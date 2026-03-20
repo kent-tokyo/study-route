@@ -1,0 +1,75 @@
+{
+  "id": "0d660988-7193-4fd1-8afe-d76d90cd0b78",
+  "nodeId": "integers",
+  "level": "standard",
+  "generatedAt": "2026-03-20T14:21:45.236Z",
+  "content": "# 整数（Integers）\n\n## 何か — 直感的な説明\n\n整数とは、分数や小数を使わずに表せる数の集まりです。具体的には $\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots$ のように、正の方向にも負の方向にも果てしなく続く数の列です。銀行口座の残高を考えてみましょう。預金残高は正の整数、借金（赤字）は負の整数、そして口座が空のときはゼロ——これらすべてが整数で表現できます。\n\n整数の集合は記号 $\\mathbb{Z}$ で表されます（ドイツ語の「Zahlen（数）」に由来します）。自然数（正の整数）$\\mathbb{N}$ に「ゼロ」と「負の数」を加えたものが整数です。この拡張によって、たとえば $3 - 5$ のような「大きい数から小さい数を引く」計算が意味を持つようになります。\n\n## なぜ必要か — 数学における位置づけ\n\n自然数だけでは引き算を自由に行うことができません。$5 - 3 = 2$ は問題ありませんが、$3 - 5 = ?$ は自然数の範囲では答えが存在しません。整数を導入することで、加法・減法・乗法の演算が数の集合の「外」に飛び出すことなく閉じて行えるようになります。これを演算について**閉じている**といいます。\n\n数の体系は歴史的に「必要に迫られて拡張」されてきました。整数は数直線上の等間隔な格子点として視覚化でき、代数学・整数論・離散数学の基礎をなします。また、整数は後に有理数 $\\mathbb{Q}$、実数 $\\mathbb{R}$、複素数 $\\mathbb{C}$ へと拡張されていく数の階層の重要な一段を占めています。\n\n## 核となるアイデア — 定義・定理の本質\n\n整数の集合 $\\mathbb{Z}$ は以下の四則演算に関して重要な性質を持ちます。\n\n**加法・乗法の基本法則：**\n\n$$a + b = b + a \\quad \\text{（交換法則）}$$\n$$a + (b + c) = (a + b) + c \\quad \\text{（結合法則）}$$\n$$a \\cdot (b + c) = a \\cdot b + a \\cdot c \\quad \\text{（分配法則）}$$\n\nこれらの法則は整数を「環（かん）」と呼ばれる代数的構造にします。加法について：単位元はゼロ（$a + 0 = a$）、逆元は $-a$（$a + (-a) = 0$）です。乗法について：単位元は 1（$a \\cdot 1 = a$）ですが、すべての整数が乗法的逆元を持つわけではありません（例えば 2 の逆元 $\\frac{1}{2}$ は整数ではない）。\n\n**符号のルール：**\n$$(-a) \\times (-b) = a \\times b, \\quad (-a) \\times b = -(a \\times b)$$\n\n除法は整数の範囲では必ずしも閉じておらず、$7 \\div 2 = 3.5$ は整数ではありません。これが整数を「体（たい）」ではなく「環」にとどめる理由です。\n\n## 具体例 — 身近な例\n\n**例1：気温の変化**\n冬の朝、気温が $-8°C$ でした。日中に $11°C$ 上昇したとすると、昼の気温は $-8 + 11 = 3°C$ です。負の整数から出発して正の整数に到達するこの計算は、数直線上を左から右へ移動するイメージで捉えられます。\n\n**例2：エレベーターの階数**\nあるビルで地下2階を $-2$、地上1階を $1$ と表します。地下2階から5階分上がると $-2 + 5 = 3$、つまり地上3階に到達します。また、地上4階から7階分下がると $4 - 7 = -3$、すなわち地下3階です。このように整数は「向き」と「大きさ」を同時に表現できます。\n\n**例3：剰余（余り）の計算**\n$17 \\div 5$ を整数の範囲で行うと、商は $3$、余りは $2$ です（$17 = 5 \\times 3 + 2$）。この「余り」の概念は整数特有のもので、暗号理論や曜日の計算（7で割った余り）に活用されます。\n\n## つながり — 他の概念との関係\n\n整数は数の体系の中で中心的な位置を占めます。$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$ という包含関係があり、整数は自然数を含み、有理数に含まれます。整数論（数論）は素数・約数・最大公約数・合同式など、整数の深い性質を研究する分野です。\n\n代数学では整数は「環」の典型例として登場し、群・環・体という構造の理解の出発点となります。離散数学や組み合わせ論においても整数は基本的な対象であり、グラフ理論やアルゴリズムの議論では「整数値」であることが本質的な役割を果たします。\n\n## 他分野への応用 — 物理・化学・経済学・工学などでこの概念がどう使われるか\n\n**物理学：** 量子力学では電子のスピンや軌道の量子数が整数（または半整数）で表されます。原子核内の陽子・中性子の数も整数であり、元素の同定に使われます。\n\n**コンピュータサイエンス：** コンピュータは内部的に2進数の整数演算を行っています。オーバーフロー（整数の上限を超える計算）はプログラムのバグの典型例です。暗号技術（RSA暗号）は非常に大きな整数の素因数分解の困難さに基づいています。\n\n**経済学・会計：** 株式の株数、商品の個数、金利の期間（年数）など、経済活動の多くの量は整数です。損益（プラス・マイナス）の概念も整数の符号に直接対応します。\n\n**工学：** 信号処理では離散時間信号のサンプル番号が整数で管理されます。画像処理でもピクセル座標は整数で表されます。",
+  "terms": [
+    {
+      "term": "整数",
+      "reading": "せいすう",
+      "en": "Integer",
+      "definition": "正の整数・負の整数・ゼロを合わせた数の集合。記号 $\\mathbb{Z}$ で表す。"
+    },
+    {
+      "term": "自然数",
+      "reading": "しぜんすう",
+      "en": "Natural Number",
+      "definition": "$1, 2, 3, \\ldots$ のような正の整数の集合。記号 $\\mathbb{N}$ で表す（0を含む定義もある）。"
+    },
+    {
+      "term": "負の整数",
+      "reading": "ふのせいすう",
+      "en": "Negative Integer",
+      "definition": "$-1, -2, -3, \\ldots$ のように0より小さい整数。正の整数の加法的逆元。"
+    },
+    {
+      "term": "加法的逆元",
+      "reading": "かほうてきぎゃくげん",
+      "en": "Additive Inverse",
+      "definition": "ある数 $a$ に足すと0になる数 $-a$。整数 $a$ の逆元は $-a$。"
+    },
+    {
+      "term": "交換法則",
+      "reading": "こうかんほうそく",
+      "en": "Commutative Law",
+      "definition": "演算の順序を入れ替えても結果が変わらない性質。$a + b = b + a$、$a \\times b = b \\times a$。"
+    },
+    {
+      "term": "結合法則",
+      "reading": "けつごうほうそく",
+      "en": "Associative Law",
+      "definition": "3つ以上の数を演算するとき、計算の組み合わせ方を変えても結果が変わらない性質。$(a+b)+c = a+(b+c)$。"
+    },
+    {
+      "term": "分配法則",
+      "reading": "ぶんぱいほうそく",
+      "en": "Distributive Law",
+      "definition": "乗法が加法に対して分配できる性質。$a(b+c) = ab + ac$。"
+    },
+    {
+      "term": "環",
+      "reading": "かん",
+      "en": "Ring",
+      "definition": "加法と乗法を持ち、分配法則などを満たす代数的構造。整数 $\\mathbb{Z}$ はその典型例。"
+    },
+    {
+      "term": "剰余",
+      "reading": "じょうよ",
+      "en": "Remainder / Modulo",
+      "definition": "整数の割り算で商を整数にしたときの余り。$a = bq + r$（$0 \\leq r < b$）の $r$。"
+    },
+    {
+      "term": "絶対値",
+      "reading": "ぜったいち",
+      "en": "Absolute Value",
+      "definition": "数直線上で0からの距離。$|a|$ で表し、$a \\geq 0$ なら $|a|=a$、$a < 0$ なら $|a|=-a$。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 380\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景なし（透明） -->\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">整数の世界：構造と関係</text>\n\n  <!-- ===== 数直線 ===== -->\n  <text x=\"300\" y=\"60\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\" opacity=\"0.7\">─ 数直線 ─</text>\n\n  <!-- 数直線本体 -->\n  <line x1=\"60\" y1=\"90\" x2=\"540\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <!-- 矢印左 -->\n  <polygon points=\"60,90 72,85 72,95\" fill=\"currentColor\"/>\n  <!-- 矢印右 -->\n  <polygon points=\"540,90 528,85 528,95\" fill=\"currentColor\"/>\n\n  <!-- 負の整数ゾーン（青） -->\n  <rect x=\"65\" y=\"75\" width=\"215\" height=\"30\" fill=\"#3b82f6\" fill-opacity=\"0.1\" rx=\"4\"/>\n  <!-- 正の整数ゾーン（緑） -->\n  <rect x=\"300\" y=\"75\" width=\"235\" height=\"30\" fill=\"#22c55e\" fill-opacity=\"0.1\" rx=\"4\"/>\n\n  <!-- 目盛り -->\n  <!-- -4 -->\n  <line x1=\"120\" y1=\"85\" x2=\"120\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"120\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3b82f6\">-4</text>\n  <!-- -3 -->\n  <line x1=\"156\" y1=\"85\" x2=\"156\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"156\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3b82f6\">-3</text>\n  <!-- -2 -->\n  <line x1=\"192\" y1=\"85\" x2=\"192\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"192\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3b82f6\">-2</text>\n  <!-- -1 -->\n  <line x1=\"228\" y1=\"85\" x2=\"228\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"228\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3b82f6\">-1</text>\n  <!-- 0 -->\n  <line x1=\"300\" y1=\"80\" x2=\"300\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2.5\"/>\n  <text x=\"300\" y=\"116\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"currentColor\">0</text>\n  <!-- 1 -->\n  <line x1=\"336\" y1=\"85\" x2=\"336\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"336\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" fill=\"#22c55e\">1</text>\n  <!-- 2 -->\n  <line x1=\"372\" y1=\"85\" x2=\"372\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"372\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" fill=\"#22c55e\">2</text>\n  <!-- 3 -->\n  <line x1=\"408\" y1=\"85\" x2=\"408\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"408\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" fill=\"#22c55e\">3</text>\n  <!-- 4 -->\n  <line x1=\"444\" y1=\"85\" x2=\"444\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"444\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" fill=\"#22c55e\">4</text>\n\n  <!-- ラベル -->\n  <text x=\"150\" y=\"75\" text-anchor=\"middle\" font-size=\"11\" fill=\"#3b82f6\">負の整数</text>\n  <text x=\"410\" y=\"75\" text-anchor=\"middle\" font-size=\"11\" fill=\"#22c55e\">正の整数</text>\n\n  <!-- 絶対値の図示 -->\n  <line x1=\"228\" y1=\"128\" x2=\"300\" y2=\"128\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n  <text x=\"264\" y=\"143\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">|-1|=1</text>\n\n  <!-- ===== 数の集合の包含関係（同心楕円） ===== -->\n  <text x=\"300\" y=\"175\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\" opacity=\"0.7\">─ 数の体系の階層 ─</text>\n\n  <!-- C: 複素数 -->\n  <ellipse cx=\"300\" cy=\"255\" rx=\"270\" ry=\"80\" fill=\"currentColor\" fill-opacity=\"0.04\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"5,3\"/>\n  <text x=\"540\" y=\"250\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\" opacity=\"0.6\">ℂ 複素数</text>\n\n  <!-- R: 実数 -->\n  <ellipse cx=\"295\" cy=\"255\" rx=\"220\" ry=\"63\" fill=\"currentColor\" fill-opacity=\"0.04\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"5,3\"/>\n  <text x=\"490\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\" opacity=\"0.6\">ℝ 実数</text>\n\n  <!-- Q: 有理数 -->\n  <ellipse cx=\"290\" cy=\"255\" rx=\"165\" ry=\"47\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"432\" y=\"253\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\" opacity=\"0.7\">ℚ 有理数</text>\n\n  <!-- Z: 整数（強調） -->\n  <ellipse cx=\"283\" cy=\"257\" rx=\"108\" ry=\"32\" fill=\"#3b82f6\" fill-opacity=\"0.12\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"366\" y=\"256\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">ℤ 整数</text>\n\n  <!-- N: 自然数 -->\n  <ellipse cx=\"272\" cy=\"259\" rx=\"55\" ry=\"18\" fill=\"#22c55e\" fill-opacity=\"0.15\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"272\" y=\"263\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">ℕ 自然数</text>\n\n  <!-- ===== 四則演算の閉包性 ===== -->\n  <text x=\"300\" y=\"355\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\" opacity=\"0.7\">─ 整数における四則演算の閉包性 ─</text>\n\n  <!-- 加法 -->\n  <rect x=\"30\" y=\"362\" width=\"110\" height=\"14\" rx=\"3\" fill=\"#22c55e\" fill-opacity=\"0.2\"/>\n  <text x=\"85\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">＋ 加法　✓ 閉じる</text>\n\n  <!-- 減法 -->\n  <rect x=\"155\" y=\"362\" width=\"110\" height=\"14\" rx=\"3\" fill=\"#22c55e\" fill-opacity=\"0.2\"/>\n  <text x=\"210\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">－ 減法　✓ 閉じる</text>\n\n  <!-- 乗法 -->\n  <rect x=\"280\" y=\"362\" width=\"110\" height=\"14\" rx=\"3\" fill=\"#22c55e\" fill-opacity=\"0.2\"/>\n  <text x=\"335\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">× 乗法　✓ 閉じる</text>\n\n  <!-- 除法 -->\n  <rect x=\"405\" y=\"362\" width=\"140\" height=\"14\" rx=\"3\" fill=\"#ef4444\" fill-opacity=\"0.15\"/>\n  <text x=\"475\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">÷ 除法　✗ 閉じない</text>\n\n</svg>"
+    }
+  ]
+}

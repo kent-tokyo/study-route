@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
@@ -19,6 +20,7 @@ function parseArgs() {
     withImages: false,
     force: false,
     dryRun: false,
+    model: null as string | null,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -44,6 +46,9 @@ function parseArgs() {
       case '--dry-run':
         flags.dryRun = true;
         break;
+      case '--model':
+        flags.model = args[++i];
+        break;
     }
   }
 
@@ -57,7 +62,7 @@ function getTargetNodeIds(flags: ReturnType<typeof parseArgs>): string[] {
   if (flags.nodes.length > 0) {
     return flags.nodes;
   }
-  console.error('Usage: npx tsx scripts/generate-content.ts --node <nodeId> [--node <nodeId2> ...] | --all [--level <level>] [--all-levels] [--with-images] [--force] [--dry-run]');
+  console.error('Usage: npx tsx scripts/generate-content.ts --node <nodeId> [--node <nodeId2> ...] | --all [--level <level>] [--all-levels] [--with-images] [--force] [--dry-run] [--model <model>]');
   process.exit(1);
 }
 
@@ -106,14 +111,15 @@ function updateContentsTable(manifest: Record<string, ManifestEntry>): void {
     const beginner = entry?.levels.includes('beginner') ? 'done' : '-';
     const standard = entry?.levels.includes('standard') ? 'done' : '-';
     const advanced = entry?.levels.includes('advanced') ? 'done' : '-';
-    return `| ${node.id} | ${node.label} | ${node.area} | ${beginner} | ${standard} | ${advanced} |`;
+    const reviewed = '-';
+    return `| ${node.id} | ${node.label} | ${node.area} | ${beginner} | ${standard} | ${advanced} | ${reviewed} |`;
   });
 
   const table = `# Content Generation Status
 Last updated: ${new Date().toISOString().split('T')[0]}
 
-| Node ID | Label | Area | Beginner | Standard | Advanced |
-|---------|-------|------|----------|----------|----------|
+| Node ID | Label | Area | Beginner | Standard | Advanced | Reviewed |
+|---------|-------|------|----------|----------|----------|----------|
 ${rows.join('\n')}
 `;
 
@@ -143,8 +149,10 @@ async function main() {
   const flags = parseArgs();
   const nodeIds = getTargetNodeIds(flags);
   const levels = getTargetLevels(flags);
+  const modelName = flags.model || 'claude-sonnet-4-6';
 
   console.log(`Target: ${nodeIds.length} node(s) × ${levels.length} level(s) = ${nodeIds.length * levels.length} combination(s)`);
+  console.log(`Model: ${modelName}`);
   if (flags.withImages) console.log('Image generation: enabled');
   if (flags.force) console.log('Force mode: overwriting existing content');
 
@@ -180,6 +188,7 @@ async function main() {
       try {
         result = await generateContent(job.nodeId, {
           contentLevel: job.level,
+          llmModel: modelName,
         });
       } catch (err) {
         console.error(`  [error] ${label}: ${(err as Error).message}`);

@@ -1,1 +1,10 @@
-{}
+{
+  "counting": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  }
+}

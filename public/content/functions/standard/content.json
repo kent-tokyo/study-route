@@ -1,0 +1,75 @@
+{
+  "id": "5820bfe1-ce83-40c2-8424-d09f0d0b3295",
+  "nodeId": "functions",
+  "level": "standard",
+  "generatedAt": "2026-03-20T14:24:03.588Z",
+  "content": "# 関数（Functions）\n\n## 何か — 直感的な説明\n\n関数とは、「ある値を入れると、決まった値が出てくる仕組み」です。自動販売機を想像してください。100円を入れてボタンを押すと、決まった飲み物が出てきます。同じボタンを押せば、必ず同じ飲み物が出る——この「入力に対して出力が一意に決まる」という性質こそが、関数の本質です。\n\n数学的には、集合 $A$ の各要素に対して、集合 $B$ のただ一つの要素を対応させる規則を**関数**（または**写像**）と呼びます。この対応を $f: A \\to B$ と書き、$A$ の要素 $x$ に対応する $B$ の要素を $f(x)$ と表します。重要なのは「ただ一つ」という点で、一つの入力から複数の出力が出てはいけません。\n\n## なぜ必要か — 数学における位置づけ\n\n関数は現代数学の最も根本的な概念の一つです。数学とは「量と構造の変化を記述する学問」とも言えますが、その「変化」や「対応関係」を厳密に扱うための道具が関数です。微分・積分、線形代数、確率論、位相数学など、あらゆる数学分野で関数は中心的な役割を果たしています。\n\n関数という概念を持つことで、「$x$ が変化したとき $y$ はどう変わるか」「ある条件を満たす $x$ は存在するか」といった問いを厳密に議論できるようになります。また、関数同士を比較したり、合成したり、逆にしたりという操作が可能になることで、数学の世界が大きく広がります。\n\n## 核となるアイデア — 定義・定理の本質\n\n関数 $f: A \\to B$ を構成する要素は三つあります。**定義域** $A$（入力できる値の集合）、**終域** $B$（出力が属する集合）、そして**対応規則**です。$A$ の要素 $x$ に対し $f(x)$ を $x$ の**像**と呼び、すべての像の集合\n\n$$f(A) = \\{ f(x) \\mid x \\in A \\}$$\n\nを関数 $f$ の**値域**（または像）といいます。値域は終域の部分集合 $f(A) \\subseteq B$ になります。\n\n関数の重要な性質として**単射**・**全射**・**全単射**があります。単射とは「異なる入力は異なる出力を持つ」（$x_1 \\neq x_2 \\Rightarrow f(x_1) \\neq f(x_2)$）、全射とは「終域のすべての要素が像として現れる」（$\\forall b \\in B, \\exists a \\in A: f(a)=b$）という性質です。両方を満たす全単射のとき、逆関数 $f^{-1}: B \\to A$ が存在します。\n\n## 具体例 — 身近な例\n\n**例1：二乗関数**　$f: \\mathbb{R} \\to \\mathbb{R}$、$f(x) = x^2$ は実数全体を定義域とする関数です。$f(3) = 9$、$f(-3) = 9$ のように、異なる入力が同じ出力を持つことがあります。このため $f$ は単射ではありません。また値域は $[0, \\infty)$ であり終域 $\\mathbb{R}$ より小さいため全射でもありません。\n\n**例2：学籍番号と学生の対応**　大学のクラスで「学籍番号 → 学生一人」という対応を考えると、これは関数です。学籍番号は一人の学生にしか割り当てられていないからです。逆に「学生 → 学籍番号」も関数であり、この二つは互いに逆関数の関係にあります（全単射）。\n\n**例3：定数関数と恒等関数**　$f(x) = 5$（すべての入力に対して5を返す）は定数関数、$f(x) = x$（入力をそのまま返す）は恒等関数 $\\mathrm{id}$ と呼ばれる特別な関数です。恒等関数はどんな関数 $g$ との合成についても $g \\circ \\mathrm{id} = \\mathrm{id} \\circ g = g$ を満たします。\n\n## つながり — 他の概念との関係\n\n関数は**集合論**を基盤として定義され、集合間の「関係（relation）」の特殊なケースです。一般の関係は一つの入力に複数の出力を許しますが、関数はその出力をただ一つに限定したものです。関数の合成 $g \\circ f$ は「$f$ を適用してから $g$ を適用する」操作で、合成は結合法則 $(h \\circ g) \\circ f = h \\circ (g \\circ f)$ を満たします。\n\n**微分積分学**では、関数の「変化率」（微分）や「累積量」（積分）を研究します。**線形代数**では行列が線形関数（線形写像）として解釈され、行列の積が写像の合成に対応します。また**位相数学**では「連続関数」という概念が中心となり、空間の形を保つ写像（同相写像）が研究されます。\n\n## 他分野への応用 — 物理・化学・経済学・工学などでこの概念がどう使われるか\n\n**物理学**では、位置・速度・加速度はすべて「時刻 $t$ を入力とする関数」として表されます。$x(t)$ は時刻 $t$ における位置を与える関数であり、その微分 $v(t) = x'(t)$ が速度です。波動関数、電場、磁場なども空間座標を変数とする関数として記述されます。\n\n**経済学**では、需要関数 $Q = D(P)$（価格 $P$ に対する需要量 $Q$）や効用関数 $U(x, y)$（財 $x$, $y$ の消費量から効用を計算する）が基本ツールです。最適化問題（利益最大化・費用最小化）は関数の極値問題として定式化されます。**工学・情報科学**では、信号処理におけるフーリエ変換（関数を別の関数へ変換する「関数の関数」）や、ニューラルネットワークにおける各層の変換（活性化関数）など、関数の概念が至るところで活用されています。",
+  "terms": [
+    {
+      "term": "関数",
+      "reading": "かんすう",
+      "en": "Function",
+      "definition": "集合 $A$ の各要素に集合 $B$ のただ一つの要素を対応させる規則。$f: A \\to B$ と表記する。"
+    },
+    {
+      "term": "写像",
+      "reading": "しゃぞう",
+      "en": "Map / Mapping",
+      "definition": "関数と同義。特に集合論・代数学の文脈で用いられる呼称。"
+    },
+    {
+      "term": "定義域",
+      "reading": "ていぎいき",
+      "en": "Domain",
+      "definition": "関数への入力となる値全体の集合 $A$。"
+    },
+    {
+      "term": "終域",
+      "reading": "しゅういき",
+      "en": "Codomain",
+      "definition": "関数の出力が属する集合 $B$。値域とは異なり、実際に出力されない要素を含んでよい。"
+    },
+    {
+      "term": "値域",
+      "reading": "ちいき",
+      "en": "Range / Image",
+      "definition": "関数 $f$ による像の全体 $f(A) = \\{f(x) \\mid x \\in A\\}$。終域の部分集合。"
+    },
+    {
+      "term": "単射",
+      "reading": "たんしゃ",
+      "en": "Injective Function (Injection)",
+      "definition": "異なる入力が必ず異なる出力を持つ関数。$x_1 \\neq x_2 \\Rightarrow f(x_1) \\neq f(x_2)$。"
+    },
+    {
+      "term": "全射",
+      "reading": "ぜんしゃ",
+      "en": "Surjective Function (Surjection)",
+      "definition": "終域のすべての要素が少なくとも一つの入力の像になっている関数。$f(A) = B$。"
+    },
+    {
+      "term": "全単射",
+      "reading": "ぜんたんしゃ",
+      "en": "Bijective Function (Bijection)",
+      "definition": "単射かつ全射である関数。このとき逆関数が存在する。"
+    },
+    {
+      "term": "逆関数",
+      "reading": "ぎゃくかんすう",
+      "en": "Inverse Function",
+      "definition": "全単射 $f: A \\to B$ に対し、$f^{-1}(f(x)) = x$ を満たす関数 $f^{-1}: B \\to A$。"
+    },
+    {
+      "term": "合成関数",
+      "reading": "ごうせいかんすう",
+      "en": "Composite Function",
+      "definition": "関数 $f: A \\to B$、$g: B \\to C$ に対し、$(g \\circ f)(x) = g(f(x))$ で定義される関数。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 380\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n  <!-- 背景なし（透明） -->\n\n  <!-- 集合 A（定義域） -->\n  <ellipse cx=\"150\" cy=\"190\" rx=\"100\" ry=\"140\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"150\" y=\"48\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"currentColor\">定義域 A</text>\n\n  <!-- 集合 B（終域） -->\n  <ellipse cx=\"450\" cy=\"190\" rx=\"100\" ry=\"140\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"450\" y=\"48\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"currentColor\">終域 B</text>\n\n  <!-- 値域ハイライト（B内の値域部分） -->\n  <ellipse cx=\"450\" cy=\"200\" rx=\"68\" ry=\"95\" fill=\"#3b82f6\" fill-opacity=\"0.13\" stroke=\"#3b82f6\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <text x=\"510\" y=\"310\" text-anchor=\"middle\" font-size=\"12\" fill=\"#3b82f6\">値域 f(A)</text>\n\n  <!-- 要素 in A -->\n  <circle cx=\"150\" cy=\"120\" r=\"5\" fill=\"currentColor\"/>\n  <text x=\"125\" y=\"117\" text-anchor=\"end\" font-size=\"13\" fill=\"currentColor\">a₁</text>\n\n  <circle cx=\"150\" cy=\"175\" r=\"5\" fill=\"currentColor\"/>\n  <text x=\"125\" y=\"172\" text-anchor=\"end\" font-size=\"13\" fill=\"currentColor\">a₂</text>\n\n  <circle cx=\"150\" cy=\"230\" r=\"5\" fill=\"currentColor\"/>\n  <text x=\"125\" y=\"227\" text-anchor=\"end\" font-size=\"13\" fill=\"currentColor\">a₃</text>\n\n  <circle cx=\"150\" cy=\"285\" r=\"5\" fill=\"currentColor\"/>\n  <text x=\"125\" y=\"282\" text-anchor=\"end\" font-size=\"13\" fill=\"currentColor\">a₄</text>\n\n  <!-- 要素 in B -->\n  <circle cx=\"450\" cy=\"130\" r=\"5\" fill=\"#3b82f6\"/>\n  <text x=\"475\" y=\"127\" text-anchor=\"start\" font-size=\"13\" fill=\"currentColor\">b₁</text>\n\n  <circle cx=\"450\" cy=\"185\" r=\"5\" fill=\"#3b82f6\"/>\n  <text x=\"475\" y=\"182\" text-anchor=\"start\" font-size=\"13\" fill=\"currentColor\">b₂</text>\n\n  <circle cx=\"450\" cy=\"240\" r=\"5\" fill=\"#3b82f6\"/>\n  <text x=\"475\" y=\"237\" text-anchor=\"start\" font-size=\"13\" fill=\"currentColor\">b₃</text>\n\n  <!-- 終域にあるが値域外の要素 -->\n  <circle cx=\"450\" cy=\"295\" r=\"5\" fill=\"currentColor\" fill-opacity=\"0.4\"/>\n  <text x=\"475\" y=\"292\" text-anchor=\"start\" font-size=\"13\" fill=\"currentColor\" fill-opacity=\"0.5\">b₄</text>\n\n  <!-- 矢印（対応） -->\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\"/>\n    </marker>\n  </defs>\n\n  <!-- a1 → b1 -->\n  <line x1=\"158\" y1=\"122\" x2=\"438\" y2=\"131\" stroke=\"#3b82f6\" stroke-width=\"1.8\" marker-end=\"url(#arrow)\"/>\n\n  <!-- a2 → b2 -->\n  <line x1=\"158\" y1=\"175\" x2=\"438\" y2=\"183\" stroke=\"#3b82f6\" stroke-width=\"1.8\" marker-end=\"url(#arrow)\"/>\n\n  <!-- a3 → b2（単射でない例） -->\n  <path d=\"M158,232 Q300,210 438,188\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1.8\" marker-end=\"url(#arrow)\" stroke-dasharray=\"6,3\"/>\n  <text x=\"298\" y=\"208\" text-anchor=\"middle\" font-size=\"11\" fill=\"#ef4444\">同じ像</text>\n\n  <!-- a4 → b3 -->\n  <line x1=\"158\" y1=\"284\" x2=\"438\" y2=\"243\" stroke=\"#3b82f6\" stroke-width=\"1.8\" marker-end=\"url(#arrow)\"/>\n\n  <!-- 関数ラベル f -->\n  <text x=\"300\" y=\"92\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#3b82f6\">f</text>\n  <line x1=\"200\" y1=\"85\" x2=\"395\" y2=\"85\" stroke=\"#3b82f6\" stroke-width=\"2\" marker-end=\"url(#arrow)\"/>\n  <text x=\"300\" y=\"75\" text-anchor=\"middle\" font-size=\"13\" fill=\"currentColor\">f : A → B</text>\n\n  <!-- 凡例 -->\n  <rect x=\"30\" y=\"335\" width=\"540\" height=\"38\" rx=\"6\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-opacity=\"0.2\" stroke-width=\"1\"/>\n  <line x1=\"50\" y1=\"354\" x2=\"80\" y2=\"354\" stroke=\"#3b82f6\" stroke-width=\"2\" marker-end=\"url(#arrow)\"/>\n  <text x=\"88\" y=\"358\" font-size=\"12\" fill=\"currentColor\">関数による対応（各入力にただ一つの出力）</text>\n  <line x1=\"310\" y1=\"354\" x2=\"340\" y2=\"354\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-dasharray=\"5,3\" marker-end=\"url(#arrow)\"/>\n  <text x=\"348\" y=\"358\" font-size=\"12\" fill=\"currentColor\">複数の入力が同じ出力（単射でない場合）</text>\n</svg>"
+    }
+  ]
+}

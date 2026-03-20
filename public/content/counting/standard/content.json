@@ -1,0 +1,87 @@
+{
+  "id": "8ef40869-8c23-4c06-82c2-d667d591ba52",
+  "nodeId": "counting",
+  "level": "standard",
+  "generatedAt": "2026-03-20T14:34:12.256Z",
+  "content": "# 数える\n\n## 何か — 直感的な説明\n\n「数える」とは、ものの集まりの**大きさを決める**操作です。リンゴが3個あるとき、私たちは無意識のうちに「1、2、3」と声に出しながら、それぞれのリンゴに番号を対応させています。この「一つひとつに順番をつけて、最後の番号を個数とする」というシンプルな操作こそが、数えるという行為の本質です。\n\n数えるためには「次はいくつ？」という問いに答えられる必要があります。$1$ の次は $2$、$2$ の次は $3$、というように、**どこまでも続く列**があれば、どんなに多いものでも原理的には数えられます。この「次がある」という感覚から、数学の世界では**自然数**という概念が生まれました。\n\n## なぜ必要か — 数学における位置づけ\n\n数えることは、数学のあらゆる分野の出発点です。足し算・引き算・掛け算・割り算といった四則演算も、「いくつ集めたら？」「何回繰り返したら？」という数える行為から始まります。数えられなければ、数式を書くことも、グラフを描くことも、確率を計算することもできません。\n\nまた、数学的な厳密さという観点からも、「数えること」の定義はきわめて重要です。有限集合と無限集合を区別したり、「二つの集合の要素の数が等しい」とはどういうことかを正確に述べたりするとき、数える操作の本質——**一対一対応**という考え方——が核になります。この発想は、やがて集合論・位相数学・情報理論へとつながっていきます。\n\n## 核となるアイデア — 定義・定理の本質\n\n数える対象となる数の体系を**自然数**と呼びます。自然数の集合は\n\n$$\\mathbb{N} = \\{1, 2, 3, 4, 5, \\ldots\\}$$\n\nと書かれます（$0$ を含める流儀もあります）。自然数の重要な性質は、**どの自然数にも「次の数（後者）」が存在する**ことです。$1$ の次は $2$、$n$ の次は $n+1$、という具合です。\n\n$n$ 個のものを数えるとは、その集合 $S$ と $\\{1, 2, \\ldots, n\\}$ の間に**一対一対応**（全単射）を作ることです。\n\n$$S \\longleftrightarrow \\{1, 2, \\ldots, n\\}$$\n\n直感的にいえば、「過不足なく、もれなく、一つずつ対応させられる」なら個数は $n$ 個、ということです。この一対一対応という考え方は、数が少ない日常的な場面では自明に思えますが、無限個のものを比べるときにも同じ原理が使えます。\n\n## 具体例\n\n### 例1：日常生活 — 財布の中のコイン\n\n財布から出したコインが何枚あるか確かめるとき、私たちは「1枚、2枚、3枚、4枚……」と一枚ずつ指で触れながら数えます。このとき、すでに数えたコインと、まだ数えていないコインを分けながら進めているはずです。これが「一つひとつに番号を割り当てる」という一対一対応の操作です。最後に「7枚」と分かったとき、コインの集合と $\\{1,2,3,4,5,6,7\\}$ の対応が完成しています。\n\n### 例2：数学的な場面 — 点の集合と番号\n\n平面上に点 $A, B, C, D, E$ の5つの点があるとします。これらを数えるとは、\n\n$$A \\leftrightarrow 1,\\quad B \\leftrightarrow 2,\\quad C \\leftrightarrow 3,\\quad D \\leftrightarrow 4,\\quad E \\leftrightarrow 5$$\n\nという対応を作ることです。対応の順番（$A$ を $1$ にするか $3$ にするか）は自由ですが、どう割り当てても最後の番号は $5$ になります。個数は対応の順番によらず一定——これが「集合の要素の数」が意味をもつ理由です。\n\n### 例3：「同じ数だけある」を確かめる — 椅子と生徒\n\n教室に椅子と生徒がいるとき、「椅子の数と生徒の数は等しいか？」を確かめるとき、実は一人ひとりの総数を数えなくても確かめられます。全員が一つずつ椅子に座ったとき、余った椅子も立っている生徒もいなければ、椅子と生徒は**同じ数だけある**といえます。これが一対一対応の本質であり、数えることの定義そのものです。数学では、この考え方を**濃度（cardinality）が等しい**と表現します。\n\n## つながり — 他の概念との関係\n\n**前提となる概念：** 数えるという操作は、「ものが区別できる」「一つひとつがバラバラに識別できる」という前提に立っています。これは**集合**の概念と密接に結びついており、「要素をもつ集合」というアイデアが土台にあります。\n\n**直接の発展先：** 数えることができれば、次に「合わせると？」という**足し算**、「何個ずつ？」という**掛け算**へと進めます。また、「同じ数だけあるとはどういうことか」という問いは、**集合の濃度**の概念へと発展し、有限集合だけでなく無限集合の「大きさ」を比べる理論——**カントールの無限論**——の入り口になります。\n\n**より深い視点：** 自然数の性質を公理（最小限の決まり）から厳密に導くことを試みたのが**ペアノの公理**です。「$1$ が存在する」「どの自然数にも次の数がある」「$1$ は後者ではない」といった少数の規則から、足し算も掛け算も論理的に構築できます。\n\n## 他分野への応用\n\n**コンピュータサイエンス：** コンピュータが扱うデータはすべて「個数が有限か無限か」「処理を何ステップで終えられるか」という数える問いと結びついています。アルゴリズムの**計算量（complexity）**は「ステップ数を数える」ことで評価され、ループが何回回るかを数えることが効率の分析の基本です。\n\n**統計学・確率論：** 「全部で何通りの場合があるか」を数えることは、確率を計算する第一歩です。サイコロを1回振って「3以下が出る確率」は、全目の数 $6$ と条件を満たす目の数 $3$ を数えて $\\frac{3}{6} = \\frac{1}{2}$ と求めます。組み合わせ論（combinatorics）は「数え方の数学」そのものです。\n\n**生物学・医学：** 細胞の数を数えること、患者の数を数えること、DNAの塩基配列の長さを数えること——どれも数えるという操作の応用です。血液検査で「白血球が $1\\,\\mathrm{mm}^3$ あたり何個か」を数えることは、健康状態の判断に直結します。\n\n**経済学：** 「何人の消費者がいるか」「何個の商品が売れたか」は、経済分析の出発点です。離散的な選択モデル（たとえば「$n$ 人のうち何人がこの商品を選ぶか」）は、数えることを基礎とした数学的モデルで記述されます。\n\n## 用語集\n[\n  {\n    \"term\": \"自然数\",\n    \"reading\": \"しぜんすう\",\n    \"en\": \"Natural Number\",\n    \"definition\": \"1, 2, 3, … と続く正の整数の集合。どの自然数にも「次の数（後者）」が存在するという性質をもつ。\"\n  },\n  {\n    \"term\": \"一対一対応\",\n    \"reading\": \"いちたいいちたいおう\",\n    \"en\": \"One-to-One Correspondence (Bijection)\",\n    \"definition\": \"二つの集合の要素を過不足なく一つずつ対応させること。全単射とも呼ばれ、集合の個数（濃度）が等しいことを示す基本的な方法。\"\n  },\n  {\n    \"term\": \"集合\",\n    \"reading\": \"しゅうごう\",\n    \"en\": \"Set\",\n    \"definition\": \"区別可能なものの集まり。数学においてものを数える際の基本的な土台となる概念。\"\n  },\n  {\n    \"term\": \"有限集合\",\n    \"reading\": \"ゆうげんしゅうごう\",\n    \"en\": \"Finite Set\",\n    \"definition\": \"要素の個数が有限である集合。自然数 {1, 2, …, n} との一対一対応が作れる集合のこと。\"\n  },\n  {\n    \"term\": \"無限集合\",\n    \"reading\": \"むげんしゅうごう\",\n    \"en\": \"Infinite Set\",\n    \"definition\": \"要素の個数が有限でない集合。有限集合と異なり、その「大きさ」の比較には濃度という概念が必要となる。\"\n  },\n  {\n    \"term\": \"濃度\",\n    \"reading\": \"のうど\",\n    \"en\": \"Cardinality\",\n    \"definition\": \"集合の「大きさ」を表す概念。二つの集合の間に一対一対応が存在するとき、両者の濃度は等しいという。\"\n  },\n  {\n    \"term\": \"全単射\",\n    \"reading\": \"ぜんたんしゃ\",\n    \"en\": \"Bijection\",\n    \"definition\": \"単射（異なる要素を異なる要素に対応させる）かつ全射（すべての要素が対応先をもつ）である写像。一対一対応の数学的な表現。\"\n  },\n  {\n    \"term\": \"ペアノの公理\",\n    \"reading\": \"ぺあののこうり\",\n    \"en\": \"Peano Axioms\",\n    \"definition\": \"自然数の性質を最小限の規則から厳密に定義する公理系。「1が存在する」「どの自然数にも後者がある」などの規則から足し算・掛け算を論理的に構築できる。\"\n  },\n  {\n    \"term\": \"カントールの無限論\",\n    \"reading\": \"かんとーるのむげんろん\",\n    \"en\": \"Cantor's Theory of Infinity\",\n    \"definition\": \"カントールが創始した無限集合の大きさを濃度によって比較する理論。有限の場合と同じ一対一対応の原理を無限集合に適用する。\"\n  },\n  {\n    \"term\": \"組み合わせ論\",\n    \"reading\": \"くみあわせろん\",\n    \"en\": \"Combinatorics\",\n    \"definition\": \"ものの並べ方や選び方の場合の数を数える数学の分野。確率論や統計学の基礎としても重要。\"\n  },\n  {\n    \"term\": \"四則演算\",\n    \"reading\": \"しそくえんざん\",\n    \"en\": \"Four Arithmetic Operations\",\n    \"definition\": \"足し算・引き算・掛け算・割り算の総称。いずれも「数える」という行為を基盤として成り立つ演算。\"\n  },\n  {\n    \"term\": \"計算量\",\n    \"reading\": \"けいさんりょう\",\n    \"en\": \"Computational Complexity\",\n    \"definition\": \"アルゴリズムが問題を解くのに要するステップ数やリソース量の指標。「何ステップかかるか」を数えることで評価される。\"\n  }\n]",
+  "terms": [
+    {
+      "term": "自然数",
+      "reading": "しぜんすう",
+      "en": "Natural Number",
+      "definition": "1, 2, 3, … と続く正の整数の集合。どの自然数にも「次の数（後者）」が存在するという性質をもつ。"
+    },
+    {
+      "term": "一対一対応",
+      "reading": "いちたいいちたいおう",
+      "en": "One-to-One Correspondence (Bijection)",
+      "definition": "二つの集合の要素を過不足なく一つずつ対応させること。全単射とも呼ばれ、集合の個数（濃度）が等しいことを示す基本的な方法。"
+    },
+    {
+      "term": "集合",
+      "reading": "しゅうごう",
+      "en": "Set",
+      "definition": "区別可能なものの集まり。数学においてものを数える際の基本的な土台となる概念。"
+    },
+    {
+      "term": "有限集合",
+      "reading": "ゆうげんしゅうごう",
+      "en": "Finite Set",
+      "definition": "要素の個数が有限である集合。自然数 {1, 2, …, n} との一対一対応が作れる集合のこと。"
+    },
+    {
+      "term": "無限集合",
+      "reading": "むげんしゅうごう",
+      "en": "Infinite Set",
+      "definition": "要素の個数が有限でない集合。有限集合と異なり、その「大きさ」の比較には濃度という概念が必要となる。"
+    },
+    {
+      "term": "濃度",
+      "reading": "のうど",
+      "en": "Cardinality",
+      "definition": "集合の「大きさ」を表す概念。二つの集合の間に一対一対応が存在するとき、両者の濃度は等しいという。"
+    },
+    {
+      "term": "全単射",
+      "reading": "ぜんたんしゃ",
+      "en": "Bijection",
+      "definition": "単射（異なる要素を異なる要素に対応させる）かつ全射（すべての要素が対応先をもつ）である写像。一対一対応の数学的な表現。"
+    },
+    {
+      "term": "ペアノの公理",
+      "reading": "ぺあののこうり",
+      "en": "Peano Axioms",
+      "definition": "自然数の性質を最小限の規則から厳密に定義する公理系。「1が存在する」「どの自然数にも後者がある」などの規則から足し算・掛け算を論理的に構築できる。"
+    },
+    {
+      "term": "カントールの無限論",
+      "reading": "かんとーるのむげんろん",
+      "en": "Cantor's Theory of Infinity",
+      "definition": "カントールが創始した無限集合の大きさを濃度によって比較する理論。有限の場合と同じ一対一対応の原理を無限集合に適用する。"
+    },
+    {
+      "term": "組み合わせ論",
+      "reading": "くみあわせろん",
+      "en": "Combinatorics",
+      "definition": "ものの並べ方や選び方の場合の数を数える数学の分野。確率論や統計学の基礎としても重要。"
+    },
+    {
+      "term": "四則演算",
+      "reading": "しそくえんざん",
+      "en": "Four Arithmetic Operations",
+      "definition": "足し算・引き算・掛け算・割り算の総称。いずれも「数える」という行為を基盤として成り立つ演算。"
+    },
+    {
+      "term": "計算量",
+      "reading": "けいさんりょう",
+      "en": "Computational Complexity",
+      "definition": "アルゴリズムが問題を解くのに要するステップ数やリソース量の指標。「何ステップかかるか」を数えることで評価される。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景透明 -->\n\n  <!-- ========== 中央コアノード：数える ========== -->\n  <ellipse cx=\"300\" cy=\"240\" rx=\"72\" ry=\"38\" fill=\"#3b82f6\" fill-opacity=\"0.18\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n  <text x=\"300\" y=\"235\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"17\" font-weight=\"bold\">数える</text>\n  <text x=\"300\" y=\"253\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"11\">一対一対応</text>\n\n  <!-- ========== 上部：自然数 ========== -->\n  <rect x=\"210\" y=\"30\" width=\"180\" height=\"62\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"53\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\">自然数 ℕ</text>\n  <text x=\"300\" y=\"70\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"11\">{1, 2, 3, 4, 5, …}</text>\n  <text x=\"300\" y=\"85\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">後者の存在・ペアノの公理</text>\n\n  <!-- 矢印: 自然数 → 数える -->\n  <line x1=\"300\" y1=\"92\" x2=\"300\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-dasharray=\"none\"/>\n  <polygon points=\"300,202 295,192 305,192\" fill=\"currentColor\"/>\n\n  <!-- ========== 左上：集合 ========== -->\n  <rect x=\"30\" y=\"60\" width=\"130\" height=\"52\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"95\" y=\"82\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"13\" font-weight=\"bold\">集合</text>\n  <text x=\"95\" y=\"100\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">要素の識別・区別</text>\n\n  <!-- 矢印: 集合 → 数える（前提） -->\n  <line x1=\"155\" y1=\"95\" x2=\"228\" y2=\"205\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\"/>\n  <polygon points=\"229,207 220,200 230,197\" fill=\"currentColor\"/>\n  <text x=\"165\" y=\"160\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\" fill-opacity=\"0.7\">前提</text>\n\n  <!-- ========== 右上：一対一対応の例示 ========== -->\n  <rect x=\"400\" y=\"38\" width=\"175\" height=\"90\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"487\" y=\"58\" text-anchor=\"middle\" fill=\"#3b82f6\" font-size=\"12\" font-weight=\"bold\">全単射の例</text>\n  <!-- S の要素 -->\n  <circle cx=\"430\" cy=\"80\" r=\"7\" fill=\"#3b82f6\" fill-opacity=\"0.3\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"430\" y=\"84\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\">A</text>\n  <circle cx=\"430\" cy=\"100\" r=\"7\" fill=\"#3b82f6\" fill-opacity=\"0.3\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"430\" y=\"104\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\">B</text>\n  <circle cx=\"430\" cy=\"120\" r=\"7\" fill=\"#3b82f6\" fill-opacity=\"0.3\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"430\" y=\"124\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\">C</text>\n  <!-- {1,2,3} -->\n  <rect x=\"510\" y=\"73\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#3b82f6\" fill-opacity=\"0.2\" stroke=\"#3b82f6\" stroke-width=\"1\"/>\n  <text x=\"519\" y=\"85\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\">1</text>\n  <rect x=\"510\" y=\"93\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#3b82f6\" fill-opacity=\"0.2\" stroke=\"#3b82f6\" stroke-width=\"1\"/>\n  <text x=\"519\" y=\"105\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\">2</text>\n  <rect x=\"510\" y=\"113\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#3b82f6\" fill-opacity=\"0.2\" stroke=\"#3b82f6\" stroke-width=\"1\"/>\n  <text x=\"519\" y=\"125\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\">3</text>\n  <!-- 矢印 A→1, B→2, C→3 -->\n  <line x1=\"438\" y1=\"80\" x2=\"508\" y2=\"82\" stroke=\"#3b82f6\" stroke-width=\"1\" marker-end=\"url(#arrowBlue)\"/>\n  <line x1=\"438\" y1=\"100\" x2=\"508\" y2=\"102\" stroke=\"#3b82f6\" stroke-width=\"1\" marker-end=\"url(#arrowBlue)\"/>\n  <line x1=\"438\" y1=\"120\" x2=\"508\" y2=\"122\" stroke=\"#3b82f6\" stroke-width=\"1\" marker-end=\"url(#arrowBlue)\"/>\n  <!-- ラベル -->\n  <text x=\"473\" y=\"72\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\">S</text>\n  <text x=\"536\" y=\"72\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\">{1..n}</text>\n\n  <!-- 矢印: 全単射の例 ← 数える -->\n  <line x1=\"372\" y1=\"220\" x2=\"405\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"403,126 400,137 410,133\" fill=\"currentColor\"/>\n\n  <!-- ========== 下部3列：発展概念 ========== -->\n\n  <!-- 左下：足し算・掛け算 -->\n  <rect x=\"28\" y=\"340\" width=\"150\" height=\"70\" rx=\"12\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"1.8\"/>\n  <text x=\"103\" y=\"363\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"13\" font-weight=\"bold\">四則演算</text>\n  <text x=\"103\" y=\"381\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">足し算・掛け算</text>\n  <text x=\"103\" y=\"397\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">「合わせると？」「繰り返し」</text>\n\n  <!-- 中下：集合の濃度 -->\n  <rect x=\"218\" y=\"340\" width=\"164\" height=\"70\" rx=\"12\" fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.8\"/>\n  <text x=\"300\" y=\"363\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"13\" font-weight=\"bold\">集合の濃度</text>\n  <text x=\"300\" y=\"381\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">cardinality</text>\n  <text x=\"300\" y=\"397\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">カントールの無限論</text>\n\n  <!-- 右下：組み合わせ論・確率 -->\n  <rect x=\"418\" y=\"340\" width=\"160\" height=\"70\" rx=\"12\" fill=\"#ef4444\" fill-opacity=\"0.1\" stroke=\"#ef4444\" stroke-width=\"1.8\"/>\n  <text x=\"498\" y=\"363\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"13\" font-weight=\"bold\">組み合わせ論</text>\n  <text x=\"498\" y=\"381\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">確率・場合の数</text>\n  <text x=\"498\" y=\"397\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">「何通りあるか？」</text>\n\n  <!-- 矢印: 数える → 四則演算 -->\n  <line x1=\"248\" y1=\"268\" x2=\"155\" y2=\"338\" stroke=\"#22c55e\" stroke-width=\"2\"/>\n  <polygon points=\"153,340 155,328 163,335\" fill=\"#22c55e\"/>\n  <text x=\"188\" y=\"315\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\" fill-opacity=\"0.75\">発展</text>\n\n  <!-- 矢印: 数える → 集合の濃度 -->\n  <line x1=\"300\" y1=\"278\" x2=\"300\" y2=\"338\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <polygon points=\"300,340 295,328 305,328\" fill=\"#3b82f6\"/>\n  <text x=\"318\" y=\"315\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\" fill-opacity=\"0.75\">抽象化</text>\n\n  <!-- 矢印: 数える → 組み合わせ論 -->\n  <line x1=\"355\" y1=\"265\" x2=\"448\" y2=\"338\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n  <polygon points=\"450,340 443,330 452,328\" fill=\"#ef4444\"/>\n  <text x=\"418\" y=\"310\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"9\" fill-opacity=\"0.75\">応用</text>\n\n  <!-- ========== 最下部：応用分野 ========== -->\n  <rect x=\"30\" y=\"440\" width=\"540\" height=\"36\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\"/>\n  <text x=\"80\" y=\"462\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">💻 CS</text>\n  <text x=\"185\" y=\"462\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">📊 統計・確率論</text>\n  <text x=\"300\" y=\"462\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\" font-weight=\"bold\">応用分野</text>\n  <text x=\"415\" y=\"462\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">🔬 生物・医学</text>\n  <text x=\"525\" y=\"462\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">📈 経済学</text>\n\n  <!-- 矢印 下段→応用 -->\n  <line x1=\"103\" y1=\"410\" x2=\"103\" y2=\"438\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4,2\"/>\n  <line x1=\"300\" y1=\"410\" x2=\"300\" y2=\"438\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4,2\"/>\n  <line x1=\"498\" y1=\"410\" x2=\"498\" y2=\"438\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4,2\"/>\n\n  <!-- ========== defs: arrowhead ========== -->\n  <defs>\n    <marker id=\"arrowBlue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ]
+}

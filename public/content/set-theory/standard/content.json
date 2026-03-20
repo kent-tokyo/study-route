@@ -1,0 +1,75 @@
+{
+  "id": "d86d93f4-6887-4a22-b2c6-1749ff02c748",
+  "nodeId": "set-theory",
+  "level": "standard",
+  "generatedAt": "2026-03-20T14:22:56.985Z",
+  "content": "# 集合論（Set Theory）\n\n## 何か — 直感的な説明\n\n集合とは、**はっきりと区別できるものの集まり**のことです。たとえば「1から5までの整数の集まり」や「日本の都道府県の集まり」のように、何が含まれて何が含まれないかが明確に定まるとき、それを集合と呼びます。集合に含まれる個々のものを**元（げん）**または**要素**といいます。\n\n集合は中括弧 $\\{\\}$ を使って表します。たとえば $A = \\{1, 2, 3, 4, 5\\}$ のように書きます。元 $a$ が集合 $A$ に属することを $a \\in A$、属さないことを $a \\notin A$ と表記します。この「属する・属さない」という二択の明確さが、集合論の出発点です。\n\n## なぜ必要か — 数学における位置づけ\n\n集合論は現代数学の**共通言語**です。数・関数・空間・確率など、数学のあらゆる概念は集合を用いて厳密に定義されています。たとえば「関数」は二つの集合の間の特別な対応として定義され、「自然数全体」も特定の性質をもつ集合として構成されます。集合論を学ぶことは、数学という建物の土台を理解することに相当します。\n\n19世紀末にゲオルク・カントールが集合論を創始して以来、数学の基礎はこの枠組みの上に築かれてきました。集合の言葉を使いこなすことで、異なる分野の議論を統一的に捉えたり、「無限」の大きさを比較したりすることさえ可能になります。大学数学のどの科目でも集合の記法が頻繁に登場するのは、それが数学の根幹だからです。\n\n## 核となるアイデア — 定義・定理の本質\n\n集合どうしの基本的な関係として**部分集合**があります。集合 $A$ のすべての元が集合 $B$ にも属するとき、$A \\subseteq B$（$A$ は $B$ の部分集合）と書きます。$A \\subseteq B$ かつ $B \\subseteq A$ であるとき、$A = B$ と定義されます。\n\n集合の基本演算は次の三つです：\n\n$$A \\cup B = \\{x \\mid x \\in A \\text{ または } x \\in B\\} \\quad \\text{（和集合）}$$\n\n$$A \\cap B = \\{x \\mid x \\in A \\text{ かつ } x \\in B\\} \\quad \\text{（積集合）}$$\n\n$$A \\setminus B = \\{x \\mid x \\in A \\text{ かつ } x \\notin B\\} \\quad \\text{（差集合）}$$\n\nまた、全体集合 $U$ に対する $A$ の**補集合**は $A^c = U \\setminus A$ です。これらの演算にはド・モルガンの法則 $(A \\cup B)^c = A^c \\cap B^c$、$(A \\cap B)^c = A^c \\cup B^c$ など、論理演算と対応した美しい性質が成り立ちます。\n\n## 具体例 — 身近な例\n\n**例1：クラスの生徒と趣味**　あるクラスで、$A$＝「音楽が好きな生徒の集合」、$B$＝「スポーツが好きな生徒の集合」とします。$A \\cup B$ は「音楽またはスポーツが好きな生徒」、$A \\cap B$ は「両方好きな生徒」、$A \\setminus B$ は「音楽は好きだがスポーツは好きでない生徒」を表します。ベン図を描くと、それぞれの領域が視覚的に把握できます。\n\n**例2：数の集合の階層**　自然数・整数・有理数・実数の集合を $\\mathbb{N}, \\mathbb{Z}, \\mathbb{Q}, \\mathbb{R}$ とすると、\n$$\\mathbb{N} \\subseteq \\mathbb{Z} \\subseteq \\mathbb{Q} \\subseteq \\mathbb{R}$$\nという部分集合の連鎖が成り立ちます。「整数は必ず有理数でもある」という当たり前に思える事実が、集合の包含関係として正確に表現されています。このように集合の言葉は、数体系の構造を見通しよく整理してくれます。\n\n## つながり — 他の概念との関係\n\n集合論は**論理学**と深く結びついています。和集合は論理の「または（$\\lor$）」、積集合は「かつ（$\\land$）」、補集合は「否定（$\\lnot$）」に対応しており、集合演算の法則と命題論理の法則は同型の構造をもちます。\n\nまた、集合の上に**写像（関数）**を定義することで代数学・解析学・位相数学が構築されます。二つの集合の間に全単射（bijection）が存在するとき、それらは「同じ大きさ」とみなされ、これがカントールの**濃度**の概念につながります。自然数全体と整数全体は同じ濃度をもつ一方、実数全体はより「大きな」無限集合であることが証明されます。\n\n## 他分野への応用 — 物理・化学・経済学・工学などでこの概念がどう使われるか\n\n**確率論・統計学**では、確率空間の「事象」が集合として定義されます。サイコロを振る実験で「偶数が出る事象」は $\\{2, 4, 6\\}$ という集合であり、和集合や積集合が「少なくとも一方が起こる」「同時に起こる」確率の計算に直結します。データサイエンスにおけるデータの絞り込みや結合操作（SQL の JOIN など）も本質的に集合演算です。\n\n**コンピュータ科学・工学**では、データベースの検索やプログラムの型システムが集合論の言葉で記述されます。また、論理回路の設計はブール代数——集合の演算と同型の代数系——に基づいており、AND・OR・NOT ゲートは積集合・和集合・補集合に対応しています。**経済学**では選好関係や予算集合、ゲーム理論の戦略集合など、経済主体の行動を集合で形式化するのが標準的なアプローチです。",
+  "terms": [
+    {
+      "term": "集合",
+      "reading": "しゅうごう",
+      "en": "Set",
+      "definition": "はっきりと区別できるものの集まり。何が属し何が属さないかが明確に定まるもの。"
+    },
+    {
+      "term": "元（要素）",
+      "reading": "げん（ようそ）",
+      "en": "Element",
+      "definition": "集合を構成する個々のもの。$a \\in A$ は「$a$ は集合 $A$ の元である」を意味する。"
+    },
+    {
+      "term": "部分集合",
+      "reading": "ぶぶんしゅうごう",
+      "en": "Subset",
+      "definition": "集合 $A$ のすべての元が集合 $B$ にも属するとき、$A \\subseteq B$ と表し「$A$ は $B$ の部分集合」という。"
+    },
+    {
+      "term": "和集合",
+      "reading": "わしゅうごう",
+      "en": "Union",
+      "definition": "$A \\cup B$：$A$ または $B$ の少なくとも一方に属する元全体の集合。"
+    },
+    {
+      "term": "積集合（共通部分）",
+      "reading": "せきしゅうごう（きょうつうぶぶん）",
+      "en": "Intersection",
+      "definition": "$A \\cap B$：$A$ と $B$ の両方に属する元全体の集合。"
+    },
+    {
+      "term": "補集合",
+      "reading": "ほしゅうごう",
+      "en": "Complement",
+      "definition": "全体集合 $U$ に対し、$A^c = U \\setminus A$：$U$ に属するが $A$ には属さない元全体の集合。"
+    },
+    {
+      "term": "差集合",
+      "reading": "さしゅうごう",
+      "en": "Set Difference",
+      "definition": "$A \\setminus B$：$A$ に属するが $B$ には属さない元全体の集合。"
+    },
+    {
+      "term": "空集合",
+      "reading": "くうしゅうごう",
+      "en": "Empty Set",
+      "definition": "元を一つも含まない集合。$\\emptyset$ または $\\{\\}$ と表す。あらゆる集合の部分集合となる。"
+    },
+    {
+      "term": "濃度",
+      "reading": "のうど",
+      "en": "Cardinality",
+      "definition": "集合の「大きさ」を表す概念。有限集合では元の個数に対応し、無限集合どうしの大きさ比較にも用いられる。"
+    },
+    {
+      "term": "ド・モルガンの法則",
+      "reading": "どもるがんのほうそく",
+      "en": "De Morgan's Laws",
+      "definition": "$(A \\cup B)^c = A^c \\cap B^c$ および $(A \\cap B)^c = A^c \\cup B^c$ が成り立つ法則。集合演算と論理演算を結ぶ重要な性質。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 420\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n  <!-- 背景なし（透明） -->\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">集合の基本演算（ベン図）</text>\n\n  <!-- ===== 全体集合の枠 ===== -->\n  <!-- 上段左: 和集合 -->\n  <rect x=\"20\" y=\"50\" width=\"170\" height=\"130\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\"/>\n  <text x=\"105\" y=\"45\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">全体集合 U</text>\n  <!-- A circle -->\n  <circle cx=\"80\" cy=\"115\" r=\"40\" fill=\"#3b82f6\" fill-opacity=\"0.25\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <!-- B circle -->\n  <circle cx=\"115\" cy=\"115\" r=\"40\" fill=\"#3b82f6\" fill-opacity=\"0.25\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"65\" y=\"118\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">A</text>\n  <text x=\"132\" y=\"118\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">B</text>\n  <text x=\"105\" y=\"195\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">A ∪ B（和集合）</text>\n\n  <!-- 上段中: 積集合 -->\n  <rect x=\"215\" y=\"50\" width=\"170\" height=\"130\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\"/>\n  <text x=\"300\" y=\"45\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">全体集合 U</text>\n  <!-- A circle (gray) -->\n  <circle cx=\"275\" cy=\"115\" r=\"40\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <!-- B circle (gray) -->\n  <circle cx=\"310\" cy=\"115\" r=\"40\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <!-- intersection highlight -->\n  <clipPath id=\"clipA\">\n    <circle cx=\"275\" cy=\"115\" r=\"40\"/>\n  </clipPath>\n  <circle cx=\"310\" cy=\"115\" r=\"40\" fill=\"#3b82f6\" fill-opacity=\"0.45\" stroke=\"none\" clip-path=\"url(#clipA)\"/>\n  <text x=\"260\" y=\"118\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">A</text>\n  <text x=\"327\" y=\"118\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">B</text>\n  <text x=\"300\" y=\"195\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">A ∩ B（積集合）</text>\n\n  <!-- 上段右: 補集合 -->\n  <rect x=\"410\" y=\"50\" width=\"170\" height=\"130\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\"/>\n  <text x=\"495\" y=\"45\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">全体集合 U</text>\n  <!-- U fill -->\n  <rect x=\"410\" y=\"50\" width=\"170\" height=\"130\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.18\" stroke=\"none\"/>\n  <!-- A circle (cut out visually with white-ish) -->\n  <circle cx=\"495\" cy=\"115\" r=\"40\" fill=\"white\" fill-opacity=\"0.55\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <!-- re-draw A circle fill with low opacity currentColor for dark mode compat -->\n  <circle cx=\"495\" cy=\"115\" r=\"40\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"495\" y=\"118\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">A</text>\n  <text x=\"495\" y=\"195\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">Aᶜ（補集合）</text>\n\n  <!-- ===== 下段: 部分集合の関係 ===== -->\n  <!-- 大きな円 B -->\n  <ellipse cx=\"150\" cy=\"320\" rx=\"110\" ry=\"70\" fill=\"#22c55e\" fill-opacity=\"0.12\" stroke=\"#22c55e\" stroke-width=\"1.8\"/>\n  <text x=\"215\" y=\"295\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">B</text>\n  <!-- 中くらいの円 A -->\n  <ellipse cx=\"140\" cy=\"325\" rx=\"70\" ry=\"45\" fill=\"#3b82f6\" fill-opacity=\"0.18\" stroke=\"#3b82f6\" stroke-width=\"1.8\"/>\n  <text x=\"175\" y=\"305\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">A</text>\n  <!-- 小さい円 C -->\n  <ellipse cx=\"130\" cy=\"330\" rx=\"38\" ry=\"25\" fill=\"#ef4444\" fill-opacity=\"0.22\" stroke=\"#ef4444\" stroke-width=\"1.8\"/>\n  <text x=\"130\" y=\"334\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#ef4444\">C</text>\n  <!-- ラベル -->\n  <text x=\"150\" y=\"405\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">部分集合の入れ子構造</text>\n  <text x=\"150\" y=\"420\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">C ⊆ A ⊆ B</text>\n\n  <!-- ===== 右下: 数の集合の階層 ===== -->\n  <text x=\"420\" y=\"230\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">数の集合の階層</text>\n  <!-- ℝ -->\n  <ellipse cx=\"420\" cy=\"320\" rx=\"105\" ry=\"75\" fill=\"currentColor\" fill-opacity=\"0.04\" stroke=\"currentColor\" stroke-width=\"1.3\"/>\n  <text x=\"495\" y=\"265\" font-size=\"12\" fill=\"currentColor\">ℝ（実数）</text>\n  <!-- ℚ -->\n  <ellipse cx=\"415\" cy=\"325\" rx=\"75\" ry=\"52\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1.3\"/>\n  <text x=\"463\" y=\"283\" font-size=\"11\" fill=\"currentColor\">ℚ（有理数）</text>\n  <!-- ℤ -->\n  <ellipse cx=\"410\" cy=\"330\" rx=\"48\" ry=\"33\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.3\"/>\n  <text x=\"430\" y=\"305\" font-size=\"10\" fill=\"currentColor\">ℤ（整数）</text>\n  <!-- ℕ -->\n  <ellipse cx=\"405\" cy=\"335\" rx=\"26\" ry=\"18\" fill=\"#3b82f6\" fill-opacity=\"0.25\" stroke=\"#3b82f6\" stroke-width=\"1.3\"/>\n  <text x=\"405\" y=\"338\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">ℕ</text>\n  <text x=\"420\" y=\"410\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">ℕ ⊆ ℤ ⊆ ℚ ⊆ ℝ</text>\n</svg>"
+    }
+  ]
+}
