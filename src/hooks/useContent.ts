@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getAvailableLevels, hasIllustration } from '@/lib/content-manifest';
+import { getAvailableLevels, hasIllustration, getContentBasePath } from '@/lib/content-manifest';
 import type { Term } from '@/types';
 
 export interface ContentData {
@@ -53,7 +53,7 @@ export function useContent(nodeId: string, level: string): UseContentResult {
         }
         setResolvedLevel(targetLevel);
 
-        const res = await fetch(`/content/${nodeId}/${targetLevel}/content.json`);
+        const res = await fetch(`${getContentBasePath()}/content/${nodeId}/${targetLevel}/content.json`);
         if (cancelled) return;
         if (!res.ok) {
           setError(true);
@@ -67,7 +67,7 @@ export function useContent(nodeId: string, level: string): UseContentResult {
         // Check illustration
         const hasImg = await hasIllustration(nodeId, targetLevel);
         if (!cancelled) {
-          setIllustrationUrl(hasImg ? `/content/${nodeId}/${targetLevel}/illustration.webp` : null);
+          setIllustrationUrl(hasImg ? `${getContentBasePath()}/content/${nodeId}/${targetLevel}/illustration.webp` : null);
         }
       } catch {
         if (!cancelled) setError(true);
