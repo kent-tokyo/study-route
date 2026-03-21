@@ -206,5 +206,13 @@
     "hasIllustration": {
       "standard": false
     }
+  },
+  "modal-logic": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
   }
 }
