@@ -1,0 +1,169 @@
+{
+  "id": "847caf85-57a8-4833-80cc-403dfca2e5c1",
+  "nodeId": "atomic-structure",
+  "level": "standard",
+  "locale": "en",
+  "generatedAt": "2026-03-21T22:33:15.488Z",
+  "content": "# Atomic Structure\n\n## What is it — Intuitive explanation\n\nAn atom is the smallest unit of matter. Everything around us — air, water, metals — is made up of collections of atoms. At the center of every atom lies the **nucleus**, which contains protons (positively charged) and neutrons (no charge). Surrounding the nucleus are **electrons**, which carry a negative charge.\n\nA helpful analogy is the solar system: the nucleus is like the Sun, and the electrons are like the planets. However, electrons don't actually follow fixed orbits — they exist more like a \"cloud\" of probability, spread out around the nucleus (this is called the **electron cloud**). The distribution of where electrons are likely to be found is what determines an atom's chemical properties.\n\n## Why it matters — Its place in chemistry\n\nUnderstanding atomic structure is essential to studying chemistry. The way substances react, the types of bonds they form, and the properties they exhibit all depend on **electron configuration**.\n\nFor example, questions like \"Why do sodium and chlorine react so violently to form table salt?\" or \"Why is water a liquid while hydrogen is a gas?\" cannot be answered without knowing atomic structure. Atomic structure is the foundation of all chemistry — once you have a solid grasp of it, advanced topics like chemical bonding, reactivity, and the patterns of the periodic table all start to connect naturally.\n\n## Core ideas — Definitions and key concepts\n\n### Atomic number and mass number\n\nAn atom's identity is determined by its **atomic number** $Z$, which is the number of protons it contains. The number of electrons normally equals the number of protons, making the atom electrically neutral overall.\n\n$$\n\\text{Mass number} \\; A = \\text{Number of protons} \\; Z + \\text{Number of neutrons} \\; N\n$$\n\nAtoms of the same element that differ in the number of neutrons are called **isotopes**. For example, carbon has the isotopes $^{12}\\text{C}$ and $^{14}\\text{C}$.\n\n### Electron configuration and shells\n\nElectrons are arranged around the nucleus according to **energy levels**, also called shells. Shells are numbered from the inside out as $n = 1, 2, 3, \\ldots$, and the maximum number of electrons each shell can hold is given by:\n\n$$\n\\text{Maximum number of electrons} = 2n^2\n$$\n\nFor example, the $n=1$ shell (K shell) can hold at most $2 \\times 1^2 = 2$ electrons, and the $n=2$ shell (L shell) can hold at most $2 \\times 2^2 = 8$ electrons.\n\n### Atomic orbitals\n\nShells are further divided into **subshells**, which come in the types $s, p, d,$ and $f$. Each type has a different shape and can hold a different number of electrons.\n\n| Orbital type | Number of orbitals | Maximum electrons |\n|:---:|:---:|:---:|\n| $s$ | 1 | 2 |\n| $p$ | 3 | 6 |\n| $d$ | 5 | 10 |\n| $f$ | 7 | 14 |\n\nElectrons fill orbitals starting from the **lowest energy level** first — this is the **Aufbau principle**. When multiple orbitals of equal energy are available, electrons occupy them one at a time before pairing up — this is **Hund's rule**. Additionally, no two electrons in the same orbital can have the same spin — this is the **Pauli exclusion principle**.\n\n### Valence electrons and chemical properties\n\nThe electrons in the outermost shell are called **valence electrons**. These are the electrons directly involved in chemical reactions, and elements with the same number of valence electrons tend to have similar chemical properties. This is the basis for the pattern seen in the **groups (columns) of the periodic table**.\n\n## Examples\n\n### Example 1: Hydrogen — The simplest atom (and its everyday relevance)\n\nHydrogen (H) has atomic number $Z = 1$, meaning it has just one proton and one electron — the simplest atom there is. Its single electron occupies the $1s$ orbital in the $n=1$ shell.\n\n$$\n\\text{Electron configuration of H:} \\; 1s^1\n$$\n\nHydrogen is deeply woven into everyday life. It is a component of water ($\\text{H}_2\\text{O}$), and it is the most abundant element in the universe. Fuel cells in hydrogen-powered vehicles also rely on redox reactions involving hydrogen's single electron. It's remarkable how such a simple structure — just one electron — plays such a diverse role across so many contexts.\n\n### Example 2: Sodium (Na) — Valence electrons determine reactivity\n\nSodium has atomic number $Z = 11$, giving it 11 electrons.\n\n$$\n\\text{Electron configuration of Na:} \\; 1s^2 \\, 2s^2 \\, 2p^6 \\, 3s^1\n$$\n\nThe outermost shell ($n=3$, M shell) contains just **one** valence electron. By giving away this single electron, sodium achieves the stable electron configuration of the noble gas neon ($1s^2\\,2s^2\\,2p^6$). This is why sodium readily \"wants to give away\" its electron, and reacts vigorously with chlorine to form table salt ($\\text{NaCl}$). This is a clear illustration of how the number of valence electrons directly governs chemical reactivity.\n\n### Example 3: Neon (Ne) — The stable noble gas configuration\n\nNeon has atomic number $Z = 10$, and its outermost shell is completely filled with electrons.\n\n$$\n\\text{Electron configuration of Ne:} \\; 1s^2 \\, 2s^2 \\, 2p^6\n$$\n\nWith 2 electrons in the $n=1$ shell and 8 in the $n=2$ shell — totaling 10 electrons — every shell is \"full.\" As a result, neon has no need to give away or receive electrons from other atoms, making it extremely stable and almost completely unreactive. Neon signs glow because electrical energy excites these stable electrons to higher energy levels; when they fall back down to lower levels, they release energy as visible light.\n\n### Example 4: Carbon (C) — Four valence electrons give rise to organic chemistry\n\nCarbon has atomic number $Z = 6$, giving it 6 electrons.\n\n$$\n\\text{Electron configuration of C:} \\; 1s^2 \\, 2s^2 \\, 2p^2\n$$\n\nWith **four** valence electrons in its outermost shell, carbon can form up to four bonds. This ability to \"reach out in four directions\" is the source of the enormous diversity of organic compounds — proteins, DNA, plastics, and more. The fact that a single element can form such a vast range of molecules is made possible entirely by its electron configuration.\n\n## Connections — Relationships to other concepts\n\n**Prerequisite knowledge:**\n- Basic concepts of atoms, molecules, and elements\n- Fundamentals of charge and electric fields (why protons and electrons attract each other)\n- Introductory ideas from quantum mechanics (the concept that energy comes in discrete, quantized amounts)\n\n**Topics that build on this:**\n- **Chemical bonding** (covalent, ionic, and metallic bonds): understood as the sharing or transfer of valence electrons\n- **Patterns in the periodic table**: the trends across groups and periods all follow directly from electron configuration\n- **Electronegativity and ionization energy**: an atom's ability to attract electrons is determined by its electron configuration\n- **Molecular orbital theory**: atomic orbitals from multiple atoms combine to form orbitals spanning an entire molecule (a more advanced extension)\n\nViewing the periodic table as a \"map of electron configurations\" makes it immediately clear why elements in the same group (column) share similar reactivity — they all have the same number of outermost electrons. Understanding atomic structure transforms the periodic table from a memorization tool into a prediction tool.\n\n## Applications to other fields\n\n**Physics (quantum mechanics and spectroscopy):**\nWhen electrons move between energy levels, they absorb or emit light at specific wavelengths. This principle is the foundation of **spectroscopy**. It is also why we can analyze the composition of distant stars from Earth — each element has its own unique spectrum, a kind of \"fingerprint\" of light. The energy levels of the hydrogen atom can be calculated exactly using the Schrödinger equation from quantum mechanics, making hydrogen one of the most celebrated successes of quantum theory.\n\n$$\nE_n = -\\frac{13.6 \\; \\text{eV}}{n^2}\n$$\n\nThis equation gives the energy of the $n$-th energy level of hydrogen, where $n=1$ is the ground state — the lowest possible energy level.\n\n**Materials science and semiconductor engineering:**\nSilicon (Si) belongs to the same group as carbon and also has four valence electrons. By **doping** silicon — introducing tiny amounts of boron (B), which has three valence electrons, or phosphorus (P), which has five — the flow of electricity can be precisely controlled. This is the principle behind semiconductors, and the chips inside smartphones and computers function through exactly this kind of atomic-level manipulation of electron configurations.\n\n**Medicine and biology (MRI):**\nMRI (Magnetic Resonance Imaging) exploits the quantum mechanical property of spin possessed by hydrogen nuclei (protons). The understanding of atomic structure thus underpins one of the most important diagnostic imaging technologies in modern medicine.\n\n**Environmental chemistry:**\nRadiocarbon dating uses $^{14}\\text{C}$ (carbon-14), applying the concept of isotopes — atoms of the same element with different numbers of neutrons. While an organism is alive, it continuously takes in $^{14}\\text{C}$ from the atmosphere. After death, uptake stops and the $^{14}\\text{C}$ decays at a known, constant rate. By measuring how much remains, scientists can estimate when the organism died — a technique made possible entirely by our knowledge of atomic structure and isotopes.",
+  "terms": [
+    {
+      "term": "Atomic Nucleus",
+      "reading": "",
+      "en": "Atomic Nucleus",
+      "definition": "The central part of an atom, composed of protons and neutrons. It carries a positive charge and accounts for nearly all of the atom's mass."
+    },
+    {
+      "term": "Electron",
+      "reading": "",
+      "en": "Electron",
+      "definition": "A negatively charged particle that exists around the atomic nucleus. It is directly involved in chemical bonding and reactions."
+    },
+    {
+      "term": "Electron Cloud",
+      "reading": "",
+      "en": "Electron Cloud",
+      "definition": "A visual representation of the probability distribution of an electron's location around the atomic nucleus, depicted as a cloud. The position of an electron can only be determined probabilistically."
+    },
+    {
+      "term": "Atomic Number",
+      "reading": "",
+      "en": "Atomic Number",
+      "definition": "An integer symbol $Z$ representing the number of protons in an atomic nucleus. It uniquely determines the type of element."
+    },
+    {
+      "term": "Mass Number",
+      "reading": "",
+      "en": "Mass Number",
+      "definition": "The total number of protons and neutrons in an atomic nucleus. Represented by the symbol $A$ and defined as $A = Z + N$."
+    },
+    {
+      "term": "Isotope",
+      "reading": "",
+      "en": "Isotope",
+      "definition": "Atoms of the same element (same atomic number) that differ in the number of neutrons. Also called isotopes."
+    },
+    {
+      "term": "Energy Level",
+      "reading": "",
+      "en": "Energy Level",
+      "definition": "The discrete energy values that an electron can take within an atom. Corresponding to shells, energy is lower closer to the nucleus."
+    },
+    {
+      "term": "Electron Configuration",
+      "reading": "",
+      "en": "Electron Configuration",
+      "definition": "A representation of how electrons in an atom are arranged across energy levels and orbitals. It determines the chemical properties of an element."
+    },
+    {
+      "term": "Atomic Orbital",
+      "reading": "",
+      "en": "Atomic Orbital",
+      "definition": "A spatial region representing the probability distribution of an electron's location, with types such as $s, p, d, f$. Each type differs in shape and the number of electrons it can hold."
+    },
+    {
+      "term": "Valence Electron",
+      "reading": "",
+      "en": "Valence Electron",
+      "definition": "Electrons present in the outermost shell of an atom. They are directly involved in chemical reactions and bonding, and their number greatly influences the reactivity of an element."
+    },
+    {
+      "term": "Aufbau Principle",
+      "reading": "",
+      "en": "Aufbau Principle",
+      "definition": "The principle that electrons fill orbitals in order of increasing energy. It is one of the fundamental rules for determining the ground-state electron configuration of an atom."
+    },
+    {
+      "term": "Hund's Rule",
+      "reading": "",
+      "en": "Hund's Rule",
+      "definition": "The rule stating that when multiple orbitals of the same energy are available, electrons occupy them one at a time before pairing up."
+    },
+    {
+      "term": "Pauli Exclusion Principle",
+      "reading": "",
+      "en": "Pauli Exclusion Principle",
+      "definition": "The principle that two electrons occupying the same orbital must have opposite spins. This is the basis for the rule that a maximum of two electrons can occupy a single orbital."
+    },
+    {
+      "term": "Subshell",
+      "reading": "",
+      "en": "Subshell",
+      "definition": "A further subdivision of an electron shell, with types $s, p, d, f$. Also referred to as a subshell."
+    },
+    {
+      "term": "Noble Gas",
+      "reading": "",
+      "en": "Noble Gas",
+      "definition": "A collective term for elements whose outermost electron shell is completely filled. They are chemically very stable and rarely undergo reactions."
+    }
+  ],
+  "diagrams": [],
+  "quiz": [
+    {
+      "question": "What is the maximum number of electrons that can be accommodated in shell number $n=3$ (M shell)?",
+      "choices": [
+        {
+          "text": "8",
+          "isCorrect": false
+        },
+        {
+          "text": "18",
+          "isCorrect": true
+        },
+        {
+          "text": "32",
+          "isCorrect": false
+        },
+        {
+          "text": "6",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "The maximum number of electrons that can be accommodated in a shell is given by $2n^2$. When $n=3$, this gives $2 \\times 3^2 = 18$ electrons. For $n=1$ it is 2, for $n=2$ it is 8, and for $n=4$ it is 32."
+    },
+    {
+      "question": "What is the most appropriate reason why sodium (Na, atomic number 11) reacts vigorously with chlorine?",
+      "choices": [
+        {
+          "text": "Because it has a large number of protons, making the nucleus unstable",
+          "isCorrect": false
+        },
+        {
+          "text": "Because it has only one valence electron in its outermost shell, and releasing it results in a stable electron configuration",
+          "isCorrect": true
+        },
+        {
+          "text": "Because it has more neutrons than protons, making it an isotope",
+          "isCorrect": false
+        },
+        {
+          "text": "Because no electrons occupy the $d$ orbitals, leaving them empty",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "The electron configuration of Na is $1s^2\\,2s^2\\,2p^6\\,3s^1$, meaning it has only one valence electron in its outermost shell (M shell). By giving up this one electron, it achieves the same stable electron configuration as the noble gas neon: $1s^2\\,2s^2\\,2p^6$. Chemical reactivity is determined by the number and arrangement of valence electrons."
+    },
+    {
+      "question": "Which of the following correctly describes the \"Pauli exclusion principle\" regarding electron orbitals?",
+      "choices": [
+        {
+          "text": "Electrons fill orbitals starting from the lowest energy level",
+          "isCorrect": false
+        },
+        {
+          "text": "When multiple orbitals have the same energy, electrons enter them one at a time first",
+          "isCorrect": false
+        },
+        {
+          "text": "Two electrons occupying the same orbital must have opposite spins",
+          "isCorrect": true
+        },
+        {
+          "text": "Electrons revolve around fixed paths in specific orbitals",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "The Pauli exclusion principle states that \"two electrons occupying the same orbital must have opposite spins.\" The rule that \"electrons fill orbitals starting from the lowest energy level\" is the Aufbau principle, and the rule that \"electrons enter orbitals of equal energy one at a time\" is Hund's rule. Furthermore, electrons do not travel along fixed paths; instead, they are distributed as an \"electron cloud\" representing their probability of existence."
+    }
+  ]
+}

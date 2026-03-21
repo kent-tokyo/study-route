@@ -1,0 +1,162 @@
+{
+  "id": "aceee52c-d9c8-4f89-b855-b394da5ffd12",
+  "nodeId": "double-entry",
+  "level": "standard",
+  "locale": "zh",
+  "generatedAt": "2026-03-21T22:45:55.382Z",
+  "content": "# 复式记账\n\n## 是什么 — 直观的解释\n\n复式记账是一种**从\"资金流出方（借方）\"和\"资金流入方（贷方）\"两个角度同时记录每一笔交易的方法**。顾名思义，\"复式\"意味着每笔交易必须在两处（或以上）进行记录。\n\n举个例子，当你从钱包里掏出5元钱买了一罐咖啡时，\"现金减少了5元\"和\"饮料（费用）产生了5元\"这两件事同时发生。复式记账就是将这两个方面成对记录下来——这便是它简单而深刻的核心理念。\n\n> **形象比喻：始终保持平衡的天平账本**\n>\n> 请把复式记账的账本想象成一架天平。左边的盘子（借方）放上什么，右边的盘子（贷方）就必须放上同等重量的东西。这种\"始终保持平衡\"的特性，正是复式记账最重要的特征。\n\n---\n\n## 为什么需要它 — 在会计与簿记体系中的地位\n\n复式记账是**现代会计的基石**。日本依据《公司法》和《金融商品交易法》编制的财务报表（资产负债表、利润表等），均以复式记账的记录为前提。从个体小店到上市公司，无论规模大小，复式记账的原理始终如一。\n\n单式记账（类似家庭账本，仅记录收支）虽然能告诉你\"花了多少钱\"，却很难看清\"为什么花这笔钱\"以及\"由此财产发生了怎样的变化\"。而复式记账能够同时掌握财产状况（存量）与收益、费用的流动（流量），从多个维度把握经营实态。这也正是会计被称为\"经营罗盘\"的原因所在。\n\n---\n\n## 核心理念 — 定义与定理的本质\n\n### 借贷平衡原理\n\n复式记账的核心法则是：**无论记录哪笔交易，借方合计与贷方合计必然相等**。\n\n$$\n\\text{借方合计} = \\text{贷方合计}\n$$\n\n这并非偶然，而是记录机制本身的设计使然，必然如此。\n\n### 会计科目与五大要素\n\n用于记录交易的\"容器\"称为**会计科目**。所有会计科目都归属于以下五大要素，每个要素都明确规定了借方或贷方哪一侧代表\"增加\"。\n\n| 要素 | 增加方向 | 减少方向 |\n|------|---------|---------|\n| 资产 | 借方（左） | 贷方（右） |\n| 负债 | 贷方（右） | 借方（左） |\n| 净资产（所有者权益） | 贷方（右） | 借方（左） |\n| 费用 | 借方（左） | 贷方（右） |\n| 收益 | 贷方（右） | 借方（左） |\n\n这张表与会计等式密切相关：\n\n$$\n\\text{资产} = \\text{负债} + \\text{净资产}\n$$\n\n净资产随收益与费用之差（利润）而变动。将期间内的收益与费用展开，可整理为：\n\n$$\n\\text{资产} + \\text{费用} = \\text{负债} + \\text{净资产} + \\text{收益}\n$$\n\n由此可见，左边（借方）与右边（贷方）始终相等。复式记账正是通过从两个方向记录所有交易，来确保这一等式永远成立的机制。\n\n### 分录（Journal Entry）\n\n将交易按借方和贷方分别记录的行为称为**做分录**。分录的格式如下：\n\n```\n（借方）会计科目  金额 ／ （贷方）会计科目  金额\n```\n\n---\n\n## 具体示例\n\n### 示例1：日常生活 — 在便利店买咖啡\n\n> 你从钱包里拿出现金5元，在便利店买了一杯咖啡。\n\n此时同时发生的两件事：\n- \"现金（资产）\"减少了5元 → 资产减少 → **贷方**\n- \"饮料费（费用）\"产生了5元 → 费用增加 → **借方**\n\n**分录：**\n\n| 借方 | 金额 | 贷方 | 金额 |\n|------|------|------|------|\n| 办公用品费（或福利费） | 5元 | 现金 | 5元 |\n\n天平左右各放上相同的5元，恰好平衡。\n\n---\n\n### 示例2：商业场景 — 用现金采购商品\n\n> 一家文具店用现金1万元采购了用于销售的笔记本。\n\n此时同时发生的两件事：\n- \"采购（费用）\"产生了1万元 → 费用增加 → **借方**\n- \"现金（资产）\"减少了1万元 → 资产减少 → **贷方**\n\n**分录：**\n\n| 借方 | 金额 | 贷方 | 金额 |\n|------|------|------|------|\n| 采购 | 10,000元 | 现金 | 10,000元 |\n\n---\n\n### 示例3：商业场景 — 向银行借款\n\n> 公司向银行借款100万元，款项已存入活期存款账户。\n\n此时同时发生的两件事：\n- \"活期存款（资产）\"增加了100万元 → 资产增加 → **借方**\n- \"借款（负债）\"增加了100万元 → 负债增加 → **贷方**\n\n**分录：**\n\n| 借方 | 金额 | 贷方 | 金额 |\n|------|------|------|------|\n| 活期存款 | 1,000,000元 | 借款 | 1,000,000元 |\n\n值得注意的是，**钱明明增加了，贷方（右侧）却也有记录**。借方并不等于\"正\"、贷方并不等于\"负\"——从两个方向记录\"什么增加了、什么增加了（或减少了）\"，才是复式记账的本质所在。\n\n---\n\n### 示例4：自我核查功能 — 发现错误的机制\n\n复式记账的另一大魅力在于能够检测记录错误。将所有分录汇总后编制**试算平衡表（Trial Balance）**时，若出现：\n\n$$\n\\text{借方合计} \\neq \\text{贷方合计}\n$$\n\n则可立即判断\"某处存在记账错误\"。单式记账没有这种自我核查功能，而这正是复式记账在实务中的一大重要优势。\n\n---\n\n## 关联 — 与其他概念的关系\n\n```\n【前提知识】\n无（会计学习的起点概念）\n　↓\n【复式记账】\n　↓ 　　　　　　　　　↓\n【日记账·总分类账】　【会计科目体系】\n　↓\n【编制试算平衡表】\n　↓\n【期末调整分录】\n　↓　　　　　　　　　 ↓\n【资产负债表（B/S）】　【利润表（P/L）】\n　↓\n【财务报表分析·管理会计】\n```\n\n复式记账是会计学习的**第一步**，此后所有概念（期末结算、财务报表编制、税务申报等）都建立在复式记账的基础之上。\n\n**关于日本准则（J-GAAP）与IFRS的差异：**\n复式记账\"在借贷两方记录相同金额\"的基本原理，在J-GAAP和IFRS中是一致的。但IFRS更强调\"资产负债观\"，在净资产的构成要件等方面可能存在差异。在簿记基础学习阶段，几乎无需特别在意这些区别。\n\n**日本特有的注意事项：**\n2023年10月实施的**发票制度（合格发票等保存方式）**，使消费税分录中需要记录的信息（注册编号、税率分类等）有所增加。复式记账的原理本身并未改变，但在学习消费税相关内容时，需要掌握符合该制度要求的分录处理方式。\n\n---\n\n## 向其他领域的延伸应用\n\n### 经营管理与商业分析\n\n复式记账\"从两个角度记录\"的思想，与**同时把握原因与结果**的商业思维一脉相承。当某件事发生变化时，习惯于同时追问其原因（从何而来）和结果（流向何处），这种思维方式在经营分析和问题解决中同样大有裨益。\n\n### 数据库设计\n\n在计算机领域，复式记账以**双录入会计系统（Double-Entry Accounting System）**的形式得以实现。现代会计软件（如弥生会计、freee等）均基于复式记账原理设计，只需录入分录，系统便能自动生成资产负债表和利润表。从两个方向保证数据一致性的理念，与数据库中\"事务（Transaction）\"的概念也有异曲同工之妙。\n\n### 历史与文化\n\n复式记账大约在700年前的**中世纪意大利（威尼斯）**发展成形，1494年由卢卡·帕乔利（Luca Pacioli）将其系统化。这一机制支撑了欧洲的商业革命，并对资本主义经济的发展做出了重要贡献。据传，歌德曾盛赞\"复式记账是人类智慧所创造的最精妙的发明之一\"。可见，复式记账早已超越了单纯的\"账本记法\"，被视为一套具有深厚内涵的知识体系。",
+  "terms": [
+    {
+      "term": "複式簿記",
+      "reading": "ふくしきぼき",
+      "en": "Double-Entry Bookkeeping",
+      "definition": "すべての取引を借方と貸方の2つの側面から同時に記録する会計方法。1つの取引を必ず2か所以上に記録することで、帳簿の借方合計と貸方合計が常に一致する。"
+    },
+    {
+      "term": "借方",
+      "reading": "かりかた",
+      "en": "Debit",
+      "definition": "仕訳における左側の記録欄。資産の増加・負債の減少・費用の発生などを記録する側。"
+    },
+    {
+      "term": "貸方",
+      "reading": "かしかた",
+      "en": "Credit",
+      "definition": "仕訳における右側の記録欄。資産の減少・負債の増加・収益の発生などを記録する側。"
+    },
+    {
+      "term": "仕訳",
+      "reading": "しわけ",
+      "en": "Journal Entry",
+      "definition": "取引を借方・貸方に分類し、勘定科目と金額を対応させて記録する行為。複式簿記における最も基本的な記帳操作。"
+    },
+    {
+      "term": "勘定科目",
+      "reading": "かんじょうかもく",
+      "en": "Account Title",
+      "definition": "取引を記録・分類するための名称ラベル（例：現金・売上・借入金など）。資産・負債・純資産・費用・収益の5要素に分類される。"
+    },
+    {
+      "term": "貸借平均の原理",
+      "reading": "たいしゃくへいきんのげんり",
+      "en": "Principle of Debit-Credit Equality",
+      "definition": "どのような取引を記録しても、借方の合計金額と貸方の合計金額は必ず等しくなるという複式簿記の根本原則。"
+    },
+    {
+      "term": "会計等式",
+      "reading": "かいけいとうしき",
+      "en": "Accounting Equation",
+      "definition": "「資産＝負債＋純資産」で表される会計の基本等式。複式簿記のすべての取引記録はこの等式が常に成立するように設計されている。"
+    },
+    {
+      "term": "試算表",
+      "reading": "しさんひょう",
+      "en": "Trial Balance",
+      "definition": "すべての仕訳を集計し、勘定科目ごとの借方・貸方合計を一覧にした表。借方合計と貸方合計が一致するかを確認することで記帳ミスを検出できる。"
+    },
+    {
+      "term": "貸借対照表",
+      "reading": "たいしゃくたいしょうひょう",
+      "en": "Balance Sheet (B/S)",
+      "definition": "一定時点における企業の資産・負債・純資産の残高を示す財務諸表。複式簿記による記録を集計・整理して作成される。"
+    },
+    {
+      "term": "損益計算書",
+      "reading": "そんえきけいさんしょ",
+      "en": "Profit and Loss Statement (P/L)",
+      "definition": "一定期間における収益・費用・利益を示す財務諸表。複式簿記の記録をもとに、経営成績を表す。"
+    },
+    {
+      "term": "単式簿記",
+      "reading": "たんしきぼき",
+      "en": "Single-Entry Bookkeeping",
+      "definition": "収入と支出の一方向のみを記録する簿記方式（家計簿など）。財産の状態を多角的に把握する機能に乏しく、自己チェック機能もない。"
+    },
+    {
+      "term": "純資産",
+      "reading": "じゅんしさん",
+      "en": "Net Assets / Equity",
+      "definition": "資産から負債を差し引いた残額。資本とも呼ばれ、収益と費用の差である利益によって増減する。"
+    },
+    {
+      "term": "インボイス制度",
+      "reading": "いんぼいすせいど",
+      "en": "Invoice System (Qualified Invoice Storage Method)",
+      "definition": "2023年10月に導入された消費税の仕入税額控除に関する制度。登録番号や税率区分などの記録が仕訳に必要となる。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 会計等式ボックス -->\n  <rect x=\"150\" y=\"10\" width=\"300\" height=\"44\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"28\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\" font-weight=\"bold\">会计等式</text>\n  <text x=\"300\" y=\"46\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">资产 ＝ 负债 ＋ 净资产</text>\n\n  <!-- 矢印：会計等式 → 天秤 -->\n  <line x1=\"300\" y1=\"54\" x2=\"300\" y2=\"78\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/>\n\n  <!-- 天秤タイトル -->\n  <text x=\"300\" y=\"93\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">复式记账的天平（借贷平衡原理）</text>\n\n  <!-- 天秤支柱 -->\n  <line x1=\"300\" y1=\"100\" x2=\"300\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"2.5\"/>\n  <!-- 天秤横棒 -->\n  <line x1=\"110\" y1=\"130\" x2=\"490\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"2.5\"/>\n  <!-- 天秤脚 -->\n  <polygon points=\"290,130 310,130 300,148\" fill=\"currentColor\" fill-opacity=\"0.5\"/>\n\n  <!-- 左ひも -->\n  <line x1=\"185\" y1=\"130\" x2=\"185\" y2=\"155\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <!-- 右ひも -->\n  <line x1=\"415\" y1=\"130\" x2=\"415\" y2=\"155\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n\n  <!-- 借方（左）皿 -->\n  <rect x=\"90\" y=\"155\" width=\"190\" height=\"120\" rx=\"10\" fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#3b82f6\">借方（左）</text>\n  <!-- 借方内容 -->\n  <text x=\"113\" y=\"200\" font-size=\"11\" fill=\"currentColor\">▲ 资产增加</text>\n  <text x=\"113\" y=\"218\" font-size=\"11\" fill=\"currentColor\">▼ 负债减少</text>\n  <text x=\"113\" y=\"236\" font-size=\"11\" fill=\"currentColor\">▼ 净资产减少</text>\n  <text x=\"113\" y=\"254\" font-size=\"11\" fill=\"currentColor\">▲ 费用增加</text>\n  <text x=\"113\" y=\"266\" font-size=\"11\" fill=\"currentColor\" font-style=\"italic\">　→ 费用・资产</text>\n\n  <!-- 貸方（右）皿 -->\n  <rect x=\"320\" y=\"155\" width=\"190\" height=\"120\" rx=\"10\" fill=\"#ef4444\" fill-opacity=\"0.1\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n  <text x=\"415\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#ef4444\">贷方（右）</text>\n  <!-- 貸方内容 -->\n  <text x=\"338\" y=\"200\" font-size=\"11\" fill=\"currentColor\">▼ 资产减少</text>\n  <text x=\"338\" y=\"218\" font-size=\"11\" fill=\"currentColor\">▲ 负债增加</text>\n  <text x=\"338\" y=\"236\" font-size=\"11\" fill=\"currentColor\">▲ 净资产增加</text>\n  <text x=\"338\" y=\"254\" font-size=\"11\" fill=\"currentColor\">▲ 收益增加</text>\n  <text x=\"338\" y=\"266\" font-size=\"11\" fill=\"currentColor\" font-style=\"italic\">　→ 收益・负债・净资产</text>\n\n  <!-- ＝ 記号 -->\n  <text x=\"300\" y=\"200\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"currentColor\">=</text>\n\n  <!-- 仕訳例ボックス -->\n  <rect x=\"40\" y=\"295\" width=\"520\" height=\"80\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"313\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">分录示例：从银行借入100万元</text>\n\n  <!-- 仕訳表ヘッダー -->\n  <rect x=\"80\" y=\"320\" width=\"180\" height=\"22\" rx=\"3\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"1\"/>\n  <text x=\"170\" y=\"335\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">借方：普通存款</text>\n  <rect x=\"340\" y=\"320\" width=\"180\" height=\"22\" rx=\"3\" fill=\"#ef4444\" fill-opacity=\"0.15\" stroke=\"#ef4444\" stroke-width=\"1\"/>\n  <text x=\"430\" y=\"335\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#ef4444\">贷方：借入款</text>\n\n  <!-- 金額 -->\n  <text x=\"170\" y=\"358\" text-anchor=\"middle\" font-size=\"13\" fill=\"currentColor\">1,000,000元</text>\n  <text x=\"300\" y=\"358\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">/</text>\n  <text x=\"430\" y=\"358\" text-anchor=\"middle\" font-size=\"13\" fill=\"currentColor\">1,000,000元</text>\n\n  <!-- 矢印：仕訳 → 試算表 -->\n  <line x1=\"300\" y1=\"375\" x2=\"300\" y2=\"395\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/>\n\n  <!-- 試算表チェック -->\n  <rect x=\"150\" y=\"395\" width=\"300\" height=\"36\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"413\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">试算表：借方合计 ＝ 贷方合计</text>\n  <text x=\"300\" y=\"427\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">（不一致 → 检测记账错误）</text>\n\n  <!-- 矢印：試算表 → 財務諸表 -->\n  <line x1=\"300\" y1=\"431\" x2=\"300\" y2=\"451\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/>\n\n  <!-- 財務諸表 2つ -->\n  <rect x=\"60\" y=\"451\" width=\"200\" height=\"42\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"160\" y=\"470\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">资产负债表（B/S）</text>\n  <text x=\"160\" y=\"485\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">资产・负债・净资产的存量</text>\n\n  <rect x=\"340\" y=\"451\" width=\"200\" height=\"42\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"440\" y=\"470\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">利润表（P/L）</text>\n  <text x=\"440\" y=\"485\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">收益・费用・利润的流量</text>\n\n  <!-- 分岐線 -->\n  <line x1=\"300\" y1=\"451\" x2=\"160\" y2=\"451\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <line x1=\"300\" y1=\"451\" x2=\"440\" y2=\"451\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n\n  <!-- arrowhead marker -->\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "複式簿記における「貸借平均の原理」とはどのような原則か？",
+      "choices": [
+        {
+          "text": "収益の合計と費用の合計が常に等しくなる原則",
+          "isCorrect": false
+        },
+        {
+          "text": "どんな取引を記録しても、借方の合計と貸方の合計が必ず等しくなる原則",
+          "isCorrect": true
+        },
+        {
+          "text": "資産の合計と負債の合計が常に等しくなる原則",
+          "isCorrect": false
+        },
+        {
+          "text": "現金の入金額と出金額の合計が必ず等しくなる原則",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "貸借平均の原理とは、すべての取引において借方合計と貸方合計が必ず等しくなるという原則です（$\\text{借方合計} = \\text{貸方合計}$）。これは偶然ではなく、1つの取引を必ず2つの側面から記録する複式簿記の仕組み上、必然的にそうなるよう設計されています。この性質を利用して、試算表の借方・貸方が一致しない場合に記帳ミスを発見できます。"
+    },
+    {
+      "question": "会社が銀行から100万円を借り入れ、普通預金口座に入金された。この取引の仕訳として正しいものはどれか？",
+      "choices": [
+        {
+          "text": "（借方）借入金 100万円 ／ （貸方）普通預金 100万円",
+          "isCorrect": false
+        },
+        {
+          "text": "（借方）普通預金 100万円 ／ （貸方）借入金 100万円",
+          "isCorrect": true
+        },
+        {
+          "text": "（借方）普通預金 100万円 ／ （貸方）資本金 100万円",
+          "isCorrect": false
+        },
+        {
+          "text": "（借方）現金 100万円 ／ （貸方）借入金 100万円",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "この取引では「普通預金（資産）が100万円増えた」と「借入金（負債）が100万円増えた」という2つの事実が同時に発生しています。資産の増加は借方に、負債の増加は貸方に記録するため、（借方）普通預金 ／ （貸方）借入金 となります。お金が増えているからといって借方だけに記録するのではなく、その資金の調達源（負債の増加）も同時に貸方へ記録するのが複式簿記の本質です。"
+    },
+    {
+      "question": "単式簿記と比較したときの複式簿記の最大のメリットとして、本文で述べられていないものはどれか？",
+      "choices": [
+        {
+          "text": "財産の状態（ストック）と収益・費用の流れ（フロー）を同時に把握できる",
+          "isCorrect": false
+        },
+        {
+          "text": "試算表の借方・貸方が一致しないことで記帳ミスを発見できる自己チェック機能がある",
+          "isCorrect": false
+        },
+        {
+          "text": "取引の「原因と結果」を2方向から記録することで経営の実態を多角的に捉えられる",
+          "isCorrect": false
+        },
+        {
+          "text": "記録する項目数が少ないため、単式簿記よりも帳簿の作成に要する時間を大幅に短縮できる",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "本文で挙げられている複式簿記のメリットは、①財産状態（ストック）と収益・費用（フロー）の同時把握、②試算表による自己チェック機能（記帳ミスの発見）、③原因と結果を2方向から捉える多角的な経営把握の3点です。「帳簿作成の時間短縮」については言及されておらず、むしろ複式簿記は単式簿記より記録の手間が増えます。"
+    }
+  ]
+}

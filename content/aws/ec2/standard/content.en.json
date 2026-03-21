@@ -1,0 +1,162 @@
+{
+  "id": "feb1bbf5-6205-4f51-a49a-aac77dc88b6e",
+  "nodeId": "ec2",
+  "level": "standard",
+  "locale": "en",
+  "generatedAt": "2026-03-21T22:32:16.576Z",
+  "content": "# EC2\n\n## What is it — Intuitive explanation\n\nIn a single phrase, EC2 (Amazon Elastic Compute Cloud) is a \"rental computer sitting on the internet that you can use however you like.\"\n\nThe computers we use every day have a physical machine right in front of us. With EC2, however, you can borrow a portion of the massive computer clusters housed in Amazon's data centers and use them as if they were your own dedicated machine. The standout feature is that everything — powering on, powering off, changing specs — can be done over the internet. This is exactly why it's called a \"Virtual Server.\" The physical hardware lives on Amazon's side, yet users enjoy the experience of having a server all to themselves.\n\n## Why it matters — Its place in the landscape\n\nIn the past, building a web service or system required companies to purchase, set up, and manage their own physical server hardware. The upfront costs could run into the hundreds of thousands of dollars, making it a steep barrier for small teams and individual developers.\n\nEC2 solves this problem at its root. Through a pay-as-you-go model — use it when you need it, pay only for what you use — teams of any size, from startups to large enterprises, can take advantage of the same infrastructure. And as the name \"Elastic\" suggests, you can scale up by adding servers when traffic spikes, then scale back down during quiet periods. EC2 is one of the core services underpinning modern cloud computing, forming a foundational pillar of AWS (Amazon Web Services) as a whole.\n\n## The core idea — The essence of the definition\n\nThe heart of EC2 lies in a technology called **Virtualization**. It is the ability to run multiple independent virtual machines (VMs) simultaneously on a single physical machine.\n\nEach EC2 instance (one unit of a virtual server) is made up of the following key components:\n\n- **AMI (Amazon Machine Image)**: The blueprint for your server. It defines the initial state of the OS and installed software.\n- **Instance Type**: A combination of CPU, memory, storage, and network performance (e.g., `t3.micro`, `m5.large`).\n- **EBS (Elastic Block Store)**: A virtual disk for storing data.\n- **Security Group**: A firewall that controls which network traffic is allowed or denied.\n\nTo get a feel for instance costs, consider the hourly pricing model:\n\n$$\n\\text{Monthly Cost} = \\text{Hourly Rate} \\times 24 \\, \\text{hours} \\times 30 \\, \\text{days}\n$$\n\nFor example, if the hourly rate is $0.02, the monthly cost works out to $0.02 \\times 24 \\times 30 = 14.4$ dollars. Because you are only charged for the hours you actually use, spinning up an instance for just a few hours of testing might cost only a few cents.\n\n## Concrete examples\n\n### Example 1: An everyday analogy — Rental car vs. personal car\n\nOwning a personal car (an on-premises server) comes with purchase costs, insurance, parking, and ongoing maintenance. A rental car (EC2), on the other hand, lets you pay only for the time you use it. You can choose a large vehicle when you have a lot of luggage, or a compact car for a simple commute — the flexibility is built in. EC2 works the same way: you can change the specs on the fly to match your current load.\n\n### Example 2: Hosting a web application\n\nImagine an independent developer who wants to publish a recipe-sharing service. At first, traffic is light, so a small instance (`t3.micro`, roughly $10/month) is more than enough. When a social media post sends traffic surging, you can upgrade to a more powerful instance type or spin up multiple copies of the same server configuration — all with minimal downtime.\n\n### Example 3: Training a machine learning model\n\nA university research lab wants to train an image recognition model, but the lab's own PCs lack enough GPU power and the job would take days. EC2 offers GPU-equipped instance types (such as the `p3` series), which you can start up only when needed for high-speed training, then stop once the job is done. Many workloads finish within a few hours at a cost of only a few dollars, eliminating the need to purchase expensive hardware outright.\n\n### Example 4: Scheduled batch processing\n\nEC2 is also well suited for batch jobs, such as aggregating daily sales data late at night and generating a report by morning. By configuring the instance to start and stop automatically around the processing window, you only pay for a few hours of runtime per day — a dramatic cost reduction compared to keeping a server running around the clock.\n\n## Connections — Relationships to other concepts\n\nHere is a map of concepts related to EC2 to help build a fuller picture.\n\n**Prerequisites and background knowledge**\n- **Cloud Computing**: EC2 is one of the core resources in the cloud. Starting with a solid grasp of cloud concepts will deepen your understanding.\n- **Linux / OS fundamentals**: EC2 instances most commonly run Linux, so familiarity with basic command-line operations is very useful.\n- **Networking basics (IP addresses & ports)**: Essential knowledge for configuring Security Groups.\n\n**Further connections**\n- **Auto Scaling**: A mechanism that automatically increases or decreases the number of EC2 instances based on traffic volume.\n- **ELB (Elastic Load Balancing)**: A service that distributes incoming traffic across multiple EC2 instances to spread the load.\n- **Lambda**: The next step toward \"serverless,\" where even server management disappears. Comparing it with EC2 sharpens your understanding of both.\n- **VPC (Virtual Private Cloud)**: The virtual network environment in which EC2 instances are deployed.\n\n## Applications across fields\n\n**Gaming industry**\nEC2 is widely used as the backend for online games. When a new title launches and traffic spikes, operators can spin up a large number of instances to handle the load, then scale back down once things settle.\n\n**Healthcare and bioinformatics**\nHigh-performance EC2 instances are used in research areas that demand enormous computational resources, such as genome analysis and drug discovery simulations. The ability to rent capacity on demand — without universities or research institutions having to own a supercomputer — is genuinely transformative.\n\n**Media and video streaming**\nVideo encoding (converting video files into various formats) is computationally intensive, but EC2 allows the work to be parallelized for much faster turnaround. Movie streaming services rely on this behind the scenes.\n\n**Finance and fintech**\nEC2 powers real-time analysis of exchange rates and stock prices, as well as the backends of trading systems. Financial systems demand high availability — the ability to stay up without interruption — and EC2's redundant architecture makes that possible.",
+  "terms": [
+    {
+      "term": "EC2",
+      "reading": "",
+      "en": "Amazon Elastic Compute Cloud",
+      "definition": "A virtual server service in the cloud provided by Amazon. Allows you to use computing resources on demand, as much as you need."
+    },
+    {
+      "term": "Virtualization",
+      "reading": "",
+      "en": "Virtualization",
+      "definition": "A technology that runs multiple mutually independent virtual machines simultaneously on a single physical machine. The core concept underlying EC2."
+    },
+    {
+      "term": "Instance",
+      "reading": "",
+      "en": "Instance",
+      "definition": "A single unit of a virtual server launched on EC2. Specifications such as CPU and memory are selected and used as an instance type."
+    },
+    {
+      "term": "AMI",
+      "reading": "",
+      "en": "Amazon Machine Image",
+      "definition": "A server blueprint that defines the initial state of the OS and software for an EC2 instance. Used as a template when launching an instance."
+    },
+    {
+      "term": "EBS",
+      "reading": "",
+      "en": "Elastic Block Store",
+      "definition": "A virtual disk storage service that is attached to and used with EC2 instances. Used for persistent data storage."
+    },
+    {
+      "term": "Security Group",
+      "reading": "",
+      "en": "Security Group",
+      "definition": "A virtual firewall that controls which communications are allowed or denied to an EC2 instance. Access rules can be configured by IP address and port."
+    },
+    {
+      "term": "Pay-as-you-go",
+      "reading": "",
+      "en": "Pay-as-you-go",
+      "definition": "A billing model where you pay only for what you use. With EC2, costs are incurred based on the number of hours an instance is running."
+    },
+    {
+      "term": "Auto Scaling",
+      "reading": "",
+      "en": "Auto Scaling",
+      "definition": "A mechanism that automatically increases or decreases the number of EC2 instances based on traffic volume and load. Achieves both cost optimization and maintained availability."
+    },
+    {
+      "term": "ELB",
+      "reading": "",
+      "en": "Elastic Load Balancing",
+      "definition": "An AWS service that distributes incoming traffic across multiple EC2 instances to balance the load. Enables stable system operation and high availability."
+    },
+    {
+      "term": "VPC",
+      "reading": "",
+      "en": "Virtual Private Cloud",
+      "definition": "A virtual network space in which EC2 instances are deployed. Allows network configurations to be logically isolated and controlled."
+    },
+    {
+      "term": "Cloud Computing",
+      "reading": "",
+      "en": "Cloud Computing",
+      "definition": "A model for providing and consuming computing resources over the internet. EC2 is one of its core services."
+    },
+    {
+      "term": "On-Premises",
+      "reading": "",
+      "en": "On-Premises",
+      "definition": "A traditional operational model in which a company purchases, installs, and manages its own servers and equipment. A concept contrasted with cloud services such as EC2."
+    },
+    {
+      "term": "Lambda",
+      "reading": "",
+      "en": "AWS Lambda",
+      "definition": "An AWS serverless computing service that eliminates even the need to manage servers. Positioned as an evolution beyond EC2."
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- Background: transparent -->\n\n  <!-- ===== Center: EC2 Instance ===== -->\n  <!-- Center box -->\n  <rect x=\"200\" y=\"200\" width=\"200\" height=\"80\" rx=\"12\" ry=\"12\"\n        fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n  <text x=\"300\" y=\"234\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#3b82f6\">EC2 Instance</text>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">Virtual Server (VM)</text>\n  <text x=\"300\" y=\"270\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">e.g. t3.micro / m5.large</text>\n\n  <!-- ===== Top: AMI (Blueprint) ===== -->\n  <rect x=\"210\" y=\"60\" width=\"180\" height=\"56\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"84\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">AMI</text>\n  <text x=\"300\" y=\"100\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Amazon Machine Image</text>\n  <text x=\"300\" y=\"113\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">OS &amp; Software Blueprint</text>\n  <!-- AMI → EC2 arrow -->\n  <line x1=\"300\" y1=\"116\" x2=\"300\" y2=\"198\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"300,200 295,190 305,190\" fill=\"currentColor\"/>\n\n  <!-- ===== Left: Instance Type ===== -->\n  <rect x=\"30\" y=\"195\" width=\"145\" height=\"60\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"102\" y=\"218\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">Instance Type</text>\n  <text x=\"102\" y=\"234\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">CPU / Memory / Network</text>\n  <text x=\"102\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Spec Combinations</text>\n  <!-- → EC2 arrow -->\n  <line x1=\"175\" y1=\"225\" x2=\"198\" y2=\"236\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"200,237 190,231 191,242\" fill=\"currentColor\"/>\n\n  <!-- ===== Right: EBS ===== -->\n  <rect x=\"425\" y=\"195\" width=\"145\" height=\"60\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"497\" y=\"218\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">EBS</text>\n  <text x=\"497\" y=\"234\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Elastic Block Store</text>\n  <text x=\"497\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Virtual Disk (Data Storage)</text>\n  <!-- EC2 → EBS arrow -->\n  <line x1=\"400\" y1=\"237\" x2=\"423\" y2=\"232\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"425,231 414,226 415,237\" fill=\"currentColor\"/>\n\n  <!-- ===== Bottom: Security Group ===== -->\n  <rect x=\"190\" y=\"325\" width=\"220\" height=\"56\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"348\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#ef4444\">Security Group</text>\n  <text x=\"300\" y=\"364\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Controls Allow / Deny Traffic</text>\n  <text x=\"300\" y=\"377\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Firewall Functionality</text>\n  <!-- EC2 → Security Group arrow -->\n  <line x1=\"300\" y1=\"280\" x2=\"300\" y2=\"323\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"300,325 295,315 305,315\" fill=\"#ef4444\"/>\n\n  <!-- ===== Pay-as-you-go Pricing Formula ===== -->\n  <rect x=\"30\" y=\"320\" width=\"155\" height=\"70\" rx=\"10\" ry=\"10\"\n        fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"107\" y=\"342\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">Pay-as-you-go Model</text>\n  <text x=\"107\" y=\"358\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Monthly = Rate × 24h × 30 days</text>\n  <text x=\"107\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">e.g. $0.02 × 24 × 30</text>\n  <text x=\"107\" y=\"386\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">= $14.4 / month</text>\n\n  <!-- ===== Advanced Concepts Area (Bottom) ===== -->\n  <rect x=\"28\" y=\"420\" width=\"544\" height=\"82\" rx=\"12\" ry=\"12\"\n        fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"6,3\"/>\n  <text x=\"300\" y=\"442\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">Related Services &amp; Advanced Concepts</text>\n\n  <!-- Auto Scaling -->\n  <rect x=\"42\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"97\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">Auto Scaling</text>\n  <text x=\"97\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">Automatic Scale In/Out</text>\n\n  <!-- ELB -->\n  <rect x=\"162\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"217\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">ELB</text>\n  <text x=\"217\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">Load Balancing</text>\n\n  <!-- VPC -->\n  <rect x=\"282\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"337\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">VPC</text>\n  <text x=\"337\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">Virtual Network</text>\n\n  <!-- Lambda -->\n  <rect x=\"402\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"1.2\"/>\n  <text x=\"457\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#22c55e\">Lambda</text>\n  <text x=\"457\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">Serverless (Advanced)</text>\n\n  <!-- EC2 → Related Concepts Area arrow -->\n  <line x1=\"300\" y1=\"280\" x2=\"300\" y2=\"418\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/>\n\n  <!-- AWS Cloud label on the right -->\n  <rect x=\"425\" y=\"320\" width=\"145\" height=\"70\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"497\" y=\"343\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">AWS Cloud</text>\n  <text x=\"497\" y=\"359\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Physical servers are</text>\n  <text x=\"497\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">managed by Amazon</text>\n  <text x=\"497\" y=\"386\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Users access them virtually</text>\n\n  <!-- Title -->\n  <text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"currentColor\">EC2 Concept Map</text>\n  <text x=\"300\" y=\"42\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">Amazon Elastic Compute Cloud — Virtual Server Architecture</text>\n\n</svg>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which of the following best describes the characteristic indicated by the name 'Elastic' in EC2?",
+      "choices": [
+        {
+          "text": "Data is encrypted, allowing flexible responses to external attacks",
+          "isCorrect": false
+        },
+        {
+          "text": "Server resources can be flexibly scaled up or down in response to increases or decreases in access volume",
+          "isCorrect": true
+        },
+        {
+          "text": "Physical servers are made of highly flexible materials, resulting in high durability",
+          "isCorrect": false
+        },
+        {
+          "text": "Pricing plans are not fixed and payments can be made in multiple currencies",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "'Elastic' refers to 'flexible scaling based on demand' — increasing instances when access surges and decreasing them during quiet periods. This is a key feature of EC2 and represents a fundamental difference from traditional fixed on-premises servers."
+    },
+    {
+      "question": "Among the components that make up an EC2 instance, which one corresponds to a 'virtual firewall that controls which communications are allowed or denied'?",
+      "choices": [
+        {
+          "text": "AMI (Amazon Machine Image)",
+          "isCorrect": false
+        },
+        {
+          "text": "EBS (Elastic Block Store)",
+          "isCorrect": false
+        },
+        {
+          "text": "Security Group",
+          "isCorrect": true
+        },
+        {
+          "text": "Instance Type",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "A Security Group is a virtual firewall that controls communication to and from EC2 instances. An AMI is a blueprint for the OS and initial software, EBS is a virtual disk for storing data, and an Instance Type refers to the performance specifications such as CPU and memory. Each serves a different role."
+    },
+    {
+      "question": "Which of the following most accurately describes the relationship between EC2 and AWS Lambda?",
+      "choices": [
+        {
+          "text": "Lambda is the former name of EC2 and has since been integrated into EC2",
+          "isCorrect": false
+        },
+        {
+          "text": "EC2 runs inside Lambda, and Lambda is a tool for managing EC2",
+          "isCorrect": false
+        },
+        {
+          "text": "Lambda is a larger-scale version of EC2 that provides higher-performance servers",
+          "isCorrect": false
+        },
+        {
+          "text": "Lambda is a more advanced 'serverless' form compared to EC2, offering a service where even server management is no longer required",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "EC2 is a service where you rent a virtual server and manage it yourself, whereas Lambda is a serverless evolution that allows you to run code without being aware of the underlying server. The progression from EC2 to Lambda represents an evolution toward further reducing the burden of infrastructure management."
+    }
+  ]
+}

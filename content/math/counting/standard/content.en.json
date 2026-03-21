@@ -1,0 +1,162 @@
+{
+  "id": "3d9f0a04-1d8b-4e6b-b0de-36959b3ef12d",
+  "nodeId": "counting",
+  "level": "standard",
+  "locale": "en",
+  "generatedAt": "2026-03-21T22:32:33.793Z",
+  "content": "# Counting\n\n## What is it — Intuitive explanation\n\n\"Counting\" is the process of matching the members of a collection to the sequence **1, 2, 3, …** one by one. When we want to know how many apples are in a basket, we naturally point at each one and say \"one, two, three.\" This everyday action is the very starting point of mathematics.\n\nAt the heart of counting is the idea of a **one-to-one correspondence**. We pair each object being counted (the apples) with a number word (1, 2, 3, …), and the last number reached becomes the \"count\" of those objects. This mechanism is essentially the same whether a two-year-old is counting toys or an astronomer is counting galaxies.\n\n## Why it matters — Its place in mathematics\n\nCounting is the foundation of all mathematics. Mathematics encompasses countless fields, but nearly all of them deal with \"numbers.\" And when we ask what a number fundamentally is, we inevitably arrive at the concept of \"being countable.\"\n\nMore concretely, the **natural numbers** $\\mathbb{N} = \\{1, 2, 3, 4, \\ldots\\}$ (or $\\{0, 1, 2, 3, \\ldots\\}$ when zero is included) that we obtain through counting form the very first step in the hierarchy of number systems leading to integers, rationals, and real numbers. The basic operation of counting also appears in **set theory** (which asks how many elements a set contains), **statistics** (which organizes data), and **computer science** (which analyzes the complexity of algorithms). Small as the concept may seem, its reach extends across the whole of mathematics.\n\n## The core idea — The essence of definitions and theorems\n\nThe key term for understanding counting rigorously is **bijection**. To count the elements of a set $A$ is to verify that there exists a **bijection** (a mapping that is both complete and non-overlapping) between $A$ and $\\{1, 2, 3, \\ldots, n\\}$, and to call that $n$ the \"number of elements (cardinality) of $A$.\"\n\n$$\n|A| = n \\iff \\exists\\, f: A \\xrightarrow{\\sim} \\{1, 2, \\ldots, n\\}\n$$\n\nThe power of this formulation is that it lets us **compare sizes without actually counting out loud**. For example, if a bijection exists between two sets $A$ and $B$, we can conclude $|A| = |B|$. This means we can tell whether the number of seats in a classroom matches the number of students — without counting either — simply by checking that no seat is empty and no one is left standing.\n\nThe collection of natural numbers $\\mathbb{N}$ itself is defined rigorously by the **Peano axioms**, whose core ideas are: \"1 exists, and every natural number has a successor.\" These two principles logically guarantee the infinite sequence of numbers.\n\n## Concrete examples\n\n### Example 1: Coins in a wallet (an everyday example)\n\nSuppose you want to count the coins in your wallet. As you take out one coin at a time — \"first, second, third…\" — the number corresponding to the last coin you remove is the total count. What matters here is satisfying two conditions: \"don't count the same coin twice (no repetition)\" and \"don't miss any coin (no omission).\" These are precisely the intuitive meaning of a bijection.\n\n### Example 2: Counting the vertices of a shape\n\nHow many vertices does a regular hexagon have? If we label the vertices one at a time, matching them to $1, 2, 3, 4, 5, 6$, we find there are $6$. The order in which we assign the labels (clockwise or counterclockwise) doesn't matter at all. The fact that the answer is the same regardless of the order we count may seem obvious, but it illustrates an important property: **the count does not depend on the method of counting**.\n\n### Example 3: \"Counting\" the infinite — natural numbers and even numbers\n\nThe concept of counting is not limited to finite collections. Compare the natural numbers $\\mathbb{N} = \\{1, 2, 3, 4, \\ldots\\}$ with the even numbers $E = \\{2, 4, 6, 8, \\ldots\\}$. Intuitively, you might feel that \"there are fewer even numbers.\" However, the correspondence $f(n) = 2n$ pairs every element of $\\mathbb{N}$ with exactly one element of $E$:\n\n$$\n1 \\leftrightarrow 2,\\quad 2 \\leftrightarrow 4,\\quad 3 \\leftrightarrow 6,\\quad \\cdots \\quad n \\leftrightarrow 2n\n$$\n\nSince a bijection exists, $|\\mathbb{N}| = |E|$ — meaning \"the natural numbers and the even numbers are infinite in exactly the same sense.\" This surprising result, impossible in the finite world, is the gateway to the mathematics of infinity.\n\n### Example 4: Counting combinations\n\nThe question \"In how many ways can exactly 2 heads appear when flipping a coin 3 times?\" is also an extension of counting. Listing all possibilities — $\\{$HHT, HTH, THH$\\}$ — gives us $3$ ways. This idea of enumerating all possible cases and putting them in correspondence is the foundation of **probability theory** and **combinatorics**.\n\n## Connections — Relationships with other concepts\n\n**Prerequisites (almost none):** Since counting is the starting point of mathematics, no special prior knowledge is required. That said, using the language of **sets** makes the discussion smoother. A set is simply \"a collection of objects,\" written as $A = \\{a, b, c\\}$.\n\n**Concepts that come next:**\n- **Natural numbers and integers:** A formalization of $1, 2, 3, \\ldots$ obtained through counting\n- **Cardinality of sets:** A theory for comparing the \"size\" of sets, finite or infinite (Example 3 above is the entry point)\n- **Combinatorics:** Systematic techniques for counting \"how many ways\" — permutations, combinations, binomial coefficients, and more\n- **Probability theory:** Probability defined as the ratio of \"how many outcomes satisfy a condition\" to \"how many total outcomes exist\"\n\nAttempting to formalize counting rigorously leads into the worlds of **mathematical logic** and **set theory** (Cantor, Peano, and others), connecting to the deep field of foundations of mathematics.\n\n## Applications in other fields\n\n**Computer science:** All data in a computer is a sequence of $0$s and $1$s, and the amount of information is expressed by counting the number of bits. The \"computational complexity\" used to evaluate the efficiency of algorithms is also defined by counting the number of operations. **Computability theory**, which determines whether problems can be solved at all, has the notion of being countable (countably infinite) at its core.\n\n**Physics and chemistry:** In statistical mechanics, counting the number of microscopic states of gas molecules is directly tied to calculating entropy (Boltzmann's formula $S = k_B \\ln W$). In chemistry, the amount of substance (the mole) is also an extension of counting, bundling the number of atoms or molecules by Avogadro's number.\n\n**Economics and social science:** Population statistics, vote tallying in elections, inventory management — every situation in which social phenomena are handled quantitatively has counting at its base. **Social choice theory**, which analyzes the fairness of voting systems, also relies heavily on combinatorial enumeration.\n\n**Biology and medicine:** Counting cells, measuring the length of DNA sequences, managing patient numbers in clinical trials — counting is a routine operation throughout the life sciences. In recent **bioinformatics** research, algorithms that rapidly count how many times a particular sequence appears in a genome have become an important area of study.",
+  "terms": [
+    {
+      "term": "One-to-One Correspondence",
+      "reading": "",
+      "en": "one-to-one correspondence",
+      "definition": "A correspondence that pairs the elements of two sets with each other completely and without duplication. It is the core concept underlying the act of counting."
+    },
+    {
+      "term": "Bijection",
+      "reading": "",
+      "en": "bijection",
+      "definition": "A mapping between two sets that is both surjective (no elements left out) and injective (no duplicates). It is used to rigorously define when two sets have the same number of elements."
+    },
+    {
+      "term": "Natural Number",
+      "reading": "",
+      "en": "natural number",
+      "definition": "The sequence of positive integers 1, 2, 3, … obtained by counting. Sometimes includes 0, and serves as the most fundamental starting point of the number system."
+    },
+    {
+      "term": "Set",
+      "reading": "",
+      "en": "set",
+      "definition": "A fundamental mathematical concept for treating a collection of objects. Elements are clearly defined and expressed using { }."
+    },
+    {
+      "term": "Cardinality of a Set",
+      "reading": "",
+      "en": "cardinality of a set",
+      "definition": "A concept representing the \"size\" of a set, whether finite or infinite. Whether two sets have equal cardinality is determined by the existence of a bijection between them."
+    },
+    {
+      "term": "Peano Axioms",
+      "reading": "",
+      "en": "Peano axioms",
+      "definition": "An axiomatic system for logically defining the natural numbers. Rules such as \"1 exists, and every natural number has a next number (successor)\" rigorously guarantee the infinite sequence of natural numbers."
+    },
+    {
+      "term": "Countable",
+      "reading": "",
+      "en": "countable",
+      "definition": "A concept referring to a set for which a bijection with the set of all natural numbers exists, or a subset of such a set. A classic example is that the natural numbers and the even numbers are infinite in the same sense."
+    },
+    {
+      "term": "Combinatorics",
+      "reading": "",
+      "en": "combinatorics",
+      "definition": "A branch of mathematics that systematically counts \"how many ways\" something can occur. It deals with techniques such as permutations, combinations, and binomial coefficients, and forms the foundation of probability theory and computer science."
+    },
+    {
+      "term": "Permutation",
+      "reading": "",
+      "en": "permutation",
+      "definition": "A concept for counting the number of ways to arrange distinct objects in order. It is one of the fundamental counting techniques in combinatorics."
+    },
+    {
+      "term": "Combination",
+      "reading": "",
+      "en": "combination",
+      "definition": "A concept for counting the number of ways to select several items from a collection of distinct objects without regard to order. It is expressed using binomial coefficients and is widely used in probability calculations."
+    },
+    {
+      "term": "Set Theory",
+      "reading": "",
+      "en": "set theory",
+      "definition": "A theory that builds the foundations of mathematics using sets as its basic concept. It was systematized by Cantor through his research on the cardinality of infinite sets."
+    },
+    {
+      "term": "Computability Theory",
+      "reading": "",
+      "en": "computability theory",
+      "definition": "A branch of computer science that studies which problems can be solved by algorithms. The concepts of countability and uncountability lie at its core."
+    },
+    {
+      "term": "Mapping / Function",
+      "reading": "",
+      "en": "mapping / function",
+      "definition": "A rule that associates each element of one set with an element of another set. A bijection is a special case of this, used to compare the sizes of sets."
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 中央：数える（核心概念） -->\n  <ellipse cx=\"300\" cy=\"240\" rx=\"72\" ry=\"40\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n  <text x=\"300\" y=\"234\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#3b82f6\">Count</text>\n  <text x=\"300\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" fill=\"#3b82f6\">(one-to-one correspondence)</text>\n\n  <!-- 上：全単射（bijection） -->\n  <rect x=\"205\" y=\"28\" width=\"190\" height=\"52\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"52\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"currentColor\">Bijection</text>\n  <text x=\"300\" y=\"70\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">|A|=n ⟺ ∃f: A →{1,…,n}</text>\n\n  <!-- 上矢印 -->\n  <line x1=\"300\" y1=\"80\" x2=\"300\" y2=\"198\" stroke=\"currentColor\" stroke-width=\"1.8\" marker-end=\"url(#arr)\"/>\n  <text x=\"310\" y=\"148\" font-size=\"10\" fill=\"currentColor\">Formalization</text>\n\n  <!-- 左上：有限の数え方 -->\n  <rect x=\"28\" y=\"100\" width=\"140\" height=\"52\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"98\" y=\"122\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">Finite Sets</text>\n  <text x=\"98\" y=\"140\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Coins · Vertices · Combinations</text>\n\n  <!-- 左上→中央 -->\n  <line x1=\"168\" y1=\"138\" x2=\"232\" y2=\"220\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr)\"/>\n  <text x=\"185\" y=\"185\" font-size=\"10\" fill=\"currentColor\">Concrete example</text>\n\n  <!-- 右上：無限集合 -->\n  <rect x=\"432\" y=\"100\" width=\"140\" height=\"52\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"502\" y=\"122\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">Infinite Sets</text>\n  <text x=\"502\" y=\"140\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Bijection between ℕ and E</text>\n\n  <!-- 右上→中央 -->\n  <line x1=\"432\" y1=\"138\" x2=\"368\" y2=\"220\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr)\"/>\n  <text x=\"390\" y=\"185\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">Extension</text>\n\n  <!-- 左：自然数ℕ（前提→次の概念） -->\n  <rect x=\"18\" y=\"208\" width=\"140\" height=\"60\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"88\" y=\"232\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">Natural Numbers ℕ</text>\n  <text x=\"88\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Peano Axioms</text>\n  <text x=\"88\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">1, 2, 3, …</text>\n\n  <!-- 左←→中央 -->\n  <line x1=\"158\" y1=\"238\" x2=\"228\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.8\" marker-end=\"url(#arr)\"/>\n  <text x=\"183\" y=\"230\" font-size=\"10\" text-anchor=\"middle\" fill=\"currentColor\">Generate</text>\n\n  <!-- 右：集合の濃度 -->\n  <rect x=\"442\" y=\"208\" width=\"140\" height=\"60\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"512\" y=\"232\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">Cardinality of Sets</text>\n  <text x=\"512\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Countable · Uncountable</text>\n  <text x=\"512\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Cantor's Theory</text>\n\n  <!-- 中央→右 -->\n  <line x1=\"372\" y1=\"238\" x2=\"442\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.8\" marker-end=\"url(#arr)\"/>\n  <text x=\"407\" y=\"230\" font-size=\"10\" text-anchor=\"middle\" fill=\"currentColor\">Extension</text>\n\n  <!-- 下左：組合せ論 -->\n  <rect x=\"28\" y=\"338\" width=\"130\" height=\"52\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.10\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"93\" y=\"360\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">Combinatorics</text>\n  <text x=\"93\" y=\"378\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">Permutations · Combinations</text>\n\n  <!-- 中央→下左 -->\n  <line x1=\"258\" y1=\"275\" x2=\"148\" y2=\"338\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arr-g)\"/>\n\n  <!-- 下中：確率論 -->\n  <rect x=\"225\" y=\"358\" width=\"150\" height=\"52\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.10\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"380\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">Probability Theory</text>\n  <text x=\"300\" y=\"398\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">Number of cases · Ratio</text>\n\n  <!-- 中央→下中 -->\n  <line x1=\"300\" y1=\"280\" x2=\"300\" y2=\"358\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arr-g)\"/>\n\n  <!-- 下右：CS・物理・社会 -->\n  <rect x=\"445\" y=\"338\" width=\"130\" height=\"52\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.10\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"510\" y=\"360\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">CS · Physics · Society</text>\n  <text x=\"510\" y=\"378\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">Complexity · Entropy</text>\n\n  <!-- 中央→下右 -->\n  <line x1=\"342\" y1=\"275\" x2=\"452\" y2=\"338\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arr-g)\"/>\n\n  <!-- 1対1対応の例示（中央下付近） -->\n  <g transform=\"translate(220,440)\">\n    <text x=\"0\" y=\"0\" font-size=\"11\" fill=\"currentColor\" font-weight=\"bold\">[Example of One-to-One Correspondence]</text>\n    <!-- リンゴ記号 -->\n    <circle cx=\"18\" cy=\"22\" r=\"9\" fill=\"#ef4444\" fill-opacity=\"0.25\" stroke=\"#ef4444\" stroke-width=\"1.2\"/>\n    <circle cx=\"46\" cy=\"22\" r=\"9\" fill=\"#ef4444\" fill-opacity=\"0.25\" stroke=\"#ef4444\" stroke-width=\"1.2\"/>\n    <circle cx=\"74\" cy=\"22\" r=\"9\" fill=\"#ef4444\" fill-opacity=\"0.25\" stroke=\"#ef4444\" stroke-width=\"1.2\"/>\n    <text x=\"18\" y=\"26\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">🍎</text>\n    <text x=\"46\" y=\"26\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">🍎</text>\n    <text x=\"74\" y=\"26\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">🍎</text>\n    <!-- 矢印 -->\n    <line x1=\"18\" y1=\"34\" x2=\"18\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.2\" marker-end=\"url(#arr-s)\"/>\n    <line x1=\"46\" y1=\"34\" x2=\"46\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.2\" marker-end=\"url(#arr-s)\"/>\n    <line x1=\"74\" y1=\"34\" x2=\"74\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.2\" marker-end=\"url(#arr-s)\"/>\n    <!-- 数字 -->\n    <circle cx=\"18\" cy=\"62\" r=\"9\" fill=\"#3b82f6\" fill-opacity=\"0.20\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n    <circle cx=\"46\" cy=\"62\" r=\"9\" fill=\"#3b82f6\" fill-opacity=\"0.20\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n    <circle cx=\"74\" cy=\"62\" r=\"9\" fill=\"#3b82f6\" fill-opacity=\"0.20\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n    <text x=\"18\" y=\"66\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">1</text>\n    <text x=\"46\" y=\"66\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">2</text>\n    <text x=\"74\" y=\"66\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">3</text>\n    <text x=\"100\" y=\"26\" font-size=\"11\" fill=\"currentColor\">Set A</text>\n    <text x=\"100\" y=\"66\" font-size=\"11\" fill=\"currentColor\">{1,2,3}</text>\n  </g>\n\n  <!-- 凡例 -->\n  <line x1=\"22\" y1=\"498\" x2=\"44\" y2=\"498\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <text x=\"48\" y=\"502\" font-size=\"10\" fill=\"currentColor\">Intuition · Concrete</text>\n  <line x1=\"130\" y1=\"498\" x2=\"152\" y2=\"498\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"156\" y=\"502\" font-size=\"10\" fill=\"#22c55e\">Application · Development</text>\n  <line x1=\"230\" y1=\"498\" x2=\"252\" y2=\"498\" stroke=\"currentColor\" stroke-width=\"1.8\"/>\n  <text x=\"256\" y=\"502\" font-size=\"10\" fill=\"currentColor\">Formalization · Generation</text>\n\n  <!-- Arrowhead markers -->\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\"/>\n    </marker>\n    <marker id=\"arr-g\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n    <marker id=\"arr-s\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L6,3 z\" fill=\"currentColor\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "When expressed with mathematical precision, what operation does it correspond to when we \"count\" the elements of a set $A$?",
+      "choices": [
+        {
+          "text": "An operation that arranges the elements of set $A$ in order of size",
+          "isCorrect": false
+        },
+        {
+          "text": "An operation that confirms the existence of a bijection between set $A$ and $\\{1, 2, \\ldots, n\\}$, and takes that $n$ as the number of elements",
+          "isCorrect": true
+        },
+        {
+          "text": "An operation that classifies the elements of set $A$ into several groups",
+          "isCorrect": false
+        },
+        {
+          "text": "An operation that identifies the largest element contained in set $A$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "The rigorous definition of counting is expressed using a \"bijection.\" When there exists a mapping (bijection) that corresponds every element of set $A$ to exactly one element of $\\{1, 2, \\ldots, n\\}$ with no omissions and no overlaps, we define $n$ as the number of elements (cardinality) of $A$. This gives us the advantage of being able to compare quantities without actually counting out loud."
+    },
+    {
+      "question": "Based on the concept of bijections, which conclusion is correct regarding the number of elements in the set of all natural numbers $\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$ and the set of all even numbers $E = \\{2, 4, 6, \\ldots\\}$?",
+      "choices": [
+        {
+          "text": "Since the even numbers are a subset of the natural numbers, the number of elements in $E$ is less than the number of elements in $\\mathbb{N}$",
+          "isCorrect": false
+        },
+        {
+          "text": "Since a bijection $f(n) = 2n$ exists, $\\mathbb{N}$ and $E$ can be said to be infinite in the same sense",
+          "isCorrect": true
+        },
+        {
+          "text": "Since no bijection exists between $\\mathbb{N}$ and $E$, their sizes cannot be compared",
+          "isCorrect": false
+        },
+        {
+          "text": "Because they differ in whether odd numbers are included, the number of elements in $\\mathbb{N}$ is exactly twice the number of elements in $E$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "By constructing the correspondence $f(n) = 2n$, each element of $\\mathbb{N}$ pairs exactly one-to-one with each element of $E$, as in $1 \\leftrightarrow 2,\\ 2 \\leftrightarrow 4,\\ 3 \\leftrightarrow 6, \\ldots$. Since a bijection exists, we can say $|\\mathbb{N}| = |E|$. While \"the number of elements in a subset is less than that of the whole\" holds for finite sets, this intuition does not apply to infinite sets — which is what makes infinity so fascinating."
+    },
+    {
+      "question": "Which of the following, as an application of the concept of \"counting,\" does NOT match the content covered in the material?",
+      "choices": [
+        {
+          "text": "\"Computational complexity,\" used to evaluate the efficiency of algorithms, is defined by counting the number of operations",
+          "isCorrect": false
+        },
+        {
+          "text": "Entropy in statistical mechanics is directly tied to counting how many microscopic states gas molecules can occupy",
+          "isCorrect": false
+        },
+        {
+          "text": "In probability theory, probability is defined as the ratio of the number of favorable outcomes to the total number of outcomes",
+          "isCorrect": false
+        },
+        {
+          "text": "The set of all real numbers can have a bijection constructed with the natural numbers, so it can be counted in the same sense as the natural numbers",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "The material explains that \"the natural numbers and the even numbers are infinite in the same sense (countable) via a bijection,\" but it is known that the set of all real numbers is \"uncountably infinite\" — meaning no bijection can be constructed between the real numbers and the natural numbers. The natural numbers, computational complexity, entropy, and the definition of probability are all mentioned in the material as applications of \"counting.\""
+    }
+  ]
+}

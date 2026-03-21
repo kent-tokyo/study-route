@@ -1,0 +1,169 @@
+{
+  "id": "f186b5ac-9608-4e87-8763-8c31c5ad83ef",
+  "nodeId": "propositional-logic",
+  "level": "standard",
+  "locale": "en",
+  "generatedAt": "2026-03-21T22:31:57.663Z",
+  "content": "# Propositional Logic\n\n## What is it — Intuitive explanation\n\nPropositional logic is a mathematical framework for rigorously handling logical reasoning by combining statements whose truth or falsity can be clearly determined, according to well-defined logical rules.\n\nIn everyday conversation, we often say things like \"probably\" or \"it depends,\" but in mathematics and logic, we require that any given statement is either **True** or **False** — one or the other, never both. Think of propositional logic as a language for combining such \"black or white\" statements into new ones, and for determining whether those new statements are true or false.\n\nA helpful analogy is an electrical switch. A switch has exactly two states: \"on (true)\" or \"off (false).\" Propositional logic is like describing a circuit in words and symbols — for example, \"the light turns on only when both switch A and switch B are on,\" or \"the buzzer sounds if either switch A or switch B is on.\"\n\n---\n\n## Why it matters — Its role in mathematics\n\nEvery mathematical proof ultimately consists of a chain of logical inferences of the form \"if such-and-such holds, then so-and-so also holds.\" Propositional logic provides the foundation that guarantees these inferences are genuinely valid. By precisely defining the rules for combinations like \"A and B,\" \"A or B,\" \"if A then B,\" and \"not A,\" we can verify the correctness of reasoning formally rather than by intuition alone.\n\nPropositional logic is also the gateway to the foundations of mathematics, including set theory and predicate logic. Before tackling more complex mathematical structures, mastering logical operations at the propositional level is an indispensable literacy across all areas of mathematics. It is no exaggeration to say that propositional logic lies at the heart of the ability to read and write proofs.\n\n---\n\n## The core ideas — Definitions and key theorems\n\n### What is a proposition?\n\nA **proposition** is a statement that has exactly one truth value: either true or false. For example, \"$2 + 2 = 4$\" is a true proposition, and \"$3 > 5$\" is a false proposition. By contrast, a statement like \"$x > 0$,\" which contains a variable and has no determined truth value, is not a proposition — nor is a subjective statement like \"this problem is difficult.\"\n\n### Logical connectives\n\nGiven propositions $P$ and $Q$, we use the following **logical connectives** to form new propositions.\n\n| Symbol | Read as | Meaning |\n|--------|---------|---------|\n| $\\lnot P$ | not P | Negation (NOT) |\n| $P \\land Q$ | P and Q | Conjunction (AND) |\n| $P \\lor Q$ | P or Q | Disjunction (OR) |\n| $P \\Rightarrow Q$ | if P then Q | Implication (IF...THEN) |\n| $P \\Leftrightarrow Q$ | P if and only if Q | Biconditional (IFF) |\n\n### Truth tables\n\nThe truth value of each connective is completely determined by the following **truth table**.\n\n$$\n\\begin{array}{cc|ccccc}\nP & Q & \\lnot P & P \\land Q & P \\lor Q & P \\Rightarrow Q & P \\Leftrightarrow Q \\\\\n\\hline\nT & T & F & T & T & T & T \\\\\nT & F & F & F & T & F & F \\\\\nF & T & T & F & T & T & F \\\\\nF & F & T & F & F & T & T \\\\\n\\end{array}\n$$\n\nThe **implication** $P \\Rightarrow Q$ deserves special attention. When $P$ is false, the whole implication is true regardless of the truth value of $Q$. This is sometimes summed up as \"from a false premise, anything follows\" (*Ex falso quodlibet*).\n\n### Tautology\n\nA propositional formula that is true under every possible assignment of truth values is called a **tautology**. A classic example is the **law of the excluded middle**:\n\n$$P \\lor \\lnot P$$\n\nThis states \"either P is true, or P is not true\" — a principle that may seem obvious but is in fact powerful, and serves as a cornerstone of classical logic.\n\n---\n\n## Concrete examples\n\n### Example 1: An everyday example — \"Rain and an umbrella\"\n\n> $P$: \"It is raining today.\"\n> $Q$: \"I have an umbrella.\"\n\nHere, $P \\Rightarrow Q$ means \"if it is raining, then I have an umbrella.\"\n\nLooking at the truth table, the only situation that makes this implication false is when it is raining but I do not have an umbrella ($P$ is true, $Q$ is false). The case where it is not raining but I have an umbrella anyway ($P$ is false, $Q$ is true) makes the implication true as a whole. This matches the intuition that \"carrying an umbrella on a sunny day doesn't mean I've broken any promise.\"\n\n---\n\n### Example 2: A mathematical example — Properties of integers\n\n> $P$: \"Integer $n$ is even.\"\n> $Q$: \"$n^2$ is even.\"\n\n$P \\Rightarrow Q$ is the statement \"if $n$ is even, then $n^2$ is even,\" which is true. The converse, $Q \\Rightarrow P$ — \"if $n^2$ is even, then $n$ is even\" — also happens to be true, but this requires a separate proof. Propositional logic enables the kind of precise distinction where \"a statement and its converse are different claims.\"\n\nEven when $P \\Rightarrow Q$ is true, its **converse** $Q \\Rightarrow P$ is not necessarily true. For instance, \"if $n$ is a multiple of 3, then $n$ is odd\" is false ($n = 6$ is a counterexample). This distinction is critically important in mathematical proofs.\n\n---\n\n### Example 3: Analyzing a compound proposition — Passing an exam\n\n> $P$: \"I passed the written exam.\"\n> $Q$: \"I passed the interview.\"\n\n\"I passed both the written exam and the interview\" is $P \\land Q$, while \"I passed at least one of them\" is $P \\lor Q$. Now, \"I either did not pass the written exam, or I passed the interview\" can be written as $\\lnot P \\lor Q$ — and this turns out to be **logically equivalent** to $P \\Rightarrow Q$ (\"if I passed the written exam, then I passed the interview\"). When two expressions that look different share the same truth table, they are called **logically equivalent**, written $\\lnot P \\lor Q \\equiv P \\Rightarrow Q$.\n\n---\n\n## Connections — Relationships with other concepts\n\n```\nSet Theory\n  └─ ∩ (intersection)  ←→  ∧ (conjunction)\n  └─ ∪ (union)         ←→  ∨ (disjunction)\n  └─ complement        ←→  ¬ (negation)\n\nPropositional Logic\n  └─ Prerequisites: none (this is the starting point)\n  └─ Next step: Predicate logic (extends with ∀ and ∃)\n  └─ Next step: Proof theory (deductive systems, natural deduction)\n  └─ Next step: Model theory (semantic approach)\n  └─ Next step: Boolean algebra (algebraic treatment)\n```\n\nPropositional logic is the simplest logical system, and requires no prior knowledge. The operations of implication, equivalence, and negation studied here form the foundation for **predicate logic** — the logic that handles statements like \"for all $x$…\" and \"there exists an $x$ such that…\" Moreover, the operations of set theory (intersection, union, complement) correspond exactly to the operations of propositional logic ($\\land$, $\\lor$, $\\lnot$), and moving fluidly between the two perspectives deepens understanding of both.\n\n---\n\n## Applications in other fields\n\n### Computer science and electrical engineering\n\nPropositional logic is directly tied to the design of **logic circuits**. AND gates, OR gates, and NOT gates are physical implementations of $\\land$, $\\lor$, and $\\lnot$ respectively, and the CPUs in smartphones and PCs execute propositional logic operations billions of times per second. Conditional expressions in programming, such as `if (A && B)` or `if (A || B)`, are propositional logic in action.\n\n### Law, philosophy, and linguistics\n\nLegal statutes are written in the form of implications: \"in such-and-such a case, the following shall apply.\" For example, \"if a minor enters into a contract, that contract may be rescinded\" has the structure $P \\Rightarrow Q$. In philosophy, propositional logic has been used since ancient Greece to examine the validity of arguments. In linguistics, it serves as a foundation for **formal semantics**, the field that analyzes the meanings of natural language expressions rigorously.\n\n### Artificial intelligence and databases\n\nAI knowledge representation and inference engines are built on propositional logic (and its extensions). The conditions in SQL `WHERE` clauses (`AND`, `OR`, `NOT`) are propositional logic operations. **SAT solvers** — programs that solve the Boolean satisfiability problem by finding variable assignments that make a propositional formula true — are applied in areas such as hardware verification and cryptanalysis.",
+  "terms": [
+    {
+      "term": "Proposition",
+      "reading": "",
+      "en": "proposition",
+      "definition": "A sentence that has a truth value of either true or false. Things whose truth or falsity is clearly determined, such as '2+2=4' or '3>5', are propositions."
+    },
+    {
+      "term": "Truth Value",
+      "reading": "",
+      "en": "truth value",
+      "definition": "A value that indicates whether a proposition is true (True) or false (False). In propositional logic, a proposition always takes one of these two values."
+    },
+    {
+      "term": "Logical Connective",
+      "reading": "",
+      "en": "logical connective",
+      "definition": "A symbol or operator used to combine propositions to form new propositions. Examples include negation, conjunction, disjunction, implication, and biconditional."
+    },
+    {
+      "term": "Negation",
+      "reading": "",
+      "en": "negation",
+      "definition": "For a proposition P, the proposition ¬P that inverts its truth value. When P is true, ¬P is false; when P is false, ¬P is true."
+    },
+    {
+      "term": "Conjunction",
+      "reading": "",
+      "en": "conjunction",
+      "definition": "A logical operation (P∧Q) that is true only when both propositions P and Q are true. Corresponds to the everyday word 'and'."
+    },
+    {
+      "term": "Disjunction",
+      "reading": "",
+      "en": "disjunction",
+      "definition": "A logical operation (P∨Q) that is true when at least one of propositions P and Q is true. Corresponds to the everyday word 'or'."
+    },
+    {
+      "term": "Implication",
+      "reading": "",
+      "en": "implication",
+      "definition": "A logical operation (P⇒Q) representing 'if P then Q'. The whole expression is false only when P is true and Q is false; when P is false, the result is always true."
+    },
+    {
+      "term": "Biconditional",
+      "reading": "",
+      "en": "biconditional",
+      "definition": "A logical operation (P⟺Q) that is true when P and Q have the same truth value. Read as 'P is equivalent to Q', also called IFF."
+    },
+    {
+      "term": "Truth Table",
+      "reading": "",
+      "en": "truth table",
+      "definition": "A table that lists the truth values of a compound proposition for all possible combinations of truth values of its propositional variables. Completely defines the meaning of logical connectives."
+    },
+    {
+      "term": "Tautology",
+      "reading": "",
+      "en": "tautology",
+      "definition": "A propositional formula that is always true regardless of what truth values are assigned to its propositional variables. The law of excluded middle 'P∨¬P' is a representative example."
+    },
+    {
+      "term": "Law of Excluded Middle",
+      "reading": "",
+      "en": "law of excluded middle",
+      "definition": "A fundamental principle of classical logic stating that 'P or not P (P∨¬P)' is always true. It asserts that for any proposition, either that proposition or its negation must hold."
+    },
+    {
+      "term": "Logical Equivalence",
+      "reading": "",
+      "en": "logical equivalence",
+      "definition": "A relationship in which two propositional formulas have the same truth value for every combination of truth values. Denoted by the symbol ≡; ¬P∨Q≡P⇒Q is a typical example."
+    },
+    {
+      "term": "Converse",
+      "reading": "",
+      "en": "converse",
+      "definition": "For an implication P⇒Q, the converse is Q⇒P, obtained by swapping the antecedent and consequent. Even if the original implication is true, the converse is not necessarily true."
+    },
+    {
+      "term": "Predicate Logic",
+      "reading": "",
+      "en": "predicate logic",
+      "definition": "A logical system that extends propositional logic by adding quantifiers such as 'for all x (∀)' and 'there exists an x such that (∃)'. It represents the next step beyond propositional logic."
+    },
+    {
+      "term": "Logic Circuit",
+      "reading": "",
+      "en": "logic circuit",
+      "definition": "An electronic circuit that physically realizes propositional logic operations by combining gates such as AND, OR, and NOT. It is a fundamental building block of a computer's CPU."
+    }
+  ],
+  "diagrams": [],
+  "quiz": [
+    {
+      "question": "In which of the following cases is the implication $P \\Rightarrow Q$ false?",
+      "choices": [
+        {
+          "text": "When $P$ is false and $Q$ is false",
+          "isCorrect": false
+        },
+        {
+          "text": "When $P$ is true and $Q$ is false",
+          "isCorrect": true
+        },
+        {
+          "text": "When $P$ is false and $Q$ is true",
+          "isCorrect": false
+        },
+        {
+          "text": "When $P$ is true and $Q$ is true",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "The implication $P \\Rightarrow Q$ is false only when the premise $P$ is true but the conclusion $Q$ is false. When $P$ is false, the implication as a whole is true regardless of the truth value of $Q$. This corresponds to the principle known as \"Ex falso quodlibet\" (anything follows from a falsehood)."
+    },
+    {
+      "question": "Which of the following expressions is logically equivalent to $P \\Rightarrow Q$?",
+      "choices": [
+        {
+          "text": "$P \\land \\lnot Q$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\lnot P \\land Q$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\lnot P \\lor Q$",
+          "isCorrect": true
+        },
+        {
+          "text": "$\\lnot P \\lor \\lnot Q$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "The implication $P \\Rightarrow Q$ is false only when $P$ is true and $Q$ is false. This has exactly the same truth table as \"$P$ is false or $Q$ is true,\" that is, $\\lnot P \\lor Q$. This equivalence $\\lnot P \\lor Q \\equiv P \\Rightarrow Q$ is also introduced in the course material using the example of passing or failing an exam."
+    },
+    {
+      "question": "Which of the following correctly describes a tautology?",
+      "choices": [
+        {
+          "text": "A propositional formula that is always false for every combination of truth values",
+          "isCorrect": false
+        },
+        {
+          "text": "A propositional formula that is true only when $P$ and $Q$ have the same truth value",
+          "isCorrect": false
+        },
+        {
+          "text": "A propositional formula that is true for at least one combination of truth values",
+          "isCorrect": false
+        },
+        {
+          "text": "A propositional formula that is always true for every combination of truth values",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "A tautology is a propositional formula that is always true no matter what truth values are assigned to its propositional variables. A classic example is the law of excluded middle, $P \\lor \\lnot P$, which expresses the fundamental principle of classical logic that \"$P$ is either true or false.\" A formula that is always false is called a \"contradiction\" and is distinct from a tautology."
+    }
+  ]
+}

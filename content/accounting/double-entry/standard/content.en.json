@@ -1,0 +1,162 @@
+{
+  "id": "707f3dec-64dc-4261-bd45-6500a158751a",
+  "nodeId": "double-entry",
+  "level": "standard",
+  "locale": "en",
+  "generatedAt": "2026-03-21T22:33:58.400Z",
+  "content": "# Double-Entry Bookkeeping\n\n## What is it — Intuitive explanation\n\nDouble-entry bookkeeping is **a method of recording every transaction from two simultaneous perspectives: the side where money goes out (debit) and the side where money comes in (credit)**. True to the name \"double-entry,\" every single transaction is always recorded in at least two places.\n\nFor example, when you take 500 yen out of your wallet to buy a canned coffee, two things happen at once: \"cash decreased by 500 yen\" and \"a beverage expense of 500 yen was incurred.\" Double-entry bookkeeping is the simple idea of recording both of these aspects together as a pair.\n\n> **Think of it as a scale that always stays balanced**\n>\n> Imagine the bookkeeping ledger as a balance scale. If you place something on the left pan (debit), you must always place something of equal weight on the right pan (credit). This property of \"always being in balance\" is the defining characteristic of double-entry bookkeeping.\n\n---\n\n## Why it matters — Its place in accounting and bookkeeping concepts\n\nDouble-entry bookkeeping is the **foundation of modern accounting**. Financial statements prepared under Japan's Companies Act and Financial Instruments and Exchange Act — including the balance sheet and income statement — are all built on double-entry bookkeeping records. The principles of double-entry bookkeeping apply equally to sole proprietors and publicly listed companies alike.\n\nWith single-entry bookkeeping (a simple record of income and expenses, like a household budget), you can see \"how much was spent,\" but it becomes difficult to see \"why that money was spent\" or \"how assets changed as a result.\" Double-entry bookkeeping allows you to track both the state of assets (stock) and the flow of revenues and expenses (flow) at the same time, making it possible to understand the true picture of a business from multiple angles. This is why accounting is often called the \"compass of management.\"\n\n---\n\n## The core idea — The essence of the definition and principles\n\n### The Principle of Debit-Credit Equality\n\nThe central rule of double-entry bookkeeping is that **no matter what transaction is recorded, the total of all debits always equals the total of all credits**.\n\n$$\n\\text{Total Debits} = \\text{Total Credits}\n$$\n\nThis is not a coincidence — it is built into the very design of the recording system, so it must always hold true.\n\n### Account Titles and the Five Elements\n\nThe \"boxes\" used to categorize and record transactions are called **account titles**. Every account title belongs to one of five elements, and for each element it is predetermined whether the debit side or the credit side represents an increase.\n\n| Element | Increases on | Decreases on |\n|---------|-------------|-------------|\n| Assets | Debit (left) | Credit (right) |\n| Liabilities | Credit (right) | Debit (left) |\n| Equity (Capital) | Credit (right) | Debit (left) |\n| Expenses | Debit (left) | Credit (right) |\n| Revenue | Credit (right) | Debit (left) |\n\nThis table is deeply connected to the fundamental accounting equation:\n\n$$\n\\text{Assets} = \\text{Liabilities} + \\text{Equity}\n$$\n\nEquity changes through the difference between revenues and expenses (i.e., profit). Expanding revenues and expenses during the period gives us:\n\n$$\n\\text{Assets} + \\text{Expenses} = \\text{Liabilities} + \\text{Equity} + \\text{Revenue}\n$$\n\nThis shows that the left side (debits) and the right side (credits) are always equal. Double-entry bookkeeping is the system that records every transaction from both sides in order to keep this equation perpetually balanced.\n\n### Journal Entries\n\nThe act of recording a transaction by splitting it into its debit and credit components is called a **journal entry**. Journal entries follow this format:\n\n```\n(Debit) Account Title  Amount  /  (Credit) Account Title  Amount\n```\n\n---\n\n## Concrete examples\n\n### Example 1: Everyday life — Buying coffee at a convenience store\n\n> You take 500 yen out of your wallet and buy a coffee at a convenience store.\n\nTwo things happen simultaneously:\n- \"Cash (asset)\" **decreases** by 500 yen → decrease in assets → **Credit**\n- \"Beverage expense\" of 500 yen **is incurred** → increase in expenses → **Debit**\n\n**Journal Entry:**\n\n| Debit | Amount | Credit | Amount |\n|-------|--------|--------|--------|\n| Supplies Expense (or Welfare Expense) | ¥500 | Cash | ¥500 |\n\nBoth sides of the scale carry the same 500 yen — perfectly balanced.\n\n---\n\n### Example 2: Business — Purchasing inventory with cash\n\n> A stationery shop purchases notebooks for resale, paying 10,000 yen in cash.\n\nTwo things happen simultaneously:\n- \"Purchases (expense)\" of 10,000 yen are incurred → increase in expenses → **Debit**\n- \"Cash (asset)\" **decreases** by 10,000 yen → decrease in assets → **Credit**\n\n**Journal Entry:**\n\n| Debit | Amount | Credit | Amount |\n|-------|--------|--------|--------|\n| Purchases | ¥10,000 | Cash | ¥10,000 |\n\n---\n\n### Example 3: Business — Borrowing money from a bank\n\n> A company borrows 1,000,000 yen from a bank, which is deposited into its savings account.\n\nTwo things happen simultaneously:\n- \"Savings deposit (asset)\" **increases** by 1,000,000 yen → increase in assets → **Debit**\n- \"Loans payable (liability)\" **increases** by 1,000,000 yen → increase in liabilities → **Credit**\n\n**Journal Entry:**\n\n| Debit | Amount | Credit | Amount |\n|-------|--------|--------|--------|\n| Savings Deposit | ¥1,000,000 | Loans Payable | ¥1,000,000 |\n\nNotice that **even though money is increasing, there is still a credit (right-side) entry**. Debit does not mean \"plus\" and credit does not mean \"minus.\" The essence of double-entry bookkeeping is recording what increased and what increased (or decreased) from two directions simultaneously.\n\n---\n\n### Example 4: Built-in error detection — How mistakes are caught\n\nAnother great strength of double-entry bookkeeping is its ability to detect recording errors. When all journal entries are aggregated into a **trial balance**, if:\n\n$$\n\\text{Total Debits} \\neq \\text{Total Credits}\n$$\n\nyou immediately know that \"there is a recording error somewhere.\" Single-entry bookkeeping has no such self-checking mechanism, which is one of the major practical advantages of double-entry bookkeeping.\n\n---\n\n## Connections — Relationships to other concepts\n\n```\n[Prerequisite knowledge]\nNone (this is the starting point of accounting)\n  ↓\n[Double-Entry Bookkeeping]\n  ↓                        ↓\n[Journal & General Ledger]  [Chart of Accounts]\n  ↓\n[Preparing the Trial Balance]\n  ↓\n[Closing/Adjusting Journal Entries]\n  ↓                             ↓\n[Balance Sheet (B/S)]    [Income Statement (P/L)]\n  ↓\n[Financial Statement Analysis & Managerial Accounting]\n```\n\nDouble-entry bookkeeping is the **first step** in learning accounting. Every concept that follows — year-end closing, preparing financial statements, tax filing, and more — is built on its foundation.\n\n**Differences between Japanese GAAP (J-GAAP) and IFRS:**\nThe core principle of double-entry bookkeeping — recording equal amounts on both the debit and credit sides — is shared by both J-GAAP and IFRS. However, IFRS places greater emphasis on the \"asset-liability approach,\" which can lead to differences in the composition of equity, among other things. At the foundational level of bookkeeping, you rarely need to be concerned with these differences.\n\n**A Japan-specific note:**\nWith the introduction of the **Invoice System (Qualified Invoice Issuer System)** in October 2023, the information required in consumption tax journal entries has increased (registration numbers, tax rate classifications, etc.). The principles of double-entry bookkeeping remain unchanged, but when studying consumption tax, you will need to apply journal entries that account for this system.\n\n---\n\n## Applications to other fields\n\n### Business management and analysis\n\nThe double-entry philosophy of \"recording from two perspectives\" connects to a way of **thinking about cause and effect simultaneously** in business. The habit of asking both where something came from and where it went whenever something changes is a valuable mindset for business analysis and problem-solving.\n\n### Database design\n\nIn computing, double-entry bookkeeping is implemented as a **double-entry accounting system**. Modern accounting software (such as Yayoi Accounting and freee) is designed on the principles of double-entry bookkeeping, automatically generating balance sheets and income statements from journal entry input alone. The idea of guaranteeing data integrity from two directions also resonates with the concept of \"transactions\" in database design.\n\n### History and culture\n\nDouble-entry bookkeeping developed approximately 700 years ago in **medieval Italy (Venice)** and is said to have been systematized by Luca Pacioli in 1494. This system is credited with supporting the commercial revolution in Europe and contributing to the development of the capitalist economy. Goethe is said to have described double-entry bookkeeping as \"one of the most beautiful discoveries of the human intellect\" — a testament to its status as an intellectual system that transcends mere \"record-keeping.\"",
+  "terms": [
+    {
+      "term": "Double-Entry Bookkeeping",
+      "reading": "",
+      "en": "Double-Entry Bookkeeping",
+      "definition": "An accounting method that simultaneously records every transaction from two aspects: debit and credit. By recording each transaction in at least two places, the total debits and total credits in the books always remain equal."
+    },
+    {
+      "term": "Debit",
+      "reading": "",
+      "en": "Debit",
+      "definition": "The left-side recording column in a journal entry. The side used to record increases in assets, decreases in liabilities, and the occurrence of expenses."
+    },
+    {
+      "term": "Credit",
+      "reading": "",
+      "en": "Credit",
+      "definition": "The right-side recording column in a journal entry. The side used to record decreases in assets, increases in liabilities, and the occurrence of revenues."
+    },
+    {
+      "term": "Journal Entry",
+      "reading": "",
+      "en": "Journal Entry",
+      "definition": "The act of classifying a transaction into debits and credits, and recording it by matching account titles with amounts. It is the most fundamental bookkeeping operation in double-entry bookkeeping."
+    },
+    {
+      "term": "Account Title",
+      "reading": "",
+      "en": "Account Title",
+      "definition": "A named label used to record and classify transactions (e.g., Cash, Sales, Loans Payable). Account titles are classified into five elements: assets, liabilities, net assets, expenses, and revenues."
+    },
+    {
+      "term": "Principle of Debit-Credit Equality",
+      "reading": "",
+      "en": "Principle of Debit-Credit Equality",
+      "definition": "A fundamental principle of double-entry bookkeeping stating that no matter what transaction is recorded, the total amount on the debit side and the total amount on the credit side will always be equal."
+    },
+    {
+      "term": "Accounting Equation",
+      "reading": "",
+      "en": "Accounting Equation",
+      "definition": "The basic accounting equation expressed as \"Assets = Liabilities + Net Assets.\" All transaction records in double-entry bookkeeping are designed so that this equation always holds true."
+    },
+    {
+      "term": "Trial Balance",
+      "reading": "",
+      "en": "Trial Balance",
+      "definition": "A table that aggregates all journal entries and lists the debit and credit totals for each account title. Recording errors can be detected by verifying that the total debits and total credits match."
+    },
+    {
+      "term": "Balance Sheet (B/S)",
+      "reading": "",
+      "en": "Balance Sheet (B/S)",
+      "definition": "A financial statement showing the balances of a company's assets, liabilities, and net assets at a specific point in time. It is prepared by aggregating and organizing the records produced through double-entry bookkeeping."
+    },
+    {
+      "term": "Profit and Loss Statement (P/L)",
+      "reading": "",
+      "en": "Profit and Loss Statement (P/L)",
+      "definition": "A financial statement showing revenues, expenses, and profit over a given period. Based on double-entry bookkeeping records, it represents the results of business operations."
+    },
+    {
+      "term": "Single-Entry Bookkeeping",
+      "reading": "",
+      "en": "Single-Entry Bookkeeping",
+      "definition": "A bookkeeping method that records only one side of a transaction—either income or expenditure (e.g., a household budget). It has limited ability to provide a comprehensive view of financial position and lacks a self-checking function."
+    },
+    {
+      "term": "Net Assets / Equity",
+      "reading": "",
+      "en": "Net Assets / Equity",
+      "definition": "The amount remaining after subtracting liabilities from assets. Also called capital, it increases or decreases based on profit, which is the difference between revenues and expenses."
+    },
+    {
+      "term": "Invoice System (Qualified Invoice Storage Method)",
+      "reading": "",
+      "en": "Invoice System (Qualified Invoice Storage Method)",
+      "definition": "A system related to the input tax credit for consumption tax, introduced in October 2023. It requires journal entries to include information such as registration numbers and tax rate classifications."
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 会計等式ボックス -->\n  <rect x=\"150\" y=\"10\" width=\"300\" height=\"44\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"28\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\" font-weight=\"bold\">Accounting Equation</text>\n  <text x=\"300\" y=\"46\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">Assets ＝ Liabilities ＋ Equity</text>\n\n  <!-- 矢印：会計等式 → 天秤 -->\n  <line x1=\"300\" y1=\"54\" x2=\"300\" y2=\"78\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/>\n\n  <!-- 天秤タイトル -->\n  <text x=\"300\" y=\"93\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">Double-Entry Bookkeeping Scale (Principle of Debit-Credit Balance)</text>\n\n  <!-- 天秤支柱 -->\n  <line x1=\"300\" y1=\"100\" x2=\"300\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"2.5\"/>\n  <!-- 天秤横棒 -->\n  <line x1=\"110\" y1=\"130\" x2=\"490\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"2.5\"/>\n  <!-- 天秤脚 -->\n  <polygon points=\"290,130 310,130 300,148\" fill=\"currentColor\" fill-opacity=\"0.5\"/>\n\n  <!-- 左ひも -->\n  <line x1=\"185\" y1=\"130\" x2=\"185\" y2=\"155\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <!-- 右ひも -->\n  <line x1=\"415\" y1=\"130\" x2=\"415\" y2=\"155\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n\n  <!-- 借方（左）皿 -->\n  <rect x=\"90\" y=\"155\" width=\"190\" height=\"120\" rx=\"10\" fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#3b82f6\">Debit (Left)</text>\n  <!-- 借方内容 -->\n  <text x=\"113\" y=\"200\" font-size=\"11\" fill=\"currentColor\">▲ Increase in Assets</text>\n  <text x=\"113\" y=\"218\" font-size=\"11\" fill=\"currentColor\">▼ Decrease in Liabilities</text>\n  <text x=\"113\" y=\"236\" font-size=\"11\" fill=\"currentColor\">▼ Decrease in Equity</text>\n  <text x=\"113\" y=\"254\" font-size=\"11\" fill=\"currentColor\">▲ Increase in Expenses</text>\n  <text x=\"113\" y=\"266\" font-size=\"11\" fill=\"currentColor\" font-style=\"italic\">　→ Expenses &amp; Assets</text>\n\n  <!-- 貸方（右）皿 -->\n  <rect x=\"320\" y=\"155\" width=\"190\" height=\"120\" rx=\"10\" fill=\"#ef4444\" fill-opacity=\"0.1\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n  <text x=\"415\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#ef4444\">Credit (Right)</text>\n  <!-- 貸方内容 -->\n  <text x=\"338\" y=\"200\" font-size=\"11\" fill=\"currentColor\">▼ Decrease in Assets</text>\n  <text x=\"338\" y=\"218\" font-size=\"11\" fill=\"currentColor\">▲ Increase in Liabilities</text>\n  <text x=\"338\" y=\"236\" font-size=\"11\" fill=\"currentColor\">▲ Increase in Equity</text>\n  <text x=\"338\" y=\"254\" font-size=\"11\" fill=\"currentColor\">▲ Increase in Revenue</text>\n  <text x=\"338\" y=\"266\" font-size=\"11\" fill=\"currentColor\" font-style=\"italic\">　→ Revenue, Liabilities &amp; Equity</text>\n\n  <!-- ＝ 記号 -->\n  <text x=\"300\" y=\"200\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"currentColor\">=</text>\n\n  <!-- 仕訳例ボックス -->\n  <rect x=\"40\" y=\"295\" width=\"520\" height=\"80\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"313\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">Journal Entry Example: Borrowed ¥1,000,000 from Bank</text>\n\n  <!-- 仕訳表ヘッダー -->\n  <rect x=\"80\" y=\"320\" width=\"180\" height=\"22\" rx=\"3\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"1\"/>\n  <text x=\"170\" y=\"335\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">Debit: Savings Account</text>\n  <rect x=\"340\" y=\"320\" width=\"180\" height=\"22\" rx=\"3\" fill=\"#ef4444\" fill-opacity=\"0.15\" stroke=\"#ef4444\" stroke-width=\"1\"/>\n  <text x=\"430\" y=\"335\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#ef4444\">Credit: Loans Payable</text>\n\n  <!-- 金額 -->\n  <text x=\"170\" y=\"358\" text-anchor=\"middle\" font-size=\"13\" fill=\"currentColor\">¥1,000,000</text>\n  <text x=\"300\" y=\"358\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">/</text>\n  <text x=\"430\" y=\"358\" text-anchor=\"middle\" font-size=\"13\" fill=\"currentColor\">¥1,000,000</text>\n\n  <!-- 矢印：仕訳 → 試算表 -->\n  <line x1=\"300\" y1=\"375\" x2=\"300\" y2=\"395\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/>\n\n  <!-- 試算表チェック -->\n  <rect x=\"150\" y=\"395\" width=\"300\" height=\"36\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"413\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">Trial Balance: Total Debits ＝ Total Credits</text>\n  <text x=\"300\" y=\"427\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">(Discrepancy → Posting Error Detected)</text>\n\n  <!-- 矢印：試算表 → 財務諸表 -->\n  <line x1=\"300\" y1=\"431\" x2=\"300\" y2=\"451\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/>\n\n  <!-- 財務諸表 2つ -->\n  <rect x=\"60\" y=\"451\" width=\"200\" height=\"42\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"160\" y=\"470\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">Balance Sheet (B/S)</text>\n  <text x=\"160\" y=\"485\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Stock of Assets, Liabilities &amp; Equity</text>\n\n  <rect x=\"340\" y=\"451\" width=\"200\" height=\"42\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"440\" y=\"470\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">Income Statement (P/L)</text>\n  <text x=\"440\" y=\"485\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Flow of Revenue, Expenses &amp; Profit</text>\n\n  <!-- 分岐線 -->\n  <line x1=\"300\" y1=\"451\" x2=\"160\" y2=\"451\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <line x1=\"300\" y1=\"451\" x2=\"440\" y2=\"451\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n\n  <!-- arrowhead marker -->\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the 'principle of debit-credit equality' in double-entry bookkeeping?",
+      "choices": [
+        {
+          "text": "A principle whereby the total revenues and total expenses are always equal",
+          "isCorrect": false
+        },
+        {
+          "text": "A principle whereby, no matter what transaction is recorded, the total debits and total credits are always equal",
+          "isCorrect": true
+        },
+        {
+          "text": "A principle whereby the total assets and total liabilities are always equal",
+          "isCorrect": false
+        },
+        {
+          "text": "A principle whereby the total cash inflows and total cash outflows are always equal",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "The principle of debit-credit equality states that for every transaction, the total debits and total credits must always be equal ($\\text{Total Debits} = \\text{Total Credits}$). This is not a coincidence — it is an inherent feature of double-entry bookkeeping, which is designed so that every transaction is recorded from two sides simultaneously. This property can be used to detect recording errors when the debit and credit sides of a trial balance do not match."
+    },
+    {
+      "question": "A company borrowed 1,000,000 yen from a bank, and the amount was deposited into its ordinary bank account. Which of the following journal entries is correct for this transaction?",
+      "choices": [
+        {
+          "text": "(Debit) Loans Payable 1,000,000 yen / (Credit) Ordinary Deposits 1,000,000 yen",
+          "isCorrect": false
+        },
+        {
+          "text": "(Debit) Ordinary Deposits 1,000,000 yen / (Credit) Loans Payable 1,000,000 yen",
+          "isCorrect": true
+        },
+        {
+          "text": "(Debit) Ordinary Deposits 1,000,000 yen / (Credit) Capital Stock 1,000,000 yen",
+          "isCorrect": false
+        },
+        {
+          "text": "(Debit) Cash 1,000,000 yen / (Credit) Loans Payable 1,000,000 yen",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "In this transaction, two facts occur simultaneously: 'Ordinary Deposits (asset) increased by 1,000,000 yen' and 'Loans Payable (liability) increased by 1,000,000 yen.' Since an increase in assets is recorded on the debit side and an increase in liabilities is recorded on the credit side, the entry is: (Debit) Ordinary Deposits / (Credit) Loans Payable. Just because cash is increasing does not mean only the debit side is recorded — the source of the funds (the increase in liability) must also be recorded on the credit side at the same time. This is the essence of double-entry bookkeeping."
+    },
+    {
+      "question": "Which of the following is NOT mentioned in the text as a key advantage of double-entry bookkeeping compared to single-entry bookkeeping?",
+      "choices": [
+        {
+          "text": "Both the state of assets (stock) and the flow of revenues and expenses (flow) can be understood at the same time",
+          "isCorrect": false
+        },
+        {
+          "text": "There is a self-checking function that allows recording errors to be detected when the debit and credit sides of a trial balance do not match",
+          "isCorrect": false
+        },
+        {
+          "text": "Recording the 'cause and effect' of transactions from two directions enables a multifaceted understanding of business operations",
+          "isCorrect": false
+        },
+        {
+          "text": "Because fewer items need to be recorded, the time required to prepare the books is significantly reduced compared to single-entry bookkeeping",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "The advantages of double-entry bookkeeping mentioned in the text are: ① simultaneous understanding of the state of assets (stock) and revenues/expenses (flow), ② a self-checking function via trial balance (detection of recording errors), and ③ multifaceted understanding of business operations by capturing cause and effect from two directions. 'Reducing the time needed to prepare the books' is not mentioned in the text; in fact, double-entry bookkeeping requires more effort to record than single-entry bookkeeping."
+    }
+  ]
+}

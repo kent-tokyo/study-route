@@ -1,3 +1,3 @@
-:HL["/study-route/_next/static/chunks/0ui99shb7_9vx.css","style"]
+:HL["/study-route/_next/static/chunks/0bksj5nke63gr.css","style"]
 :HL["https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"domain","param":{"type":"d","key":"math","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"learn","param":null,"prefetchHints":0,"slots":{"children":{"name":"nodeId","param":{"type":"d","key":"pde","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"-ey71ytY1cUDWvHzIkm9x"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"domain","param":{"type":"d","key":"math","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"learn","param":null,"prefetchHints":0,"slots":{"children":{"name":"nodeId","param":{"type":"d","key":"pde","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"vZTtiG2QbXEJesVUn9CTq"}

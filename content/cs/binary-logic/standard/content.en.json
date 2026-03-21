@@ -1,0 +1,162 @@
+{
+  "id": "ce379ce6-9d12-4b7a-b38e-7e1c9c509962",
+  "nodeId": "binary-logic",
+  "level": "standard",
+  "locale": "en",
+  "generatedAt": "2026-03-21T22:33:18.896Z",
+  "content": "# Binary Numbers and Logic Circuits\n\n## What is it — Intuitive explanation\n\nInside a computer, all information is represented using only two kinds of digits: \"0 or 1.\" This is called **binary** (base-2). Just as the decimal system we use every day relies on ten distinct digits (0 through 9), binary uses only 0 and 1 to represent any number.\n\nThink of a light switch. A switch has exactly two states: \"on (1)\" or \"off (0).\" Inside a computer, billions of tiny switches called transistors each hold one of these two states — 0 or 1 — and together they process enormous amounts of information.\n\n**Logic circuits** combine these 0 and 1 signals to perform logical operations: \"AND,\" \"OR,\" and \"NOT.\" Binary numbers and logic circuits are the fundamental building blocks of computers — the bricks from which the entire structure is built.\n\n---\n\n## Why it matters — Its place in mathematics\n\nBinary numbers and logic circuits form **the most fundamental foundation of computer science**. No matter how complex a program may be, it is ultimately translated into the world of 0s and 1s before being executed. The mathematical framework underlying all of this is called **Boolean algebra**, a system developed in the 19th century by mathematician George Boole to treat logic algebraically.\n\nThese concepts connect directly to fields such as discrete mathematics, information theory, and digital circuit design, making them an indispensable starting point for anyone studying computer science or electrical engineering at the university level. They also tie in deeply with set theory and propositional logic, making them excellent material for developing rigorous mathematical thinking.\n\nOn the practical side, understanding binary makes bit manipulation in programming and the mechanisms of data storage and compression feel natural and intuitive. Being able to answer the question \"Why do computers use binary?\" is a form of essential literacy for living in the digital age.\n\n---\n\n## The core ideas — Definitions and key theorems\n\n### Representing numbers in binary\n\nIn decimal, each digit position carries a weight of $10^n$. In binary, each position carries a weight of $2^n$ instead.\n\n$$\n(1011)_2 = 1 \\times 2^3 + 0 \\times 2^2 + 1 \\times 2^1 + 1 \\times 2^0 = 8 + 0 + 2 + 1 = 11\n$$\n\nIn general, an $n$-bit binary number $b_{n-1} b_{n-2} \\cdots b_1 b_0$ (where each $b_i \\in \\{0, 1\\}$) represents the decimal value\n\n$$\n\\sum_{i=0}^{n-1} b_i \\cdot 2^i\n$$\n\n### Boolean algebra and the basic logic gates\n\n**Boolean algebra** defines the rules for computing in the world of 0s and 1s. There are three fundamental operations:\n\n| Operation | Symbol | Meaning |\n|-----------|--------|---------|\n| AND (logical conjunction) | $A \\land B$ | 1 only when both A and B are 1 |\n| OR (logical disjunction) | $A \\lor B$ | 1 when at least one of A or B is 1 |\n| NOT (negation) | $\\lnot A$ | Flips 0 to 1 and 1 to 0 |\n\nEach of these operations can be completely defined by a **truth table**. For example, the truth table for AND is:\n\n| $A$ | $B$ | $A \\land B$ |\n|-----|-----|-------------|\n| 0   | 0   | 0           |\n| 0   | 1   | 0           |\n| 1   | 0   | 0           |\n| 1   | 1   | 1           |\n\nBoolean algebra also satisfies several important laws, including **De Morgan's laws**:\n\n$$\n\\lnot (A \\land B) = \\lnot A \\lor \\lnot B\n$$\n\n$$\n\\lnot (A \\lor B) = \\lnot A \\land \\lnot B\n$$\n\nBy combining these gates, any operation — addition, subtraction, comparison, and more — can be realized.\n\n---\n\n## Concrete examples\n\n### Example 1: Everyday life — A hallway light with two switches\n\nImagine a hallway light. There is one switch at the entrance (A) and one at the exit (B), and the light turns on **when either switch is flipped on**. This is exactly how an **OR circuit** works:\n\n$$\n\\text{Light} = A \\lor B\n$$\n\nOn the other hand, a security door that unlocks **only when both** \"the door is closed (A = 1)\" **and** \"the correct PIN is entered (B = 1)\" is an **AND circuit**. This shows that virtually any combination of conditions in everyday life can be expressed as a logic circuit.\n\n### Example 2: Counting in binary\n\nThe decimal numbers 0 through 15 written in binary look like this:\n\n| Decimal | Binary |\n|---------|--------|\n| 0       | 0000   |\n| 1       | 0001   |\n| 5       | 0101   |\n| 10      | 1010   |\n| 15      | 1111   |\n\nThe largest value representable with 4 bits is $1111_2 = 15 = 2^4 - 1$. In general, $n$ bits can represent $2^n$ distinct values, from $0$ to $2^n - 1$. This matches exactly the total number of possible on/off combinations for $n$ switches.\n\n### Example 3: The half adder — building addition from logic gates\n\nBy combining AND and XOR (exclusive OR), we can build a circuit that adds two 1-bit numbers — this is called a **half adder**.\n\n$$\n\\text{Sum}\\ (S) = A \\oplus B \\quad (\\text{XOR})\n$$\n$$\n\\text{Carry}\\ (C) = A \\land B \\quad (\\text{AND})\n$$\n\nChecking all input combinations with a truth table:\n\n| $A$ | $B$ | $S = A \\oplus B$ | $C = A \\land B$ |\n|-----|-----|------------------|-----------------|\n| 0   | 0   | 0                | 0               |\n| 0   | 1   | 1                | 0               |\n| 1   | 0   | 1                | 0               |\n| 1   | 1   | 0                | 1               |\n\nFor example, when $A = 1,\\, B = 1$, we get $S = 0,\\, C = 1$, which corresponds to $1 + 1 = 10_2$ (decimal 2). By stacking basic gates like this, computers gain the ability to compute — all from the simplest possible ingredients.\n\n---\n\n## Connections — Relationships to other concepts\n\n**Prerequisite knowledge:**\n- How the decimal system works (understanding positional notation)\n- Basic set theory and propositional logic (the logical meaning of AND/OR/NOT)\n\n**Mathematical concepts that connect here:**\n- **Boolean algebra**: The mathematical foundation of binary numbers and logic circuits. It corresponds exactly to set operations — $\\cap$ (intersection) and $\\cup$ (union)\n- **Propositional logic**: The operations $\\land,\\, \\lor,\\, \\lnot$ are the very symbols used in formal logic\n- **Information theory**: A bit (binary digit) is the smallest unit of information, and this connects to the concept of entropy\n\n**Directions for further study:**\n- **Combinational and sequential circuits**: Circuits with memory, such as flip-flops and counters\n- **Two's complement representation**: How negative numbers are represented in binary\n- **Floating-point numbers (IEEE 754)**: How computers represent decimal fractions\n- **Algorithms and computational complexity**: The number of binary digits (bits) appears naturally in discussions of algorithmic complexity\n\n---\n\n## Applications in other fields\n\n### Computer engineering and electrical engineering\n\nLogic circuits are directly tied to the design of CPUs (central processing units). Modern CPUs integrate billions of transistors, and combinations of AND, OR, and NOT gates implement all arithmetic, memory, and control operations. FPGAs (field-programmable gate arrays) — reconfigurable logic circuits — are also widely used in communications equipment and medical devices.\n\n### Information and communications technology, cryptography\n\nWhen data is transmitted over the internet, it is handled as a stream of binary bits. Error-correcting codes (such as Hamming codes) use bit operations cleverly to detect and correct errors in data. Modern cryptographic systems (AES, RSA, etc.) are also grounded in bit operations on large binary numbers.\n\n### Cognitive science and philosophy\n\nThe two-valued logic of Boolean algebra — true (1) / false (0) — has long been used to formalize human thought. In early artificial intelligence research, the dominant view was that human reasoning could be reduced to logical operations. Even in modern neural networks, the binary abstraction of each neuron \"firing (1) or not firing (0)\" lies at the historical origin of these models.\n\n### Biology and medicine\n\nThe regulatory networks that switch genes on and off share a structural similarity with logic circuits. Networks that determine whether a gene is \"expressed (1) or not (0)\" are modeled as Boolean circuits, and this approach has been applied to understanding cell differentiation and the mechanisms underlying disease.",
+  "terms": [
+    {
+      "term": "Binary number",
+      "reading": "",
+      "en": "binary number",
+      "definition": "A numeral system that represents numbers using only two digits, 0 and 1. It is a type of positional notation in which the weight of each digit is a power of 2."
+    },
+    {
+      "term": "Boolean algebra",
+      "reading": "",
+      "en": "Boolean algebra",
+      "definition": "A system of operations—AND, OR, and NOT—applied to two values, 0 and 1. It was formulated algebraically by the 19th-century mathematician George Boole to express logic, and serves as the mathematical foundation of logic circuits."
+    },
+    {
+      "term": "Logic circuit",
+      "reading": "",
+      "en": "logic circuit",
+      "definition": "An electronic circuit that takes 0 and 1 signals as inputs and produces an output by combining logical operations such as AND, OR, and NOT. It is the fundamental building block for computation and control in computers."
+    },
+    {
+      "term": "Logical conjunction",
+      "reading": "",
+      "en": "AND",
+      "definition": "A logical operation whose output is 1 only when both inputs are 1. It is expressed by the symbol $A \\land B$."
+    },
+    {
+      "term": "Logical disjunction",
+      "reading": "",
+      "en": "OR",
+      "definition": "A logical operation whose output is 1 when at least one of the two inputs is 1. It is expressed by the symbol $A \\lor B$."
+    },
+    {
+      "term": "Negation",
+      "reading": "",
+      "en": "NOT",
+      "definition": "A logical operation that inverts the input, turning 0 into 1 and vice versa. It is expressed by the symbol $\\lnot A$ and is the most basic logic gate, with one input and one output."
+    },
+    {
+      "term": "Truth table",
+      "reading": "",
+      "en": "truth table",
+      "definition": "A table that lists all possible combinations of inputs and their corresponding outputs for a logical operation. It completely defines the behavior of a logical operation."
+    },
+    {
+      "term": "De Morgan's laws",
+      "reading": "",
+      "en": "De Morgan's laws",
+      "definition": "Important transformation laws in Boolean algebra, stating that $\\lnot(A \\land B) = \\lnot A \\lor \\lnot B$ and $\\lnot(A \\lor B) = \\lnot A \\land \\lnot B$."
+    },
+    {
+      "term": "Exclusive OR",
+      "reading": "",
+      "en": "XOR (exclusive OR)",
+      "definition": "A logical operation that outputs 1 when the two inputs differ and 0 when they are the same. It is expressed by the symbol $A \\oplus B$ and is used, for example, in computing the sum in a half adder."
+    },
+    {
+      "term": "Half adder",
+      "reading": "",
+      "en": "half adder",
+      "definition": "A basic logic circuit that combines an XOR gate and an AND gate to perform addition of two 1-bit values. It outputs two bits: the sum (S) and the carry (C)."
+    },
+    {
+      "term": "Bit",
+      "reading": "",
+      "en": "bit",
+      "definition": "Short for binary digit, it is the smallest unit of information, taking a value of either 0 or 1. It corresponds to a single digit in the binary number system."
+    },
+    {
+      "term": "Transistor",
+      "reading": "",
+      "en": "transistor",
+      "definition": "A semiconductor device capable of switching electrical signals on and off. It is the physical implementation unit of logic circuits, and modern CPUs integrate billions of them."
+    },
+    {
+      "term": "Propositional logic",
+      "reading": "",
+      "en": "propositional logic",
+      "definition": "A branch of logic that deals with a formal system of inference by combining propositions—which take a value of true (1) or false (0)—using logical operations such as ∧, ∨, and ¬."
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- Background transparent -->\n\n  <!-- ===== TITLE ===== -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">Structure Map of Binary Numbers and Logic Circuits</text>\n\n  <!-- ===== CENTER: Boolean Algebra ===== -->\n  <ellipse cx=\"300\" cy=\"260\" rx=\"70\" ry=\"36\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">Boolean Algebra</text>\n  <text x=\"300\" y=\"272\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Boolean Algebra</text>\n\n  <!-- ===== TOP LEFT: 2進数 ===== -->\n  <rect x=\"50\" y=\"55\" width=\"140\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"120\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">Binary Numbers</text>\n  <text x=\"120\" y=\"96\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Weight of each digit: 2ⁿ</text>\n  <text x=\"120\" y=\"112\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">(1011)₂ = 8+0+2+1 = 11</text>\n  <text x=\"120\" y=\"126\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">n bits → 2ⁿ combinations</text>\n\n  <!-- ===== TOP RIGHT: 命題論理 ===== -->\n  <rect x=\"410\" y=\"55\" width=\"140\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"480\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">Propositional Logic</text>\n  <text x=\"480\" y=\"96\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">∧（AND）∨（OR）</text>\n  <text x=\"480\" y=\"112\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬（NOT）</text>\n  <text x=\"480\" y=\"126\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">True/False → 0 / 1</text>\n\n  <!-- ===== MIDDLE LEFT: 基本ゲート ===== -->\n  <rect x=\"30\" y=\"215\" width=\"150\" height=\"90\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"105\" y=\"238\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">Basic Logic Gates</text>\n  <!-- AND gate symbol -->\n  <text x=\"50\" y=\"258\" font-size=\"10\" fill=\"#3b82f6\">AND:</text>\n  <text x=\"90\" y=\"258\" font-size=\"10\" fill=\"currentColor\">A∧B → 1 if both 1</text>\n  <text x=\"50\" y=\"274\" font-size=\"10\" fill=\"#22c55e\">OR:</text>\n  <text x=\"90\" y=\"274\" font-size=\"10\" fill=\"currentColor\">A∨B → 1 if either 1</text>\n  <text x=\"50\" y=\"290\" font-size=\"10\" fill=\"#ef4444\">NOT:</text>\n  <text x=\"90\" y=\"290\" font-size=\"10\" fill=\"currentColor\">¬A → 0↔1 invert</text>\n\n  <!-- ===== MIDDLE RIGHT: 真理値表 ===== -->\n  <rect x=\"420\" y=\"215\" width=\"150\" height=\"90\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"495\" y=\"238\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">Truth Table (AND)</text>\n  <text x=\"445\" y=\"256\" font-size=\"10\" fill=\"currentColor\">A  B  A∧B</text>\n  <line x1=\"435\" y1=\"260\" x2=\"560\" y2=\"260\" stroke=\"currentColor\" stroke-width=\"0.8\" stroke-opacity=\"0.4\"/>\n  <text x=\"445\" y=\"272\" font-size=\"10\" fill=\"currentColor\">0  0   0</text>\n  <text x=\"445\" y=\"284\" font-size=\"10\" fill=\"currentColor\">0  1   0</text>\n  <text x=\"445\" y=\"296\" font-size=\"10\" fill=\"currentColor\">1  0   0</text>\n  <text x=\"445\" y=\"308\" font-size=\"10\" fill=\"#22c55e\" font-weight=\"bold\">1  1   1</text>\n\n  <!-- ===== BOTTOM LEFT: ド・モルガン則 ===== -->\n  <rect x=\"50\" y=\"370\" width=\"160\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"130\" y=\"392\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">De Morgan's Laws</text>\n  <text x=\"130\" y=\"412\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬(A∧B) = ¬A ∨ ¬B</text>\n  <text x=\"130\" y=\"428\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬(A∨B) = ¬A ∧ ¬B</text>\n  <text x=\"130\" y=\"444\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.7\">Corresponds to set complements</text>\n\n  <!-- ===== BOTTOM CENTER: 半加算器 ===== -->\n  <rect x=\"220\" y=\"370\" width=\"160\" height=\"80\" rx=\"12\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"392\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">Half Adder</text>\n  <text x=\"300\" y=\"410\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Sum S = A ⊕ B (XOR)</text>\n  <text x=\"300\" y=\"426\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Carry C = A∧B</text>\n  <text x=\"300\" y=\"444\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">1+1 = 10₂ (C=1, S=0)</text>\n\n  <!-- ===== BOTTOM RIGHT: 応用 ===== -->\n  <rect x=\"395\" y=\"370\" width=\"160\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"475\" y=\"392\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">Applications &amp; Connections</text>\n  <text x=\"475\" y=\"410\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Information Theory / Bit Operations</text>\n  <text x=\"475\" y=\"426\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Digital Circuit Design</text>\n  <text x=\"475\" y=\"442\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Set Theory / Discrete Mathematics</text>\n\n  <!-- ===== ARROWS ===== -->\n  <!-- 2進数 → ブール代数 -->\n  <line x1=\"185\" y1=\"110\" x2=\"255\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- 命題論理 → ブール代数 -->\n  <line x1=\"415\" y1=\"110\" x2=\"345\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- ブール代数 → 基本ゲート -->\n  <line x1=\"234\" y1=\"268\" x2=\"182\" y2=\"268\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- ブール代数 → 真理値表 -->\n  <line x1=\"366\" y1=\"268\" x2=\"418\" y2=\"268\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- ブール代数 → ド・モルガン -->\n  <line x1=\"258\" y1=\"288\" x2=\"210\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- ブール代数 → 半加算器 -->\n  <line x1=\"300\" y1=\"296\" x2=\"300\" y2=\"368\" stroke=\"#3b82f6\" stroke-width=\"1.8\" stroke-opacity=\"0.7\" marker-end=\"url(#arrowBlue)\"/>\n  <!-- ブール代数 → 応用 -->\n  <line x1=\"342\" y1=\"288\" x2=\"440\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n\n  <!-- 2進数 → 半加算器 (dashed) -->\n  <line x1=\"150\" y1=\"135\" x2=\"255\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1\" stroke-opacity=\"0.3\" stroke-dasharray=\"5,4\" marker-end=\"url(#arrowLight)\"/>\n\n  <!-- ===== ARROW MARKERS ===== -->\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.6\"/>\n    </marker>\n    <marker id=\"arrowBlue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\" fill-opacity=\"0.8\"/>\n    </marker>\n    <marker id=\"arrowLight\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.3\"/>\n    </marker>\n  </defs>\n\n  <!-- ===== LEGEND ===== -->\n  <text x=\"300\" y=\"500\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.55\">→ Conceptual dependency / derivation　　Dashed → Indirect connection</text>\n\n</svg>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the decimal value of the binary number $(1101)_2$?",
+      "choices": [
+        {
+          "text": "11",
+          "isCorrect": false
+        },
+        {
+          "text": "13",
+          "isCorrect": true
+        },
+        {
+          "text": "14",
+          "isCorrect": false
+        },
+        {
+          "text": "15",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "The weight of each digit from right to left is $2^0, 2^1, 2^2, 2^3$. $(1101)_2 = 1 \\times 2^3 + 1 \\times 2^2 + 0 \\times 2^1 + 1 \\times 2^0 = 8 + 4 + 0 + 1 = 13$."
+    },
+    {
+      "question": "Regarding AND gates and OR gates, which of the following statements is correct?",
+      "choices": [
+        {
+          "text": "An AND gate outputs 1 if either input A or input B is 1",
+          "isCorrect": false
+        },
+        {
+          "text": "An OR gate outputs 0 only when both inputs A and B are 0",
+          "isCorrect": true
+        },
+        {
+          "text": "An AND gate outputs 0 if either input A or input B is 1",
+          "isCorrect": false
+        },
+        {
+          "text": "An OR gate outputs 1 only when both inputs A and B are 1",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "An OR gate ($A \\lor B$) outputs 1 if at least one of A or B is 1. Conversely, it outputs 0 only when both inputs are 0. An AND gate outputs 1 only when both inputs are 1."
+    },
+    {
+      "question": "In a half adder, when $A = 1,\\ B = 1$ are given as inputs, which of the following is the correct combination of the sum ($S$) and carry ($C$) outputs?",
+      "choices": [
+        {
+          "text": "$S = 1,\\ C = 1$",
+          "isCorrect": false
+        },
+        {
+          "text": "$S = 1,\\ C = 0$",
+          "isCorrect": false
+        },
+        {
+          "text": "$S = 0,\\ C = 1$",
+          "isCorrect": true
+        },
+        {
+          "text": "$S = 0,\\ C = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "In a half adder, $S = A \\oplus B$ (XOR) and $C = A \\land B$ (AND). When $A = 1,\\ B = 1$, we get $S = 1 \\oplus 1 = 0$ and $C = 1 \\land 1 = 1$. This corresponds to $1 + 1 = (10)_2$, which equals 2 in decimal."
+    }
+  ]
+}
