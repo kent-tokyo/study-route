@@ -3,7 +3,7 @@
     "id": "epistemology",
     "label": "認識論",
     "labels": { "ja": "認識論", "en": "Epistemology", "zh": "认识论" },
-    "position": { "x": 0, "y": 0 },
+    "position": { "x": 400, "y": 0 },
     "color": "#8b5cf6",
     "description": "知識とは何か、真理にどう到達するか",
     "descriptions": { "ja": "知識とは何か、真理にどう到達するか", "en": "What is knowledge, and how do we reach truth?", "zh": "什么是知识，如何达到真理？" }
@@ -12,7 +12,7 @@
     "id": "ethics",
     "label": "倫理学",
     "labels": { "ja": "倫理学", "en": "Ethics", "zh": "伦理学" },
-    "position": { "x": 400, "y": 0 },
+    "position": { "x": 0, "y": 0 },
     "color": "#ef4444",
     "description": "善悪・正義・徳の問題を探究する",
     "descriptions": { "ja": "善悪・正義・徳の問題を探究する", "en": "Exploring good, evil, justice, and virtue", "zh": "探究善恶、正义与德性" }
@@ -21,7 +21,7 @@
     "id": "logic",
     "label": "論理学",
     "labels": { "ja": "論理学", "en": "Logic", "zh": "逻辑学" },
-    "position": { "x": 200, "y": -200 },
+    "position": { "x": 0, "y": -200 },
     "color": "#3b82f6",
     "description": "正しい推論の形式と構造",
     "descriptions": { "ja": "正しい推論の形式と構造", "en": "Forms and structures of valid reasoning", "zh": "正确推理的形式与结构" }
@@ -30,7 +30,7 @@
     "id": "metaphysics",
     "label": "形而上学",
     "labels": { "ja": "形而上学", "en": "Metaphysics", "zh": "形而上学" },
-    "position": { "x": 200, "y": 200 },
+    "position": { "x": 400, "y": 200 },
     "color": "#14b8a6",
     "description": "存在・時間・因果の根本原理",
     "descriptions": { "ja": "存在・時間・因果の根本原理", "en": "Fundamental principles of existence, time, and causation", "zh": "存在、时间与因果的根本原理" }
@@ -39,7 +39,7 @@
     "id": "aesthetics",
     "label": "美学",
     "labels": { "ja": "美学", "en": "Aesthetics", "zh": "美学" },
-    "position": { "x": 600, "y": 200 },
+    "position": { "x": 0, "y": 200 },
     "color": "#f59e0b",
     "description": "美・芸術・感性の哲学",
     "descriptions": { "ja": "美・芸術・感性の哲学", "en": "Philosophy of beauty, art, and sensibility", "zh": "美、艺术与感性的哲学" }

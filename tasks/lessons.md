@@ -6,6 +6,11 @@
 - Vercelデプロイ時にDB接続が問題になり、S3に簡素化。その後、静的サイト化でlocalStorageに移行
 - 教訓: 個人ツールは最もシンプルなストレージから始めるべき。サーバーレス構成のDB接続は複雑さに見合わないことが多い
 
+### 認証方式の選択（Vercel時代）
+- bcryptではなくWeb Crypto API（SHA-256 + HMAC-SHA256）を採用していた
+- Next.js Edge Runtime互換性のため（bcryptはNode.js専用）
+- 教訓: **Edge Runtime環境ではNode.js専用ライブラリが使えない。Web標準APIで代替可能か先に確認すべき**
+
 ### 静的サイト化の判断
 - Vercel + S3 + API routes → Next.js Static Export + GitHub Pages に移行
 - 認証・API・S3依存を全削除し、コンテンツは事前生成、進捗はlocalStorage
@@ -14,6 +19,9 @@
 ### コンテンツ事前生成パイプライン
 - オンデマンド生成（SSEストリーミング）→ 事前生成（CLIスクリプト）に移行
 - `--all --all-levels` で全ノード×全レベルを一括生成、manifest.jsonで管理
+- オンデマンド時代はVercel無料プラン（タイムアウト10秒）の制約があり、高速なclaude-sonnet-4-6を選択していた
+- S3保存はVercelのファイルシステムが揮発するため。読み込みの優先順位はローカルfs → S3 → 生成
+- diagramsはローカルfsでは個別SVGファイル、S3では`diagrams.json`に配列として一括保存（リクエスト数削減）
 - 教訓: 生成AIコンテンツは事前生成が運用上シンプル。オンデマンドはUX的に魅力的だがインフラ依存が増す
 
 ### エリア分割の柔軟性
@@ -100,6 +108,21 @@
 - 改善: `domains.json`に`prefix`・`areaOrder`・`contentsTableLabel`を集約し、`add-numbers.ts`・`generate-content.ts`・`content-generator.ts`・`graph.ts`がマスタを参照するよう統一。重複定義を解消
 - 教訓: **ドメイン設定（プレフィックス、エリア順序、ラベル等）は1つのマスタファイルに集約すべき。複数箇所にハードコードすると同期漏れが起きる**
 
+## 技術スタック
+
+### Next.js 16 の注意点
+- `middleware.ts` は非推奨 → `proxy` への移行が推奨されている
+- Turbopack がデフォルトビルドツール
+- App Router + Server Components が前提
+- 教訓: **Next.jsのメジャーバージョンアップでは非推奨APIの確認が必須。公式マイグレーションガイドを先に読む**
+
+### Tailwind CSS v4 の注意点
+- `tailwind.config.ts` は不要、CSS内で設定する
+- ダークモードclass方式: `@variant dark (&:where(.dark, .dark *));` をglobals.cssに記述
+- `@plugin` でプラグイン読み込み（例: `@plugin "@tailwindcss/typography"`）
+- `@theme inline` でカスタムテーマ変数を定義
+- 教訓: **Tailwind v4はCSS-firstの設計思想に変わった。v3のJS設定ファイルベースの知識はリセットが必要**
+
 ## フロントエンド
 
 ### mdxToHtmlの数式ブロック処理順序
@@ -142,6 +165,8 @@
 
 ### React Flowのビューポート保存
 - `onMoveEnd`でlocalStorageに保存、`defaultViewport`で復元
+- `key` propでReact Flowコンポーネントを再マウントすると、レベル切替時にクリーンなリセットが可能
+- `fitView` と `defaultViewport` は排他的に使う（保存済みviewportがあればfitViewを無効に）
 - 教訓: マップUIはユーザーの位置記憶が重要。毎回リセットはストレス
 
 ### 学習ページからの戻り先

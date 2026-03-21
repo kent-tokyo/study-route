@@ -19,7 +19,7 @@
 - **ドメイン別エリア構成**:
   - 数学: 8エリア（foundations, pure_algebra, pure_analysis, pure_geometry, stochastic, computational, mathematical_modeling, social）
   - 哲学: 5エリア（epistemology, ethics, logic, metaphysics, aesthetics）
-  - AWS: 5エリア（compute, storage, networking, security, databases）
+  - AWS: 8エリア（compute, storage, networking, security, databases, ai_ml, management, app_integration）
 - **詳細マップへの直接遷移**: `?area=xxx` クエリパラメータで初期表示エリアを指定可能
 - ノード間の前提関係（prerequisites）を矢印で表示
 - ノード状態: locked / available / in_progress / completed
@@ -31,7 +31,7 @@
 - **エッジ重なり防止**: `getSmoothStepPath` に動的offset（縦方向接続80px / 横方向50px、borderRadius 20px）でノードからエッジを離す
 - **モバイル対応ヘッダー**: `flex flex-col md:flex-row` で2段レイアウト。上段: ナビ+タイトル、下段: 完了数・レベル切替・言語・テーマ。padding `px-4 py-2 md:px-6 md:py-3`
 - **マップ領域**: 外側 `h-screen flex flex-col`、マップ領域 `flex-1 overflow-hidden`（ヘッダー高さに依存しない）
-- **スタートノード表示**: 詳細マップ: `prerequisites.length === 0` のノードに `START` バッジ + `ring-2 ring-blue-400/50`。全体マップ: `areaEdges`のターゲットに含まれないエリア（入力エッジなし）に `START` バッジ + `ring-2 ring-blue-400/50`。両レベルとも初回表示時にスタートノード/エリアにフォーカス（padding: 0.5, maxZoom: 1.0）
+- **スタートノード表示**: 詳細マップ: `prerequisites.length === 0` のノードに `START` バッジ + `ring-2 ring-blue-400/50`。全体マップ: `areaEdges`のターゲットに含まれないエリア（入力エッジなし）に `START` バッジ + `ring-2 ring-blue-400/50`。両レベルとも初回表示時にスタートノード/エリアにフォーカス（padding: 0.5, maxZoom: 1.0）。**STARTエリアは最も左（低x座標）に配置**し、非STARTエリアを右側に配置することで視覚的にエントリーポイントを明示
 - ヘッダー: ドメイン選択へ戻るリンク、コンテンツレベルトグル、言語切替、テーマ切替
 
 ### 3. 概念学習ページ（/{domain}/learn/[nodeId]）
@@ -189,7 +189,7 @@
 | math | 8 | 64 | 基礎から大学院数学まで |
 | philosophy | 5 | 25 | 認識論・倫理学・論理学・形而上学・美学 |
 | aws | 8 | 33 | コンピューティング・ストレージ・ネットワーキング・セキュリティ・DB・AI/ML・管理監視・アプリ統合 |
-| cs | 6 | 28 | 基礎理論・アルゴリズム・システム・ネットワーク・PL・AI/ML |
+| cs | 6 | 25 | 基礎理論・アルゴリズム・システム・ネットワーク・PL・AI/ML |
 | chemistry | 6 | 27 | 一般化学・有機・無機・物理化学・分析化学・生化学 |
 | accounting | 6 | 24 | 簿記基礎・財務諸表・原価計算・税務会計・管理会計・監査 |
 
@@ -248,7 +248,7 @@
 | 管理・監視 (management) | 4 | cloudwatch, cloudformation, ssm, cloudtrail |
 | アプリ統合 (app_integration) | 4 | sqs, sns, step-functions, eventbridge |
 
-#### コンピュータサイエンスドメイン（28ノード・6エリア）
+#### コンピュータサイエンスドメイン（25ノード・6エリア）
 
 | エリア | ノード数 | 代表的なノード |
 |--------|---------|---------------|
