@@ -14,7 +14,7 @@ interface SphereNodeData {
 }
 
 const STATUS_STYLES: Record<NodeStatus, string> = {
-  locked: 'border-zinc-300 dark:border-zinc-700 bg-zinc-100/50 dark:bg-zinc-800/50 text-zinc-400 dark:text-zinc-600 cursor-not-allowed opacity-50',
+  locked: 'border-zinc-300 dark:border-zinc-700 bg-zinc-100/50 dark:bg-zinc-800/50 text-zinc-400 dark:text-zinc-500 cursor-not-allowed opacity-70',
   available: 'border-zinc-400 dark:border-zinc-500 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 cursor-pointer hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/10',
   in_progress: 'border-blue-500 bg-blue-50 dark:bg-blue-950 text-blue-800 dark:text-blue-100 cursor-pointer ring-2 ring-blue-500/30',
   completed: 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-100 cursor-pointer',
