@@ -1,0 +1,93 @@
+{
+  "id": "24040796-5664-42f5-94d7-30395ed14259",
+  "nodeId": "utilitarianism",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:42:01.939Z",
+  "content": "# 功利主義\n\n## 何か — 直感的な説明\n\n功利主義（utilitarianism）とは、「最大多数の最大幸福」を道徳の基準とする倫理理論です。ある行為が正しいかどうかを、その行為がもたらす**結果**、特に関わるすべての人々の幸福や満足（これを「功利」や「効用」と呼びます）の総量によって判断します。\n\nたとえば、友達5人でピザを分けるとき、1人が独り占めするよりも全員で分けたほうが「全体としての満足度」は高くなります。功利主義はまさにこの「全体の幸福をできるだけ大きくしよう」という発想を、社会全体の道徳判断に応用したものです。\n\n「行為の善悪はその結果で決まる」という考え方はシンプルで直感にも合っており、政策決定や日常的な意思決定を考える上での強力な出発点となります。\n\n## なぜ必要か — 数学における位置づけ\n\n功利主義は哲学・倫理学の概念ですが、数学・経済学・意思決定論と深く結びついています。「幸福の総量を最大化する」という発想は、そのまま**最適化問題**の構造を持っており、数式を使って厳密に表現することができます。\n\n経済学では個人の満足度を**効用関数（utility function）**として数値化し、社会全体の効用を集計する**社会的厚生関数**の理論へと発展しました。また、ゲーム理論や公共政策の分析においても、功利主義的な基準（総効用の最大化）は標準的な評価軸のひとつです。数学的に「何が最善か」を議論するとき、功利主義はその基準を明確に与えてくれる重要な枠組みなのです。\n\n## 核となるアイデア — 定義・定理の本質\n\n功利主義の中心的なアイデアは、行為の道徳的価値を**効用の総和**で測るという点にあります。$n$ 人の人々がいて、ある行為によって $i$ 番目の人が得る幸福（効用）を $u_i$ と表すとき、功利主義が最大化しようとする量は次のように書けます。\n\n$$U_{\\text{total}} = \\sum_{i=1}^{n} u_i = u_1 + u_2 + \\cdots + u_n$$\n\nある行為 $A$ と行為 $B$ を比べるとき、功利主義は $U_{\\text{total}}(A) > U_{\\text{total}}(B)$ であれば $A$ を選ぶべきだと言います。\n\n功利主義には大きく二つの流れがあります。**行為功利主義（act utilitarianism）**は個々の行為ひとつひとつについて効用計算を行います。一方、**規則功利主義（rule utilitarianism）**は「もし皆がこのルールに従えば、全体の効用が最大化されるか」という観点からルールの善悪を判断します。\n\n功利主義の父と呼ばれる**ジェレミー・ベンサム（Jeremy Bentham）**は、快楽と苦痛の強さ・持続時間・確実性などを数値化できると考えました。後に**ジョン・スチュアート・ミル（John Stuart Mill）**は快楽に「質」の違いを導入し、単純な量的計算では捉えられない側面を補いました。\n\n## 具体例\n\n### 例1：日常生活 — 夕食のメニューを決める\n\n家族4人で夕食のメニューを決める場面を考えましょう。カレーとハンバーグの2択で、それぞれが感じる満足度（10点満点）を表にします。\n\n| 人物 | カレー | ハンバーグ |\n|------|--------|------------|\n| 父   | 8      | 5          |\n| 母   | 6      | 7          |\n| 兄   | 7      | 6          |\n| 妹   | 9      | 4          |\n\nカレーの合計満足度は $8+6+7+9 = 30$、ハンバーグは $5+7+6+4 = 22$ です。功利主義的に判断すれば、**カレーを選ぶべき**ということになります。全員が第一希望というわけではなくても、「家族全体の幸福の総量」が大きいほうを選ぶのが功利主義の発想です。\n\n### 例2：公共政策 — 橋の建設\n\nある地方自治体が橋の建設を検討しています。建設費用（税金）によって住民全体が負担を負いますが、橋が完成すれば通勤時間の短縮や物流の改善により、多くの住民が大きな恩恵を受けます。\n\n功利主義的な分析では、**費用便益分析（cost-benefit analysis）**の手法を使い、橋がもたらす便益（時間短縮・経済効果など）の総和と、建設コストの総和を比較します。便益の総和がコストを上回れば、「橋を建設すること」は功利主義的に正当化されます。現代の公共政策の多くはこの考え方を基礎としています。\n\n### 例3：医療倫理 — 臓器移植の優先順位\n\n限られた臓器（たとえば心臓）を誰に移植するかという場面でも、功利主義的な視点が登場します。純粋な功利主義に従えば、移植によって「最も長く・最も多くの人に利益をもたらす」患者が優先されることになります。\n\nたとえば、20歳の患者と70歳の患者では、前者の移植がもたらす「生存年数と社会への貢献」の期待値が高いと計算されるかもしれません。しかしこの結論は「高齢者の命を軽視する」という強い倫理的反発も生みます。この例は、功利主義の強力さと同時に、**その限界や批判点**を考えるための重要なケースです。\n\n## つながり — 他の概念との関係\n\n**前提となる概念：**\n- **帰結主義（consequentialism）**：行為の善悪を結果で判断する考え方の総称。功利主義はその代表例です。\n- **快楽主義（hedonism）**：幸福を快楽と苦痛の差で定義する考え方。ベンサムの功利主義の哲学的基礎です。\n\n**対比される概念：**\n- **義務論（deontology, カント倫理学）**：結果ではなく行為そのものの義務や規則を重視します。「嘘をついて誰かを幸せにしても嘘は悪い」という立場です。\n- **徳倫理学（virtue ethics）**：行為者の品性・徳を中心に置く倫理学です。\n\n**発展する概念：**\n- **社会的厚生関数（social welfare function）**：功利主義を数学的に一般化したもの。全員の効用の総和だけでなく、平等性なども考慮できます。\n- **優先主義（prioritarianism）**：恵まれない人々の効用改善に高いウェイトをかける考え方で、純粋な功利主義の修正版です。\n\n## 他分野への応用\n\n**経済学・厚生経済学：**\n功利主義は近代経済学の基礎に組み込まれています。消費者が効用を最大化するという仮定、社会全体の効用の総和を最大化する**パレート効率性**の概念、そして税制・福祉政策の評価基準として功利主義的な考え方が広く使われています。\n\n**コンピュータサイエンス・AI倫理：**\nAIシステムの意思決定アルゴリズムにも功利主義は登場します。強化学習（reinforcement learning）では、エージェントが「累積報酬の総和」を最大化するように学習しますが、これは功利主義の数学的表現そのものです。また、自動運転車が事故回避の判断をする際の倫理基準（「トロッコ問題」）においても、功利主義的アプローチが議論されます。\n\n**公衆衛生・医療政策：**\n限られた医療資源をどう配分するかという問題（ワクチンの優先接種順序、ICUベッドの割り当てなど）において、功利主義的な基準は広く使われます。**QALY（Quality-Adjusted Life Year：質調整生存年）**という指標は、治療が生み出す「質の高い生存年数」を数値化することで、医療政策の費用対効果を功利主義的に評価するために開発されました。\n\n**オペレーションズリサーチ（OR）：**\n工場の生産スケジュールや配送ルートの最適化において、「全体のコストを最小化する」または「全体の利益を最大化する」という目標関数の設定は、功利主義の直接的な応用です。$\\sum_{i} c_i x_i$ のような線形計画の目的関数は、功利主義の「効用の総和最大化」と同じ構造を持っています。",
+  "terms": [
+    {
+      "term": "功利主義",
+      "reading": "こうりしゅぎ",
+      "en": "Utilitarianism",
+      "definition": "「最大多数の最大幸福」を道徳の基準とする倫理理論。行為の善悪をその結果がもたらす効用の総量によって判断する。"
+    },
+    {
+      "term": "効用",
+      "reading": "こうよう",
+      "en": "Utility",
+      "definition": "個人が行為や財から得る満足度・幸福の度合いを数値で表したもの。功利主義における道徳的評価の基本単位。"
+    },
+    {
+      "term": "効用関数",
+      "reading": "こうようかんすう",
+      "en": "Utility Function",
+      "definition": "個人の満足度を数値として表す数学的関数。経済学において消費者の選好を定量的に記述するために用いられる。"
+    },
+    {
+      "term": "社会的厚生関数",
+      "reading": "しゃかいてきこうせいかんすう",
+      "en": "Social Welfare Function",
+      "definition": "社会全体の効用を集計・評価するための数学的関数。功利主義を一般化し、平等性なども考慮できる枠組みを提供する。"
+    },
+    {
+      "term": "行為功利主義",
+      "reading": "こういこうりしゅぎ",
+      "en": "Act Utilitarianism",
+      "definition": "個々の行為ひとつひとつについて効用計算を行い、最も効用の総和が大きい行為を選ぶべきとする功利主義の立場。"
+    },
+    {
+      "term": "規則功利主義",
+      "reading": "きそくこうりしゅぎ",
+      "en": "Rule Utilitarianism",
+      "definition": "「皆がこのルールに従えば全体の効用が最大化されるか」という観点からルールの善悪を判断する功利主義の立場。"
+    },
+    {
+      "term": "帰結主義",
+      "reading": "きけつしゅぎ",
+      "en": "Consequentialism",
+      "definition": "行為の善悪をその結果によって判断する倫理理論の総称。功利主義はその代表的な例である。"
+    },
+    {
+      "term": "義務論",
+      "reading": "ぎむろん",
+      "en": "Deontology",
+      "definition": "行為の結果ではなく、行為そのものに伴う義務や規則を道徳的判断の基準とする倫理理論。カント倫理学がその代表例。"
+    },
+    {
+      "term": "費用便益分析",
+      "reading": "ひようべんえきぶんせき",
+      "en": "Cost-Benefit Analysis",
+      "definition": "ある政策や事業がもたらす便益の総和とコストの総和を比較し、実施の是非を判断する分析手法。功利主義的な公共政策評価の基礎となる。"
+    },
+    {
+      "term": "パレート効率性",
+      "reading": "ぱれーとこうりつせい",
+      "en": "Pareto Efficiency",
+      "definition": "他の誰かを悪化させることなく誰かをより良くすることができない状態。厚生経済学における資源配分の効率性を評価する基準。"
+    },
+    {
+      "term": "QALY",
+      "reading": "きゅーえーえるわい",
+      "en": "Quality-Adjusted Life Year",
+      "definition": "質調整生存年のこと。治療が生み出す生存年数を生活の質で重み付けして数値化した指標で、医療政策の費用対効果を功利主義的に評価するために用いられる。"
+    },
+    {
+      "term": "最適化問題",
+      "reading": "さいてきかもんだい",
+      "en": "Optimization Problem",
+      "definition": "与えられた制約条件のもとで目的関数を最大化または最小化する問題。功利主義の「効用の総和を最大化する」という発想と同じ数学的構造を持つ。"
+    },
+    {
+      "term": "快楽主義",
+      "reading": "かいらくしゅぎ",
+      "en": "Hedonism",
+      "definition": "幸福を快楽と苦痛の差として定義する考え方。ベンサムの功利主義の哲学的基礎をなす。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景透明 -->\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"currentColor\">功利主義の構造マップ</text>\n\n  <!-- ===== 中央：功利主義コア ===== -->\n  <ellipse cx=\"300\" cy=\"200\" rx=\"90\" ry=\"50\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"193\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#3b82f6\">功利主義</text>\n  <text x=\"300\" y=\"211\" text-anchor=\"middle\" font-size=\"11\" fill=\"#3b82f6\">Utilitarianism</text>\n\n  <!-- 数式ボックス -->\n  <rect x=\"195\" y=\"265\" width=\"210\" height=\"38\" rx=\"6\" fill=\"#3b82f6\" fill-opacity=\"0.10\" stroke=\"#3b82f6\" stroke-width=\"1.5\" stroke-dasharray=\"4,2\"/>\n  <text x=\"300\" y=\"281\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">最大化する量：</text>\n  <text x=\"300\" y=\"297\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">U = u₁ + u₂ + ⋯ + uₙ</text>\n\n  <!-- 矢印：コア → 数式 -->\n  <line x1=\"300\" y1=\"250\" x2=\"300\" y2=\"263\" stroke=\"#3b82f6\" stroke-width=\"1.5\" marker-end=\"url(#arr-blue)\"/>\n\n  <!-- ===== 上部：哲学的基盤 ===== -->\n  <!-- 帰結主義 -->\n  <rect x=\"60\" y=\"55\" width=\"110\" height=\"42\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"115\" y=\"73\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">帰結主義</text>\n  <text x=\"115\" y=\"89\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">結果で善悪を判断</text>\n\n  <!-- 快楽主義 -->\n  <rect x=\"430\" y=\"55\" width=\"110\" height=\"42\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"485\" y=\"73\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">快楽主義</text>\n  <text x=\"485\" y=\"89\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">快楽＝幸福の基礎</text>\n\n  <!-- 帰結主義 → 功利主義 -->\n  <line x1=\"170\" y1=\"90\" x2=\"218\" y2=\"165\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr-cur)\"/>\n  <text x=\"175\" y=\"132\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">前提</text>\n\n  <!-- 快楽主義 → 功利主義 -->\n  <line x1=\"430\" y1=\"90\" x2=\"382\" y2=\"165\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr-cur)\"/>\n  <text x=\"425\" y=\"132\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">前提</text>\n\n  <!-- ===== 左：行為功利主義 ===== -->\n  <rect x=\"30\" y=\"175\" width=\"120\" height=\"50\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.12\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"90\" y=\"195\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">行為功利主義</text>\n  <text x=\"90\" y=\"210\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">個々の行為を</text>\n  <text x=\"90\" y=\"222\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">効用計算で評価</text>\n\n  <!-- 功利主義 → 行為功利主義 -->\n  <line x1=\"210\" y1=\"200\" x2=\"152\" y2=\"200\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arr-green)\"/>\n\n  <!-- ===== 右：規則功利主義 ===== -->\n  <rect x=\"450\" y=\"175\" width=\"120\" height=\"50\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.12\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"510\" y=\"195\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">規則功利主義</text>\n  <text x=\"510\" y=\"210\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">ルール全体の</text>\n  <text x=\"510\" y=\"222\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">効用で評価</text>\n\n  <!-- 功利主義 → 規則功利主義 -->\n  <line x1=\"390\" y1=\"200\" x2=\"448\" y2=\"200\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arr-green)\"/>\n\n  <!-- ===== 対比：義務論・徳倫理学 ===== -->\n  <!-- 義務論 -->\n  <rect x=\"30\" y=\"330\" width=\"115\" height=\"50\" rx=\"8\" fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <text x=\"88\" y=\"350\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#ef4444\">義務論</text>\n  <text x=\"88\" y=\"366\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">行為の義務・規則</text>\n  <text x=\"88\" y=\"378\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">を重視（カント）</text>\n\n  <!-- 徳倫理学 -->\n  <rect x=\"455\" y=\"330\" width=\"115\" height=\"50\" rx=\"8\" fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <text x=\"513\" y=\"350\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#ef4444\">徳倫理学</text>\n  <text x=\"513\" y=\"366\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">行為者の品性・</text>\n  <text x=\"513\" y=\"378\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">徳を重視</text>\n\n  <!-- 対比ラベル -->\n  <text x=\"163\" y=\"358\" text-anchor=\"middle\" font-size=\"9\" fill=\"#ef4444\">対比</text>\n  <text x=\"437\" y=\"358\" text-anchor=\"middle\" font-size=\"9\" fill=\"#ef4444\">対比</text>\n\n  <!-- 対比矢印（双方向） -->\n  <line x1=\"210\" y1=\"240\" x2=\"145\" y2=\"330\" stroke=\"#ef4444\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr-red)\"/>\n  <line x1=\"390\" y1=\"240\" x2=\"455\" y2=\"330\" stroke=\"#ef4444\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr-red)\"/>\n\n  <!-- ===== 下部：発展概念 ===== -->\n  <!-- 社会的厚生関数 -->\n  <rect x=\"80\" y=\"415\" width=\"130\" height=\"48\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.10\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"145\" y=\"434\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">社会的厚生関数</text>\n  <text x=\"145\" y=\"449\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">効用の数学的一般化</text>\n  <text x=\"145\" y=\"461\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">平等性も考慮</text>\n\n  <!-- 費用便益分析 -->\n  <rect x=\"235\" y=\"415\" width=\"130\" height=\"48\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.10\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"434\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">費用便益分析</text>\n  <text x=\"300\" y=\"449\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">公共政策・橋の建設</text>\n  <text x=\"300\" y=\"461\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">便益総和 vs コスト</text>\n\n  <!-- AI強化学習 -->\n  <rect x=\"390\" y=\"415\" width=\"130\" height=\"48\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.10\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"455\" y=\"434\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">AI・強化学習</text>\n  <text x=\"455\" y=\"449\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">累積報酬の最大化</text>\n  <text x=\"455\" y=\"461\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">＝功利主義の応用</text>\n\n  <!-- 数式 → 発展概念 -->\n  <line x1=\"245\" y1=\"303\" x2=\"145\" y2=\"413\" stroke=\"#3b82f6\" stroke-width=\"1.2\" marker-end=\"url(#arr-blue)\"/>\n  <line x1=\"300\" y1=\"303\" x2=\"300\" y2=\"413\" stroke=\"#3b82f6\" stroke-width=\"1.2\" marker-end=\"url(#arr-blue)\"/>\n  <line x1=\"355\" y1=\"303\" x2=\"455\" y2=\"413\" stroke=\"#3b82f6\" stroke-width=\"1.2\" marker-end=\"url(#arr-blue)\"/>\n\n  <!-- 発展ラベル -->\n  <text x=\"300\" y=\"402\" text-anchor=\"middle\" font-size=\"9\" fill=\"#3b82f6\">← 発展・応用 →</text>\n\n  <!-- ===== 凡例 ===== -->\n  <rect x=\"195\" y=\"490\" width=\"12\" height=\"12\" rx=\"2\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1\"/>\n  <text x=\"212\" y=\"501\" font-size=\"9\" fill=\"currentColor\">前提・対比</text>\n  <rect x=\"265\" y=\"490\" width=\"12\" height=\"12\" rx=\"2\" fill=\"#22c55e\" fill-opacity=\"0.12\" stroke=\"#22c55e\" stroke-width=\"1\"/>\n  <text x=\"282\" y=\"501\" font-size=\"9\" fill=\"currentColor\">派生</text>\n  <rect x=\"315\" y=\"490\" width=\"12\" height=\"12\" rx=\"2\" fill=\"#3b82f6\" fill-opacity=\"0.10\" stroke=\"#3b82f6\" stroke-width=\"1\"/>\n  <text x=\"332\" y=\"501\" font-size=\"9\" fill=\"currentColor\">発展・応用</text>\n  <rect x=\"385\" y=\"490\" width=\"12\" height=\"12\" rx=\"2\" fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"1\"/>\n  <text x=\"402\" y=\"501\" font-size=\"9\" fill=\"currentColor\">対立概念</text>\n\n  <!-- ===== Arrow markers ===== -->\n  <defs>\n    <marker id=\"arr-blue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\"/>\n    </marker>\n    <marker id=\"arr-green\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n    <marker id=\"arr-red\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#ef4444\"/>\n    </marker>\n    <marker id=\"arr-cur\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ]
+}

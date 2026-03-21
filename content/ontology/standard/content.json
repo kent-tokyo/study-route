@@ -1,0 +1,105 @@
+{
+  "id": "16acb1f9-d254-4a5c-ba27-2d03b853a68a",
+  "nodeId": "ontology",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:50:36.232Z",
+  "content": "# 存在論\n\n## 何か — 直感的な説明\n\n「数字の「2」は本当に存在するのだろうか？」——こんな問いを考えたことはないだろうか。手で触れることはできないし、目で見ることもできない。しかし私たちは「2個のリンゴ」や「2番目の席」を自然に使いこなしている。存在論（ontology）とは、**何が「存在する」といえるのか、そして「存在する」とはそもそもどういうことか**を問う哲学・形而上学の根本的な問いである。\n\n日常語で言えば、「世界の在庫リスト（inventory of the world）を作ろうとする試み」とも表現できる。物理的なモノだけが存在するのか、数や集合や命題のような抽象的な対象も存在するのか、それとも存在には複数の種類や「程度」があるのか——存在論はこれらの問いを体系的に扱う。数学においては特に、**数学的対象の存在様式**が中心的な問題となる。\n\n---\n\n## なぜ必要か — 数学における位置づけ\n\n数学は膨大な量の「対象」——自然数、実数、集合、関数、群、位相空間——を扱う。しかしそれらは「どこに」あり、「どのように」存在しているのか？この問いに答えることは、数学の基礎論と深く結びついている。たとえば「無限集合は存在するか」という問いは、ZFC公理系における**無限公理**（Axiom of Infinity）として明示的に仮定されている。つまり数学の形式的な構築そのものが、存在論的な決断を含んでいるのである。\n\nまた、数学的証明が「何かの存在を示す」（存在証明）か「すべての場合に成り立つ」（全称証明）かという区別も、存在論と切り離せない。構成的数学（constructive mathematics）では、「$\\exists x,\\ P(x)$（$P(x)$ を満たす $x$ が存在する）」と主張するためには、その $x$ を具体的に構成できなければならないと要求する。これは非構成的な存在証明——たとえば矛盾を示すことで存在を導く背理法——を認める古典数学と根本的に異なる立場であり、まさに存在論的な相違である。\n\n---\n\n## 核となるアイデア — 定義・定理の本質\n\n存在論の中心的な問いは、形式的には次のように表現できる。ある領域（domain）$D$ と、その上の述語（predicate）$P$ が与えられたとき、\n\n$$\\exists x \\in D,\\ P(x)$$\n\nという命題が「真である」とはどういうことか——これが存在論の問いの核心である。古典論理では、この命題が真であるためには $D$ の中に $P$ を満たす要素が「少なくとも一つある」ことで十分とされる。その要素を実際に指し示せるかどうかは問われない。\n\n一方、直観主義論理（intuitionistic logic）に基づく存在論では、存在命題の真理条件は**構成的証拠（constructive witness）**の提示を要求する。すなわち\n\n$$\\exists x \\in D,\\ P(x) \\iff \\text{具体的な } a \\in D \\text{ と } P(a) \\text{ の証明が与えられる}$$\n\nという形になる。この違いは、排中律（law of excluded middle）$P \\vee \\neg P$ の受け入れ方に関わっており、数学基礎論における**プラトニズム・フォーマリズム・直観主義**という三大立場の分岐点でもある。\n\nさらに、存在の「種類」を区別する存在論的階層（ontological hierarchy）も重要な概念である。集合論では、対象・クラス・固有クラス（proper class）といった区別が導入され、「すべての集合の集合」のような対象を安易に認めるとラッセルのパラドックス\n\n$$R = \\{x \\mid x \\notin x\\} \\implies R \\in R \\iff R \\notin R$$\n\nが生じることが示されている。存在できる対象の範囲を適切に制限することが、数学の無矛盾性を保つ鍵となる。\n\n---\n\n## 具体例\n\n### 例1：自然数の存在様式——プラトニズムvsフォーマリズム\n\n「自然数 $\\mathbb{N} = \\{0, 1, 2, 3, \\ldots\\}$ は存在するか？」という問いに対し、**数学的プラトニズム**は「はい、人間の思考とは独立した抽象的世界に自然数は存在する」と答える（プラトンの「イデア」に類比できる）。これに対し**フォーマリズム**（形式主義）は「自然数とはペアノ公理系というゲームのルールの下で操作される記号の体系に過ぎず、独立した存在はない」と答える。どちらの立場を取るかで、数学の真理の意味が変わってくる。この対立は未解決の哲学的問いであり、今なお議論が続いている。\n\n### 例2：無限集合の存在——公理による存在の宣言\n\nZFC集合論における**無限公理**は次のように述べる：\n\n$$\\exists S\\left(\\emptyset \\in S \\wedge \\forall x \\in S,\\ x \\cup \\{x\\} \\in S\\right)$$\n\nこれは「無限集合が存在する」ことを**公理として宣言**している。公理系とは、存在論的にどのような対象を認めるかの取り決めであり、異なる公理系（たとえば選択公理 AC を認めるかどうか）によって「存在する数学的対象」の範囲が変わる。連続体仮説（$|\\mathbb{R}| = \\aleph_1$）が ZFC から独立していることは、存在論的問いに対して公理だけでは答えられないことを示す鮮烈な例である。\n\n### 例3：虚数単位 $i$ の存在——存在と有用性の乖離\n\n$i = \\sqrt{-1}$ は実数の範囲では存在しない。しかし複素数体 $\\mathbb{C} = \\{a + bi \\mid a, b \\in \\mathbb{R}\\}$ を構成することで、$i$ は「存在する」ようになる。ここで重要なのは、$i$ の存在は**体の拡大という構造的操作によって与えられる**という点である。存在論的には「$i$ そのものが実体として存在する」のではなく、「$\\mathbb{C}$ という代数構造の中で $x^2 + 1 = 0$ の解として定義される要素が存在する」という形をとる。これは存在が常に**構造に相対的**でありうることを示している。\n\n### 例4：ユニコーンと空集合——空虚な存在と非存在\n\n「ユニコーンの集合」$U = \\{x \\mid x \\text{ はユニコーンである}\\}$ を考える。現実世界にユニコーンが存在しないならば $U = \\emptyset$（空集合）となる。しかし $\\emptyset$ 自体は集合として存在する。これは**「空集合は存在するが、その要素は存在しない」**という興味深い二層構造を示す。数学において「何も存在しない」ことを表す $\\emptyset$ が集合論の中で明確な地位を占めていることは、「非存在の存在」という逆説的概念を形式的に扱うことができることを示している。\n\n---\n\n## つながり — 他の概念との関係\n\n**前提となる概念：**\n- **論理学（述語論理）**：$\\exists$（存在量化子）と $\\forall$（全称量化子）の理解が不可欠。存在論の問いは述語論理の意味論（semantics）と直結する。\n- **集合論（ZFC）**：数学的対象の多くは集合として定義されるため、集合論の公理体系は現代数学の存在論的基盤となっている。\n\n**発展的な関連概念：**\n- **数学基礎論**（foundations of mathematics）：ヒルベルトの形式主義プログラム、ゲーデルの不完全性定理は存在論と真理論の関係を根本的に問い直した。\n- **圏論（category theory）**：対象（object）と射（morphism）という枠組みで数学を再構成し、「どんな対象が存在するか」よりも「対象間の関係」を重視する新しい存在論的パラダイムを提供する。\n- **モデル論（model theory）**：形式的な言語の「モデル」＝解釈（どの領域のどの対象に量化子を及ぼすか）を研究し、存在論的コミットメントを数学的に精緻化する。\n- **構成的数学・型理論**：カリー＝ハワード対応（Curry–Howard correspondence）により「証明」と「プログラム」と「構成的存在証拠」が同一視され、存在論と計算論が融合する。\n\n---\n\n## 他分野への応用\n\n**コンピュータサイエンス・人工知能：**\n情報科学においての「オントロジー（ontology）」は、**知識表現（knowledge representation）**の分野で中心的役割を担う。特定のドメイン（例：医療、法律、生物学）において「どのような概念が存在し、それらの間にどのような関係があるか」を形式的に定義したものがオントロジーである。セマンティックウェブ（Semantic Web）では OWL（Web Ontology Language）が使われ、機械が情報の意味を理解するための基盤となっている。データベース設計における「エンティティ（entity）」の概念も存在論的思考の応用である。\n\n**物理学・自然科学：**\n量子力学では「観測されていない電子はどこに存在するのか」という問いが、コペンハーゲン解釈・多世界解釈・ド・ブロイ＝ボーム解釈といった複数の存在論的立場の対立として現れる。波動関数 $\\psi(x, t)$ が「実在を表すのか、単に私たちの知識の状態を表すのか」は、物理学と存在論が交差する深い問いである。また場の量子論では、「粒子とは場の励起状態である」という形で、粒子の存在様式が場の言語で再定義される。\n\n**言語学・認知科学：**\n人間が世界をどのようなカテゴリに分割して認識するか（**概念化・カテゴリ化**）は、認知オントロジーの問いである。異なる言語が異なる存在論的コミットメントを持つ（たとえば「雪」を表す語の数の違い）という観察は、言語相対論（サピア＝ウォーフ仮説）と結びつく。機械翻訳や自然言語処理においても、概念の存在論的構造を計算機が扱えるように表現することが重要な課題となっている。\n\n**経済学・社会科学：**\n「価格」「貨幣」「企業」「制度」などの社会的・経済的対象は、物理的な実体ではないにもかかわらず強力に「存在する」。社会存在論（social ontology）は、こうした**制度的実在（institutional reality）**の存在様式を分析する。経済モデルにおける「合理的経済人（homo economicus）」が実際に存在するかという問いも、モデルにおける理想化された対象の存在論的地位に関わる。",
+  "terms": [
+    {
+      "term": "存在論",
+      "reading": "そんざいろん",
+      "en": "Ontology",
+      "definition": "何が「存在する」といえるのか、そして「存在する」とはどういうことかを問う哲学・形而上学の根本的な分野。数学においては数学的対象の存在様式が中心的な問題となる。"
+    },
+    {
+      "term": "数学的プラトニズム",
+      "reading": "すうがくてきぷらとにずむ",
+      "en": "Mathematical Platonism",
+      "definition": "数学的対象は人間の思考とは独立した抽象的世界に実在するという立場。自然数や集合などはイデアの世界に客観的に存在すると主張する。"
+    },
+    {
+      "term": "フォーマリズム",
+      "reading": "ふぉーまりずむ",
+      "en": "Formalism",
+      "definition": "数学的対象は公理系というゲームのルールの下で操作される記号の体系に過ぎず、独立した存在はないとする立場。ヒルベルトが代表的な提唱者である。"
+    },
+    {
+      "term": "直観主義",
+      "reading": "ちょっかんしゅぎ",
+      "en": "Intuitionism",
+      "definition": "数学的対象や真理は人間の直観的構成活動によって生み出されるという立場。存在命題の証明には具体的な構成的証拠の提示を要求する。"
+    },
+    {
+      "term": "構成的数学",
+      "reading": "こうせいてきすうがく",
+      "en": "Constructive Mathematics",
+      "definition": "「∃x, P(x)」を主張するためにはその x を具体的に構成できなければならないと要求する数学の立場。背理法による非構成的存在証明を認めない。"
+    },
+    {
+      "term": "直観主義論理",
+      "reading": "ちょっかんしゅぎろんり",
+      "en": "Intuitionistic Logic",
+      "definition": "排中律（P∨¬P）を一般には認めず、存在命題の真理条件として構成的証拠の提示を要求する論理体系。古典論理とは異なる意味論を持つ。"
+    },
+    {
+      "term": "排中律",
+      "reading": "はいちゅうりつ",
+      "en": "Law of Excluded Middle",
+      "definition": "任意の命題 P に対して「P∨¬P」が成り立つとする古典論理の原理。直観主義論理ではこれを一般に受け入れず、プラトニズムと直観主義の分岐点となる。"
+    },
+    {
+      "term": "無限公理",
+      "reading": "むげんこうり",
+      "en": "Axiom of Infinity",
+      "definition": "ZFC集合論において無限集合の存在を明示的に保証する公理。数学の形式的構築が存在論的な決断を含むことを示す典型例である。"
+    },
+    {
+      "term": "ラッセルのパラドックス",
+      "reading": "らっせるのぱらどっくす",
+      "en": "Russell's Paradox",
+      "definition": "「自分自身を要素として含まない集合すべての集合 R」を考えると R∈R ⟺ R∉R という矛盾が生じるパラドックス。存在できる対象の範囲を制限する必要性を示した。"
+    },
+    {
+      "term": "連続体仮説",
+      "reading": "れんぞくたいかせつ",
+      "en": "Continuum Hypothesis",
+      "definition": "実数の濃度が ℵ₁ に等しいという命題。ZFC公理系からは証明も反証もできない独立命題であり、公理だけでは存在論的問いに答えられないことを示す。"
+    },
+    {
+      "term": "存在量化子",
+      "reading": "そんざいりょうかし",
+      "en": "Existential Quantifier",
+      "definition": "述語論理において「∃x, P(x)」（P(x) を満たす x が少なくとも一つ存在する）を表す記号。存在論の問いを形式的に表現する中核的な道具である。"
+    },
+    {
+      "term": "圏論",
+      "reading": "けんろん",
+      "en": "Category Theory",
+      "definition": "対象（object）と射（morphism）という枠組みで数学を再構成する理論。「どんな対象が存在するか」よりも「対象間の関係」を重視する新しい存在論的パラダイムを提供する。"
+    },
+    {
+      "term": "モデル論",
+      "reading": "もでるろん",
+      "en": "Model Theory",
+      "definition": "形式的な言語の解釈（モデル）を研究する数学基礎論の分野。どの領域のどの対象に量化子を及ぼすかを数学的に扱い、存在論的コミットメントを精緻化する。"
+    },
+    {
+      "term": "カリー＝ハワード対応",
+      "reading": "かりーはわーどたいおう",
+      "en": "Curry–Howard Correspondence",
+      "definition": "論理の証明とプログラムの型が対応するという原理。構成的存在証拠・証明・プログラムを同一視し、存在論と計算論を融合させる。"
+    },
+    {
+      "term": "固有クラス",
+      "reading": "こゆうくらす",
+      "en": "Proper Class",
+      "definition": "集合論において集合よりも大きく、それ自体は集合とならないコレクション。「すべての集合の集合」のような対象を安易に認めるとパラドックスが生じるため導入された存在論的階層の概念。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景なし（透明） -->\n\n  <!-- 中央：存在論の核心 -->\n  <ellipse cx=\"300\" cy=\"260\" rx=\"70\" ry=\"38\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">存在論</text>\n  <text x=\"300\" y=\"271\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">∃x∈D, P(x)</text>\n\n  <!-- ====== 上部：数学的立場の三分岐 ====== -->\n  <!-- プラトニズム -->\n  <rect x=\"30\" y=\"30\" width=\"120\" height=\"54\" rx=\"10\" fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"90\" y=\"51\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">プラトニズム</text>\n  <text x=\"90\" y=\"67\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">抽象的対象が独立</text>\n  <text x=\"90\" y=\"79\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">して実在する</text>\n\n  <!-- フォーマリズム -->\n  <rect x=\"240\" y=\"30\" width=\"120\" height=\"54\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"51\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">フォーマリズム</text>\n  <text x=\"300\" y=\"67\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">記号操作の体系</text>\n  <text x=\"300\" y=\"79\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">独立した存在なし</text>\n\n  <!-- 直観主義 -->\n  <rect x=\"450\" y=\"30\" width=\"120\" height=\"54\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"510\" y=\"51\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#22c55e\">直観主義</text>\n  <text x=\"510\" y=\"67\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">構成的証拠が必要</text>\n  <text x=\"510\" y=\"79\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">排中律を否定</text>\n\n  <!-- 三立場から存在論へ矢印 -->\n  <line x1=\"150\" y1=\"84\" x2=\"248\" y2=\"234\" stroke=\"#3b82f6\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr-blue)\"/>\n  <line x1=\"300\" y1=\"84\" x2=\"300\" y2=\"222\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr-cur)\"/>\n  <line x1=\"450\" y1=\"84\" x2=\"352\" y2=\"234\" stroke=\"#22c55e\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr-green)\"/>\n\n  <!-- 分岐点ラベル -->\n  <text x=\"300\" y=\"120\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" font-style=\"italic\">「数学的対象の存在様式」</text>\n  <text x=\"300\" y=\"133\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" font-style=\"italic\">をめぐる三大立場</text>\n\n  <!-- ====== 左：古典論理 vs 直観主義論理 ====== -->\n  <rect x=\"22\" y=\"210\" width=\"130\" height=\"80\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"87\" y=\"228\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">古典論理</text>\n  <text x=\"87\" y=\"243\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">P ∨ ¬P（排中律）</text>\n  <text x=\"87\" y=\"256\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">背理法による</text>\n  <text x=\"87\" y=\"268\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">非構成的存在証明</text>\n  <text x=\"87\" y=\"282\" text-anchor=\"middle\" font-size=\"9\" fill=\"#3b82f6\">✓ 無限公理を受容</text>\n\n  <line x1=\"152\" y1=\"250\" x2=\"230\" y2=\"260\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arr-cur)\"/>\n\n  <!-- ====== 右：存在の階層 ====== -->\n  <rect x=\"448\" y=\"205\" width=\"130\" height=\"95\" rx=\"10\" fill=\"#ef4444\" fill-opacity=\"0.08\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"513\" y=\"224\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#ef4444\">存在論的階層</text>\n  <text x=\"513\" y=\"239\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">集合 ⊂ クラス</text>\n  <text x=\"513\" y=\"252\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">⊂ 固有クラス</text>\n  <line x1=\"453\" y1=\"265\" x2=\"513\" y2=\"265\" stroke=\"#ef4444\" stroke-width=\"1\" stroke-dasharray=\"2,2\"/>\n  <text x=\"513\" y=\"278\" text-anchor=\"middle\" font-size=\"9\" fill=\"#ef4444\">ラッセルのパラドックス</text>\n  <text x=\"513\" y=\"291\" text-anchor=\"middle\" font-size=\"8.5\" fill=\"currentColor\">R∈R ⟺ R∉R</text>\n\n  <line x1=\"370\" y1=\"260\" x2=\"448\" y2=\"260\" stroke=\"#ef4444\" stroke-width=\"1.5\" marker-end=\"url(#arr-red)\"/>\n\n  <!-- ====== 下部：具体例 4つ ====== -->\n  <!-- 例1：自然数 -->\n  <rect x=\"22\" y=\"360\" width=\"125\" height=\"70\" rx=\"9\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.3\"/>\n  <text x=\"84\" y=\"378\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" fill=\"#3b82f6\">例1：自然数 ℕ</text>\n  <text x=\"84\" y=\"393\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">プラトニズム：イデアとして実在</text>\n  <text x=\"84\" y=\"407\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">フォーマリズム：記号体系</text>\n  <text x=\"84\" y=\"421\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">ペアノ公理系</text>\n\n  <!-- 例2：無限公理 -->\n  <rect x=\"165\" y=\"360\" width=\"125\" height=\"70\" rx=\"9\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.3\"/>\n  <text x=\"227\" y=\"378\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" fill=\"currentColor\">例2：無限公理</text>\n  <text x=\"227\" y=\"393\" text-anchor=\"middle\" font-size=\"8.5\" fill=\"currentColor\">∃S(∅∈S ∧ ∀x∈S,</text>\n  <text x=\"227\" y=\"406\" text-anchor=\"middle\" font-size=\"8.5\" fill=\"currentColor\">x∪{x}∈S)</text>\n  <text x=\"227\" y=\"420\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">公理による存在宣言</text>\n\n  <!-- 例3：虚数i -->\n  <rect x=\"308\" y=\"360\" width=\"125\" height=\"70\" rx=\"9\" fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.3\"/>\n  <text x=\"370\" y=\"378\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" fill=\"#22c55e\">例3：虚数 i</text>\n  <text x=\"370\" y=\"393\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">構造に相対的な存在</text>\n  <text x=\"370\" y=\"407\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">ℂ = {a+bi | a,b∈ℝ}</text>\n  <text x=\"370\" y=\"421\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">体の拡大による定義</text>\n\n  <!-- 例4：空集合 -->\n  <rect x=\"451\" y=\"360\" width=\"125\" height=\"70\" rx=\"9\" fill=\"#ef4444\" fill-opacity=\"0.08\" stroke=\"#ef4444\" stroke-width=\"1.3\"/>\n  <text x=\"513\" y=\"378\" text-anchor=\"middle\" font-size=\"10.5\" font-weight=\"bold\" fill=\"#ef4444\">例4：空集合 ∅</text>\n  <text x=\"513\" y=\"393\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">非存在の存在</text>\n  <text x=\"513\" y=\"407\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">∅ 自体は存在するが</text>\n  <text x=\"513\" y=\"421\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">要素は存在しない</text>\n\n  <!-- 存在論から各例への矢印 -->\n  <line x1=\"260\" y1=\"286\" x2=\"120\" y2=\"358\" stroke=\"#3b82f6\" stroke-width=\"1.3\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr-blue)\"/>\n  <line x1=\"280\" y1=\"295\" x2=\"237\" y2=\"358\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr-cur)\"/>\n  <line x1=\"320\" y1=\"295\" x2=\"360\" y2=\"358\" stroke=\"#22c55e\" stroke-width=\"1.3\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr-green)\"/>\n  <line x1=\"340\" y1=\"286\" x2=\"480\" y2=\"358\" stroke=\"#ef4444\" stroke-width=\"1.3\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr-red)\"/>\n\n  <!-- 下部ラベル：具体例 -->\n  <text x=\"300\" y=\"450\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" font-style=\"italic\">── 具体例（数学的対象の存在様式） ──</text>\n\n  <!-- 連続体仮説メモ -->\n  <rect x=\"155\" y=\"468\" width=\"290\" height=\"38\" rx=\"7\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n  <text x=\"300\" y=\"484\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">連続体仮説は ZFC から独立</text>\n  <text x=\"300\" y=\"499\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">→ 公理だけでは存在論的問いに答えられない</text>\n\n  <!-- マーカー定義 -->\n  <defs>\n    <marker id=\"arr-blue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\"/>\n    </marker>\n    <marker id=\"arr-cur\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\"/>\n    </marker>\n    <marker id=\"arr-green\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n    <marker id=\"arr-red\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#ef4444\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ]
+}

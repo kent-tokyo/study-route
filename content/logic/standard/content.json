@@ -1,0 +1,75 @@
+{
+  "id": "d8b0ced0-74fc-44ae-8ddf-031ce180abb8",
+  "nodeId": "logic",
+  "level": "standard",
+  "generatedAt": "2026-03-20T14:23:59.599Z",
+  "content": "# 数理論理学（Mathematical Logic）\n\n## 何か — 直感的な説明\n\n数理論理学とは、「正しい推論とは何か」を数学的に厳密に定式化する学問です。日常会話では「たぶんそうだろう」「感覚的にそう思う」という言い方が通じますが、数学では「なぜそれが正しいか」を誰もが納得できる形で示す必要があります。数理論理学はその「納得の仕組み」そのものを研究します。\n\n身近な例で考えてみましょう。「すべての人間は死ぬ。ソクラテスは人間だ。ゆえにソクラテスは死ぬ」という三段論法は、古代から知られた推論の形です。数理論理学はこのような推論のパターンを記号と規則で表現し、どんな内容の話題であっても機械的に正しさを検証できるようにします。\n\n## なぜ必要か — 数学における位置づけ\n\n数学の証明は「言葉で書かれた議論」ですが、自然言語には曖昧さがつきものです。「または」は「どちらか一方だけ」なのか「両方も含む」のか、文脈によって変わりますね。数理論理学はこうした曖昧さを排除し、すべての数学的議論を揺るぎない基盤の上に置きます。\n\n20世紀初頭、数学者たちは「数学全体を矛盾のない公理系から構築できるか」という大きな問いに取り組みました（ヒルベルトのプログラム）。数理論理学はその挑戦から生まれ、現代では数学の基礎論・コンピュータ科学・人工知能の根幹を支えています。証明の正しさをコンピュータが検証する「定理証明支援系」も、数理論理学なしには存在しません。\n\n## 核となるアイデア — 定義・定理の本質\n\n**命題（Proposition）** とは、真（True）か偽（False）かが定まる文です。命題 $P, Q$ に対して、以下の論理結合子で新しい命題を作ります。\n\n$$\\neg P \\quad (\\text{否定}), \\quad P \\land Q \\quad (\\text{かつ}), \\quad P \\lor Q \\quad (\\text{または}), \\quad P \\Rightarrow Q \\quad (\\text{ならば})$$\n\n特に含意 $P \\Rightarrow Q$（「$P$ ならば $Q$」）は数学の証明で最も頻繁に登場します。これは $P$ が真のとき $Q$ も必ず真であることを意味し、$P$ が偽のときは $Q$ の真偽に関わらず $P \\Rightarrow Q$ 全体は真となります（「偽から何でも導ける」原理）。\n\n**述語論理（Predicate Logic）** は命題論理を拡張し、「すべての $x$ について」「ある $x$ が存在して」という量化を扱います。量化子 $\\forall$（全称）と $\\exists$（存在）を使うと、例えば「すべての自然数 $n$ について $n^2 \\geq 0$」は\n\n$$\\forall n \\in \\mathbb{N},\\; n^2 \\geq 0$$\n\nと表せます。**証明（Proof）** とは、公理と推論規則を有限回適用して結論を導く手続きです。代表的な推論規則として、「$P$ が真であり、$P \\Rightarrow Q$ が真ならば $Q$ は真」というモーダス・ポネンス（Modus Ponens）があります。\n\n## 具体例 — 身近な例\n\n**例1：論理パズルへの応用**\n「アリスが正直者ならば、ボブは嘘つきだ（$A \\Rightarrow \\neg B$）」「ボブは正直者だ（$B$）」という前提から何が言えるでしょうか。$B$ が真なので $\\neg B$ は偽。$A \\Rightarrow \\neg B$ が真で $\\neg B$ が偽ならば、$A$ は偽でなければなりません（対偶 $B \\Rightarrow \\neg A$ を使う）。よって「アリスは嘘つき（$\\neg A$）」と結論できます。記号的操作だけで答えが出ました。\n\n**例2：数学の証明で使う背理法**\n「$\\sqrt{2}$ は無理数である」の証明を論理の言葉で整理します。命題 $P$ を「$\\sqrt{2}$ は有理数」として $\\neg P$ を証明したい。$P$ を仮定すると $\\sqrt{2} = p/q$（既約分数）と書けますが、計算すると $p$ も $q$ も偶数になり「既約」に矛盾します。つまり $P \\Rightarrow (Q \\land \\neg Q)$ が示され、$P$ は偽。これが背理法（$\\neg P$ を $P$ の仮定から矛盾を導いて示す手法）の論理構造です。\n\n## つながり — 他の概念との関係\n\n数理論理学は**集合論**と密接に関わっています。集合の演算（和・積・補）と命題の論理演算（$\\lor, \\land, \\neg$）は全く同じ代数的構造（ブール代数）を持ちます。また**グラフ理論**や**組み合わせ論**の証明を厳密に書くには述語論理の記法が欠かせません。\n\nさらに数理論理学は**計算可能性理論**（チューリング機械）と深くつながっており、「証明できる ↔ 計算できる」という対応（カリー・ハワード同型）が知られています。現代の**型理論**はこの対応を基盤とし、プログラムと証明を統一的に扱います。\n\n## 他分野への応用 — 物理・化学・経済学・工学などでこの概念がどう使われるか\n\n**コンピュータ科学・工学**では、論理回路の設計に命題論理が直接使われます。AND・OR・NOT ゲートは $\\land, \\lor, \\neg$ そのものであり、CPU の演算回路はブール代数で設計されます。また SQL などのデータベースクエリも述語論理の応用です。`WHERE age > 20 AND city = 'Tokyo'` は述語論理の式そのものです。\n\n**人工知能・法律・医療診断**では、知識を論理規則として表現する「知識ベースシステム」が使われます。医療診断システムは「発熱 $\\land$ 咳 $\\Rightarrow$ 感染症の可能性」のような規則の集合として構築されます。**経済学**では、ゲーム理論の均衡概念の証明や契約理論における条件分岐の厳密化に論理学の道具立てが使われており、「もし…ならば…」という条件付き戦略の分析に $\\Rightarrow$ の扱いが本質的な役割を果たします。",
+  "terms": [
+    {
+      "term": "命題",
+      "reading": "めいだい",
+      "en": "Proposition",
+      "definition": "真（True）または偽（False）のいずれか一方の真理値が定まる文や式。"
+    },
+    {
+      "term": "論理結合子",
+      "reading": "ろんりけつごうし",
+      "en": "Logical Connective",
+      "definition": "命題を組み合わせて新しい命題を作る演算子。否定（¬）、論理積（∧）、論理和（∨）、含意（⇒）など。"
+    },
+    {
+      "term": "含意",
+      "reading": "がんい",
+      "en": "Implication",
+      "definition": "「P ならば Q」を表す論理結合子 P ⇒ Q。P が真のとき Q も真でなければならないことを意味する。"
+    },
+    {
+      "term": "全称量化子",
+      "reading": "ぜんしょうりょうかし",
+      "en": "Universal Quantifier",
+      "definition": "「すべての x について」を表す記号 ∀。∀x P(x) は定義域のすべての x に対して P(x) が真であることを述べる。"
+    },
+    {
+      "term": "存在量化子",
+      "reading": "そんざいりょうかし",
+      "en": "Existential Quantifier",
+      "definition": "「ある x が存在して」を表す記号 ∃。∃x P(x) は P(x) を真にする x が少なくとも1つ存在することを述べる。"
+    },
+    {
+      "term": "述語",
+      "reading": "じゅつご",
+      "en": "Predicate",
+      "definition": "変数を含み、変数に具体的な値を代入すると命題になる式。例：P(x) = 「x は偶数である」。"
+    },
+    {
+      "term": "モーダス・ポネンス",
+      "reading": "もーだす・ぽねんす",
+      "en": "Modus Ponens",
+      "definition": "「P が真、かつ P ⇒ Q が真ならば、Q は真」という最も基本的な推論規則。"
+    },
+    {
+      "term": "背理法",
+      "reading": "はいりほう",
+      "en": "Proof by Contradiction",
+      "definition": "命題 P を証明するために ¬P を仮定し、矛盾を導くことで P の真を示す証明手法。"
+    },
+    {
+      "term": "対偶",
+      "reading": "たいぐう",
+      "en": "Contrapositive",
+      "definition": "含意 P ⇒ Q と論理的に同値な命題 ¬Q ⇒ ¬P。対偶を証明することで元の含意を証明できる。"
+    },
+    {
+      "term": "トートロジー",
+      "reading": "とーとろじー",
+      "en": "Tautology",
+      "definition": "変数の真偽値によらず常に真となる論理式。例：P ∨ ¬P（排中律）。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 420\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n  <!-- 背景透明 -->\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">数理論理学の構造マップ</text>\n\n  <!-- 中央：命題論理 -->\n  <rect x=\"220\" y=\"55\" width=\"160\" height=\"50\" rx=\"10\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"76\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">命題論理</text>\n  <text x=\"300\" y=\"94\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">P, Q, R … 真 / 偽</text>\n\n  <!-- 論理結合子ボックス群 -->\n  <!-- 否定 -->\n  <rect x=\"30\" y=\"145\" width=\"90\" height=\"40\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"75\" y=\"161\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">¬P</text>\n  <text x=\"75\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">否定</text>\n\n  <!-- 論理積 -->\n  <rect x=\"140\" y=\"145\" width=\"90\" height=\"40\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"185\" y=\"161\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">P ∧ Q</text>\n  <text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">論理積（かつ）</text>\n\n  <!-- 論理和 -->\n  <rect x=\"250\" y=\"145\" width=\"90\" height=\"40\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"295\" y=\"161\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">P ∨ Q</text>\n  <text x=\"295\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">論理和（または）</text>\n\n  <!-- 含意 -->\n  <rect x=\"360\" y=\"145\" width=\"90\" height=\"40\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"405\" y=\"161\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">P ⇒ Q</text>\n  <text x=\"405\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">含意（ならば）</text>\n\n  <!-- 同値 -->\n  <rect x=\"470\" y=\"145\" width=\"100\" height=\"40\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"520\" y=\"161\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">P ⟺ Q</text>\n  <text x=\"520\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">同値</text>\n\n  <!-- 命題論理 → 各結合子 矢印 -->\n  <line x1=\"300\" y1=\"105\" x2=\"75\" y2=\"145\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/>\n  <line x1=\"300\" y1=\"105\" x2=\"185\" y2=\"145\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/>\n  <line x1=\"300\" y1=\"105\" x2=\"295\" y2=\"145\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/>\n  <line x1=\"300\" y1=\"105\" x2=\"405\" y2=\"145\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/>\n  <line x1=\"300\" y1=\"105\" x2=\"520\" y2=\"145\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\" opacity=\"0.6\"/>\n\n  <!-- 述語論理ボックス -->\n  <rect x=\"190\" y=\"220\" width=\"220\" height=\"55\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.15\" stroke=\"#22c55e\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"242\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">述語論理</text>\n  <text x=\"300\" y=\"258\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">∀x P(x)　∃x P(x)</text>\n  <text x=\"300\" y=\"272\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">全称量化・存在量化</text>\n\n  <!-- 命題論理 → 述語論理 矢印（拡張） -->\n  <line x1=\"300\" y1=\"105\" x2=\"300\" y2=\"220\" stroke=\"#22c55e\" stroke-width=\"2\"/>\n  <polygon points=\"300,220 295,210 305,210\" fill=\"#22c55e\"/>\n  <text x=\"315\" y=\"168\" font-size=\"10\" fill=\"#22c55e\">拡張</text>\n\n  <!-- 証明手法ボックス -->\n  <!-- 直接証明 -->\n  <rect x=\"30\" y=\"305\" width=\"120\" height=\"45\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"90\" y=\"323\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">直接証明</text>\n  <text x=\"90\" y=\"340\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">P ⇒ Q を直接導く</text>\n\n  <!-- 背理法 -->\n  <rect x=\"170\" y=\"305\" width=\"120\" height=\"45\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"230\" y=\"323\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">背理法</text>\n  <text x=\"230\" y=\"340\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬P を仮定 → 矛盾</text>\n\n  <!-- 対偶証明 -->\n  <rect x=\"310\" y=\"305\" width=\"120\" height=\"45\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"370\" y=\"323\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">対偶証明</text>\n  <text x=\"370\" y=\"340\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬Q ⇒ ¬P を示す</text>\n\n  <!-- 数学的帰納法 -->\n  <rect x=\"450\" y=\"305\" width=\"120\" height=\"45\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"510\" y=\"323\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">数学的帰納法</text>\n  <text x=\"510\" y=\"340\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">∀n への証明</text>\n\n  <!-- 述語論理 → 証明手法 矢印 -->\n  <line x1=\"230\" y1=\"275\" x2=\"90\" y2=\"305\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <polygon points=\"90,305 85,295 95,295\" fill=\"#ef4444\"/>\n  <line x1=\"270\" y1=\"275\" x2=\"230\" y2=\"305\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <polygon points=\"230,305 225,295 235,295\" fill=\"#ef4444\"/>\n  <line x1=\"330\" y1=\"275\" x2=\"370\" y2=\"305\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <polygon points=\"370,305 365,295 375,295\" fill=\"#ef4444\"/>\n  <line x1=\"360\" y1=\"275\" x2=\"510\" y2=\"305\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <polygon points=\"510,305 505,295 515,295\" fill=\"#ef4444\"/>\n\n  <!-- 証明手法ラベル -->\n  <text x=\"300\" y=\"292\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">証明手法</text>\n\n  <!-- 凡例 -->\n  <rect x=\"10\" y=\"378\" width=\"580\" height=\"36\" rx=\"6\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"0.5\"/>\n  <line x1=\"25\" y1=\"396\" x2=\"55\" y2=\"396\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"60\" y=\"400\" font-size=\"10\" fill=\"currentColor\">命題論理の層</text>\n  <line x1=\"160\" y1=\"396\" x2=\"190\" y2=\"396\" stroke=\"#22c55e\" stroke-width=\"2\"/>\n  <text x=\"195\" y=\"400\" font-size=\"10\" fill=\"currentColor\">述語論理への拡張</text>\n  <line x1=\"330\" y1=\"396\" x2=\"360\" y2=\"396\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n  <text x=\"365\" y=\"400\" font-size=\"10\" fill=\"currentColor\">証明手法への展開</text>\n</svg>"
+    }
+  ]
+}

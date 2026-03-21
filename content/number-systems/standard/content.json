@@ -1,0 +1,63 @@
+{
+  "id": "e74929de-8bec-47e9-913c-792b23179f93",
+  "nodeId": "number-systems",
+  "level": "standard",
+  "generatedAt": "2026-03-20T14:21:42.331Z",
+  "content": "# 数の体系\n\n## 何か — 直感的な説明\n\n数の体系とは、私たちが日常で使う「数」を、その性質や使われ方によって段階的に分類・拡張していった体系のことです。最初は「1個、2個、3個…」と物を数えるために使われた自然数から始まり、借金や温度のマイナス表現のために整数が、等分するために有理数が、円周率や√2のような無理数まで含めて実数が、そして方程式を解くために複素数が生まれました。\n\nこのように数の体系は「困ったこと・解けないこと」を解決するために少しずつ拡張されてきた歴史があります。新しい数の集合は、前の集合を完全に含みながら、より多くの問題が解けるようになります。ロシア人形（マトリョーシカ）のように、数の集合が入れ子状に広がっていくイメージです。\n\n## なぜ必要か — 数学における位置づけ\n\n数の体系を理解することは、数学全体の土台を固めることに直結します。「この計算の答えはどの種類の数になるか」「この方程式は必ず解を持つか」といった問いに答えるためには、どの数の集合で議論しているかを意識することが欠かせません。たとえば $x^2 = 2$ の解は有理数の範囲には存在せず、実数まで広げて初めて $x = \\pm\\sqrt{2}$ という解が得られます。\n\nまた、代数学・解析学・幾何学など数学のあらゆる分野で「数」は基本的な道具として登場します。それぞれの集合が持つ演算の性質（加減乗除ができるか、順序関係があるかなど）を理解することで、各分野の理論がなぜそのように構築されているかを深く把握できます。\n\n## 核となるアイデア — 定義・定理の本質\n\n数の体系は次のように入れ子状に拡張されます：\n\n$$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$$\n\n各集合の定義をまとめると：\n\n- **自然数** $\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$（または $0$ を含める流儀もある）\n- **整数** $\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$：自然数に $0$ と負の数を追加\n- **有理数** $\\mathbb{Q} = \\left\\{\\dfrac{p}{q} \\mid p, q \\in \\mathbb{Z},\\ q \\neq 0\\right\\}$：整数の比で表せる数\n- **実数** $\\mathbb{R}$：有理数と無理数（$\\sqrt{2},\\ \\pi,\\ e$ など）を合わせた数直線上のすべての数\n- **複素数** $\\mathbb{C} = \\{a + bi \\mid a, b \\in \\mathbb{R},\\ i^2 = -1\\}$：実数に虚数単位 $i$ を加えた数\n\n各拡張の動機は「ある演算・方程式に対して解が存在しない」という問題を解消することです。整数は $x + 3 = 1$ を、有理数は $2x = 1$ を、実数は $x^2 = 2$ を、複素数は $x^2 = -1$ をそれぞれ解けるようにします。\n\n## 具体例 — 身近な例\n\n**例1：気温と整数**　気温を表すとき、「−5℃」という表現が必要です。物の個数を数えるだけなら自然数で十分ですが、「基準点より低い値」を表すには $0$ と負の数を含む整数 $\\mathbb{Z}$ が必要です。身長や人数はマイナスになりませんが、気温・損益・標高差などは整数（さらには実数）の概念を必要とします。\n\n**例2：ケーキを分ける有理数と√2の無理数**　ケーキを3人で等分すると1人分は $\\frac{1}{3}$ になります。これは有理数ですが、小数で書くと $0.333\\ldots$ と無限に続きます。一方、1辺が1の正方形の対角線の長さは $\\sqrt{2} = 1.41421356\\ldots$ ですが、これはどんな整数の比 $\\frac{p}{q}$ でも表せない無理数です。2種類の「割り切れない数」を区別することで、数の豊かさが感じられます。\n\n## つながり — 他の概念との関係\n\n数の体系は、**集合論**（包含関係の表現）、**代数構造**（群・環・体：各集合がどんな演算を持つか）、**位相・解析学**（実数の連続性・完備性）と深く結びついています。たとえば $\\mathbb{Q}$ は「稠密だが完備でない」（有理数だけでは数直線に隙間がある）のに対し、$\\mathbb{R}$ は完備性を持ちます。この違いが微積分の基礎である**実数の連続性**を支えています。\n\nまた複素数 $\\mathbb{C}$ は**代数学の基本定理**（$n$ 次方程式は必ず $n$ 個の複素数解を持つ）を成り立たせる最小の集合です。つまり複素数の段階で「代数的に閉じた体」が完成します。この事実は、数の拡張がここで一段落することを意味しています。\n\n## 他分野への応用 — 物理・化学・経済学・工学などでこの概念がどう使われるか\n\n**物理・工学**では複素数が交流回路の解析に欠かせません。電圧や電流の位相を $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$（オイラーの公式）で表すと、複雑な微分方程式が代数的な計算に帰着します。量子力学では状態を複素数の波動関数で記述し、虚数は単なる「架空の数」ではなく物理的実在を表す道具です。\n\n**経済学・ファイナンス**では実数全体（負の数を含む）が利益・損失・金利の計算に使われます。確率論（統計学の基盤）は実数上で構築されており、経済モデルの最適化問題も実数の連続性を前提とします。**コンピュータサイエンス**では整数・浮動小数点数（実数の近似）の表現限界がアルゴリズムの設計に直接影響し、「どの数の体系で計算するか」は非常に実用的な問いとなります。",
+  "terms": [
+    {
+      "term": "自然数",
+      "reading": "しぜんすう",
+      "en": "Natural Numbers",
+      "definition": "物を数えるときに使う正の整数全体の集合。$\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$（流儀によっては $0$ を含む）。"
+    },
+    {
+      "term": "整数",
+      "reading": "せいすう",
+      "en": "Integers",
+      "definition": "自然数・0・負の自然数を合わせた集合。$\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$。"
+    },
+    {
+      "term": "有理数",
+      "reading": "ゆうりすう",
+      "en": "Rational Numbers",
+      "definition": "2つの整数の比 $\\frac{p}{q}$（$q \\neq 0$）で表せる数の集合 $\\mathbb{Q}$。有限小数または循環小数で表される。"
+    },
+    {
+      "term": "無理数",
+      "reading": "むりすう",
+      "en": "Irrational Numbers",
+      "definition": "整数の比で表せない実数。$\\sqrt{2}$、$\\pi$、$e$ など。無限小数で循環しない。"
+    },
+    {
+      "term": "実数",
+      "reading": "じっすう",
+      "en": "Real Numbers",
+      "definition": "有理数と無理数を合わせた集合 $\\mathbb{R}$。数直線上のすべての点に対応し、連続性・完備性を持つ。"
+    },
+    {
+      "term": "複素数",
+      "reading": "ふくそすう",
+      "en": "Complex Numbers",
+      "definition": "$a + bi$（$a, b \\in \\mathbb{R}$、$i^2 = -1$）の形で表される数の集合 $\\mathbb{C}$。$i$ を虚数単位と呼ぶ。"
+    },
+    {
+      "term": "虚数単位",
+      "reading": "きょすうたんい",
+      "en": "Imaginary Unit",
+      "definition": "$i^2 = -1$ を満たす数 $i$。実数の範囲では存在しないが、複素数を導入することで定義される。"
+    },
+    {
+      "term": "数の拡張",
+      "reading": "かずのかくちょう",
+      "en": "Extension of Number Systems",
+      "definition": "ある集合では解けない問題（方程式など）を解くために、より大きな数の集合へと体系を広げること。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 420\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n  <!-- 背景：複素数 -->\n  <ellipse cx=\"300\" cy=\"210\" rx=\"285\" ry=\"195\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <!-- 実数 -->\n  <ellipse cx=\"300\" cy=\"220\" rx=\"230\" ry=\"155\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <!-- 有理数 -->\n  <ellipse cx=\"290\" cy=\"230\" rx=\"165\" ry=\"115\" fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <!-- 整数 -->\n  <ellipse cx=\"285\" cy=\"240\" rx=\"108\" ry=\"78\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <!-- 自然数 -->\n  <ellipse cx=\"282\" cy=\"248\" rx=\"60\" ry=\"44\" fill=\"#22c55e\" fill-opacity=\"0.15\" stroke=\"#22c55e\" stroke-width=\"2\"/>\n\n  <!-- ラベル：複素数 -->\n  <text x=\"530\" y=\"52\" font-size=\"14\" font-weight=\"bold\" fill=\"#3b82f6\" text-anchor=\"middle\">複素数</text>\n  <text x=\"530\" y=\"70\" font-size=\"11\" fill=\"currentColor\" text-anchor=\"middle\" fill-opacity=\"0.7\">ℂ</text>\n  <text x=\"508\" y=\"88\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.6\" text-anchor=\"middle\">a + bi</text>\n\n  <!-- ラベル：実数 -->\n  <text x=\"496\" y=\"120\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\" text-anchor=\"middle\">実数</text>\n  <text x=\"496\" y=\"137\" font-size=\"11\" fill=\"currentColor\" text-anchor=\"middle\" fill-opacity=\"0.7\">ℝ</text>\n\n  <!-- 無理数ラベル（実数と有理数の間） -->\n  <text x=\"448\" y=\"190\" font-size=\"11\" fill=\"currentColor\" fill-opacity=\"0.75\" text-anchor=\"middle\">（無理数を含む）</text>\n  <text x=\"448\" y=\"205\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.6\" text-anchor=\"middle\">√2, π, e …</text>\n\n  <!-- ラベル：有理数 -->\n  <text x=\"418\" y=\"255\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\" text-anchor=\"middle\">有理数</text>\n  <text x=\"418\" y=\"272\" font-size=\"11\" fill=\"currentColor\" text-anchor=\"middle\" fill-opacity=\"0.7\">ℚ</text>\n  <text x=\"418\" y=\"288\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.6\" text-anchor=\"middle\">p/q 形式</text>\n\n  <!-- ラベル：整数 -->\n  <text x=\"356\" y=\"295\" font-size=\"12\" font-weight=\"bold\" fill=\"#22c55e\" text-anchor=\"middle\">整数</text>\n  <text x=\"356\" y=\"311\" font-size=\"11\" fill=\"currentColor\" text-anchor=\"middle\" fill-opacity=\"0.7\">ℤ</text>\n  <text x=\"356\" y=\"326\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.6\" text-anchor=\"middle\">…−1, 0, 1…</text>\n\n  <!-- ラベル：自然数 -->\n  <text x=\"282\" y=\"240\" font-size=\"12\" font-weight=\"bold\" fill=\"#22c55e\" text-anchor=\"middle\">自然数</text>\n  <text x=\"282\" y=\"256\" font-size=\"11\" fill=\"currentColor\" text-anchor=\"middle\" fill-opacity=\"0.7\">ℕ</text>\n  <text x=\"282\" y=\"272\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.6\" text-anchor=\"middle\">1, 2, 3…</text>\n\n  <!-- 虚数部分ラベル -->\n  <text x=\"90\" y=\"160\" font-size=\"11\" fill=\"#ef4444\" fill-opacity=\"0.85\" text-anchor=\"middle\">虚数部分</text>\n  <text x=\"90\" y=\"175\" font-size=\"10\" fill=\"#ef4444\" fill-opacity=\"0.7\" text-anchor=\"middle\">(bi, b≠0)</text>\n\n  <!-- 拡張の矢印と動機 -->\n  <!-- 自然数→整数 -->\n  <line x1=\"282\" y1=\"294\" x2=\"282\" y2=\"355\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/>\n  <!-- 整数→有理数 -->\n  <!-- 有理数→実数 -->\n  <!-- 実数→複素数 -->\n\n  <!-- 下部：拡張の動機テキスト -->\n  <rect x=\"20\" y=\"360\" width=\"560\" height=\"50\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.04\" stroke=\"currentColor\" stroke-opacity=\"0.15\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"378\" font-size=\"11\" fill=\"currentColor\" fill-opacity=\"0.8\" text-anchor=\"middle\" font-weight=\"bold\">拡張の動機（解けなかった方程式）</text>\n  <text x=\"90\" y=\"397\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.7\" text-anchor=\"middle\">ℕ→ℤ: x+3=1</text>\n  <text x=\"220\" y=\"397\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.7\" text-anchor=\"middle\">ℤ→ℚ: 2x=1</text>\n  <text x=\"350\" y=\"397\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.7\" text-anchor=\"middle\">ℚ→ℝ: x²=2</text>\n  <text x=\"490\" y=\"397\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.7\" text-anchor=\"middle\">ℝ→ℂ: x²=−1</text>\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"22\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">数の体系（入れ子構造）</text>\n</svg>"
+    }
+  ]
+}

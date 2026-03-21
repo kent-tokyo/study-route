@@ -1,0 +1,93 @@
+{
+  "id": "83057de1-0102-457a-baa6-19eafcd08527",
+  "nodeId": "lambda",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:53:17.563Z",
+  "content": "# Lambda\n\n## 何か — 直感的な説明\n\nAWS Lambdaとは、**サーバーを自分で用意・管理しなくても、コードを実行できる仕組み**です。\n\nたとえば、宅配の「コンビニ受け取り」をイメージしてみてください。自宅（サーバー）を24時間開けておかなくても、荷物（処理）が届いたときだけコンビニ（Lambda）が受け取ってくれます。用事が終われば、コンビニは特別な準備をしておく必要はありません。Lambdaもまったく同じで、「関数を実行してほしいイベントが来たときだけ動き、終わったら消える」という動き方をします。\n\nこの仕組みは**サーバーレスコンピューティング**と呼ばれます。「サーバーがない」わけではなく、「サーバーの存在をユーザーが意識しなくてよい」という意味です。コードを書いてAWSに預けておけば、あとはAWSが必要なときに自動で動かしてくれます。\n\n---\n\n## なぜ必要か — 背景と位置づけ\n\n従来のWebアプリケーション開発では、EC2のような仮想サーバーを常時起動しておく必要がありました。しかしこれは、**誰もアクセスしていない深夜もサーバーが動き続けてコストがかかる**という問題を抱えています。月に数回しか使われない処理のためにサーバーを24時間稼働させるのは、非常に非効率です。\n\nLambdaはこの問題を根本から解決します。**実行された回数と実行時間に対してのみ課金される**ため、使わなければコストはほぼゼロです。また、アクセスが急増しても自動的にスケールアウト（並列実行）するため、サーバーのキャパシティを事前に見積もる作業も不要になります。\n\nクラウドコンピューティングの世界では、Lambdaは**イベント駆動型アーキテクチャ**の中心的な役割を担います。「何かが起きたら処理する」というシンプルな発想が、現代のマイクロサービス設計やAPI開発の基盤となっています。\n\n---\n\n## 核となるアイデア — 定義・本質\n\nLambdaを理解する上で最も重要な概念は、**「関数」「トリガー」「イベント」の3つ**です。\n\n- **関数（Function）**: 実行したいコードのまとまり。Python・Node.js・Javaなど複数の言語で記述できます\n- **トリガー（Trigger）**: 関数を起動するきっかけ。S3へのファイルアップロード、APIリクエスト、スケジュール実行など様々な種類があります\n- **イベント（Event）**: トリガーから関数に渡されるデータ。「誰が・何を・いつ」送ってきたかの情報が含まれます\n\nLambdaの動作は**写像**の考え方に近いと言えます。\n\n$$f: \\text{Event} \\rightarrow \\text{Result}$$\n\nつまり、入力（イベント）を受け取り、処理を行い、出力（結果）を返す純粋な関数の概念です。この「入力→処理→出力」という一方向の流れがLambdaの設計思想の核心で、各関数は**独立して動作し、他の関数の状態に依存しない**ことが理想とされます。\n\nLambdaにはいくつかの重要な制約があります。**実行時間の上限は最大15分**で、それ以上かかる処理には向きません。また、関数が終了するとメモリ上のデータは消えるため、データを永続化したい場合はS3やDynamoDBなど別のサービスと組み合わせる必要があります。\n\n---\n\n## 具体例\n\n### 例1：日常生活 — 自動販売機\n\n自動販売機はLambdaの動き方をとてもよく表しています。誰かがボタンを押す（トリガー）と、機械が動いて商品を出し（関数の実行）、終わればまた待機状態に戻ります。誰も使っていないときは機械が「ジュースを出す処理」を実行し続けているわけではありません。\n\nLambdaもまったく同じです。リクエストが来るまでコードは眠っており、来た瞬間だけ目覚めて処理し、また眠りにつきます。\n\n### 例2：画像のサムネイル自動生成\n\nユーザーがS3バケットに画像をアップロードしたとき、自動的にサムネイル（小さな画像）を作成する処理はLambdaの典型的なユースケースです。\n\n```\n[ユーザーが画像をS3にアップロード]\n        ↓（トリガー）\n[LambdaがS3イベントを受け取る]\n        ↓（処理）\n[画像をリサイズしてサムネイルを作成]\n        ↓（出力）\n[サムネイルを別のS3バケットに保存]\n```\n\nこの処理は1日に1回かもしれないし、1秒に1000回かもしれません。どちらの場合もLambdaは自動でスケールし、使った分だけ課金されます。\n\n### 例3：定時レポート送信\n\n毎朝9時に売上レポートをメールで送る、といった**スケジュール実行**もLambdaで実現できます。Amazon EventBridge（旧CloudWatch Events）をトリガーとして設定すれば、指定した時刻に自動でLambda関数が起動し、データベースから売上データを取得してメール送信する処理を実行できます。\n\nこの場合、サーバーを常時起動しておく必要はなく、1日1回・数秒だけ動くためのコストのみ発生します。\n\n### 例4：APIのバックエンド\n\nAmazon API Gatewayと組み合わせると、LambdaはREST APIのバックエンドとして機能します。スマートフォンアプリから「ユーザー情報を取得して」というHTTPリクエストが来ると、API GatewayがそれをLambdaに転送し、LambdaがDynamoDBからデータを取得してJSONで返す、という流れです。これにより、サーバーを一切管理せずにAPIを公開できます。\n\n---\n\n## つながり — 他の概念との関係\n\n**前提となる知識: IAM（Identity and Access Management）**\n\nLambdaを動かすためには、IAMの理解が不可欠です。Lambda関数には必ず**実行ロール（Execution Role）**というIAMロールを割り当てる必要があります。このロールが「Lambda関数がどのAWSサービスにアクセスできるか」を決定します。\n\nたとえば、先ほどの画像リサイズの例では、Lambda関数がS3のファイルを読み書きするために、そのIAMロールにS3へのアクセス権限が必要です。適切なIAM設定なしには、LambdaはS3にもDynamoDBにも触れません。**最小権限の原則**（必要最小限の権限のみを付与する）に従って設計することが、セキュリティ上の重要なベストプラクティスです。\n\n**発展先となる概念**\n\nLambdaを学んだあとは、以下の概念へと自然につながっていきます。\n\n- **API Gateway**: LambdaをHTTP APIとして公開するサービス\n- **Step Functions**: 複数のLambda関数をフローとして連結するオーケストレーションサービス\n- **EventBridge**: Lambdaをスケジュール実行・イベントルーティングするサービス\n- **DynamoDB / S3**: Lambdaが処理したデータの保存先\n\n---\n\n## 他分野への応用\n\n**Webサービス・スタートアップ**\n\n初期フェーズのスタートアップがサービスを立ち上げる際、Lambdaは非常に強力な選択肢です。ユーザー数が少ない段階ではコストがほぼゼロで、急成長してもインフラのスケールアウトを自分で行う必要がありません。「まずプロダクトを作って検証する」というリーンスタートアップの考え方とLambdaは非常に相性が良いと言えます。\n\n**データ処理・機械学習パイプライン**\n\nIoTセンサーや各種ログから大量のデータが流れてくる場合、Lambdaはデータのフィルタリングやフォーマットをリアルタイムで行うことができます。機械学習の分野では、学習済みモデルをLambdaに載せて**推論APIとして公開**するパターンも一般的です。軽量なモデルであれば、GPUサーバーを常時起動せずとも推論リクエストに応答できます。\n\n**金融・フィンテック**\n\n取引が発生した瞬間に不正検知のロジックを実行したり、特定の条件を満たしたときにアラートを送ったりするといった**イベント駆動型の処理**は、金融分野でLambdaが活躍する代表的なシーンです。処理が独立しており、秒単位の課金が可能なLambdaは、突発的な取引量の増加にも柔軟に対応できます。",
+  "terms": [
+    {
+      "term": "サーバーレスコンピューティング",
+      "reading": "さーばーれすこんぴゅーてぃんぐ",
+      "en": "Serverless Computing",
+      "definition": "ユーザーがサーバーの管理・運用を意識せずにコードを実行できるクラウドの実行モデル。インフラの管理はクラウドプロバイダーが担当する。"
+    },
+    {
+      "term": "イベント駆動型アーキテクチャ",
+      "reading": "いべんとくどうがたあーきてくちゃ",
+      "en": "Event-Driven Architecture",
+      "definition": "「何かが起きたとき（イベント）に処理を実行する」という設計思想に基づくシステム構造。Lambdaはこのアーキテクチャの中心的な役割を担う。"
+    },
+    {
+      "term": "トリガー",
+      "reading": "とりがー",
+      "en": "Trigger",
+      "definition": "Lambda関数を起動するきっかけとなるイベント発生源。S3へのファイルアップロード、APIリクエスト、スケジュール実行などが代表例。"
+    },
+    {
+      "term": "スケールアウト",
+      "reading": "すけーるあうと",
+      "en": "Scale Out",
+      "definition": "アクセスや処理量の増加に応じて、処理を並列に増やして対応すること。Lambdaはリクエスト増加時に自動でスケールアウトする。"
+    },
+    {
+      "term": "実行ロール",
+      "reading": "じっこうろーる",
+      "en": "Execution Role",
+      "definition": "Lambda関数に割り当てるIAMロールで、関数がアクセスできるAWSサービスの権限範囲を定義するもの。"
+    },
+    {
+      "term": "IAM（Identity and Access Management）",
+      "reading": "あいえーえむ",
+      "en": "IAM (Identity and Access Management)",
+      "definition": "AWSリソースへのアクセス権限を管理するサービス。Lambdaの実行ロールを通じて、関数が操作できるリソースを制御する。"
+    },
+    {
+      "term": "最小権限の原則",
+      "reading": "さいしょうけんげんのげんそく",
+      "en": "Principle of Least Privilege",
+      "definition": "システムやユーザーに対して、必要最小限の権限のみを付与するセキュリティ設計の基本原則。"
+    },
+    {
+      "term": "写像",
+      "reading": "しゃぞう",
+      "en": "Mapping / Function",
+      "definition": "ある集合の要素を別の集合の要素に対応させる数学的な概念。Lambdaの「入力（イベント）→処理→出力（結果）」の流れはこの概念に近い。"
+    },
+    {
+      "term": "API Gateway",
+      "reading": "えーぴーあいげーとうぇい",
+      "en": "API Gateway",
+      "definition": "HTTPリクエストを受け取りLambda関数に転送するAWSサービス。LambdaをREST APIのバックエンドとして公開するために使われる。"
+    },
+    {
+      "term": "マイクロサービス",
+      "reading": "まいくろさーびす",
+      "en": "Microservices",
+      "definition": "アプリケーションを独立した小さな機能単位に分割して構築する設計手法。Lambdaの独立した関数実行の思想と親和性が高い。"
+    },
+    {
+      "term": "EventBridge",
+      "reading": "いべんとぶりっじ",
+      "en": "Amazon EventBridge",
+      "definition": "AWSのイベントルーティングサービスで、スケジュール実行や各種イベントのトリガーとしてLambdaと組み合わせて使われる。"
+    },
+    {
+      "term": "Step Functions",
+      "reading": "すてっぷふぁんくしょんず",
+      "en": "AWS Step Functions",
+      "definition": "複数のLambda関数をフローとして連結・制御するオーケストレーションサービス。複雑なワークフローをLambdaで実現する際に使用する。"
+    },
+    {
+      "term": "永続化",
+      "reading": "えいぞくか",
+      "en": "Persistence",
+      "definition": "データをプログラム終了後も保持し続けること。Lambda関数はステートレスで終了後にメモリが消えるため、S3やDynamoDBなどに保存する必要がある。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- Background regions -->\n  <!-- IAM Role area -->\n  <rect x=\"10\" y=\"390\" width=\"160\" height=\"80\" rx=\"10\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\"/>\n  <text x=\"90\" y=\"410\" text-anchor=\"middle\" font-size=\"11\" fill=\"#3b82f6\" font-weight=\"bold\">IAM 実行ロール</text>\n  <text x=\"90\" y=\"428\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">最小権限の原則</text>\n  <text x=\"90\" y=\"444\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">アクセス制御</text>\n  <text x=\"90\" y=\"460\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">S3/DynamoDB権限</text>\n\n  <!-- Extensions area -->\n  <rect x=\"430\" y=\"390\" width=\"160\" height=\"80\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\"/>\n  <text x=\"510\" y=\"410\" text-anchor=\"middle\" font-size=\"11\" fill=\"#22c55e\" font-weight=\"bold\">発展概念</text>\n  <text x=\"510\" y=\"428\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">API Gateway</text>\n  <text x=\"510\" y=\"444\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Step Functions</text>\n  <text x=\"510\" y=\"460\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">EventBridge</text>\n\n  <!-- Main Lambda box -->\n  <rect x=\"195\" y=\"195\" width=\"210\" height=\"110\" rx=\"14\" fill=\"#3b82f6\" fill-opacity=\"0.13\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"222\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#3b82f6\">AWS Lambda</text>\n  <text x=\"300\" y=\"242\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">関数（Function）</text>\n  <line x1=\"210\" y1=\"250\" x2=\"390\" y2=\"250\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"265\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">f : Event → Result</text>\n  <text x=\"300\" y=\"281\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">最大実行時間: 15分</text>\n  <text x=\"300\" y=\"296\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">使った分だけ課金</text>\n\n  <!-- Trigger sources - top area -->\n  <!-- S3 trigger -->\n  <rect x=\"30\" y=\"60\" width=\"110\" height=\"58\" rx=\"9\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"85\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">S3</text>\n  <text x=\"85\" y=\"97\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">ファイル</text>\n  <text x=\"85\" y=\"111\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">アップロード</text>\n\n  <!-- API Gateway trigger -->\n  <rect x=\"160\" y=\"60\" width=\"110\" height=\"58\" rx=\"9\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"215\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">API Gateway</text>\n  <text x=\"215\" y=\"97\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">HTTP</text>\n  <text x=\"215\" y=\"111\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">リクエスト</text>\n\n  <!-- EventBridge trigger -->\n  <rect x=\"290\" y=\"60\" width=\"110\" height=\"58\" rx=\"9\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"345\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">EventBridge</text>\n  <text x=\"345\" y=\"97\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">スケジュール</text>\n  <text x=\"345\" y=\"111\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">実行</text>\n\n  <!-- Other trigger -->\n  <rect x=\"420\" y=\"60\" width=\"110\" height=\"58\" rx=\"9\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"475\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">その他</text>\n  <text x=\"475\" y=\"97\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">SNS / SQS</text>\n  <text x=\"475\" y=\"111\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">DynamoDB等</text>\n\n  <!-- Trigger label row -->\n  <text x=\"300\" y=\"20\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">トリガー（Trigger）</text>\n  <line x1=\"30\" y1=\"28\" x2=\"530\" y2=\"28\" stroke=\"currentColor\" stroke-opacity=\"0.2\" stroke-width=\"1\"/>\n\n  <!-- Event arrow label -->\n  <rect x=\"220\" y=\"148\" width=\"160\" height=\"30\" rx=\"6\" fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"167\" text-anchor=\"middle\" font-size=\"11\" fill=\"#ef4444\" font-weight=\"bold\">イベント（Event）</text>\n  <text x=\"300\" y=\"179\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">誰が・何を・いつ の情報</text>\n\n  <!-- Arrows from triggers to event box -->\n  <line x1=\"85\" y1=\"118\" x2=\"245\" y2=\"148\" stroke=\"currentColor\" stroke-opacity=\"0.5\" stroke-width=\"1.3\" marker-end=\"url(#arr)\"/>\n  <line x1=\"215\" y1=\"118\" x2=\"270\" y2=\"148\" stroke=\"currentColor\" stroke-opacity=\"0.5\" stroke-width=\"1.3\" marker-end=\"url(#arr)\"/>\n  <line x1=\"345\" y1=\"118\" x2=\"325\" y2=\"148\" stroke=\"currentColor\" stroke-opacity=\"0.5\" stroke-width=\"1.3\" marker-end=\"url(#arr)\"/>\n  <line x1=\"475\" y1=\"118\" x2=\"355\" y2=\"148\" stroke=\"currentColor\" stroke-opacity=\"0.5\" stroke-width=\"1.3\" marker-end=\"url(#arr)\"/>\n\n  <!-- Arrow from event to lambda -->\n  <line x1=\"300\" y1=\"178\" x2=\"300\" y2=\"195\" stroke=\"#ef4444\" stroke-width=\"1.8\" marker-end=\"url(#arrRed)\"/>\n\n  <!-- Output destinations -->\n  <!-- S3 output -->\n  <rect x=\"50\" y=\"340\" width=\"105\" height=\"52\" rx=\"9\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"103\" y=\"362\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">S3</text>\n  <text x=\"103\" y=\"377\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">ファイル保存</text>\n  <text x=\"103\" y=\"391\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">サムネイル等</text>\n\n  <!-- DynamoDB output -->\n  <rect x=\"170\" y=\"340\" width=\"105\" height=\"52\" rx=\"9\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"223\" y=\"362\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">DynamoDB</text>\n  <text x=\"223\" y=\"377\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">データ永続化</text>\n  <text x=\"223\" y=\"391\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">DB操作</text>\n\n  <!-- Other services output -->\n  <rect x=\"290\" y=\"340\" width=\"105\" height=\"52\" rx=\"9\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"343\" y=\"362\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">SNS / SES</text>\n  <text x=\"343\" y=\"377\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">通知・メール</text>\n  <text x=\"343\" y=\"391\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">送信</text>\n\n  <!-- Step Functions output -->\n  <rect x=\"410\" y=\"340\" width=\"105\" height=\"52\" rx=\"9\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"463\" y=\"362\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">Step Functions</text>\n  <text x=\"463\" y=\"377\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">ワークフロー</text>\n  <text x=\"463\" y=\"391\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">連携</text>\n\n  <!-- Result label -->\n  <text x=\"300\" y=\"326\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">出力先（Result）</text>\n\n  <!-- Arrows from lambda to outputs -->\n  <line x1=\"240\" y1=\"305\" x2=\"103\" y2=\"340\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arrGreen)\"/>\n  <line x1=\"265\" y1=\"305\" x2=\"223\" y2=\"340\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arrGreen)\"/>\n  <line x1=\"335\" y1=\"305\" x2=\"343\" y2=\"340\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arrGreen)\"/>\n  <line x1=\"360\" y1=\"305\" x2=\"463\" y2=\"340\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arrGreen)\"/>\n\n  <!-- IAM arrow to lambda -->\n  <line x1=\"170\" y1=\"430\" x2=\"210\" y2=\"300\" stroke=\"#3b82f6\" stroke-width=\"1.4\" stroke-dasharray=\"5,3\" marker-end=\"url(#arrBlue)\"/>\n\n  <!-- Extension arrow from lambda -->\n  <line x1=\"430\" y1=\"430\" x2=\"390\" y2=\"300\" stroke=\"#22c55e\" stroke-width=\"1.4\" stroke-dasharray=\"5,3\" marker-end=\"url(#arrGreenD)\"/>\n\n  <!-- Scale-out note -->\n  <rect x=\"195\" y=\"490\" width=\"210\" height=\"22\" rx=\"6\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-opacity=\"0.2\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"505\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">アクセス増加 → 自動スケールアウト（並列実行）</text>\n\n  <!-- Arrow markers -->\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.5\"/>\n    </marker>\n    <marker id=\"arrRed\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#ef4444\"/>\n    </marker>\n    <marker id=\"arrGreen\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n    <marker id=\"arrBlue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\"/>\n    </marker>\n    <marker id=\"arrGreenD\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ]
+}

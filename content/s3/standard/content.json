@@ -1,0 +1,99 @@
+{
+  "id": "7e808d51-6ce9-4915-9f4d-9255e0d900b8",
+  "nodeId": "s3",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:49:00.681Z",
+  "content": "# S3\n\n## 何か — 直感的な説明\n\nS3（Simple Storage Service）とは、インターネット上にファイルを保存・取り出しできる「巨大なクラウド倉庫」です。Amazon Web Services（AWS）が提供するオブジェクトストレージサービスで、画像・動画・テキストファイル・バックアップデータなど、あらゆる種類のデータをインターネット経由で保存できます。\n\nイメージとしては、自分のパソコンのフォルダではなく、世界中のどこからでもアクセスできる「空中に浮かぶ引き出し」です。ファイルの数が増えても、容量が足りなくなっても、自動的に広がってくれる魔法の引き出しと思ってください。難しい設定やサーバーの管理は一切不要で、「入れる・取り出す・削除する」という操作だけに集中できます。\n\n## なぜ必要か — 数学における位置づけ\n\n従来のファイル保存方法（ハードディスクや自社サーバー）では、容量が足りなくなったら物理的にディスクを追加する必要がありました。しかしWebサービスやアプリのデータ量は予測が難しく、突然100倍に増えることもあります。S3はそのような「スケール問題」を解決するために生まれました。\n\nクラウドコンピューティング全体の中で、S3は「データの置き場所」という最も基礎的な役割を担っています。計算処理（EC2）やデータベース（RDS）など他のサービスが何かをするためには、まずデータがどこかに存在しなければなりません。S3はそのデータ基盤として機能しており、AWSエコシステム全体の土台となる存在です。\n\n## 核となるアイデア — 定義・定理の本質\n\nS3の中心的な概念は **「バケット（Bucket）」** と **「オブジェクト（Object）」** の2つです。\n\n- **バケット**：データを格納する最上位のコンテナ（入れ物）。名前はグローバルで一意でなければならない\n- **オブジェクト**：バケットの中に保存される個々のデータ。ファイル本体（Value）とそれを識別するキー（Key）、およびメタデータで構成される\n\n```\nS3の構造：\nバケット名 / キー名 → オブジェクト（データ本体 + メタデータ）\n\n例：\nmy-photos / 2024/vacation/beach.jpg → 画像データ\n```\n\nS3はオブジェクトを **フラットな構造** で管理します。本当の意味でのフォルダ階層は存在せず、キー名の中にスラッシュ（`/`）を含めることで階層があるように見せています。これは従来のファイルシステムとの大きな違いです。\n\n保存できるオブジェクト1つの最大サイズは **5TB**、バケット内のオブジェクト数に上限はありません。料金は保存容量と通信量に応じた従量課金で、数式的には：\n\n$$\\text{料金} = \\text{保存量（GB）} \\times \\text{単価} + \\text{転送量（GB）} \\times \\text{転送単価}$$\n\n## 具体例\n\n### 例1：日常生活 — スマートフォンの写真アプリ\n\niPhoneの「iCloud写真」やGoogleフォトを思い浮かべてください。スマホで写真を撮ると、自動的にクラウドにアップロードされ、機種変更しても写真が消えません。これと全く同じ仕組みをAWS上で実現するのがS3です。\n\n実際、多くのフォトサービスのバックエンドにはS3（またはS3互換サービス）が使われています。ユーザーが「アップロード」ボタンを押した瞬間、画像ファイルはS3のバケットにオブジェクトとして保存され、固有のキー（URL）が割り当てられます。\n\n### 例2：Webサイトの静的ホスティング\n\n会社のWebサイトに表示する画像やCSSファイル、JavaScriptファイルをS3に置いておき、世界中のユーザーに配信することができます。たとえばニュースサイトのトップ画像は、サーバーではなくS3から直接ブラウザに届いていることが多いです。\n\nS3の静的ウェブサイトホスティング機能を使えば、HTMLファイルをバケットに置くだけでWebサイトが公開できます。サーバーの設定やメンテナンスが一切不要なため、小規模なポートフォリオサイトや社内ドキュメントの公開に非常に便利です。\n\n### 例3：機械学習のデータセット保管\n\nAIや機械学習のモデルを訓練するには、大量のデータが必要です。たとえば画像認識モデルを作る場合、数十万枚の画像（数百GB〜数TB）を保存しておく必要があります。これをS3に置いておくと、学習用のコンピュータ（EC2インスタンス）が必要なときだけデータを読み込めます。\n\n```\nデータパイプラインの例：\n[カメラ・センサー] → [S3バケット] → [学習用サーバー(EC2)] → [モデル保存(S3)]\n```\n\nこのように「データの入口・出口・一時置き場」すべてにS3が使われるパターンは、機械学習プロジェクトの標準構成です。\n\n## つながり — 他の概念との関係\n\n**前提知識（S3を理解する前に知っておくと良いもの）：**\n\n- **クラウドコンピューティングの基礎**：オンプレミス vs クラウドの違い\n- **HTTP/HTTPS**：S3へのアクセスはWeb APIで行われるため、リクエスト・レスポンスの基本概念\n- **IAM（Identity and Access Management）**：誰がS3にアクセスできるかを制御する権限管理\n\n**関連するAWSサービス：**\n\n| サービス | S3との関係 |\n|----------|------------|\n| CloudFront（CDN） | S3のデータを世界中に高速配信する |\n| Lambda | S3へのファイル保存をトリガーに処理を実行する |\n| Glacier | S3の低コスト長期アーカイブ版 |\n| Athena | S3上のデータを直接SQLで分析する |\n\n**発展的な概念：**\n\n- **S3バージョニング**：同じキーのオブジェクトを上書きせず履歴として保持する機能\n- **S3ライフサイクルポリシー**：一定期間後に自動でストレージクラスを変更したり削除したりするルール\n- **マルチパートアップロード**：大きなファイルを分割して並行アップロードする仕組み\n\n## 他分野への応用\n\n**ゲーム産業：**\nゲームのアップデートファイルやDLC（追加コンテンツ）の配布にS3が使われています。数百万人のプレイヤーが同時にダウンロードしても耐えられる高い可用性と、CloudFrontと組み合わせた高速配信が強みです。\n\n**医療・バイオインフォマティクス：**\nゲノム解析では1人分のDNAデータが数百GBになることがあります。研究機関は大量の患者データをS3に保存し、解析時だけ高性能なコンピュータを借りて処理します。保存コストと計算コストを分離できるのがクラウドの大きな利点です。\n\n**メディア・動画配信：**\nNetflixのような動画配信サービスは、エンコードされた動画ファイルをS3（またはS3互換ストレージ）に保管し、ユーザーのリクエストに応じてストリーミング配信しています。ストレージ容量を気にせず新作を追加し続けられるスケーラビリティが不可欠です。\n\n**金融・ログ分析：**\n証券会社や銀行は膨大な取引ログをS3に保存し、後からAthenaやSparkで分析します。規制上、数年間のデータ保存が義務付けられているケースも多く、低コストで大量データを長期保存できるS3 Glacierへの移行と組み合わせて使われます。",
+  "terms": [
+    {
+      "term": "S3",
+      "reading": "えすすりー",
+      "en": "Simple Storage Service",
+      "definition": "Amazon Web Services（AWS）が提供するオブジェクトストレージサービス。インターネット経由であらゆる種類のデータを保存・取得できる。"
+    },
+    {
+      "term": "バケット",
+      "reading": "ばけっと",
+      "en": "Bucket",
+      "definition": "S3においてデータを格納する最上位のコンテナ（入れ物）。名前はグローバルで一意でなければならない。"
+    },
+    {
+      "term": "オブジェクト",
+      "reading": "おぶじぇくと",
+      "en": "Object",
+      "definition": "S3のバケット内に保存される個々のデータ単位。ファイル本体（Value）・キー（Key）・メタデータで構成される。"
+    },
+    {
+      "term": "キー",
+      "reading": "きー",
+      "en": "Key",
+      "definition": "S3のバケット内でオブジェクトを一意に識別する名前。スラッシュを含めることでフォルダ階層のように見せることができる。"
+    },
+    {
+      "term": "メタデータ",
+      "reading": "めたでーた",
+      "en": "Metadata",
+      "definition": "オブジェクトに付随するデータの属性情報（ファイルサイズ・作成日時・コンテンツタイプなど）。データ本体とは別に管理される。"
+    },
+    {
+      "term": "オブジェクトストレージ",
+      "reading": "おぶじぇくとすとれーじ",
+      "en": "Object Storage",
+      "definition": "データをフラットな構造でオブジェクトとして管理するストレージ方式。従来のファイルシステムとは異なり、真のフォルダ階層を持たない。"
+    },
+    {
+      "term": "静的ウェブサイトホスティング",
+      "reading": "せいてきうぇぶさいとほすてぃんぐ",
+      "en": "Static Website Hosting",
+      "definition": "HTMLやCSSなどの静的ファイルをS3バケットに配置するだけでWebサイトを公開できる機能。サーバー管理が不要。"
+    },
+    {
+      "term": "S3バージョニング",
+      "reading": "えすすりーばーじょにんぐ",
+      "en": "S3 Versioning",
+      "definition": "同じキーのオブジェクトを上書きせずに履歴として保持する機能。誤削除や誤上書きからデータを保護できる。"
+    },
+    {
+      "term": "S3ライフサイクルポリシー",
+      "reading": "えすすりーらいふさいくるぽりしー",
+      "en": "S3 Lifecycle Policy",
+      "definition": "一定期間後にストレージクラスを自動変更したりオブジェクトを削除したりするルール。コスト最適化に活用される。"
+    },
+    {
+      "term": "マルチパートアップロード",
+      "reading": "まるちぱーとあっぷろーど",
+      "en": "Multipart Upload",
+      "definition": "大きなファイルを複数のパートに分割して並行アップロードする仕組み。大容量ファイルの転送効率と信頼性を向上させる。"
+    },
+    {
+      "term": "S3 Glacier",
+      "reading": "えすすりーぐれいしゃー",
+      "en": "S3 Glacier",
+      "definition": "S3の低コスト長期アーカイブ向けストレージクラス。アクセス頻度が低いデータの長期保存に適している。"
+    },
+    {
+      "term": "従量課金",
+      "reading": "じゅうりょうかきん",
+      "en": "Pay-as-you-go",
+      "definition": "実際に使用した保存容量や転送量に応じて料金が発生する課金モデル。使った分だけ支払う仕組み。"
+    },
+    {
+      "term": "IAM",
+      "reading": "あいえーえむ",
+      "en": "Identity and Access Management",
+      "definition": "AWSリソースへのアクセス権限を管理するサービス。誰がS3のどのバケットにアクセスできるかを制御する。"
+    },
+    {
+      "term": "CloudFront",
+      "reading": "くらうどふろんと",
+      "en": "CloudFront",
+      "definition": "AWSのCDN（コンテンツデリバリーネットワーク）サービス。S3のデータを世界中のエッジサーバーから高速配信するために利用される。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- Background regions -->\n  <!-- AWS Cloud outer region -->\n  <rect x=\"10\" y=\"10\" width=\"580\" height=\"500\" rx=\"16\" fill=\"currentColor\" fill-opacity=\"0.04\" stroke=\"currentColor\" stroke-opacity=\"0.2\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\"/>\n  <text x=\"30\" y=\"32\" font-size=\"11\" fill=\"currentColor\" fill-opacity=\"0.5\">AWS クラウド環境</text>\n\n  <!-- ===== S3 Core Structure ===== -->\n  <!-- S3 Service Box -->\n  <rect x=\"30\" y=\"50\" width=\"540\" height=\"200\" rx=\"12\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-opacity=\"0.5\" stroke-width=\"2\"/>\n  <text x=\"50\" y=\"74\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">Amazon S3（Simple Storage Service）</text>\n\n  <!-- Bucket 1 -->\n  <rect x=\"50\" y=\"88\" width=\"220\" height=\"148\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-opacity=\"0.35\" stroke-width=\"1.5\"/>\n  <text x=\"68\" y=\"108\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">バケット（Bucket）</text>\n  <text x=\"68\" y=\"122\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.6\">グローバルで一意の名前</text>\n  <text x=\"68\" y=\"134\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.6\">例: my-photos</text>\n\n  <!-- Objects inside Bucket 1 -->\n  <rect x=\"62\" y=\"140\" width=\"190\" height=\"34\" rx=\"5\" fill=\"#3b82f6\" fill-opacity=\"0.12\" stroke=\"#3b82f6\" stroke-opacity=\"0.4\" stroke-width=\"1\"/>\n  <text x=\"72\" y=\"153\" font-size=\"9\" font-weight=\"bold\" fill=\"#3b82f6\">オブジェクト 1</text>\n  <text x=\"72\" y=\"165\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.7\">Key: 2024/vacation/beach.jpg</text>\n\n  <rect x=\"62\" y=\"180\" width=\"190\" height=\"34\" rx=\"5\" fill=\"#3b82f6\" fill-opacity=\"0.12\" stroke=\"#3b82f6\" stroke-opacity=\"0.4\" stroke-width=\"1\"/>\n  <text x=\"72\" y=\"193\" font-size=\"9\" font-weight=\"bold\" fill=\"#3b82f6\">オブジェクト 2</text>\n  <text x=\"72\" y=\"205\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.7\">Key: 2024/docs/report.pdf</text>\n\n  <!-- Object detail callout -->\n  <rect x=\"62\" y=\"220\" width=\"190\" height=\"10\" rx=\"3\" fill=\"currentColor\" fill-opacity=\"0.04\" stroke=\"currentColor\" stroke-opacity=\"0.2\" stroke-width=\"0.8\" stroke-dasharray=\"3,2\"/>\n  <text x=\"152\" y=\"228\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.45\" text-anchor=\"middle\">フラット構造（/ は擬似階層）</text>\n\n  <!-- Bucket 2 -->\n  <rect x=\"290\" y=\"88\" width=\"260\" height=\"148\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-opacity=\"0.35\" stroke-width=\"1.5\"/>\n  <text x=\"308\" y=\"108\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">バケット（Bucket）</text>\n  <text x=\"308\" y=\"122\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.6\">例: ml-training-data</text>\n\n  <rect x=\"302\" y=\"140\" width=\"230\" height=\"34\" rx=\"5\" fill=\"#22c55e\" fill-opacity=\"0.12\" stroke=\"#22c55e\" stroke-opacity=\"0.4\" stroke-width=\"1\"/>\n  <text x=\"312\" y=\"153\" font-size=\"9\" font-weight=\"bold\" fill=\"#22c55e\">オブジェクト（最大 5TB）</text>\n  <text x=\"312\" y=\"165\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.7\">Value（データ本体）+ メタデータ</text>\n\n  <rect x=\"302\" y=\"180\" width=\"230\" height=\"34\" rx=\"5\" fill=\"#22c55e\" fill-opacity=\"0.12\" stroke=\"#22c55e\" stroke-opacity=\"0.4\" stroke-width=\"1\"/>\n  <text x=\"312\" y=\"193\" font-size=\"9\" font-weight=\"bold\" fill=\"#22c55e\">オブジェクト数：∞（上限なし）</text>\n  <text x=\"312\" y=\"205\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.7\">n → ∞ 個のファイルを格納可能</text>\n\n  <!-- ===== Pricing Formula ===== -->\n  <rect x=\"30\" y=\"265\" width=\"200\" height=\"52\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1.2\"/>\n  <text x=\"130\" y=\"282\" font-size=\"10\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">料金モデル（従量課金）</text>\n  <text x=\"130\" y=\"298\" font-size=\"9\" fill=\"#3b82f6\" text-anchor=\"middle\">料金 = 保存量(GB) × 単価</text>\n  <text x=\"130\" y=\"311\" font-size=\"9\" fill=\"#3b82f6\" text-anchor=\"middle\">　　 ＋ 転送量(GB) × 転送単価</text>\n\n  <!-- ===== Data Pipeline Flow ===== -->\n  <rect x=\"30\" y=\"330\" width=\"540\" height=\"140\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.04\" stroke=\"currentColor\" stroke-opacity=\"0.2\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\"/>\n  <text x=\"300\" y=\"350\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">データパイプライン / 連携サービス</text>\n\n  <!-- Pipeline nodes -->\n  <!-- Input -->\n  <rect x=\"44\" y=\"360\" width=\"88\" height=\"44\" rx=\"7\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"88\" y=\"378\" font-size=\"10\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">入力元</text>\n  <text x=\"88\" y=\"393\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.65\" text-anchor=\"middle\">カメラ/センサー</text>\n\n  <!-- Arrow 1 -->\n  <line x1=\"132\" y1=\"382\" x2=\"154\" y2=\"382\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\"/>\n  <polygon points=\"154,378 162,382 154,386\" fill=\"currentColor\" fill-opacity=\"0.6\"/>\n\n  <!-- S3 center -->\n  <rect x=\"162\" y=\"355\" width=\"100\" height=\"54\" rx=\"7\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-opacity=\"0.6\" stroke-width=\"1.8\"/>\n  <text x=\"212\" y=\"376\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\" text-anchor=\"middle\">S3</text>\n  <text x=\"212\" y=\"390\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.7\" text-anchor=\"middle\">バケット</text>\n  <text x=\"212\" y=\"401\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.7\" text-anchor=\"middle\">（データ基盤）</text>\n\n  <!-- Arrow 2 -->\n  <line x1=\"262\" y1=\"382\" x2=\"284\" y2=\"382\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\"/>\n  <polygon points=\"284,378 292,382 284,386\" fill=\"currentColor\" fill-opacity=\"0.6\"/>\n\n  <!-- EC2 -->\n  <rect x=\"292\" y=\"360\" width=\"80\" height=\"44\" rx=\"7\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"332\" y=\"378\" font-size=\"10\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">EC2</text>\n  <text x=\"332\" y=\"393\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.65\" text-anchor=\"middle\">学習サーバー</text>\n\n  <!-- Arrow 3 -->\n  <line x1=\"372\" y1=\"382\" x2=\"390\" y2=\"382\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\"/>\n  <polygon points=\"390,378 398,382 390,386\" fill=\"currentColor\" fill-opacity=\"0.6\"/>\n\n  <!-- CloudFront -->\n  <rect x=\"398\" y=\"360\" width=\"80\" height=\"44\" rx=\"7\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"438\" y=\"378\" font-size=\"10\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">CloudFront</text>\n  <text x=\"438\" y=\"393\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.65\" text-anchor=\"middle\">CDN配信</text>\n\n  <!-- Arrow 4 -->\n  <line x1=\"478\" y1=\"382\" x2=\"496\" y2=\"382\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\"/>\n  <polygon points=\"496,378 504,382 496,386\" fill=\"currentColor\" fill-opacity=\"0.6\"/>\n\n  <!-- Users -->\n  <rect x=\"504\" y=\"360\" width=\"58\" height=\"44\" rx=\"7\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\"/>\n  <text x=\"533\" y=\"378\" font-size=\"10\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">ユーザー</text>\n  <text x=\"533\" y=\"393\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.65\" text-anchor=\"middle\">世界中</text>\n\n  <!-- Related services row -->\n  <text x=\"300\" y=\"425\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.7\" text-anchor=\"middle\">連携サービス：</text>\n\n  <!-- Lambda -->\n  <rect x=\"44\" y=\"434\" width=\"76\" height=\"26\" rx=\"5\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-opacity=\"0.4\" stroke-width=\"1\"/>\n  <text x=\"82\" y=\"451\" font-size=\"9\" fill=\"#22c55e\" text-anchor=\"middle\">Lambda（イベント）</text>\n\n  <!-- Athena -->\n  <rect x=\"128\" y=\"434\" width=\"76\" height=\"26\" rx=\"5\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-opacity=\"0.4\" stroke-width=\"1\"/>\n  <text x=\"166\" y=\"451\" font-size=\"9\" fill=\"#22c55e\" text-anchor=\"middle\">Athena（SQL分析）</text>\n\n  <!-- Glacier -->\n  <rect x=\"212\" y=\"434\" width=\"76\" height=\"26\" rx=\"5\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-opacity=\"0.4\" stroke-width=\"1\"/>\n  <text x=\"250\" y=\"451\" font-size=\"9\" fill=\"#22c55e\" text-anchor=\"middle\">Glacier（アーカイブ）</text>\n\n  <!-- IAM -->\n  <rect x=\"296\" y=\"434\" width=\"76\" height=\"26\" rx=\"5\" fill=\"#ef4444\" fill-opacity=\"0.1\" stroke=\"#ef4444\" stroke-opacity=\"0.4\" stroke-width=\"1\"/>\n  <text x=\"334\" y=\"451\" font-size=\"9\" fill=\"#ef4444\" text-anchor=\"middle\">IAM（アクセス制御）</text>\n\n  <!-- Versioning -->\n  <rect x=\"380\" y=\"434\" width=\"88\" height=\"26\" rx=\"5\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"424\" y=\"451\" font-size=\"9\" fill=\"currentColor\" text-anchor=\"middle\">バージョニング</text>\n\n  <!-- Lifecycle -->\n  <rect x=\"476\" y=\"434\" width=\"86\" height=\"26\" rx=\"5\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"519\" y=\"451\" font-size=\"9\" fill=\"currentColor\" text-anchor=\"middle\">ライフサイクル</text>\n\n  <!-- ===== Key label on object structure ===== -->\n  <!-- Arrow from bucket label down to key/value -->\n  <text x=\"248\" y=\"270\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.55\">バケット名 / キー名</text>\n  <line x1=\"300\" y1=\"274\" x2=\"330\" y2=\"274\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n  <text x=\"333\" y=\"278\" font-size=\"9\" fill=\"#3b82f6\">→ オブジェクト</text>\n  <text x=\"333\" y=\"291\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.55\">（Value + Key + メタデータ）</text>\n\n  <!-- S3 label center emphasis -->\n  <text x=\"300\" y=\"490\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.45\" text-anchor=\"middle\">S3 はクラウドエコシステム全体のデータ基盤として機能する</text>\n\n</svg>"
+    }
+  ]
+}

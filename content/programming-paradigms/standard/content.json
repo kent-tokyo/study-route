@@ -1,0 +1,99 @@
+{
+  "id": "781331f7-f07b-4b53-a3be-ea90678497ea",
+  "nodeId": "programming-paradigms",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:55:20.339Z",
+  "content": "# プログラミングパラダイム\n\n## 何か — 直感的な説明\n\nプログラミングパラダイムとは、「プログラムをどのような考え方で書くか」という根本的なスタイルや流儀のことです。料理にたとえると、同じ「カレーを作る」という目的でも、「手順書通りに順番に進める人」「材料の組み合わせを関数として考える人」「シェフとアシスタントという役割分担で進める人」がいるように、プログラミングにも複数の考え方の枠組みが存在します。\n\nパラダイムという言葉は「模範・典型」を意味し、コンピュータサイエンスでは「問題を解くための思想的な枠組み」を指します。同じ問題でも、どのパラダイムを選ぶかによってコードの構造・読みやすさ・保守性が大きく変わります。主要なパラダイムとして、**命令型（Imperative）**・**関数型（Functional）**・**オブジェクト指向（Object-Oriented）** の3つが特に重要です。\n\n## なぜ必要か — 数学における位置づけ\n\nプログラミングパラダイムは、数学の異なる分野と深く対応しています。命令型は数学的には**状態遷移系**や**チューリング機械**のモデルと対応し、「状態 $s$ がステップごとに $s_0 \\to s_1 \\to \\cdots \\to s_n$ と変化する」という逐次計算の概念を体現しています。関数型は**ラムダ計算（$\\lambda$計算）** という数学的体系を基盤とし、「計算とは関数の適用である」という純粋な数学的見方を実装したものです。オブジェクト指向は**代数的構造**や**型理論**と結びついており、「同じ性質を持つものをひとまとめにする」という抽象化の発想と通じています。\n\nこれらのパラダイムを理解することは、単にプログラムを書く技術を超えて、「計算とは何か」「問題を抽象化するとはどういうことか」を考えるための知的基盤となります。情報科学・計算理論・数理論理学を学ぶ上で、パラダイムの違いを意識することは不可欠です。\n\n## 核となるアイデア — 定義・定理の本質\n\n### 命令型パラダイム\n\n命令型プログラミングは、「状態を変化させる命令の列」としてプログラムを記述します。プログラムの本質は**可変な状態（mutable state）** であり、変数 $x$ は時刻 $t$ によって値が変わる $x(t)$ として捉えられます。\n\n$$\\text{状態} \\; S = (x_1, x_2, \\ldots, x_n), \\quad S_0 \\xrightarrow{\\text{命令}_1} S_1 \\xrightarrow{\\text{命令}_2} S_2 \\xrightarrow{\\;\\cdots\\;} S_{\\text{final}}$$\n\nループや条件分岐で「何をどの順番でするか」を細かく指定するスタイルで、C言語やPythonの手続き的な書き方がこれにあたります。\n\n### 関数型パラダイム\n\n関数型プログラミングは、計算を**数学的な関数の合成**として記述します。関数 $f: A \\to B$ と $g: B \\to C$ があれば、合成 $g \\circ f: A \\to C$ によって新しい計算が生まれるというイメージです。\n\n$$\\text{output} = (f_n \\circ f_{n-1} \\circ \\cdots \\circ f_1)(\\text{input})$$\n\n重要な原則は**副作用のなさ（純粋性）** と**不変性（immutability）** です。同じ入力には常に同じ出力が返るため、数学の関数と同じように推論できます。Haskellやリストの`map`・`filter`・`reduce`がこの考え方を体現しています。\n\n### オブジェクト指向パラダイム\n\nオブジェクト指向プログラミングは、**データとそれに関連する操作をひとまとめにした「オブジェクト」** を基本単位とします。クラス $C$ はオブジェクトの設計図であり、そこから生成されるインスタンスは共通の属性とメソッドを持ちます。重要な概念として、**カプセル化**（内部状態を隠す）・**継承**（性質を引き継ぐ）・**ポリモーフィズム**（同じ操作が異なる振る舞いをする）が挙げられます。\n\n$$\\text{クラス} \\; C \\ni \\text{インスタンス} \\; o, \\quad o.\\text{method}() \\to \\text{結果}$$\n\n## 具体例\n\n### 例1：日常生活 — レシピと料理の流儀\n\n「1から10までの整数の合計を求める」という同じ目的に対して、3つのパラダイムでの思考の違いを料理にたとえて考えてみましょう。\n\n- **命令型**：「まずボウルを用意して（`total = 0`）、1を入れて（`total += 1`）、2を入れて…と10まで繰り返す」という手順書。料理人が「次はこれをする」と逐一指示される感覚です。\n- **関数型**：「1から10の集合に対して『足す』という操作を適用する（`sum([1..10])`）」。材料（データ）を変換する関数を組み合わせる感覚です。\n- **オブジェクト指向**：「合計器オブジェクトを作り、そいつに数を追加するよう頼む（`accumulator.add(i)`）」。役割を持った道具に仕事を依頼する感覚です。\n\n### 例2：リストから偶数だけを取り出す\n\nリスト $[1, 2, 3, 4, 5, 6]$ から偶数だけを集めるとき、各パラダイムの発想の違いが明確に現れます。\n\n**命令型（Pythonの手続き的スタイル）：**\n```python\nresult = []\nfor x in [1, 2, 3, 4, 5, 6]:\n    if x % 2 == 0:\n        result.append(x)\n# result = [2, 4, 6]\n```\n「ループを回して、条件を確認して、追加する」という逐次手順を明示します。\n\n**関数型（Pythonのfilterを使うスタイル）：**\n```python\nresult = list(filter(lambda x: x % 2 == 0, [1, 2, 3, 4, 5, 6]))\n# result = [2, 4, 6]\n```\n「偶数かどうかを判定する関数」と「リストを絞り込む関数」を組み合わせています。「何をするか」の意図が直接表れており、$\\mathrm{filter}(\\mathrm{isEven},\\, \\mathrm{list})$ という数学的な写像の適用そのものです。\n\n**オブジェクト指向（コレクションオブジェクトのメソッドを使うスタイル）：**\n```python\nresult = NumberList([1, 2, 3, 4, 5, 6]).filter_evens()\n# result = [2, 4, 6]\n```\n「数のリスト」というオブジェクトが「偶数だけを返す」という能力（メソッド）を持っているというイメージです。\n\n### 例3：図形の面積計算\n\n異なる図形（円・三角形・長方形）の面積を計算する問題は、オブジェクト指向の**ポリモーフィズム**の威力が輝く場面です。\n\n```python\nclass Shape:\n    def area(self): pass\n\nclass Circle(Shape):\n    def area(self): return 3.14159 * self.r ** 2\n\nclass Triangle(Shape):\n    def area(self): return 0.5 * self.b * self.h\n```\n\nどの図形も `shape.area()` という同じ呼び出し方をするにもかかわらず、それぞれが適切な公式 $\\pi r^2$ や $\\dfrac{1}{2}bh$ で計算します。これは数学における「面積」という概念の多態性に対応しており、命令型で `if shape == 'circle'` ... と場合分けを書き続けるよりも、はるかに拡張しやすい設計になっています。\n\n## つながり — 他の概念との関係\n\n**前提知識として役立つもの：**\n\n- **集合と関数**（$f: A \\to B$）：関数型パラダイムの基礎。入力と出力の型を意識することがそのまま関数型の発想につながります。\n- **論理・命題**：条件分岐（`if`文）の背景にある「真・偽の判定」は命題論理と直結しています。\n- **グラフ・木構造**：オブジェクト間の継承関係はグラフ（特に有向非巡回グラフ）で表現されます。\n\n**発展先となる概念：**\n\n- **ラムダ計算（$\\lambda$計算）**：関数型パラダイムの数学的基礎理論で、計算可能性の研究と深く結びついています。\n- **型システム・型理論**：「どんなデータを受け取ってどんなデータを返すか」を厳密に記述する理論で、コンパイラ設計や形式検証に発展します。\n- **デザインパターン**：オブジェクト指向の設計における定石集で、GoF（Gang of Four）パターンが有名です。\n- **並行・並列計算**：関数型の「副作用なし」という性質は、複数の計算を同時に走らせる並行計算との相性が非常によく、現代の多コアプロセッサ時代に再評価されています。\n\n## 他分野への応用\n\n**コンピュータサイエンス・ソフトウェア工学：**\n現実のソフトウェア開発では、3つのパラダイムは対立するものではなく**組み合わせて使われます**。たとえばPythonは命令型・関数型・オブジェクト指向のすべてをサポートする「マルチパラダイム言語」であり、状況に応じて最適なスタイルを選べます。WebフレームワークやゲームエンジンはOOP、データ変換パイプラインは関数型の発想が活きる例です。\n\n**数学・形式検証：**\n定理証明支援システム（Coq、Lean、Agdaなど）は関数型パラダイムをベースに設計されています。「証明とプログラムは同じものである」というカリー＝ハワード同型対応（Curry–Howard correspondence）は、$\\text{型} \\leftrightarrow \\text{命題}$、$\\text{プログラム} \\leftrightarrow \\text{証明}$ という驚くべき対応を示し、数学の証明をコンピュータで検証することを可能にしています。\n\n**データサイエンス・機械学習：**\n関数型パラダイムの`map`・`filter`・`reduce`は、大規模データ処理フレームワーク（Hadoop、Spark）の設計思想の核心です。データを「変換の連鎖」として表現することで、巨大なデータセットを分散処理しやすくなります。また、ニューラルネットワークは「層（Layer）オブジェクト」の積み重ねとして設計されるOOPの好例でもあります。\n\n**経済学・エージェントベースモデリング：**\nオブジェクト指向のパラダイムは、経済主体（家計・企業・政府）をそれぞれ独立したエージェントオブジェクトとしてモデル化する**マルチエージェントシミュレーション**に応用されています。各エージェントが独自の意思決定ルールを持ちながら相互作用する様子を、OOPのオブジェクト間通信として自然に表現できます。",
+  "terms": [
+    {
+      "term": "プログラミングパラダイム",
+      "reading": "ぷろぐらみんぐぱらだいむ",
+      "en": "Programming Paradigm",
+      "definition": "プログラムをどのような考え方・スタイルで記述するかという根本的な思想的枠組みのこと。命令型・関数型・オブジェクト指向などが主要なパラダイムとして知られる。"
+    },
+    {
+      "term": "命令型パラダイム",
+      "reading": "めいれいがたぱらだいむ",
+      "en": "Imperative Paradigm",
+      "definition": "状態を変化させる命令の列としてプログラムを記述するスタイル。変数の値がステップごとに変化する可変な状態を中心概念とし、チューリング機械や状態遷移系と対応する。"
+    },
+    {
+      "term": "関数型パラダイム",
+      "reading": "かんすうがたぱらだいむ",
+      "en": "Functional Paradigm",
+      "definition": "計算を数学的な関数の合成として記述するスタイル。副作用のなさ（純粋性）と不変性を原則とし、ラムダ計算を数学的基盤とする。"
+    },
+    {
+      "term": "オブジェクト指向パラダイム",
+      "reading": "おぶじぇくとしこうぱらだいむ",
+      "en": "Object-Oriented Paradigm",
+      "definition": "データとそれに関連する操作をひとまとめにした「オブジェクト」を基本単位としてプログラムを構築するスタイル。カプセル化・継承・ポリモーフィズムが重要な概念である。"
+    },
+    {
+      "term": "ラムダ計算",
+      "reading": "らむだけいさん",
+      "en": "Lambda Calculus",
+      "definition": "関数の定義・適用・合成を形式的に記述する数学的体系。関数型パラダイムの理論的基盤であり、計算可能性の研究とも深く結びついている。"
+    },
+    {
+      "term": "副作用",
+      "reading": "ふくさよう",
+      "en": "Side Effect",
+      "definition": "関数の実行が戻り値以外の外部状態を変化させる現象のこと。関数型パラダイムでは副作用をなくすことで、同じ入力に常に同じ出力を保証する純粋な関数を実現する。"
+    },
+    {
+      "term": "不変性",
+      "reading": "ふへんせい",
+      "en": "Immutability",
+      "definition": "一度生成したデータを変更しないという性質。関数型パラダイムの重要な原則であり、並行計算との相性がよく、プログラムの推論を容易にする。"
+    },
+    {
+      "term": "カプセル化",
+      "reading": "かぷせるか",
+      "en": "Encapsulation",
+      "definition": "オブジェクトの内部状態や実装の詳細を外部から隠蔽し、公開されたインターフェースのみを通じてアクセスさせる仕組み。オブジェクト指向の重要な原則の一つ。"
+    },
+    {
+      "term": "継承",
+      "reading": "けいしょう",
+      "en": "Inheritance",
+      "definition": "あるクラスの属性やメソッドを別のクラスが引き継ぐ仕組み。オブジェクト指向の基本概念であり、クラス間の関係は有向非巡回グラフで表現される。"
+    },
+    {
+      "term": "ポリモーフィズム",
+      "reading": "ぽりもーふぃずむ",
+      "en": "Polymorphism",
+      "definition": "同じ操作（メソッド呼び出し）が、対象のオブジェクトの種類に応じて異なる振る舞いをする性質。オブジェクト指向における多態性を意味し、拡張性の高い設計を可能にする。"
+    },
+    {
+      "term": "状態遷移系",
+      "reading": "じょうたいせんいけい",
+      "en": "State Transition System",
+      "definition": "システムが持つ状態と、命令によって状態が変化する遷移を形式的に記述する数学的モデル。命令型パラダイムの理論的対応物であり、チューリング機械と関連する。"
+    },
+    {
+      "term": "関数合成",
+      "reading": "かんすうごうせい",
+      "en": "Function Composition",
+      "definition": "関数 $f: A \\to B$ と $g: B \\to C$ を組み合わせて新たな関数 $g \\circ f: A \\to C$ を作る操作。関数型パラダイムにおける計算構築の基本的な手法。"
+    },
+    {
+      "term": "カリー＝ハワード同型対応",
+      "reading": "かりーはわーどどうけいたいおう",
+      "en": "Curry–Howard Correspondence",
+      "definition": "型とプログラムが、それぞれ命題と証明に対応するという数学的な対応関係。定理証明支援システムの理論的基盤であり、数学の証明をプログラムとして検証することを可能にする。"
+    },
+    {
+      "term": "型システム",
+      "reading": "かたしすてむ",
+      "en": "Type System",
+      "definition": "プログラム中のデータや関数が受け取る・返す値の種類（型）を厳密に記述・検査する仕組み。型理論を基盤とし、コンパイラ設計や形式検証に応用される。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景透明 -->\n\n  <!-- 中央：プログラミングパラダイム -->\n  <ellipse cx=\"300\" cy=\"260\" rx=\"72\" ry=\"36\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">プログラミング</text>\n  <text x=\"300\" y=\"270\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">パラダイム</text>\n\n  <!-- 命令型ノード（左上） -->\n  <rect x=\"30\" y=\"60\" width=\"150\" height=\"110\" rx=\"12\" fill=\"#ef4444\" fill-opacity=\"0.1\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n  <text x=\"105\" y=\"85\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#ef4444\">命令型</text>\n  <text x=\"105\" y=\"85\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#ef4444\">命令型</text>\n  <text x=\"105\" y=\"103\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Imperative</text>\n  <line x1=\"45\" y1=\"118\" x2=\"165\" y2=\"118\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"105\" y=\"133\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">状態遷移・逐次実行</text>\n  <text x=\"105\" y=\"148\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">可変状態 (mutable)</text>\n  <text x=\"105\" y=\"163\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">チューリング機械</text>\n\n  <!-- 関数型ノード（右上） -->\n  <rect x=\"420\" y=\"60\" width=\"150\" height=\"110\" rx=\"12\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"2\"/>\n  <text x=\"495\" y=\"85\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">関数型</text>\n  <text x=\"495\" y=\"103\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Functional</text>\n  <line x1=\"435\" y1=\"118\" x2=\"555\" y2=\"118\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"495\" y=\"133\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">関数の合成・適用</text>\n  <text x=\"495\" y=\"148\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">不変性・純粋性</text>\n  <text x=\"495\" y=\"163\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">λ計算</text>\n\n  <!-- オブジェクト指向ノード（下） -->\n  <rect x=\"210\" y=\"390\" width=\"180\" height=\"110\" rx=\"12\" fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"415\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">オブジェクト指向</text>\n  <text x=\"300\" y=\"433\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Object-Oriented</text>\n  <line x1=\"225\" y1=\"448\" x2=\"375\" y2=\"448\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"463\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">データ＋操作のカプセル化</text>\n  <text x=\"300\" y=\"478\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">継承・ポリモーフィズム</text>\n  <text x=\"300\" y=\"493\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">代数的構造・型理論</text>\n\n  <!-- 矢印：命令型→中央 -->\n  <line x1=\"178\" y1=\"148\" x2=\"234\" y2=\"255\" stroke=\"#ef4444\" stroke-width=\"1.8\" stroke-opacity=\"0.7\" marker-end=\"url(#arrow-red)\"/>\n  <!-- 矢印：関数型→中央 -->\n  <line x1=\"422\" y1=\"148\" x2=\"366\" y2=\"255\" stroke=\"#22c55e\" stroke-width=\"1.8\" stroke-opacity=\"0.7\" marker-end=\"url(#arrow-green)\"/>\n  <!-- 矢印：中央→OOP -->\n  <line x1=\"300\" y1=\"296\" x2=\"300\" y2=\"388\" stroke=\"#3b82f6\" stroke-width=\"1.8\" stroke-opacity=\"0.7\" marker-end=\"url(#arrow-blue)\"/>\n\n  <!-- 矢印定義 -->\n  <defs>\n    <marker id=\"arrow-red\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#ef4444\" fill-opacity=\"0.8\"/>\n    </marker>\n    <marker id=\"arrow-green\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\" fill-opacity=\"0.8\"/>\n    </marker>\n    <marker id=\"arrow-blue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\" fill-opacity=\"0.8\"/>\n    </marker>\n    <marker id=\"arrow-gray\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.5\"/>\n    </marker>\n  </defs>\n\n  <!-- 命令型と関数型をつなぐ水平線（比較） -->\n  <line x1=\"183\" y1=\"90\" x2=\"417\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5,4\" stroke-opacity=\"0.4\"/>\n  <text x=\"300\" y=\"86\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.7\">比較・選択</text>\n\n  <!-- 例セクション（下部3列） -->\n  <!-- 命令型例 -->\n  <rect x=\"20\" y=\"295\" width=\"140\" height=\"70\" rx=\"8\" fill=\"#ef4444\" fill-opacity=\"0.07\" stroke=\"#ef4444\" stroke-opacity=\"0.4\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\"/>\n  <text x=\"90\" y=\"313\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#ef4444\">命令型の例</text>\n  <text x=\"90\" y=\"330\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">for x in list:</text>\n  <text x=\"90\" y=\"345\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">  if 条件: append</text>\n  <text x=\"90\" y=\"360\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.7\">C言語, Python手続き型</text>\n\n  <!-- 関数型例 -->\n  <rect x=\"440\" y=\"295\" width=\"140\" height=\"70\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.07\" stroke=\"#22c55e\" stroke-opacity=\"0.4\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\"/>\n  <text x=\"510\" y=\"313\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#22c55e\">関数型の例</text>\n  <text x=\"510\" y=\"330\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">filter(lambda x:...</text>\n  <text x=\"510\" y=\"345\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"currentColor\">g ∘ f (input)</text>\n  <text x=\"510\" y=\"360\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.7\">Haskell, map/filter</text>\n\n  <!-- 命令型例→中央 -->\n  <line x1=\"160\" y1=\"310\" x2=\"228\" y2=\"270\" stroke=\"#ef4444\" stroke-width=\"1\" stroke-opacity=\"0.4\" stroke-dasharray=\"3,3\"/>\n  <!-- 関数型例→中央 -->\n  <line x1=\"440\" y1=\"310\" x2=\"372\" y2=\"270\" stroke=\"#22c55e\" stroke-width=\"1\" stroke-opacity=\"0.4\" stroke-dasharray=\"3,3\"/>\n\n  <!-- 数式バナー（上部） -->\n  <rect x=\"175\" y=\"14\" width=\"250\" height=\"32\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-opacity=\"0.2\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"27\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">S₀ →命令₁→ S₁ →命令₂→ … → Sfinal</text>\n  <text x=\"300\" y=\"41\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">output = fₙ ∘ fₙ₋₁ ∘ … ∘ f₁(input)</text>\n\n  <!-- OOP例ラベル -->\n  <text x=\"300\" y=\"510\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.7\">Java, Python クラス定義</text>\n\n</svg>"
+    }
+  ]
+}

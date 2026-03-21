@@ -1,0 +1,93 @@
+{
+  "id": "1ba09ce9-aa7c-42fa-8fc7-2f1aa24186b3",
+  "nodeId": "binary-logic",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:54:11.624Z",
+  "content": "# 2進数と論理回路\n\n## 何か — 直感的な説明\n\nコンピュータの中では、すべての情報が「0か1か」という2種類の数字だけで表されています。これが**2進数（binary）**です。私たちが普段使う10進数が0〜9の10種類の数字を使うのと同じように、2進数は0と1の2種類だけを使って数を表します。\n\nたとえば、電気のスイッチを思い浮かべてください。スイッチは「オン（1）」か「オフ（0）」かの2状態しかありません。コンピュータの内部にある何十億もの小さなスイッチ（トランジスタ）が、まさにこの「0か1か」の状態を持つことで、膨大な量の情報を処理しています。\n\n**論理回路（logic circuit）**は、そのような0と1の信号を組み合わせて「AND（かつ）」「OR（または）」「NOT（否定）」という論理的な計算を行う回路です。2進数と論理回路は、まさにコンピュータという巨大な建物を支える「レンガ」のような存在です。\n\n---\n\n## なぜ必要か — 数学における位置づけ\n\n2進数と論理回路は、**コンピュータ科学の最も根本的な基礎**です。どんなに複雑なプログラムも、最終的にはこの0と1の世界に変換されて処理されます。数学的には「ブール代数（Boolean algebra）」という体系が背景にあり、これは19世紀の数学者ジョージ・ブールが論理学を代数的に扱うために作り上げたものです。\n\nこの概念は「離散数学」「情報理論」「デジタル回路設計」などの分野に直結しており、大学でコンピュータサイエンスや電気工学を学ぶ上で欠かせない出発点です。また、集合論や命題論理とも深くつながっているため、数学の論理的思考力を養う素材としても非常に優れています。\n\nさらに実用面では、2進数を理解することでプログラミングにおけるビット演算や、データの格納・圧縮のしくみが自然に見えてくるようになります。「なぜコンピュータは2進数を使うのか？」という問いに答えられることは、デジタル社会を生きる上での大切な教養でもあります。\n\n---\n\n## 核となるアイデア — 定義・定理の本質\n\n### 2進数の表現\n\n10進数では「位（くらい）」ごとに $10^n$ の重みがあります。同様に2進数では各位の重みが $2^n$ になります。\n\n$$\n(1011)_2 = 1 \\times 2^3 + 0 \\times 2^2 + 1 \\times 2^1 + 1 \\times 2^0 = 8 + 0 + 2 + 1 = 11\n$$\n\n一般に $n$ ビットの2進数 $b_{n-1} b_{n-2} \\cdots b_1 b_0$（各 $b_i \\in \\{0, 1\\}$）が表す10進数の値は\n\n$$\n\\sum_{i=0}^{n-1} b_i \\cdot 2^i\n$$\n\nと書けます。\n\n### ブール代数と基本論理ゲート\n\n0と1の世界での計算ルールを定めたのが**ブール代数**です。基本的な演算は次の3つです。\n\n| 演算名 | 記号 | 意味 |\n|--------|------|------|\n| AND（論理積） | $A \\land B$ | AもBも1のときだけ1 |\n| OR（論理和） | $A \\lor B$ | AかBのどちらかが1なら1 |\n| NOT（否定） | $\\lnot A$ | 0と1を逆にする |\n\nこれらの演算はそれぞれ**真理値表**で完全に定義できます。たとえばANDの真理値表は次の通りです。\n\n| $A$ | $B$ | $A \\land B$ |\n|-----|-----|-------------|\n| 0   | 0   | 0           |\n| 0   | 1   | 0           |\n| 1   | 0   | 0           |\n| 1   | 1   | 1           |\n\nまた、ブール代数では次のような重要な法則が成り立ちます（ド・モルガンの法則）。\n\n$$\n\\lnot (A \\land B) = \\lnot A \\lor \\lnot B\n$$\n\n$$\n\\lnot (A \\lor B) = \\lnot A \\land \\lnot B\n$$\n\nこれらのゲートを組み合わせることで、足し算・引き算・比較など、あらゆる演算が実現できます。\n\n---\n\n## 具体例\n\n### 例1：日常生活 — 電灯と2つのスイッチ\n\n廊下の電灯を思い浮かべてください。「廊下の入口のスイッチ（A）」と「廊下の出口のスイッチ（B）」の2つがあり、**どちらかをオンにすると電灯がつく**というシステムです。これはまさに **OR 回路**の動作です。\n\n$$\n\\text{電灯} = A \\lor B\n$$\n\n一方、「セキュリティドアが閉まっている（A = 1）」かつ「暗証番号が正しい（B = 1）」の**両方を満たしたときだけ解錠される**システムは **AND 回路**です。日常のあらゆる「条件の組み合わせ」が論理回路で表現できることがわかります。\n\n### 例2：2進数で数を数える\n\n10進数の 0〜15 を2進数で表すと次のようになります。\n\n| 10進数 | 2進数 |\n|--------|-------|\n| 0      | 0000  |\n| 1      | 0001  |\n| 5      | 0101  |\n| 10     | 1010  |\n| 15     | 1111  |\n\n4ビット（4桁）の2進数で表せる最大の値は $1111_2 = 15 = 2^4 - 1$ です。一般に $n$ ビットでは $0$ から $2^n - 1$ までの $2^n$ 通りの値を表せます。これは、$n$ 個のスイッチの「オン・オフの組み合わせ」の総数に一致します。\n\n### 例3：半加算器 — 論理ゲートで足し算を作る\n\nAND と XOR（排他的論理和）を組み合わせると、1ビットの足し算を行う回路（**半加算器**）が作れます。\n\n$$\n\\text{和}（S） = A \\oplus B \\quad (\\text{XOR})\n$$\n$$\n\\text{桁上がり}（C） = A \\land B \\quad (\\text{AND})\n$$\n\nすべての入力の組み合わせを真理値表で確認すると次のようになります。\n\n| $A$ | $B$ | $S = A \\oplus B$ | $C = A \\land B$ |\n|-----|-----|------------------|-----------------|\n| 0   | 0   | 0                | 0               |\n| 0   | 1   | 1                | 0               |\n| 1   | 0   | 1                | 0               |\n| 1   | 1   | 0                | 1               |\n\nたとえば $A = 1,\\, B = 1$ のとき、$S = 0,\\, C = 1$ となり、これは $1 + 1 = 10_2$（10進数の2）に対応しています。こうして基本ゲートを積み重ねることで、コンピュータの「計算する」という機能が生まれるのです。\n\n---\n\n## つながり — 他の概念との関係\n\n**前提となる知識：**\n- 10進数の仕組み（位取り記数法の理解）\n- 基本的な集合論・命題論理（AND/OR/NOTの論理的意味）\n\n**この概念とつながる数学：**\n- **ブール代数**：2進数と論理回路の数学的基盤。集合の $\\cap$（積集合）や $\\cup$（和集合）と完全に対応します\n- **命題論理**：$\\land,\\, \\lor,\\, \\lnot$ の演算は論理学の記号そのものです\n- **情報理論**：ビット（bit = binary digit）は情報量の最小単位であり、エントロピーの概念へとつながります\n\n**発展する方向：**\n- **組み合わせ回路・順序回路**：フリップフロップやカウンタなど、記憶を持つ回路へ\n- **2の補数表現**：負の数を2進数で扱う方法\n- **浮動小数点数（IEEE 754）**：小数をコンピュータで表す仕組み\n- **アルゴリズムと計算量**：2進数の桁数（ビット数）がアルゴリズムの複雑さの議論に現れます\n\n---\n\n## 他分野への応用\n\n### コンピュータ工学・電気工学\n\n論理回路はCPU（中央処理装置）の設計に直結しています。現代のCPUには数十億個のトランジスタが集積されており、それらがAND・OR・NOTの組み合わせで演算・記憶・制御のすべてを実現しています。また、FPGA（書き換え可能な論理回路）は通信機器や医療機器にも広く使われています。\n\n### 情報通信・暗号理論\n\nインターネットでデータを送受信するとき、データは2進数のビット列として扱われます。エラー訂正符号（ハミング符号など）はビット演算を巧みに利用してデータの誤りを検出・修正します。さらに現代の暗号技術（AES, RSAなど）は大きな2進数に対するビット演算に基盤を置いています。\n\n### 認知科学・哲学\n\nブール代数の「真（1）／偽（0）」の二値論理は、人間の思考の形式化にも使われてきました。人工知能の初期の研究では「人間の推論は論理演算に還元できる」という考え方が支配的でした。現代のニューラルネットワークにおいても、各ニューロンの「発火する（1）／しない（0）」という二値的な抽象化がモデルの起源にあります。\n\n### 生物学・医学\n\n遺伝子のスイッチ（オン・オフ）の制御ネットワークは論理回路と類似した構造を持ちます。ある遺伝子が「発現する（1）か否（0）か」を決める調節ネットワークはブール回路でモデル化されており、細胞の分化や疾患のメカニズム解明に応用されています。",
+  "terms": [
+    {
+      "term": "2進数",
+      "reading": "にしんすう",
+      "en": "binary number",
+      "definition": "0と1の2種類の数字のみを用いて数を表す記数法。各桁の重みが2のべき乗となる位取り記数法の一種。"
+    },
+    {
+      "term": "ブール代数",
+      "reading": "ぶーるだいすう",
+      "en": "Boolean algebra",
+      "definition": "0と1の二値を対象としたAND・OR・NOTの演算体系。19世紀の数学者ジョージ・ブールが論理学を代数的に定式化したもので、論理回路の数学的基盤となる。"
+    },
+    {
+      "term": "論理回路",
+      "reading": "ろんりかいろ",
+      "en": "logic circuit",
+      "definition": "0と1の信号を入力とし、AND・OR・NOTなどの論理演算を組み合わせて出力を得る電子回路。コンピュータの演算・制御の基本構成要素。"
+    },
+    {
+      "term": "論理積",
+      "reading": "ろんりせき",
+      "en": "AND",
+      "definition": "二つの入力がともに1のときにのみ出力が1となる論理演算。記号 $A \\land B$ で表される。"
+    },
+    {
+      "term": "論理和",
+      "reading": "ろんりわ",
+      "en": "OR",
+      "definition": "二つの入力のうち少なくとも一方が1であれば出力が1となる論理演算。記号 $A \\lor B$ で表される。"
+    },
+    {
+      "term": "否定",
+      "reading": "ひてい",
+      "en": "NOT",
+      "definition": "入力の0と1を反転させる論理演算。記号 $\\lnot A$ で表され、1入力1出力の最も基本的な論理ゲート。"
+    },
+    {
+      "term": "真理値表",
+      "reading": "しんりちひょう",
+      "en": "truth table",
+      "definition": "論理演算において、すべての入力の組み合わせとそれに対応する出力を一覧にした表。論理演算の動作を完全に定義する。"
+    },
+    {
+      "term": "ド・モルガンの法則",
+      "reading": "どもるがんのほうそく",
+      "en": "De Morgan's laws",
+      "definition": "ブール代数における重要な変換法則で、$\\lnot(A \\land B) = \\lnot A \\lor \\lnot B$ および $\\lnot(A \\lor B) = \\lnot A \\land \\lnot B$ が成り立つ。"
+    },
+    {
+      "term": "排他的論理和",
+      "reading": "はいたてきろんりわ",
+      "en": "XOR (exclusive OR)",
+      "definition": "二つの入力が異なるときに1、同じときに0を出力する論理演算。記号 $A \\oplus B$ で表され、半加算器の和の計算などに用いられる。"
+    },
+    {
+      "term": "半加算器",
+      "reading": "はんかさんき",
+      "en": "half adder",
+      "definition": "XORゲートとANDゲートを組み合わせて1ビット同士の加算を行う基本的な論理回路。和（S）と桁上がり（C）の2ビットを出力する。"
+    },
+    {
+      "term": "ビット",
+      "reading": "びっと",
+      "en": "bit",
+      "definition": "binary digitの略で、0か1かの2値をとる情報量の最小単位。2進数の1桁に相当する。"
+    },
+    {
+      "term": "トランジスタ",
+      "reading": "とらんじすた",
+      "en": "transistor",
+      "definition": "電気信号のオン・オフを制御できる半導体素子。論理回路の物理的な実装単位であり、現代のCPUには数十億個が集積されている。"
+    },
+    {
+      "term": "命題論理",
+      "reading": "めいだいろんり",
+      "en": "propositional logic",
+      "definition": "真（1）または偽（0）の値をとる命題を∧・∨・¬などの論理演算で結合し、推論の形式的な体系を扱う論理学の一分野。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- Background transparent -->\n\n  <!-- ===== TITLE ===== -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">2進数と論理回路の構造マップ</text>\n\n  <!-- ===== CENTER: Boolean Algebra ===== -->\n  <ellipse cx=\"300\" cy=\"260\" rx=\"70\" ry=\"36\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">ブール代数</text>\n  <text x=\"300\" y=\"272\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Boolean Algebra</text>\n\n  <!-- ===== TOP LEFT: 2進数 ===== -->\n  <rect x=\"50\" y=\"55\" width=\"140\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"120\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">2進数</text>\n  <text x=\"120\" y=\"96\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">各桁の重み: 2ⁿ</text>\n  <text x=\"120\" y=\"112\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">(1011)₂ = 8+0+2+1 = 11</text>\n  <text x=\"120\" y=\"126\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">nビット → 2ⁿ通り</text>\n\n  <!-- ===== TOP RIGHT: 命題論理 ===== -->\n  <rect x=\"410\" y=\"55\" width=\"140\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"480\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">命題論理</text>\n  <text x=\"480\" y=\"96\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">∧（AND）∨（OR）</text>\n  <text x=\"480\" y=\"112\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬（NOT）</text>\n  <text x=\"480\" y=\"126\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">真偽 → 0 / 1</text>\n\n  <!-- ===== MIDDLE LEFT: 基本ゲート ===== -->\n  <rect x=\"30\" y=\"215\" width=\"150\" height=\"90\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"105\" y=\"238\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">基本論理ゲート</text>\n  <!-- AND gate symbol -->\n  <text x=\"50\" y=\"258\" font-size=\"10\" fill=\"#3b82f6\">AND:</text>\n  <text x=\"90\" y=\"258\" font-size=\"10\" fill=\"currentColor\">A∧B → 両方1で1</text>\n  <text x=\"50\" y=\"274\" font-size=\"10\" fill=\"#22c55e\">OR:</text>\n  <text x=\"90\" y=\"274\" font-size=\"10\" fill=\"currentColor\">A∨B → 一方1で1</text>\n  <text x=\"50\" y=\"290\" font-size=\"10\" fill=\"#ef4444\">NOT:</text>\n  <text x=\"90\" y=\"290\" font-size=\"10\" fill=\"currentColor\">¬A → 0↔1反転</text>\n\n  <!-- ===== MIDDLE RIGHT: 真理値表 ===== -->\n  <rect x=\"420\" y=\"215\" width=\"150\" height=\"90\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"495\" y=\"238\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">真理値表 (AND)</text>\n  <text x=\"445\" y=\"256\" font-size=\"10\" fill=\"currentColor\">A  B  A∧B</text>\n  <line x1=\"435\" y1=\"260\" x2=\"560\" y2=\"260\" stroke=\"currentColor\" stroke-width=\"0.8\" stroke-opacity=\"0.4\"/>\n  <text x=\"445\" y=\"272\" font-size=\"10\" fill=\"currentColor\">0  0   0</text>\n  <text x=\"445\" y=\"284\" font-size=\"10\" fill=\"currentColor\">0  1   0</text>\n  <text x=\"445\" y=\"296\" font-size=\"10\" fill=\"currentColor\">1  0   0</text>\n  <text x=\"445\" y=\"308\" font-size=\"10\" fill=\"#22c55e\" font-weight=\"bold\">1  1   1</text>\n\n  <!-- ===== BOTTOM LEFT: ド・モルガン則 ===== -->\n  <rect x=\"50\" y=\"370\" width=\"160\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"130\" y=\"392\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">ド・モルガンの法則</text>\n  <text x=\"130\" y=\"412\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬(A∧B) = ¬A ∨ ¬B</text>\n  <text x=\"130\" y=\"428\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬(A∨B) = ¬A ∧ ¬B</text>\n  <text x=\"130\" y=\"444\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.7\">集合の補集合と対応</text>\n\n  <!-- ===== BOTTOM CENTER: 半加算器 ===== -->\n  <rect x=\"220\" y=\"370\" width=\"160\" height=\"80\" rx=\"12\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"392\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">半加算器</text>\n  <text x=\"300\" y=\"410\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">和 S = A ⊕ B (XOR)</text>\n  <text x=\"300\" y=\"426\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">桁上がり C = A∧B</text>\n  <text x=\"300\" y=\"444\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">1+1 = 10₂ (C=1, S=0)</text>\n\n  <!-- ===== BOTTOM RIGHT: 応用 ===== -->\n  <rect x=\"395\" y=\"370\" width=\"160\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"475\" y=\"392\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">応用・つながり</text>\n  <text x=\"475\" y=\"410\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">情報理論・ビット演算</text>\n  <text x=\"475\" y=\"426\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">デジタル回路設計</text>\n  <text x=\"475\" y=\"442\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">集合論・離散数学</text>\n\n  <!-- ===== ARROWS ===== -->\n  <!-- 2進数 → ブール代数 -->\n  <line x1=\"185\" y1=\"110\" x2=\"255\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- 命題論理 → ブール代数 -->\n  <line x1=\"415\" y1=\"110\" x2=\"345\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- ブール代数 → 基本ゲート -->\n  <line x1=\"234\" y1=\"268\" x2=\"182\" y2=\"268\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- ブール代数 → 真理値表 -->\n  <line x1=\"366\" y1=\"268\" x2=\"418\" y2=\"268\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- ブール代数 → ド・モルガン -->\n  <line x1=\"258\" y1=\"288\" x2=\"210\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- ブール代数 → 半加算器 -->\n  <line x1=\"300\" y1=\"296\" x2=\"300\" y2=\"368\" stroke=\"#3b82f6\" stroke-width=\"1.8\" stroke-opacity=\"0.7\" marker-end=\"url(#arrowBlue)\"/>\n  <!-- ブール代数 → 応用 -->\n  <line x1=\"342\" y1=\"288\" x2=\"440\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n\n  <!-- 2進数 → 半加算器 (dashed) -->\n  <line x1=\"150\" y1=\"135\" x2=\"255\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1\" stroke-opacity=\"0.3\" stroke-dasharray=\"5,4\" marker-end=\"url(#arrowLight)\"/>\n\n  <!-- ===== ARROW MARKERS ===== -->\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.6\"/>\n    </marker>\n    <marker id=\"arrowBlue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\" fill-opacity=\"0.8\"/>\n    </marker>\n    <marker id=\"arrowLight\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.3\"/>\n    </marker>\n  </defs>\n\n  <!-- ===== LEGEND ===== -->\n  <text x=\"300\" y=\"500\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.55\">→ 概念の依存・派生関係　　破線 → 間接的なつながり</text>\n\n</svg>"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "5fb2cfa3-3a3f-4ac8-9ba9-42ddef7723ae",
+  "nodeId": "real-numbers",
+  "level": "standard",
+  "generatedAt": "2026-03-20T14:22:38.715Z",
+  "content": "# 実数\n\n## 何か — 直感的な説明\n\n実数とは、数直線上のすべての点に対応する数の集まりです。整数や分数（有理数）だけでなく、$\\sqrt{2}$ や $\\pi$ のような「分数で表せない数」（無理数）もすべて含んだ、隙間のない連続的な数の体系です。\n\n数直線を想像してください。$0$ と $1$ の間には $\\frac{1}{2}$ や $\\frac{1}{3}$ といった有理数が無数に存在しますが、実はそれだけでは数直線を「埋め尽くす」ことはできません。有理数だけでは表せない点が無数に残っており、それらを含めて初めて数直線が完全に満たされます。この「完全に満たされた数直線」に対応する数の全体が実数です。\n\n## なぜ必要か — 数学における位置づけ\n\n有理数だけでは、数学的に自然な操作を行ったときに「数が存在しない」という困った状況が生じます。たとえば、$x^2 = 2$ を満たす正の数は有理数の範囲には存在しません（$\\sqrt{2}$ が無理数であることは古代ギリシャ時代から知られています）。また、円の直径に対する周の比 $\\pi$ も有理数ではありません。こうした数を排除してしまうと、幾何学や解析学が成り立たなくなります。\n\n実数の体系を導入することで、「数列の極限」「関数の連続性」「微分・積分」といった解析学の概念が厳密に定式化できるようになります。実数の最も重要な性質は**完備性**（completeness）で、「実数列が収束しそうに見えるなら、その極限も必ず実数として存在する」ことを保証します。これは高校数学から大学数学への大きな飛躍の一つです。\n\n## 核となるアイデア — 定義・定理の本質\n\n実数の全体 $\\mathbb{R}$ は、有理数の集合 $\\mathbb{Q}$ と無理数の集合を合わせたものです。\n\n$$\\mathbb{R} = \\mathbb{Q} \\cup (\\mathbb{R} \\setminus \\mathbb{Q})$$\n\n実数の構造を特徴づける重要な性質として、**上限公理**（あるいは連続性公理）があります。「上に有界な空でない実数の部分集合には、上限（最小上界）が必ず実数として存在する」というものです。これを式で表すと：\n\n$$\\text{空でない } S \\subset \\mathbb{R} \\text{ が上に有界} \\implies \\sup S \\in \\mathbb{R} \\text{ が存在する}$$\n\nこの公理こそが実数を有理数と区別する本質であり、解析学全体の基盤となります。また、実数は**順序体**の構造を持ちます。すなわち、加減乗除の四則演算ができ（体）、大小関係が定まっており（順序）、この二つが整合的に組み合わさっています。\n\n## 具体例 — 身近な例\n\n**例1：$\\sqrt{2}$ は実数だが有理数ではない**\n正方形の一辺の長さが $1$ のとき、対角線の長さは $\\sqrt{2} \\approx 1.41421356\\ldots$ です。この値は循環しない無限小数で、どんな整数 $p, q$（$q \\neq 0$）を使っても $\\sqrt{2} = \\frac{p}{q}$ と書けないことが証明されています。しかし数直線上には確かに存在する点であり、立派な実数です。\n\n**例2：円周率 $\\pi$ と自然対数の底 $e$**\n円の直径に対する周の長さの比 $\\pi \\approx 3.14159265\\ldots$ や、指数関数・対数関数の土台となる $e \\approx 2.71828182\\ldots$ は、無理数であるだけでなく「代数方程式の解にもなれない」**超越数**という特別な無理数です。これらは日常の計測や自然現象の記述に頻繁に登場する、非常に重要な実数です。\n\n## つながり — 他の概念との関係\n\n実数は数の体系の階層の中に位置づけられます。自然数 $\\mathbb{N}$ から整数 $\\mathbb{Z}$、有理数 $\\mathbb{Q}$、実数 $\\mathbb{R}$、そして複素数 $\\mathbb{C}$ へと拡張される階層の中で、実数は「連続性・順序・完備性をすべて持つ」という点で特別な地位を占めます。\n\n実数の概念は、**数列と極限**（実数の完備性が極限の存在を保証する）、**連続関数**（実数の連続性があって初めて「滑らかにつながる関数」が定義できる）、**微分積分学**（極限を使って定義される）へと直接つながります。また、実数の公理的な構築方法としてデデキント切断やコーシー列による方法があり、これらは大学の解析学・集合論で詳しく学びます。\n\n## 他分野への応用 — 物理・化学・経済学・工学などでこの概念がどう使われるか\n\n**物理学**では、時間・距離・質量・温度などあらゆる物理量が実数で表されます。「時刻 $t = \\sqrt{2}$ 秒後の位置」も意味をなしますし、量子力学でも観測量の期待値は実数です。実数の連続性があることで、「微小な変化」を扱う微分方程式が物理法則の言語となります。\n\n**経済学・ファイナンス**では、価格・利率・確率などが実数値を取ります。連続時間モデルによる資産価格の変動（ブラック・ショールズ方程式など）は、実数と微積分の枠組みで記述されます。**工学**においても、信号処理・制御理論・最適化問題で実数値の連続関数を扱うことが基本となっており、実数の完備性が数値計算の収束保証を支えています。",
+  "terms": [
+    {
+      "term": "実数",
+      "reading": "じっすう",
+      "en": "Real Number",
+      "definition": "有理数と無理数をすべて含む数の体系。数直線上のすべての点に対応し、完備な順序体を形成する。"
+    },
+    {
+      "term": "有理数",
+      "reading": "ゆうりすう",
+      "en": "Rational Number",
+      "definition": "整数 $p$, $q$（$q \\neq 0$）を用いて $\\frac{p}{q}$ の形で表せる数。有限小数または循環小数になる。"
+    },
+    {
+      "term": "無理数",
+      "reading": "むりすう",
+      "en": "Irrational Number",
+      "definition": "分数で表せない実数。無限に続き循環しない小数で表され、$\\sqrt{2}$、$\\pi$、$e$ などが代表例。"
+    },
+    {
+      "term": "完備性",
+      "reading": "かんびせい",
+      "en": "Completeness",
+      "definition": "上に有界な空でない部分集合が必ず上限（最小上界）を持つという実数の基本性質。有理数にはないが実数には成り立つ。"
+    },
+    {
+      "term": "上限（最小上界）",
+      "reading": "じょうげん（さいしょうじょうかい）",
+      "en": "Supremum",
+      "definition": "集合のすべての要素以上であるような数のうち、最も小さいもの。$\\sup S$ と表記する。"
+    },
+    {
+      "term": "数直線",
+      "reading": "すうちょくせん",
+      "en": "Number Line",
+      "definition": "実数全体を一直線上の点として表した図。実数と直線上の点が一対一に対応するという実数の幾何学的解釈。"
+    },
+    {
+      "term": "超越数",
+      "reading": "ちょうえつすう",
+      "en": "Transcendental Number",
+      "definition": "有理数係数の多項式方程式の解にならない無理数。$\\pi$ や $e$ が代表例で、無理数の中でも「より複雑」な数。"
+    },
+    {
+      "term": "順序体",
+      "reading": "じゅんじょたい",
+      "en": "Ordered Field",
+      "definition": "四則演算が定義され（体）、かつ大小関係（順序）が演算と整合的に定まっている代数構造。実数はその代表例。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 420\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n  <!-- 背景なし（透明） -->\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"32\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"currentColor\">数の体系：実数の位置づけ</text>\n\n  <!-- 最外層：実数 R -->\n  <ellipse cx=\"300\" cy=\"230\" rx=\"270\" ry=\"175\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"530\" y=\"90\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#3b82f6\">実数 ℝ</text>\n\n  <!-- 無理数ゾーン（実数の右側の帯として示すラベル） -->\n  <text x=\"490\" y=\"200\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\" opacity=\"0.8\">無理数</text>\n  <text x=\"490\" y=\"218\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\" opacity=\"0.7\">√2, π, e, …</text>\n  <line x1=\"455\" y1=\"205\" x2=\"390\" y2=\"205\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\" opacity=\"0.5\"/>\n\n  <!-- 有理数層 -->\n  <ellipse cx=\"270\" cy=\"240\" rx=\"195\" ry=\"130\" fill=\"#22c55e\" fill-opacity=\"0.10\" stroke=\"#22c55e\" stroke-width=\"2\"/>\n  <text x=\"126\" y=\"118\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">有理数 ℚ</text>\n  <text x=\"126\" y=\"136\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\" opacity=\"0.7\">（分数で表せる数）</text>\n\n  <!-- 整数層 -->\n  <ellipse cx=\"258\" cy=\"252\" rx=\"130\" ry=\"88\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\"/>\n  <text x=\"175\" y=\"175\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">整数 ℤ</text>\n\n  <!-- 自然数層 -->\n  <ellipse cx=\"248\" cy=\"265\" rx=\"72\" ry=\"52\" fill=\"currentColor\" fill-opacity=\"0.10\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"248\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">自然数 ℕ</text>\n  <text x=\"248\" y=\"270\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">1, 2, 3, …</text>\n\n  <!-- 整数の例ラベル -->\n  <text x=\"175\" y=\"282\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.8\">…, −2, −1, 0</text>\n\n  <!-- 有理数の例ラベル -->\n  <text x=\"116\" y=\"250\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.8\">1/2, −3/4</text>\n  <text x=\"116\" y=\"265\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.8\">0.333…</text>\n\n  <!-- 数直線セクション -->\n  <line x1=\"30\" y1=\"370\" x2=\"570\" y2=\"370\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <!-- 矢印 -->\n  <polygon points=\"570,370 560,365 560,375\" fill=\"currentColor\"/>\n  <polygon points=\"30,370 40,365 40,375\" fill=\"currentColor\"/>\n  <text x=\"300\" y=\"395\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">数直線（実数は隙間なくこの直線を埋め尽くす）</text>\n\n  <!-- 数直線上の点 -->\n  <!-- 目盛り -->\n  <line x1=\"150\" y1=\"365\" x2=\"150\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"150\" y=\"358\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">−1</text>\n  <line x1=\"220\" y1=\"365\" x2=\"220\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"220\" y=\"358\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">0</text>\n  <line x1=\"290\" y1=\"365\" x2=\"290\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"290\" y=\"358\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">1</text>\n  <line x1=\"360\" y1=\"365\" x2=\"360\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"360\" y=\"358\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">2</text>\n  <line x1=\"430\" y1=\"365\" x2=\"430\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"430\" y=\"358\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">3</text>\n\n  <!-- 特別な点：√2 -->\n  <circle cx=\"389\" cy=\"370\" r=\"4\" fill=\"#ef4444\"/>\n  <text x=\"389\" y=\"352\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">√2</text>\n\n  <!-- 特別な点：π -->\n  <circle cx=\"511\" cy=\"370\" r=\"4\" fill=\"#3b82f6\"/>\n  <text x=\"511\" y=\"352\" text-anchor=\"middle\" font-size=\"10\" fill=\"#3b82f6\">π</text>\n\n  <!-- 凡例 -->\n  <circle cx=\"390\" cy=\"340\" r=\"4\" fill=\"#ef4444\"/>\n  <text x=\"398\" y=\"344\" font-size=\"10\" fill=\"currentColor\">無理数（代数的）</text>\n  <circle cx=\"490\" cy=\"340\" r=\"4\" fill=\"#3b82f6\"/>\n  <text x=\"498\" y=\"344\" font-size=\"10\" fill=\"currentColor\">無理数（超越数）</text>\n\n</svg>"
+    }
+  ]
+}

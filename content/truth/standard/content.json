@@ -1,0 +1,99 @@
+{
+  "id": "beeb9558-7eb0-4d57-9522-40acb996452f",
+  "nodeId": "truth",
+  "level": "standard",
+  "generatedAt": "2026-03-21T07:27:55.473Z",
+  "content": "# 真理論\n\n## 何か — 直感的な説明\n\n「この命題は本当のことを言っているか？」——私たちは日常生活の中で、無意識にこの問いを繰り返しています。**真理論（Theory of Truth）**とは、ある文や命題が「真（true）」であるとはどういうことかを体系的に分析する哲学・論理学の分野です。\n\nたとえば、「東京は日本の首都である」という文を読んだとき、私たちはこれが「正しい」と判断します。しかしその「正しさ」はどこから来るのでしょうか？文の中に「正しさ」が書いてあるわけではありません。文と、文が指し示す**現実の世界**との間に何らかの対応関係があるからこそ、私たちはこれを「真だ」と言えるのです。真理論とは、この「対応関係」の正体を丁寧に解明しようとする試みです。\n\n---\n\n## なぜ必要か — 数学における位置づけ\n\n数学や論理学では、命題の真偽を厳密に扱うことが基盤となっています。たとえば**命題論理**では、命題 $P$ が「真（$\\top$）」か「偽（$\\bot$）」かを明確に定め、そこから論理演算（AND, OR, NOTなど）の意味を構築します。この「真であるとはどういうことか」という問いに答えを与えなければ、論理体系全体の土台が揺らいでしまいます。\n\nまた、数学の証明では「ある命題が真であることを示す」という作業が中心です。では「示された」とはどういう意味か？形式的な証明システム（公理＋推論規則）の中で導出できることと、意味論的に真であることは、実は別の問題です。ゲーデルの不完全性定理のような深い結果は、まさにこの「証明できる」と「真である」のズレを鋭く突いたものです。真理論はこのような問いの出発点に位置します。\n\n---\n\n## 核となるアイデア — 定義・定理の本質\n\n真理論には複数のアプローチがありますが、最も基礎的かつ影響力の大きいものが**タルスキの対応説（Tarski's Truth Definition）**です。アルフレッド・タルスキは1930年代に、真理の定義を次の原則（T図式）で表しました：\n\n$$\n\\text{「}S\\text{」は真である} \\iff S\n$$\n\nたとえば：\n\n$$\n\\text{「雪は白い」は真である} \\iff \\text{雪は白い}\n$$\n\nこれは循環しているように見えますが、タルスキの重要なアイデアは**「対象言語（object language）」と「メタ言語（meta-language）」を区別する**ことにあります。左辺の「\"雪は白い\"」は言語表現そのものを名指しており、右辺の「雪は白い」は実際の事実について述べています。この二層構造があるからこそ、定義は矛盾しないのです。\n\nより形式的には、論理式 $\\varphi$ に対して、構造（モデル）$\\mathcal{M}$ のもとでの**真理定義**を次のように再帰的に構成します：\n\n$$\n\\mathcal{M} \\models \\varphi\n$$\n\nこれを「$\\mathcal{M}$ は $\\varphi$ を満足する（$\\varphi$ は $\\mathcal{M}$ において真）」と読みます。たとえば：\n\n- 原子論理式：$\\mathcal{M} \\models P(a)$ $\\iff$ $a$ の解釈が $P$ の外延に含まれる\n- 否定：$\\mathcal{M} \\models \\lnot\\varphi$ $\\iff$ $\\mathcal{M} \\not\\models \\varphi$\n- 連言：$\\mathcal{M} \\models \\varphi \\land \\psi$ $\\iff$ $\\mathcal{M} \\models \\varphi$ かつ $\\mathcal{M} \\models \\psi$\n\nこのようにして、「真である」という概念が**再帰的に・精密に**定義されます。\n\n---\n\n## 具体例\n\n### 例1：日常生活 ——「今日は雨が降っている」\n\n窓の外を見て、実際に雨が降っていれば「今日は雨が降っている」は**真**です。降っていなければ**偽**です。これは対応説の核心を示しています——文の真偽は、文それ自体の性質ではなく、**文と現実の事態との対応関係**によって決まります。どんなに丁寧な文章で書かれていても、現実と対応していなければ真ではない、という至ってシンプルな原則です。\n\n### 例2：数学の命題 ——「素数は無限に存在する」\n\n「素数は無限に存在する」というユークリッドの命題は、数学の世界の構造（自然数の集合とその性質）において**真**です。これはモデル理論的な真理の例です。命題 $\\varphi$ =「素数は無限に存在する」に対し、モデル $\\mathcal{M}$ =「自然数の標準的な構造」を取れば、$\\mathcal{M} \\models \\varphi$ が成立します。ここでの「真」はある特定の**数学的構造の中での成立**を意味しており、物理的な現実とは直接関係がありません。\n\n### 例3：嘘つきのパラドックス ——「この文は偽である」\n\n「この文は偽である」という文 $L$ を考えてみましょう。もし $L$ が真なら、$L$ は「$L$ は偽である」と主張しているので、$L$ は偽になってしまいます。逆に $L$ が偽なら、$L$ の主張（「$L$ は偽である」）は正しいので、$L$ は真になります。どちらを仮定しても矛盾が生じます。\n\nこれが有名な**嘘つきのパラドックス（Liar Paradox）**です。タルスキが対象言語とメタ言語を厳しく区別したのは、まさにこのパラドックスを避けるためでした。「この文」という自己言及を禁止することで、真理述語を含む文が無限に積み重なる**階層構造（truth hierarchy）**が生まれ、矛盾を回避できるのです。これは「真」という概念が、扱い方を誤ると簡単に破綻することを示す重要な例です。\n\n---\n\n## つながり — 他の概念との関係\n\n**前提となる概念**としては、まず**命題論理・述語論理**の基礎的な理解が必要です。論理式の構文（シンタックス）がわからなければ、意味論（セマンティクス）としての真理定義も理解しにくいでしょう。また、集合論の基礎（集合の外延、関係など）も、モデル理論的な定義には不可欠です。\n\n**発展先**としては、**モデル理論（Model Theory）**があります。真理の概念を突き詰めると「どのモデルでも真か（論理的真理）」「あるモデルで真か（充足可能性）」といった問いが生まれ、これが現代数理論理学の中核を担います。また、**証明論（Proof Theory）**との対比では、「証明可能性（derivability, $\\vdash$）」と「真理（semantic truth, $\\models$）」の関係を問う**健全性（soundness）**・**完全性（completeness）**の概念へとつながっていきます。さらに認識論・言語哲学では、**整合説（coherence theory）**や**実用主義的真理論（pragmatic theory of truth）**など、対応説以外の真理観との比較も重要なテーマです。\n\n---\n\n## 他分野への応用\n\n**コンピュータサイエンス**では、真理論はプログラムの意味論（semantics）の基礎を提供します。プログラムの仕様が「真」であるとはどういうことかを形式化することで、**形式的検証（formal verification）**や**モデル検査（model checking）**が可能になります。自動運転や航空制御システムのような安全最優先のソフトウェアでは、「このプログラムは仕様を満たすか」を数学的に証明する技術が実際に使われており、その核心にはタルスキ的な真理定義があります。\n\n**言語学・自然言語処理（NLP）**においては、文の意味を形式的に扱う**形式意味論（formal semantics）**が真理条件的意味論（truth-conditional semantics）を採用しています。「その文はどんな世界で真か」という問いが文の意味を規定するという考え方で、機械翻訳や質問応答システムの設計にも影響を与えています。また、**法学・倫理学**では「証拠が真実を示しているか」の判断基準として、真理の対応説的な考え方が証拠評価の枠組みに暗黙的に組み込まれています。真理論は、数学の内部にとどまらず、「正しさ」を問うあらゆる営みの根底に流れている概念なのです。",
+  "terms": [
+    {
+      "term": "真理論",
+      "reading": "しんりろん",
+      "en": "Theory of Truth",
+      "definition": "ある文や命題が「真である」とはどういうことかを体系的に分析する哲学・論理学の分野。"
+    },
+    {
+      "term": "対応説",
+      "reading": "たいおうせつ",
+      "en": "Correspondence Theory of Truth",
+      "definition": "文や命題の真偽は、文それ自体の性質ではなく、文と現実の事態との対応関係によって決まるとする真理論の立場。"
+    },
+    {
+      "term": "T図式",
+      "reading": "てぃーずしき",
+      "en": "T-schema",
+      "definition": "タルスキが提唱した真理定義の原則で、「『S』は真である ⟺ S」という形式で表される。"
+    },
+    {
+      "term": "対象言語",
+      "reading": "たいしょうげんご",
+      "en": "Object Language",
+      "definition": "真理述語によって真偽が語られる対象となる言語層で、メタ言語によって記述される側の言語。"
+    },
+    {
+      "term": "メタ言語",
+      "reading": "めたげんご",
+      "en": "Meta-language",
+      "definition": "対象言語について語るために用いられる上位の言語層で、真理定義はこの層で行われる。"
+    },
+    {
+      "term": "嘘つきのパラドックス",
+      "reading": "うそつきのぱらどっくす",
+      "en": "Liar Paradox",
+      "definition": "「この文は偽である」という自己言及文が真でも偽でも矛盾を生じさせるパラドックスで、真理概念の扱いの難しさを示す。"
+    },
+    {
+      "term": "モデル理論",
+      "reading": "もでるりろん",
+      "en": "Model Theory",
+      "definition": "論理式とそれを解釈する数学的構造（モデル）との関係を研究する数理論理学の分野。"
+    },
+    {
+      "term": "充足関係",
+      "reading": "じゅうそくかんけい",
+      "en": "Satisfaction Relation",
+      "definition": "モデル $\\mathcal{M}$ が論理式 $\\varphi$ を満足することを $\\mathcal{M} \\models \\varphi$ と表す関係で、真理の意味論的定義の核心をなす。"
+    },
+    {
+      "term": "健全性",
+      "reading": "けんぜんせい",
+      "en": "Soundness",
+      "definition": "形式的な証明システムで証明可能な命題はすべて意味論的に真である、という証明論とモデル理論をつなぐ性質。"
+    },
+    {
+      "term": "完全性",
+      "reading": "かんぜんせい",
+      "en": "Completeness",
+      "definition": "意味論的に真であるすべての命題が形式的な証明システムで証明可能である、という性質。"
+    },
+    {
+      "term": "証明論",
+      "reading": "しょうめいろん",
+      "en": "Proof Theory",
+      "definition": "公理と推論規則からなる形式的な証明システムを対象とし、証明可能性（$\\vdash$）を研究する数理論理学の分野。"
+    },
+    {
+      "term": "命題論理",
+      "reading": "めいだいろんり",
+      "en": "Propositional Logic",
+      "definition": "命題を最小単位とし、AND・OR・NOTなどの論理演算によって複合命題の真偽を扱う論理体系。"
+    },
+    {
+      "term": "形式意味論",
+      "reading": "けいしきいみろん",
+      "en": "Formal Semantics",
+      "definition": "文の意味を「どのような状況・世界でその文が真か」という真理条件によって形式的に規定する言語学・論理学の分野。"
+    },
+    {
+      "term": "階層構造",
+      "reading": "かいそうこうぞう",
+      "en": "Truth Hierarchy",
+      "definition": "自己言及によるパラドックスを避けるため、真理述語を言語の階層ごとに分離して積み重ねる構造。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- Background regions -->\n  <!-- Meta-language layer -->\n  <rect x=\"30\" y=\"20\" width=\"540\" height=\"160\" rx=\"14\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\"/>\n  <text x=\"50\" y=\"42\" font-size=\"11\" fill=\"#3b82f6\" font-weight=\"bold\">メタ言語（Meta-language）</text>\n\n  <!-- Object language layer -->\n  <rect x=\"30\" y=\"195\" width=\"540\" height=\"100\" rx=\"14\" fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\"/>\n  <text x=\"50\" y=\"216\" font-size=\"11\" fill=\"#22c55e\" font-weight=\"bold\">対象言語（Object language）</text>\n\n  <!-- Reality layer -->\n  <rect x=\"30\" y=\"308\" width=\"540\" height=\"80\" rx=\"14\" fill=\"#ef4444\" fill-opacity=\"0.08\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\"/>\n  <text x=\"50\" y=\"328\" font-size=\"11\" fill=\"#ef4444\" font-weight=\"bold\">現実・モデル（Reality / Model M）</text>\n\n  <!-- ===== META LANGUAGE NODES ===== -->\n\n  <!-- Tarski T-schema -->\n  <rect x=\"55\" y=\"54\" width=\"160\" height=\"52\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.8\"/>\n  <text x=\"135\" y=\"74\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">タルスキのT図式</text>\n  <text x=\"135\" y=\"90\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">「S」は真 ⟺ S</text>\n  <text x=\"135\" y=\"104\" font-size=\"9\" fill=\"#3b82f6\" text-anchor=\"middle\">真理定義の原則</text>\n\n  <!-- Truth Hierarchy -->\n  <rect x=\"235\" y=\"54\" width=\"140\" height=\"52\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.8\"/>\n  <text x=\"305\" y=\"74\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">真理階層</text>\n  <text x=\"305\" y=\"90\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">Truth Hierarchy</text>\n  <text x=\"305\" y=\"104\" font-size=\"9\" fill=\"#3b82f6\" text-anchor=\"middle\">嘘つきパラドックス回避</text>\n\n  <!-- Soundness / Completeness -->\n  <rect x=\"395\" y=\"54\" width=\"155\" height=\"52\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.8\"/>\n  <text x=\"472\" y=\"74\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">健全性・完全性</text>\n  <text x=\"472\" y=\"90\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">⊢ と ⊨ の関係</text>\n  <text x=\"472\" y=\"104\" font-size=\"9\" fill=\"#3b82f6\" text-anchor=\"middle\">証明論との橋渡し</text>\n\n  <!-- ===== OBJECT LANGUAGE NODES ===== -->\n\n  <!-- Proposition -->\n  <rect x=\"60\" y=\"225\" width=\"120\" height=\"48\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.8\"/>\n  <text x=\"120\" y=\"245\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">命題・論理式 φ</text>\n  <text x=\"120\" y=\"262\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">構文（Syntax）</text>\n\n  <!-- Logical connectives -->\n  <rect x=\"215\" y=\"225\" width=\"170\" height=\"48\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.8\"/>\n  <text x=\"300\" y=\"245\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">論理演算子</text>\n  <text x=\"300\" y=\"262\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">¬φ, φ∧ψ, φ∨ψ, ∀x, ∃x</text>\n\n  <!-- Proof derivation -->\n  <rect x=\"415\" y=\"225\" width=\"135\" height=\"48\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.8\"/>\n  <text x=\"482\" y=\"245\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">形式的証明</text>\n  <text x=\"482\" y=\"262\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">公理 ＋ 推論規則  ⊢</text>\n\n  <!-- ===== REALITY / MODEL NODES ===== -->\n\n  <!-- Model M -->\n  <rect x=\"60\" y=\"330\" width=\"130\" height=\"44\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"#ef4444\" stroke-width=\"1.8\"/>\n  <text x=\"125\" y=\"350\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">モデル M</text>\n  <text x=\"125\" y=\"366\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">構造・解釈・外延</text>\n\n  <!-- Satisfaction -->\n  <rect x=\"225\" y=\"330\" width=\"150\" height=\"44\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"#ef4444\" stroke-width=\"1.8\"/>\n  <text x=\"300\" y=\"350\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">充足関係</text>\n  <text x=\"300\" y=\"366\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">M ⊨ φ（意味的真理）</text>\n\n  <!-- Reality -->\n  <rect x=\"410\" y=\"330\" width=\"140\" height=\"44\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"#ef4444\" stroke-width=\"1.8\"/>\n  <text x=\"480\" y=\"350\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">現実の事態</text>\n  <text x=\"480\" y=\"366\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">対応関係（Correspondence）</text>\n\n  <!-- ===== BOTTOM CONCEPTS ===== -->\n  <rect x=\"55\" y=\"410\" width=\"150\" height=\"44\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"130\" y=\"429\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">前提知識</text>\n  <text x=\"130\" y=\"446\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">命題・述語論理, 集合論</text>\n\n  <rect x=\"225\" y=\"410\" width=\"150\" height=\"44\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"300\" y=\"429\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">モデル理論</text>\n  <text x=\"300\" y=\"446\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">論理的真理・充足可能性</text>\n\n  <rect x=\"395\" y=\"410\" width=\"155\" height=\"44\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"472\" y=\"429\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">証明論</text>\n  <text x=\"472\" y=\"446\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">不完全性定理との接点</text>\n\n  <!-- ===== ARROWS ===== -->\n\n  <!-- T-schema -> Truth Hierarchy -->\n  <line x1=\"215\" y1=\"80\" x2=\"233\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/>\n\n  <!-- Truth Hierarchy -> Soundness -->\n  <line x1=\"375\" y1=\"80\" x2=\"393\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/>\n\n  <!-- T-schema down to Proposition -->\n  <line x1=\"135\" y1=\"106\" x2=\"135\" y2=\"170\" stroke=\"#3b82f6\" stroke-width=\"1.3\" stroke-dasharray=\"4,3\" marker-end=\"url(#arrB)\"/>\n  <text x=\"140\" y=\"163\" font-size=\"9\" fill=\"#3b82f6\">区別</text>\n\n  <!-- Proposition -> Logical connectives -->\n  <line x1=\"180\" y1=\"249\" x2=\"213\" y2=\"249\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/>\n\n  <!-- Logical connectives -> Proof -->\n  <line x1=\"385\" y1=\"249\" x2=\"413\" y2=\"249\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/>\n\n  <!-- Proposition down to Model -->\n  <line x1=\"120\" y1=\"273\" x2=\"120\" y2=\"295\" stroke=\"#22c55e\" stroke-width=\"1.3\" marker-end=\"url(#arrG)\"/>\n\n  <!-- Model -> Satisfaction -->\n  <line x1=\"190\" y1=\"352\" x2=\"223\" y2=\"352\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/>\n\n  <!-- Satisfaction -> Reality -->\n  <line x1=\"375\" y1=\"352\" x2=\"408\" y2=\"352\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/>\n\n  <!-- Proof (syntax) <-> Satisfaction (semantic): the key tension -->\n  <path d=\"M482 273 Q505 305 375 352\" stroke=\"#ef4444\" stroke-width=\"1.6\" fill=\"none\" stroke-dasharray=\"5,3\" marker-end=\"url(#arrR)\"/>\n  <text x=\"510\" y=\"305\" font-size=\"9\" fill=\"#ef4444\">⊢ vs ⊨</text>\n\n  <!-- Satisfaction up to Tarski schema -->\n  <path d=\"M300 329 Q300 180 215 106\" stroke=\"#3b82f6\" stroke-width=\"1.3\" fill=\"none\" stroke-dasharray=\"4,3\" marker-end=\"url(#arrB)\"/>\n  <text x=\"248\" y=\"200\" font-size=\"9\" fill=\"#3b82f6\">意味論的真理</text>\n\n  <!-- Bottom arrows from Model layer -->\n  <line x1=\"125\" y1=\"374\" x2=\"125\" y2=\"408\" stroke=\"currentColor\" stroke-width=\"1.2\" marker-end=\"url(#arr)\"/>\n  <line x1=\"300\" y1=\"374\" x2=\"300\" y2=\"408\" stroke=\"currentColor\" stroke-width=\"1.2\" marker-end=\"url(#arr)\"/>\n  <line x1=\"480\" y1=\"374\" x2=\"480\" y2=\"408\" stroke=\"currentColor\" stroke-width=\"1.2\" marker-end=\"url(#arr)\"/>\n\n  <!-- Liar paradox annotation -->\n  <ellipse cx=\"305\" cy=\"80\" rx=\"68\" ry=\"28\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1.2\" stroke-dasharray=\"3,2\"/>\n  <text x=\"305\" y=\"126\" font-size=\"9\" fill=\"#ef4444\" text-anchor=\"middle\">← 嘘つきパラドックス対策</text>\n\n  <!-- Arrow markers -->\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\"/>\n    </marker>\n    <marker id=\"arrB\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\"/>\n    </marker>\n    <marker id=\"arrG\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n    <marker id=\"arrR\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#ef4444\"/>\n    </marker>\n  </defs>\n\n  <!-- Title -->\n  <text x=\"300\" y=\"498\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\" text-anchor=\"middle\">真理論の概念構造マップ</text>\n\n</svg>"
+    }
+  ]
+}

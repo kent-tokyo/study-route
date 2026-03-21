@@ -1,0 +1,93 @@
+{
+  "id": "b656d307-89c8-471a-9886-6909251b6217",
+  "nodeId": "ec2",
+  "level": "standard",
+  "generatedAt": "2026-03-21T07:24:31.861Z",
+  "content": "# EC2\n\n## 何か — 直感的な説明\n\nEC2（Amazon Elastic Compute Cloud）を一言で表すなら、「インターネット上に置かれた、自分で自由に使えるレンタルコンピュータ」です。\n\n普段私たちが使うパソコンは、手元に物理的な機械があります。しかし EC2 では、Amazon のデータセンターにある巨大なコンピュータ群の一部を、まるで自分専用のマシンのように借りることができます。電源を入れる・切る・スペックを変えるといった操作がすべてインターネット経由でできるのが最大の特徴です。「仮想サーバー（Virtual Server）」と呼ばれる所以はここにあります。物理的な実体は Amazon 側にありながら、利用者には「自分だけのサーバーを持っている」ような体験を提供します。\n\n## なぜ必要か — 数学における位置づけ\n\nかつてウェブサービスやシステムを構築しようとすると、企業は自前でサーバー機器を購入・設置・管理する必要がありました。これには初期費用が数百万円かかることもあり、小さなチームや個人開発者にとっては大きな壁でした。\n\nEC2 はこの問題を根本から解決します。使いたいときだけ使い、使った分だけ料金を支払う「従量課金」モデルにより、スタートアップから大企業まで、あらゆる規模のチームが同じインフラを活用できます。また「Elastic（弾力的）」という名前が示す通り、アクセスが急増したときはサーバーを増やし、閑散期には減らすという柔軟なスケーリングが可能です。現代のクラウドコンピューティングを支える中核サービスのひとつとして、AWS（Amazon Web Services）全体の基盤を担っています。\n\n## 核となるアイデア — 定義・定理の本質\n\nEC2 の本質は **仮想化（Virtualization）** という技術にあります。1台の物理マシン上に、互いに独立した複数の仮想マシン（VM）を同時に動かす技術です。\n\n各 EC2 インスタンス（仮想サーバーの1単位）は、以下の主要な要素で構成されます。\n\n- **AMI（Amazon Machine Image）**: サーバーの設計図。OS やソフトウェアの初期状態を定義します\n- **インスタンスタイプ**: CPU・メモリ・ストレージ・ネットワーク性能の組み合わせ（例：`t3.micro`、`m5.large`）\n- **EBS（Elastic Block Store）**: データを保存するための仮想ディスク\n- **セキュリティグループ**: どの通信を許可・拒否するかを制御するファイアウォール\n\nインスタンスのコスト感覚を掴む例として、時間単位の料金を考えると次のようなイメージになります。\n\n$$\n\\text{月額コスト} = \\text{時間単価} \\times 24 \\, \\text{時間} \\times 30 \\, \\text{日}\n$$\n\nたとえば時間単価が $0.02 ドルの場合、月額は $0.02 \\times 24 \\times 30 = 14.4$ ドルと計算できます。使った時間だけ課金されるため、テスト用途で数時間だけ起動しても数十円程度で済みます。\n\n## 具体例\n\n### 例1：日常生活のたとえ — レンタカーとマイカー\n\n自家用車（オンプレミスサーバー）を持つと、購入費・保険・駐車場・維持費がかかります。一方レンタカー（EC2）は、必要なときだけ借りて、使った分だけ払えばよい。旅行の荷物が多い日は大きな車を、通勤だけなら小さな車を選べる柔軟性があります。EC2 も同様に、負荷に応じてスペックをその場で変更できます。\n\n### 例2：ウェブアプリケーションのホスティング\n\n個人開発者が作った料理レシピ共有サービスを公開するケースを考えましょう。最初はアクセスが少ないので、小さなインスタンス（`t3.micro`、月額約1,000円）で十分です。SNS で紹介されてアクセスが急増した際には、インスタンスタイプをより高性能なものに変更したり、同じ構成のサーバーを複数台に増やしたりすることが、ダウンタイムを最小限に抑えながら行えます。\n\n### 例3：機械学習モデルのトレーニング\n\n大学の研究室で画像認識モデルを学習させたい場合、手元の PC では GPU 不足で何日もかかることがあります。EC2 には GPU を搭載したインスタンスタイプ（`p3`シリーズなど）があり、必要なときだけ起動して高速トレーニングを行い、終わったらインスタンスを停止できます。数時間の利用で数千円のコストに収まることが多く、高額なハードウェアを購入する必要がありません。\n\n### 例4：定期バッチ処理\n\n毎晩深夜に売上データを集計して翌朝レポートを生成する、といったバッチ処理にも EC2 は適しています。処理の時間帯だけインスタンスを自動で起動・停止するよう設定すれば、1日に数時間分のコストしかかかりません。常時起動と比べてコストを大幅に削減できます。\n\n## つながり — 他の概念との関係\n\nEC2 を理解するうえで関連する概念を整理しておきましょう。\n\n**前提・周辺知識**\n- **クラウドコンピューティング**: EC2 はクラウドの中核リソースのひとつ。まずクラウドの概念を押さえると理解が深まります\n- **Linux / OS の基礎**: EC2 インスタンスは多くの場合 Linux で動作するため、基本的なコマンド操作の知識が役立ちます\n- **ネットワークの基礎（IP・ポート）**: セキュリティグループの設定に必要な知識です\n\n**発展的なつながり**\n- **Auto Scaling**: アクセス量に応じて EC2 インスタンスを自動的に増減させる仕組み\n- **ELB（Elastic Load Balancing）**: 複数の EC2 インスタンスへ通信を振り分け、負荷を分散させるサービス\n- **Lambda**: サーバーの管理すら不要にした「サーバーレス」の発展形。EC2 との違いを比較することで理解が深まります\n- **VPC（Virtual Private Cloud）**: EC2 インスタンスを配置する仮想ネットワーク空間\n\n## 他分野への応用\n\n**ゲーム産業**\nオンラインゲームのサーバーとして EC2 が広く使われています。新作タイトルのリリース直後はアクセスが集中するため、一時的に多数のインスタンスを立ち上げて対応し、落ち着いたら縮小するという運用が可能です。\n\n**医療・バイオインフォマティクス**\nゲノム解析や創薬シミュレーションなど、膨大な計算リソースを要する研究に EC2 の高性能インスタンスが活用されています。大学や研究機関が自前でスーパーコンピュータを持たなくても、必要なときだけ借りられる点が革新的です。\n\n**メディア・動画配信**\n映像のエンコード処理（動画ファイルを様々な形式に変換する作業）は計算集約的ですが、EC2 を使えば並列処理でスピードを上げられます。映画のストリーミングサービスなどが舞台裏で活用しています。\n\n**金融・フィンテック**\n為替レートや株価のリアルタイム分析、取引システムのバックエンドとして EC2 が利用されています。金融システムには高い可用性（止まらないこと）が求められますが、EC2 の冗長構成によってそれを実現しています。",
+  "terms": [
+    {
+      "term": "EC2",
+      "reading": "いーしーつー",
+      "en": "Amazon Elastic Compute Cloud",
+      "definition": "Amazonが提供するクラウド上の仮想サーバーサービス。必要なときに必要な分だけコンピューティングリソースを利用できる。"
+    },
+    {
+      "term": "仮想化",
+      "reading": "かそうか",
+      "en": "Virtualization",
+      "definition": "1台の物理マシン上に、互いに独立した複数の仮想マシンを同時に動かす技術。EC2の根幹をなすコアコンセプト。"
+    },
+    {
+      "term": "インスタンス",
+      "reading": "いんすたんす",
+      "en": "Instance",
+      "definition": "EC2上で起動する仮想サーバーの1単位。CPUやメモリなどのスペックをインスタンスタイプとして選択して利用する。"
+    },
+    {
+      "term": "AMI",
+      "reading": "えーえむあい",
+      "en": "Amazon Machine Image",
+      "definition": "EC2インスタンスのOSやソフトウェアの初期状態を定義したサーバーの設計図。インスタンス起動時のテンプレートとして使用される。"
+    },
+    {
+      "term": "EBS",
+      "reading": "いーびーえす",
+      "en": "Elastic Block Store",
+      "definition": "EC2インスタンスに接続して使用する仮想ディスクストレージサービス。データの永続的な保存に利用される。"
+    },
+    {
+      "term": "セキュリティグループ",
+      "reading": "せきゅりてぃぐるーぷ",
+      "en": "Security Group",
+      "definition": "EC2インスタンスへの通信の許可・拒否を制御する仮想ファイアウォール。IPアドレスやポート単位でアクセスルールを設定できる。"
+    },
+    {
+      "term": "従量課金",
+      "reading": "じゅうりょうかきん",
+      "en": "Pay-as-you-go",
+      "definition": "使用した分だけ料金を支払う課金モデル。EC2では起動した時間単位でコストが発生する。"
+    },
+    {
+      "term": "Auto Scaling",
+      "reading": "おーとすけーりんぐ",
+      "en": "Auto Scaling",
+      "definition": "アクセス量や負荷に応じてEC2インスタンスの数を自動的に増減させる仕組み。コスト最適化と可用性の維持を両立する。"
+    },
+    {
+      "term": "ELB",
+      "reading": "いーえるびー",
+      "en": "Elastic Load Balancing",
+      "definition": "複数のEC2インスタンスへの通信を振り分け、負荷を分散させるAWSのサービス。システムの安定稼働と高可用性を実現する。"
+    },
+    {
+      "term": "VPC",
+      "reading": "ぶいぴーしー",
+      "en": "Virtual Private Cloud",
+      "definition": "EC2インスタンスを配置するための仮想ネットワーク空間。ネットワーク構成を論理的に分離・制御できる。"
+    },
+    {
+      "term": "クラウドコンピューティング",
+      "reading": "くらうどこんぴゅーてぃんぐ",
+      "en": "Cloud Computing",
+      "definition": "インターネット経由でコンピューティングリソースを提供・利用するモデル。EC2はその中核サービスのひとつ。"
+    },
+    {
+      "term": "オンプレミス",
+      "reading": "おんぷれみす",
+      "en": "On-Premises",
+      "definition": "企業が自前でサーバーや機器を購入・設置・管理する従来型の運用形態。EC2などのクラウドサービスと対比される概念。"
+    },
+    {
+      "term": "Lambda",
+      "reading": "らむだ",
+      "en": "AWS Lambda",
+      "definition": "サーバーの管理すら不要にしたAWSのサーバーレスコンピューティングサービス。EC2の発展形として位置づけられる。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景: 透明 -->\n\n  <!-- ===== 中央: EC2インスタンス ===== -->\n  <!-- 中心ボックス -->\n  <rect x=\"200\" y=\"200\" width=\"200\" height=\"80\" rx=\"12\" ry=\"12\"\n        fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n  <text x=\"300\" y=\"234\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#3b82f6\">EC2インスタンス</text>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">仮想サーバー（VM）</text>\n  <text x=\"300\" y=\"270\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">例: t3.micro / m5.large</text>\n\n  <!-- ===== 上部: AMI（設計図） ===== -->\n  <rect x=\"210\" y=\"60\" width=\"180\" height=\"56\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"84\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">AMI</text>\n  <text x=\"300\" y=\"100\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Amazon Machine Image</text>\n  <text x=\"300\" y=\"113\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">OS・ソフトウェアの設計図</text>\n  <!-- AMI → EC2 矢印 -->\n  <line x1=\"300\" y1=\"116\" x2=\"300\" y2=\"198\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"300,200 295,190 305,190\" fill=\"currentColor\"/>\n\n  <!-- ===== 左: インスタンスタイプ ===== -->\n  <rect x=\"30\" y=\"195\" width=\"145\" height=\"60\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"102\" y=\"218\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">インスタンスタイプ</text>\n  <text x=\"102\" y=\"234\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">CPU / メモリ / ネットワーク</text>\n  <text x=\"102\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">スペックの組み合わせ</text>\n  <!-- → EC2 矢印 -->\n  <line x1=\"175\" y1=\"225\" x2=\"198\" y2=\"236\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"200,237 190,231 191,242\" fill=\"currentColor\"/>\n\n  <!-- ===== 右: EBS ===== -->\n  <rect x=\"425\" y=\"195\" width=\"145\" height=\"60\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"497\" y=\"218\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">EBS</text>\n  <text x=\"497\" y=\"234\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Elastic Block Store</text>\n  <text x=\"497\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">仮想ディスク（データ保存）</text>\n  <!-- EC2 → EBS 矢印 -->\n  <line x1=\"400\" y1=\"237\" x2=\"423\" y2=\"232\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"425,231 414,226 415,237\" fill=\"currentColor\"/>\n\n  <!-- ===== 下: セキュリティグループ ===== -->\n  <rect x=\"190\" y=\"325\" width=\"220\" height=\"56\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"348\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#ef4444\">セキュリティグループ</text>\n  <text x=\"300\" y=\"364\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">通信の許可・拒否を制御</text>\n  <text x=\"300\" y=\"377\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">ファイアウォール機能</text>\n  <!-- EC2 → セキュリティグループ 矢印 -->\n  <line x1=\"300\" y1=\"280\" x2=\"300\" y2=\"323\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"300,325 295,315 305,315\" fill=\"#ef4444\"/>\n\n  <!-- ===== 従量課金の計算式 ===== -->\n  <rect x=\"30\" y=\"320\" width=\"155\" height=\"70\" rx=\"10\" ry=\"10\"\n        fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"107\" y=\"342\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">従量課金モデル</text>\n  <text x=\"107\" y=\"358\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">月額 = 単価 × 24h × 30日</text>\n  <text x=\"107\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">例: $0.02 × 24 × 30</text>\n  <text x=\"107\" y=\"386\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">= $14.4 / 月</text>\n\n  <!-- ===== 発展概念エリア（下部） ===== -->\n  <rect x=\"28\" y=\"420\" width=\"544\" height=\"82\" rx=\"12\" ry=\"12\"\n        fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"6,3\"/>\n  <text x=\"300\" y=\"442\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">関連サービス・発展概念</text>\n\n  <!-- Auto Scaling -->\n  <rect x=\"42\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"97\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">Auto Scaling</text>\n  <text x=\"97\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">自動増減</text>\n\n  <!-- ELB -->\n  <rect x=\"162\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"217\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">ELB</text>\n  <text x=\"217\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">負荷分散</text>\n\n  <!-- VPC -->\n  <rect x=\"282\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"337\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">VPC</text>\n  <text x=\"337\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">仮想ネットワーク</text>\n\n  <!-- Lambda -->\n  <rect x=\"402\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"1.2\"/>\n  <text x=\"457\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#22c55e\">Lambda</text>\n  <text x=\"457\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">サーバーレス（発展）</text>\n\n  <!-- EC2 → 関連概念エリアへの矢印 -->\n  <line x1=\"300\" y1=\"280\" x2=\"300\" y2=\"418\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/>\n\n  <!-- 右側にAWSクラウドのラベル -->\n  <rect x=\"425\" y=\"320\" width=\"145\" height=\"70\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"497\" y=\"343\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">AWSクラウド</text>\n  <text x=\"497\" y=\"359\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">物理サーバーは</text>\n  <text x=\"497\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Amazonが管理</text>\n  <text x=\"497\" y=\"386\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">利用者は仮想的に使用</text>\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"currentColor\">EC2 概念マップ</text>\n  <text x=\"300\" y=\"42\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">Amazon Elastic Compute Cloud — 仮想サーバーの構造</text>\n\n</svg>"
+    }
+  ]
+}

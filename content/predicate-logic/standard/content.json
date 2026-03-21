@@ -1,0 +1,105 @@
+{
+  "id": "75c79cc1-eafa-494b-9edd-2a1f7caeaa65",
+  "nodeId": "predicate-logic",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:46:24.843Z",
+  "content": "# 述語論理\n\n## 何か — 直感的な説明\n\n述語論理とは、「すべての〜について」「ある〜が存在して」という**量化の表現**を含む推論を、厳密な記号体系で扱うための論理的枠組みです。命題論理が「P かつ Q」「P ならば Q」といった文全体の真偽を扱うのに対し、述語論理はさらに踏み込んで、「何について」「どのような性質が」成り立つかを細かく表現できます。\n\nたとえば「すべての偶数は2で割り切れる」や「ある素数は偶数である」といった文は、命題論理の記号だけでは自然に表現できません。述語論理では、対象（個体）と性質（述語）と量化子（∀, ∃）という三つの要素を組み合わせることで、こうした文を正確に形式化します。「$P(x)$：$x$ は偶数である」のように、変数 $x$ に依存する性質を表す**述語**を導入し、$\\forall x\\, P(x)$（すべての $x$ について $P(x)$ が成り立つ）や $\\exists x\\, P(x)$（$P(x)$ が成り立つ $x$ が存在する）と書くことで、数学の言葉をそのまま論理式に翻訳できるようになります。\n\n日常言語に例えるなら、命題論理は「文のオン/オフ」を操作する回路設計であり、述語論理はさらに「誰が」「何を」「どのような対象に対して」という構造を持つ文章全体を扱う文法体系です。述語論理は、現代数学の証明を支える**共通言語**として機能しています。\n\n---\n\n## なぜ必要か — 数学における位置づけ\n\n命題論理だけでは、数学の定理のほとんどを適切に表現することができません。「すべての実数 $x$ に対して $x^2 \\geq 0$ が成り立つ」「任意の $\\varepsilon > 0$ に対してある $\\delta > 0$ が存在する」——微積分・代数・幾何を問わず、数学の命題は「すべての〜」「ある〜が存在する」という量化の構造を持っています。述語論理は、こうした量化を含む命題を形式化し、推論の正しさを機械的に検証できる枠組みを提供します。\n\n数学基礎論の観点からも、述語論理は決定的に重要です。ゲーデルの完全性定理（1930年）は「一階述語論理において、意味論的に妥当な論理式は必ず構文論的に証明できる」ことを保証しており、公理的集合論（ZFC）・ペアノ算術・群論などの数学的理論はすべて一階述語論理の上に構築されています。つまり述語論理は、現代数学の**土台**そのものです。\n\nまた計算機科学においても、データベースの問い合わせ言語（SQL）、プログラム検証、人工知能における知識表現など、述語論理の考え方は至るところに応用されています。論理を学ぶ上で命題論理が「第一歩」だとすれば、述語論理は「数学の本格的な入口」と言えるでしょう。\n\n---\n\n## 核となるアイデア — 定義・定理の本質\n\n### 基本的な構成要素\n\n一階述語論理（first-order predicate logic）の言語は、以下の要素から構成されます。\n\n- **個体変数**：$x, y, z, \\ldots$（対象の領域（定義域）の要素を表す）\n- **定数記号**：$a, b, c, \\ldots$（特定の個体を指す）\n- **関数記号**：$f, g, \\ldots$（個体から個体への写像）\n- **述語記号**（関係記号）：$P, Q, R, \\ldots$（個体の性質や関係を表す）\n- **論理結合子**：$\\lnot,\\ \\land,\\ \\lor,\\ \\to,\\ \\leftrightarrow$\n- **量化子**：$\\forall$（全称量化子）、$\\exists$（存在量化子）\n\n### 述語と項\n\n**項（term）** とは個体を表す式で、変数・定数・関数記号の適用から帰納的に定義されます。**原子論理式（atomic formula）** は、$n$ 項述語記号 $P$ と $n$ 個の項 $t_1, \\ldots, t_n$ を用いて $P(t_1, \\ldots, t_n)$ と書かれます。等号 $t_1 = t_2$ も原子論理式の一種です。\n\n**論理式（formula）** は原子論理式を出発点として、論理結合子と量化子を使って帰納的に構成されます：\n\n$$\n\\varphi ::= P(t_1,\\ldots,t_n) \\mid \\lnot\\varphi \\mid (\\varphi \\land \\psi) \\mid (\\varphi \\lor \\psi) \\mid (\\varphi \\to \\psi) \\mid \\forall x\\,\\varphi \\mid \\exists x\\,\\varphi\n$$\n\n### 量化子の意味（意味論）\n\n解釈 $\\mathcal{M} = (D, \\cdot^{\\mathcal{M}})$（$D$ は空でない定義域）のもとで、変数割り当て $s$ に対する充足関係 $\\mathcal{M} \\models_s \\varphi$ を次のように定義します（主要な節のみ）：\n\n$$\n\\mathcal{M} \\models_s \\forall x\\,\\varphi \\iff \\text{すべての } d \\in D \\text{ に対して } \\mathcal{M} \\models_{s[x \\mapsto d]} \\varphi\n$$\n\n$$\n\\mathcal{M} \\models_s \\exists x\\,\\varphi \\iff \\text{ある } d \\in D \\text{ が存在して } \\mathcal{M} \\models_{s[x \\mapsto d]} \\varphi\n$$\n\nここで $s[x \\mapsto d]$ は、変数 $x$ の値だけを $d$ に変えた割り当てを表します。\n\n### 量化子の双対性\n\n全称量化子と存在量化子は、否定を通じて互いに変換できます（ド・モルガンの量化版）：\n\n$$\n\\lnot \\forall x\\, P(x) \\equiv \\exists x\\, \\lnot P(x)\n$$\n\n$$\n\\lnot \\exists x\\, P(x) \\equiv \\forall x\\, \\lnot P(x)\n$$\n\n「すべての $x$ が $P$ を満たすわけではない」は「$P$ を満たさない $x$ が存在する」と同値であり、これは日常的な直感とも一致します。\n\n### 自由変数と束縛変数\n\n$\\forall x\\,\\varphi$ や $\\exists x\\,\\varphi$ の中の $x$ は**束縛変数（bound variable）**、量化子の外側に現れる変数は**自由変数（free variable）**と呼ばれます。自由変数を含まない論理式を**閉論理式（文, sentence）**といい、解釈だけで真偽が決まります。\n\n---\n\n## 具体例\n\n### 例1：数の性質を述語論理で表現する\n\n定義域を整数全体 $\\mathbb{Z}$ とし、述語 $\\mathrm{Even}(x)$（$x$ は偶数）、$\\mathrm{Prime}(x)$（$x$ は素数）を使います。\n\n| 日本語の文 | 述語論理式 |\n|---|---|\n| すべての整数は偶数か奇数である | $\\forall x\\,(\\mathrm{Even}(x) \\lor \\lnot\\mathrm{Even}(x))$ |\n| 偶数の素数が存在する | $\\exists x\\,(\\mathrm{Even}(x) \\land \\mathrm{Prime}(x))$ |\n| 素数はすべて正である | $\\forall x\\,(\\mathrm{Prime}(x) \\to x > 0)$ |\n\n「偶数の素数が存在する」という命題が真であることは、$x = 2$ を代入すれば確かめられます（$2$ は偶数かつ素数）。一方、「すべての素数は奇数」という主張\n\n$$\n\\forall x\\,(\\mathrm{Prime}(x) \\to \\lnot\\mathrm{Even}(x))\n$$\n\nは $x = 2$ が反例となるため、偽です。このように述語論理は「ある例が反例になる」という構造を $\\exists x\\, \\lnot(\\ldots)$ と明示的に対応させます。\n\n---\n\n### 例2：量化子の順序が意味を変える\n\n二変数述語 $L(x, y)$：「$x$ は $y$ を愛している」を使い、定義域を人間全体とします。次の二つの式を比べてください：\n\n$$\n\\forall x\\, \\exists y\\, L(x, y) \\quad \\text{「すべての人はある人を愛している」}\n$$\n\n$$\n\\exists y\\, \\forall x\\, L(x, y) \\quad \\text{「すべての人に愛されているある人が存在する」}\n$$\n\n前者は「誰でも誰かしらを愛している（人によって異なるかもしれない）」という意味ですが、後者は「全員から愛される特定の人物が存在する」という、はるかに強い主張です。**量化子の順序を入れ替えると意味が変わる**ことは述語論理の最重要ポイントのひとつです。\n\n一般に $\\exists y\\, \\forall x\\, \\varphi(x, y) \\to \\forall x\\, \\exists y\\, \\varphi(x, y)$ は恒真ですが、逆方向 $\\forall x\\, \\exists y\\, \\varphi(x, y) \\to \\exists y\\, \\forall x\\, \\varphi(x, y)$ は成り立ちません。上の愛の例がその反例になっています。\n\n数学的文脈では、これは連続性の定義に典型的に現れます。関数 $f$ が点 $a$ で連続であることは：\n\n$$\n\\forall \\varepsilon > 0\\, \\exists \\delta > 0\\, \\forall x\\,(|x - a| < \\delta \\to |f(x) - f(a)| < \\varepsilon)\n$$\n\nこれに対し $\\exists \\delta > 0\\, \\forall \\varepsilon > 0$ の順序で書くと意味が壊れてしまい、一様連続性は $\\delta$ が $\\varepsilon$ のみに依存し $a$ に依存しないという別の（より強い）概念です：\n\n$$\n\\forall \\varepsilon > 0\\, \\exists \\delta > 0\\, \\forall x\\, \\forall a\\,(|x - a| < \\delta \\to |f(x) - f(a)| < \\varepsilon)\n$$\n\n---\n\n### 例3：群の公理を述語論理で書く\n\n代数的構造の定義も述語論理で精密に表現できます。群 $(G, \\cdot)$ の公理は次のように形式化されます：\n\n**結合律**：\n$$\n\\forall x\\, \\forall y\\, \\forall z\\, ((x \\cdot y) \\cdot z = x \\cdot (y \\cdot z))\n$$\n\n**単位元の存在**：\n$$\n\\exists e\\, \\forall x\\, (e \\cdot x = x \\land x \\cdot e = x)\n$$\n\n**逆元の存在**：\n$$\n\\forall x\\, \\exists y\\, (x \\cdot y = e \\land y \\cdot x = e)\n$$\n\nこれらの論理式の集まりが群論の**公理系**を形成します。「任意の群で成り立つ命題」とは、これらの公理から述語論理の推論規則によって導出できる命題のことです。このように、数学の分野全体が述語論理を基盤として公理的に展開できます。\n\n---\n\n### 例4：「最大値」の定義\n\n定義域を実数 $\\mathbb{R}$ とし、集合 $S$ の最大値 $m$ を述語論理で定義すると：\n\n$$\n\\mathrm{Max}(m, S) \\iff m \\in S \\land \\forall x\\,(x \\in S \\to x \\leq m)\n$$\n\n「最大値が一意である」という定理は：\n\n$$\n\\forall m_1\\, \\forall m_2\\,(\\mathrm{Max}(m_1, S) \\land \\mathrm{Max}(m_2, S) \\to m_1 = m_2)\n$$\n\nこの証明は $m_1 \\leq m_2$ かつ $m_2 \\leq m_1$ を導いて $m_1 = m_2$ を示すもので、述語論理の推論規則（全称例化など）だけを用いた純粋に形式的な証明として書けます。\n\n---\n\n## つながり — 他の概念との関係\n\n**命題論理（前提知識）との関係**：述語論理は命題論理を**拡張**した体系です。述語論理から量化子を取り除き、原子論理式を命題変数に置き換えれば命題論理に帰着します。命題論理で学んだ $\\lnot, \\land, \\lor, \\to$ の演算はそのまま述語論理でも使われるため、命題論理の確かな理解が前提となります。\n\n**集合論との関係**：述語論理は集合論の言語そのものです。$x \\in A$（$x$ は集合 $A$ の元である）という述語を使えば、$\\forall x\\,(x \\in A \\to x \\in B)$ が $A \\subseteq B$ を意味するなど、集合の演算がすべて述語論理式として表現されます。ZFC 公理系は一階述語論理の文の集まりとして定式化されています。\n\n**モデル理論・証明論（発展的内容）への橋渡し**：述語論理を深めると、「意味論（真理）」と「構文論（証明）」という二つのアプローチが現れます。モデル理論は解釈と充足関係を、証明論は形式的な証明規則（自然演繹・シークエント計算など）を研究します。ゲーデルの完全性定理・コンパクト性定理は、この二つの側面をつなぐ深い結果です。\n\n**型理論・ラムダ計算との関係**：計算機科学では述語論理と型理論が密接に関係しており、カリー＝ハワード同型対応（命題と型、証明とプログラムの対応）という美しい構造が知られています。\n\n---\n\n## 他分野への応用\n\n**コンピュータサイエンス（データベース・AI）**：リレーショナルデータベースの問い合わせ言語 SQL は述語論理の直接的な応用です。`SELECT * FROM students WHERE age > 20` という問い合わせは、$\\exists$ や条件述語を使った論理式に対応します。また Prolog という論理プログラミング言語は述語論理の節（ホーン節）を計算の基礎とし、人工知能の知識表現・推論エンジンとして使われます。\n\n**プログラム検証・形式手法**：ソフトウェアの正しさを数学的に保証する「形式検証」では、プログラムの仕様を述語論理式で記述します。「すべての入力 $x$ に対して、プログラム $P$ は出力 $y$ を返し $y > 0$ が成り立つ」という仕様は $\\forall x\\, \\exists y\\, (\\mathrm{runs}(P, x, y) \\land y > 0)$ と表せます。ホーア論理・TLA+ などの検証ツールはこの考え方を基盤にしています。\n\n**言語学・自然言語処理**：Montague 意味論は自然言語の意味を述語論理（とその拡張）で形式化する理論で、「すべての学生が少なくとも一冊の本を読んだ」のような量化表現の曖昧性（スコープの曖昧性）を解析するために使われます。現代の自然言語処理における意味解析（semantic parsing）もこの流れを汲んでいます。\n\n**数理経済学**：ゲーム理論や一般均衡理論の定理は述語論理的な構造を持ちます。「すべての有限ゲームにおいてナッシュ均衡が存在する」という命題は $\\forall G\\,(\\mathrm{Finite}(G) \\to \\exists s\\, \\mathrm{NashEq}(G, s))$ という形をしており、その証明はモデル内での存在主張を構成的・非構成的に示す論理的議論に依存しています。",
+  "terms": [
+    {
+      "term": "述語論理",
+      "reading": "じゅつごろんり",
+      "en": "Predicate Logic",
+      "definition": "「すべての〜」「ある〜が存在する」という量化の表現を含む推論を、個体・述語・量化子を用いた記号体系で厳密に扱う論理的枠組み。命題論理を拡張したものである。"
+    },
+    {
+      "term": "量化子",
+      "reading": "りょうかし",
+      "en": "Quantifier",
+      "definition": "「すべての〜について（∀）」や「ある〜が存在する（∃）」を表す記号。全称量化子∀と存在量化子∃の二種類がある。"
+    },
+    {
+      "term": "全称量化子",
+      "reading": "ぜんしょうりょうかし",
+      "en": "Universal Quantifier",
+      "definition": "記号∀で表され、「定義域のすべての個体について〜が成り立つ」ことを意味する量化子。"
+    },
+    {
+      "term": "存在量化子",
+      "reading": "そんざいりょうかし",
+      "en": "Existential Quantifier",
+      "definition": "記号∃で表され、「定義域のある個体について〜が成り立つ」ことを意味する量化子。"
+    },
+    {
+      "term": "述語",
+      "reading": "じゅつご",
+      "en": "Predicate",
+      "definition": "個体変数に依存する性質や関係を表す記号で、P(x)のように書かれる。変数に具体的な値を代入することで真偽が定まる。"
+    },
+    {
+      "term": "項",
+      "reading": "こう",
+      "en": "Term",
+      "definition": "個体を表す式であり、変数・定数記号・関数記号の適用を帰納的に組み合わせて構成される。"
+    },
+    {
+      "term": "原子論理式",
+      "reading": "げんしろんりしき",
+      "en": "Atomic Formula",
+      "definition": "述語記号と項を組み合わせたP(t₁,…,tₙ)の形の論理式で、論理結合子や量化子を含まない最小単位の式。"
+    },
+    {
+      "term": "論理式",
+      "reading": "ろんりしき",
+      "en": "Formula",
+      "definition": "原子論理式を出発点として、論理結合子（¬,∧,∨,→）と量化子（∀,∃）を帰納的に適用して構成される式。"
+    },
+    {
+      "term": "自由変数",
+      "reading": "じゆうへんすう",
+      "en": "Free Variable",
+      "definition": "論理式中で量化子に束縛されていない変数。自由変数の値は解釈の外から与えられる変数割り当てに依存する。"
+    },
+    {
+      "term": "束縛変数",
+      "reading": "そくばくへんすう",
+      "en": "Bound Variable",
+      "definition": "∀xや∃xのように量化子によって束縛されている変数。その変数の値は量化子の意味論によって定まる。"
+    },
+    {
+      "term": "閉論理式",
+      "reading": "とじろんりしき",
+      "en": "Sentence (Closed Formula)",
+      "definition": "自由変数を含まない論理式。解釈（モデル）のみによって真偽が一意に決まる。"
+    },
+    {
+      "term": "充足関係",
+      "reading": "じゅうそくかんけい",
+      "en": "Satisfaction Relation",
+      "definition": "解釈Mと変数割り当てsのもとで論理式φが真であることを表す関係（M⊨ₛφ）。量化子の意味論の中核をなす概念。"
+    },
+    {
+      "term": "ゲーデルの完全性定理",
+      "reading": "げーでるのかんぜんせいていり",
+      "en": "Gödel's Completeness Theorem",
+      "definition": "一階述語論理において、意味論的に妥当（すべてのモデルで真）な論理式は必ず構文論的に証明できることを保証する定理（1930年）。"
+    },
+    {
+      "term": "一階述語論理",
+      "reading": "いっかいじゅつごろんり",
+      "en": "First-Order Predicate Logic",
+      "definition": "量化子の適用対象が個体変数に限定された述語論理の体系。ZFCや群論など現代数学の公理系の基盤として広く用いられる。"
+    },
+    {
+      "term": "命題論理",
+      "reading": "めいだいろんり",
+      "en": "Propositional Logic",
+      "definition": "文全体を真または偽の命題変数として扱い、¬,∧,∨,→などの論理結合子で推論を行う論理体系。述語論理の前提となる基礎的な体系である。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景透明 -->\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">述語論理の構造マップ</text>\n\n  <!-- ===== 中央：述語論理 ===== -->\n  <ellipse cx=\"300\" cy=\"260\" rx=\"72\" ry=\"38\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">述語論理</text>\n  <text x=\"300\" y=\"271\" text-anchor=\"middle\" font-size=\"10\" fill=\"#3b82f6\">一階述語論理</text>\n\n  <!-- ===== 上部：命題論理（基盤） ===== -->\n  <rect x=\"210\" y=\"55\" width=\"180\" height=\"46\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"74\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">命題論理</text>\n  <text x=\"300\" y=\"90\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬ ∧ ∨ → ↔（文全体の真偽）</text>\n\n  <!-- 命題論理 → 述語論理 矢印 -->\n  <line x1=\"300\" y1=\"101\" x2=\"300\" y2=\"218\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"300,222 295,212 305,212\" fill=\"currentColor\"/>\n  <text x=\"315\" y=\"165\" font-size=\"9\" fill=\"currentColor\">拡張</text>\n\n  <!-- ===== 左列：構成要素 ===== -->\n  <!-- 個体・定数・関数 -->\n  <rect x=\"30\" y=\"130\" width=\"140\" height=\"52\" rx=\"7\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"100\" y=\"150\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">項（term）</text>\n  <text x=\"100\" y=\"165\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">変数 x, y, z</text>\n  <text x=\"100\" y=\"177\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">定数 a, b / 関数 f, g</text>\n\n  <!-- 述語記号 -->\n  <rect x=\"30\" y=\"200\" width=\"140\" height=\"42\" rx=\"7\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"100\" y=\"218\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">述語記号</text>\n  <text x=\"100\" y=\"234\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">P(x), Q(x,y), x=y</text>\n\n  <!-- 矢印：項・述語 → 中央 -->\n  <line x1=\"170\" y1=\"175\" x2=\"225\" y2=\"248\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <polygon points=\"225,248 216,242 222,234\" fill=\"currentColor\"/>\n  <line x1=\"170\" y1=\"221\" x2=\"225\" y2=\"252\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <polygon points=\"225,252 216,248 220,239\" fill=\"currentColor\"/>\n\n  <!-- ===== 右列：量化子 ===== -->\n  <!-- 全称量化子 -->\n  <rect x=\"430\" y=\"130\" width=\"145\" height=\"52\" rx=\"7\" fill=\"#22c55e\" fill-opacity=\"0.12\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"502\" y=\"150\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#22c55e\">∀ 全称量化子</text>\n  <text x=\"502\" y=\"165\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">∀x P(x)</text>\n  <text x=\"502\" y=\"178\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">「すべての x について」</text>\n\n  <!-- 存在量化子 -->\n  <rect x=\"430\" y=\"200\" width=\"145\" height=\"52\" rx=\"7\" fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"502\" y=\"220\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#ef4444\">∃ 存在量化子</text>\n  <text x=\"502\" y=\"235\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">∃x P(x)</text>\n  <text x=\"502\" y=\"248\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">「ある x が存在して」</text>\n\n  <!-- 矢印：量化子 → 中央 -->\n  <line x1=\"430\" y1=\"175\" x2=\"374\" y2=\"248\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <polygon points=\"374,248 378,237 384,245\" fill=\"#22c55e\"/>\n  <line x1=\"430\" y1=\"224\" x2=\"374\" y2=\"255\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <polygon points=\"374,255 380,246 385,254\" fill=\"#ef4444\"/>\n\n  <!-- ===== 双対性：量化子間の変換 ===== -->\n  <!-- 双対ボックス -->\n  <rect x=\"400\" y=\"278\" width=\"175\" height=\"60\" rx=\"7\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/>\n  <text x=\"487\" y=\"296\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"currentColor\">双対性（ド・モルガン）</text>\n  <text x=\"487\" y=\"313\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">¬∀x P(x) ≡ ∃x ¬P(x)</text>\n  <text x=\"487\" y=\"328\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">¬∃x P(x) ≡ ∀x ¬P(x)</text>\n\n  <!-- 双対ボックスと量化子を接続 -->\n  <line x1=\"487\" y1=\"278\" x2=\"502\" y2=\"252\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n\n  <!-- ===== 下部：変数の種類 ===== -->\n  <rect x=\"60\" y=\"300\" width=\"220\" height=\"55\" rx=\"7\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"170\" y=\"319\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">変数のスコープ</text>\n  <text x=\"170\" y=\"335\" text-anchor=\"middle\" font-size=\"10\" fill=\"#3b82f6\">束縛変数：∀x・∃x 内の x</text>\n  <text x=\"170\" y=\"350\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">自由変数：量化子外の変数</text>\n\n  <!-- 矢印：変数スコープ ← 中央 -->\n  <line x1=\"228\" y1=\"281\" x2=\"215\" y2=\"300\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <polygon points=\"215,300 217,289 225,294\" fill=\"currentColor\"/>\n\n  <!-- ===== 下部：意味論（モデル） ===== -->\n  <rect x=\"140\" y=\"385\" width=\"310\" height=\"65\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"295\" y=\"404\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">意味論：解釈 ℳ = (D, ·ᴹ)</text>\n  <text x=\"295\" y=\"421\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">D（定義域）上で変数割り当て s を固定</text>\n  <text x=\"295\" y=\"437\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">ℳ ⊨ₛ ∀x φ  ⟺  すべての d∈D で ℳ ⊨ₛ[x↦d] φ</text>\n  <text x=\"295\" y=\"452\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">ℳ ⊨ₛ ∃x φ  ⟺  ある d∈D で ℳ ⊨ₛ[x↦d] φ</text>\n\n  <!-- 矢印：中央 → 意味論 -->\n  <line x1=\"300\" y1=\"298\" x2=\"300\" y2=\"383\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <polygon points=\"300,385 295,374 305,374\" fill=\"#3b82f6\"/>\n  <text x=\"316\" y=\"345\" font-size=\"9\" fill=\"#3b82f6\">充足関係</text>\n\n  <!-- ===== 最下部：応用 ===== -->\n  <text x=\"300\" y=\"475\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">応用：ZFC集合論 ／ ゲーデル完全性定理 ／ データベース（SQL）／ プログラム検証</text>\n\n  <!-- ===== 具体例ラベル（左上） ===== -->\n  <rect x=\"28\" y=\"56\" width=\"160\" height=\"55\" rx=\"6\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n  <text x=\"108\" y=\"73\" text-anchor=\"middle\" font-size=\"9.5\" font-weight=\"bold\" fill=\"currentColor\">具体例（ℤ上）</text>\n  <text x=\"108\" y=\"88\" text-anchor=\"middle\" font-size=\"9\" fill=\"#22c55e\">∀x Even(x)→Div2(x)</text>\n  <text x=\"108\" y=\"102\" text-anchor=\"middle\" font-size=\"9\" fill=\"#ef4444\">∃x (Prime(x)∧Even(x))</text>\n\n</svg>"
+    }
+  ]
+}

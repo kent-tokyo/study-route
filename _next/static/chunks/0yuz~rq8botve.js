@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,18566,(e,t,r)=>{t.exports=e.r(76562)},68082,e=>{"use strict";var t=e.i(71645),r=e.i(18566);e.s(["default",0,function({nodeId:e}){let u=(0,r.useRouter)();return(0,t.useEffect)(()=>{u.replace(`/math/learn/${e}`)},[u,e]),null}])}]);

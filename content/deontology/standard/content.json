@@ -1,0 +1,99 @@
+{
+  "id": "43d05a5a-c03d-441e-9a94-d403732a36d9",
+  "nodeId": "deontology",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:42:40.223Z",
+  "content": "# 義務論\n\n## 何か — 直感的な説明\n\n義務論（deontology）とは、**行為の道徳的な正しさや誤りは、その行為がもたらす結果ではなく、行為そのものの性質・義務・規則によって決まる**という倫理学の立場である。語源はギリシャ語の *deon*（義務）と *logos*（学）に由来する。\n\nたとえば、「嘘をつくことは悪いことだ」という命題を考えてみよう。功利主義者であれば「その嘘が全体の幸福を増やすなら許容される」と考えるかもしれない。しかし義務論者は「嘘をつくことは義務に反する行為であり、たとえ良い結果をもたらすとしても本質的に誤っている」と主張する。結果がどうであれ、**行為の規則適合性そのもの**が道徳的評価の基準となるのである。\n\n---\n\n## なぜ必要か — 数学における位置づけ\n\n倫理学において、道徳的判断の根拠を何に求めるかという問いは中心的なテーマである。義務論は、結果主義（consequentialism）と並ぶ二大潮流の一つであり、特に**普遍的な道徳規則の存在**を論理的に基礎づけようとする試みとして重要な位置を占める。\n\nまた、義務論は**規範倫理学（normative ethics）** の枠組みの中で、形式的・体系的な思考を要求する。とりわけカントの定言命法は、論理学や数学的な普遍化の概念と深く関わっており、「ある行為の格率が矛盾なく普遍法則となりうるか」という問いは、一種の**論理的整合性テスト**として理解することができる。これにより、義務論は直感に頼らない形式的な倫理的推論の基盤を提供する。\n\n---\n\n## 核となるアイデア — 定義・定理の本質\n\n義務論の核心は、**行為の道徳的価値は行為の内在的性質に依存する**という主張にある。形式的に表現すると、行為 $a$ の道徳的評価関数 $M(a)$ について、\n\n$$M(a) = f(\\text{nature}(a),\\ \\mathcal{R})$$\n\nと書くことができる。ここで $\\mathcal{R}$ は義務・禁止・許容の規則体系であり、$\\text{nature}(a)$ は行為 $a$ の内在的性質である。結果主義が $M(a) = f(\\text{consequences}(a))$ と定式化されるのとは対照的である。\n\n義務論の中で最も体系的かつ影響力の大きい理論はイマヌエル・カント（Immanuel Kant）の**義務倫理学**である。カントは道徳の最高原理として**定言命法（categorical imperative）** を提唱した。その第一定式は次の通りである。\n\n> **普遍法則の定式：** 「あなたの行為の格率が、同時に普遍的な法則となることを意志できるような格率に従ってのみ行為せよ。」\n\nここで**格率（Maxim）** とは、行為者が自らの行為の根拠とする主観的原理 $m$ のことである。定言命法は、この $m$ が矛盾なく普遍化可能かどうかを問う。普遍化テストを論理的に書けば、\n\n$$\\text{Permissible}(a) \\iff \\Box\\bigl(\\forall x:\\ \\text{Agent}(x) \\Rightarrow \\text{ActOn}(x, m_a)\\bigr)\\ \\text{が論理的矛盾を含まない}$$\n\nここで $\\Box$ は様相論理の必然性演算子、$m_a$ は行為 $a$ の格率を表す。カントはさらに**人格性の定式**も提唱した。\n\n> 「人格を、自分自身においても他のいかなる人格においても、常に同時に目的として扱い、決して単なる手段としてのみ扱わないように行為せよ。」\n\nこれは人間の**尊厳（dignity）** と**自律（autonomy）** を倫理の基礎に据える原理であり、義務論の根幹をなす。\n\nカントの義務論に加え、**W.D.ロスの一応の義務論（Prima Facie Duties）** も重要である。ロスは複数の義務が存在し、それらが衝突する場合には状況に応じて優先順位を判断すべきと主張した。一応の義務の例として、誠実さの義務、感謝の義務、危害を与えない義務などが挙げられる。\n\n---\n\n## 具体例\n\n### 例1：嘘と殺人犯のジレンマ\n\nカントの最も有名な思考実験として、「殺人犯があなたの友人の居場所を尋ねてきた場合、嘘をついて友人を守るべきか」という問いがある。カントの立場では、**たとえ友人の命を救うためであっても嘘をつくことは許されない**。なぜなら「困ったときは嘘をついてよい」という格率は普遍化すると言語・約束・コミュニケーション全体の基盤を崩壊させる矛盾を生じるからである。これは義務論の厳格さを示す典型例であり、「結果がよければ手段は問わない」という結果主義との鮮明な対比となっている。\n\n### 例2：医療における患者の同意\n\n医療倫理の場面では、義務論的考え方が**インフォームド・コンセント（informed consent）** の根拠となる。たとえ医師が「この手術をすれば患者の命が救われる」と確信していても、患者の同意なしに手術を行うことは許されない。これはカントの人格性の定式に基づいており、患者を単なる医療行為の「手段」として扱ってはならず、自律的な意思決定主体として尊重する義務があるからである。患者の命が失われるという悪い結果が予想されても、同意なしの介入は義務論的には禁止される。\n\n### 例3：約束の拘束力\n\n友人に「明日手伝いに行く」と約束したとする。当日、より楽しいイベントの誘いが来た場合、功利主義者は「全体の幸福を最大化する選択」を考えるかもしれない。しかし義務論者にとって、約束を守ることは**結果とは独立した義務**であり、それ自体に拘束力がある。ロスの一応の義務論では「誠実さの義務（duty of fidelity）」として分類され、これが他の状況的利益よりも原則として優先される。ただしロスは、より重大な義務（例：生命の危機への対処）と衝突する場合には、状況判断による調整を認める。\n\n### 例4：企業倫理と内部告発\n\nある社員が会社の不正行為を知った場合を考えよう。告発すれば自分の雇用が危うくなり、会社にも損害が生じる。功利主義的計算では「誰が最も多く利益を得るか」が問われるが、義務論者は「不正を告発することは義務であり、その結果として生じる自分への不利益は道徳的評価に影響しない」と考える。道義的に正しい行為（真実を明らかにすること、社会への誠実さ）は、結果に関わらず遂行すべき義務として位置づけられる。\n\n---\n\n## つながり — 他の概念との関係\n\n**前提となる概念：**\n- **結果主義・功利主義（consequentialism / utilitarianism）**：義務論はこれへの対抗として理解されることが多く、両者を比較することで義務論の特徴が明確になる。\n- **自由意志（free will）** と**理性（reason）**：カントの義務論は、人間が理性によって道徳法則を自律的に認識できるという前提に立つ。\n- **様相論理（modal logic）**：義務・禁止・許容を形式化する**規範論理（deontic logic）** は義務論の形式的表現を可能にし、$\\mathbf{O}$（義務）、$\\mathbf{F}$（禁止）、$\\mathbf{P}$（許容）といった演算子を用いる。\n\n**発展的な概念：**\n- **規範論理学（deontic logic）**：1951年にG.H.フォン・ライトが体系化した論理体系であり、義務論的概念を命題論理に組み込む。$\\mathbf{O}p \\Rightarrow \\mathbf{P}p$（義務は許容を含意する）などの公理が含まれる。\n- **契約論（contractualism）**：ロールズやスキャンロンの理論は義務論と親和性が高く、「誰もが合理的に拒否できない原則に基づく行為」を道徳的基準とする。\n- **徳倫理学（virtue ethics）**：アリストテレスに由来する第三の規範倫理学であり、義務論・結果主義と対比される。\n\n---\n\n## 他分野への応用\n\n**法学・法哲学：** 義務論は近代法の基礎概念と深く関わっている。「無実の人を罰してはならない」「デュープロセス（適正手続き）を守らなければならない」といった法的義務は、結果に関わらず遵守が求められる。刑事司法における**無罪推定の原則**や**拷問の絶対的禁止**は、義務論的論拠によって強力に支持される。\n\n**コンピュータサイエンス・AI倫理：** 機械学習システムやAIの意思決定設計において、義務論的アプローチは**ルールベースのAI倫理**の基盤となる。「個人データを無断で使用してはならない」「ユーザーを欺くアルゴリズムを実装してはならない」といった絶対的ルールの設定は義務論的発想に基づく。また、**規範論理（deontic logic）** はAIの形式的検証（formal verification）において、システムが守るべき規範を論理式として記述するために活用される。\n\n**医療倫理・生命倫理：** インフォームド・コンセント、守秘義務、安楽死・尊厳死の議論など、医療の多くの倫理問題において義務論的枠組みが重要な役割を果たす。特に**ニュルンベルク綱領**や**ヘルシンキ宣言**は、人体実験に関する絶対的禁止事項を定めており、その根底には義務論的思想がある。\n\n**政治哲学・人権論：** 「すべての人間は生命・自由・財産への権利を持つ」というロックの自然権論や、現代の**普遍的人権（universal human rights）** の概念は義務論と強い親和性を持つ。人権は結果的計算によって剥奪されるものではないという主張は、義務論の**絶対的制約（side-constraints）** の発想——ノージックが提唱——に基づいている。",
+  "terms": [
+    {
+      "term": "義務論",
+      "reading": "ぎむろん",
+      "en": "Deontology",
+      "definition": "行為の道徳的な正しさや誤りは結果ではなく、行為そのものの性質・義務・規則によって決まるという倫理学の立場。語源はギリシャ語のdeon（義務）とlogos（学）に由来する。"
+    },
+    {
+      "term": "定言命法",
+      "reading": "ていげんめいほう",
+      "en": "Categorical Imperative",
+      "definition": "カントが提唱した道徳の最高原理であり、行為の格率が普遍的な法則となりうるかどうかを問う形式的な道徳テスト。条件や結果に依存しない絶対的な命令として機能する。"
+    },
+    {
+      "term": "格率",
+      "reading": "かくりつ",
+      "en": "Maxim",
+      "definition": "行為者が自らの行為の根拠とする主観的原理のこと。カントの定言命法においては、この格率が矛盾なく普遍化可能かどうかが道徳的許容性の判断基準となる。"
+    },
+    {
+      "term": "規範倫理学",
+      "reading": "きはんりんりがく",
+      "en": "Normative Ethics",
+      "definition": "何が道徳的に正しいか・誤りかを体系的に論じる倫理学の分野。義務論・結果主義・徳倫理学が三大潮流として位置づけられる。"
+    },
+    {
+      "term": "結果主義",
+      "reading": "けっかしゅぎ",
+      "en": "Consequentialism",
+      "definition": "行為の道徳的評価をその結果（もたらされる善悪）によって判断する倫理学の立場。功利主義はその代表的な理論であり、義務論と対比される。"
+    },
+    {
+      "term": "一応の義務",
+      "reading": "いちおうのぎむ",
+      "en": "Prima Facie Duties",
+      "definition": "W.D.ロスが提唱した概念で、複数の道徳的義務が存在し、衝突する際には状況に応じて優先順位を判断すべきとする立場。誠実さ・感謝・危害回避などの義務が例として挙げられる。"
+    },
+    {
+      "term": "規範論理",
+      "reading": "きはんろんり",
+      "en": "Deontic Logic",
+      "definition": "義務・禁止・許容といった規範概念を形式的に扱う論理体系で、1951年にG.H.フォン・ライトが体系化した。O（義務）・F（禁止）・P（許容）などの演算子を用いて命題論理に組み込む。"
+    },
+    {
+      "term": "自律",
+      "reading": "じりつ",
+      "en": "Autonomy",
+      "definition": "理性によって自ら道徳法則を立て、それに従う能力のこと。カントの倫理学において人格の尊厳とともに道徳の基礎として位置づけられる。"
+    },
+    {
+      "term": "尊厳",
+      "reading": "そんげん",
+      "en": "Dignity",
+      "definition": "人格が持つ固有の価値のことであり、人を単なる手段として扱うことを禁じるカントの人格性の定式の根拠となる概念。"
+    },
+    {
+      "term": "インフォームド・コンセント",
+      "reading": "いんふぉーむどこんせんと",
+      "en": "Informed Consent",
+      "definition": "医療行為を行う前に患者が十分な情報を得た上で自律的に同意するプロセス。義務論的観点から患者を目的として尊重する原則として位置づけられる。"
+    },
+    {
+      "term": "様相論理",
+      "reading": "ようそうろんり",
+      "en": "Modal Logic",
+      "definition": "必然性・可能性などのモダリティを扱う論理体系。義務論の形式化において、普遍化テストの必然性演算子□などとして活用される。"
+    },
+    {
+      "term": "絶対的制約",
+      "reading": "ぜったいてきせいやく",
+      "en": "Side-constraints",
+      "definition": "ノージックが提唱した概念で、結果的計算によっても侵害してはならない個人の権利・義務上の制約のこと。義務論的発想に基づく人権の絶対性を表す。"
+    },
+    {
+      "term": "契約論",
+      "reading": "けいやくろん",
+      "en": "Contractualism",
+      "definition": "ロールズやスキャンロンらが展開した倫理理論で、誰もが合理的に拒否できない原則に基づく行為を道徳的基準とする。義務論と親和性が高い。"
+    },
+    {
+      "term": "徳倫理学",
+      "reading": "とくりんりがく",
+      "en": "Virtue Ethics",
+      "definition": "アリストテレスに由来する規範倫理学の一潮流で、行為の正しさよりも行為者の性格・徳を中心に置く。義務論・結果主義と並ぶ三大規範倫理理論の一つ。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- Background transparent -->\n\n  <!-- Central concept: 義務論 -->\n  <ellipse cx=\"300\" cy=\"260\" rx=\"72\" ry=\"38\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#3b82f6\">義務論</text>\n  <text x=\"300\" y=\"272\" text-anchor=\"middle\" font-size=\"10\" fill=\"#3b82f6\">Deontology</text>\n\n  <!-- ===== TOP: 道徳的評価の基準 ===== -->\n  <rect x=\"178\" y=\"20\" width=\"244\" height=\"44\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"300\" y=\"38\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">道徳的評価の基準</text>\n  <text x=\"300\" y=\"54\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">M(a) = f(nature(a), ℛ)</text>\n\n  <!-- Arrow: top box → center -->\n  <line x1=\"300\" y1=\"64\" x2=\"300\" y2=\"222\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr)\"/>\n\n  <!-- ===== LEFT TOP: カントの義務倫理学 ===== -->\n  <rect x=\"16\" y=\"110\" width=\"148\" height=\"80\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.4\"/>\n  <text x=\"90\" y=\"130\" text-anchor=\"middle\" font-size=\"11.5\" font-weight=\"bold\" fill=\"currentColor\">カントの義務倫理学</text>\n  <text x=\"90\" y=\"148\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">定言命法</text>\n  <text x=\"90\" y=\"163\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">普遍法則の定式</text>\n  <text x=\"90\" y=\"177\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">人格性の定式</text>\n\n  <!-- Arrow: left top → center -->\n  <line x1=\"164\" y1=\"170\" x2=\"230\" y2=\"256\" stroke=\"#3b82f6\" stroke-width=\"1.5\" marker-end=\"url(#arrBlue)\"/>\n\n  <!-- ===== RIGHT TOP: ロスの一応の義務論 ===== -->\n  <rect x=\"436\" y=\"110\" width=\"148\" height=\"80\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.4\"/>\n  <text x=\"510\" y=\"130\" text-anchor=\"middle\" font-size=\"11.5\" font-weight=\"bold\" fill=\"currentColor\">ロスの義務論</text>\n  <text x=\"510\" y=\"148\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Prima Facie Duties</text>\n  <text x=\"510\" y=\"163\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">複数義務の共存</text>\n  <text x=\"510\" y=\"177\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">衝突時の状況判断</text>\n\n  <!-- Arrow: right top → center -->\n  <line x1=\"436\" y1=\"170\" x2=\"370\" y2=\"256\" stroke=\"#3b82f6\" stroke-width=\"1.5\" marker-end=\"url(#arrBlue)\"/>\n\n  <!-- ===== LEFT MIDDLE: 普遍化テスト ===== -->\n  <rect x=\"16\" y=\"230\" width=\"148\" height=\"68\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"90\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">普遍化テスト</text>\n  <text x=\"90\" y=\"268\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">格率 m が矛盾なく</text>\n  <text x=\"90\" y=\"282\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">普遍法則になれるか</text>\n  <text x=\"90\" y=\"294\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">□(∀x: Agent(x)⇒Act(x,m))</text>\n\n  <!-- Arrow: universal test → center -->\n  <line x1=\"164\" y1=\"264\" x2=\"228\" y2=\"262\" stroke=\"currentColor\" stroke-width=\"1.3\" marker-end=\"url(#arr)\"/>\n\n  <!-- ===== RIGHT MIDDLE: 尊厳と自律 ===== -->\n  <rect x=\"436\" y=\"230\" width=\"148\" height=\"68\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"510\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">尊厳と自律</text>\n  <text x=\"510\" y=\"268\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">人格を目的として扱う</text>\n  <text x=\"510\" y=\"282\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">手段のみとしない</text>\n  <text x=\"510\" y=\"294\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">自律的意思決定の尊重</text>\n\n  <!-- Arrow: dignity → center -->\n  <line x1=\"436\" y1=\"264\" x2=\"372\" y2=\"262\" stroke=\"currentColor\" stroke-width=\"1.3\" marker-end=\"url(#arr)\"/>\n\n  <!-- ===== CONTRAST: vs 結果主義 ===== -->\n  <!-- 義務論 box (left) -->\n  <rect x=\"34\" y=\"370\" width=\"130\" height=\"56\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.12\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"99\" y=\"391\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">義務論</text>\n  <text x=\"99\" y=\"407\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">M(a)=f(nature(a), ℛ)</text>\n  <text x=\"99\" y=\"419\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">行為の性質が基準</text>\n\n  <!-- vs label -->\n  <text x=\"300\" y=\"403\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">vs</text>\n\n  <!-- 結果主義 box (right) -->\n  <rect x=\"436\" y=\"370\" width=\"130\" height=\"56\" rx=\"8\" fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"501\" y=\"391\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#ef4444\">結果主義</text>\n  <text x=\"501\" y=\"407\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">M(a)=f(consequences(a))</text>\n  <text x=\"501\" y=\"419\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">結果・帰結が基準</text>\n\n  <!-- Arrow from center to contrast area -->\n  <line x1=\"270\" y1=\"298\" x2=\"200\" y2=\"368\" stroke=\"#3b82f6\" stroke-width=\"1.3\" stroke-dasharray=\"4,3\" marker-end=\"url(#arrBlue)\"/>\n  <line x1=\"330\" y1=\"298\" x2=\"400\" y2=\"368\" stroke=\"#ef4444\" stroke-width=\"1.3\" stroke-dasharray=\"4,3\" marker-end=\"url(#arrRed)\"/>\n\n  <!-- contrast horizontal line -->\n  <line x1=\"164\" y1=\"398\" x2=\"200\" y2=\"398\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3,3\"/>\n  <line x1=\"400\" y1=\"398\" x2=\"436\" y2=\"398\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3,3\"/>\n\n  <!-- ===== BOTTOM: 具体例 ===== -->\n  <rect x=\"50\" y=\"454\" width=\"500\" height=\"52\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.2\"/>\n  <text x=\"300\" y=\"472\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">具体的適用例</text>\n  <text x=\"130\" y=\"490\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">嘘と殺人犯</text>\n  <text x=\"240\" y=\"490\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">医療同意</text>\n  <text x=\"340\" y=\"490\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">約束の義務</text>\n  <text x=\"450\" y=\"490\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">企業倫理</text>\n  <!-- dots between examples -->\n  <text x=\"185\" y=\"490\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">·</text>\n  <text x=\"292\" y=\"490\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">·</text>\n  <text x=\"395\" y=\"490\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">·</text>\n\n  <!-- Arrow from contrast area to examples -->\n  <line x1=\"300\" y1=\"426\" x2=\"300\" y2=\"452\" stroke=\"#22c55e\" stroke-width=\"1.3\" marker-end=\"url(#arrGreen)\"/>\n\n  <!-- ===== TITLE LABEL ===== -->\n  <text x=\"300\" y=\"13\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.5\">義務論の概念構造マップ</text>\n\n  <!-- ===== DEFS: arrowheads ===== -->\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.7\"/>\n    </marker>\n    <marker id=\"arrBlue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\"/>\n    </marker>\n    <marker id=\"arrRed\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#ef4444\"/>\n    </marker>\n    <marker id=\"arrGreen\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ]
+}

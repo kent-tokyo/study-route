@@ -1,0 +1,105 @@
+{
+  "id": "755aa7df-4333-4a18-b334-623fb91cd555",
+  "nodeId": "accounts",
+  "level": "standard",
+  "generatedAt": "2026-03-21T09:12:14.895Z",
+  "content": "# 勘定科目\n\n## 何か — 直感的な説明\n\n勘定科目とは、**企業のお金や財産の動きを「種類ごとに仕分けるための引き出し」**のことです。\n\nたとえば、自宅の引き出しを想像してください。文房具の引き出し、薬の引き出し、書類の引き出し……それぞれに名前をつけて整理しておけば、必要なものをすぐに取り出せます。勘定科目はこれと同じ発想で、企業で起きるさまざまなお金の動きを「現金」「売掛金」「借入金」などの名前がついた引き出しに整理して記録します。\n\n引き出しに名前がなければ、何がどこにあるのかわかりません。勘定科目という「名前のついた引き出し」があるからこそ、企業の財務状況を誰もが正確に読み取ることができるのです。\n\n---\n\n## なぜ必要か — 会計・簿記の概念における位置づけ\n\n複式簿記では、すべての取引を「借方」と「貸方」の2つの側面から記録します。しかし、ただ「左に何円、右に何円」と記録するだけでは、その金額が何を意味するのかがまったくわかりません。そこで、**取引の内容を明確に示すラベル**として勘定科目が必要になります。\n\n勘定科目は、日本の会計基準（J-GAAP）において大きく **5つのグループ**に分類されます。この分類は財務諸表の構造と直結しており、どの勘定科目がどのグループに属するかを理解することが、貸借対照表や損益計算書を正しく読む第一歩となります。簿記の学習において勘定科目の習得は、英語学習における語彙習得と同じくらい基礎的かつ重要なステップです。\n\n---\n\n## 核となるアイデア — 定義・定理の本質\n\n勘定科目は以下の **5つの要素（Elements）** に分類されます。\n\n$$\n\\text{資産} = \\text{負債} + \\text{純資産}\n$$\n\n$$\n\\text{純資産（期末）} = \\text{純資産（期首）} + \\text{収益} - \\text{費用}\n$$\n\nこの2つの等式が、5つの要素をつなぎます。それぞれの要素と、代表的な勘定科目を整理すると次のとおりです。\n\n| 要素 | 意味 | 代表的な勘定科目 | 記載される財務諸表 |\n|------|------|-----------------|-------------------|\n| **資産** | 企業が持つ経済的価値のあるもの | 現金、売掛金、建物、土地 | 貸借対照表（B/S） |\n| **負債** | 将来返済・支払い義務があるもの | 借入金、買掛金、未払費用 | 貸借対照表（B/S） |\n| **純資産** | 資産から負債を差し引いた正味の財産 | 資本金、繰越利益剰余金 | 貸借対照表（B/S） |\n| **収益** | 企業の稼ぎ（利益の源泉） | 売上高、受取利息、雑収入 | 損益計算書（P/L） |\n| **費用** | 収益を得るためにかかったコスト | 仕入、給料、減価償却費 | 損益計算書（P/L） |\n\n各勘定科目には、**増加するときに借方に記録するか、貸方に記録するか**というルールが決まっています。\n\n- **資産・費用** → 増加で借方（左）、減少で貸方（右）\n- **負債・純資産・収益** → 増加で貸方（右）、減少で借方（左）\n\nこのルールは複式簿記の等式が常に成り立つように設計されており、暗記ではなく「等式のバランス」から自然に導き出されます。\n\n---\n\n## 具体例\n\n### 例1：日常生活 — 財布の整理術で理解する\n\n毎月の家計を管理するとき、レシートをただ積み上げるのではなく「食費」「交通費」「娯楽費」などの封筒に仕分けする方法があります。月末に封筒を見れば、どこにいくら使ったか一目瞭然です。\n\n勘定科目はまさにこれと同じです。企業で「10万円の支払いがあった」という事実だけでは、給料なのか、仕入れなのか、家賃なのかがわかりません。「給料」「仕入」「支払家賃」という勘定科目のラベルを貼ることで、はじめてその支払いの意味が明確になります。\n\n### 例2：カフェの開業 — 勘定科目が実際の取引に登場する場面\n\n友人がカフェを開業したとします。開業時にいくつかの取引が発生しますが、それぞれに適切な勘定科目が割り当てられます。\n\n- 銀行から100万円を借りた → **現金**（資産↑）/ **借入金**（負債↑）\n- コーヒー豆を5万円で仕入れた → **仕入**（費用↑）/ **現金**（資産↓）\n- コーヒーを売って3万円受け取った → **現金**（資産↑）/ **売上高**（収益↑）\n- 店員に給料10万円を支払った → **給料**（費用↑）/ **現金**（資産↓）\n\n同じ「現金が動く」取引でも、相手方の勘定科目が異なることで「何のためのお金か」が明確に伝わります。\n\n### 例3：売掛金と買掛金 — 「ツケ」で理解する\n\n商店街の八百屋さんを想像してください。常連客が「今月分はまとめて月末に払うね」と言って野菜を持って帰りました。八百屋さんはまだ現金を受け取っていないけれど、「後でもらえる権利」を持っています。これが**売掛金（資産）**です。\n\n逆に、八百屋さんが農家から野菜を仕入れて「来月まとめて払います」と言った場合、農家に対して「後で払う義務」が生まれます。これが**買掛金（負債）**です。\n\n現金の授受がなくても、権利や義務が発生した時点で記録するのが発生主義会計の考え方であり、そのための勘定科目として「売掛金」「買掛金」が用意されています。\n\n---\n\n## つながり — 他の概念との関係\n\n**前提知識：複式簿記との関係**\n\n複式簿記では、すべての取引を借方・貸方の2つの側面から記録します。勘定科目はその記録に「意味のある名前」を与える存在です。勘定科目なき複式簿記は、ラベルのない引き出しと同じ——何がどこにあるかわからなくなります。勘定科目を正確に選ぶ行為が「仕訳」であり、仕訳は簿記の中心的な作業です。\n\n**発展先：財務諸表との関係**\n\n勘定科目は最終的に財務諸表に集約されます。資産・負債・純資産の勘定科目は**貸借対照表（B/S）**に、収益・費用の勘定科目は**損益計算書（P/L）**に転記されます。期中に記録し続けた勘定科目の残高を集めることで、企業の財務状況を示す報告書が完成します。\n\n**勘定科目の標準化**\n\n日本では業種別に「標準勘定科目」が設けられており、製造業・建設業・医療法人などで使用する勘定科目が異なる場合があります。また、2023年10月に本格導入された**インボイス制度（適格請求書等保存方式）**の影響で、消費税の処理に関わる勘定科目（「仮払消費税」「仮受消費税」など）の重要性がさらに高まっています。\n\n> 📌 **IFRSとの差異**：IFRSでは勘定科目の名称や分類に関する詳細な規定が少なく、企業が実態に合わせて柔軟に設定できます。一方、J-GAAPは財務諸表等規則などで科目名や表示区分が細かく定められており、標準化の度合いが高いという特徴があります。\n\n---\n\n## 他分野への応用\n\n**経営管理・管理会計への応用**\n\n勘定科目の分類の考え方は、企業内部の経営管理にも応用されます。部門別・プロジェクト別に費用科目を細分化することで、「どの部署がどれだけコストをかけているか」を可視化する**管理会計**の基礎となります。\n\n**税務・申告実務への応用**\n\n法人税の申告書や消費税の申告書では、勘定科目ごとの金額集計が必要になります。たとえば「交際費」は税法上一定の損金算入制限があるため、「会議費」と明確に区別して記録することが求められます。正しい勘定科目の選択が、適切な節税や申告書の正確性に直結します。\n\n**非営利組織・公会計への応用**\n\nNPOや地方自治体でも、財務活動を記録・分類するために勘定科目に相当する概念が使われます。呼称は「費目」「節」「目」など異なりますが、「何にいくら使ったか」を種類ごとに整理するという発想は共通しており、企業会計の勘定科目の考え方が応用されています。",
+  "terms": [
+    {
+      "term": "勘定科目",
+      "reading": "かんじょうかもく",
+      "en": "Account Title",
+      "definition": "企業のお金や財産の動きを種類ごとに分類・記録するための名称。複式簿記において取引の内容を明確に示すラベルとして機能する。"
+    },
+    {
+      "term": "複式簿記",
+      "reading": "ふくしきぼき",
+      "en": "Double-Entry Bookkeeping",
+      "definition": "すべての取引を借方と貸方の2つの側面から記録する簿記の方式。資産＝負債＋純資産の等式が常に成立するように設計されている。"
+    },
+    {
+      "term": "借方",
+      "reading": "かりかた",
+      "en": "Debit",
+      "definition": "複式簿記における仕訳の左側。資産・費用の増加および負債・純資産・収益の減少を記録する。"
+    },
+    {
+      "term": "貸方",
+      "reading": "かしかた",
+      "en": "Credit",
+      "definition": "複式簿記における仕訳の右側。負債・純資産・収益の増加および資産・費用の減少を記録する。"
+    },
+    {
+      "term": "仕訳",
+      "reading": "しわけ",
+      "en": "Journal Entry",
+      "definition": "取引を借方・貸方に分けて勘定科目と金額を割り当てて記録する作業。簿記の中心的な作業である。"
+    },
+    {
+      "term": "貸借対照表",
+      "reading": "たいしゃくたいしょうひょう",
+      "en": "Balance Sheet",
+      "definition": "一定時点における企業の資産・負債・純資産の残高を示す財務諸表。B/Sとも呼ばれる。"
+    },
+    {
+      "term": "損益計算書",
+      "reading": "そんえきけいさんしょ",
+      "en": "Profit and Loss Statement",
+      "definition": "一定期間における企業の収益・費用・利益を示す財務諸表。P/Lとも呼ばれる。"
+    },
+    {
+      "term": "売掛金",
+      "reading": "うりかけきん",
+      "en": "Accounts Receivable",
+      "definition": "商品やサービスを提供したが代金をまだ受け取っていない場合に計上する資産の勘定科目。後日受け取る権利を表す。"
+    },
+    {
+      "term": "買掛金",
+      "reading": "かいかけきん",
+      "en": "Accounts Payable",
+      "definition": "商品やサービスを受け取ったが代金をまだ支払っていない場合に計上する負債の勘定科目。後日支払う義務を表す。"
+    },
+    {
+      "term": "発生主義会計",
+      "reading": "はっせいしゅぎかいけい",
+      "en": "Accrual Basis Accounting",
+      "definition": "現金の授受にかかわらず、権利や義務が発生した時点で収益・費用を認識・記録する会計の考え方。"
+    },
+    {
+      "term": "純資産",
+      "reading": "じゅんしさん",
+      "en": "Net Assets / Equity",
+      "definition": "資産の総額から負債の総額を差し引いた正味の財産。資本金や繰越利益剰余金などの勘定科目が該当する。"
+    },
+    {
+      "term": "減価償却費",
+      "reading": "げんかしょうきゃくひ",
+      "en": "Depreciation Expense",
+      "definition": "建物や機械などの固定資産の取得原価をその耐用年数にわたって費用として配分したもの。費用の勘定科目に分類される。"
+    },
+    {
+      "term": "インボイス制度",
+      "reading": "いんぼいすせいど",
+      "en": "Invoice System (Qualified Invoice Storage Method)",
+      "definition": "2023年10月に導入された適格請求書等保存方式。消費税の仕入税額控除に関わる勘定科目（仮払消費税・仮受消費税）の重要性を高めた制度。"
+    },
+    {
+      "term": "管理会計",
+      "reading": "かんりかいけい",
+      "en": "Management Accounting",
+      "definition": "企業内部の経営管理を目的として、部門別・プロジェクト別に費用などを分析・報告する会計手法。勘定科目の細分化を基礎とする。"
+    },
+    {
+      "term": "J-GAAP",
+      "reading": "じぇいがーぷ",
+      "en": "Japanese Generally Accepted Accounting Principles",
+      "definition": "日本の一般に公正妥当と認められた会計基準の総称。勘定科目の名称や表示区分が財務諸表等規則などで細かく定められている。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 中央タイトル -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">勘定科目の構造</text>\n\n  <!-- 会計等式 上部 -->\n  <rect x=\"30\" y=\"50\" width=\"540\" height=\"36\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"65\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\" font-weight=\"bold\">会計等式</text>\n  <text x=\"300\" y=\"80\" text-anchor=\"middle\" font-size=\"12\" fill=\"currentColor\">資産 ＝ 負債 ＋ 純資産　　純資産 ＝ 純資産（期首） ＋ 収益 － 費用</text>\n\n  <!-- 貸借対照表ブロック -->\n  <rect x=\"30\" y=\"110\" width=\"335\" height=\"200\" rx=\"10\" fill=\"#3b82f6\" fill-opacity=\"0.07\" stroke=\"#3b82f6\" stroke-opacity=\"0.5\" stroke-width=\"1.5\"/>\n  <text x=\"197\" y=\"130\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">貸借対照表（B/S）</text>\n\n  <!-- 資産ブロック -->\n  <rect x=\"45\" y=\"140\" width=\"140\" height=\"155\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.13\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"115\" y=\"162\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">資産</text>\n  <text x=\"115\" y=\"180\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">企業が持つ経済的価値</text>\n  <line x1=\"60\" y1=\"187\" x2=\"170\" y2=\"187\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"115\" y=\"201\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">現金</text>\n  <text x=\"115\" y=\"215\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">売掛金</text>\n  <text x=\"115\" y=\"229\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">建物</text>\n  <text x=\"115\" y=\"243\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">土地</text>\n  <line x1=\"60\" y1=\"253\" x2=\"170\" y2=\"253\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"115\" y=\"267\" text-anchor=\"middle\" font-size=\"9\" fill=\"#3b82f6\" font-weight=\"bold\">増加 → 借方（左）</text>\n  <text x=\"115\" y=\"281\" text-anchor=\"middle\" font-size=\"9\" fill=\"#3b82f6\" font-weight=\"bold\">減少 → 貸方（右）</text>\n\n  <!-- 負債ブロック -->\n  <rect x=\"200\" y=\"140\" width=\"150\" height=\"72\" rx=\"8\" fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"275\" y=\"162\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#ef4444\">負債</text>\n  <text x=\"275\" y=\"178\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">返済・支払い義務</text>\n  <line x1=\"212\" y1=\"185\" x2=\"338\" y2=\"185\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"275\" y=\"198\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">借入金　買掛金　未払費用</text>\n\n  <!-- 純資産ブロック -->\n  <rect x=\"200\" y=\"222\" width=\"150\" height=\"73\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.10\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"275\" y=\"244\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#22c55e\">純資産</text>\n  <text x=\"275\" y=\"260\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">正味の財産</text>\n  <line x1=\"212\" y1=\"267\" x2=\"338\" y2=\"267\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"275\" y=\"282\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">資本金　繰越利益剰余金</text>\n\n  <!-- 負債・純資産ルール -->\n  <text x=\"275\" y=\"307\" text-anchor=\"middle\" font-size=\"9\" fill=\"#ef4444\" font-weight=\"bold\">増加 → 貸方（右）</text>\n\n  <!-- 損益計算書ブロック -->\n  <rect x=\"380\" y=\"110\" width=\"190\" height=\"200\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.07\" stroke=\"#22c55e\" stroke-opacity=\"0.5\" stroke-width=\"1.5\"/>\n  <text x=\"475\" y=\"130\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#22c55e\">損益計算書（P/L）</text>\n\n  <!-- 収益ブロック -->\n  <rect x=\"393\" y=\"140\" width=\"164\" height=\"72\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.13\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"475\" y=\"162\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#22c55e\">収益</text>\n  <text x=\"475\" y=\"178\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">企業の稼ぎ（利益の源泉）</text>\n  <line x1=\"405\" y1=\"185\" x2=\"545\" y2=\"185\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"475\" y=\"199\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">売上高　受取利息　雑収入</text>\n\n  <!-- 費用ブロック -->\n  <rect x=\"393\" y=\"222\" width=\"164\" height=\"73\" rx=\"8\" fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"475\" y=\"244\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#ef4444\">費用</text>\n  <text x=\"475\" y=\"260\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">収益を得るためのコスト</text>\n  <line x1=\"405\" y1=\"267\" x2=\"545\" y2=\"267\" stroke=\"currentColor\" stroke-opacity=\"0.3\" stroke-width=\"1\"/>\n  <text x=\"475\" y=\"281\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">仕入　給料　減価償却費</text>\n\n  <!-- 収益・費用ルール -->\n  <text x=\"475\" y=\"307\" text-anchor=\"middle\" font-size=\"9\" fill=\"#ef4444\" font-weight=\"bold\">増加 → 貸方（右）／借方（左）</text>\n\n  <!-- 接続線: 純資産 ←→ 収益・費用 -->\n  <path d=\"M 350 258 Q 370 258 380 220\" fill=\"none\" stroke=\"currentColor\" stroke-opacity=\"0.4\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\"/>\n  <text x=\"363\" y=\"248\" font-size=\"8\" fill=\"currentColor\" fill-opacity=\"0.7\">当期純利益</text>\n\n  <!-- 借方/貸方説明ボックス -->\n  <rect x=\"30\" y=\"335\" width=\"540\" height=\"80\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-opacity=\"0.2\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"354\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">借方・貸方ルール（仕訳の基本）</text>\n\n  <!-- 借方列 -->\n  <rect x=\"50\" y=\"362\" width=\"230\" height=\"44\" rx=\"6\" fill=\"#3b82f6\" fill-opacity=\"0.10\" stroke=\"#3b82f6\" stroke-width=\"1\"/>\n  <text x=\"165\" y=\"378\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">借方（左）に増加</text>\n  <text x=\"165\" y=\"395\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">資産 ／ 費用</text>\n\n  <!-- 貸方列 -->\n  <rect x=\"320\" y=\"362\" width=\"230\" height=\"44\" rx=\"6\" fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"1\"/>\n  <text x=\"435\" y=\"378\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#ef4444\">貸方（右）に増加</text>\n  <text x=\"435\" y=\"395\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">負債 ／ 純資産 ／ 収益</text>\n\n  <!-- 仕訳例ボックス -->\n  <rect x=\"30\" y=\"430\" width=\"540\" height=\"78\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-opacity=\"0.2\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"449\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">仕訳例（カフェ開業）</text>\n\n  <text x=\"50\" y=\"467\" font-size=\"9.5\" fill=\"currentColor\">① 借入：</text>\n  <text x=\"100\" y=\"467\" font-size=\"9.5\" fill=\"#3b82f6\">現金100万（資産↑）</text>\n  <text x=\"210\" y=\"467\" font-size=\"9.5\" fill=\"currentColor\">/</text>\n  <text x=\"220\" y=\"467\" font-size=\"9.5\" fill=\"#ef4444\">借入金100万（負債↑）</text>\n\n  <text x=\"50\" y=\"483\" font-size=\"9.5\" fill=\"currentColor\">② 仕入：</text>\n  <text x=\"100\" y=\"483\" font-size=\"9.5\" fill=\"#ef4444\">仕入5万（費用↑）</text>\n  <text x=\"190\" y=\"483\" font-size=\"9.5\" fill=\"currentColor\">/</text>\n  <text x=\"200\" y=\"483\" font-size=\"9.5\" fill=\"#3b82f6\">現金5万（資産↓）</text>\n\n  <text x=\"50\" y=\"499\" font-size=\"9.5\" fill=\"currentColor\">③ 売上：</text>\n  <text x=\"100\" y=\"499\" font-size=\"9.5\" fill=\"#3b82f6\">現金3万（資産↑）</text>\n  <text x=\"190\" y=\"499\" font-size=\"9.5\" fill=\"currentColor\">/</text>\n  <text x=\"200\" y=\"499\" font-size=\"9.5\" fill=\"#22c55e\">売上高3万（収益↑）</text>\n\n</svg>"
+    }
+  ]
+}

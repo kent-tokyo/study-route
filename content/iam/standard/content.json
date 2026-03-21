@@ -1,0 +1,105 @@
+{
+  "id": "210de0bd-9c9e-4356-bac7-98a912052704",
+  "nodeId": "iam",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:52:14.144Z",
+  "content": "# IAM（Identity and Access Management）\n\n## 何か — 直感的な説明\n\nIAM（アイデンティティ・アクセス・マネジメント）とは、「**誰が**・**何に**・**どこまでアクセスできるか**」を管理する仕組みのことです。\n\nマンションのセキュリティシステムを思い浮かべてください。住人はエントランス・自分の部屋・共用ロビーに入れますが、他人の部屋には入れません。管理人はすべての部屋に入れますが、来客は1階のロビーまでしか入れません。このように「人ごとに許可する範囲を細かく決める」のがIAMの本質です。\n\nコンピュータやクラウドの世界では、ユーザー・アプリケーション・サーバーなど無数の「誰か」がデータやサービスにアクセスしようとします。IAMはそれらを適切に識別し、必要最低限の権限だけを与えることでシステム全体を守る、セキュリティの土台となる概念です。\n\n---\n\n## なぜ必要か — 数学における位置づけ\n\nIAMはセキュリティ分野の中心概念であり、情報セキュリティの三大原則である「**機密性（Confidentiality）**・**完全性（Integrity）**・**可用性（Availability）**」（CIA トライアド）すべてに深く関わっています。\n\n特に機密性の観点では、「本来見てはいけない人がデータを見られてしまう」事態を防ぐことが最重要です。IAMはその入り口を守る門番として機能します。また、アクセス制御の理論は集合論・グラフ理論・論理学と密接に結びついており、「誰が誰の上位権限を持つか」はツリー構造や半順序集合として数学的にモデル化できます。\n\nユーザーの集合を $U$、リソースの集合を $R$ とするとき、アクセス制御は関数\n\n$$f: U \\times R \\rightarrow \\{0, 1\\}$$\n\nとして表せます（$1$ がアクセス許可、$0$ が拒否）。この単純な写像の背後に、IAM全体の設計思想が凝縮されています。\n\n---\n\n## 核となるアイデア — 定義・定理の本質\n\nIAMは大きく **3つの柱** で構成されています。\n\n### 1. 認証（Authentication）―「あなたは誰？」\n\n本人であることを確認するプロセスです。パスワード・生体認証・ワンタイムパスワード（OTP）などが使われます。認証が成功すると、システムはそのエンティティに **IDトークン** を発行します。\n\n### 2. 認可（Authorization）―「あなたは何ができる？」\n\n認証済みのエンティティに対して、どのリソースへのどの操作を許可するかを決めます。代表的なモデルとして以下があります。\n\n| モデル | 概要 |\n|---|---|\n| **DAC**（任意アクセス制御） | 所有者が自由に権限を設定 |\n| **MAC**（強制アクセス制御） | システムがラベルで強制管理 |\n| **RBAC**（役割ベースアクセス制御） | 役割（ロール）単位で権限を付与 |\n| **ABAC**（属性ベースアクセス制御） | 属性の組み合わせで動的に判定 |\n\nRBACでは、ユーザー $u$ がロール $r$ を持ち、ロール $r$ がパーミッション $p$ を持つとき、\n\n$$u \\xrightarrow{\\text{assigned}} r \\xrightarrow{\\text{has}} p$$\n\nという関係が成立します。ユーザーは直接権限を持つのではなく、**ロールを介して間接的に権限を得る**点が重要です。\n\n### 3. 最小権限の原則（Principle of Least Privilege）\n\nエンティティには「その仕事をするために必要な最小限の権限だけ」を与えるという設計原則です。全権限の集合を $P_{\\text{all}}$、あるタスク $t$ に必要な権限の集合を $P_t$ とすると、\n\n$$P_{\\text{付与}} = P_t \\subseteq P_{\\text{all}}$$\n\nとなるように設計します。余分な権限を与えないことで、万が一アカウントが侵害されても被害を最小化できます。\n\n---\n\n## 具体例\n\n### 例1：日常生活 — 会社のビルのセキュリティカード\n\nオフィスビルを想像してください。\n\n- **受付スタッフ**：1階と受付エリアのみ入室可能\n- **一般社員**：自分の部署のフロアと共用会議室に入室可能\n- **エンジニア**：サーバールームにも入室可能\n- **管理者（総務部）**：全フロアに入室可能\n\nこれはまさに **RBAC（役割ベースアクセス制御）** の実装です。個人ごとにカードを設定するのではなく、「役職（ロール）」ごとにアクセス範囲を決め、人をそのロールに割り当てています。新入社員が入社したとき、「一般社員ロール」を割り当てるだけで適切な権限が自動的に付与されます。\n\n### 例2：クラウドサービス（AWS IAM）\n\nAmazon Web Services（AWS）では、IAMを使ってクラウドリソースへのアクセスを細かく制御します。\n\n```json\n{\n  \"Effect\": \"Allow\",\n  \"Action\": \"s3:GetObject\",\n  \"Resource\": \"arn:aws:s3:::my-bucket/*\"\n}\n```\n\nこのポリシーは「`my-bucket` の中のオブジェクトを**読み取る**ことだけを許可し、削除や書き込みは禁止」という意味です。開発者Aには読み取りのみ、データ管理者Bには読み書き両方、と役割に応じて細かく制御できます。最小権限の原則を実践する典型例です。\n\n### 例3：大学の学習管理システム（LMS）\n\n大学のオンライン授業システムを考えましょう。\n\n- **学生**：自分が履修している授業の資料を閲覧・課題を提出できる\n- **TA（ティーチングアシスタント）**：担当授業の課題を採点できる\n- **教員**：担当授業のコンテンツを作成・編集・成績をつけられる\n- **システム管理者**：全授業・全ユーザーを管理できる\n\nここでも「**認証**（ログイン）→ **認可**（ロールに基づく機能制限）」の流れが働いています。学生Aが誤って他の学生の成績を書き換えようとしても、認可の段階でブロックされます。\n\n### 例4：スマートフォンのアプリ権限\n\nスマートフォンにインストールしたアプリが「カメラへのアクセスを許可しますか？」と尋ねてくるのも IAMの一形態です。\n\n- **地図アプリ**：位置情報 ✅・カメラ ❌・連絡先 ❌\n- **カメラアプリ**：カメラ ✅・位置情報（任意）✅・連絡先 ❌\n- **SNSアプリ**：カメラ ✅・マイク ✅・連絡先 ✅\n\nOSが「リソース（カメラ・マイクなど）」へのアクセスを管理し、ユーザーが明示的に認可したアプリだけが特定機能を使える仕組みになっています。アプリの種別・ユーザーの選択・リソースの属性という複数の条件を組み合わせてアクセスを動的に判定しており、**ABAC（属性ベースアクセス制御）** の考え方に近い実例です。\n\n---\n\n## つながり — 他の概念との関係\n\n```\n【前提知識】\n認証の基礎（パスワード・ハッシュ関数）\n　　↓\n暗号理論（公開鍵暗号・デジタル署名）\n　　↓\n　　├── IAM ──┬── ゼロトラストセキュリティ\n　　│           ├── OAuth / OpenID Connect\n　　│           ├── LDAP / Active Directory\n　　│           └── SIEM（セキュリティ情報・イベント管理）\n　　↓\n集合論・グラフ理論（権限の数学的モデリング）\n```\n\n**前提となる知識：**\n- **ハッシュ関数**：パスワードを安全に保存するために使われる（認証の基盤）\n- **公開鍵暗号**：デジタル証明書によるIDの証明に利用される\n\n**発展的な関連概念：**\n- **OAuth 2.0 / OpenID Connect**：「Googleアカウントでログイン」のような連携認証の標準プロトコル\n- **ゼロトラストセキュリティ**：「社内ネットワークだから安全」という前提を捨て、常に認証・認可を行う現代的セキュリティ思想\n- **PAM（特権アクセス管理）**：管理者権限など高リスクなアクセスを特別に管理する仕組み\n\n---\n\n## 他分野への応用\n\n### 🏥 医療・ヘルスケア\n\n電子カルテシステムでは、IAMは患者のプライバシー保護に直結します。主治医は自分の患者の全情報にアクセスできますが、別の診療科の医師は緊急時以外は閲覧できません。日本では個人情報保護法、米国ではHIPAA（医療情報プライバシー法）がこうしたアクセス制御の法的根拠となっており、IAMの正確な実装が法令遵守（コンプライアンス）に不可欠です。\n\n### 🏦 金融・フィンテック\n\n銀行システムでは、「送金の承認には2人の担当者の認可が必要」という **職務分離（Separation of Duties）** をIAMで実現します。一人の人間がすべての権限を持つと不正が起きやすいため、権限を意図的に分散させます。これは特定の操作を完了するためには複数の独立した主体の承認が必要であるという独立性の考え方に基づいており、内部不正防止の重要な設計原則となっています。\n\n### ☁️ クラウドコンピューティング・DevOps\n\nマイクロサービスアーキテクチャでは、人間だけでなく「サービス（プログラム）」も IAMの管理対象になります。サービスAがサービスBのAPIを呼び出す際にも認証・認可が必要で、これを **サービスアカウント** や **サービスメッシュ** で管理します。現代のクラウドネイティブ開発において、IAMの設計はシステムアーキテクチャの中核を成します。\n\n### 🏭 産業制御システム（ICS/SCADA）\n\n発電所や工場の制御システムでは、誤ったオペレーターが機器を操作してしまうと物理的な事故につながります。IAMは「誰がどの機器をどの操作モードで制御できるか」を厳密に管理し、人的ミスや意図的な妨害行為から重要インフラを守ります。ここでの IAMの失敗は、デジタル世界を超えて現実世界の安全に直接影響します。",
+  "terms": [
+    {
+      "term": "IAM",
+      "reading": "あいえーえむ",
+      "en": "Identity and Access Management",
+      "definition": "「誰が・何に・どこまでアクセスできるか」を管理する仕組み。ユーザーやシステムの識別・認証・認可を統合的に制御するセキュリティの基盤概念。"
+    },
+    {
+      "term": "認証",
+      "reading": "にんしょう",
+      "en": "Authentication",
+      "definition": "アクセスしようとするエンティティが本当に本人であるかを確認するプロセス。パスワード・生体認証・ワンタイムパスワードなどが用いられる。"
+    },
+    {
+      "term": "認可",
+      "reading": "にんか",
+      "en": "Authorization",
+      "definition": "認証済みのエンティティに対して、どのリソースへのどの操作を許可するかを決定するプロセス。アクセス制御モデルに基づいて権限を付与・拒否する。"
+    },
+    {
+      "term": "RBAC",
+      "reading": "あーるばっく",
+      "en": "Role-Based Access Control",
+      "definition": "役割（ロール）単位で権限を付与するアクセス制御モデル。ユーザーは直接権限を持つのではなく、割り当てられたロールを介して間接的に権限を得る。"
+    },
+    {
+      "term": "ABAC",
+      "reading": "えーばっく",
+      "en": "Attribute-Based Access Control",
+      "definition": "ユーザー・リソース・環境などの属性の組み合わせによって動的にアクセス可否を判定するアクセス制御モデル。"
+    },
+    {
+      "term": "最小権限の原則",
+      "reading": "さいしょうけんげんのげんそく",
+      "en": "Principle of Least Privilege",
+      "definition": "エンティティには業務に必要な最小限の権限だけを付与するという設計原則。アカウントが侵害された場合の被害範囲を最小化する目的で用いられる。"
+    },
+    {
+      "term": "CIAトライアド",
+      "reading": "しーあいえーとらいあど",
+      "en": "CIA Triad",
+      "definition": "情報セキュリティの三大原則である機密性（Confidentiality）・完全性（Integrity）・可用性（Availability）をまとめた概念。IAMはこの3原則すべてに深く関わる。"
+    },
+    {
+      "term": "アクセス制御",
+      "reading": "あくせすせいぎょ",
+      "en": "Access Control",
+      "definition": "ユーザーの集合Uとリソースの集合Rに対して、アクセス可否を関数 f: U×R→{0,1} として定義し、誰が何にアクセスできるかを制御する仕組み。"
+    },
+    {
+      "term": "ゼロトラストセキュリティ",
+      "reading": "ぜろとらすとせきゅりてぃ",
+      "en": "Zero Trust Security",
+      "definition": "「社内ネットワークだから安全」という前提を排除し、すべてのアクセスに対して常に認証・認可を行う現代的なセキュリティ思想。"
+    },
+    {
+      "term": "OAuth 2.0",
+      "reading": "おーおーす つーてんぜろ",
+      "en": "OAuth 2.0",
+      "definition": "「Googleアカウントでログイン」のような第三者サービス間の認可連携を実現する標準プロトコル。OpenID Connectと組み合わせて認証にも利用される。"
+    },
+    {
+      "term": "職務分離",
+      "reading": "しょくむぶんり",
+      "en": "Separation of Duties",
+      "definition": "一人の人間が特定の業務に必要なすべての権限を持たないよう、権限を意図的に複数人に分散させる原則。内部不正の防止に用いられる。"
+    },
+    {
+      "term": "DAC",
+      "reading": "だっく",
+      "en": "Discretionary Access Control",
+      "definition": "リソースの所有者が自由に他のユーザーへの権限を設定できる任意アクセス制御モデル。"
+    },
+    {
+      "term": "MAC",
+      "reading": "まっく",
+      "en": "Mandatory Access Control",
+      "definition": "システムがセキュリティラベルに基づいてアクセスを強制的に管理する強制アクセス制御モデル。所有者の裁量ではなくシステムポリシーが優先される。"
+    },
+    {
+      "term": "IDトークン",
+      "reading": "あいでぃとーくん",
+      "en": "ID Token",
+      "definition": "認証が成功した際にシステムが発行する、エンティティの身元を証明するデータ。以降のリソースアクセス時に提示することで認可判定に利用される。"
+    },
+    {
+      "term": "PAM",
+      "reading": "ぱむ",
+      "en": "Privileged Access Management",
+      "definition": "管理者権限など高リスクな特権アクセスを特別に管理・監視する仕組み。通常のIAMよりも厳格な制御と監査ログの記録が行われる。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景透明 -->\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">IAM（アイデンティティ・アクセス管理）の構造</text>\n\n  <!-- ===== 中央のアクセス制御関数 ===== -->\n  <rect x=\"210\" y=\"220\" width=\"180\" height=\"60\" rx=\"12\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"244\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">アクセス制御関数</text>\n  <text x=\"300\" y=\"263\" text-anchor=\"middle\" font-size=\"12\" fill=\"#3b82f6\">f: U × R → {0, 1}</text>\n  <text x=\"300\" y=\"278\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">許可 / 拒否</text>\n\n  <!-- ===== 左側：認証ボックス ===== -->\n  <rect x=\"30\" y=\"190\" width=\"130\" height=\"55\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"95\" y=\"212\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">認証</text>\n  <text x=\"95\" y=\"228\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Authentication</text>\n  <text x=\"95\" y=\"241\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">「あなたは誰？」</text>\n\n  <!-- 認証 → アクセス制御 矢印 -->\n  <line x1=\"160\" y1=\"217\" x2=\"208\" y2=\"245\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow-gray)\"/>\n\n  <!-- ===== 右側：認可ボックス ===== -->\n  <rect x=\"440\" y=\"190\" width=\"130\" height=\"55\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"505\" y=\"212\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">認可</text>\n  <text x=\"505\" y=\"228\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Authorization</text>\n  <text x=\"505\" y=\"241\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">「何ができる？」</text>\n\n  <!-- アクセス制御 → 認可 矢印 -->\n  <line x1=\"392\" y1=\"245\" x2=\"438\" y2=\"217\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow-gray)\"/>\n\n  <!-- ===== 上部：ユーザー集合 U ===== -->\n  <rect x=\"110\" y=\"60\" width=\"120\" height=\"90\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"170\" y=\"82\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#22c55e\">ユーザー集合 U</text>\n  <!-- ユーザーアイコン群 -->\n  <circle cx=\"145\" cy=\"103\" r=\"10\" fill=\"#22c55e\" fill-opacity=\"0.3\" stroke=\"#22c55e\" stroke-width=\"1\"/>\n  <text x=\"145\" y=\"107\" text-anchor=\"middle\" font-size=\"9\" fill=\"#22c55e\">社員</text>\n  <circle cx=\"170\" cy=\"103\" r=\"10\" fill=\"#22c55e\" fill-opacity=\"0.3\" stroke=\"#22c55e\" stroke-width=\"1\"/>\n  <text x=\"170\" y=\"107\" text-anchor=\"middle\" font-size=\"9\" fill=\"#22c55e\">管理</text>\n  <circle cx=\"195\" cy=\"103\" r=\"10\" fill=\"#22c55e\" fill-opacity=\"0.3\" stroke=\"#22c55e\" stroke-width=\"1\"/>\n  <text x=\"195\" y=\"107\" text-anchor=\"middle\" font-size=\"9\" fill=\"#22c55e\">Guest</text>\n  <text x=\"170\" y=\"136\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">アプリ / サーバーも含む</text>\n\n  <!-- U → 認証 矢印 -->\n  <line x1=\"170\" y1=\"150\" x2=\"110\" y2=\"190\" stroke=\"#22c55e\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arrow-green)\"/>\n  <!-- U → アクセス制御 矢印 -->\n  <line x1=\"200\" y1=\"150\" x2=\"268\" y2=\"220\" stroke=\"#22c55e\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arrow-green)\"/>\n\n  <!-- ===== 上部右：リソース集合 R ===== -->\n  <rect x=\"370\" y=\"60\" width=\"120\" height=\"90\" rx=\"10\" fill=\"#ef4444\" fill-opacity=\"0.1\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"430\" y=\"82\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#ef4444\">リソース集合 R</text>\n  <rect x=\"385\" y=\"92\" width=\"30\" height=\"18\" rx=\"3\" fill=\"#ef4444\" fill-opacity=\"0.3\" stroke=\"#ef4444\" stroke-width=\"1\"/>\n  <text x=\"400\" y=\"105\" text-anchor=\"middle\" font-size=\"8\" fill=\"#ef4444\">DB</text>\n  <rect x=\"420\" y=\"92\" width=\"30\" height=\"18\" rx=\"3\" fill=\"#ef4444\" fill-opacity=\"0.3\" stroke=\"#ef4444\" stroke-width=\"1\"/>\n  <text x=\"435\" y=\"105\" text-anchor=\"middle\" font-size=\"8\" fill=\"#ef4444\">ファイル</text>\n  <rect x=\"455\" y=\"92\" width=\"28\" height=\"18\" rx=\"3\" fill=\"#ef4444\" fill-opacity=\"0.3\" stroke=\"#ef4444\" stroke-width=\"1\"/>\n  <text x=\"469\" y=\"105\" text-anchor=\"middle\" font-size=\"8\" fill=\"#ef4444\">API</text>\n  <text x=\"430\" y=\"136\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">サービス / データ</text>\n\n  <!-- R → アクセス制御 矢印 -->\n  <line x1=\"400\" y1=\"150\" x2=\"335\" y2=\"220\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arrow-red)\"/>\n\n  <!-- ===== 下部：RBACモデル詳細 ===== -->\n  <!-- u → role → permission の関係 -->\n  <rect x=\"30\" y=\"340\" width=\"530\" height=\"130\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"6,3\"/>\n  <text x=\"295\" y=\"360\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">RBAC（役割ベースアクセス制御）の構造</text>\n\n  <!-- User -->\n  <rect x=\"50\" y=\"375\" width=\"80\" height=\"36\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.15\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"90\" y=\"390\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">ユーザー u</text>\n  <text x=\"90\" y=\"404\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">（社員・管理者）</text>\n\n  <!-- assigned arrow -->\n  <line x1=\"130\" y1=\"393\" x2=\"188\" y2=\"393\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow-gray)\"/>\n  <text x=\"159\" y=\"385\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">assigned</text>\n\n  <!-- Role -->\n  <rect x=\"190\" y=\"375\" width=\"80\" height=\"36\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"230\" y=\"390\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">ロール r</text>\n  <text x=\"230\" y=\"404\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">（役職・権限群）</text>\n\n  <!-- has arrow -->\n  <line x1=\"270\" y1=\"393\" x2=\"328\" y2=\"393\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow-gray)\"/>\n  <text x=\"299\" y=\"385\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">has</text>\n\n  <!-- Permission -->\n  <rect x=\"330\" y=\"375\" width=\"90\" height=\"36\" rx=\"8\" fill=\"#ef4444\" fill-opacity=\"0.15\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"375\" y=\"390\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#ef4444\">パーミッション p</text>\n  <text x=\"375\" y=\"404\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">（操作の許可）</text>\n\n  <!-- allows arrow -->\n  <line x1=\"420\" y1=\"393\" x2=\"468\" y2=\"393\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow-gray)\"/>\n  <text x=\"444\" y=\"385\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">allows</text>\n\n  <!-- Resource box small -->\n  <rect x=\"470\" y=\"375\" width=\"70\" height=\"36\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.1\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"505\" y=\"390\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">リソース</text>\n  <text x=\"505\" y=\"404\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">R</text>\n\n  <!-- 最小権限の原則 note -->\n  <text x=\"295\" y=\"435\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">最小権限の原則：P_付与 = P_t ⊆ P_all</text>\n  <text x=\"295\" y=\"452\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">（タスクに必要な最小限の権限のみを付与）</text>\n\n  <!-- ===== CIAトライアド 小さく右上 ===== -->\n  <text x=\"300\" y=\"480\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.7\">CIA トライアド：機密性 · 完全性 · 可用性 を支える基盤</text>\n\n  <!-- ===== 矢印マーカー定義 ===== -->\n  <defs>\n    <marker id=\"arrow-gray\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\"/>\n    </marker>\n    <marker id=\"arrow-green\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n    <marker id=\"arrow-red\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#ef4444\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ]
+}

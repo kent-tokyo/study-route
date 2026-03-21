@@ -1,0 +1,93 @@
+{
+  "id": "1693841c-81ad-4145-8366-25d5f04069e6",
+  "nodeId": "beauty",
+  "level": "standard",
+  "generatedAt": "2026-03-21T08:45:43.208Z",
+  "content": "# 美の概念\n\n## 何か — 直感的な説明\n\n「美しい」という言葉は、私たちが日常的に使う言葉でありながら、いざ「美とは何か？」と問われると、途端に答えに詰まってしまいます。夕暮れの空を見て「きれいだな」と感じる瞬間、好きな音楽を聴いて胸が熱くなる瞬間——これらはすべて「美」と呼ばれる体験です。しかし、同じ夕焼けを見ても「別に…」と感じる人もいるかもしれません。\n\n美（beauty）とは、あるものを知覚したときに人が感じる「心地よさ・調和・感動」のような感覚的・情動的な反応であり、それを引き起こす対象がもつ性質のことを指します。美学（aesthetics）は、こうした「美とは何か」「何が美しいのか」「美はどこにあるのか」を哲学的・科学的に探究する学問です。\n\n---\n\n## なぜ必要か — 数学における位置づけ\n\n「美」は芸術や文学の話であって、数学とは無関係に思えるかもしれません。しかし、数学者たちは古くから「美しい証明」「エレガントな解法」という言葉を使い、数学的な美を語ってきました。哲学者・数学者のバートランド・ラッセルは「数学は美しさを持つ——冷たく厳粛な美しさを」と述べています。\n\n美の概念は、数学そのものの中には直接登場しませんが、数学を**どう評価するか**、**どんな証明が良い証明か**、という判断基準として深く関わっています。また、幾何学における対称性・黄金比・フラクタルといったトピックは、美の感覚と数学的構造が交差する領域です。美の概念を理解することは、数学の外側——「なぜ数学をするのか」「良い数学とは何か」——という問いへの入口でもあります。\n\n---\n\n## 核となるアイデア — 定義・定理の本質\n\n美の概念を考えるうえで、哲学では大きく二つの立場があります。\n\n**主観主義（Subjectivism）**：美は見る人の心の中にある。「美しい」という判断は、その人の感情や好みの表明であり、普遍的な正解はない。哲学者ヒュームはこの立場に近く、「美は物の中にあるのではなく、それを観察する心の中にある」と述べました。\n\n**客観主義（Objectivism）**：美は対象そのものがもつ性質である。対称性・比例・調和・複雑さといった構造的特徴が美を生み出す。プラトンは美そのものの「イデア」が存在すると考えました。\n\n現代では、これらの中間的な立場として **カント的な立場** が重要です。カントは著書『判断力批判』（1790年）の中で、美的判断（「これは美しい」）は**主観的でありながらも普遍的な同意を要求する**という独特な性格をもつと論じました。\n\n$$\\text{美的判断} = \\text{主観的な感情} + \\text{普遍的な妥当性への要求}$$\n\nこれは例えば「砂糖は甘い（私にとって）」という単なる好みの判断でもなく、「三角形の内角の和は $180°$ だ」という客観的な知識の判断でもない、第三の種類の判断です。カントはこれを **「趣味判断（taste judgment）」** と呼びました。\n\nさらに、美的体験にはしばしば **無関心性（disinterestedness）** が伴うとされます。純粋に美しさを味わうとき、私たちはその対象を所有したい・利用したいという欲望を超えて、ただ「それがある」こと自体を楽しんでいます。\n\n---\n\n## 具体例\n\n### 例1：日常生活 — 桜の花びらと対称性\n\n春に桜の花を見て「美しい」と感じるとき、何が起きているのでしょうか。桜の花びらは5枚あり、花全体が**ほぼ五回対称**（$C_5$ 対称）をもっています。また、花びら一枚一枚の形も左右ほぼ対称です。人間の脳は対称的なパターンを「処理しやすい」と感じ、それが快感・美感につながるという認知科学的な説明があります。\n\nしかし、完全な対称よりも「少しだけずれた」自然の不完全さが、かえって生き生きとした美しさを生むとも言われます（日本の美学概念「わびさび」はまさにこの不完全さの美を重視します）。同じ桜を見ても、感動する人もいれば無感動な人もいる——ここに美の主観性が顔を出します。\n\n### 例2：数学における美 — オイラーの等式\n\n数学者が「史上最も美しい数式」と称えることの多い**オイラーの等式**を見てみましょう。\n\n$$e^{i\\pi} + 1 = 0$$\n\nこの式の美しさはどこにあるのでしょうか？数学の世界で最も重要な定数——自然対数の底 $e$、虚数単位 $i$、円周率 $\\pi$、乗法の単位元 $1$、加法の単位元 $0$——がたった一本の等式の中に過不足なく収まっています。異なる分野（指数関数・複素数・幾何学・代数）から来た概念が「そうか、つながっていたのか！」と結びつく瞬間の驚きが、美的感動を生んでいます。これは複雑さの中に見出される**深い統一性**という、数学的美の典型です。\n\n### 例3：音楽 — 協和音と周波数比\n\nピアノで「ド」と「ソ」の音を同時に鳴らすと、とても心地よく聞こえます（完全5度）。このとき、2つの音の振動数の比は $3:2$ という**単純な整数比**になっています。一方、不協和音では比が複雑になります。古代ギリシャのピタゴラスはこの発見から、「美しさの本質は数的比例にある」と結論しました。\n\n$$f_{\\text{ソ}} : f_{\\text{ド}} = 3 : 2 \\quad (\\text{完全5度})$$\n\nこれは客観的な物理的構造（周波数比）が美の感覚と対応する例です。しかし、現代の音楽（ジャズや現代音楽）では意図的に不協和音を使い「美しさ」や「表現」を作り出すこともあります。美の感覚が文化や文脈によって変わりうることを示す例でもあります。\n\n### 例4：建築 — 黄金比とパルテノン神殿\n\n古代ギリシャのパルテノン神殿の外観比例には**黄金比** $\\phi = \\dfrac{1+\\sqrt{5}}{2} \\approx 1.618$ が現れているとされ、長い間「だから美しい」と説明されてきました。\n\n$$\\phi = \\frac{1+\\sqrt{5}}{2}$$\n\n黄金比は、$\\phi$ が自分自身の逆数に1を加えたものと等しい\n\n$$\\phi = 1 + \\frac{1}{\\phi}$$\n\nという不思議な性質をもちます。この「自己相似的な」構造が美しさを生むという説がある一方、実証研究では「人は黄金比を他の比より必ずしも美しいと感じない」という結果も出ています。美が本当に数学的構造に宿るのか、それとも私たちの解釈や文化が美を作り出しているのか——この問いは今も決着していません。\n\n---\n\n## つながり — 他の概念との関係\n\n**前提となる概念：**\n- **感覚と知覚（Sensation & Perception）**：美の体験はまず感覚（視覚・聴覚など）から始まります。美学を深く理解するには、知覚の仕組みへの基本的な理解が助けになります。\n- **感情と情動（Emotion & Affect）**：美的体験は感情と密接に結びついています。哲学的な情動理論を知ると、美の体験をより精密に分析できます。\n\n**関連する概念：**\n- **崇高（Sublime）**：美と近いが異なる概念。山岳や嵐のような「圧倒的な大きさ・力」を前にしたときの畏怖と喜びが混ざった感覚。カントは美と崇高を区別しました。\n- **対称性（Symmetry）**：美の重要な構成要素とされる数学的・物理的概念。群論と結びつきます。\n- **趣味・好み（Taste）**：美的判断の主観的な側面。文化・時代・個人によって変化します。\n\n**発展する先：**\n- **芸術哲学（Philosophy of Art）**：「芸術とは何か」「何が芸術を芸術たらしめるか」という問いへ。\n- **認知美学（Cognitive Aesthetics）**：脳科学・認知科学の知見を用いて美的体験を科学的に研究する分野。\n- **数学的美学（Mathematical Aesthetics）**：証明の美しさ・エレガンスを分析する、数学の哲学の一分野。\n\n---\n\n## 他分野への応用\n\n**デザインとUI/UX（コンピュータサイエンス・工学）：**\nアプリやウェブサイトのデザインでは、ユーザーが「使いやすい・心地よい」と感じるインターフェースを作ることが重要です。ここでは対称性・比例・余白・色の調和といった美学的原理が直接応用されています。Appleのプロダクトデザインはその典型で、「美しさ」が製品の価値そのものになっています。\n\n**神経美学（神経科学・医学）：**\n「なぜ人は美しさを感じるのか」を脳科学で解明しようとする**神経美学（neuroaesthetics）**という分野があります。美しい顔を見たときや美しい音楽を聴いたときに、脳の報酬系（腹側被蓋野・側坐核など）が活性化することがfMRI研究で示されています。美の体験には進化的な起源——生存に有利な環境・パートナーを見つけるための手がかり——があるという仮説もあります。\n\n**経済学・マーケティング：**\n消費者行動の研究では、製品の「美しさ」が購買意欲に直結することが知られています。「美しいパッケージの商品は品質も高いと感じる」という認知バイアス（ハロー効果）があり、企業は美学的設計に多大な投資をします。また、「美しい人は収入が高い傾向がある」という**美の経済学（economics of beauty）**の研究もあり、美が経済的資源として機能することが示されています。\n\n**物理学・自然科学：**\n物理学者は「美しい理論は正しい可能性が高い」という直感を大切にしてきました。ポール・ディラックは「方程式が美しくなければ、それは間違っている」とさえ言いました。対称性の美しさは現代物理学の核心にあり、素粒子物理学の標準模型は様々な対称性（ゲージ対称性など）を基盤に構築されています。美的直感が科学的発見を導くという、興味深い認識論的問いをここに見ることができます。",
+  "terms": [
+    {
+      "term": "美学",
+      "reading": "びがく",
+      "en": "Aesthetics",
+      "definition": "「美とは何か」「何が美しいのか」「美はどこにあるのか」を哲学的・科学的に探究する学問。芸術・自然・数学における美的体験を対象とする。"
+    },
+    {
+      "term": "主観主義",
+      "reading": "しゅかんしゅぎ",
+      "en": "Subjectivism",
+      "definition": "美は見る人の心の中にあるという立場。「美しい」という判断はその人の感情や好みの表明であり、普遍的な正解はないと考える。"
+    },
+    {
+      "term": "客観主義",
+      "reading": "きゃっかんしゅぎ",
+      "en": "Objectivism",
+      "definition": "美は対象そのものがもつ性質であるという立場。対称性・比例・調和といった構造的特徴が美を生み出すと考える。"
+    },
+    {
+      "term": "趣味判断",
+      "reading": "しゅみはんだん",
+      "en": "Taste Judgment",
+      "definition": "カントが提唱した美的判断の概念。主観的な感情に基づきながらも普遍的な同意を要求するという、好みの判断でも客観的知識でもない第三の判断の種類。"
+    },
+    {
+      "term": "無関心性",
+      "reading": "むかんしんせい",
+      "en": "Disinterestedness",
+      "definition": "純粋な美的体験において、対象を所有・利用したいという欲望を超えて、ただ「それがある」こと自体を楽しむ態度のこと。"
+    },
+    {
+      "term": "対称性",
+      "reading": "たいしょうせい",
+      "en": "Symmetry",
+      "definition": "ある変換（回転・反射など）のもとで形や構造が変わらない性質。美の重要な構成要素とされ、数学の群論とも深く結びつく概念。"
+    },
+    {
+      "term": "黄金比",
+      "reading": "おうごんひ",
+      "en": "Golden Ratio",
+      "definition": "φ＝(1＋√5)／2≈1.618で表される比率。自己相似的な数学的性質をもち、建築や芸術における美の根拠として古くから言及されてきた。"
+    },
+    {
+      "term": "オイラーの等式",
+      "reading": "おいらーのとうしき",
+      "en": "Euler's Identity",
+      "definition": "e^(iπ)＋1＝0で表される数式。e・i・π・1・0という数学の最重要定数が一つの等式に収まり、数学者から「史上最も美しい数式」と称えられる。"
+    },
+    {
+      "term": "崇高",
+      "reading": "そうこう",
+      "en": "Sublime",
+      "definition": "山岳や嵐のような圧倒的な大きさ・力を前にしたときに生じる畏怖と喜びが混ざった感覚。カントが美と区別した美学上の重要概念。"
+    },
+    {
+      "term": "神経美学",
+      "reading": "しんけいびがく",
+      "en": "Neuroaesthetics",
+      "definition": "なぜ人は美しさを感じるのかを脳科学の手法で解明しようとする学問分野。fMRI研究などにより美的体験時の脳の報酬系の活動が研究されている。"
+    },
+    {
+      "term": "認知美学",
+      "reading": "にんちびがく",
+      "en": "Cognitive Aesthetics",
+      "definition": "脳科学・認知科学の知見を用いて美的体験を科学的に研究する分野。知覚・感情・認知処理と美の関係を探究する。"
+    },
+    {
+      "term": "数学的美学",
+      "reading": "すうがくてきびがく",
+      "en": "Mathematical Aesthetics",
+      "definition": "証明の美しさやエレガンスを分析する数学の哲学の一分野。「美しい証明」「エレガントな解法」といった評価基準を探究する。"
+    },
+    {
+      "term": "わびさび",
+      "reading": "わびさび",
+      "en": "Wabi-Sabi",
+      "definition": "不完全さ・無常・不足の中に美を見出す日本固有の美学概念。完全な対称よりも自然の不完全さに美を認める感性を指す。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景透明 -->\n\n  <!-- 中央：美の概念 -->\n  <ellipse cx=\"300\" cy=\"260\" rx=\"72\" ry=\"38\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#3b82f6\">美の概念</text>\n  <text x=\"300\" y=\"271\" text-anchor=\"middle\" font-size=\"11\" fill=\"#3b82f6\">Beauty</text>\n\n  <!-- ===== 上部：二大立場 ===== -->\n  <!-- 主観主義 -->\n  <rect x=\"60\" y=\"30\" width=\"110\" height=\"52\" rx=\"10\" fill=\"#ef4444\" fill-opacity=\"0.12\" stroke=\"#ef4444\" stroke-width=\"1.8\"/>\n  <text x=\"115\" y=\"53\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#ef4444\">主観主義</text>\n  <text x=\"115\" y=\"69\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">美は見る人の心の中</text>\n\n  <!-- 客観主義 -->\n  <rect x=\"430\" y=\"30\" width=\"110\" height=\"52\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.12\" stroke=\"#22c55e\" stroke-width=\"1.8\"/>\n  <text x=\"485\" y=\"53\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">客観主義</text>\n  <text x=\"485\" y=\"69\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">美は対象の性質</text>\n\n  <!-- カント的立場（中間） -->\n  <rect x=\"210\" y=\"22\" width=\"180\" height=\"58\" rx=\"10\" fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.8\"/>\n  <text x=\"300\" y=\"43\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">カント的立場</text>\n  <text x=\"300\" y=\"58\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">主観的感情 ＋</text>\n  <text x=\"300\" y=\"71\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">普遍的妥当性の要求</text>\n\n  <!-- 矢印：主観主義→中央 -->\n  <line x1=\"170\" y1=\"82\" x2=\"235\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr)\"/>\n  <!-- 矢印：客観主義→中央 -->\n  <line x1=\"430\" y1=\"82\" x2=\"365\" y2=\"230\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr)\"/>\n  <!-- 矢印：カント→中央 -->\n  <line x1=\"300\" y1=\"80\" x2=\"300\" y2=\"222\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/>\n\n  <!-- ===== 右側：数学的美の例 ===== -->\n  <!-- オイラーの等式 -->\n  <rect x=\"450\" y=\"155\" width=\"132\" height=\"58\" rx=\"8\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"516\" y=\"176\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">オイラーの等式</text>\n  <text x=\"516\" y=\"192\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3b82f6\">eⁱᵖ + 1 = 0</text>\n  <text x=\"516\" y=\"207\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">深い統一性</text>\n\n  <!-- 黄金比 -->\n  <rect x=\"450\" y=\"230\" width=\"132\" height=\"56\" rx=\"8\" fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"516\" y=\"250\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">黄金比</text>\n  <text x=\"516\" y=\"265\" text-anchor=\"middle\" font-size=\"12\" fill=\"#22c55e\">φ ≈ 1.618</text>\n  <text x=\"516\" y=\"279\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">自己相似・比例</text>\n\n  <!-- 矢印：オイラー→中央 -->\n  <line x1=\"450\" y1=\"184\" x2=\"372\" y2=\"254\" stroke=\"#3b82f6\" stroke-width=\"1.3\" marker-end=\"url(#arr-blue)\"/>\n  <!-- 矢印：黄金比→中央 -->\n  <line x1=\"450\" y1=\"258\" x2=\"372\" y2=\"263\" stroke=\"#22c55e\" stroke-width=\"1.3\" marker-end=\"url(#arr-green)\"/>\n\n  <!-- ===== 左側：感覚・体験の例 ===== -->\n  <!-- 対称性（桜） -->\n  <rect x=\"20\" y=\"155\" width=\"130\" height=\"56\" rx=\"8\" fill=\"#ef4444\" fill-opacity=\"0.08\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"85\" y=\"175\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">対称性（桜）</text>\n  <text x=\"85\" y=\"191\" text-anchor=\"middle\" font-size=\"11\" fill=\"#ef4444\">C₅ 対称</text>\n  <text x=\"85\" y=\"206\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">わびさびの不完全さも</text>\n\n  <!-- 協和音 -->\n  <rect x=\"20\" y=\"228\" width=\"130\" height=\"56\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"85\" y=\"248\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">協和音（音楽）</text>\n  <text x=\"85\" y=\"264\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">3 : 2 の整数比</text>\n  <text x=\"85\" y=\"279\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">ピタゴラスの発見</text>\n\n  <!-- 矢印：対称性→中央 -->\n  <line x1=\"150\" y1=\"183\" x2=\"228\" y2=\"252\" stroke=\"#ef4444\" stroke-width=\"1.3\" marker-end=\"url(#arr-red)\"/>\n  <!-- 矢印：協和音→中央 -->\n  <line x1=\"150\" y1=\"256\" x2=\"228\" y2=\"260\" stroke=\"currentColor\" stroke-width=\"1.3\" marker-end=\"url(#arr)\"/>\n\n  <!-- ===== 下部：前提・関連概念 ===== -->\n  <!-- 感覚と知覚 -->\n  <rect x=\"60\" y=\"360\" width=\"130\" height=\"48\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.3\"/>\n  <text x=\"125\" y=\"381\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">感覚と知覚</text>\n  <text x=\"125\" y=\"397\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">視覚・聴覚から始まる</text>\n\n  <!-- 感情と情動 -->\n  <rect x=\"220\" y=\"360\" width=\"130\" height=\"48\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.3\"/>\n  <text x=\"285\" y=\"381\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">感情と情動</text>\n  <text x=\"285\" y=\"397\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">美的体験と密接に連動</text>\n\n  <!-- 無関心性 -->\n  <rect x=\"380\" y=\"360\" width=\"130\" height=\"48\" rx=\"8\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.3\"/>\n  <text x=\"445\" y=\"381\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">無関心性</text>\n  <text x=\"445\" y=\"397\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">欲望を超えた純粋な享受</text>\n\n  <!-- 矢印：感覚→中央 -->\n  <line x1=\"125\" y1=\"360\" x2=\"268\" y2=\"295\" stroke=\"currentColor\" stroke-width=\"1.1\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr)\"/>\n  <!-- 矢印：感情→中央 -->\n  <line x1=\"285\" y1=\"360\" x2=\"295\" y2=\"298\" stroke=\"currentColor\" stroke-width=\"1.1\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr)\"/>\n  <!-- 矢印：無関心性→中央 -->\n  <line x1=\"445\" y1=\"360\" x2=\"360\" y2=\"295\" stroke=\"currentColor\" stroke-width=\"1.1\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr)\"/>\n\n  <!-- ===== 下部：美学（学問） ===== -->\n  <rect x=\"195\" y=\"448\" width=\"210\" height=\"50\" rx=\"10\" fill=\"#3b82f6\" fill-opacity=\"0.13\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"469\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">美学 (Aesthetics)</text>\n  <text x=\"300\" y=\"486\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">「美とは何か」を哲学・科学的に探究</text>\n\n  <!-- 矢印：美学←→中央 -->\n  <line x1=\"300\" y1=\"448\" x2=\"300\" y2=\"298\" stroke=\"#3b82f6\" stroke-width=\"1.8\" stroke-dasharray=\"6,3\" marker-end=\"url(#arr-blue)\"/>\n\n  <!-- ===== 凡例 ===== -->\n  <rect x=\"18\" y=\"455\" width=\"160\" height=\"52\" rx=\"6\" fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1\"/>\n  <text x=\"28\" y=\"472\" font-size=\"9\" font-weight=\"bold\" fill=\"currentColor\">凡例</text>\n  <line x1=\"28\" y1=\"482\" x2=\"55\" y2=\"482\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"4,2\"/>\n  <text x=\"60\" y=\"486\" font-size=\"9\" fill=\"currentColor\">前提・構成要素</text>\n  <line x1=\"28\" y1=\"496\" x2=\"55\" y2=\"496\" stroke=\"#3b82f6\" stroke-width=\"1.8\"/>\n  <text x=\"60\" y=\"500\" font-size=\"9\" fill=\"currentColor\">主要な関係</text>\n\n  <!-- ===== タイトル ===== -->\n  <text x=\"300\" y=\"518\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\" fill-opacity=\"0.5\">美の概念マップ</text>\n\n  <!-- マーカー定義 -->\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.7\"/>\n    </marker>\n    <marker id=\"arr-blue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\"/>\n    </marker>\n    <marker id=\"arr-red\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#ef4444\"/>\n    </marker>\n    <marker id=\"arr-green\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ]
+}
