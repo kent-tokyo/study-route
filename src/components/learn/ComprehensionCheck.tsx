@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { NodeStatus, QuizQuestion } from '@/types';
 import { useLocale } from '@/i18n/useLocale';
+import { getContentBasePath } from '@/lib/content-manifest';
 import QuizView from './QuizView';
 
 interface ComprehensionCheckProps {
@@ -26,7 +27,7 @@ export default function ComprehensionCheck({ nodeId, status, area, onUpdateProgr
   const handleComplete = () => {
     setLoading(true);
     onUpdateProgress(nodeId, 'completed');
-    window.location.href = resolvedMapUrl;
+    window.location.href = `${getContentBasePath()}${resolvedMapUrl}`;
   };
 
   const handleStartLearning = () => {
