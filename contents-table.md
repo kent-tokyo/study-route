@@ -144,7 +144,7 @@ Last updated: 2026-03-21
 |-----|---------|-------|------|----------|----------|----------|---------|------|----------|
 | 04-001 | binary-logic | 2進数と論理回路 | foundations_cs | - | done | - | done | done | - |
 | 04-002 | discrete-math | 離散数学 | foundations_cs | - | done | - | done | done | - |
-| 04-003 | automata | オートマトン理論 | foundations_cs | - | - | - | - | - | - |
+| 04-003 | automata | オートマトン理論 | foundations_cs | - | done | - | - | - | - |
 | 04-004 | complexity | 計算量理論 | foundations_cs | - | - | - | - | - | - |
 | 04-005 | data-structures | データ構造 | algorithms | - | - | - | - | - | - |
 | 04-006 | sorting-searching | ソートと探索 | algorithms | - | - | - | - | - | - |

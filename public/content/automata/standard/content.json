@@ -1,0 +1,105 @@
+{
+  "id": "9f0fd8ed-ceef-48be-8805-8dc36fe9e688",
+  "nodeId": "automata",
+  "level": "standard",
+  "generatedAt": "2026-03-21T22:02:33.716Z",
+  "content": "# オートマトン理論\n\n## 何か — 直感的な説明\n\n「オートマトン（automaton）」とはギリシャ語で「自動的に動くもの」を意味します。オートマトン理論とは、**計算とは何か**を数学的に定義するための理論で、「入力を受け取って、ある規則に従って状態を変化させ、最終的に何らかの判定を下す抽象的な機械」を研究する分野です。現実のコンピュータから無駄をすべて取り除いた、純粋なアイデアとしての「計算機械」を扱います。\n\nたとえば自動販売機を思い浮かべてください。お金を投入するたびに機械の「状態」が変わり（100円投入済み、200円投入済み……）、一定額に達すると商品を選べるようになります。この仕組みは有限個の状態と、状態間の遷移規則で完全に記述できます。オートマトン理論は、このような「状態機械」を徹底的に形式化し、「どんな問題がどんな機械で解けるか（解けないか）」という問いに厳密な答えを与えます。\n\n## なぜ必要か — コンピュータサイエンスの概念における位置づけ\n\nコンピュータサイエンスの根本的な問いのひとつは「コンピュータには何ができて、何ができないのか」です。オートマトン理論はこの問いに答えるための**計算可能性理論（computability theory）**の基盤を形成します。有限オートマトン・プッシュダウンオートマトン・チューリング機械という3段階のモデルは、それぞれ「解ける問題の範囲」が異なり、計算能力の階層構造を明らかにします。\n\n実用面でも、オートマトン理論は至る所に現れます。プログラミング言語のコンパイラが文法エラーを検出するとき、正規表現でテキストを検索するとき、ネットワークのプロトコルが状態を管理するとき——いずれもオートマトンの考え方が直接使われています。さらに、「この問題はそもそも計算機で解けるのか」という根本的な限界を示したチューリングの停止問題は、現代のプログラム検証や人工知能の理論的限界を議論する際にも参照される重要な結果です。\n\n## 核となるアイデア — 定義・定理の本質\n\n### 有限オートマトン（Finite Automaton, FA）\n\n**決定性有限オートマトン（DFA）**は次の5つ組 $M = (Q, \\Sigma, \\delta, q_0, F)$ で定義されます。\n\n- $Q$：有限の**状態集合**\n- $\\Sigma$：有限の**入力アルファベット**\n- $\\delta: Q \\times \\Sigma \\to Q$：**遷移関数**\n- $q_0 \\in Q$：**初期状態**\n- $F \\subseteq Q$：**受理状態の集合**\n\nDFAは入力文字列 $w = a_1 a_2 \\cdots a_n$ を左から1文字ずつ読み、$\\delta$ に従って状態を遷移させます。読み終わった時点の状態が $F$ に含まれていれば**受理**、そうでなければ**拒否**します。DFAが受理する文字列の集合を**受理言語** $L(M)$ と呼びます。\n\n**非決定性有限オートマトン（NFA）**は遷移関数を $\\delta: Q \\times (\\Sigma \\cup \\{\\varepsilon\\}) \\to \\mathcal{P}(Q)$（べき集合）に拡張したもので、1つの状態から複数の遷移先を持てます。直感的には「並行して複数の可能性を試す機械」です。重要な定理として：\n\n$$\\text{DFAで受理できる言語} = \\text{NFAで受理できる言語}$$\n\nNFAはDFAより強く見えますが、実は表現力は同じです（部分集合構成法により任意のNFAを等価なDFAに変換できます）。\n\n### 正規言語と正規表現\n\nDFA/NFAが受理できる言語のクラスを**正規言語（regular language）**と呼びます。正規言語は**正規表現（regular expression）**とも等価で、次の3つの演算で構成されます。\n\n- **連接（concatenation）**：$L_1 L_2 = \\{xy \\mid x \\in L_1, y \\in L_2\\}$\n- **和（union）**：$L_1 \\cup L_2$\n- **クリーネ閉包（Kleene star）**：$L^* = \\{\\varepsilon\\} \\cup L \\cup LL \\cup \\cdots$\n\n正規言語には重要な限界があります。**ポンピング補題（pumping lemma）**によれば、正規言語 $L$ に属する十分に長い文字列 $w$（$|w| \\geq p$、$p$ はポンピング長）は必ず $w = xyz$（$|xy| \\leq p$、$|y| \\geq 1$）と分割でき、すべての $i \\geq 0$ について $xy^iz \\in L$ が成立します。これを使うと $\\{a^nb^n \\mid n \\geq 0\\}$ のような言語が**正規でない**ことを証明できます。\n\n### プッシュダウンオートマトンと文脈自由言語\n\n有限オートマトンにスタック（LIFO構造）を追加した**プッシュダウンオートマトン（PDA）**は、正規言語よりも広いクラスである**文脈自由言語（context-free language）**を認識します。文脈自由言語は**文脈自由文法（CFG）**で生成される言語と等価です。\n\n$\\{a^nb^n \\mid n \\geq 0\\}$ のような言語はDFAでは認識できませんが、PDAではスタックを使って $a$ を読むたびにスタックに積み、$b$ を読むたびにスタックから取り出すことで正確に認識できます。プログラミング言語の括弧の対応や入れ子構造はこのクラスに属します。\n\n### チューリング機械（Turing Machine, TM）\n\nチューリング機械は $M = (Q, \\Sigma, \\Gamma, \\delta, q_0, q_{\\text{accept}}, q_{\\text{reject}})$ で定義されます。ここで $\\Gamma$ はテープアルファベット（$\\Sigma \\subseteq \\Gamma$）、遷移関数は：\n\n$$\\delta: Q \\times \\Gamma \\to Q \\times \\Gamma \\times \\{L, R\\}$$\n\nつまり「現在の状態と読んだ記号」から「次の状態・書き込む記号・ヘッドの移動方向（左 or 右）」を決めます。チューリング機械は無限長のテープに読み書きでき、ヘッドを自由に動かせるため、現代のコンピュータと同等の計算能力を持ちます（**チャーチ＝チューリングのテーゼ**）。\n\nチューリング機械でも解けない問題が存在します。その代表が**停止問題（halting problem）**：「任意のプログラム $P$ と入力 $x$ に対して、$P(x)$ が停止するかどうかを判定するプログラムは存在しない」。これは対角線論法によって証明され、計算の根本的な限界を示しています。\n\n### 言語の階層（チョムスキー階層）\n\n$$\\text{正規言語} \\subsetneq \\text{文脈自由言語} \\subsetneq \\text{文脈依存言語} \\subsetneq \\text{帰納的可算言語}$$\n\n各クラスはそれぞれ有限オートマトン・プッシュダウンオートマトン・線形有界オートマトン・チューリング機械に対応します。\n\n## 具体例\n\n### 具体例 1：偶数個の0を含む文字列を判定するDFA\n\nアルファベット $\\Sigma = \\{0, 1\\}$ 上で「0の個数が偶数（0個を含む）である文字列」を受理するDFAを考えます。\n\n- $Q = \\{q_{\\text{even}}, q_{\\text{odd}}\\}$（0を偶数個読んだ状態、奇数個読んだ状態）\n- 初期状態かつ受理状態：$q_{\\text{even}}$\n- 遷移規則：0を読むと状態が切り替わり、1を読んでも状態は変わらない\n\n$$\\delta(q_{\\text{even}}, 0) = q_{\\text{odd}}, \\quad \\delta(q_{\\text{odd}}, 0) = q_{\\text{even}}$$\n$$\\delta(q_{\\text{even}}, 1) = q_{\\text{even}}, \\quad \\delta(q_{\\text{odd}}, 1) = q_{\\text{odd}}$$\n\n文字列 `1010` を入力すると、$q_{\\text{even}} \\xrightarrow{1} q_{\\text{even}} \\xrightarrow{0} q_{\\text{odd}} \\xrightarrow{1} q_{\\text{odd}} \\xrightarrow{0} q_{\\text{even}}$ と遷移し、受理状態 $q_{\\text{even}}$ で終わるので受理されます。一方、`101` は $q_{\\text{even}} \\xrightarrow{1} q_{\\text{even}} \\xrightarrow{0} q_{\\text{odd}} \\xrightarrow{1} q_{\\text{odd}}$ と遷移し、$q_{\\text{odd}}$ で終わるため拒否されます。この例は「DFAがどれほどシンプルに構成できるか」を示しています。\n\n### 具体例 2：正規表現とテキスト検索\n\n`grep` コマンドや多くのプログラミング言語で使われる正規表現は、正規言語の理論を直接応用したものです。たとえば正規表現 `[a-z]+@[a-z]+\\.(com|jp)` は「小文字の英字1文字以上 + @ + 小文字の英字1文字以上 + .(com または jp)」にマッチするメールアドレスのパターンを表します。\n\nコンパイラやインタプリタはこのような正規表現をNFAに変換し、さらにDFAに変換してテキストを高速にスキャンします。正規表現エンジンがDFAを使う利点は、DFAの状態遷移が常に一意に決まるため、バックトラックなしに $O(n)$（$n$ は文字列長）で処理できる点にあります。ただし、DFAへの変換時に状態数が最悪 $2^{|Q|}$ に爆発しうる点はトレードオフとして存在します。\n\n### 具体例 3：プログラミング言語の構文と文脈自由文法\n\nプログラミング言語の括弧の対応（`((a+b)*c)` のような式）は正規言語では表現できません。なぜなら $\\{(^n)^n \\mid n \\geq 0\\}$ はポンピング補題により正規言語でないからです。このような構造は**文脈自由文法（CFG）**で記述されます。\n\n$$S \\to (S) \\mid SS \\mid \\varepsilon$$\n\nこの文法はプッシュダウンオートマトン（スタックを持つオートマトン）で認識でき、現実のコンパイラの構文解析（パーサ）はこの原理に基づいています。JavaやPythonの `if-else` 文や関数の入れ子構造も、文脈自由文法で定義されています。\n\n### 具体例 4：停止問題の証明と自己言及のパラドックス\n\n停止問題が解けないことを示す議論は、「自分自身への適用」という鮮やかな論法を使います。仮に停止判定プログラム $H(P, x)$（$P(x)$ が停止すれば `true`、しなければ `false` を返す）が存在すると仮定します。次のプログラム $D$ を構成します：\n\n> $D(P)$：$H(P, P)$ が `true` なら無限ループ、`false` なら停止する\n\n$D(D)$ を実行するとどうなるか？$H(D, D) = \\text{true}$（$D(D)$ が停止する）なら $D(D)$ は無限ループし矛盾。$H(D, D) = \\text{false}$（$D(D)$ が停止しない）なら $D(D)$ は停止し矛盾。どちらの場合も矛盾が生じるため、$H$ は存在しないことが示されます。この論法は、カントールの対角線論法と本質的に同じ構造を持っています。\n\n## つながり — 他の概念との関係\n\n**前提知識との関係：**\nオートマトン理論は**離散数学**の語彙と道具を全面的に使います。状態集合 $Q$ や受理状態 $F$ は集合論の記法そのもので、遷移関数 $\\delta$ は関数の概念、べき集合 $\\mathcal{P}(Q)$ はNFAの定義に現れます。ポンピング補題の証明では数学的帰納法が使われ、停止問題の不可能性証明では対角線論法という証明技法が中心的な役割を果たします。\n\n**チョムスキー階層との関係：**\n有限オートマトンで認識できる正規言語は最も単純なクラスです。スタック（LIFO構造）を追加したプッシュダウンオートマトンが文脈自由言語を認識し、さらに完全なテープを持つチューリング機械が到達可能性の上限を定めます。この階層は計算能力と記憶能力のトレードオフを明確に示しています。\n\n**発展先：**\n計算複雑性理論（P/NP問題）はオートマトン理論の延長上にあり、「解けるかどうか」だけでなく「どのくらい時間・空間がかかるか」を問います。プログラム意味論や型理論も、オートマトンが提供する形式的な計算モデルを土台にしています。\n\n## 他分野への応用\n\n**コンパイラ設計とプログラミング言語処理：**\nコンパイラのフロントエンドは字句解析（lexing）と構文解析（parsing）の2段階で構成されます。字句解析ではDFAを使ってソースコードをトークン（キーワード、識別子、数値リテラルなど）に分割し、構文解析ではCFGに基づくプッシュダウンオートマトンの原理を用いて文法構造を解析します。`flex`（字句解析器生成系）や `yacc/bison`（構文解析器生成系）はこの理論の直接的な産物です。\n\n**生物情報学（バイオインフォマティクス）：**\nDNA配列はアルファベット $\\{A, T, G, C\\}$ 上の文字列とみなせます。ゲノム配列中のモチーフ（特定のパターン）を検索したり、RNA二次構造を解析したりする際に、正規表現や文脈自由文法が使われます。特にRNA分子の折り畳み構造（ステムループ構造）は $\\{a^nb^n\\}$ 型の文脈自由言語として記述でき、CYKアルゴリズムなどの構文解析技術が適用されます。\n\n**ハードウェア設計と通信プロトコル：**\nデジタル回路の**有限状態機械（FSM）**設計はDFAの直接的な応用です。信号機の制御、USBやTCPのプロトコル状態管理、CPUの命令デコーダなど、状態に基づいて動作が切り替わるシステムはすべてオートマトンとしてモデル化・検証できます。モデル検査（model checking）という分野では、システムの仕様を形式的なオートマトンとして記述し、バグや競合状態を自動的に検出します。",
+  "terms": [
+    {
+      "term": "有限オートマトン",
+      "reading": "ゆうげんおーとまとん",
+      "en": "Finite Automaton (FA)",
+      "definition": "有限個の状態と遷移規則を持つ抽象的な計算機械。入力文字列を読み進めながら状態を遷移させ、最終状態が受理状態であれば入力を受理する。"
+    },
+    {
+      "term": "決定性有限オートマトン",
+      "reading": "けっていせいゆうげんおーとまとん",
+      "en": "Deterministic Finite Automaton (DFA)",
+      "definition": "各状態と入力記号の組み合わせに対して遷移先が一意に定まる有限オートマトン。5つ組 (Q, Σ, δ, q₀, F) で形式的に定義される。"
+    },
+    {
+      "term": "非決定性有限オートマトン",
+      "reading": "ひけっていせいゆうげんおーとまとん",
+      "en": "Nondeterministic Finite Automaton (NFA)",
+      "definition": "一つの状態から同じ入力に対して複数の遷移先を持てる有限オートマトン。ε遷移も許容するが、DFAと受理できる言語のクラスは等しい。"
+    },
+    {
+      "term": "正規言語",
+      "reading": "せいきげんご",
+      "en": "Regular Language",
+      "definition": "DFAまたはNFAが受理できる言語のクラス。正規表現で表現できる言語と等価であり、連接・和・クリーネ閉包の演算で構成される。"
+    },
+    {
+      "term": "正規表現",
+      "reading": "せいきひょうげん",
+      "en": "Regular Expression",
+      "definition": "正規言語を記述するための表記法で、連接・和・クリーネ閉包の3演算を組み合わせてパターンを表す。テキスト検索やコンパイラの字句解析で広く利用される。"
+    },
+    {
+      "term": "ポンピング補題",
+      "reading": "ぽんぴんぐほだい",
+      "en": "Pumping Lemma",
+      "definition": "ある言語が正規言語でないことを証明するための補題。正規言語に属する十分に長い文字列は必ず特定の形式に分割でき、部分文字列を繰り返しても同じ言語に属することを主張する。"
+    },
+    {
+      "term": "クリーネ閉包",
+      "reading": "くりーねへいほう",
+      "en": "Kleene Star",
+      "definition": "言語 L に対して空文字列を含む L の任意回の連接全体の集合 L* を返す演算。正規言語を定義する基本演算の一つ。"
+    },
+    {
+      "term": "チューリング機械",
+      "reading": "ちゅーりんぐきかい",
+      "en": "Turing Machine (TM)",
+      "definition": "無限長のテープと読み書きヘッドを持つ抽象的な計算モデル。現代のコンピュータと同等の計算能力を持ち、計算可能性の理論的基盤となる。"
+    },
+    {
+      "term": "停止問題",
+      "reading": "ていしもんだい",
+      "en": "Halting Problem",
+      "definition": "任意のプログラムと入力に対してそのプログラムが停止するかどうかを判定するアルゴリズムが存在しないことを示す問題。対角線論法によって計算の根本的な限界を示す。"
+    },
+    {
+      "term": "チョムスキー階層",
+      "reading": "ちょむすきーかいそう",
+      "en": "Chomsky Hierarchy",
+      "definition": "形式言語を正規言語・文脈自由言語・文脈依存言語・帰納的可算言語の4クラスに分類した階層構造。各クラスはそれぞれ対応するオートマトンモデルによって認識される。"
+    },
+    {
+      "term": "文脈自由文法",
+      "reading": "ぶんみゃくじゆうぶんぽう",
+      "en": "Context-Free Grammar (CFG)",
+      "definition": "プログラミング言語の構文など入れ子構造を持つ言語を記述するための文法形式。プッシュダウンオートマトンで認識でき、コンパイラの構文解析の基盤となる。"
+    },
+    {
+      "term": "プッシュダウンオートマトン",
+      "reading": "ぷっしゅだうんおーとまとん",
+      "en": "Pushdown Automaton (PDA)",
+      "definition": "有限オートマトンにスタック（LIFO構造）を追加した計算モデル。文脈自由言語を認識でき、コンパイラの構文解析の理論的基盤となる。"
+    },
+    {
+      "term": "計算可能性理論",
+      "reading": "けいさんかのうせいりろん",
+      "en": "Computability Theory",
+      "definition": "どのような問題がアルゴリズムによって解けるか（解けないか）を研究する理論分野。オートマトン理論とチューリング機械を基盤として計算の限界を明らかにする。"
+    },
+    {
+      "term": "遷移関数",
+      "reading": "せんいかんすう",
+      "en": "Transition Function",
+      "definition": "オートマトンにおいて現在の状態と入力記号から次の状態を決定する関数。DFAでは一意の次状態を返し、NFAでは次状態の集合を返す。"
+    },
+    {
+      "term": "チャーチ＝チューリングのテーゼ",
+      "reading": "ちゃーちちゅーりんぐのてーぜ",
+      "en": "Church–Turing Thesis",
+      "definition": "直感的に計算可能な関数はすべてチューリング機械で計算できるという主張。数学的な証明ではなく理論的・哲学的テーゼとして広く受け入れられている。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- Background transparent -->\n\n  <!-- Title -->\n  <text x=\"300\" y=\"28\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">オートマトン理論：計算能力の階層と対応関係</text>\n\n  <!-- ===================== -->\n  <!-- Chomsky Hierarchy (nested rectangles) -->\n  <!-- ===================== -->\n\n  <!-- Level 4: Recursively Enumerable (チューリング機械) -->\n  <rect x=\"30\" y=\"45\" width=\"540\" height=\"290\" rx=\"12\" ry=\"12\"\n        fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\"/>\n  <text x=\"48\" y=\"65\" font-size=\"11\" fill=\"#3b82f6\" font-weight=\"bold\">帰納的可算言語（チューリング機械）</text>\n\n  <!-- Level 3: Context-Sensitive (線形有界オートマトン) -->\n  <rect x=\"55\" y=\"75\" width=\"490\" height=\"240\" rx=\"10\" ry=\"10\"\n        fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <text x=\"73\" y=\"94\" font-size=\"11\" fill=\"#3b82f6\" font-weight=\"bold\">文脈依存言語（線形有界オートマトン）</text>\n\n  <!-- Level 2: Context-Free (プッシュダウンオートマトン) -->\n  <rect x=\"80\" y=\"104\" width=\"440\" height=\"190\" rx=\"10\" ry=\"10\"\n        fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <text x=\"98\" y=\"122\" font-size=\"11\" fill=\"#22c55e\" font-weight=\"bold\">文脈自由言語（プッシュダウンオートマトン）</text>\n  <text x=\"98\" y=\"136\" font-size=\"10\" fill=\"#22c55e\">例: { aⁿbⁿ | n≥0 }</text>\n\n  <!-- Level 1: Regular (DFA/NFA) -->\n  <rect x=\"108\" y=\"148\" width=\"384\" height=\"130\" rx=\"10\" ry=\"10\"\n        fill=\"#ef4444\" fill-opacity=\"0.10\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n  <text x=\"126\" y=\"167\" font-size=\"11\" fill=\"#ef4444\" font-weight=\"bold\">正規言語（有限オートマトン DFA / NFA）</text>\n\n  <!-- Regular expression label -->\n  <text x=\"126\" y=\"183\" font-size=\"10\" fill=\"#ef4444\">= 正規表現で表現可能</text>\n\n  <!-- DFA example inside regular box -->\n  <!-- DFA: even zeros -->\n  <text x=\"140\" y=\"205\" font-size=\"10\" fill=\"currentColor\" font-weight=\"bold\">DFA例: 0の個数が偶数の文字列</text>\n\n  <!-- State q_even (initial + accept) -->\n  <circle cx=\"210\" cy=\"240\" r=\"22\" fill=\"#ef4444\" fill-opacity=\"0.12\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n  <circle cx=\"210\" cy=\"240\" r=\"17\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"210\" y=\"237\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">q_even</text>\n  <text x=\"210\" y=\"249\" text-anchor=\"middle\" font-size=\"8\" fill=\"currentColor\">（受理）</text>\n\n  <!-- Initial arrow to q_even -->\n  <line x1=\"170\" y1=\"240\" x2=\"185\" y2=\"240\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\"/>\n  <text x=\"155\" y=\"237\" font-size=\"9\" fill=\"currentColor\">開始</text>\n\n  <!-- State q_odd -->\n  <circle cx=\"330\" cy=\"240\" r=\"22\" fill=\"currentColor\" fill-opacity=\"0.06\" stroke=\"currentColor\" stroke-width=\"2\"/>\n  <text x=\"330\" y=\"237\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">q_odd</text>\n  <text x=\"330\" y=\"249\" text-anchor=\"middle\" font-size=\"8\" fill=\"currentColor\">（拒否）</text>\n\n  <!-- Transition q_even -> q_odd on 0 -->\n  <path d=\"M232 230 Q270 210 308 230\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\"/>\n  <text x=\"270\" y=\"212\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">0</text>\n\n  <!-- Transition q_odd -> q_even on 0 -->\n  <path d=\"M308 250 Q270 268 232 250\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\"/>\n  <text x=\"270\" y=\"272\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">0</text>\n\n  <!-- Self-loop q_even on 1 -->\n  <path d=\"M198 220 Q185 198 210 195 Q235 192 222 218\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\"/>\n  <text x=\"210\" y=\"191\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">1</text>\n\n  <!-- Self-loop q_odd on 1 -->\n  <path d=\"M318 220 Q305 198 330 195 Q355 192 342 218\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\"/>\n  <text x=\"330\" y=\"191\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">1</text>\n\n  <!-- aⁿbⁿ label -->\n  <text x=\"430\" y=\"240\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">正規でない：</text>\n  <text x=\"430\" y=\"254\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">{ aⁿbⁿ | n≥0 }</text>\n  <text x=\"430\" y=\"266\" text-anchor=\"middle\" font-size=\"9\" fill=\"#22c55e\">（ポンピング補題）</text>\n\n  <!-- ===================== -->\n  <!-- DFA 5-tuple definition box -->\n  <!-- ===================== -->\n  <rect x=\"30\" y=\"350\" width=\"250\" height=\"120\" rx=\"8\" ry=\"8\"\n        fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4,2\"/>\n  <text x=\"155\" y=\"370\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">DFA の定義</text>\n  <text x=\"155\" y=\"387\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">M = (Q, Σ, δ, q₀, F)</text>\n  <text x=\"45\" y=\"403\" font-size=\"10\" fill=\"currentColor\">Q : 状態集合（有限）</text>\n  <text x=\"45\" y=\"417\" font-size=\"10\" fill=\"currentColor\">Σ : 入力アルファベット</text>\n  <text x=\"45\" y=\"431\" font-size=\"10\" fill=\"currentColor\">δ : Q × Σ → Q（遷移関数）</text>\n  <text x=\"45\" y=\"445\" font-size=\"10\" fill=\"currentColor\">q₀ : 初期状態　F : 受理状態集合</text>\n  <text x=\"45\" y=\"459\" font-size=\"10\" fill=\"currentColor\">NFA: δ : Q×(Σ∪{ε}) → 𝒫(Q)</text>\n\n  <!-- ===================== -->\n  <!-- Turing Machine box -->\n  <!-- ===================== -->\n  <rect x=\"320\" y=\"350\" width=\"250\" height=\"120\" rx=\"8\" ry=\"8\"\n        fill=\"#3b82f6\" fill-opacity=\"0.07\" stroke=\"#3b82f6\" stroke-width=\"1\" stroke-dasharray=\"4,2\"/>\n  <text x=\"445\" y=\"370\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">チューリング機械</text>\n  <text x=\"335\" y=\"388\" font-size=\"10\" fill=\"currentColor\">δ : Q × Γ → Q × Γ × {L, R}</text>\n  <text x=\"335\" y=\"403\" font-size=\"10\" fill=\"currentColor\">・無限テープへの読み書き</text>\n  <text x=\"335\" y=\"418\" font-size=\"10\" fill=\"currentColor\">・現代コンピュータと同等の能力</text>\n  <text x=\"335\" y=\"433\" font-size=\"10\" fill=\"currentColor\">・チャーチ＝チューリングのテーゼ</text>\n  <text x=\"335\" y=\"451\" font-size=\"10\" fill=\"#ef4444\" font-weight=\"bold\">停止問題：解けない問題の存在</text>\n  <text x=\"335\" y=\"465\" font-size=\"10\" fill=\"#ef4444\">∄ プログラム P(x) の停止判定機</text>\n\n  <!-- ===================== -->\n  <!-- Equivalence arrow: DFA = NFA -->\n  <!-- ===================== -->\n  <rect x=\"180\" y=\"480\" width=\"240\" height=\"30\" rx=\"6\" ry=\"6\"\n        fill=\"#22c55e\" fill-opacity=\"0.10\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"492\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\" font-weight=\"bold\">DFA ≡ NFA（表現力は同等）</text>\n  <text x=\"300\" y=\"505\" text-anchor=\"middle\" font-size=\"9\" fill=\"#22c55e\">→ 部分集合構成法で相互変換可能</text>\n\n  <!-- Arrow from definition box to DFA diagram -->\n  <line x1=\"280\" y1=\"390\" x2=\"320\" y2=\"350\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3,2\" marker-end=\"url(#arrowSm)\"/>\n\n  <!-- Arrow markers -->\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\"/>\n    </marker>\n    <marker id=\"arrowSm\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"2.5\" orient=\"auto\">\n      <path d=\"M0,0 L0,5 L6,2.5 z\" fill=\"currentColor\"/>\n    </marker>\n  </defs>\n\n</svg>"
+    }
+  ]
+}

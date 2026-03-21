@@ -222,5 +222,13 @@
     "hasIllustration": {
       "standard": false
     }
+  },
+  "automata": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
   }
 }
