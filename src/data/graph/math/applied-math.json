@@ -1,46 +1,472 @@
 {
   "nodes": [
-    { "id": "probability", "label": "確率論", "labels": { "ja": "確率論", "en": "Probability Theory", "zh": "概率论" }, "area": "stochastic", "difficulty": 3, "position": { "x": 1250, "y": 320 }, "description": "不確実な事象の数学的モデル。", "descriptions": { "ja": "不確実な事象の数学的モデル。", "en": "Mathematical models of uncertain events.", "zh": "不确定事件的数学模型。" }, "prerequisites": ["combinatorics", "calculus-integral"] },
-    { "id": "statistics", "label": "統計学", "labels": { "ja": "統計学", "en": "Statistics", "zh": "统计学" }, "area": "stochastic", "difficulty": 3, "position": { "x": 1500, "y": 320 }, "description": "データから情報を引き出す方法論。", "descriptions": { "ja": "データから情報を引き出す方法論。", "en": "Methodology for extracting information from data.", "zh": "从数据中提取信息的方法论。" }, "prerequisites": ["probability"] },
-    { "id": "information-theory", "label": "情報理論", "labels": { "ja": "情報理論", "en": "Information Theory", "zh": "信息论" }, "area": "stochastic", "difficulty": 4, "position": { "x": 1750, "y": 400 }, "description": "エントロピー・通信路容量。情報の数学的理論。", "descriptions": { "ja": "エントロピー・通信路容量。情報の数学的理論。", "en": "Entropy and channel capacity. Mathematical theory of information.", "zh": "熵与信道容量。信息的数学理论。" }, "prerequisites": ["probability"] },
-    { "id": "stochastic-processes", "label": "確率過程論", "labels": { "ja": "確率過程論", "en": "Stochastic Processes", "zh": "随机过程" }, "area": "stochastic", "difficulty": 4, "position": { "x": 1750, "y": 480 }, "description": "マルコフ連鎖・ブラウン運動。時間と確率の理論。", "descriptions": { "ja": "マルコフ連鎖・ブラウン運動。時間と確率の理論。", "en": "Markov chains and Brownian motion. Theory of time and probability.", "zh": "马尔可夫链与布朗运动。时间与概率的理论。" }, "prerequisites": ["probability", "measure-theory"] },
-    { "id": "mathematical-statistics", "label": "数理統計学", "labels": { "ja": "数理統計学", "en": "Mathematical Statistics", "zh": "数理统计" }, "area": "stochastic", "difficulty": 4, "position": { "x": 1750, "y": 320 }, "description": "推定論・検定論の数学的基盤。", "descriptions": { "ja": "推定論・検定論の数学的基盤。", "en": "Mathematical foundations of estimation and hypothesis testing.", "zh": "估计论与假设检验的数学基础。" }, "prerequisites": ["statistics", "measure-theory"] },
-    { "id": "numerical-analysis", "label": "数値解析", "labels": { "ja": "数値解析", "en": "Numerical Analysis", "zh": "数值分析" }, "area": "computational", "difficulty": 3, "position": { "x": 1500, "y": 160 }, "description": "近似計算・誤差解析。コンピュータによる数学。", "descriptions": { "ja": "近似計算・誤差解析。コンピュータによる数学。", "en": "Approximate computation and error analysis. Mathematics by computer.", "zh": "近似计算与误差分析。计算机数学。" }, "prerequisites": ["calculus-integral", "linear-algebra"] },
-    { "id": "optimization", "label": "最適化理論", "labels": { "ja": "最適化理論", "en": "Optimization Theory", "zh": "优化理论" }, "area": "computational", "difficulty": 4, "position": { "x": 1750, "y": 160 }, "description": "関数の最大最小問題。線形計画・凸最適化。", "descriptions": { "ja": "関数の最大最小問題。線形計画・凸最適化。", "en": "Maximization and minimization. Linear programming and convex optimization.", "zh": "函数极值问题。线性规划与凸优化。" }, "prerequisites": ["multivariable-calculus", "linear-algebra"] },
-    { "id": "machine-learning-math", "label": "機械学習の数理", "labels": { "ja": "機械学習の数理", "en": "Mathematics of ML", "zh": "机器学习数理" }, "area": "computational", "difficulty": 4, "position": { "x": 2000, "y": 280 }, "description": "統計的学習理論・カーネル法・最適化の応用。", "descriptions": { "ja": "統計的学習理論・カーネル法・最適化の応用。", "en": "Statistical learning theory, kernel methods, and optimization applications.", "zh": "统计学习理论、核方法与优化应用。" }, "prerequisites": ["mathematical-statistics", "optimization", "linear-algebra"] },
-    { "id": "combinatorial-optimization", "label": "組合せ最適化", "labels": { "ja": "組合せ最適化", "en": "Combinatorial Optimization", "zh": "组合优化" }, "area": "computational", "difficulty": 4, "position": { "x": 2000, "y": 60 }, "description": "グラフ理論・整数計画。離散構造の最適化。", "descriptions": { "ja": "グラフ理論・整数計画。離散構造の最適化。", "en": "Graph theory and integer programming. Optimization of discrete structures.", "zh": "图论与整数规划。离散结构的优化。" }, "prerequisites": ["combinatorics", "optimization"] },
-    { "id": "dynamical-systems", "label": "力学系", "labels": { "ja": "力学系", "en": "Dynamical Systems", "zh": "动力系统" }, "area": "mathematical_modeling", "difficulty": 4, "position": { "x": 1750, "y": 280 }, "description": "時間発展する系の定性的理論。カオス。", "descriptions": { "ja": "時間発展する系の定性的理論。カオス。", "en": "Qualitative theory of time-evolving systems. Chaos.", "zh": "时间演化系统的定性理论。混沌。" }, "prerequisites": ["ode"] },
-    { "id": "mathematical-physics", "label": "数理物理学", "labels": { "ja": "数理物理学", "en": "Mathematical Physics", "zh": "数学物理" }, "area": "mathematical_modeling", "difficulty": 5, "position": { "x": 2000, "y": 160 }, "description": "物理学の数学的定式化。量子力学・場の理論。", "descriptions": { "ja": "物理学の数学的定式化。量子力学・場の理論。", "en": "Mathematical formulation of physics. Quantum mechanics and field theory.", "zh": "物理学的数学表述。量子力学与场论。" }, "prerequisites": ["functional-analysis", "ode"] },
-    { "id": "control-theory", "label": "制御理論", "labels": { "ja": "制御理論", "en": "Control Theory", "zh": "控制理论" }, "area": "mathematical_modeling", "difficulty": 4, "position": { "x": 2000, "y": 480 }, "description": "動的システムの制御。フィードバックの数学。", "descriptions": { "ja": "動的システムの制御。フィードバックの数学。", "en": "Control of dynamic systems. Mathematics of feedback.", "zh": "动态系统的控制。反馈的数学。" }, "prerequisites": ["dynamical-systems", "linear-algebra"] },
-    { "id": "game-theory", "label": "ゲーム理論", "labels": { "ja": "ゲーム理論", "en": "Game Theory", "zh": "博弈论" }, "area": "social", "difficulty": 3, "position": { "x": 1500, "y": 480 }, "description": "戦略的意思決定の数学。ナッシュ均衡。", "descriptions": { "ja": "戦略的意思決定の数学。ナッシュ均衡。", "en": "Mathematics of strategic decision-making. Nash equilibrium.", "zh": "策略决策的数学。纳什均衡。" }, "prerequisites": ["probability", "optimization"] },
-    { "id": "cryptography", "label": "暗号理論", "labels": { "ja": "暗号理論", "en": "Cryptography", "zh": "密码学" }, "area": "social", "difficulty": 4, "position": { "x": 2000, "y": 400 }, "description": "数論に基づく暗号化。RSA・楕円曲線暗号。", "descriptions": { "ja": "数論に基づく暗号化。RSA・楕円曲線暗号。", "en": "Number theory-based encryption. RSA and elliptic curve cryptography.", "zh": "基于数论的加密。RSA与椭圆曲线密码。" }, "prerequisites": ["number-theory", "probability"] }
+    {
+      "id": "probability",
+      "label": "確率論",
+      "labels": {
+        "ja": "確率論",
+        "en": "Probability Theory",
+        "zh": "概率论"
+      },
+      "area": "stochastic",
+      "difficulty": 3,
+      "position": {
+        "x": 1250,
+        "y": 320
+      },
+      "description": "不確実な事象の数学的モデル。",
+      "descriptions": {
+        "ja": "不確実な事象の数学的モデル。",
+        "en": "Mathematical models of uncertain events.",
+        "zh": "不确定事件的数学模型。"
+      },
+      "prerequisites": [
+        "combinatorics",
+        "calculus-integral"
+      ],
+      "number": "05-01"
+    },
+    {
+      "id": "statistics",
+      "label": "統計学",
+      "labels": {
+        "ja": "統計学",
+        "en": "Statistics",
+        "zh": "统计学"
+      },
+      "area": "stochastic",
+      "difficulty": 3,
+      "position": {
+        "x": 1500,
+        "y": 320
+      },
+      "description": "データから情報を引き出す方法論。",
+      "descriptions": {
+        "ja": "データから情報を引き出す方法論。",
+        "en": "Methodology for extracting information from data.",
+        "zh": "从数据中提取信息的方法论。"
+      },
+      "prerequisites": [
+        "probability"
+      ],
+      "number": "05-02"
+    },
+    {
+      "id": "information-theory",
+      "label": "情報理論",
+      "labels": {
+        "ja": "情報理論",
+        "en": "Information Theory",
+        "zh": "信息论"
+      },
+      "area": "stochastic",
+      "difficulty": 4,
+      "position": {
+        "x": 1750,
+        "y": 400
+      },
+      "description": "エントロピー・通信路容量。情報の数学的理論。",
+      "descriptions": {
+        "ja": "エントロピー・通信路容量。情報の数学的理論。",
+        "en": "Entropy and channel capacity. Mathematical theory of information.",
+        "zh": "熵与信道容量。信息的数学理论。"
+      },
+      "prerequisites": [
+        "probability"
+      ],
+      "number": "05-03"
+    },
+    {
+      "id": "stochastic-processes",
+      "label": "確率過程論",
+      "labels": {
+        "ja": "確率過程論",
+        "en": "Stochastic Processes",
+        "zh": "随机过程"
+      },
+      "area": "stochastic",
+      "difficulty": 4,
+      "position": {
+        "x": 1750,
+        "y": 480
+      },
+      "description": "マルコフ連鎖・ブラウン運動。時間と確率の理論。",
+      "descriptions": {
+        "ja": "マルコフ連鎖・ブラウン運動。時間と確率の理論。",
+        "en": "Markov chains and Brownian motion. Theory of time and probability.",
+        "zh": "马尔可夫链与布朗运动。时间与概率的理论。"
+      },
+      "prerequisites": [
+        "probability",
+        "measure-theory"
+      ],
+      "number": "05-04"
+    },
+    {
+      "id": "mathematical-statistics",
+      "label": "数理統計学",
+      "labels": {
+        "ja": "数理統計学",
+        "en": "Mathematical Statistics",
+        "zh": "数理统计"
+      },
+      "area": "stochastic",
+      "difficulty": 4,
+      "position": {
+        "x": 1750,
+        "y": 320
+      },
+      "description": "推定論・検定論の数学的基盤。",
+      "descriptions": {
+        "ja": "推定論・検定論の数学的基盤。",
+        "en": "Mathematical foundations of estimation and hypothesis testing.",
+        "zh": "估计论与假设检验的数学基础。"
+      },
+      "prerequisites": [
+        "statistics",
+        "measure-theory"
+      ],
+      "number": "05-05"
+    },
+    {
+      "id": "numerical-analysis",
+      "label": "数値解析",
+      "labels": {
+        "ja": "数値解析",
+        "en": "Numerical Analysis",
+        "zh": "数值分析"
+      },
+      "area": "computational",
+      "difficulty": 3,
+      "position": {
+        "x": 1500,
+        "y": 160
+      },
+      "description": "近似計算・誤差解析。コンピュータによる数学。",
+      "descriptions": {
+        "ja": "近似計算・誤差解析。コンピュータによる数学。",
+        "en": "Approximate computation and error analysis. Mathematics by computer.",
+        "zh": "近似计算与误差分析。计算机数学。"
+      },
+      "prerequisites": [
+        "calculus-integral",
+        "linear-algebra"
+      ],
+      "number": "06-01"
+    },
+    {
+      "id": "optimization",
+      "label": "最適化理論",
+      "labels": {
+        "ja": "最適化理論",
+        "en": "Optimization Theory",
+        "zh": "优化理论"
+      },
+      "area": "computational",
+      "difficulty": 4,
+      "position": {
+        "x": 1750,
+        "y": 160
+      },
+      "description": "関数の最大最小問題。線形計画・凸最適化。",
+      "descriptions": {
+        "ja": "関数の最大最小問題。線形計画・凸最適化。",
+        "en": "Maximization and minimization. Linear programming and convex optimization.",
+        "zh": "函数极值问题。线性规划与凸优化。"
+      },
+      "prerequisites": [
+        "multivariable-calculus",
+        "linear-algebra"
+      ],
+      "number": "06-02"
+    },
+    {
+      "id": "machine-learning-math",
+      "label": "機械学習の数理",
+      "labels": {
+        "ja": "機械学習の数理",
+        "en": "Mathematics of ML",
+        "zh": "机器学习数理"
+      },
+      "area": "computational",
+      "difficulty": 4,
+      "position": {
+        "x": 2000,
+        "y": 280
+      },
+      "description": "統計的学習理論・カーネル法・最適化の応用。",
+      "descriptions": {
+        "ja": "統計的学習理論・カーネル法・最適化の応用。",
+        "en": "Statistical learning theory, kernel methods, and optimization applications.",
+        "zh": "统计学习理论、核方法与优化应用。"
+      },
+      "prerequisites": [
+        "mathematical-statistics",
+        "optimization",
+        "linear-algebra"
+      ],
+      "number": "06-03"
+    },
+    {
+      "id": "combinatorial-optimization",
+      "label": "組合せ最適化",
+      "labels": {
+        "ja": "組合せ最適化",
+        "en": "Combinatorial Optimization",
+        "zh": "组合优化"
+      },
+      "area": "computational",
+      "difficulty": 4,
+      "position": {
+        "x": 2000,
+        "y": 60
+      },
+      "description": "グラフ理論・整数計画。離散構造の最適化。",
+      "descriptions": {
+        "ja": "グラフ理論・整数計画。離散構造の最適化。",
+        "en": "Graph theory and integer programming. Optimization of discrete structures.",
+        "zh": "图论与整数规划。离散结构的优化。"
+      },
+      "prerequisites": [
+        "combinatorics",
+        "optimization"
+      ],
+      "number": "06-04"
+    },
+    {
+      "id": "dynamical-systems",
+      "label": "力学系",
+      "labels": {
+        "ja": "力学系",
+        "en": "Dynamical Systems",
+        "zh": "动力系统"
+      },
+      "area": "mathematical_modeling",
+      "difficulty": 4,
+      "position": {
+        "x": 1750,
+        "y": 280
+      },
+      "description": "時間発展する系の定性的理論。カオス。",
+      "descriptions": {
+        "ja": "時間発展する系の定性的理論。カオス。",
+        "en": "Qualitative theory of time-evolving systems. Chaos.",
+        "zh": "时间演化系统的定性理论。混沌。"
+      },
+      "prerequisites": [
+        "ode"
+      ],
+      "number": "07-01"
+    },
+    {
+      "id": "mathematical-physics",
+      "label": "数理物理学",
+      "labels": {
+        "ja": "数理物理学",
+        "en": "Mathematical Physics",
+        "zh": "数学物理"
+      },
+      "area": "mathematical_modeling",
+      "difficulty": 5,
+      "position": {
+        "x": 2000,
+        "y": 160
+      },
+      "description": "物理学の数学的定式化。量子力学・場の理論。",
+      "descriptions": {
+        "ja": "物理学の数学的定式化。量子力学・場の理論。",
+        "en": "Mathematical formulation of physics. Quantum mechanics and field theory.",
+        "zh": "物理学的数学表述。量子力学与场论。"
+      },
+      "prerequisites": [
+        "functional-analysis",
+        "ode"
+      ],
+      "number": "07-02"
+    },
+    {
+      "id": "control-theory",
+      "label": "制御理論",
+      "labels": {
+        "ja": "制御理論",
+        "en": "Control Theory",
+        "zh": "控制理论"
+      },
+      "area": "mathematical_modeling",
+      "difficulty": 4,
+      "position": {
+        "x": 2000,
+        "y": 480
+      },
+      "description": "動的システムの制御。フィードバックの数学。",
+      "descriptions": {
+        "ja": "動的システムの制御。フィードバックの数学。",
+        "en": "Control of dynamic systems. Mathematics of feedback.",
+        "zh": "动态系统的控制。反馈的数学。"
+      },
+      "prerequisites": [
+        "dynamical-systems",
+        "linear-algebra"
+      ],
+      "number": "07-03"
+    },
+    {
+      "id": "game-theory",
+      "label": "ゲーム理論",
+      "labels": {
+        "ja": "ゲーム理論",
+        "en": "Game Theory",
+        "zh": "博弈论"
+      },
+      "area": "social",
+      "difficulty": 3,
+      "position": {
+        "x": 1500,
+        "y": 480
+      },
+      "description": "戦略的意思決定の数学。ナッシュ均衡。",
+      "descriptions": {
+        "ja": "戦略的意思決定の数学。ナッシュ均衡。",
+        "en": "Mathematics of strategic decision-making. Nash equilibrium.",
+        "zh": "策略决策的数学。纳什均衡。"
+      },
+      "prerequisites": [
+        "probability",
+        "optimization"
+      ],
+      "number": "08-01"
+    },
+    {
+      "id": "cryptography",
+      "label": "暗号理論",
+      "labels": {
+        "ja": "暗号理論",
+        "en": "Cryptography",
+        "zh": "密码学"
+      },
+      "area": "social",
+      "difficulty": 4,
+      "position": {
+        "x": 2000,
+        "y": 400
+      },
+      "description": "数論に基づく暗号化。RSA・楕円曲線暗号。",
+      "descriptions": {
+        "ja": "数論に基づく暗号化。RSA・楕円曲線暗号。",
+        "en": "Number theory-based encryption. RSA and elliptic curve cryptography.",
+        "zh": "基于数论的加密。RSA与椭圆曲线密码。"
+      },
+      "prerequisites": [
+        "number-theory",
+        "probability"
+      ],
+      "number": "08-02"
+    }
   ],
   "edges": [
-    { "source": "combinatorics", "target": "probability" },
-    { "source": "calculus-integral", "target": "probability" },
-    { "source": "probability", "target": "statistics" },
-    { "source": "probability", "target": "information-theory" },
-    { "source": "probability", "target": "stochastic-processes" },
-    { "source": "measure-theory", "target": "stochastic-processes" },
-    { "source": "statistics", "target": "mathematical-statistics" },
-    { "source": "measure-theory", "target": "mathematical-statistics" },
-    { "source": "calculus-integral", "target": "numerical-analysis" },
-    { "source": "linear-algebra", "target": "numerical-analysis" },
-    { "source": "multivariable-calculus", "target": "optimization" },
-    { "source": "linear-algebra", "target": "optimization" },
-    { "source": "mathematical-statistics", "target": "machine-learning-math" },
-    { "source": "optimization", "target": "machine-learning-math" },
-    { "source": "linear-algebra", "target": "machine-learning-math" },
-    { "source": "combinatorics", "target": "combinatorial-optimization" },
-    { "source": "optimization", "target": "combinatorial-optimization" },
-    { "source": "ode", "target": "dynamical-systems" },
-    { "source": "functional-analysis", "target": "mathematical-physics" },
-    { "source": "ode", "target": "mathematical-physics" },
-    { "source": "dynamical-systems", "target": "control-theory" },
-    { "source": "linear-algebra", "target": "control-theory" },
-    { "source": "probability", "target": "game-theory" },
-    { "source": "optimization", "target": "game-theory" },
-    { "source": "number-theory", "target": "cryptography" },
-    { "source": "probability", "target": "cryptography" }
+    {
+      "source": "combinatorics",
+      "target": "probability"
+    },
+    {
+      "source": "calculus-integral",
+      "target": "probability"
+    },
+    {
+      "source": "probability",
+      "target": "statistics"
+    },
+    {
+      "source": "probability",
+      "target": "information-theory"
+    },
+    {
+      "source": "probability",
+      "target": "stochastic-processes"
+    },
+    {
+      "source": "measure-theory",
+      "target": "stochastic-processes"
+    },
+    {
+      "source": "statistics",
+      "target": "mathematical-statistics"
+    },
+    {
+      "source": "measure-theory",
+      "target": "mathematical-statistics"
+    },
+    {
+      "source": "calculus-integral",
+      "target": "numerical-analysis"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "numerical-analysis"
+    },
+    {
+      "source": "multivariable-calculus",
+      "target": "optimization"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "optimization"
+    },
+    {
+      "source": "mathematical-statistics",
+      "target": "machine-learning-math"
+    },
+    {
+      "source": "optimization",
+      "target": "machine-learning-math"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "machine-learning-math"
+    },
+    {
+      "source": "combinatorics",
+      "target": "combinatorial-optimization"
+    },
+    {
+      "source": "optimization",
+      "target": "combinatorial-optimization"
+    },
+    {
+      "source": "ode",
+      "target": "dynamical-systems"
+    },
+    {
+      "source": "functional-analysis",
+      "target": "mathematical-physics"
+    },
+    {
+      "source": "ode",
+      "target": "mathematical-physics"
+    },
+    {
+      "source": "dynamical-systems",
+      "target": "control-theory"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "control-theory"
+    },
+    {
+      "source": "probability",
+      "target": "game-theory"
+    },
+    {
+      "source": "optimization",
+      "target": "game-theory"
+    },
+    {
+      "source": "number-theory",
+      "target": "cryptography"
+    },
+    {
+      "source": "probability",
+      "target": "cryptography"
+    }
   ]
 }

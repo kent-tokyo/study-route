@@ -2,6 +2,7 @@ export type LocalizedStrings = { ja?: string; en?: string; zh?: string };
 
 export interface GraphNode {
   id: string;
+  number?: string;
   label: string;
   labels?: LocalizedStrings;
   area: string;

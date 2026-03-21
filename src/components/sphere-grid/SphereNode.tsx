@@ -5,6 +5,7 @@ import type { NodeStatus } from '@/types';
 
 interface SphereNodeData {
   label: string;
+  number?: string;
   description: string;
   area: string;
   difficulty: number;
@@ -50,7 +51,10 @@ export default function SphereNode({ id, data }: { id: string; data: SphereNodeD
           {'★'.repeat(data.difficulty)}
         </span>
       </div>
-      <div className="text-sm font-semibold leading-tight">{label}</div>
+      <div className="text-sm font-semibold leading-tight">
+        {data.number && <span className="text-xs font-normal text-zinc-400 dark:text-zinc-500 mr-1">{data.number}</span>}
+        {label}
+      </div>
 
       {status === 'completed' && (
         <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xs">

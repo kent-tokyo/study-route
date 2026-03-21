@@ -1,64 +1,744 @@
 {
   "nodes": [
-    { "id": "binary-logic", "label": "2進数と論理回路", "labels": { "ja": "2進数と論理回路", "en": "Binary & Logic Gates", "zh": "二进制与逻辑门" }, "area": "foundations_cs", "difficulty": 1, "position": { "x": 0, "y": 0 }, "description": "コンピュータの基礎となる2進表現と論理ゲート", "descriptions": { "ja": "コンピュータの基礎となる2進表現と論理ゲート", "en": "Binary representation and logic gates — the foundation of computers", "zh": "计算机基础：二进制表示与逻辑门" }, "prerequisites": [] },
-    { "id": "discrete-math", "label": "離散数学", "labels": { "ja": "離散数学", "en": "Discrete Mathematics", "zh": "离散数学" }, "area": "foundations_cs", "difficulty": 2, "position": { "x": 200, "y": 0 }, "description": "集合・グラフ・組合せ論・証明", "descriptions": { "ja": "集合・グラフ・組合せ論・証明", "en": "Sets, graphs, combinatorics, and proofs", "zh": "集合、图、组合学与证明" }, "prerequisites": ["binary-logic"] },
-    { "id": "automata", "label": "オートマトン理論", "labels": { "ja": "オートマトン理論", "en": "Automata Theory", "zh": "自动机理论" }, "area": "foundations_cs", "difficulty": 3, "position": { "x": 400, "y": 0 }, "description": "有限オートマトン・正規言語・チューリング機械", "descriptions": { "ja": "有限オートマトン・正規言語・チューリング機械", "en": "Finite automata, regular languages, and Turing machines", "zh": "有限自动机、正则语言与图灵机" }, "prerequisites": ["discrete-math"] },
-    { "id": "complexity", "label": "計算量理論", "labels": { "ja": "計算量理論", "en": "Computational Complexity", "zh": "计算复杂性" }, "area": "foundations_cs", "difficulty": 4, "position": { "x": 400, "y": 150 }, "description": "P vs NP・計算量クラス・帰着", "descriptions": { "ja": "P vs NP・計算量クラス・帰着", "en": "P vs NP, complexity classes, and reductions", "zh": "P vs NP、复杂性类与归约" }, "prerequisites": ["automata"] },
-
-    { "id": "data-structures", "label": "データ構造", "labels": { "ja": "データ構造", "en": "Data Structures", "zh": "数据结构" }, "area": "algorithms", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "配列・リスト・木・ハッシュテーブル", "descriptions": { "ja": "配列・リスト・木・ハッシュテーブル", "en": "Arrays, lists, trees, and hash tables", "zh": "数组、链表、树与哈希表" }, "prerequisites": ["discrete-math"] },
-    { "id": "sorting-searching", "label": "ソートと探索", "labels": { "ja": "ソートと探索", "en": "Sorting & Searching", "zh": "排序与搜索" }, "area": "algorithms", "difficulty": 2, "position": { "x": 200, "y": 0 }, "description": "基本的なソート・探索アルゴリズム", "descriptions": { "ja": "基本的なソート・探索アルゴリズム", "en": "Basic sorting and searching algorithms", "zh": "基本排序与搜索算法" }, "prerequisites": ["data-structures"] },
-    { "id": "graph-algorithms", "label": "グラフアルゴリズム", "labels": { "ja": "グラフアルゴリズム", "en": "Graph Algorithms", "zh": "图算法" }, "area": "algorithms", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "BFS・DFS・最短経路・最小全域木", "descriptions": { "ja": "BFS・DFS・最短経路・最小全域木", "en": "BFS, DFS, shortest paths, and minimum spanning trees", "zh": "BFS、DFS、最短路径与最小生成树" }, "prerequisites": ["data-structures", "discrete-math"] },
-    { "id": "dynamic-programming", "label": "動的計画法", "labels": { "ja": "動的計画法", "en": "Dynamic Programming", "zh": "动态规划" }, "area": "algorithms", "difficulty": 3, "position": { "x": 300, "y": 150 }, "description": "部分問題の最適解を組み合わせる手法", "descriptions": { "ja": "部分問題の最適解を組み合わせる手法", "en": "Combining optimal solutions to subproblems", "zh": "组合子问题最优解的方法" }, "prerequisites": ["sorting-searching"] },
-
-    { "id": "os-basics", "label": "OS基礎", "labels": { "ja": "OS基礎", "en": "OS Basics", "zh": "操作系统基础" }, "area": "systems", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "プロセス・スレッド・メモリ管理", "descriptions": { "ja": "プロセス・スレッド・メモリ管理", "en": "Processes, threads, and memory management", "zh": "进程、线程与内存管理" }, "prerequisites": ["binary-logic"] },
-    { "id": "file-systems", "label": "ファイルシステム", "labels": { "ja": "ファイルシステム", "en": "File Systems", "zh": "文件系统" }, "area": "systems", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "ファイル管理・ジャーナリング・RAID", "descriptions": { "ja": "ファイル管理・ジャーナリング・RAID", "en": "File management, journaling, and RAID", "zh": "文件管理、日志与RAID" }, "prerequisites": ["os-basics"] },
-    { "id": "db-fundamentals", "label": "データベース基礎", "labels": { "ja": "データベース基礎", "en": "Database Fundamentals", "zh": "数据库基础" }, "area": "systems", "difficulty": 2, "position": { "x": 100, "y": 150 }, "description": "リレーショナルモデル・SQL・正規化", "descriptions": { "ja": "リレーショナルモデル・SQL・正規化", "en": "Relational model, SQL, and normalization", "zh": "关系模型、SQL与规范化" }, "prerequisites": ["discrete-math"] },
-    { "id": "distributed-systems", "label": "分散システム", "labels": { "ja": "分散システム", "en": "Distributed Systems", "zh": "分布式系统" }, "area": "systems", "difficulty": 4, "position": { "x": 300, "y": 150 }, "description": "CAP定理・合意プロトコル・一貫性モデル", "descriptions": { "ja": "CAP定理・合意プロトコル・一貫性モデル", "en": "CAP theorem, consensus protocols, and consistency models", "zh": "CAP定理、共识协议与一致性模型" }, "prerequisites": ["os-basics", "tcp-ip"] },
-    { "id": "compiler", "label": "コンパイラ", "labels": { "ja": "コンパイラ", "en": "Compilers", "zh": "编译器" }, "area": "systems", "difficulty": 4, "position": { "x": 0, "y": 150 }, "description": "字句解析・構文解析・コード生成", "descriptions": { "ja": "字句解析・構文解析・コード生成", "en": "Lexical analysis, parsing, and code generation", "zh": "词法分析、语法分析与代码生成" }, "prerequisites": ["automata", "os-basics"] },
-
-    { "id": "tcp-ip", "label": "TCP/IP", "labels": { "ja": "TCP/IP", "en": "TCP/IP", "zh": "TCP/IP" }, "area": "networking_cs", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "インターネットプロトコルスイート", "descriptions": { "ja": "インターネットプロトコルスイート", "en": "Internet protocol suite", "zh": "互联网协议族" }, "prerequisites": ["os-basics"] },
-    { "id": "http-web", "label": "HTTP/Web", "labels": { "ja": "HTTP/Web", "en": "HTTP & Web", "zh": "HTTP与Web" }, "area": "networking_cs", "difficulty": 2, "position": { "x": 200, "y": 0 }, "description": "HTTPプロトコル・REST・Webアーキテクチャ", "descriptions": { "ja": "HTTPプロトコル・REST・Webアーキテクチャ", "en": "HTTP protocol, REST, and web architecture", "zh": "HTTP协议、REST与Web架构" }, "prerequisites": ["tcp-ip"] },
-    { "id": "network-security", "label": "ネットワークセキュリティ", "labels": { "ja": "ネットワークセキュリティ", "en": "Network Security", "zh": "网络安全" }, "area": "networking_cs", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "暗号・TLS・認証・ファイアウォール", "descriptions": { "ja": "暗号・TLS・認証・ファイアウォール", "en": "Cryptography, TLS, authentication, and firewalls", "zh": "密码学、TLS、认证与防火墙" }, "prerequisites": ["tcp-ip"] },
-    { "id": "dns-routing", "label": "DNS/ルーティング", "labels": { "ja": "DNS/ルーティング", "en": "DNS & Routing", "zh": "DNS与路由" }, "area": "networking_cs", "difficulty": 3, "position": { "x": 300, "y": 150 }, "description": "名前解決・ルーティングプロトコル", "descriptions": { "ja": "名前解決・ルーティングプロトコル", "en": "Name resolution and routing protocols", "zh": "域名解析与路由协议" }, "prerequisites": ["tcp-ip"] },
-
-    { "id": "programming-paradigms", "label": "プログラミングパラダイム", "labels": { "ja": "プログラミングパラダイム", "en": "Programming Paradigms", "zh": "编程范式" }, "area": "pl", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "命令型・関数型・オブジェクト指向", "descriptions": { "ja": "命令型・関数型・オブジェクト指向", "en": "Imperative, functional, and object-oriented programming", "zh": "命令式、函数式与面向对象编程" }, "prerequisites": [] },
-    { "id": "type-systems", "label": "型システム", "labels": { "ja": "型システム", "en": "Type Systems", "zh": "类型系统" }, "area": "pl", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "静的型付け・型推論・ジェネリクス", "descriptions": { "ja": "静的型付け・型推論・ジェネリクス", "en": "Static typing, type inference, and generics", "zh": "静态类型、类型推断与泛型" }, "prerequisites": ["programming-paradigms"] },
-    { "id": "fp", "label": "関数型プログラミング", "labels": { "ja": "関数型プログラミング", "en": "Functional Programming", "zh": "函数式编程" }, "area": "pl", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "純粋関数・不変性・モナド・高階関数", "descriptions": { "ja": "純粋関数・不変性・モナド・高階関数", "en": "Pure functions, immutability, monads, and higher-order functions", "zh": "纯函数、不变性、单子与高阶函数" }, "prerequisites": ["programming-paradigms"] },
-    { "id": "concurrent-programming", "label": "並行プログラミング", "labels": { "ja": "並行プログラミング", "en": "Concurrent Programming", "zh": "并发编程" }, "area": "pl", "difficulty": 3, "position": { "x": 300, "y": 0 }, "description": "マルチスレッド・非同期・アクターモデル", "descriptions": { "ja": "マルチスレッド・非同期・アクターモデル", "en": "Multithreading, async, and the actor model", "zh": "多线程、异步与Actor模型" }, "prerequisites": ["programming-paradigms", "os-basics"] },
-
-    { "id": "ml-basics", "label": "機械学習基礎", "labels": { "ja": "機械学習基礎", "en": "ML Basics", "zh": "机器学习基础" }, "area": "ai_cs", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "教師あり学習・教師なし学習・評価指標", "descriptions": { "ja": "教師あり学習・教師なし学習・評価指標", "en": "Supervised learning, unsupervised learning, and evaluation metrics", "zh": "监督学习、无监督学习与评估指标" }, "prerequisites": ["discrete-math"] },
-    { "id": "deep-learning", "label": "深層学習", "labels": { "ja": "深層学習", "en": "Deep Learning", "zh": "深度学习" }, "area": "ai_cs", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "ニューラルネットワーク・CNN・RNN・Transformer", "descriptions": { "ja": "ニューラルネットワーク・CNN・RNN・Transformer", "en": "Neural networks, CNN, RNN, and Transformers", "zh": "神经网络、CNN、RNN与Transformer" }, "prerequisites": ["ml-basics"] },
-    { "id": "nlp", "label": "自然言語処理", "labels": { "ja": "自然言語処理", "en": "Natural Language Processing", "zh": "自然语言处理" }, "area": "ai_cs", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "形態素解析・埋め込み・大規模言語モデル", "descriptions": { "ja": "形態素解析・埋め込み・大規模言語モデル", "en": "Tokenization, embeddings, and large language models", "zh": "分词、嵌入与大语言模型" }, "prerequisites": ["deep-learning"] },
-    { "id": "reinforcement-learning", "label": "強化学習", "labels": { "ja": "強化学習", "en": "Reinforcement Learning", "zh": "强化学习" }, "area": "ai_cs", "difficulty": 4, "position": { "x": 300, "y": 150 }, "description": "報酬最大化・Q学習・方策勾配法", "descriptions": { "ja": "報酬最大化・Q学習・方策勾配法", "en": "Reward maximization, Q-learning, and policy gradients", "zh": "奖励最大化、Q学习与策略梯度" }, "prerequisites": ["ml-basics", "dynamic-programming"] }
+    {
+      "id": "binary-logic",
+      "label": "2進数と論理回路",
+      "labels": {
+        "ja": "2進数と論理回路",
+        "en": "Binary & Logic Gates",
+        "zh": "二进制与逻辑门"
+      },
+      "area": "foundations_cs",
+      "difficulty": 1,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "コンピュータの基礎となる2進表現と論理ゲート",
+      "descriptions": {
+        "ja": "コンピュータの基礎となる2進表現と論理ゲート",
+        "en": "Binary representation and logic gates — the foundation of computers",
+        "zh": "计算机基础：二进制表示与逻辑门"
+      },
+      "prerequisites": [],
+      "number": "01-01"
+    },
+    {
+      "id": "discrete-math",
+      "label": "離散数学",
+      "labels": {
+        "ja": "離散数学",
+        "en": "Discrete Mathematics",
+        "zh": "离散数学"
+      },
+      "area": "foundations_cs",
+      "difficulty": 2,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "集合・グラフ・組合せ論・証明",
+      "descriptions": {
+        "ja": "集合・グラフ・組合せ論・証明",
+        "en": "Sets, graphs, combinatorics, and proofs",
+        "zh": "集合、图、组合学与证明"
+      },
+      "prerequisites": [
+        "binary-logic"
+      ],
+      "number": "01-02"
+    },
+    {
+      "id": "automata",
+      "label": "オートマトン理論",
+      "labels": {
+        "ja": "オートマトン理論",
+        "en": "Automata Theory",
+        "zh": "自动机理论"
+      },
+      "area": "foundations_cs",
+      "difficulty": 3,
+      "position": {
+        "x": 400,
+        "y": 0
+      },
+      "description": "有限オートマトン・正規言語・チューリング機械",
+      "descriptions": {
+        "ja": "有限オートマトン・正規言語・チューリング機械",
+        "en": "Finite automata, regular languages, and Turing machines",
+        "zh": "有限自动机、正则语言与图灵机"
+      },
+      "prerequisites": [
+        "discrete-math"
+      ],
+      "number": "01-03"
+    },
+    {
+      "id": "complexity",
+      "label": "計算量理論",
+      "labels": {
+        "ja": "計算量理論",
+        "en": "Computational Complexity",
+        "zh": "计算复杂性"
+      },
+      "area": "foundations_cs",
+      "difficulty": 4,
+      "position": {
+        "x": 400,
+        "y": 150
+      },
+      "description": "P vs NP・計算量クラス・帰着",
+      "descriptions": {
+        "ja": "P vs NP・計算量クラス・帰着",
+        "en": "P vs NP, complexity classes, and reductions",
+        "zh": "P vs NP、复杂性类与归约"
+      },
+      "prerequisites": [
+        "automata"
+      ],
+      "number": "01-04"
+    },
+    {
+      "id": "data-structures",
+      "label": "データ構造",
+      "labels": {
+        "ja": "データ構造",
+        "en": "Data Structures",
+        "zh": "数据结构"
+      },
+      "area": "algorithms",
+      "difficulty": 2,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "配列・リスト・木・ハッシュテーブル",
+      "descriptions": {
+        "ja": "配列・リスト・木・ハッシュテーブル",
+        "en": "Arrays, lists, trees, and hash tables",
+        "zh": "数组、链表、树与哈希表"
+      },
+      "prerequisites": [
+        "discrete-math"
+      ],
+      "number": "02-01"
+    },
+    {
+      "id": "sorting-searching",
+      "label": "ソートと探索",
+      "labels": {
+        "ja": "ソートと探索",
+        "en": "Sorting & Searching",
+        "zh": "排序与搜索"
+      },
+      "area": "algorithms",
+      "difficulty": 2,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "基本的なソート・探索アルゴリズム",
+      "descriptions": {
+        "ja": "基本的なソート・探索アルゴリズム",
+        "en": "Basic sorting and searching algorithms",
+        "zh": "基本排序与搜索算法"
+      },
+      "prerequisites": [
+        "data-structures"
+      ],
+      "number": "02-02"
+    },
+    {
+      "id": "graph-algorithms",
+      "label": "グラフアルゴリズム",
+      "labels": {
+        "ja": "グラフアルゴリズム",
+        "en": "Graph Algorithms",
+        "zh": "图算法"
+      },
+      "area": "algorithms",
+      "difficulty": 3,
+      "position": {
+        "x": 100,
+        "y": 150
+      },
+      "description": "BFS・DFS・最短経路・最小全域木",
+      "descriptions": {
+        "ja": "BFS・DFS・最短経路・最小全域木",
+        "en": "BFS, DFS, shortest paths, and minimum spanning trees",
+        "zh": "BFS、DFS、最短路径与最小生成树"
+      },
+      "prerequisites": [
+        "data-structures",
+        "discrete-math"
+      ],
+      "number": "02-03"
+    },
+    {
+      "id": "dynamic-programming",
+      "label": "動的計画法",
+      "labels": {
+        "ja": "動的計画法",
+        "en": "Dynamic Programming",
+        "zh": "动态规划"
+      },
+      "area": "algorithms",
+      "difficulty": 3,
+      "position": {
+        "x": 300,
+        "y": 150
+      },
+      "description": "部分問題の最適解を組み合わせる手法",
+      "descriptions": {
+        "ja": "部分問題の最適解を組み合わせる手法",
+        "en": "Combining optimal solutions to subproblems",
+        "zh": "组合子问题最优解的方法"
+      },
+      "prerequisites": [
+        "sorting-searching"
+      ],
+      "number": "02-04"
+    },
+    {
+      "id": "os-basics",
+      "label": "OS基礎",
+      "labels": {
+        "ja": "OS基礎",
+        "en": "OS Basics",
+        "zh": "操作系统基础"
+      },
+      "area": "systems",
+      "difficulty": 2,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "プロセス・スレッド・メモリ管理",
+      "descriptions": {
+        "ja": "プロセス・スレッド・メモリ管理",
+        "en": "Processes, threads, and memory management",
+        "zh": "进程、线程与内存管理"
+      },
+      "prerequisites": [
+        "binary-logic"
+      ],
+      "number": "03-01"
+    },
+    {
+      "id": "file-systems",
+      "label": "ファイルシステム",
+      "labels": {
+        "ja": "ファイルシステム",
+        "en": "File Systems",
+        "zh": "文件系统"
+      },
+      "area": "systems",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "ファイル管理・ジャーナリング・RAID",
+      "descriptions": {
+        "ja": "ファイル管理・ジャーナリング・RAID",
+        "en": "File management, journaling, and RAID",
+        "zh": "文件管理、日志与RAID"
+      },
+      "prerequisites": [
+        "os-basics"
+      ],
+      "number": "03-02"
+    },
+    {
+      "id": "db-fundamentals",
+      "label": "データベース基礎",
+      "labels": {
+        "ja": "データベース基礎",
+        "en": "Database Fundamentals",
+        "zh": "数据库基础"
+      },
+      "area": "systems",
+      "difficulty": 2,
+      "position": {
+        "x": 100,
+        "y": 150
+      },
+      "description": "リレーショナルモデル・SQL・正規化",
+      "descriptions": {
+        "ja": "リレーショナルモデル・SQL・正規化",
+        "en": "Relational model, SQL, and normalization",
+        "zh": "关系模型、SQL与规范化"
+      },
+      "prerequisites": [
+        "discrete-math"
+      ],
+      "number": "03-03"
+    },
+    {
+      "id": "distributed-systems",
+      "label": "分散システム",
+      "labels": {
+        "ja": "分散システム",
+        "en": "Distributed Systems",
+        "zh": "分布式系统"
+      },
+      "area": "systems",
+      "difficulty": 4,
+      "position": {
+        "x": 300,
+        "y": 150
+      },
+      "description": "CAP定理・合意プロトコル・一貫性モデル",
+      "descriptions": {
+        "ja": "CAP定理・合意プロトコル・一貫性モデル",
+        "en": "CAP theorem, consensus protocols, and consistency models",
+        "zh": "CAP定理、共识协议与一致性模型"
+      },
+      "prerequisites": [
+        "os-basics",
+        "tcp-ip"
+      ],
+      "number": "03-04"
+    },
+    {
+      "id": "compiler",
+      "label": "コンパイラ",
+      "labels": {
+        "ja": "コンパイラ",
+        "en": "Compilers",
+        "zh": "编译器"
+      },
+      "area": "systems",
+      "difficulty": 4,
+      "position": {
+        "x": 0,
+        "y": 150
+      },
+      "description": "字句解析・構文解析・コード生成",
+      "descriptions": {
+        "ja": "字句解析・構文解析・コード生成",
+        "en": "Lexical analysis, parsing, and code generation",
+        "zh": "词法分析、语法分析与代码生成"
+      },
+      "prerequisites": [
+        "automata",
+        "os-basics"
+      ],
+      "number": "03-05"
+    },
+    {
+      "id": "tcp-ip",
+      "label": "TCP/IP",
+      "labels": {
+        "ja": "TCP/IP",
+        "en": "TCP/IP",
+        "zh": "TCP/IP"
+      },
+      "area": "networking_cs",
+      "difficulty": 2,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "インターネットプロトコルスイート",
+      "descriptions": {
+        "ja": "インターネットプロトコルスイート",
+        "en": "Internet protocol suite",
+        "zh": "互联网协议族"
+      },
+      "prerequisites": [
+        "os-basics"
+      ],
+      "number": "04-01"
+    },
+    {
+      "id": "http-web",
+      "label": "HTTP/Web",
+      "labels": {
+        "ja": "HTTP/Web",
+        "en": "HTTP & Web",
+        "zh": "HTTP与Web"
+      },
+      "area": "networking_cs",
+      "difficulty": 2,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "HTTPプロトコル・REST・Webアーキテクチャ",
+      "descriptions": {
+        "ja": "HTTPプロトコル・REST・Webアーキテクチャ",
+        "en": "HTTP protocol, REST, and web architecture",
+        "zh": "HTTP协议、REST与Web架构"
+      },
+      "prerequisites": [
+        "tcp-ip"
+      ],
+      "number": "04-02"
+    },
+    {
+      "id": "network-security",
+      "label": "ネットワークセキュリティ",
+      "labels": {
+        "ja": "ネットワークセキュリティ",
+        "en": "Network Security",
+        "zh": "网络安全"
+      },
+      "area": "networking_cs",
+      "difficulty": 3,
+      "position": {
+        "x": 100,
+        "y": 150
+      },
+      "description": "暗号・TLS・認証・ファイアウォール",
+      "descriptions": {
+        "ja": "暗号・TLS・認証・ファイアウォール",
+        "en": "Cryptography, TLS, authentication, and firewalls",
+        "zh": "密码学、TLS、认证与防火墙"
+      },
+      "prerequisites": [
+        "tcp-ip"
+      ],
+      "number": "04-03"
+    },
+    {
+      "id": "dns-routing",
+      "label": "DNS/ルーティング",
+      "labels": {
+        "ja": "DNS/ルーティング",
+        "en": "DNS & Routing",
+        "zh": "DNS与路由"
+      },
+      "area": "networking_cs",
+      "difficulty": 3,
+      "position": {
+        "x": 300,
+        "y": 150
+      },
+      "description": "名前解決・ルーティングプロトコル",
+      "descriptions": {
+        "ja": "名前解決・ルーティングプロトコル",
+        "en": "Name resolution and routing protocols",
+        "zh": "域名解析与路由协议"
+      },
+      "prerequisites": [
+        "tcp-ip"
+      ],
+      "number": "04-04"
+    },
+    {
+      "id": "programming-paradigms",
+      "label": "プログラミングパラダイム",
+      "labels": {
+        "ja": "プログラミングパラダイム",
+        "en": "Programming Paradigms",
+        "zh": "编程范式"
+      },
+      "area": "pl",
+      "difficulty": 2,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "命令型・関数型・オブジェクト指向",
+      "descriptions": {
+        "ja": "命令型・関数型・オブジェクト指向",
+        "en": "Imperative, functional, and object-oriented programming",
+        "zh": "命令式、函数式与面向对象编程"
+      },
+      "prerequisites": [],
+      "number": "05-01"
+    },
+    {
+      "id": "type-systems",
+      "label": "型システム",
+      "labels": {
+        "ja": "型システム",
+        "en": "Type Systems",
+        "zh": "类型系统"
+      },
+      "area": "pl",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "静的型付け・型推論・ジェネリクス",
+      "descriptions": {
+        "ja": "静的型付け・型推論・ジェネリクス",
+        "en": "Static typing, type inference, and generics",
+        "zh": "静态类型、类型推断与泛型"
+      },
+      "prerequisites": [
+        "programming-paradigms"
+      ],
+      "number": "05-02"
+    },
+    {
+      "id": "fp",
+      "label": "関数型プログラミング",
+      "labels": {
+        "ja": "関数型プログラミング",
+        "en": "Functional Programming",
+        "zh": "函数式编程"
+      },
+      "area": "pl",
+      "difficulty": 3,
+      "position": {
+        "x": 100,
+        "y": 150
+      },
+      "description": "純粋関数・不変性・モナド・高階関数",
+      "descriptions": {
+        "ja": "純粋関数・不変性・モナド・高階関数",
+        "en": "Pure functions, immutability, monads, and higher-order functions",
+        "zh": "纯函数、不变性、单子与高阶函数"
+      },
+      "prerequisites": [
+        "programming-paradigms"
+      ],
+      "number": "05-03"
+    },
+    {
+      "id": "concurrent-programming",
+      "label": "並行プログラミング",
+      "labels": {
+        "ja": "並行プログラミング",
+        "en": "Concurrent Programming",
+        "zh": "并发编程"
+      },
+      "area": "pl",
+      "difficulty": 3,
+      "position": {
+        "x": 300,
+        "y": 0
+      },
+      "description": "マルチスレッド・非同期・アクターモデル",
+      "descriptions": {
+        "ja": "マルチスレッド・非同期・アクターモデル",
+        "en": "Multithreading, async, and the actor model",
+        "zh": "多线程、异步与Actor模型"
+      },
+      "prerequisites": [
+        "programming-paradigms",
+        "os-basics"
+      ],
+      "number": "05-04"
+    },
+    {
+      "id": "ml-basics",
+      "label": "機械学習基礎",
+      "labels": {
+        "ja": "機械学習基礎",
+        "en": "ML Basics",
+        "zh": "机器学习基础"
+      },
+      "area": "ai_cs",
+      "difficulty": 2,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "教師あり学習・教師なし学習・評価指標",
+      "descriptions": {
+        "ja": "教師あり学習・教師なし学習・評価指標",
+        "en": "Supervised learning, unsupervised learning, and evaluation metrics",
+        "zh": "监督学习、无监督学习与评估指标"
+      },
+      "prerequisites": [
+        "discrete-math"
+      ],
+      "number": "06-01"
+    },
+    {
+      "id": "deep-learning",
+      "label": "深層学習",
+      "labels": {
+        "ja": "深層学習",
+        "en": "Deep Learning",
+        "zh": "深度学习"
+      },
+      "area": "ai_cs",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "ニューラルネットワーク・CNN・RNN・Transformer",
+      "descriptions": {
+        "ja": "ニューラルネットワーク・CNN・RNN・Transformer",
+        "en": "Neural networks, CNN, RNN, and Transformers",
+        "zh": "神经网络、CNN、RNN与Transformer"
+      },
+      "prerequisites": [
+        "ml-basics"
+      ],
+      "number": "06-02"
+    },
+    {
+      "id": "nlp",
+      "label": "自然言語処理",
+      "labels": {
+        "ja": "自然言語処理",
+        "en": "Natural Language Processing",
+        "zh": "自然语言处理"
+      },
+      "area": "ai_cs",
+      "difficulty": 3,
+      "position": {
+        "x": 100,
+        "y": 150
+      },
+      "description": "形態素解析・埋め込み・大規模言語モデル",
+      "descriptions": {
+        "ja": "形態素解析・埋め込み・大規模言語モデル",
+        "en": "Tokenization, embeddings, and large language models",
+        "zh": "分词、嵌入与大语言模型"
+      },
+      "prerequisites": [
+        "deep-learning"
+      ],
+      "number": "06-03"
+    },
+    {
+      "id": "reinforcement-learning",
+      "label": "強化学習",
+      "labels": {
+        "ja": "強化学習",
+        "en": "Reinforcement Learning",
+        "zh": "强化学习"
+      },
+      "area": "ai_cs",
+      "difficulty": 4,
+      "position": {
+        "x": 300,
+        "y": 150
+      },
+      "description": "報酬最大化・Q学習・方策勾配法",
+      "descriptions": {
+        "ja": "報酬最大化・Q学習・方策勾配法",
+        "en": "Reward maximization, Q-learning, and policy gradients",
+        "zh": "奖励最大化、Q学习与策略梯度"
+      },
+      "prerequisites": [
+        "ml-basics",
+        "dynamic-programming"
+      ],
+      "number": "06-04"
+    }
   ],
   "edges": [
-    { "source": "binary-logic", "target": "discrete-math" },
-    { "source": "discrete-math", "target": "automata" },
-    { "source": "automata", "target": "complexity" },
-    { "source": "discrete-math", "target": "data-structures" },
-    { "source": "data-structures", "target": "sorting-searching" },
-    { "source": "data-structures", "target": "graph-algorithms" },
-    { "source": "discrete-math", "target": "graph-algorithms" },
-    { "source": "sorting-searching", "target": "dynamic-programming" },
-    { "source": "binary-logic", "target": "os-basics" },
-    { "source": "os-basics", "target": "file-systems" },
-    { "source": "discrete-math", "target": "db-fundamentals" },
-    { "source": "os-basics", "target": "tcp-ip" },
-    { "source": "os-basics", "target": "distributed-systems" },
-    { "source": "tcp-ip", "target": "distributed-systems" },
-    { "source": "automata", "target": "compiler" },
-    { "source": "os-basics", "target": "compiler" },
-    { "source": "tcp-ip", "target": "http-web" },
-    { "source": "tcp-ip", "target": "network-security" },
-    { "source": "tcp-ip", "target": "dns-routing" },
-    { "source": "programming-paradigms", "target": "type-systems" },
-    { "source": "programming-paradigms", "target": "fp" },
-    { "source": "programming-paradigms", "target": "concurrent-programming" },
-    { "source": "os-basics", "target": "concurrent-programming" },
-    { "source": "discrete-math", "target": "ml-basics" },
-    { "source": "ml-basics", "target": "deep-learning" },
-    { "source": "deep-learning", "target": "nlp" },
-    { "source": "ml-basics", "target": "reinforcement-learning" },
-    { "source": "dynamic-programming", "target": "reinforcement-learning" }
+    {
+      "source": "binary-logic",
+      "target": "discrete-math"
+    },
+    {
+      "source": "discrete-math",
+      "target": "automata"
+    },
+    {
+      "source": "automata",
+      "target": "complexity"
+    },
+    {
+      "source": "discrete-math",
+      "target": "data-structures"
+    },
+    {
+      "source": "data-structures",
+      "target": "sorting-searching"
+    },
+    {
+      "source": "data-structures",
+      "target": "graph-algorithms"
+    },
+    {
+      "source": "discrete-math",
+      "target": "graph-algorithms"
+    },
+    {
+      "source": "sorting-searching",
+      "target": "dynamic-programming"
+    },
+    {
+      "source": "binary-logic",
+      "target": "os-basics"
+    },
+    {
+      "source": "os-basics",
+      "target": "file-systems"
+    },
+    {
+      "source": "discrete-math",
+      "target": "db-fundamentals"
+    },
+    {
+      "source": "os-basics",
+      "target": "tcp-ip"
+    },
+    {
+      "source": "os-basics",
+      "target": "distributed-systems"
+    },
+    {
+      "source": "tcp-ip",
+      "target": "distributed-systems"
+    },
+    {
+      "source": "automata",
+      "target": "compiler"
+    },
+    {
+      "source": "os-basics",
+      "target": "compiler"
+    },
+    {
+      "source": "tcp-ip",
+      "target": "http-web"
+    },
+    {
+      "source": "tcp-ip",
+      "target": "network-security"
+    },
+    {
+      "source": "tcp-ip",
+      "target": "dns-routing"
+    },
+    {
+      "source": "programming-paradigms",
+      "target": "type-systems"
+    },
+    {
+      "source": "programming-paradigms",
+      "target": "fp"
+    },
+    {
+      "source": "programming-paradigms",
+      "target": "concurrent-programming"
+    },
+    {
+      "source": "os-basics",
+      "target": "concurrent-programming"
+    },
+    {
+      "source": "discrete-math",
+      "target": "ml-basics"
+    },
+    {
+      "source": "ml-basics",
+      "target": "deep-learning"
+    },
+    {
+      "source": "deep-learning",
+      "target": "nlp"
+    },
+    {
+      "source": "ml-basics",
+      "target": "reinforcement-learning"
+    },
+    {
+      "source": "dynamic-programming",
+      "target": "reinforcement-learning"
+    }
   ]
 }

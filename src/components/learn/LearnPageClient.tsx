@@ -68,7 +68,10 @@ export default function LearnPageClient({ nodeId, domain }: LearnPageClientProps
           <Link href={mapUrl} className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors">
             {t('common.backToMap')}
           </Link>
-          <h1 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{localize(locale, node.label, node.labels)}</h1>
+          <h1 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+            {node.number && <span className="text-sm font-normal text-zinc-400 dark:text-zinc-500 mr-1.5">{node.number}</span>}
+            {localize(locale, node.label, node.labels)}
+          </h1>
           <span className="text-xs text-zinc-500 dark:text-zinc-400">
             {'★'.repeat(node.difficulty)} · {localize(locale, node.description, node.descriptions)}
           </span>

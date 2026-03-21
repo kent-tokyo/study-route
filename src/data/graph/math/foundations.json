@@ -3,203 +3,502 @@
     {
       "id": "counting",
       "label": "数える",
-      "labels": { "ja": "数える", "en": "Counting", "zh": "计数" },
+      "labels": {
+        "ja": "数える",
+        "en": "Counting",
+        "zh": "计数"
+      },
       "area": "foundations",
       "difficulty": 1,
-      "position": { "x": 0, "y": 0 },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
       "description": "ものを数えるという最も基本的な概念。自然数の導入。",
-      "descriptions": { "ja": "ものを数えるという最も基本的な概念。自然数の導入。", "en": "The most fundamental concept of counting. Introduction of natural numbers.", "zh": "计数这一最基本的概念。自然数的引入。" },
-      "prerequisites": []
+      "descriptions": {
+        "ja": "ものを数えるという最も基本的な概念。自然数の導入。",
+        "en": "The most fundamental concept of counting. Introduction of natural numbers.",
+        "zh": "计数这一最基本的概念。自然数的引入。"
+      },
+      "prerequisites": [],
+      "number": "01-01"
     },
     {
       "id": "number-systems",
       "label": "数の体系",
-      "labels": { "ja": "数の体系", "en": "Number Systems", "zh": "数系" },
+      "labels": {
+        "ja": "数の体系",
+        "en": "Number Systems",
+        "zh": "数系"
+      },
       "area": "foundations",
       "difficulty": 1,
-      "position": { "x": 250, "y": 0 },
+      "position": {
+        "x": 250,
+        "y": 0
+      },
       "description": "自然数から整数、有理数、実数、複素数へと広がる数の世界。",
-      "descriptions": { "ja": "自然数から整数、有理数、実数、複素数へと広がる数の世界。", "en": "The world of numbers expanding from natural numbers to integers, rationals, reals, and complex numbers.", "zh": "从自然数扩展到整数、有理数、实数、复数的数的世界。" },
-      "prerequisites": ["counting"]
+      "descriptions": {
+        "ja": "自然数から整数、有理数、実数、複素数へと広がる数の世界。",
+        "en": "The world of numbers expanding from natural numbers to integers, rationals, reals, and complex numbers.",
+        "zh": "从自然数扩展到整数、有理数、实数、复数的数的世界。"
+      },
+      "prerequisites": [
+        "counting"
+      ],
+      "number": "01-02"
     },
     {
       "id": "integers",
       "label": "整数",
-      "labels": { "ja": "整数", "en": "Integers", "zh": "整数" },
+      "labels": {
+        "ja": "整数",
+        "en": "Integers",
+        "zh": "整数"
+      },
       "area": "foundations",
       "difficulty": 1,
-      "position": { "x": 500, "y": -80 },
+      "position": {
+        "x": 500,
+        "y": -80
+      },
       "description": "正の数・負の数・ゼロ。四則演算の性質。",
-      "descriptions": { "ja": "正の数・負の数・ゼロ。四則演算の性質。", "en": "Positive numbers, negative numbers, and zero. Properties of arithmetic.", "zh": "正数、负数和零。四则运算的性质。" },
-      "prerequisites": ["number-systems"]
+      "descriptions": {
+        "ja": "正の数・負の数・ゼロ。四則演算の性質。",
+        "en": "Positive numbers, negative numbers, and zero. Properties of arithmetic.",
+        "zh": "正数、负数和零。四则运算的性质。"
+      },
+      "prerequisites": [
+        "number-systems"
+      ],
+      "number": "01-03"
     },
     {
       "id": "real-numbers",
       "label": "実数",
-      "labels": { "ja": "実数", "en": "Real Numbers", "zh": "实数" },
+      "labels": {
+        "ja": "実数",
+        "en": "Real Numbers",
+        "zh": "实数"
+      },
       "area": "foundations",
       "difficulty": 2,
-      "position": { "x": 750, "y": -80 },
+      "position": {
+        "x": 750,
+        "y": -80
+      },
       "description": "有理数と無理数を合わせた連続的な数の体系。",
-      "descriptions": { "ja": "有理数と無理数を合わせた連続的な数の体系。", "en": "A continuous number system combining rationals and irrationals.", "zh": "有理数与无理数的连续数系。" },
-      "prerequisites": ["integers"]
+      "descriptions": {
+        "ja": "有理数と無理数を合わせた連続的な数の体系。",
+        "en": "A continuous number system combining rationals and irrationals.",
+        "zh": "有理数与无理数的连续数系。"
+      },
+      "prerequisites": [
+        "integers"
+      ],
+      "number": "01-04"
     },
     {
       "id": "complex-numbers",
       "label": "複素数",
-      "labels": { "ja": "複素数", "en": "Complex Numbers", "zh": "复数" },
+      "labels": {
+        "ja": "複素数",
+        "en": "Complex Numbers",
+        "zh": "复数"
+      },
       "area": "foundations",
       "difficulty": 2,
-      "position": { "x": 1000, "y": -80 },
+      "position": {
+        "x": 1000,
+        "y": -80
+      },
       "description": "実数を拡張し、虚数単位iを導入した数の体系。",
-      "descriptions": { "ja": "実数を拡張し、虚数単位iを導入した数の体系。", "en": "Number system extending reals with the imaginary unit i.", "zh": "引入虚数单位i扩展实数的数系。" },
-      "prerequisites": ["real-numbers"]
+      "descriptions": {
+        "ja": "実数を拡張し、虚数単位iを導入した数の体系。",
+        "en": "Number system extending reals with the imaginary unit i.",
+        "zh": "引入虚数单位i扩展实数的数系。"
+      },
+      "prerequisites": [
+        "real-numbers"
+      ],
+      "number": "01-05"
     },
     {
       "id": "set-theory",
       "label": "集合論",
-      "labels": { "ja": "集合論", "en": "Set Theory", "zh": "集合论" },
+      "labels": {
+        "ja": "集合論",
+        "en": "Set Theory",
+        "zh": "集合论"
+      },
       "area": "foundations",
       "difficulty": 2,
-      "position": { "x": 250, "y": 160 },
+      "position": {
+        "x": 250,
+        "y": 160
+      },
       "description": "数学の基礎言語。ものの集まりを扱う理論。",
-      "descriptions": { "ja": "数学の基礎言語。ものの集まりを扱う理論。", "en": "The foundational language of mathematics. Theory of collections.", "zh": "数学的基础语言。处理集合的理论。" },
-      "prerequisites": ["counting"]
+      "descriptions": {
+        "ja": "数学の基礎言語。ものの集まりを扱う理論。",
+        "en": "The foundational language of mathematics. Theory of collections.",
+        "zh": "数学的基础语言。处理集合的理论。"
+      },
+      "prerequisites": [
+        "counting"
+      ],
+      "number": "01-06"
     },
     {
       "id": "logic",
       "label": "数理論理学",
-      "labels": { "ja": "数理論理学", "en": "Mathematical Logic", "zh": "数理逻辑" },
+      "labels": {
+        "ja": "数理論理学",
+        "en": "Mathematical Logic",
+        "zh": "数理逻辑"
+      },
       "area": "foundations",
       "difficulty": 2,
-      "position": { "x": 500, "y": 160 },
+      "position": {
+        "x": 500,
+        "y": 160
+      },
       "description": "命題・述語・証明。数学的推論の形式化。",
-      "descriptions": { "ja": "命題・述語・証明。数学的推論の形式化。", "en": "Propositions, predicates, and proofs. Formalization of mathematical reasoning.", "zh": "命题、谓词与证明。数学推理的形式化。" },
-      "prerequisites": ["set-theory"]
+      "descriptions": {
+        "ja": "命題・述語・証明。数学的推論の形式化。",
+        "en": "Propositions, predicates, and proofs. Formalization of mathematical reasoning.",
+        "zh": "命题、谓词与证明。数学推理的形式化。"
+      },
+      "prerequisites": [
+        "set-theory"
+      ],
+      "number": "01-07"
     },
     {
       "id": "functions",
       "label": "関数",
-      "labels": { "ja": "関数", "en": "Functions", "zh": "函数" },
+      "labels": {
+        "ja": "関数",
+        "en": "Functions",
+        "zh": "函数"
+      },
       "area": "foundations",
       "difficulty": 2,
-      "position": { "x": 500, "y": 40 },
+      "position": {
+        "x": 500,
+        "y": 40
+      },
       "description": "入力と出力の対応関係。写像の概念。",
-      "descriptions": { "ja": "入力と出力の対応関係。写像の概念。", "en": "Input-output correspondence. The concept of mappings.", "zh": "输入与输出的对应关系。映射的概念。" },
-      "prerequisites": ["number-systems", "set-theory"]
+      "descriptions": {
+        "ja": "入力と出力の対応関係。写像の概念。",
+        "en": "Input-output correspondence. The concept of mappings.",
+        "zh": "输入与输出的对应关系。映射的概念。"
+      },
+      "prerequisites": [
+        "number-systems",
+        "set-theory"
+      ],
+      "number": "01-08"
     },
     {
       "id": "proof-methods",
       "label": "証明法",
-      "labels": { "ja": "証明法", "en": "Proof Methods", "zh": "证明方法" },
+      "labels": {
+        "ja": "証明法",
+        "en": "Proof Methods",
+        "zh": "证明方法"
+      },
       "area": "foundations",
       "difficulty": 2,
-      "position": { "x": 750, "y": 160 },
+      "position": {
+        "x": 750,
+        "y": 160
+      },
       "description": "直接証明・背理法・数学的帰納法。",
-      "descriptions": { "ja": "直接証明・背理法・数学的帰納法。", "en": "Direct proof, proof by contradiction, and mathematical induction.", "zh": "直接证明、反证法与数学归纳法。" },
-      "prerequisites": ["logic"]
+      "descriptions": {
+        "ja": "直接証明・背理法・数学的帰納法。",
+        "en": "Direct proof, proof by contradiction, and mathematical induction.",
+        "zh": "直接证明、反证法与数学归纳法。"
+      },
+      "prerequisites": [
+        "logic"
+      ],
+      "number": "01-09"
     },
     {
       "id": "combinatorics",
       "label": "組合せ論",
-      "labels": { "ja": "組合せ論", "en": "Combinatorics", "zh": "组合学" },
+      "labels": {
+        "ja": "組合せ論",
+        "en": "Combinatorics",
+        "zh": "组合学"
+      },
       "area": "foundations",
       "difficulty": 2,
-      "position": { "x": 750, "y": 40 },
+      "position": {
+        "x": 750,
+        "y": 40
+      },
       "description": "順列・組合せ・数え上げの方法。",
-      "descriptions": { "ja": "順列・組合せ・数え上げの方法。", "en": "Permutations, combinations, and counting methods.", "zh": "排列、组合与计数方法。" },
-      "prerequisites": ["functions"]
+      "descriptions": {
+        "ja": "順列・組合せ・数え上げの方法。",
+        "en": "Permutations, combinations, and counting methods.",
+        "zh": "排列、组合与计数方法。"
+      },
+      "prerequisites": [
+        "functions"
+      ],
+      "number": "01-10"
     },
     {
       "id": "relations",
       "label": "関係",
-      "labels": { "ja": "関係", "en": "Relations", "zh": "关系" },
+      "labels": {
+        "ja": "関係",
+        "en": "Relations",
+        "zh": "关系"
+      },
       "area": "foundations",
       "difficulty": 2,
-      "position": { "x": 750, "y": -160 },
+      "position": {
+        "x": 750,
+        "y": -160
+      },
       "description": "同値関係・順序関係。集合上の二項関係の理論。",
-      "descriptions": { "ja": "同値関係・順序関係。集合上の二項関係の理論。", "en": "Equivalence and order relations. Theory of binary relations on sets.", "zh": "等价关系与序关系。集合上二元关系的理论。" },
-      "prerequisites": ["set-theory", "functions"]
+      "descriptions": {
+        "ja": "同値関係・順序関係。集合上の二項関係の理論。",
+        "en": "Equivalence and order relations. Theory of binary relations on sets.",
+        "zh": "等价关系与序关系。集合上二元关系的理论。"
+      },
+      "prerequisites": [
+        "set-theory",
+        "functions"
+      ],
+      "number": "01-11"
     },
     {
       "id": "order-theory",
       "label": "順序理論",
-      "labels": { "ja": "順序理論", "en": "Order Theory", "zh": "序理论" },
+      "labels": {
+        "ja": "順序理論",
+        "en": "Order Theory",
+        "zh": "序理论"
+      },
       "area": "foundations",
       "difficulty": 3,
-      "position": { "x": 1000, "y": 160 },
+      "position": {
+        "x": 1000,
+        "y": 160
+      },
       "description": "半順序・全順序・束。順序構造の数学。",
-      "descriptions": { "ja": "半順序・全順序・束。順序構造の数学。", "en": "Partial orders, total orders, and lattices.", "zh": "偏序、全序与格。序结构的数学。" },
-      "prerequisites": ["set-theory", "proof-methods"]
+      "descriptions": {
+        "ja": "半順序・全順序・束。順序構造の数学。",
+        "en": "Partial orders, total orders, and lattices.",
+        "zh": "偏序、全序与格。序结构的数学。"
+      },
+      "prerequisites": [
+        "set-theory",
+        "proof-methods"
+      ],
+      "number": "01-12"
     },
     {
       "id": "mathematical-logic-advanced",
       "label": "数理論理学(発展)",
-      "labels": { "ja": "数理論理学(発展)", "en": "Advanced Logic", "zh": "高级数理逻辑" },
+      "labels": {
+        "ja": "数理論理学(発展)",
+        "en": "Advanced Logic",
+        "zh": "高级数理逻辑"
+      },
       "area": "foundations",
       "difficulty": 3,
-      "position": { "x": 1000, "y": 280 },
+      "position": {
+        "x": 1000,
+        "y": 280
+      },
       "description": "モデル理論・証明論。形式的体系の深い理論。",
-      "descriptions": { "ja": "モデル理論・証明論。形式的体系の深い理論。", "en": "Model theory and proof theory. Deep theory of formal systems.", "zh": "模型论与证明论。形式系统的深层理论。" },
-      "prerequisites": ["logic", "proof-methods"]
+      "descriptions": {
+        "ja": "モデル理論・証明論。形式的体系の深い理論。",
+        "en": "Model theory and proof theory. Deep theory of formal systems.",
+        "zh": "模型论与证明论。形式系统的深层理论。"
+      },
+      "prerequisites": [
+        "logic",
+        "proof-methods"
+      ],
+      "number": "01-13"
     },
     {
       "id": "axiomatic-set-theory",
       "label": "公理的集合論",
-      "labels": { "ja": "公理的集合論", "en": "Axiomatic Set Theory", "zh": "公理集合论" },
+      "labels": {
+        "ja": "公理的集合論",
+        "en": "Axiomatic Set Theory",
+        "zh": "公理集合论"
+      },
       "area": "foundations",
       "difficulty": 4,
-      "position": { "x": 1250, "y": 40 },
+      "position": {
+        "x": 1250,
+        "y": 40
+      },
       "description": "ZFC公理系。集合論の厳密な基礎付け。",
-      "descriptions": { "ja": "ZFC公理系。集合論の厳密な基礎付け。", "en": "ZFC axioms. Rigorous foundation of set theory.", "zh": "ZFC公理系统。集合论的严格基础。" },
-      "prerequisites": ["set-theory", "mathematical-logic-advanced"]
+      "descriptions": {
+        "ja": "ZFC公理系。集合論の厳密な基礎付け。",
+        "en": "ZFC axioms. Rigorous foundation of set theory.",
+        "zh": "ZFC公理系统。集合论的严格基础。"
+      },
+      "prerequisites": [
+        "set-theory",
+        "mathematical-logic-advanced"
+      ],
+      "number": "01-14"
     },
     {
       "id": "computability",
       "label": "計算可能性理論",
-      "labels": { "ja": "計算可能性理論", "en": "Computability Theory", "zh": "可计算性理论" },
+      "labels": {
+        "ja": "計算可能性理論",
+        "en": "Computability Theory",
+        "zh": "可计算性理论"
+      },
       "area": "foundations",
       "difficulty": 4,
-      "position": { "x": 1250, "y": 280 },
+      "position": {
+        "x": 1250,
+        "y": 280
+      },
       "description": "チューリング機械・決定不能性・再帰関数。",
-      "descriptions": { "ja": "チューリング機械・決定不能性・再帰関数。", "en": "Turing machines, undecidability, and recursive functions.", "zh": "图灵机、不可判定性与递归函数。" },
-      "prerequisites": ["mathematical-logic-advanced", "functions"]
+      "descriptions": {
+        "ja": "チューリング機械・決定不能性・再帰関数。",
+        "en": "Turing machines, undecidability, and recursive functions.",
+        "zh": "图灵机、不可判定性与递归函数。"
+      },
+      "prerequisites": [
+        "mathematical-logic-advanced",
+        "functions"
+      ],
+      "number": "01-15"
     },
     {
       "id": "category-theory",
       "label": "圏論",
-      "labels": { "ja": "圏論", "en": "Category Theory", "zh": "范畴论" },
+      "labels": {
+        "ja": "圏論",
+        "en": "Category Theory",
+        "zh": "范畴论"
+      },
       "area": "foundations",
       "difficulty": 4,
-      "position": { "x": 1250, "y": 160 },
+      "position": {
+        "x": 1250,
+        "y": 160
+      },
       "description": "対象と射の抽象理論。数学の統一的枠組み。",
-      "descriptions": { "ja": "対象と射の抽象理論。数学の統一的枠組み。", "en": "Abstract theory of objects and morphisms. A unifying framework for mathematics.", "zh": "对象与态射的抽象理论。数学的统一框架。" },
-      "prerequisites": ["set-theory", "proof-methods", "functions"]
+      "descriptions": {
+        "ja": "対象と射の抽象理論。数学の統一的枠組み。",
+        "en": "Abstract theory of objects and morphisms. A unifying framework for mathematics.",
+        "zh": "对象与态射的抽象理论。数学的统一框架。"
+      },
+      "prerequisites": [
+        "set-theory",
+        "proof-methods",
+        "functions"
+      ],
+      "number": "01-16"
     }
   ],
   "edges": [
-    { "source": "counting", "target": "number-systems" },
-    { "source": "number-systems", "target": "integers" },
-    { "source": "integers", "target": "real-numbers" },
-    { "source": "real-numbers", "target": "complex-numbers" },
-    { "source": "counting", "target": "set-theory" },
-    { "source": "set-theory", "target": "logic" },
-    { "source": "number-systems", "target": "functions" },
-    { "source": "set-theory", "target": "functions" },
-    { "source": "logic", "target": "proof-methods" },
-    { "source": "functions", "target": "combinatorics" },
-    { "source": "set-theory", "target": "relations" },
-    { "source": "functions", "target": "relations" },
-    { "source": "set-theory", "target": "order-theory" },
-    { "source": "proof-methods", "target": "order-theory" },
-    { "source": "logic", "target": "mathematical-logic-advanced" },
-    { "source": "proof-methods", "target": "mathematical-logic-advanced" },
-    { "source": "set-theory", "target": "axiomatic-set-theory" },
-    { "source": "mathematical-logic-advanced", "target": "axiomatic-set-theory" },
-    { "source": "mathematical-logic-advanced", "target": "computability" },
-    { "source": "functions", "target": "computability" },
-    { "source": "set-theory", "target": "category-theory" },
-    { "source": "proof-methods", "target": "category-theory" },
-    { "source": "functions", "target": "category-theory" }
+    {
+      "source": "counting",
+      "target": "number-systems"
+    },
+    {
+      "source": "number-systems",
+      "target": "integers"
+    },
+    {
+      "source": "integers",
+      "target": "real-numbers"
+    },
+    {
+      "source": "real-numbers",
+      "target": "complex-numbers"
+    },
+    {
+      "source": "counting",
+      "target": "set-theory"
+    },
+    {
+      "source": "set-theory",
+      "target": "logic"
+    },
+    {
+      "source": "number-systems",
+      "target": "functions"
+    },
+    {
+      "source": "set-theory",
+      "target": "functions"
+    },
+    {
+      "source": "logic",
+      "target": "proof-methods"
+    },
+    {
+      "source": "functions",
+      "target": "combinatorics"
+    },
+    {
+      "source": "set-theory",
+      "target": "relations"
+    },
+    {
+      "source": "functions",
+      "target": "relations"
+    },
+    {
+      "source": "set-theory",
+      "target": "order-theory"
+    },
+    {
+      "source": "proof-methods",
+      "target": "order-theory"
+    },
+    {
+      "source": "logic",
+      "target": "mathematical-logic-advanced"
+    },
+    {
+      "source": "proof-methods",
+      "target": "mathematical-logic-advanced"
+    },
+    {
+      "source": "set-theory",
+      "target": "axiomatic-set-theory"
+    },
+    {
+      "source": "mathematical-logic-advanced",
+      "target": "axiomatic-set-theory"
+    },
+    {
+      "source": "mathematical-logic-advanced",
+      "target": "computability"
+    },
+    {
+      "source": "functions",
+      "target": "computability"
+    },
+    {
+      "source": "set-theory",
+      "target": "category-theory"
+    },
+    {
+      "source": "proof-methods",
+      "target": "category-theory"
+    },
+    {
+      "source": "functions",
+      "target": "category-theory"
+    }
   ]
 }

@@ -90,6 +90,7 @@ export default function SphereGrid({
         draggable: false,
         data: {
           label: localize(locale, n.label, n.labels),
+          number: n.number,
           description: localize(locale, n.description, n.descriptions),
           area: n.area,
           difficulty: n.difficulty,

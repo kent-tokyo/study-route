@@ -1,65 +1,709 @@
 {
   "nodes": [
-    { "id": "propositional-logic", "label": "命題論理", "labels": { "ja": "命題論理", "en": "Propositional Logic", "zh": "命题逻辑" }, "area": "logic", "difficulty": 1, "position": { "x": 0, "y": 0 }, "description": "命題と論理結合子の基本", "descriptions": { "ja": "命題と論理結合子の基本", "en": "Basics of propositions and logical connectives", "zh": "命题与逻辑连接词的基础" }, "prerequisites": [] },
-    { "id": "predicate-logic", "label": "述語論理", "labels": { "ja": "述語論理", "en": "Predicate Logic", "zh": "谓词逻辑" }, "area": "logic", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "量化子と述語による推論体系", "descriptions": { "ja": "量化子と述語による推論体系", "en": "Reasoning system using quantifiers and predicates", "zh": "使用量词和谓词的推理体系" }, "prerequisites": ["propositional-logic"] },
-    { "id": "modal-logic", "label": "様相論理", "labels": { "ja": "様相論理", "en": "Modal Logic", "zh": "模态逻辑" }, "area": "logic", "difficulty": 4, "position": { "x": 400, "y": 0 }, "description": "可能性と必然性を扱う論理体系", "descriptions": { "ja": "可能性と必然性を扱う論理体系", "en": "Logic of possibility and necessity", "zh": "处理可能性与必然性的逻辑体系" }, "prerequisites": ["predicate-logic"] },
-    { "id": "informal-fallacies", "label": "非形式的誤謬", "labels": { "ja": "非形式的誤謬", "en": "Informal Fallacies", "zh": "非形式谬误" }, "area": "logic", "difficulty": 2, "position": { "x": 100, "y": 150 }, "description": "日常的推論に潜む典型的な誤り", "descriptions": { "ja": "日常的推論に潜む典型的な誤り", "en": "Common errors lurking in everyday reasoning", "zh": "日常推理中潜藏的典型错误" }, "prerequisites": ["propositional-logic"] },
-
-    { "id": "truth", "label": "真理論", "labels": { "ja": "真理論", "en": "Theory of Truth", "zh": "真理论" }, "area": "epistemology", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "真理の定義と条件を考える", "descriptions": { "ja": "真理の定義と条件を考える", "en": "Exploring the definition and conditions of truth", "zh": "思考真理的定义与条件" }, "prerequisites": [] },
-    { "id": "justification", "label": "正当化", "labels": { "ja": "正当化", "en": "Justification", "zh": "证成" }, "area": "epistemology", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "信念が知識となるための正当化条件", "descriptions": { "ja": "信念が知識となるための正当化条件", "en": "Conditions for beliefs to become knowledge", "zh": "信念成为知识的证成条件" }, "prerequisites": ["truth"] },
-    { "id": "skepticism", "label": "懐疑論", "labels": { "ja": "懐疑論", "en": "Skepticism", "zh": "怀疑论" }, "area": "epistemology", "difficulty": 3, "position": { "x": 400, "y": 0 }, "description": "知識の可能性を問い直す", "descriptions": { "ja": "知識の可能性を問い直す", "en": "Questioning the possibility of knowledge", "zh": "质疑知识的可能性" }, "prerequisites": ["justification"] },
-    { "id": "rationalism-empiricism", "label": "合理論と経験論", "labels": { "ja": "合理論と経験論", "en": "Rationalism & Empiricism", "zh": "理性主义与经验主义" }, "area": "epistemology", "difficulty": 3, "position": { "x": 200, "y": 150 }, "description": "知識の源泉は理性か経験か", "descriptions": { "ja": "知識の源泉は理性か経験か", "en": "Is the source of knowledge reason or experience?", "zh": "知识的来源是理性还是经验？" }, "prerequisites": ["truth", "justification"] },
-    { "id": "philosophy-of-science", "label": "科学哲学", "labels": { "ja": "科学哲学", "en": "Philosophy of Science", "zh": "科学哲学" }, "area": "epistemology", "difficulty": 4, "position": { "x": 400, "y": 150 }, "description": "科学的方法・反証可能性・パラダイム転換", "descriptions": { "ja": "科学的方法・反証可能性・パラダイム転換", "en": "Scientific method, falsifiability, and paradigm shifts", "zh": "科学方法、可证伪性与范式转换" }, "prerequisites": ["skepticism", "rationalism-empiricism"] },
-
-    { "id": "utilitarianism", "label": "功利主義", "labels": { "ja": "功利主義", "en": "Utilitarianism", "zh": "功利主义" }, "area": "ethics", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "最大多数の最大幸福を目指す倫理理論", "descriptions": { "ja": "最大多数の最大幸福を目指す倫理理論", "en": "Ethical theory aiming for the greatest happiness of the greatest number", "zh": "追求最大多数人最大幸福的伦理理论" }, "prerequisites": [] },
-    { "id": "deontology", "label": "義務論", "labels": { "ja": "義務論", "en": "Deontology", "zh": "义务论" }, "area": "ethics", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "行為の正しさは義務と規則で決まる", "descriptions": { "ja": "行為の正しさは義務と規則で決まる", "en": "Rightness of action is determined by duty and rules", "zh": "行为的正确性由义务和规则决定" }, "prerequisites": [] },
-    { "id": "virtue-ethics", "label": "徳倫理学", "labels": { "ja": "徳倫理学", "en": "Virtue Ethics", "zh": "德性伦理学" }, "area": "ethics", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "良い人格・徳を中心に据える倫理学", "descriptions": { "ja": "良い人格・徳を中心に据える倫理学", "en": "Ethics centered on good character and virtue", "zh": "以良好品格与德性为核心的伦理学" }, "prerequisites": ["utilitarianism", "deontology"] },
-    { "id": "justice", "label": "正義論", "labels": { "ja": "正義論", "en": "Theory of Justice", "zh": "正义论" }, "area": "ethics", "difficulty": 4, "position": { "x": 300, "y": 150 }, "description": "ロールズの正義論・分配的正義・公正としての正義", "descriptions": { "ja": "ロールズの正義論・分配的正義・公正としての正義", "en": "Rawls' theory of justice, distributive justice, justice as fairness", "zh": "罗尔斯正义论、分配正义、作为公平的正义" }, "prerequisites": ["deontology", "utilitarianism"] },
-    { "id": "bioethics", "label": "生命倫理", "labels": { "ja": "生命倫理", "en": "Bioethics", "zh": "生命伦理" }, "area": "ethics", "difficulty": 3, "position": { "x": 400, "y": 0 }, "description": "医療・生殖・遺伝子操作の倫理的問題", "descriptions": { "ja": "医療・生殖・遺伝子操作の倫理的問題", "en": "Ethical issues in medicine, reproduction, and genetic engineering", "zh": "医疗、生殖与基因工程的伦理问题" }, "prerequisites": ["utilitarianism", "deontology"] },
-    { "id": "environmental-ethics", "label": "環境倫理", "labels": { "ja": "環境倫理", "en": "Environmental Ethics", "zh": "环境伦理" }, "area": "ethics", "difficulty": 3, "position": { "x": 200, "y": -150 }, "description": "自然環境・動物・未来世代への道徳的責任", "descriptions": { "ja": "自然環境・動物・未来世代への道徳的責任", "en": "Moral responsibility toward nature, animals, and future generations", "zh": "对自然环境、动物与未来世代的道德责任" }, "prerequisites": ["utilitarianism"] },
-
-    { "id": "ontology", "label": "存在論", "labels": { "ja": "存在論", "en": "Ontology", "zh": "本体论" }, "area": "metaphysics", "difficulty": 3, "position": { "x": 0, "y": 0 }, "description": "何が存在するか、存在とは何か", "descriptions": { "ja": "何が存在するか、存在とは何か", "en": "What exists, and what is existence?", "zh": "什么存在，存在是什么？" }, "prerequisites": [] },
-    { "id": "causation", "label": "因果論", "labels": { "ja": "因果論", "en": "Causation", "zh": "因果论" }, "area": "metaphysics", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "原因と結果の関係を分析する", "descriptions": { "ja": "原因と結果の関係を分析する", "en": "Analyzing the relationship between cause and effect", "zh": "分析原因与结果的关系" }, "prerequisites": ["ontology"] },
-    { "id": "free-will", "label": "自由意志", "labels": { "ja": "自由意志", "en": "Free Will", "zh": "自由意志" }, "area": "metaphysics", "difficulty": 3, "position": { "x": 400, "y": 0 }, "description": "決定論と自由意志の両立可能性", "descriptions": { "ja": "決定論と自由意志の両立可能性", "en": "Compatibility of determinism and free will", "zh": "决定论与自由意志的兼容可能性" }, "prerequisites": ["causation"] },
-    { "id": "mind-body", "label": "心身問題", "labels": { "ja": "心身問題", "en": "Mind-Body Problem", "zh": "身心问题" }, "area": "metaphysics", "difficulty": 4, "position": { "x": 100, "y": 150 }, "description": "心と身体の関係・意識のハードプロブレム", "descriptions": { "ja": "心と身体の関係・意識のハードプロブレム", "en": "Relation between mind and body; the hard problem of consciousness", "zh": "心与身的关系、意识的困难问题" }, "prerequisites": ["ontology"] },
-    { "id": "time-space", "label": "時間と空間", "labels": { "ja": "時間と空間", "en": "Time & Space", "zh": "时间与空间" }, "area": "metaphysics", "difficulty": 4, "position": { "x": 300, "y": 150 }, "description": "時間の本質・空間の実在性・相対主義", "descriptions": { "ja": "時間の本質・空間の実在性・相対主義", "en": "Nature of time, reality of space, and relativism", "zh": "时间的本质、空间的实在性与相对主义" }, "prerequisites": ["ontology", "causation"] },
-
-    { "id": "beauty", "label": "美の概念", "labels": { "ja": "美の概念", "en": "Concept of Beauty", "zh": "美的概念" }, "area": "aesthetics", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "美とは何か、その主観性と客観性", "descriptions": { "ja": "美とは何か、その主観性と客観性", "en": "What is beauty? Its subjectivity and objectivity", "zh": "什么是美？其主观性与客观性" }, "prerequisites": [] },
-    { "id": "art-philosophy", "label": "芸術哲学", "labels": { "ja": "芸術哲学", "en": "Philosophy of Art", "zh": "艺术哲学" }, "area": "aesthetics", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "芸術作品の本質と価値を考える", "descriptions": { "ja": "芸術作品の本質と価値を考える", "en": "Exploring the essence and value of artworks", "zh": "思考艺术作品的本质与价值" }, "prerequisites": ["beauty"] },
-    { "id": "sublime", "label": "崇高", "labels": { "ja": "崇高", "en": "The Sublime", "zh": "崇高" }, "area": "aesthetics", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "圧倒的な自然や偉大さが喚起する感情", "descriptions": { "ja": "圧倒的な自然や偉大さが喚起する感情", "en": "Emotions evoked by overwhelming nature and greatness", "zh": "压倒性的自然与伟大所唤起的情感" }, "prerequisites": ["beauty"] },
-    { "id": "aesthetic-judgment", "label": "美的判断", "labels": { "ja": "美的判断", "en": "Aesthetic Judgment", "zh": "审美判断" }, "area": "aesthetics", "difficulty": 4, "position": { "x": 300, "y": 150 }, "description": "カントの趣味判断・美的経験の普遍性", "descriptions": { "ja": "カントの趣味判断・美的経験の普遍性", "en": "Kant's judgment of taste and universality of aesthetic experience", "zh": "康德的趣味判断与审美经验的普遍性" }, "prerequisites": ["beauty", "art-philosophy"] }
+    {
+      "id": "propositional-logic",
+      "label": "命題論理",
+      "labels": {
+        "ja": "命題論理",
+        "en": "Propositional Logic",
+        "zh": "命题逻辑"
+      },
+      "area": "logic",
+      "difficulty": 1,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "命題と論理結合子の基本",
+      "descriptions": {
+        "ja": "命題と論理結合子の基本",
+        "en": "Basics of propositions and logical connectives",
+        "zh": "命题与逻辑连接词的基础"
+      },
+      "prerequisites": [],
+      "number": "01-01"
+    },
+    {
+      "id": "predicate-logic",
+      "label": "述語論理",
+      "labels": {
+        "ja": "述語論理",
+        "en": "Predicate Logic",
+        "zh": "谓词逻辑"
+      },
+      "area": "logic",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "量化子と述語による推論体系",
+      "descriptions": {
+        "ja": "量化子と述語による推論体系",
+        "en": "Reasoning system using quantifiers and predicates",
+        "zh": "使用量词和谓词的推理体系"
+      },
+      "prerequisites": [
+        "propositional-logic"
+      ],
+      "number": "01-02"
+    },
+    {
+      "id": "modal-logic",
+      "label": "様相論理",
+      "labels": {
+        "ja": "様相論理",
+        "en": "Modal Logic",
+        "zh": "模态逻辑"
+      },
+      "area": "logic",
+      "difficulty": 4,
+      "position": {
+        "x": 400,
+        "y": 0
+      },
+      "description": "可能性と必然性を扱う論理体系",
+      "descriptions": {
+        "ja": "可能性と必然性を扱う論理体系",
+        "en": "Logic of possibility and necessity",
+        "zh": "处理可能性与必然性的逻辑体系"
+      },
+      "prerequisites": [
+        "predicate-logic"
+      ],
+      "number": "01-03"
+    },
+    {
+      "id": "informal-fallacies",
+      "label": "非形式的誤謬",
+      "labels": {
+        "ja": "非形式的誤謬",
+        "en": "Informal Fallacies",
+        "zh": "非形式谬误"
+      },
+      "area": "logic",
+      "difficulty": 2,
+      "position": {
+        "x": 100,
+        "y": 150
+      },
+      "description": "日常的推論に潜む典型的な誤り",
+      "descriptions": {
+        "ja": "日常的推論に潜む典型的な誤り",
+        "en": "Common errors lurking in everyday reasoning",
+        "zh": "日常推理中潜藏的典型错误"
+      },
+      "prerequisites": [
+        "propositional-logic"
+      ],
+      "number": "01-04"
+    },
+    {
+      "id": "truth",
+      "label": "真理論",
+      "labels": {
+        "ja": "真理論",
+        "en": "Theory of Truth",
+        "zh": "真理论"
+      },
+      "area": "epistemology",
+      "difficulty": 2,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "真理の定義と条件を考える",
+      "descriptions": {
+        "ja": "真理の定義と条件を考える",
+        "en": "Exploring the definition and conditions of truth",
+        "zh": "思考真理的定义与条件"
+      },
+      "prerequisites": [],
+      "number": "02-01"
+    },
+    {
+      "id": "justification",
+      "label": "正当化",
+      "labels": {
+        "ja": "正当化",
+        "en": "Justification",
+        "zh": "证成"
+      },
+      "area": "epistemology",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "信念が知識となるための正当化条件",
+      "descriptions": {
+        "ja": "信念が知識となるための正当化条件",
+        "en": "Conditions for beliefs to become knowledge",
+        "zh": "信念成为知识的证成条件"
+      },
+      "prerequisites": [
+        "truth"
+      ],
+      "number": "02-02"
+    },
+    {
+      "id": "skepticism",
+      "label": "懐疑論",
+      "labels": {
+        "ja": "懐疑論",
+        "en": "Skepticism",
+        "zh": "怀疑论"
+      },
+      "area": "epistemology",
+      "difficulty": 3,
+      "position": {
+        "x": 400,
+        "y": 0
+      },
+      "description": "知識の可能性を問い直す",
+      "descriptions": {
+        "ja": "知識の可能性を問い直す",
+        "en": "Questioning the possibility of knowledge",
+        "zh": "质疑知识的可能性"
+      },
+      "prerequisites": [
+        "justification"
+      ],
+      "number": "02-03"
+    },
+    {
+      "id": "rationalism-empiricism",
+      "label": "合理論と経験論",
+      "labels": {
+        "ja": "合理論と経験論",
+        "en": "Rationalism & Empiricism",
+        "zh": "理性主义与经验主义"
+      },
+      "area": "epistemology",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": 150
+      },
+      "description": "知識の源泉は理性か経験か",
+      "descriptions": {
+        "ja": "知識の源泉は理性か経験か",
+        "en": "Is the source of knowledge reason or experience?",
+        "zh": "知识的来源是理性还是经验？"
+      },
+      "prerequisites": [
+        "truth",
+        "justification"
+      ],
+      "number": "02-04"
+    },
+    {
+      "id": "philosophy-of-science",
+      "label": "科学哲学",
+      "labels": {
+        "ja": "科学哲学",
+        "en": "Philosophy of Science",
+        "zh": "科学哲学"
+      },
+      "area": "epistemology",
+      "difficulty": 4,
+      "position": {
+        "x": 400,
+        "y": 150
+      },
+      "description": "科学的方法・反証可能性・パラダイム転換",
+      "descriptions": {
+        "ja": "科学的方法・反証可能性・パラダイム転換",
+        "en": "Scientific method, falsifiability, and paradigm shifts",
+        "zh": "科学方法、可证伪性与范式转换"
+      },
+      "prerequisites": [
+        "skepticism",
+        "rationalism-empiricism"
+      ],
+      "number": "02-05"
+    },
+    {
+      "id": "utilitarianism",
+      "label": "功利主義",
+      "labels": {
+        "ja": "功利主義",
+        "en": "Utilitarianism",
+        "zh": "功利主义"
+      },
+      "area": "ethics",
+      "difficulty": 2,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "最大多数の最大幸福を目指す倫理理論",
+      "descriptions": {
+        "ja": "最大多数の最大幸福を目指す倫理理論",
+        "en": "Ethical theory aiming for the greatest happiness of the greatest number",
+        "zh": "追求最大多数人最大幸福的伦理理论"
+      },
+      "prerequisites": [],
+      "number": "03-01"
+    },
+    {
+      "id": "deontology",
+      "label": "義務論",
+      "labels": {
+        "ja": "義務論",
+        "en": "Deontology",
+        "zh": "义务论"
+      },
+      "area": "ethics",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "行為の正しさは義務と規則で決まる",
+      "descriptions": {
+        "ja": "行為の正しさは義務と規則で決まる",
+        "en": "Rightness of action is determined by duty and rules",
+        "zh": "行为的正确性由义务和规则决定"
+      },
+      "prerequisites": [],
+      "number": "03-02"
+    },
+    {
+      "id": "virtue-ethics",
+      "label": "徳倫理学",
+      "labels": {
+        "ja": "徳倫理学",
+        "en": "Virtue Ethics",
+        "zh": "德性伦理学"
+      },
+      "area": "ethics",
+      "difficulty": 3,
+      "position": {
+        "x": 100,
+        "y": 150
+      },
+      "description": "良い人格・徳を中心に据える倫理学",
+      "descriptions": {
+        "ja": "良い人格・徳を中心に据える倫理学",
+        "en": "Ethics centered on good character and virtue",
+        "zh": "以良好品格与德性为核心的伦理学"
+      },
+      "prerequisites": [
+        "utilitarianism",
+        "deontology"
+      ],
+      "number": "03-03"
+    },
+    {
+      "id": "justice",
+      "label": "正義論",
+      "labels": {
+        "ja": "正義論",
+        "en": "Theory of Justice",
+        "zh": "正义论"
+      },
+      "area": "ethics",
+      "difficulty": 4,
+      "position": {
+        "x": 300,
+        "y": 150
+      },
+      "description": "ロールズの正義論・分配的正義・公正としての正義",
+      "descriptions": {
+        "ja": "ロールズの正義論・分配的正義・公正としての正義",
+        "en": "Rawls' theory of justice, distributive justice, justice as fairness",
+        "zh": "罗尔斯正义论、分配正义、作为公平的正义"
+      },
+      "prerequisites": [
+        "deontology",
+        "utilitarianism"
+      ],
+      "number": "03-04"
+    },
+    {
+      "id": "bioethics",
+      "label": "生命倫理",
+      "labels": {
+        "ja": "生命倫理",
+        "en": "Bioethics",
+        "zh": "生命伦理"
+      },
+      "area": "ethics",
+      "difficulty": 3,
+      "position": {
+        "x": 400,
+        "y": 0
+      },
+      "description": "医療・生殖・遺伝子操作の倫理的問題",
+      "descriptions": {
+        "ja": "医療・生殖・遺伝子操作の倫理的問題",
+        "en": "Ethical issues in medicine, reproduction, and genetic engineering",
+        "zh": "医疗、生殖与基因工程的伦理问题"
+      },
+      "prerequisites": [
+        "utilitarianism",
+        "deontology"
+      ],
+      "number": "03-05"
+    },
+    {
+      "id": "environmental-ethics",
+      "label": "環境倫理",
+      "labels": {
+        "ja": "環境倫理",
+        "en": "Environmental Ethics",
+        "zh": "环境伦理"
+      },
+      "area": "ethics",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": -150
+      },
+      "description": "自然環境・動物・未来世代への道徳的責任",
+      "descriptions": {
+        "ja": "自然環境・動物・未来世代への道徳的責任",
+        "en": "Moral responsibility toward nature, animals, and future generations",
+        "zh": "对自然环境、动物与未来世代的道德责任"
+      },
+      "prerequisites": [
+        "utilitarianism"
+      ],
+      "number": "03-06"
+    },
+    {
+      "id": "ontology",
+      "label": "存在論",
+      "labels": {
+        "ja": "存在論",
+        "en": "Ontology",
+        "zh": "本体论"
+      },
+      "area": "metaphysics",
+      "difficulty": 3,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "何が存在するか、存在とは何か",
+      "descriptions": {
+        "ja": "何が存在するか、存在とは何か",
+        "en": "What exists, and what is existence?",
+        "zh": "什么存在，存在是什么？"
+      },
+      "prerequisites": [],
+      "number": "04-01"
+    },
+    {
+      "id": "causation",
+      "label": "因果論",
+      "labels": {
+        "ja": "因果論",
+        "en": "Causation",
+        "zh": "因果论"
+      },
+      "area": "metaphysics",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "原因と結果の関係を分析する",
+      "descriptions": {
+        "ja": "原因と結果の関係を分析する",
+        "en": "Analyzing the relationship between cause and effect",
+        "zh": "分析原因与结果的关系"
+      },
+      "prerequisites": [
+        "ontology"
+      ],
+      "number": "04-02"
+    },
+    {
+      "id": "free-will",
+      "label": "自由意志",
+      "labels": {
+        "ja": "自由意志",
+        "en": "Free Will",
+        "zh": "自由意志"
+      },
+      "area": "metaphysics",
+      "difficulty": 3,
+      "position": {
+        "x": 400,
+        "y": 0
+      },
+      "description": "決定論と自由意志の両立可能性",
+      "descriptions": {
+        "ja": "決定論と自由意志の両立可能性",
+        "en": "Compatibility of determinism and free will",
+        "zh": "决定论与自由意志的兼容可能性"
+      },
+      "prerequisites": [
+        "causation"
+      ],
+      "number": "04-03"
+    },
+    {
+      "id": "mind-body",
+      "label": "心身問題",
+      "labels": {
+        "ja": "心身問題",
+        "en": "Mind-Body Problem",
+        "zh": "身心问题"
+      },
+      "area": "metaphysics",
+      "difficulty": 4,
+      "position": {
+        "x": 100,
+        "y": 150
+      },
+      "description": "心と身体の関係・意識のハードプロブレム",
+      "descriptions": {
+        "ja": "心と身体の関係・意識のハードプロブレム",
+        "en": "Relation between mind and body; the hard problem of consciousness",
+        "zh": "心与身的关系、意识的困难问题"
+      },
+      "prerequisites": [
+        "ontology"
+      ],
+      "number": "04-04"
+    },
+    {
+      "id": "time-space",
+      "label": "時間と空間",
+      "labels": {
+        "ja": "時間と空間",
+        "en": "Time & Space",
+        "zh": "时间与空间"
+      },
+      "area": "metaphysics",
+      "difficulty": 4,
+      "position": {
+        "x": 300,
+        "y": 150
+      },
+      "description": "時間の本質・空間の実在性・相対主義",
+      "descriptions": {
+        "ja": "時間の本質・空間の実在性・相対主義",
+        "en": "Nature of time, reality of space, and relativism",
+        "zh": "时间的本质、空间的实在性与相对主义"
+      },
+      "prerequisites": [
+        "ontology",
+        "causation"
+      ],
+      "number": "04-05"
+    },
+    {
+      "id": "beauty",
+      "label": "美の概念",
+      "labels": {
+        "ja": "美の概念",
+        "en": "Concept of Beauty",
+        "zh": "美的概念"
+      },
+      "area": "aesthetics",
+      "difficulty": 2,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "description": "美とは何か、その主観性と客観性",
+      "descriptions": {
+        "ja": "美とは何か、その主観性と客観性",
+        "en": "What is beauty? Its subjectivity and objectivity",
+        "zh": "什么是美？其主观性与客观性"
+      },
+      "prerequisites": [],
+      "number": "05-01"
+    },
+    {
+      "id": "art-philosophy",
+      "label": "芸術哲学",
+      "labels": {
+        "ja": "芸術哲学",
+        "en": "Philosophy of Art",
+        "zh": "艺术哲学"
+      },
+      "area": "aesthetics",
+      "difficulty": 3,
+      "position": {
+        "x": 200,
+        "y": 0
+      },
+      "description": "芸術作品の本質と価値を考える",
+      "descriptions": {
+        "ja": "芸術作品の本質と価値を考える",
+        "en": "Exploring the essence and value of artworks",
+        "zh": "思考艺术作品的本质与价值"
+      },
+      "prerequisites": [
+        "beauty"
+      ],
+      "number": "05-02"
+    },
+    {
+      "id": "sublime",
+      "label": "崇高",
+      "labels": {
+        "ja": "崇高",
+        "en": "The Sublime",
+        "zh": "崇高"
+      },
+      "area": "aesthetics",
+      "difficulty": 3,
+      "position": {
+        "x": 100,
+        "y": 150
+      },
+      "description": "圧倒的な自然や偉大さが喚起する感情",
+      "descriptions": {
+        "ja": "圧倒的な自然や偉大さが喚起する感情",
+        "en": "Emotions evoked by overwhelming nature and greatness",
+        "zh": "压倒性的自然与伟大所唤起的情感"
+      },
+      "prerequisites": [
+        "beauty"
+      ],
+      "number": "05-03"
+    },
+    {
+      "id": "aesthetic-judgment",
+      "label": "美的判断",
+      "labels": {
+        "ja": "美的判断",
+        "en": "Aesthetic Judgment",
+        "zh": "审美判断"
+      },
+      "area": "aesthetics",
+      "difficulty": 4,
+      "position": {
+        "x": 300,
+        "y": 150
+      },
+      "description": "カントの趣味判断・美的経験の普遍性",
+      "descriptions": {
+        "ja": "カントの趣味判断・美的経験の普遍性",
+        "en": "Kant's judgment of taste and universality of aesthetic experience",
+        "zh": "康德的趣味判断与审美经验的普遍性"
+      },
+      "prerequisites": [
+        "beauty",
+        "art-philosophy"
+      ],
+      "number": "05-04"
+    }
   ],
   "edges": [
-    { "source": "propositional-logic", "target": "predicate-logic" },
-    { "source": "predicate-logic", "target": "modal-logic" },
-    { "source": "propositional-logic", "target": "informal-fallacies" },
-    { "source": "propositional-logic", "target": "truth" },
-
-    { "source": "truth", "target": "justification" },
-    { "source": "justification", "target": "skepticism" },
-    { "source": "truth", "target": "rationalism-empiricism" },
-    { "source": "justification", "target": "rationalism-empiricism" },
-    { "source": "skepticism", "target": "philosophy-of-science" },
-    { "source": "rationalism-empiricism", "target": "philosophy-of-science" },
-
-    { "source": "utilitarianism", "target": "virtue-ethics" },
-    { "source": "deontology", "target": "virtue-ethics" },
-    { "source": "deontology", "target": "justice" },
-    { "source": "utilitarianism", "target": "justice" },
-    { "source": "utilitarianism", "target": "bioethics" },
-    { "source": "deontology", "target": "bioethics" },
-    { "source": "utilitarianism", "target": "environmental-ethics" },
-
-    { "source": "truth", "target": "ontology" },
-    { "source": "ontology", "target": "causation" },
-    { "source": "causation", "target": "free-will" },
-    { "source": "ontology", "target": "mind-body" },
-    { "source": "ontology", "target": "time-space" },
-    { "source": "causation", "target": "time-space" },
-
-    { "source": "beauty", "target": "art-philosophy" },
-    { "source": "beauty", "target": "sublime" },
-    { "source": "beauty", "target": "aesthetic-judgment" },
-    { "source": "art-philosophy", "target": "aesthetic-judgment" }
+    {
+      "source": "propositional-logic",
+      "target": "predicate-logic"
+    },
+    {
+      "source": "predicate-logic",
+      "target": "modal-logic"
+    },
+    {
+      "source": "propositional-logic",
+      "target": "informal-fallacies"
+    },
+    {
+      "source": "propositional-logic",
+      "target": "truth"
+    },
+    {
+      "source": "truth",
+      "target": "justification"
+    },
+    {
+      "source": "justification",
+      "target": "skepticism"
+    },
+    {
+      "source": "truth",
+      "target": "rationalism-empiricism"
+    },
+    {
+      "source": "justification",
+      "target": "rationalism-empiricism"
+    },
+    {
+      "source": "skepticism",
+      "target": "philosophy-of-science"
+    },
+    {
+      "source": "rationalism-empiricism",
+      "target": "philosophy-of-science"
+    },
+    {
+      "source": "utilitarianism",
+      "target": "virtue-ethics"
+    },
+    {
+      "source": "deontology",
+      "target": "virtue-ethics"
+    },
+    {
+      "source": "deontology",
+      "target": "justice"
+    },
+    {
+      "source": "utilitarianism",
+      "target": "justice"
+    },
+    {
+      "source": "utilitarianism",
+      "target": "bioethics"
+    },
+    {
+      "source": "deontology",
+      "target": "bioethics"
+    },
+    {
+      "source": "utilitarianism",
+      "target": "environmental-ethics"
+    },
+    {
+      "source": "truth",
+      "target": "ontology"
+    },
+    {
+      "source": "ontology",
+      "target": "causation"
+    },
+    {
+      "source": "causation",
+      "target": "free-will"
+    },
+    {
+      "source": "ontology",
+      "target": "mind-body"
+    },
+    {
+      "source": "ontology",
+      "target": "time-space"
+    },
+    {
+      "source": "causation",
+      "target": "time-space"
+    },
+    {
+      "source": "beauty",
+      "target": "art-philosophy"
+    },
+    {
+      "source": "beauty",
+      "target": "sublime"
+    },
+    {
+      "source": "beauty",
+      "target": "aesthetic-judgment"
+    },
+    {
+      "source": "art-philosophy",
+      "target": "aesthetic-judgment"
+    }
   ]
 }

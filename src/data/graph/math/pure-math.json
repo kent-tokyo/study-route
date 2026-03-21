@@ -1,105 +1,1147 @@
 {
   "nodes": [
-    { "id": "linear-algebra", "label": "線形代数", "labels": { "ja": "線形代数", "en": "Linear Algebra", "zh": "线性代数" }, "area": "pure_algebra", "difficulty": 3, "position": { "x": 1000, "y": 40 }, "description": "ベクトル・行列・線形変換。現代数学の基本言語。", "descriptions": { "ja": "ベクトル・行列・線形変換。現代数学の基本言語。", "en": "Vectors, matrices, and linear transformations. The basic language of modern mathematics.", "zh": "向量、矩阵与线性变换。现代数学的基本语言。" }, "prerequisites": ["functions", "real-numbers"] },
-    { "id": "group-theory", "label": "群論", "labels": { "ja": "群論", "en": "Group Theory", "zh": "群论" }, "area": "pure_algebra", "difficulty": 3, "position": { "x": 1250, "y": 40 }, "description": "対称性を抽象化した代数構造。", "descriptions": { "ja": "対称性を抽象化した代数構造。", "en": "Algebraic structure abstracting symmetry.", "zh": "对称性的抽象代数结构。" }, "prerequisites": ["linear-algebra", "proof-methods"] },
-    { "id": "number-theory", "label": "初等整数論", "labels": { "ja": "初等整数論", "en": "Elementary Number Theory", "zh": "初等数论" }, "area": "pure_algebra", "difficulty": 3, "position": { "x": 1250, "y": 320 }, "description": "合同式・二次剰余。整数の深い性質。", "descriptions": { "ja": "合同式・二次剰余。整数の深い性質。", "en": "Congruences and quadratic residues. Deep properties of integers.", "zh": "同余式与二次剩余。整数的深层性质。" }, "prerequisites": ["prime-numbers", "proof-methods"] },
-    { "id": "ring-theory", "label": "環論", "labels": { "ja": "環論", "en": "Ring Theory", "zh": "环论" }, "area": "pure_algebra", "difficulty": 4, "position": { "x": 1500, "y": 0 }, "description": "環・イデアル・剰余環。加法と乗法を持つ代数構造。", "descriptions": { "ja": "環・イデアル・剰余環。加法と乗法を持つ代数構造。", "en": "Rings, ideals, and quotient rings. Algebraic structures with addition and multiplication.", "zh": "环、理想与商环。具有加法和乘法的代数结构。" }, "prerequisites": ["group-theory", "linear-algebra"] },
-    { "id": "field-theory", "label": "体論", "labels": { "ja": "体論", "en": "Field Theory", "zh": "域论" }, "area": "pure_algebra", "difficulty": 4, "position": { "x": 1750, "y": -80 }, "description": "体の拡大・分離拡大。方程式の可解性への道。", "descriptions": { "ja": "体の拡大・分離拡大。方程式の可解性への道。", "en": "Field extensions. The path to solvability of equations.", "zh": "域扩张与分裂扩张。方程可解性之路。" }, "prerequisites": ["ring-theory"] },
-    { "id": "galois-theory", "label": "ガロア理論", "labels": { "ja": "ガロア理論", "en": "Galois Theory", "zh": "伽罗瓦理论" }, "area": "pure_algebra", "difficulty": 5, "position": { "x": 2000, "y": -80 }, "description": "体の拡大と群の対応。方程式の可解性の完全な解答。", "descriptions": { "ja": "体の拡大と群の対応。方程式の可解性の完全な解答。", "en": "Correspondence between field extensions and groups. Complete answer to solvability.", "zh": "域扩张与群的对应。方程可解性的完整解答。" }, "prerequisites": ["field-theory", "group-theory"] },
-    { "id": "module-theory", "label": "加群論", "labels": { "ja": "加群論", "en": "Module Theory", "zh": "模论" }, "area": "pure_algebra", "difficulty": 4, "position": { "x": 1500, "y": 120 }, "description": "環上の加群。線形代数の一般化。", "descriptions": { "ja": "環上の加群。線形代数の一般化。", "en": "Modules over rings. Generalization of linear algebra.", "zh": "环上的模。线性代数的推广。" }, "prerequisites": ["ring-theory", "linear-algebra"] },
-    { "id": "commutative-algebra", "label": "可換代数", "labels": { "ja": "可換代数", "en": "Commutative Algebra", "zh": "交换代数" }, "area": "pure_algebra", "difficulty": 5, "position": { "x": 1750, "y": 40 }, "description": "可換環とその加群。代数幾何の代数的基盤。", "descriptions": { "ja": "可換環とその加群。代数幾何の代数的基盤。", "en": "Commutative rings and their modules. Algebraic foundation of algebraic geometry.", "zh": "交换环及其模。代数几何的代数基础。" }, "prerequisites": ["ring-theory", "module-theory"] },
-    { "id": "homological-algebra", "label": "ホモロジー代数", "labels": { "ja": "ホモロジー代数", "en": "Homological Algebra", "zh": "同调代数" }, "area": "pure_algebra", "difficulty": 5, "position": { "x": 2000, "y": 120 }, "description": "完全系列・導来関手。代数の深い構造論。", "descriptions": { "ja": "完全系列・導来関手。代数の深い構造論。", "en": "Exact sequences and derived functors. Deep structural theory.", "zh": "正合列与导出函子。代数的深层结构理论。" }, "prerequisites": ["module-theory", "category-theory"] },
-    { "id": "representation-theory", "label": "表現論", "labels": { "ja": "表現論", "en": "Representation Theory", "zh": "表示论" }, "area": "pure_algebra", "difficulty": 5, "position": { "x": 2000, "y": 240 }, "description": "群や環を行列で表現する理論。", "descriptions": { "ja": "群や環を行列で表現する理論。", "en": "Theory of representing groups and rings by matrices.", "zh": "用矩阵表示群和环的理论。" }, "prerequisites": ["group-theory", "linear-algebra", "module-theory"] },
-    { "id": "algebraic-number-theory", "label": "代数的整数論", "labels": { "ja": "代数的整数論", "en": "Algebraic Number Theory", "zh": "代数数论" }, "area": "pure_algebra", "difficulty": 5, "position": { "x": 2000, "y": 320 }, "description": "代数体の整数環。フェルマー予想への道。", "descriptions": { "ja": "代数体の整数環。フェルマー予想への道。", "en": "Rings of integers in algebraic number fields. Path to Fermat's conjecture.", "zh": "代数数域的整数环。通往费马猜想之路。" }, "prerequisites": ["number-theory", "field-theory"] },
-    { "id": "lie-algebras", "label": "リー代数", "labels": { "ja": "リー代数", "en": "Lie Algebras", "zh": "李代数" }, "area": "pure_algebra", "difficulty": 5, "position": { "x": 1750, "y": 240 }, "description": "連続対称性の無限小構造。微分幾何・物理への橋。", "descriptions": { "ja": "連続対称性の無限小構造。微分幾何・物理への橋。", "en": "Infinitesimal structures of continuous symmetry. Bridge to differential geometry and physics.", "zh": "连续对称性的无穷小结构。通往微分几何与物理的桥梁。" }, "prerequisites": ["linear-algebra", "group-theory"] },
-    { "id": "calculus-differential", "label": "微分", "labels": { "ja": "微分", "en": "Differential Calculus", "zh": "微分" }, "area": "pure_analysis", "difficulty": 3, "position": { "x": 1000, "y": -200 }, "description": "変化の速さを捉える。極限・導関数。", "descriptions": { "ja": "変化の速さを捉える。極限・導関数。", "en": "Capturing rates of change. Limits and derivatives.", "zh": "捕捉变化速率。极限与导数。" }, "prerequisites": ["real-numbers", "functions"] },
-    { "id": "calculus-integral", "label": "積分", "labels": { "ja": "積分", "en": "Integral Calculus", "zh": "积分" }, "area": "pure_analysis", "difficulty": 3, "position": { "x": 1250, "y": -200 }, "description": "面積・累積量を求める。不定積分と定積分。", "descriptions": { "ja": "面積・累積量を求める。不定積分と定積分。", "en": "Finding areas and accumulated quantities. Indefinite and definite integrals.", "zh": "求面积与累积量。不定积分与定积分。" }, "prerequisites": ["calculus-differential"] },
-    { "id": "multivariable-calculus", "label": "多変数微積分", "labels": { "ja": "多変数微積分", "en": "Multivariable Calculus", "zh": "多元微积分" }, "area": "pure_analysis", "difficulty": 3, "position": { "x": 1500, "y": -280 }, "description": "偏微分・重積分・ベクトル解析。多次元への拡張。", "descriptions": { "ja": "偏微分・重積分・ベクトル解析。多次元への拡張。", "en": "Partial derivatives, multiple integrals, and vector analysis.", "zh": "偏微分、重积分与向量分析。向多维扩展。" }, "prerequisites": ["calculus-integral", "linear-algebra"] },
-    { "id": "sequences-series", "label": "級数論", "labels": { "ja": "級数論", "en": "Sequences & Series", "zh": "级数论" }, "area": "pure_analysis", "difficulty": 3, "position": { "x": 1500, "y": -160 }, "description": "数列・級数の収束。テイラー展開・べき級数。", "descriptions": { "ja": "数列・級数の収束。テイラー展開・べき級数。", "en": "Convergence of sequences and series. Taylor and power series.", "zh": "数列与级数的收敛。泰勒展开与幂级数。" }, "prerequisites": ["calculus-integral"] },
-    { "id": "ode", "label": "常微分方程式", "labels": { "ja": "常微分方程式", "en": "Ordinary Differential Equations", "zh": "常微分方程" }, "area": "pure_analysis", "difficulty": 3, "position": { "x": 1750, "y": -280 }, "description": "未知関数とその導関数の方程式。", "descriptions": { "ja": "未知関数とその導関数の方程式。", "en": "Equations involving unknown functions and their derivatives.", "zh": "未知函数及其导数的方程。" }, "prerequisites": ["multivariable-calculus"] },
-    { "id": "real-analysis", "label": "実解析", "labels": { "ja": "実解析", "en": "Real Analysis", "zh": "实分析" }, "area": "pure_analysis", "difficulty": 4, "position": { "x": 1750, "y": -160 }, "description": "厳密なε-δ論法。位相的性質と収束の理論。", "descriptions": { "ja": "厳密なε-δ論法。位相的性質と収束の理論。", "en": "Rigorous ε-δ arguments. Topological properties and convergence.", "zh": "严格的ε-δ论证。拓扑性质与收敛理论。" }, "prerequisites": ["sequences-series", "proof-methods"] },
-    { "id": "complex-analysis", "label": "複素解析", "labels": { "ja": "複素解析", "en": "Complex Analysis", "zh": "复分析" }, "area": "pure_analysis", "difficulty": 4, "position": { "x": 1750, "y": -40 }, "description": "正則関数・コーシーの積分定理・留数。", "descriptions": { "ja": "正則関数・コーシーの積分定理・留数。", "en": "Holomorphic functions, Cauchy's integral theorem, and residues.", "zh": "全纯函数、柯西积分定理与留数。" }, "prerequisites": ["multivariable-calculus", "complex-numbers"] },
-    { "id": "measure-theory", "label": "測度論", "labels": { "ja": "測度論", "en": "Measure Theory", "zh": "测度论" }, "area": "pure_analysis", "difficulty": 4, "position": { "x": 2000, "y": -160 }, "description": "ルベーグ測度・ルベーグ積分。現代解析の基礎。", "descriptions": { "ja": "ルベーグ測度・ルベーグ積分。現代解析の基礎。", "en": "Lebesgue measure and integration. Foundation of modern analysis.", "zh": "勒贝格测度与勒贝格积分。现代分析的基础。" }, "prerequisites": ["real-analysis"] },
-    { "id": "pde", "label": "偏微分方程式", "labels": { "ja": "偏微分方程式", "en": "Partial Differential Equations", "zh": "偏微分方程" }, "area": "pure_analysis", "difficulty": 4, "position": { "x": 2000, "y": -280 }, "description": "多変数の微分方程式。物理現象のモデル化。", "descriptions": { "ja": "多変数の微分方程式。物理現象のモデル化。", "en": "Multivariable differential equations. Modeling physical phenomena.", "zh": "多元微分方程。物理现象的建模。" }, "prerequisites": ["ode", "multivariable-calculus"] },
-    { "id": "functional-analysis", "label": "関数解析", "labels": { "ja": "関数解析", "en": "Functional Analysis", "zh": "泛函分析" }, "area": "pure_analysis", "difficulty": 5, "position": { "x": 2250, "y": -160 }, "description": "バナッハ空間・ヒルベルト空間。無限次元の線形代数。", "descriptions": { "ja": "バナッハ空間・ヒルベルト空間。無限次元の線形代数。", "en": "Banach and Hilbert spaces. Infinite-dimensional linear algebra.", "zh": "巴拿赫空间与希尔伯特空间。无穷维线性代数。" }, "prerequisites": ["measure-theory", "linear-algebra"] },
-    { "id": "fourier-analysis", "label": "フーリエ解析", "labels": { "ja": "フーリエ解析", "en": "Fourier Analysis", "zh": "傅里叶分析" }, "area": "pure_analysis", "difficulty": 4, "position": { "x": 2000, "y": -40 }, "description": "フーリエ級数・フーリエ変換。信号分解の数学。", "descriptions": { "ja": "フーリエ級数・フーリエ変換。信号分解の数学。", "en": "Fourier series and transforms. Mathematics of signal decomposition.", "zh": "傅里叶级数与傅里叶变换。信号分解的数学。" }, "prerequisites": ["complex-analysis", "real-analysis"] },
-    { "id": "harmonic-analysis", "label": "調和解析", "labels": { "ja": "調和解析", "en": "Harmonic Analysis", "zh": "调和分析" }, "area": "pure_analysis", "difficulty": 5, "position": { "x": 2250, "y": -40 }, "description": "フーリエ解析の一般化。群上の解析。", "descriptions": { "ja": "フーリエ解析の一般化。群上の解析。", "en": "Generalization of Fourier analysis. Analysis on groups.", "zh": "傅里叶分析的推广。群上的分析。" }, "prerequisites": ["fourier-analysis", "functional-analysis"] },
-    { "id": "operator-theory", "label": "作用素論", "labels": { "ja": "作用素論", "en": "Operator Theory", "zh": "算子理论" }, "area": "pure_analysis", "difficulty": 5, "position": { "x": 2250, "y": -280 }, "description": "線形作用素のスペクトル理論。量子力学の数学的基盤。", "descriptions": { "ja": "線形作用素のスペクトル理論。量子力学の数学的基盤。", "en": "Spectral theory of linear operators. Mathematical foundation of quantum mechanics.", "zh": "线性算子的谱理论。量子力学的数学基础。" }, "prerequisites": ["functional-analysis"] },
-    { "id": "euclidean-geometry", "label": "ユークリッド幾何", "labels": { "ja": "ユークリッド幾何", "en": "Euclidean Geometry", "zh": "欧几里得几何" }, "area": "pure_geometry", "difficulty": 2, "position": { "x": 1000, "y": 200 }, "description": "点・直線・平面。古代ギリシャからの幾何学。", "descriptions": { "ja": "点・直線・平面。古代ギリシャからの幾何学。", "en": "Points, lines, and planes. Geometry from ancient Greece.", "zh": "点、直线与平面。源自古希腊的几何学。" }, "prerequisites": ["proof-methods", "real-numbers"] },
-    { "id": "analytic-geometry", "label": "解析幾何", "labels": { "ja": "解析幾何", "en": "Analytic Geometry", "zh": "解析几何" }, "area": "pure_geometry", "difficulty": 2, "position": { "x": 1250, "y": 200 }, "description": "座標を用いた幾何学。図形と方程式の対応。", "descriptions": { "ja": "座標を用いた幾何学。図形と方程式の対応。", "en": "Geometry using coordinates. Correspondence between figures and equations.", "zh": "使用坐标的几何学。图形与方程的对应。" }, "prerequisites": ["euclidean-geometry", "functions"] },
-    { "id": "point-set-topology", "label": "位相空間論", "labels": { "ja": "位相空間論", "en": "Point-Set Topology", "zh": "点集拓扑" }, "area": "pure_geometry", "difficulty": 3, "position": { "x": 1250, "y": 320 }, "description": "開集合・連続写像・コンパクト性。空間の抽象化。", "descriptions": { "ja": "開集合・連続写像・コンパクト性。空間の抽象化。", "en": "Open sets, continuous maps, and compactness. Abstraction of space.", "zh": "开集、连续映射与紧致性。空间的抽象化。" }, "prerequisites": ["set-theory", "proof-methods", "real-numbers"] },
-    { "id": "differential-geometry", "label": "微分幾何学", "labels": { "ja": "微分幾何学", "en": "Differential Geometry", "zh": "微分几何" }, "area": "pure_geometry", "difficulty": 4, "position": { "x": 1500, "y": 200 }, "description": "曲線・曲面の微分的性質。曲率の理論。", "descriptions": { "ja": "曲線・曲面の微分的性質。曲率の理論。", "en": "Differential properties of curves and surfaces. Theory of curvature.", "zh": "曲线与曲面的微分性质。曲率理论。" }, "prerequisites": ["multivariable-calculus", "linear-algebra", "analytic-geometry"] },
-    { "id": "manifolds", "label": "多様体論", "labels": { "ja": "多様体論", "en": "Manifold Theory", "zh": "流形论" }, "area": "pure_geometry", "difficulty": 4, "position": { "x": 1500, "y": 320 }, "description": "局所的にユークリッド空間に見える空間。", "descriptions": { "ja": "局所的にユークリッド空間に見える空間。", "en": "Spaces that locally resemble Euclidean space.", "zh": "局部看起来像欧几里得空间的空间。" }, "prerequisites": ["point-set-topology", "differential-geometry"] },
-    { "id": "algebraic-topology", "label": "代数的位相幾何学", "labels": { "ja": "代数的位相幾何学", "en": "Algebraic Topology", "zh": "代数拓扑" }, "area": "pure_geometry", "difficulty": 5, "position": { "x": 1750, "y": 320 }, "description": "基本群・ホモロジー群。位相的不変量の代数化。", "descriptions": { "ja": "基本群・ホモロジー群。位相的不変量の代数化。", "en": "Fundamental groups and homology. Algebraization of topological invariants.", "zh": "基本群与同调群。拓扑不变量的代数化。" }, "prerequisites": ["point-set-topology", "group-theory"] },
-    { "id": "riemannian-geometry", "label": "リーマン幾何学", "labels": { "ja": "リーマン幾何学", "en": "Riemannian Geometry", "zh": "黎曼几何" }, "area": "pure_geometry", "difficulty": 5, "position": { "x": 1750, "y": 200 }, "description": "計量を持つ多様体。一般相対性理論の数学。", "descriptions": { "ja": "計量を持つ多様体。一般相対性理論の数学。", "en": "Manifolds with metrics. The mathematics of general relativity.", "zh": "具有度量的流形。广义相对论的数学。" }, "prerequisites": ["differential-geometry", "manifolds"] },
-    { "id": "algebraic-geometry", "label": "代数幾何学", "labels": { "ja": "代数幾何学", "en": "Algebraic Geometry", "zh": "代数几何" }, "area": "pure_geometry", "difficulty": 5, "position": { "x": 2000, "y": 280 }, "description": "多項式の零点集合の幾何学。可換代数との深い結びつき。", "descriptions": { "ja": "多項式の零点集合の幾何学。可換代数との深い結びつき。", "en": "Geometry of polynomial zero sets. Deep connection with commutative algebra.", "zh": "多项式零点集的几何学。与交换代数的深层联系。" }, "prerequisites": ["commutative-algebra", "point-set-topology"] },
-    { "id": "prime-numbers", "label": "素数", "labels": { "ja": "素数", "en": "Prime Numbers", "zh": "素数" }, "area": "pure_algebra", "difficulty": 2, "position": { "x": 1000, "y": 320 }, "description": "1とその数自身でしか割れない特別な自然数。", "descriptions": { "ja": "1とその数自身でしか割れない特別な自然数。", "en": "Special natural numbers divisible only by 1 and themselves.", "zh": "只能被1和自身整除的特殊自然数。" }, "prerequisites": ["integers", "proof-methods"] }
+    {
+      "id": "linear-algebra",
+      "label": "線形代数",
+      "labels": {
+        "ja": "線形代数",
+        "en": "Linear Algebra",
+        "zh": "线性代数"
+      },
+      "area": "pure_algebra",
+      "difficulty": 3,
+      "position": {
+        "x": 1000,
+        "y": 40
+      },
+      "description": "ベクトル・行列・線形変換。現代数学の基本言語。",
+      "descriptions": {
+        "ja": "ベクトル・行列・線形変換。現代数学の基本言語。",
+        "en": "Vectors, matrices, and linear transformations. The basic language of modern mathematics.",
+        "zh": "向量、矩阵与线性变换。现代数学的基本语言。"
+      },
+      "prerequisites": [
+        "functions",
+        "real-numbers"
+      ],
+      "number": "02-01"
+    },
+    {
+      "id": "group-theory",
+      "label": "群論",
+      "labels": {
+        "ja": "群論",
+        "en": "Group Theory",
+        "zh": "群论"
+      },
+      "area": "pure_algebra",
+      "difficulty": 3,
+      "position": {
+        "x": 1250,
+        "y": 40
+      },
+      "description": "対称性を抽象化した代数構造。",
+      "descriptions": {
+        "ja": "対称性を抽象化した代数構造。",
+        "en": "Algebraic structure abstracting symmetry.",
+        "zh": "对称性的抽象代数结构。"
+      },
+      "prerequisites": [
+        "linear-algebra",
+        "proof-methods"
+      ],
+      "number": "02-02"
+    },
+    {
+      "id": "number-theory",
+      "label": "初等整数論",
+      "labels": {
+        "ja": "初等整数論",
+        "en": "Elementary Number Theory",
+        "zh": "初等数论"
+      },
+      "area": "pure_algebra",
+      "difficulty": 3,
+      "position": {
+        "x": 1250,
+        "y": 320
+      },
+      "description": "合同式・二次剰余。整数の深い性質。",
+      "descriptions": {
+        "ja": "合同式・二次剰余。整数の深い性質。",
+        "en": "Congruences and quadratic residues. Deep properties of integers.",
+        "zh": "同余式与二次剩余。整数的深层性质。"
+      },
+      "prerequisites": [
+        "prime-numbers",
+        "proof-methods"
+      ],
+      "number": "02-04"
+    },
+    {
+      "id": "ring-theory",
+      "label": "環論",
+      "labels": {
+        "ja": "環論",
+        "en": "Ring Theory",
+        "zh": "环论"
+      },
+      "area": "pure_algebra",
+      "difficulty": 4,
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "description": "環・イデアル・剰余環。加法と乗法を持つ代数構造。",
+      "descriptions": {
+        "ja": "環・イデアル・剰余環。加法と乗法を持つ代数構造。",
+        "en": "Rings, ideals, and quotient rings. Algebraic structures with addition and multiplication.",
+        "zh": "环、理想与商环。具有加法和乘法的代数结构。"
+      },
+      "prerequisites": [
+        "group-theory",
+        "linear-algebra"
+      ],
+      "number": "02-05"
+    },
+    {
+      "id": "field-theory",
+      "label": "体論",
+      "labels": {
+        "ja": "体論",
+        "en": "Field Theory",
+        "zh": "域论"
+      },
+      "area": "pure_algebra",
+      "difficulty": 4,
+      "position": {
+        "x": 1750,
+        "y": -80
+      },
+      "description": "体の拡大・分離拡大。方程式の可解性への道。",
+      "descriptions": {
+        "ja": "体の拡大・分離拡大。方程式の可解性への道。",
+        "en": "Field extensions. The path to solvability of equations.",
+        "zh": "域扩张与分裂扩张。方程可解性之路。"
+      },
+      "prerequisites": [
+        "ring-theory"
+      ],
+      "number": "02-06"
+    },
+    {
+      "id": "galois-theory",
+      "label": "ガロア理論",
+      "labels": {
+        "ja": "ガロア理論",
+        "en": "Galois Theory",
+        "zh": "伽罗瓦理论"
+      },
+      "area": "pure_algebra",
+      "difficulty": 5,
+      "position": {
+        "x": 2000,
+        "y": -80
+      },
+      "description": "体の拡大と群の対応。方程式の可解性の完全な解答。",
+      "descriptions": {
+        "ja": "体の拡大と群の対応。方程式の可解性の完全な解答。",
+        "en": "Correspondence between field extensions and groups. Complete answer to solvability.",
+        "zh": "域扩张与群的对应。方程可解性的完整解答。"
+      },
+      "prerequisites": [
+        "field-theory",
+        "group-theory"
+      ],
+      "number": "02-07"
+    },
+    {
+      "id": "module-theory",
+      "label": "加群論",
+      "labels": {
+        "ja": "加群論",
+        "en": "Module Theory",
+        "zh": "模论"
+      },
+      "area": "pure_algebra",
+      "difficulty": 4,
+      "position": {
+        "x": 1500,
+        "y": 120
+      },
+      "description": "環上の加群。線形代数の一般化。",
+      "descriptions": {
+        "ja": "環上の加群。線形代数の一般化。",
+        "en": "Modules over rings. Generalization of linear algebra.",
+        "zh": "环上的模。线性代数的推广。"
+      },
+      "prerequisites": [
+        "ring-theory",
+        "linear-algebra"
+      ],
+      "number": "02-08"
+    },
+    {
+      "id": "commutative-algebra",
+      "label": "可換代数",
+      "labels": {
+        "ja": "可換代数",
+        "en": "Commutative Algebra",
+        "zh": "交换代数"
+      },
+      "area": "pure_algebra",
+      "difficulty": 5,
+      "position": {
+        "x": 1750,
+        "y": 40
+      },
+      "description": "可換環とその加群。代数幾何の代数的基盤。",
+      "descriptions": {
+        "ja": "可換環とその加群。代数幾何の代数的基盤。",
+        "en": "Commutative rings and their modules. Algebraic foundation of algebraic geometry.",
+        "zh": "交换环及其模。代数几何的代数基础。"
+      },
+      "prerequisites": [
+        "ring-theory",
+        "module-theory"
+      ],
+      "number": "02-09"
+    },
+    {
+      "id": "homological-algebra",
+      "label": "ホモロジー代数",
+      "labels": {
+        "ja": "ホモロジー代数",
+        "en": "Homological Algebra",
+        "zh": "同调代数"
+      },
+      "area": "pure_algebra",
+      "difficulty": 5,
+      "position": {
+        "x": 2000,
+        "y": 120
+      },
+      "description": "完全系列・導来関手。代数の深い構造論。",
+      "descriptions": {
+        "ja": "完全系列・導来関手。代数の深い構造論。",
+        "en": "Exact sequences and derived functors. Deep structural theory.",
+        "zh": "正合列与导出函子。代数的深层结构理论。"
+      },
+      "prerequisites": [
+        "module-theory",
+        "category-theory"
+      ],
+      "number": "02-10"
+    },
+    {
+      "id": "representation-theory",
+      "label": "表現論",
+      "labels": {
+        "ja": "表現論",
+        "en": "Representation Theory",
+        "zh": "表示论"
+      },
+      "area": "pure_algebra",
+      "difficulty": 5,
+      "position": {
+        "x": 2000,
+        "y": 240
+      },
+      "description": "群や環を行列で表現する理論。",
+      "descriptions": {
+        "ja": "群や環を行列で表現する理論。",
+        "en": "Theory of representing groups and rings by matrices.",
+        "zh": "用矩阵表示群和环的理论。"
+      },
+      "prerequisites": [
+        "group-theory",
+        "linear-algebra",
+        "module-theory"
+      ],
+      "number": "02-11"
+    },
+    {
+      "id": "algebraic-number-theory",
+      "label": "代数的整数論",
+      "labels": {
+        "ja": "代数的整数論",
+        "en": "Algebraic Number Theory",
+        "zh": "代数数论"
+      },
+      "area": "pure_algebra",
+      "difficulty": 5,
+      "position": {
+        "x": 2000,
+        "y": 320
+      },
+      "description": "代数体の整数環。フェルマー予想への道。",
+      "descriptions": {
+        "ja": "代数体の整数環。フェルマー予想への道。",
+        "en": "Rings of integers in algebraic number fields. Path to Fermat's conjecture.",
+        "zh": "代数数域的整数环。通往费马猜想之路。"
+      },
+      "prerequisites": [
+        "number-theory",
+        "field-theory"
+      ],
+      "number": "02-12"
+    },
+    {
+      "id": "lie-algebras",
+      "label": "リー代数",
+      "labels": {
+        "ja": "リー代数",
+        "en": "Lie Algebras",
+        "zh": "李代数"
+      },
+      "area": "pure_algebra",
+      "difficulty": 5,
+      "position": {
+        "x": 1750,
+        "y": 240
+      },
+      "description": "連続対称性の無限小構造。微分幾何・物理への橋。",
+      "descriptions": {
+        "ja": "連続対称性の無限小構造。微分幾何・物理への橋。",
+        "en": "Infinitesimal structures of continuous symmetry. Bridge to differential geometry and physics.",
+        "zh": "连续对称性的无穷小结构。通往微分几何与物理的桥梁。"
+      },
+      "prerequisites": [
+        "linear-algebra",
+        "group-theory"
+      ],
+      "number": "02-13"
+    },
+    {
+      "id": "calculus-differential",
+      "label": "微分",
+      "labels": {
+        "ja": "微分",
+        "en": "Differential Calculus",
+        "zh": "微分"
+      },
+      "area": "pure_analysis",
+      "difficulty": 3,
+      "position": {
+        "x": 1000,
+        "y": -200
+      },
+      "description": "変化の速さを捉える。極限・導関数。",
+      "descriptions": {
+        "ja": "変化の速さを捉える。極限・導関数。",
+        "en": "Capturing rates of change. Limits and derivatives.",
+        "zh": "捕捉变化速率。极限与导数。"
+      },
+      "prerequisites": [
+        "real-numbers",
+        "functions"
+      ],
+      "number": "03-01"
+    },
+    {
+      "id": "calculus-integral",
+      "label": "積分",
+      "labels": {
+        "ja": "積分",
+        "en": "Integral Calculus",
+        "zh": "积分"
+      },
+      "area": "pure_analysis",
+      "difficulty": 3,
+      "position": {
+        "x": 1250,
+        "y": -200
+      },
+      "description": "面積・累積量を求める。不定積分と定積分。",
+      "descriptions": {
+        "ja": "面積・累積量を求める。不定積分と定積分。",
+        "en": "Finding areas and accumulated quantities. Indefinite and definite integrals.",
+        "zh": "求面积与累积量。不定积分与定积分。"
+      },
+      "prerequisites": [
+        "calculus-differential"
+      ],
+      "number": "03-02"
+    },
+    {
+      "id": "multivariable-calculus",
+      "label": "多変数微積分",
+      "labels": {
+        "ja": "多変数微積分",
+        "en": "Multivariable Calculus",
+        "zh": "多元微积分"
+      },
+      "area": "pure_analysis",
+      "difficulty": 3,
+      "position": {
+        "x": 1500,
+        "y": -280
+      },
+      "description": "偏微分・重積分・ベクトル解析。多次元への拡張。",
+      "descriptions": {
+        "ja": "偏微分・重積分・ベクトル解析。多次元への拡張。",
+        "en": "Partial derivatives, multiple integrals, and vector analysis.",
+        "zh": "偏微分、重积分与向量分析。向多维扩展。"
+      },
+      "prerequisites": [
+        "calculus-integral",
+        "linear-algebra"
+      ],
+      "number": "03-03"
+    },
+    {
+      "id": "sequences-series",
+      "label": "級数論",
+      "labels": {
+        "ja": "級数論",
+        "en": "Sequences & Series",
+        "zh": "级数论"
+      },
+      "area": "pure_analysis",
+      "difficulty": 3,
+      "position": {
+        "x": 1500,
+        "y": -160
+      },
+      "description": "数列・級数の収束。テイラー展開・べき級数。",
+      "descriptions": {
+        "ja": "数列・級数の収束。テイラー展開・べき級数。",
+        "en": "Convergence of sequences and series. Taylor and power series.",
+        "zh": "数列与级数的收敛。泰勒展开与幂级数。"
+      },
+      "prerequisites": [
+        "calculus-integral"
+      ],
+      "number": "03-04"
+    },
+    {
+      "id": "ode",
+      "label": "常微分方程式",
+      "labels": {
+        "ja": "常微分方程式",
+        "en": "Ordinary Differential Equations",
+        "zh": "常微分方程"
+      },
+      "area": "pure_analysis",
+      "difficulty": 3,
+      "position": {
+        "x": 1750,
+        "y": -280
+      },
+      "description": "未知関数とその導関数の方程式。",
+      "descriptions": {
+        "ja": "未知関数とその導関数の方程式。",
+        "en": "Equations involving unknown functions and their derivatives.",
+        "zh": "未知函数及其导数的方程。"
+      },
+      "prerequisites": [
+        "multivariable-calculus"
+      ],
+      "number": "03-05"
+    },
+    {
+      "id": "real-analysis",
+      "label": "実解析",
+      "labels": {
+        "ja": "実解析",
+        "en": "Real Analysis",
+        "zh": "实分析"
+      },
+      "area": "pure_analysis",
+      "difficulty": 4,
+      "position": {
+        "x": 1750,
+        "y": -160
+      },
+      "description": "厳密なε-δ論法。位相的性質と収束の理論。",
+      "descriptions": {
+        "ja": "厳密なε-δ論法。位相的性質と収束の理論。",
+        "en": "Rigorous ε-δ arguments. Topological properties and convergence.",
+        "zh": "严格的ε-δ论证。拓扑性质与收敛理论。"
+      },
+      "prerequisites": [
+        "sequences-series",
+        "proof-methods"
+      ],
+      "number": "03-06"
+    },
+    {
+      "id": "complex-analysis",
+      "label": "複素解析",
+      "labels": {
+        "ja": "複素解析",
+        "en": "Complex Analysis",
+        "zh": "复分析"
+      },
+      "area": "pure_analysis",
+      "difficulty": 4,
+      "position": {
+        "x": 1750,
+        "y": -40
+      },
+      "description": "正則関数・コーシーの積分定理・留数。",
+      "descriptions": {
+        "ja": "正則関数・コーシーの積分定理・留数。",
+        "en": "Holomorphic functions, Cauchy's integral theorem, and residues.",
+        "zh": "全纯函数、柯西积分定理与留数。"
+      },
+      "prerequisites": [
+        "multivariable-calculus",
+        "complex-numbers"
+      ],
+      "number": "03-07"
+    },
+    {
+      "id": "measure-theory",
+      "label": "測度論",
+      "labels": {
+        "ja": "測度論",
+        "en": "Measure Theory",
+        "zh": "测度论"
+      },
+      "area": "pure_analysis",
+      "difficulty": 4,
+      "position": {
+        "x": 2000,
+        "y": -160
+      },
+      "description": "ルベーグ測度・ルベーグ積分。現代解析の基礎。",
+      "descriptions": {
+        "ja": "ルベーグ測度・ルベーグ積分。現代解析の基礎。",
+        "en": "Lebesgue measure and integration. Foundation of modern analysis.",
+        "zh": "勒贝格测度与勒贝格积分。现代分析的基础。"
+      },
+      "prerequisites": [
+        "real-analysis"
+      ],
+      "number": "03-08"
+    },
+    {
+      "id": "pde",
+      "label": "偏微分方程式",
+      "labels": {
+        "ja": "偏微分方程式",
+        "en": "Partial Differential Equations",
+        "zh": "偏微分方程"
+      },
+      "area": "pure_analysis",
+      "difficulty": 4,
+      "position": {
+        "x": 2000,
+        "y": -280
+      },
+      "description": "多変数の微分方程式。物理現象のモデル化。",
+      "descriptions": {
+        "ja": "多変数の微分方程式。物理現象のモデル化。",
+        "en": "Multivariable differential equations. Modeling physical phenomena.",
+        "zh": "多元微分方程。物理现象的建模。"
+      },
+      "prerequisites": [
+        "ode",
+        "multivariable-calculus"
+      ],
+      "number": "03-09"
+    },
+    {
+      "id": "functional-analysis",
+      "label": "関数解析",
+      "labels": {
+        "ja": "関数解析",
+        "en": "Functional Analysis",
+        "zh": "泛函分析"
+      },
+      "area": "pure_analysis",
+      "difficulty": 5,
+      "position": {
+        "x": 2250,
+        "y": -160
+      },
+      "description": "バナッハ空間・ヒルベルト空間。無限次元の線形代数。",
+      "descriptions": {
+        "ja": "バナッハ空間・ヒルベルト空間。無限次元の線形代数。",
+        "en": "Banach and Hilbert spaces. Infinite-dimensional linear algebra.",
+        "zh": "巴拿赫空间与希尔伯特空间。无穷维线性代数。"
+      },
+      "prerequisites": [
+        "measure-theory",
+        "linear-algebra"
+      ],
+      "number": "03-10"
+    },
+    {
+      "id": "fourier-analysis",
+      "label": "フーリエ解析",
+      "labels": {
+        "ja": "フーリエ解析",
+        "en": "Fourier Analysis",
+        "zh": "傅里叶分析"
+      },
+      "area": "pure_analysis",
+      "difficulty": 4,
+      "position": {
+        "x": 2000,
+        "y": -40
+      },
+      "description": "フーリエ級数・フーリエ変換。信号分解の数学。",
+      "descriptions": {
+        "ja": "フーリエ級数・フーリエ変換。信号分解の数学。",
+        "en": "Fourier series and transforms. Mathematics of signal decomposition.",
+        "zh": "傅里叶级数与傅里叶变换。信号分解的数学。"
+      },
+      "prerequisites": [
+        "complex-analysis",
+        "real-analysis"
+      ],
+      "number": "03-11"
+    },
+    {
+      "id": "harmonic-analysis",
+      "label": "調和解析",
+      "labels": {
+        "ja": "調和解析",
+        "en": "Harmonic Analysis",
+        "zh": "调和分析"
+      },
+      "area": "pure_analysis",
+      "difficulty": 5,
+      "position": {
+        "x": 2250,
+        "y": -40
+      },
+      "description": "フーリエ解析の一般化。群上の解析。",
+      "descriptions": {
+        "ja": "フーリエ解析の一般化。群上の解析。",
+        "en": "Generalization of Fourier analysis. Analysis on groups.",
+        "zh": "傅里叶分析的推广。群上的分析。"
+      },
+      "prerequisites": [
+        "fourier-analysis",
+        "functional-analysis"
+      ],
+      "number": "03-12"
+    },
+    {
+      "id": "operator-theory",
+      "label": "作用素論",
+      "labels": {
+        "ja": "作用素論",
+        "en": "Operator Theory",
+        "zh": "算子理论"
+      },
+      "area": "pure_analysis",
+      "difficulty": 5,
+      "position": {
+        "x": 2250,
+        "y": -280
+      },
+      "description": "線形作用素のスペクトル理論。量子力学の数学的基盤。",
+      "descriptions": {
+        "ja": "線形作用素のスペクトル理論。量子力学の数学的基盤。",
+        "en": "Spectral theory of linear operators. Mathematical foundation of quantum mechanics.",
+        "zh": "线性算子的谱理论。量子力学的数学基础。"
+      },
+      "prerequisites": [
+        "functional-analysis"
+      ],
+      "number": "03-13"
+    },
+    {
+      "id": "euclidean-geometry",
+      "label": "ユークリッド幾何",
+      "labels": {
+        "ja": "ユークリッド幾何",
+        "en": "Euclidean Geometry",
+        "zh": "欧几里得几何"
+      },
+      "area": "pure_geometry",
+      "difficulty": 2,
+      "position": {
+        "x": 1000,
+        "y": 200
+      },
+      "description": "点・直線・平面。古代ギリシャからの幾何学。",
+      "descriptions": {
+        "ja": "点・直線・平面。古代ギリシャからの幾何学。",
+        "en": "Points, lines, and planes. Geometry from ancient Greece.",
+        "zh": "点、直线与平面。源自古希腊的几何学。"
+      },
+      "prerequisites": [
+        "proof-methods",
+        "real-numbers"
+      ],
+      "number": "04-01"
+    },
+    {
+      "id": "analytic-geometry",
+      "label": "解析幾何",
+      "labels": {
+        "ja": "解析幾何",
+        "en": "Analytic Geometry",
+        "zh": "解析几何"
+      },
+      "area": "pure_geometry",
+      "difficulty": 2,
+      "position": {
+        "x": 1250,
+        "y": 200
+      },
+      "description": "座標を用いた幾何学。図形と方程式の対応。",
+      "descriptions": {
+        "ja": "座標を用いた幾何学。図形と方程式の対応。",
+        "en": "Geometry using coordinates. Correspondence between figures and equations.",
+        "zh": "使用坐标的几何学。图形与方程的对应。"
+      },
+      "prerequisites": [
+        "euclidean-geometry",
+        "functions"
+      ],
+      "number": "04-02"
+    },
+    {
+      "id": "point-set-topology",
+      "label": "位相空間論",
+      "labels": {
+        "ja": "位相空間論",
+        "en": "Point-Set Topology",
+        "zh": "点集拓扑"
+      },
+      "area": "pure_geometry",
+      "difficulty": 3,
+      "position": {
+        "x": 1250,
+        "y": 320
+      },
+      "description": "開集合・連続写像・コンパクト性。空間の抽象化。",
+      "descriptions": {
+        "ja": "開集合・連続写像・コンパクト性。空間の抽象化。",
+        "en": "Open sets, continuous maps, and compactness. Abstraction of space.",
+        "zh": "开集、连续映射与紧致性。空间的抽象化。"
+      },
+      "prerequisites": [
+        "set-theory",
+        "proof-methods",
+        "real-numbers"
+      ],
+      "number": "04-03"
+    },
+    {
+      "id": "differential-geometry",
+      "label": "微分幾何学",
+      "labels": {
+        "ja": "微分幾何学",
+        "en": "Differential Geometry",
+        "zh": "微分几何"
+      },
+      "area": "pure_geometry",
+      "difficulty": 4,
+      "position": {
+        "x": 1500,
+        "y": 200
+      },
+      "description": "曲線・曲面の微分的性質。曲率の理論。",
+      "descriptions": {
+        "ja": "曲線・曲面の微分的性質。曲率の理論。",
+        "en": "Differential properties of curves and surfaces. Theory of curvature.",
+        "zh": "曲线与曲面的微分性质。曲率理论。"
+      },
+      "prerequisites": [
+        "multivariable-calculus",
+        "linear-algebra",
+        "analytic-geometry"
+      ],
+      "number": "04-04"
+    },
+    {
+      "id": "manifolds",
+      "label": "多様体論",
+      "labels": {
+        "ja": "多様体論",
+        "en": "Manifold Theory",
+        "zh": "流形论"
+      },
+      "area": "pure_geometry",
+      "difficulty": 4,
+      "position": {
+        "x": 1500,
+        "y": 320
+      },
+      "description": "局所的にユークリッド空間に見える空間。",
+      "descriptions": {
+        "ja": "局所的にユークリッド空間に見える空間。",
+        "en": "Spaces that locally resemble Euclidean space.",
+        "zh": "局部看起来像欧几里得空间的空间。"
+      },
+      "prerequisites": [
+        "point-set-topology",
+        "differential-geometry"
+      ],
+      "number": "04-05"
+    },
+    {
+      "id": "algebraic-topology",
+      "label": "代数的位相幾何学",
+      "labels": {
+        "ja": "代数的位相幾何学",
+        "en": "Algebraic Topology",
+        "zh": "代数拓扑"
+      },
+      "area": "pure_geometry",
+      "difficulty": 5,
+      "position": {
+        "x": 1750,
+        "y": 320
+      },
+      "description": "基本群・ホモロジー群。位相的不変量の代数化。",
+      "descriptions": {
+        "ja": "基本群・ホモロジー群。位相的不変量の代数化。",
+        "en": "Fundamental groups and homology. Algebraization of topological invariants.",
+        "zh": "基本群与同调群。拓扑不变量的代数化。"
+      },
+      "prerequisites": [
+        "point-set-topology",
+        "group-theory"
+      ],
+      "number": "04-06"
+    },
+    {
+      "id": "riemannian-geometry",
+      "label": "リーマン幾何学",
+      "labels": {
+        "ja": "リーマン幾何学",
+        "en": "Riemannian Geometry",
+        "zh": "黎曼几何"
+      },
+      "area": "pure_geometry",
+      "difficulty": 5,
+      "position": {
+        "x": 1750,
+        "y": 200
+      },
+      "description": "計量を持つ多様体。一般相対性理論の数学。",
+      "descriptions": {
+        "ja": "計量を持つ多様体。一般相対性理論の数学。",
+        "en": "Manifolds with metrics. The mathematics of general relativity.",
+        "zh": "具有度量的流形。广义相对论的数学。"
+      },
+      "prerequisites": [
+        "differential-geometry",
+        "manifolds"
+      ],
+      "number": "04-07"
+    },
+    {
+      "id": "algebraic-geometry",
+      "label": "代数幾何学",
+      "labels": {
+        "ja": "代数幾何学",
+        "en": "Algebraic Geometry",
+        "zh": "代数几何"
+      },
+      "area": "pure_geometry",
+      "difficulty": 5,
+      "position": {
+        "x": 2000,
+        "y": 280
+      },
+      "description": "多項式の零点集合の幾何学。可換代数との深い結びつき。",
+      "descriptions": {
+        "ja": "多項式の零点集合の幾何学。可換代数との深い結びつき。",
+        "en": "Geometry of polynomial zero sets. Deep connection with commutative algebra.",
+        "zh": "多项式零点集的几何学。与交换代数的深层联系。"
+      },
+      "prerequisites": [
+        "commutative-algebra",
+        "point-set-topology"
+      ],
+      "number": "04-08"
+    },
+    {
+      "id": "prime-numbers",
+      "label": "素数",
+      "labels": {
+        "ja": "素数",
+        "en": "Prime Numbers",
+        "zh": "素数"
+      },
+      "area": "pure_algebra",
+      "difficulty": 2,
+      "position": {
+        "x": 1000,
+        "y": 320
+      },
+      "description": "1とその数自身でしか割れない特別な自然数。",
+      "descriptions": {
+        "ja": "1とその数自身でしか割れない特別な自然数。",
+        "en": "Special natural numbers divisible only by 1 and themselves.",
+        "zh": "只能被1和自身整除的特殊自然数。"
+      },
+      "prerequisites": [
+        "integers",
+        "proof-methods"
+      ],
+      "number": "02-03"
+    }
   ],
   "edges": [
-    { "source": "functions", "target": "linear-algebra" },
-    { "source": "real-numbers", "target": "linear-algebra" },
-    { "source": "linear-algebra", "target": "group-theory" },
-    { "source": "proof-methods", "target": "group-theory" },
-    { "source": "real-numbers", "target": "calculus-differential" },
-    { "source": "functions", "target": "calculus-differential" },
-    { "source": "calculus-differential", "target": "calculus-integral" },
-    { "source": "proof-methods", "target": "euclidean-geometry" },
-    { "source": "real-numbers", "target": "euclidean-geometry" },
-    { "source": "integers", "target": "prime-numbers" },
-    { "source": "proof-methods", "target": "prime-numbers" },
-    { "source": "prime-numbers", "target": "number-theory" },
-    { "source": "proof-methods", "target": "number-theory" },
-    { "source": "group-theory", "target": "ring-theory" },
-    { "source": "linear-algebra", "target": "ring-theory" },
-    { "source": "ring-theory", "target": "field-theory" },
-    { "source": "field-theory", "target": "galois-theory" },
-    { "source": "group-theory", "target": "galois-theory" },
-    { "source": "ring-theory", "target": "module-theory" },
-    { "source": "linear-algebra", "target": "module-theory" },
-    { "source": "ring-theory", "target": "commutative-algebra" },
-    { "source": "module-theory", "target": "commutative-algebra" },
-    { "source": "module-theory", "target": "homological-algebra" },
-    { "source": "category-theory", "target": "homological-algebra" },
-    { "source": "group-theory", "target": "representation-theory" },
-    { "source": "linear-algebra", "target": "representation-theory" },
-    { "source": "module-theory", "target": "representation-theory" },
-    { "source": "number-theory", "target": "algebraic-number-theory" },
-    { "source": "field-theory", "target": "algebraic-number-theory" },
-    { "source": "linear-algebra", "target": "lie-algebras" },
-    { "source": "group-theory", "target": "lie-algebras" },
-    { "source": "calculus-integral", "target": "multivariable-calculus" },
-    { "source": "linear-algebra", "target": "multivariable-calculus" },
-    { "source": "calculus-integral", "target": "sequences-series" },
-    { "source": "multivariable-calculus", "target": "ode" },
-    { "source": "sequences-series", "target": "real-analysis" },
-    { "source": "proof-methods", "target": "real-analysis" },
-    { "source": "multivariable-calculus", "target": "complex-analysis" },
-    { "source": "complex-numbers", "target": "complex-analysis" },
-    { "source": "real-analysis", "target": "measure-theory" },
-    { "source": "ode", "target": "pde" },
-    { "source": "multivariable-calculus", "target": "pde" },
-    { "source": "measure-theory", "target": "functional-analysis" },
-    { "source": "linear-algebra", "target": "functional-analysis" },
-    { "source": "complex-analysis", "target": "fourier-analysis" },
-    { "source": "real-analysis", "target": "fourier-analysis" },
-    { "source": "fourier-analysis", "target": "harmonic-analysis" },
-    { "source": "functional-analysis", "target": "harmonic-analysis" },
-    { "source": "functional-analysis", "target": "operator-theory" },
-    { "source": "euclidean-geometry", "target": "analytic-geometry" },
-    { "source": "functions", "target": "analytic-geometry" },
-    { "source": "set-theory", "target": "point-set-topology" },
-    { "source": "proof-methods", "target": "point-set-topology" },
-    { "source": "real-numbers", "target": "point-set-topology" },
-    { "source": "multivariable-calculus", "target": "differential-geometry" },
-    { "source": "linear-algebra", "target": "differential-geometry" },
-    { "source": "analytic-geometry", "target": "differential-geometry" },
-    { "source": "point-set-topology", "target": "manifolds" },
-    { "source": "differential-geometry", "target": "manifolds" },
-    { "source": "point-set-topology", "target": "algebraic-topology" },
-    { "source": "group-theory", "target": "algebraic-topology" },
-    { "source": "differential-geometry", "target": "riemannian-geometry" },
-    { "source": "manifolds", "target": "riemannian-geometry" },
-    { "source": "commutative-algebra", "target": "algebraic-geometry" },
-    { "source": "point-set-topology", "target": "algebraic-geometry" }
+    {
+      "source": "functions",
+      "target": "linear-algebra"
+    },
+    {
+      "source": "real-numbers",
+      "target": "linear-algebra"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "group-theory"
+    },
+    {
+      "source": "proof-methods",
+      "target": "group-theory"
+    },
+    {
+      "source": "real-numbers",
+      "target": "calculus-differential"
+    },
+    {
+      "source": "functions",
+      "target": "calculus-differential"
+    },
+    {
+      "source": "calculus-differential",
+      "target": "calculus-integral"
+    },
+    {
+      "source": "proof-methods",
+      "target": "euclidean-geometry"
+    },
+    {
+      "source": "real-numbers",
+      "target": "euclidean-geometry"
+    },
+    {
+      "source": "integers",
+      "target": "prime-numbers"
+    },
+    {
+      "source": "proof-methods",
+      "target": "prime-numbers"
+    },
+    {
+      "source": "prime-numbers",
+      "target": "number-theory"
+    },
+    {
+      "source": "proof-methods",
+      "target": "number-theory"
+    },
+    {
+      "source": "group-theory",
+      "target": "ring-theory"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "ring-theory"
+    },
+    {
+      "source": "ring-theory",
+      "target": "field-theory"
+    },
+    {
+      "source": "field-theory",
+      "target": "galois-theory"
+    },
+    {
+      "source": "group-theory",
+      "target": "galois-theory"
+    },
+    {
+      "source": "ring-theory",
+      "target": "module-theory"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "module-theory"
+    },
+    {
+      "source": "ring-theory",
+      "target": "commutative-algebra"
+    },
+    {
+      "source": "module-theory",
+      "target": "commutative-algebra"
+    },
+    {
+      "source": "module-theory",
+      "target": "homological-algebra"
+    },
+    {
+      "source": "category-theory",
+      "target": "homological-algebra"
+    },
+    {
+      "source": "group-theory",
+      "target": "representation-theory"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "representation-theory"
+    },
+    {
+      "source": "module-theory",
+      "target": "representation-theory"
+    },
+    {
+      "source": "number-theory",
+      "target": "algebraic-number-theory"
+    },
+    {
+      "source": "field-theory",
+      "target": "algebraic-number-theory"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "lie-algebras"
+    },
+    {
+      "source": "group-theory",
+      "target": "lie-algebras"
+    },
+    {
+      "source": "calculus-integral",
+      "target": "multivariable-calculus"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "multivariable-calculus"
+    },
+    {
+      "source": "calculus-integral",
+      "target": "sequences-series"
+    },
+    {
+      "source": "multivariable-calculus",
+      "target": "ode"
+    },
+    {
+      "source": "sequences-series",
+      "target": "real-analysis"
+    },
+    {
+      "source": "proof-methods",
+      "target": "real-analysis"
+    },
+    {
+      "source": "multivariable-calculus",
+      "target": "complex-analysis"
+    },
+    {
+      "source": "complex-numbers",
+      "target": "complex-analysis"
+    },
+    {
+      "source": "real-analysis",
+      "target": "measure-theory"
+    },
+    {
+      "source": "ode",
+      "target": "pde"
+    },
+    {
+      "source": "multivariable-calculus",
+      "target": "pde"
+    },
+    {
+      "source": "measure-theory",
+      "target": "functional-analysis"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "functional-analysis"
+    },
+    {
+      "source": "complex-analysis",
+      "target": "fourier-analysis"
+    },
+    {
+      "source": "real-analysis",
+      "target": "fourier-analysis"
+    },
+    {
+      "source": "fourier-analysis",
+      "target": "harmonic-analysis"
+    },
+    {
+      "source": "functional-analysis",
+      "target": "harmonic-analysis"
+    },
+    {
+      "source": "functional-analysis",
+      "target": "operator-theory"
+    },
+    {
+      "source": "euclidean-geometry",
+      "target": "analytic-geometry"
+    },
+    {
+      "source": "functions",
+      "target": "analytic-geometry"
+    },
+    {
+      "source": "set-theory",
+      "target": "point-set-topology"
+    },
+    {
+      "source": "proof-methods",
+      "target": "point-set-topology"
+    },
+    {
+      "source": "real-numbers",
+      "target": "point-set-topology"
+    },
+    {
+      "source": "multivariable-calculus",
+      "target": "differential-geometry"
+    },
+    {
+      "source": "linear-algebra",
+      "target": "differential-geometry"
+    },
+    {
+      "source": "analytic-geometry",
+      "target": "differential-geometry"
+    },
+    {
+      "source": "point-set-topology",
+      "target": "manifolds"
+    },
+    {
+      "source": "differential-geometry",
+      "target": "manifolds"
+    },
+    {
+      "source": "point-set-topology",
+      "target": "algebraic-topology"
+    },
+    {
+      "source": "group-theory",
+      "target": "algebraic-topology"
+    },
+    {
+      "source": "differential-geometry",
+      "target": "riemannian-geometry"
+    },
+    {
+      "source": "manifolds",
+      "target": "riemannian-geometry"
+    },
+    {
+      "source": "commutative-algebra",
+      "target": "algebraic-geometry"
+    },
+    {
+      "source": "point-set-topology",
+      "target": "algebraic-geometry"
+    }
   ]
 }
