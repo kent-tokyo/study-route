@@ -49,5 +49,20 @@
     "ja": "日本語",
     "en": "EN",
     "zh": "中文"
+  },
+  "policy": {
+    "title": "网站政策",
+    "aboutTitle": "关于本站",
+    "aboutBody": "本站（plactice_math）是一款免费的教育Web应用，支持数学、哲学、AWS、计算机科学、化学、会计等多领域概念学习。学习内容由AI（Anthropic的Claude）生成，并经过准确性审核。",
+    "disclaimerTitle": "免责声明",
+    "disclaimerBody": "本站内容由AI生成，仅供教育目的使用。虽然我们力求准确，但不保证所提供信息的准确性、完整性或时效性。用户应通过权威来源核实重要信息。",
+    "disclaimerAccounting": "特别关于会计内容：说明以日本准则（J-GAAP）为基础，并在适用时提及IFRS的差异。本内容不构成专业会计或税务建议。",
+    "privacyTitle": "隐私",
+    "privacyBody": "本站不收集个人信息。所有学习进度和设置均存储在浏览器的localStorage中，不会发送至任何服务器。",
+    "techTitle": "技术栈",
+    "licenseTitle": "许可",
+    "licenseBody": "源代码在GitHub上公开。生成内容按原样提供，仅供教育使用。",
+    "contactTitle": "联系我们",
+    "contactBody": "如需报告错误或提出功能建议，请使用GitHub Issues页面。"
   }
 }
