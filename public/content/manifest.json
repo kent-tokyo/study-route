@@ -214,5 +214,13 @@
     "hasIllustration": {
       "standard": false
     }
+  },
+  "ecs": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
   }
 }

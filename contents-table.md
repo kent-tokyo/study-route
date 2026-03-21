@@ -105,7 +105,7 @@ Last updated: 2026-03-21
 |-----|---------|-------|------|----------|----------|----------|---------|------|----------|
 | 03-001 | ec2 | EC2 | compute | - | done | - | done | done | - |
 | 03-002 | lambda | Lambda | compute | - | done | - | done | done | - |
-| 03-003 | ecs | ECS | compute | - | - | - | - | - | - |
+| 03-003 | ecs | ECS | compute | - | done | - | - | - | - |
 | 03-004 | fargate | Fargate | compute | - | - | - | - | - | - |
 | 03-005 | auto-scaling | Auto Scaling | compute | - | - | - | - | - | - |
 | 03-006 | s3 | S3 | storage | - | done | - | - | - | - |
