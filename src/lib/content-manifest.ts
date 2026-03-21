@@ -1,6 +1,7 @@
 interface ManifestEntry {
   levels: string[];
   hasIllustration: Record<string, boolean>;
+  locales?: Record<string, string[]>;
 }
 
 type Manifest = Record<string, ManifestEntry>;
@@ -36,4 +37,9 @@ export async function getAvailableLevels(nodeId: string, domain: string): Promis
 export async function hasIllustration(nodeId: string, level: string, domain: string): Promise<boolean> {
   const manifest = await fetchManifest(domain);
   return manifest[nodeId]?.hasIllustration[level] ?? false;
+}
+
+export async function getAvailableLocales(nodeId: string, level: string, domain: string): Promise<string[]> {
+  const manifest = await fetchManifest(domain);
+  return manifest[nodeId]?.locales?.[level] ?? ['ja'];
 }

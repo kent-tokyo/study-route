@@ -33,7 +33,7 @@ export default function LearnPageClient({ nodeId, domain }: LearnPageClientProps
   const areas = useMemo(() => getAreaMeta(domain), [domain]);
   const { contentLevel, setContentLevel } = useSettings();
   const { progress, updateProgress } = useProgress(domain);
-  const { data, illustrationUrl, loading, error, resolvedLevel, availableLevels } = useContent(nodeId, contentLevel, domain);
+  const { data, illustrationUrl, loading, error, resolvedLevel, availableLevels } = useContent(nodeId, contentLevel, domain, locale);
 
   const status = progress[nodeId]?.status ?? 'available';
   const mapUrl = domain ? `/${domain}/map?area=${node?.area}` : `/map?area=${node?.area}`;
@@ -57,12 +57,20 @@ export default function LearnPageClient({ nodeId, domain }: LearnPageClientProps
     return (
       <div className="flex h-screen flex-col items-center justify-center gap-4 bg-white dark:bg-zinc-950">
         <p className="text-zinc-500 dark:text-zinc-400">{t('common.notFound')}</p>
-        <Link
-          href={mapUrl}
-          className="rounded-lg bg-blue-600 px-4 py-2 text-sm text-white hover:bg-blue-700 transition-colors"
-        >
-          {t('common.backToMap')}
-        </Link>
+        <div className="flex gap-3">
+          <Link
+            href={mapUrl}
+            className="rounded-lg bg-blue-600 px-4 py-2 text-sm text-white hover:bg-blue-700 transition-colors"
+          >
+            {t('common.backToMap')}
+          </Link>
+          <Link
+            href={domainMapUrl}
+            className="rounded-lg bg-zinc-600 px-4 py-2 text-sm text-white hover:bg-zinc-700 transition-colors"
+          >
+            {t('common.backToOverview')}
+          </Link>
+        </div>
       </div>
     );
   }

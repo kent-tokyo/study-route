@@ -2,7 +2,7 @@ import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
-import { generateContent, generateQuizOnly } from '../src/lib/content-generator';
+import { generateContent, generateQuizOnly, translateContent } from '../src/lib/content-generator';
 import { generateConceptImage } from '../src/lib/image-generator';
 import { getAllNodes, getNode } from '../src/lib/graph';
 import type { DomainId } from '../src/types/domain';
@@ -38,6 +38,7 @@ function parseArgs() {
     dryRun: false,
     model: null as string | null,
     imageModel: null as string | null,
+    locales: [] as string[],
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -76,6 +77,9 @@ function parseArgs() {
       case '--image-model':
         flags.imageModel = args[++i];
         break;
+      case '--locale':
+        flags.locales.push(args[++i]);
+        break;
     }
   }
 
@@ -107,14 +111,19 @@ function getTargetLevels(flags: ReturnType<typeof parseArgs>): string[] {
   return ['standard'];
 }
 
-function contentExists(nodeId: string, level: string): boolean {
+function contentFilename(locale: string = 'ja'): string {
+  return locale === 'ja' ? 'content.json' : `content.${locale}.json`;
+}
+
+function contentExists(nodeId: string, level: string, locale: string = 'ja'): boolean {
   const domain = getDomainForNode(nodeId);
-  return fs.existsSync(path.join(OUTPUT_DIR, domain, nodeId, level, 'content.json'));
+  return fs.existsSync(path.join(OUTPUT_DIR, domain, nodeId, level, contentFilename(locale)));
 }
 
 interface ManifestEntry {
   levels: string[];
   hasIllustration: Record<string, boolean>;
+  locales?: Record<string, string[]>;
 }
 
 function loadManifest(domainId: DomainId): Record<string, ManifestEntry> {
@@ -207,8 +216,13 @@ async function main() {
   const levels = getTargetLevels(flags);
   const modelName = flags.model || 'claude-sonnet-4-6';
 
+  const targetLocales = flags.locales.length > 0 ? flags.locales : [];
+  const isTranslateMode = targetLocales.length > 0;
+
   console.log(`Target: ${nodeIds.length} node(s) × ${levels.length} level(s) = ${nodeIds.length * levels.length} combination(s)`);
-  if (flags.quizOnly) {
+  if (isTranslateMode) {
+    console.log(`Mode: translate (${targetLocales.join(', ')})`);
+  } else if (flags.quizOnly) {
     console.log('Mode: quiz only (generating quizzes for existing content)');
   } else if (flags.imagesOnly) {
     console.log('Mode: images only (skipping content generation)');
@@ -218,6 +232,68 @@ async function main() {
   }
   if (flags.force) console.log('Force mode: overwriting existing content');
 
+  // In --locale mode, translate existing Japanese content
+  if (isTranslateMode) {
+    const translateJobs: { nodeId: string; level: string; locale: string }[] = [];
+    for (const nodeId of nodeIds) {
+      for (const level of levels) {
+        if (!contentExists(nodeId, level, 'ja')) {
+          console.log(`  [skip] ${nodeId}/${level} (no Japanese content to translate)`);
+          continue;
+        }
+        for (const locale of targetLocales) {
+          if (!flags.force && contentExists(nodeId, level, locale)) {
+            console.log(`  [skip] ${nodeId}/${level}/${locale} (already exists)`);
+            continue;
+          }
+          translateJobs.push({ nodeId, level, locale });
+        }
+      }
+    }
+
+    if (flags.dryRun) {
+      console.log(`\nDry run: ${translateJobs.length} translation job(s) would be executed:`);
+      for (const job of translateJobs) {
+        console.log(`  - ${job.nodeId}/${job.level} → ${job.locale}`);
+      }
+    } else if (translateJobs.length === 0) {
+      console.log('No translation jobs to execute.');
+    } else {
+      console.log(`\nTranslating ${translateJobs.length} content(s) with concurrency ${MAX_CONCURRENCY}...`);
+
+      const tasks = translateJobs.map(job => async () => {
+        const label = `${job.nodeId}/${job.level} → ${job.locale}`;
+        const domain = getDomainForNode(job.nodeId);
+        try {
+          const jaPath = path.join(OUTPUT_DIR, domain, job.nodeId, job.level, 'content.json');
+          const jaContent = JSON.parse(fs.readFileSync(jaPath, 'utf-8'));
+          const translated = await translateContent(
+            { content: jaContent.content, terms: jaContent.terms, diagrams: jaContent.diagrams, quiz: jaContent.quiz || [] },
+            job.locale,
+            { llmModel: modelName },
+          );
+          const outPath = path.join(OUTPUT_DIR, domain, job.nodeId, job.level, contentFilename(job.locale));
+          fs.writeFileSync(outPath, JSON.stringify({
+            id: crypto.randomUUID(),
+            nodeId: job.nodeId,
+            level: job.level,
+            locale: job.locale,
+            generatedAt: new Date().toISOString(),
+            content: translated.content,
+            terms: translated.terms,
+            diagrams: translated.diagrams,
+            quiz: translated.quiz,
+          }, null, 2));
+          console.log(`  [done] ${label}`);
+        } catch (err) {
+          console.warn(`  [error] ${label}: ${(err as Error).message}`);
+        }
+        return { nodeId: job.nodeId, level: job.level, locale: job.locale };
+      });
+
+      await runWithConcurrency(tasks, MAX_CONCURRENCY);
+    }
+  } else
   // In --quiz-only mode, generate quizzes for existing content
   if (flags.quizOnly) {
     const quizJobs: { nodeId: string; level: string }[] = [];
@@ -416,6 +492,15 @@ async function main() {
           manifest[nodeId].hasIllustration[level] = fs.existsSync(
             path.join(OUTPUT_DIR, domainId, nodeId, level, 'illustration.webp'),
           );
+          // Track available locales
+          if (!manifest[nodeId].locales) manifest[nodeId].locales = {};
+          const availableLocales = ['ja'];
+          for (const loc of ['en', 'zh']) {
+            if (contentExists(nodeId, level, loc)) {
+              availableLocales.push(loc);
+            }
+          }
+          manifest[nodeId].locales[level] = availableLocales;
         }
       }
     }

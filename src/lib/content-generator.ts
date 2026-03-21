@@ -530,6 +530,178 @@ export async function generateContent(
 }
 
 // ---------------------------------------------------------------------------
+// Translation function (translate existing Japanese content)
+// ---------------------------------------------------------------------------
+
+const LOCALE_LABELS: Record<string, { language: string; instruction: string }> = {
+  en: {
+    language: 'English',
+    instruction: 'Translate the following Japanese educational content into clear, accessible English. Maintain the same MDX structure, section headings, and KaTeX math formulas exactly. Translate section headings naturally (e.g., "何か — 直感的な説明" → "What is it — Intuitive explanation"). Keep $...$ and $$...$$ math notation unchanged. Output only the translated MDX.',
+  },
+  zh: {
+    language: '简体中文',
+    instruction: '请将以下日文教育内容翻译为简体中文。保持相同的MDX结构、章节标题和KaTeX数学公式不变。自然翻译章节标题（例如："何か — 直感的な説明" → "是什么 — 直观的解释"）。保持 $...$ 和 $$...$$ 数学标记不变。只输出翻译后的MDX。',
+  },
+};
+
+async function translateMDX(mdxContent: string, locale: string, model: string): Promise<string> {
+  const config = LOCALE_LABELS[locale];
+  if (!config) throw new Error(`Unsupported locale: ${locale}`);
+
+  const prompt = `${config.instruction}
+
+---
+${mdxContent}
+---
+
+Important:
+- Keep all KaTeX math expressions ($...$, $$...$$) exactly as they are
+- Keep the MDX structure (headings, lists, etc.) intact
+- Translate naturally, not word-by-word
+- If a concept has no standard translation in ${config.language}, keep the original term with a brief explanation
+- Output only the translated MDX (no code fences, no extra text)`;
+
+  const response = await client.messages.create({
+    model,
+    max_tokens: 8000,
+    messages: [{ role: 'user', content: prompt }],
+  });
+
+  const text = response.content[0].type === 'text' ? response.content[0].text : '';
+  return text.replace(/^```(?:mdx|markdown)?\n?/, '').replace(/\n?```$/, '').trim();
+}
+
+async function translateTerms(terms: Term[], locale: string, model: string): Promise<Term[]> {
+  const config = LOCALE_LABELS[locale];
+  if (!config) throw new Error(`Unsupported locale: ${locale}`);
+
+  const prompt = `Translate the following Japanese glossary terms into ${config.language}. Return a JSON array with the same structure.
+
+${JSON.stringify(terms, null, 2)}
+
+Rules:
+- "term": translate to ${config.language}
+- "reading": ${locale === 'zh' ? 'provide pinyin' : 'leave empty string'}
+- "en": keep unchanged (already in English)
+- "definition": translate to ${config.language}
+- Keep KaTeX math expressions unchanged
+- Return only the JSON array (no extra text)`;
+
+  const response = await client.messages.create({
+    model,
+    max_tokens: 3000,
+    messages: [{ role: 'user', content: prompt }],
+  });
+
+  const text = response.content[0].type === 'text' ? response.content[0].text : '';
+  const jsonMatch = text.match(/\[[\s\S]*\]/);
+  if (!jsonMatch) return terms;
+
+  try {
+    return JSON.parse(jsonMatch[0]);
+  } catch {
+    const fixed = jsonMatch[0].replace(/[\x00-\x1f]/g, (ch) => {
+      if (ch === '\n') return '\\n';
+      if (ch === '\r') return '\\r';
+      if (ch === '\t') return '\\t';
+      return '';
+    });
+    return JSON.parse(fixed);
+  }
+}
+
+async function translateQuiz(quiz: QuizQuestion[], locale: string, model: string): Promise<QuizQuestion[]> {
+  if (!quiz || quiz.length === 0) return [];
+  const config = LOCALE_LABELS[locale];
+  if (!config) throw new Error(`Unsupported locale: ${locale}`);
+
+  const prompt = `Translate the following quiz questions from Japanese into ${config.language}. Return a JSON array with the exact same structure.
+
+${JSON.stringify(quiz, null, 2)}
+
+Rules:
+- Translate "question", "choices[].text", and "explanation" into ${config.language}
+- Keep "isCorrect" values unchanged
+- Keep KaTeX math expressions unchanged
+- Return only the JSON array (no extra text)`;
+
+  const response = await client.messages.create({
+    model,
+    max_tokens: 4000,
+    messages: [{ role: 'user', content: prompt }],
+  });
+
+  const text = response.content[0].type === 'text' ? response.content[0].text : '';
+  const jsonMatch = text.match(/\[[\s\S]*\]/);
+  if (!jsonMatch) return quiz;
+
+  try {
+    return JSON.parse(jsonMatch[0]);
+  } catch {
+    const fixed = jsonMatch[0].replace(/[\x00-\x1f]/g, (ch) => {
+      if (ch === '\n') return '\\n';
+      if (ch === '\r') return '\\r';
+      if (ch === '\t') return '\\t';
+      return '';
+    });
+    return JSON.parse(fixed);
+  }
+}
+
+async function translateSVG(svgContent: string, locale: string, model: string): Promise<string> {
+  const config = LOCALE_LABELS[locale];
+  if (!config) throw new Error(`Unsupported locale: ${locale}`);
+
+  const prompt = `Translate the text labels in the following SVG diagram from Japanese into ${config.language}. Keep all SVG attributes, structure, and styling exactly the same. Only translate the text content within <text> elements.
+
+${svgContent}
+
+Return only the translated SVG (from <svg> to </svg>). No extra text.`;
+
+  const response = await client.messages.create({
+    model,
+    max_tokens: 4000,
+    messages: [{ role: 'user', content: prompt }],
+  });
+
+  const text = response.content[0].type === 'text' ? response.content[0].text : '';
+  const svgMatch = text.match(/<svg[\s\S]*<\/svg>/);
+  return svgMatch ? svgMatch[0] : svgContent;
+}
+
+export async function translateContent(
+  jaContent: GeneratedContent,
+  locale: string,
+  options?: { llmModel?: string },
+): Promise<GeneratedContent> {
+  const model = options?.llmModel || 'claude-sonnet-4-6';
+
+  console.log(`  [step 1/3] Translating MDX to ${locale}...`);
+  const translatedMdx = await translateMDX(jaContent.content, locale, model);
+
+  console.log(`  [step 2/3] Translating terms + quiz to ${locale}...`);
+  const [translatedTerms, translatedQuiz] = await Promise.all([
+    translateTerms(jaContent.terms, locale, model),
+    translateQuiz(jaContent.quiz, locale, model),
+  ]);
+
+  console.log(`  [step 3/3] Translating diagrams to ${locale}...`);
+  const translatedDiagrams = await Promise.all(
+    jaContent.diagrams.map(async (d) => ({
+      name: d.name,
+      svg: await translateSVG(d.svg, locale, model),
+    })),
+  );
+
+  return {
+    content: translatedMdx,
+    terms: translatedTerms,
+    diagrams: translatedDiagrams,
+    quiz: translatedQuiz,
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Standalone quiz generation (for --quiz-only mode)
 // ---------------------------------------------------------------------------
 

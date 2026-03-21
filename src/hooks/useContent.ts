@@ -24,7 +24,11 @@ interface UseContentResult {
   availableLevels: string[];
 }
 
-export function useContent(nodeId: string, level: string, domain: string = 'math'): UseContentResult {
+function contentFilename(locale: string): string {
+  return locale === 'ja' ? 'content.json' : `content.${locale}.json`;
+}
+
+export function useContent(nodeId: string, level: string, domain: string = 'math', locale: string = 'ja'): UseContentResult {
   const [data, setData] = useState<ContentData | null>(null);
   const [illustrationUrl, setIllustrationUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -56,7 +60,12 @@ export function useContent(nodeId: string, level: string, domain: string = 'math
 
         const basePath = getContentBasePath();
         const domainPrefix = domain ? `${domain}/` : '';
-        const res = await fetch(`${basePath}/content/${domainPrefix}${nodeId}/${targetLevel}/content.json`);
+
+        // Try locale-specific file first, fall back to Japanese
+        let res = await fetch(`${basePath}/content/${domainPrefix}${nodeId}/${targetLevel}/${contentFilename(locale)}`);
+        if (!res.ok && locale !== 'ja') {
+          res = await fetch(`${basePath}/content/${domainPrefix}${nodeId}/${targetLevel}/content.json`);
+        }
         if (cancelled) return;
         if (!res.ok) {
           setError(true);
@@ -80,7 +89,7 @@ export function useContent(nodeId: string, level: string, domain: string = 'math
 
     load();
     return () => { cancelled = true; };
-  }, [nodeId, level, domain]);
+  }, [nodeId, level, domain, locale]);
 
   return { data, illustrationUrl, loading, error, resolvedLevel, availableLevels };
 }
