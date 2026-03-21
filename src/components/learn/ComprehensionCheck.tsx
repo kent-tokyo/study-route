@@ -14,9 +14,10 @@ interface ComprehensionCheckProps {
   onUpdateProgress: (nodeId: string, status: NodeStatus) => void;
   quiz?: QuizQuestion[];
   mapUrl?: string;
+  domainMapUrl?: string;
 }
 
-export default function ComprehensionCheck({ nodeId, status, area, onUpdateProgress, quiz, mapUrl }: ComprehensionCheckProps) {
+export default function ComprehensionCheck({ nodeId, status, area, onUpdateProgress, quiz, mapUrl, domainMapUrl }: ComprehensionCheckProps) {
   const [loading, setLoading] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const router = useRouter();
@@ -40,12 +41,22 @@ export default function ComprehensionCheck({ nodeId, status, area, onUpdateProgr
     return (
       <div className="rounded-lg border border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950 p-6 text-center">
         <p className="text-emerald-700 dark:text-emerald-300 font-semibold">{t('comprehension.alreadyCompleted')}</p>
-        <button
-          onClick={() => router.push(resolvedMapUrl)}
-          className="mt-3 rounded-md bg-emerald-600 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-700"
-        >
-          {t('common.backToMap')}
-        </button>
+        <div className="mt-3 flex justify-center gap-3">
+          <button
+            onClick={() => router.push(resolvedMapUrl)}
+            className="rounded-md bg-emerald-600 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-700"
+          >
+            {t('common.backToMap')}
+          </button>
+          {domainMapUrl && (
+            <button
+              onClick={() => router.push(domainMapUrl)}
+              className="rounded-md border border-emerald-300 dark:border-emerald-700 bg-white dark:bg-emerald-950 px-6 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-300 transition-colors hover:bg-emerald-50 dark:hover:bg-emerald-900"
+            >
+              {t('common.backToOverview')}
+            </button>
+          )}
+        </div>
       </div>
     );
   }

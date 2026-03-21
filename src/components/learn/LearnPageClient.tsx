@@ -31,6 +31,7 @@ export default function LearnPageClient({ nodeId, domain }: LearnPageClientProps
 
   const status = progress[nodeId]?.status ?? 'available';
   const mapUrl = domain ? `/${domain}/map?area=${node?.area}` : `/map?area=${node?.area}`;
+  const domainMapUrl = domain ? `/${domain}/map` : `/map`;
 
   if (!node) {
     router.replace(domain ? `/${domain}/map` : '/map');
@@ -113,6 +114,7 @@ export default function LearnPageClient({ nodeId, domain }: LearnPageClientProps
           onUpdateProgress={updateProgress}
           quiz={data.quiz}
           mapUrl={mapUrl}
+          domainMapUrl={domainMapUrl}
         />
       </main>
     </div>
