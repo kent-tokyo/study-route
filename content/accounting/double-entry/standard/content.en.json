@@ -137,7 +137,7 @@
       "explanation": "In this transaction, two facts occur simultaneously: 'Ordinary Deposits (asset) increased by 1,000,000 yen' and 'Loans Payable (liability) increased by 1,000,000 yen.' Since an increase in assets is recorded on the debit side and an increase in liabilities is recorded on the credit side, the entry is: (Debit) Ordinary Deposits / (Credit) Loans Payable. Just because cash is increasing does not mean only the debit side is recorded — the source of the funds (the increase in liability) must also be recorded on the credit side at the same time. This is the essence of double-entry bookkeeping."
     },
     {
-      "question": "Which of the following is NOT mentioned in the text as a key advantage of double-entry bookkeeping compared to single-entry bookkeeping?",
+      "question": "Which of the following is NOT a key advantage of double-entry bookkeeping compared to single-entry bookkeeping?",
       "choices": [
         {
           "text": "Both the state of assets (stock) and the flow of revenues and expenses (flow) can be understood at the same time",
@@ -156,7 +156,7 @@
           "isCorrect": true
         }
       ],
-      "explanation": "The advantages of double-entry bookkeeping mentioned in the text are: ① simultaneous understanding of the state of assets (stock) and revenues/expenses (flow), ② a self-checking function via trial balance (detection of recording errors), and ③ multifaceted understanding of business operations by capturing cause and effect from two directions. 'Reducing the time needed to prepare the books' is not mentioned in the text; in fact, double-entry bookkeeping requires more effort to record than single-entry bookkeeping."
+      "explanation": "The advantages of double-entry bookkeeping are: ① simultaneous understanding of the state of assets (stock) and revenues/expenses (flow), ② a self-checking function via trial balance (detection of recording errors), and ③ multifaceted understanding of business operations by capturing cause and effect from two directions. 'Reducing the time needed to prepare the books' is incorrect; in fact, double-entry bookkeeping requires more effort to record than single-entry bookkeeping."
     }
   ]
 }

@@ -137,7 +137,7 @@
       "explanation": "By constructing the correspondence $f(n) = 2n$, each element of $\\mathbb{N}$ pairs exactly one-to-one with each element of $E$, as in $1 \\leftrightarrow 2,\\ 2 \\leftrightarrow 4,\\ 3 \\leftrightarrow 6, \\ldots$. Since a bijection exists, we can say $|\\mathbb{N}| = |E|$. While \"the number of elements in a subset is less than that of the whole\" holds for finite sets, this intuition does not apply to infinite sets — which is what makes infinity so fascinating."
     },
     {
-      "question": "Which of the following, as an application of the concept of \"counting,\" does NOT match the content covered in the material?",
+      "question": "Which of the following is NOT a correct application of the concept of \"counting\"?",
       "choices": [
         {
           "text": "\"Computational complexity,\" used to evaluate the efficiency of algorithms, is defined by counting the number of operations",
@@ -156,7 +156,7 @@
           "isCorrect": true
         }
       ],
-      "explanation": "The material explains that \"the natural numbers and the even numbers are infinite in the same sense (countable) via a bijection,\" but it is known that the set of all real numbers is \"uncountably infinite\" — meaning no bijection can be constructed between the real numbers and the natural numbers. The natural numbers, computational complexity, entropy, and the definition of probability are all mentioned in the material as applications of \"counting.\""
+      "explanation": "The natural numbers and the even numbers are infinite in the same sense (countable) via a bijection, but it is known that the set of all real numbers is \"uncountably infinite\" — meaning no bijection can be constructed between the real numbers and the natural numbers. The natural numbers, computational complexity, entropy, and the definition of probability are all valid applications of \"counting.\""
     }
   ]
 }

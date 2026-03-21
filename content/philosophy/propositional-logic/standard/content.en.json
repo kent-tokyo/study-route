@@ -141,7 +141,7 @@
           "isCorrect": false
         }
       ],
-      "explanation": "The implication $P \\Rightarrow Q$ is false only when $P$ is true and $Q$ is false. This has exactly the same truth table as \"$P$ is false or $Q$ is true,\" that is, $\\lnot P \\lor Q$. This equivalence $\\lnot P \\lor Q \\equiv P \\Rightarrow Q$ is also introduced in the course material using the example of passing or failing an exam."
+      "explanation": "The implication $P \\Rightarrow Q$ is false only when $P$ is true and $Q$ is false. This has exactly the same truth table as \"$P$ is false or $Q$ is true,\" that is, $\\lnot P \\lor Q$. This equivalence $\\lnot P \\lor Q \\equiv P \\Rightarrow Q$ is also illustrated by the example of passing or failing an exam."
     },
     {
       "question": "Which of the following correctly describes a tautology?",

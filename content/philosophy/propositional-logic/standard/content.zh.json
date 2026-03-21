@@ -141,7 +141,7 @@
           "isCorrect": false
         }
       ],
-      "explanation": "含意 $P \\Rightarrow Q$ は「$P$ が真で $Q$ が偽」のときのみ偽となります。これは「$P$ が偽、または $Q$ が真」すなわち $\\lnot P \\lor Q$ と全く同じ真理値表を持ちます。コンテンツ中の「試験の合否」の例でも、$\\lnot P \\lor Q \\equiv P \\Rightarrow Q$ として紹介されています。"
+      "explanation": "含意 $P \\Rightarrow Q$ は「$P$ が真で $Q$ が偽」のときのみ偽となります。これは「$P$ が偽、または $Q$ が真」すなわち $\\lnot P \\lor Q$ と全く同じ真理値表を持ちます。「試験の合否」の例でも、$\\lnot P \\lor Q \\equiv P \\Rightarrow Q$ として紹介されています。"
     },
     {
       "question": "トートロジー（tautology）の説明として正しいものはどれか？",
