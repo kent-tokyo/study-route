@@ -70,6 +70,12 @@
 - `mapUrl`（`?area=xxx`付き）はサブマップ、`domainMapUrl`（`?area=`なし）は全体マップの2つを用意
 - 教訓: **階層構造のあるUIでは「戻る」の行き先を複数提供すべき。ユーザーは直前のレベルだけでなく上位レベルにも戻りたい場合がある**
 
+### ナンバリングはIDではなく表示フィールドで
+- ノードIDを`0101_counting`のようにナンバー入りに変更すると、ルート・コンテンツパス・localStorage進捗・manifestが全て壊れる
+- 代わりに表示用の`number`フィールド（`01-01`形式）を追加し、SphereNodeとLearnPageClientで表示
+- `add-numbers.ts`スクリプトでエリア順×トポロジカルソートで自動付番
+- 教訓: **表示用のメタデータはIDに混ぜるのではなく、別フィールドとして持つ。IDは安定した識別子として一貫性を保つべき**
+
 ### ドメイン追加のスケーラビリティ
 - 新ドメイン追加に必要な作業: (1) areas.json + topics.json作成 (2) domains.json追記 (3) DomainId型追加 (4) index.tsにimport+switch追加 (5) graph.tsのfallback配列追加 (6) generate-content.tsのDOMAIN_IDS追加
 - 6箇所の変更が必要で、switchベースのデータロードは拡張性がやや低い
