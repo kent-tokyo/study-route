@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    { "id": "double-entry", "label": "複式簿記", "labels": { "ja": "複式簿記", "en": "Double-Entry Bookkeeping", "zh": "复式簿记" }, "area": "bookkeeping", "difficulty": 1, "position": { "x": 0, "y": 0 }, "description": "借方・貸方の基本原則", "descriptions": { "ja": "借方・貸方の基本原則", "en": "Basic principles of debit and credit", "zh": "借方与贷方的基本原则" }, "prerequisites": [] },
+    { "id": "accounts", "label": "勘定科目", "labels": { "ja": "勘定科目", "en": "Chart of Accounts", "zh": "会计科目" }, "area": "bookkeeping", "difficulty": 1, "position": { "x": 200, "y": 0 }, "description": "資産・負債・純資産・収益・費用の分類", "descriptions": { "ja": "資産・負債・純資産・収益・費用の分類", "en": "Classification of assets, liabilities, equity, revenue, and expenses", "zh": "资产、负债、所有者权益、收入与费用的分类" }, "prerequisites": ["double-entry"] },
+    { "id": "journal-entries", "label": "仕訳", "labels": { "ja": "仕訳", "en": "Journal Entries", "zh": "分录" }, "area": "bookkeeping", "difficulty": 2, "position": { "x": 100, "y": 150 }, "description": "取引の記録方法と仕訳帳", "descriptions": { "ja": "取引の記録方法と仕訳帳", "en": "Recording transactions and the journal", "zh": "交易的记录方法与日记账" }, "prerequisites": ["double-entry", "accounts"] },
+    { "id": "trial-balance", "label": "試算表", "labels": { "ja": "試算表", "en": "Trial Balance", "zh": "试算表" }, "area": "bookkeeping", "difficulty": 2, "position": { "x": 300, "y": 150 }, "description": "合計残高試算表・残高試算表", "descriptions": { "ja": "合計残高試算表・残高試算表", "en": "Trial balance and adjusted trial balance", "zh": "合计余额试算表与余额试算表" }, "prerequisites": ["journal-entries"] },
+    { "id": "closing-entries", "label": "決算整理", "labels": { "ja": "決算整理", "en": "Closing Entries", "zh": "结账调整" }, "area": "bookkeeping", "difficulty": 2, "position": { "x": 0, "y": 150 }, "description": "減価償却・引当金・経過勘定", "descriptions": { "ja": "減価償却・引当金・経過勘定", "en": "Depreciation, provisions, and accruals", "zh": "折旧、准备金与应计科目" }, "prerequisites": ["journal-entries"] },
+
+    { "id": "balance-sheet", "label": "貸借対照表", "labels": { "ja": "貸借対照表", "en": "Balance Sheet", "zh": "资产负债表" }, "area": "financial_statements", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "資産・負債・純資産の一覧表", "descriptions": { "ja": "資産・負債・純資産の一覧表", "en": "Statement of assets, liabilities, and equity", "zh": "资产、负债与所有者权益一览表" }, "prerequisites": ["trial-balance", "closing-entries"] },
+    { "id": "income-statement", "label": "損益計算書", "labels": { "ja": "損益計算書", "en": "Income Statement", "zh": "利润表" }, "area": "financial_statements", "difficulty": 2, "position": { "x": 200, "y": 0 }, "description": "収益と費用から利益を算出", "descriptions": { "ja": "収益と費用から利益を算出", "en": "Calculating profit from revenue and expenses", "zh": "从收入与费用计算利润" }, "prerequisites": ["trial-balance", "closing-entries"] },
+    { "id": "cash-flow", "label": "キャッシュフロー計算書", "labels": { "ja": "CF計算書", "en": "Cash Flow Statement", "zh": "现金流量表" }, "area": "financial_statements", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "営業・投資・財務活動のキャッシュフロー", "descriptions": { "ja": "営業・投資・財務活動のキャッシュフロー", "en": "Cash flows from operating, investing, and financing activities", "zh": "经营、投资与筹资活动的现金流" }, "prerequisites": ["balance-sheet", "income-statement"] },
+    { "id": "financial-analysis", "label": "財務分析", "labels": { "ja": "財務分析", "en": "Financial Analysis", "zh": "财务分析" }, "area": "financial_statements", "difficulty": 3, "position": { "x": 300, "y": 150 }, "description": "ROE・流動比率・自己資本比率", "descriptions": { "ja": "ROE・流動比率・自己資本比率", "en": "ROE, current ratio, and equity ratio", "zh": "ROE、流动比率与资本充足率" }, "prerequisites": ["balance-sheet", "income-statement"] },
+
+    { "id": "cost-classification", "label": "原価の分類", "labels": { "ja": "原価の分類", "en": "Cost Classification", "zh": "成本分类" }, "area": "cost_accounting", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "直接費・間接費・変動費・固定費", "descriptions": { "ja": "直接費・間接費・変動費・固定費", "en": "Direct/indirect costs and variable/fixed costs", "zh": "直接成本与间接成本、变动成本与固定成本" }, "prerequisites": ["accounts"] },
+    { "id": "job-costing", "label": "個別原価計算", "labels": { "ja": "個別原価計算", "en": "Job Costing", "zh": "分批成本核算" }, "area": "cost_accounting", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "受注生産の原価計算", "descriptions": { "ja": "受注生産の原価計算", "en": "Costing for custom/job-order production", "zh": "订单生产的成本核算" }, "prerequisites": ["cost-classification"] },
+    { "id": "process-costing", "label": "総合原価計算", "labels": { "ja": "総合原価計算", "en": "Process Costing", "zh": "分步成本核算" }, "area": "cost_accounting", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "大量生産の原価計算", "descriptions": { "ja": "大量生産の原価計算", "en": "Costing for mass production", "zh": "大量生产的成本核算" }, "prerequisites": ["cost-classification"] },
+    { "id": "standard-costing", "label": "標準原価計算", "labels": { "ja": "標準原価計算", "en": "Standard Costing", "zh": "标准成本核算" }, "area": "cost_accounting", "difficulty": 3, "position": { "x": 300, "y": 150 }, "description": "標準原価と原価差異分析", "descriptions": { "ja": "標準原価と原価差異分析", "en": "Standard costs and variance analysis", "zh": "标准成本与成本差异分析" }, "prerequisites": ["job-costing", "process-costing"] },
+
+    { "id": "corporate-tax", "label": "法人税", "labels": { "ja": "法人税", "en": "Corporate Tax", "zh": "企业所得税" }, "area": "tax_accounting", "difficulty": 3, "position": { "x": 0, "y": 0 }, "description": "課税所得の計算・税務調整", "descriptions": { "ja": "課税所得の計算・税務調整", "en": "Taxable income calculation and tax adjustments", "zh": "应纳税所得额计算与税务调整" }, "prerequisites": ["income-statement"] },
+    { "id": "consumption-tax", "label": "消費税", "labels": { "ja": "消費税", "en": "Consumption Tax", "zh": "消费税" }, "area": "tax_accounting", "difficulty": 2, "position": { "x": 200, "y": 0 }, "description": "課税取引・仕入税額控除・インボイス制度", "descriptions": { "ja": "課税取引・仕入税額控除・インボイス制度", "en": "Taxable transactions, input tax credits, and invoice system", "zh": "应税交易、进项税抵扣与发票制度" }, "prerequisites": ["journal-entries"] },
+    { "id": "deferred-tax", "label": "税効果会計", "labels": { "ja": "税効果会計", "en": "Deferred Tax Accounting", "zh": "递延税会计" }, "area": "tax_accounting", "difficulty": 4, "position": { "x": 100, "y": 150 }, "description": "繰延税金資産・負債と一時差異", "descriptions": { "ja": "繰延税金資産・負債と一時差異", "en": "Deferred tax assets/liabilities and temporary differences", "zh": "递延税资产/负债与暂时性差异" }, "prerequisites": ["corporate-tax", "balance-sheet"] },
+
+    { "id": "cvp-analysis", "label": "CVP分析", "labels": { "ja": "CVP分析", "en": "CVP Analysis", "zh": "CVP分析" }, "area": "management_accounting", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "損益分岐点分析・限界利益", "descriptions": { "ja": "損益分岐点分析・限界利益", "en": "Break-even analysis and contribution margin", "zh": "盈亏平衡分析与边际利润" }, "prerequisites": ["cost-classification"] },
+    { "id": "budgeting", "label": "予算管理", "labels": { "ja": "予算管理", "en": "Budgeting", "zh": "预算管理" }, "area": "management_accounting", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "予算編成・予算実績差異分析", "descriptions": { "ja": "予算編成・予算実績差異分析", "en": "Budget preparation and variance analysis", "zh": "预算编制与预算实绩差异分析" }, "prerequisites": ["cvp-analysis", "income-statement"] },
+    { "id": "decision-accounting", "label": "意思決定会計", "labels": { "ja": "意思決定会計", "en": "Decision Accounting", "zh": "决策会计" }, "area": "management_accounting", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "設備投資の経済性計算・NPV・IRR", "descriptions": { "ja": "設備投資の経済性計算・NPV・IRR", "en": "Capital budgeting, NPV, and IRR", "zh": "设备投资经济性计算、NPV与IRR" }, "prerequisites": ["cvp-analysis", "cash-flow"] },
+    { "id": "abc", "label": "活動基準原価計算", "labels": { "ja": "活動基準原価計算", "en": "Activity-Based Costing", "zh": "作业成本法" }, "area": "management_accounting", "difficulty": 3, "position": { "x": 300, "y": 0 }, "description": "活動に基づく間接費配賦", "descriptions": { "ja": "活動に基づく間接費配賦", "en": "Overhead allocation based on activities", "zh": "基于作业的间接成本分配" }, "prerequisites": ["cost-classification"] },
+
+    { "id": "internal-control", "label": "内部統制", "labels": { "ja": "内部統制", "en": "Internal Controls", "zh": "内部控制" }, "area": "auditing", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "内部統制の構成要素と評価", "descriptions": { "ja": "内部統制の構成要素と評価", "en": "Components and evaluation of internal controls", "zh": "内部控制的组成要素与评价" }, "prerequisites": ["balance-sheet"] },
+    { "id": "audit-procedures", "label": "監査手続", "labels": { "ja": "監査手続", "en": "Audit Procedures", "zh": "审计程序" }, "area": "auditing", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "リスク評価・実証手続・分析的手続", "descriptions": { "ja": "リスク評価・実証手続・分析的手続", "en": "Risk assessment, substantive procedures, and analytical procedures", "zh": "风险评估、实质性程序与分析性程序" }, "prerequisites": ["internal-control"] },
+    { "id": "audit-report", "label": "監査報告書", "labels": { "ja": "監査報告書", "en": "Audit Report", "zh": "审计报告" }, "area": "auditing", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "監査意見の種類と報告書の構成", "descriptions": { "ja": "監査意見の種類と報告書の構成", "en": "Types of audit opinions and report structure", "zh": "审计意见类型与报告结构" }, "prerequisites": ["audit-procedures"] }
+  ],
+  "edges": [
+    { "source": "double-entry", "target": "accounts" },
+    { "source": "double-entry", "target": "journal-entries" },
+    { "source": "accounts", "target": "journal-entries" },
+    { "source": "journal-entries", "target": "trial-balance" },
+    { "source": "journal-entries", "target": "closing-entries" },
+    { "source": "trial-balance", "target": "balance-sheet" },
+    { "source": "trial-balance", "target": "income-statement" },
+    { "source": "closing-entries", "target": "balance-sheet" },
+    { "source": "closing-entries", "target": "income-statement" },
+    { "source": "balance-sheet", "target": "cash-flow" },
+    { "source": "income-statement", "target": "cash-flow" },
+    { "source": "balance-sheet", "target": "financial-analysis" },
+    { "source": "income-statement", "target": "financial-analysis" },
+    { "source": "accounts", "target": "cost-classification" },
+    { "source": "cost-classification", "target": "job-costing" },
+    { "source": "cost-classification", "target": "process-costing" },
+    { "source": "job-costing", "target": "standard-costing" },
+    { "source": "process-costing", "target": "standard-costing" },
+    { "source": "income-statement", "target": "corporate-tax" },
+    { "source": "journal-entries", "target": "consumption-tax" },
+    { "source": "corporate-tax", "target": "deferred-tax" },
+    { "source": "balance-sheet", "target": "deferred-tax" },
+    { "source": "cost-classification", "target": "cvp-analysis" },
+    { "source": "cvp-analysis", "target": "budgeting" },
+    { "source": "income-statement", "target": "budgeting" },
+    { "source": "cvp-analysis", "target": "decision-accounting" },
+    { "source": "cash-flow", "target": "decision-accounting" },
+    { "source": "cost-classification", "target": "abc" },
+    { "source": "balance-sheet", "target": "internal-control" },
+    { "source": "internal-control", "target": "audit-procedures" },
+    { "source": "audit-procedures", "target": "audit-report" }
+  ]
+}

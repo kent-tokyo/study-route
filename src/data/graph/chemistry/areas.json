@@ -1,0 +1,56 @@
+[
+  {
+    "id": "general_chem",
+    "label": "一般化学",
+    "labels": { "ja": "一般化学", "en": "General Chemistry", "zh": "普通化学" },
+    "position": { "x": 0, "y": 0 },
+    "color": "#f59e0b",
+    "description": "原子構造・化学結合・物質の状態",
+    "descriptions": { "ja": "原子構造・化学結合・物質の状態", "en": "Atomic structure, chemical bonding, and states of matter", "zh": "原子结构、化学键与物质状态" }
+  },
+  {
+    "id": "organic",
+    "label": "有機化学",
+    "labels": { "ja": "有機化学", "en": "Organic Chemistry", "zh": "有机化学" },
+    "position": { "x": 400, "y": -100 },
+    "color": "#22c55e",
+    "description": "炭素を中心とする化合物の化学",
+    "descriptions": { "ja": "炭素を中心とする化合物の化学", "en": "Chemistry of carbon-based compounds", "zh": "以碳为中心的化合物化学" }
+  },
+  {
+    "id": "inorganic",
+    "label": "無機化学",
+    "labels": { "ja": "無機化学", "en": "Inorganic Chemistry", "zh": "无机化学" },
+    "position": { "x": 400, "y": 100 },
+    "color": "#3b82f6",
+    "description": "金属・錯体・固体化学",
+    "descriptions": { "ja": "金属・錯体・固体化学", "en": "Metals, complexes, and solid-state chemistry", "zh": "金属、配合物与固体化学" }
+  },
+  {
+    "id": "physical",
+    "label": "物理化学",
+    "labels": { "ja": "物理化学", "en": "Physical Chemistry", "zh": "物理化学" },
+    "position": { "x": 800, "y": 0 },
+    "color": "#ef4444",
+    "description": "熱力学・量子化学・反応速度論",
+    "descriptions": { "ja": "熱力学・量子化学・反応速度論", "en": "Thermodynamics, quantum chemistry, and kinetics", "zh": "热力学、量子化学与反应动力学" }
+  },
+  {
+    "id": "analytical",
+    "label": "分析化学",
+    "labels": { "ja": "分析化学", "en": "Analytical Chemistry", "zh": "分析化学" },
+    "position": { "x": 200, "y": 200 },
+    "color": "#8b5cf6",
+    "description": "定性分析・定量分析・機器分析",
+    "descriptions": { "ja": "定性分析・定量分析・機器分析", "en": "Qualitative, quantitative, and instrumental analysis", "zh": "定性分析、定量分析与仪器分析" }
+  },
+  {
+    "id": "biochem",
+    "label": "生化学",
+    "labels": { "ja": "生化学", "en": "Biochemistry", "zh": "生物化学" },
+    "position": { "x": 600, "y": 200 },
+    "color": "#06b6d4",
+    "description": "タンパク質・酵素・代謝経路",
+    "descriptions": { "ja": "タンパク質・酵素・代謝経路", "en": "Proteins, enzymes, and metabolic pathways", "zh": "蛋白质、酶与代谢途径" }
+  }
+]

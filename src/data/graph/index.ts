@@ -15,6 +15,18 @@ import philosophyTopics from './philosophy/topics.json';
 import awsAreas from './aws/areas.json';
 import awsTopics from './aws/topics.json';
 
+// --- CS data ---
+import csAreas from './cs/areas.json';
+import csTopics from './cs/topics.json';
+
+// --- Chemistry data ---
+import chemistryAreas from './chemistry/areas.json';
+import chemistryTopics from './chemistry/topics.json';
+
+// --- Accounting data ---
+import accountingAreas from './accounting/areas.json';
+import accountingTopics from './accounting/topics.json';
+
 // --- Domains ---
 import domainsData from './domains.json';
 
@@ -31,27 +43,19 @@ export function getDomains(): DomainMeta[] {
 export function getAllGraphData(domainId?: DomainId): GraphData {
   switch (domainId) {
     case 'philosophy':
-      return {
-        nodes: philosophyTopics.nodes as GraphData['nodes'],
-        edges: philosophyTopics.edges,
-      };
+      return { nodes: philosophyTopics.nodes as GraphData['nodes'], edges: philosophyTopics.edges };
     case 'aws':
-      return {
-        nodes: awsTopics.nodes as GraphData['nodes'],
-        edges: awsTopics.edges,
-      };
+      return { nodes: awsTopics.nodes as GraphData['nodes'], edges: awsTopics.edges };
+    case 'cs':
+      return { nodes: csTopics.nodes as GraphData['nodes'], edges: csTopics.edges };
+    case 'chemistry':
+      return { nodes: chemistryTopics.nodes as GraphData['nodes'], edges: chemistryTopics.edges };
+    case 'accounting':
+      return { nodes: accountingTopics.nodes as GraphData['nodes'], edges: accountingTopics.edges };
     case 'math':
     default: {
-      const nodes = [
-        ...mathFoundations.nodes,
-        ...mathPureMath.nodes,
-        ...mathApplied.nodes,
-      ];
-      const edges = [
-        ...mathFoundations.edges,
-        ...mathPureMath.edges,
-        ...mathApplied.edges,
-      ];
+      const nodes = [...mathFoundations.nodes, ...mathPureMath.nodes, ...mathApplied.nodes];
+      const edges = [...mathFoundations.edges, ...mathPureMath.edges, ...mathApplied.edges];
       return { nodes, edges } as GraphData;
     }
   }
@@ -59,13 +63,13 @@ export function getAllGraphData(domainId?: DomainId): GraphData {
 
 export function getAreaMeta(domainId?: DomainId): AreaMeta[] {
   switch (domainId) {
-    case 'philosophy':
-      return philosophyAreas as AreaMeta[];
-    case 'aws':
-      return awsAreas as AreaMeta[];
+    case 'philosophy': return philosophyAreas as AreaMeta[];
+    case 'aws': return awsAreas as AreaMeta[];
+    case 'cs': return csAreas as AreaMeta[];
+    case 'chemistry': return chemistryAreas as AreaMeta[];
+    case 'accounting': return accountingAreas as AreaMeta[];
     case 'math':
-    default:
-      return mathAreas as AreaMeta[];
+    default: return mathAreas as AreaMeta[];
   }
 }
 

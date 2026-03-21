@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    { "id": "atomic-structure", "label": "原子構造", "labels": { "ja": "原子構造", "en": "Atomic Structure", "zh": "原子结构" }, "area": "general_chem", "difficulty": 1, "position": { "x": 0, "y": 0 }, "description": "電子配置・周期表・原子軌道", "descriptions": { "ja": "電子配置・周期表・原子軌道", "en": "Electron configuration, periodic table, and atomic orbitals", "zh": "电子构型、元素周期表与原子轨道" }, "prerequisites": [] },
+    { "id": "chemical-bonding", "label": "化学結合", "labels": { "ja": "化学結合", "en": "Chemical Bonding", "zh": "化学键" }, "area": "general_chem", "difficulty": 2, "position": { "x": 200, "y": 0 }, "description": "イオン結合・共有結合・分子軌道", "descriptions": { "ja": "イオン結合・共有結合・分子軌道", "en": "Ionic bonds, covalent bonds, and molecular orbitals", "zh": "离子键、共价键与分子轨道" }, "prerequisites": ["atomic-structure"] },
+    { "id": "stoichiometry", "label": "化学量論", "labels": { "ja": "化学量論", "en": "Stoichiometry", "zh": "化学计量" }, "area": "general_chem", "difficulty": 2, "position": { "x": 100, "y": 150 }, "description": "モル計算・化学反応式の量的関係", "descriptions": { "ja": "モル計算・化学反応式の量的関係", "en": "Mole calculations and quantitative relationships in reactions", "zh": "摩尔计算与化学反应的定量关系" }, "prerequisites": ["atomic-structure"] },
+    { "id": "states-of-matter", "label": "物質の状態", "labels": { "ja": "物質の状態", "en": "States of Matter", "zh": "物质状态" }, "area": "general_chem", "difficulty": 2, "position": { "x": 400, "y": 0 }, "description": "気体・液体・固体・相転移", "descriptions": { "ja": "気体・液体・固体・相転移", "en": "Gases, liquids, solids, and phase transitions", "zh": "气体、液体、固体与相变" }, "prerequisites": ["chemical-bonding"] },
+    { "id": "solutions", "label": "溶液", "labels": { "ja": "溶液", "en": "Solutions", "zh": "溶液" }, "area": "general_chem", "difficulty": 2, "position": { "x": 300, "y": 150 }, "description": "濃度・溶解度・コロイド", "descriptions": { "ja": "濃度・溶解度・コロイド", "en": "Concentration, solubility, and colloids", "zh": "浓度、溶解度与胶体" }, "prerequisites": ["chemical-bonding", "stoichiometry"] },
+
+    { "id": "hydrocarbons", "label": "炭化水素", "labels": { "ja": "炭化水素", "en": "Hydrocarbons", "zh": "烃" }, "area": "organic", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "アルカン・アルケン・アルキン・芳香族", "descriptions": { "ja": "アルカン・アルケン・アルキン・芳香族", "en": "Alkanes, alkenes, alkynes, and aromatics", "zh": "烷烃、烯烃、炔烃与芳香族" }, "prerequisites": ["chemical-bonding"] },
+    { "id": "functional-groups", "label": "官能基", "labels": { "ja": "官能基", "en": "Functional Groups", "zh": "官能团" }, "area": "organic", "difficulty": 2, "position": { "x": 200, "y": 0 }, "description": "アルコール・アルデヒド・ケトン・カルボン酸", "descriptions": { "ja": "アルコール・アルデヒド・ケトン・カルボン酸", "en": "Alcohols, aldehydes, ketones, and carboxylic acids", "zh": "醇、醛、酮与羧酸" }, "prerequisites": ["hydrocarbons"] },
+    { "id": "organic-reactions", "label": "有機反応", "labels": { "ja": "有機反応", "en": "Organic Reactions", "zh": "有机反应" }, "area": "organic", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "置換反応・付加反応・脱離反応", "descriptions": { "ja": "置換反応・付加反応・脱離反応", "en": "Substitution, addition, and elimination reactions", "zh": "取代反应、加成反应与消除反应" }, "prerequisites": ["functional-groups"] },
+    { "id": "stereochemistry", "label": "立体化学", "labels": { "ja": "立体化学", "en": "Stereochemistry", "zh": "立体化学" }, "area": "organic", "difficulty": 3, "position": { "x": 300, "y": 150 }, "description": "キラリティ・立体異性体・光学活性", "descriptions": { "ja": "キラリティ・立体異性体・光学活性", "en": "Chirality, stereoisomers, and optical activity", "zh": "手性、立体异构体与旋光性" }, "prerequisites": ["functional-groups"] },
+
+    { "id": "coordination-chem", "label": "錯体化学", "labels": { "ja": "錯体化学", "en": "Coordination Chemistry", "zh": "配位化学" }, "area": "inorganic", "difficulty": 3, "position": { "x": 0, "y": 0 }, "description": "配位子・結晶場理論・配位数", "descriptions": { "ja": "配位子・結晶場理論・配位数", "en": "Ligands, crystal field theory, and coordination numbers", "zh": "配体、晶体场理论与配位数" }, "prerequisites": ["chemical-bonding"] },
+    { "id": "solid-state", "label": "固体化学", "labels": { "ja": "固体化学", "en": "Solid-State Chemistry", "zh": "固体化学" }, "area": "inorganic", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "結晶構造・バンド理論・半導体", "descriptions": { "ja": "結晶構造・バンド理論・半導体", "en": "Crystal structure, band theory, and semiconductors", "zh": "晶体结构、能带理论与半导体" }, "prerequisites": ["chemical-bonding"] },
+    { "id": "bioinorganic", "label": "生物無機化学", "labels": { "ja": "生物無機化学", "en": "Bioinorganic Chemistry", "zh": "生物无机化学" }, "area": "inorganic", "difficulty": 4, "position": { "x": 100, "y": 150 }, "description": "金属酵素・ヘモグロビン・光合成の化学", "descriptions": { "ja": "金属酵素・ヘモグロビン・光合成の化学", "en": "Metalloenzymes, hemoglobin, and photosynthesis chemistry", "zh": "金属酶、血红蛋白与光合作用化学" }, "prerequisites": ["coordination-chem"] },
+
+    { "id": "thermodynamics-chem", "label": "化学熱力学", "labels": { "ja": "化学熱力学", "en": "Chemical Thermodynamics", "zh": "化学热力学" }, "area": "physical", "difficulty": 3, "position": { "x": 0, "y": 0 }, "description": "エンタルピー・エントロピー・自由エネルギー", "descriptions": { "ja": "エンタルピー・エントロピー・自由エネルギー", "en": "Enthalpy, entropy, and free energy", "zh": "焓、熵与自由能" }, "prerequisites": ["stoichiometry", "states-of-matter"] },
+    { "id": "kinetics", "label": "反応速度論", "labels": { "ja": "反応速度論", "en": "Chemical Kinetics", "zh": "化学动力学" }, "area": "physical", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "反応速度・活性化エネルギー・触媒", "descriptions": { "ja": "反応速度・活性化エネルギー・触媒", "en": "Reaction rates, activation energy, and catalysis", "zh": "反应速率、活化能与催化" }, "prerequisites": ["thermodynamics-chem"] },
+    { "id": "equilibrium", "label": "化学平衡", "labels": { "ja": "化学平衡", "en": "Chemical Equilibrium", "zh": "化学平衡" }, "area": "physical", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "平衡定数・ルシャトリエの原理", "descriptions": { "ja": "平衡定数・ルシャトリエの原理", "en": "Equilibrium constants and Le Chatelier's principle", "zh": "平衡常数与勒夏特列原理" }, "prerequisites": ["thermodynamics-chem"] },
+    { "id": "electrochemistry", "label": "電気化学", "labels": { "ja": "電気化学", "en": "Electrochemistry", "zh": "电化学" }, "area": "physical", "difficulty": 3, "position": { "x": 300, "y": 0 }, "description": "酸化還元・電池・電気分解", "descriptions": { "ja": "酸化還元・電池・電気分解", "en": "Redox reactions, batteries, and electrolysis", "zh": "氧化还原、电池与电解" }, "prerequisites": ["thermodynamics-chem"] },
+    { "id": "quantum-chem", "label": "量子化学", "labels": { "ja": "量子化学", "en": "Quantum Chemistry", "zh": "量子化学" }, "area": "physical", "difficulty": 4, "position": { "x": 300, "y": 150 }, "description": "シュレディンガー方程式・分子軌道計算", "descriptions": { "ja": "シュレディンガー方程式・分子軌道計算", "en": "Schrödinger equation and molecular orbital calculations", "zh": "薛定谔方程与分子轨道计算" }, "prerequisites": ["chemical-bonding", "thermodynamics-chem"] },
+
+    { "id": "acid-base", "label": "酸塩基", "labels": { "ja": "酸塩基", "en": "Acids & Bases", "zh": "酸碱" }, "area": "analytical", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "pH・中和滴定・緩衝液", "descriptions": { "ja": "pH・中和滴定・緩衝液", "en": "pH, neutralization titration, and buffer solutions", "zh": "pH、中和滴定与缓冲液" }, "prerequisites": ["solutions", "stoichiometry"] },
+    { "id": "spectroscopy", "label": "分光分析", "labels": { "ja": "分光分析", "en": "Spectroscopy", "zh": "光谱分析" }, "area": "analytical", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "UV-Vis・IR・NMR・質量分析", "descriptions": { "ja": "UV-Vis・IR・NMR・質量分析", "en": "UV-Vis, IR, NMR, and mass spectrometry", "zh": "紫外-可见、红外、核磁与质谱" }, "prerequisites": ["chemical-bonding", "acid-base"] },
+    { "id": "chromatography", "label": "クロマトグラフィー", "labels": { "ja": "クロマトグラフィー", "en": "Chromatography", "zh": "色谱法" }, "area": "analytical", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "GC・HPLC・薄層クロマトグラフィー", "descriptions": { "ja": "GC・HPLC・薄層クロマトグラフィー", "en": "GC, HPLC, and thin-layer chromatography", "zh": "气相色谱、高效液相色谱与薄层色谱" }, "prerequisites": ["solutions"] },
+
+    { "id": "amino-acids-proteins", "label": "アミノ酸・タンパク質", "labels": { "ja": "アミノ酸・タンパク質", "en": "Amino Acids & Proteins", "zh": "氨基酸与蛋白质" }, "area": "biochem", "difficulty": 2, "position": { "x": 0, "y": 0 }, "description": "アミノ酸の構造・タンパク質の折り畳み", "descriptions": { "ja": "アミノ酸の構造・タンパク質の折り畳み", "en": "Amino acid structure and protein folding", "zh": "氨基酸结构与蛋白质折叠" }, "prerequisites": ["functional-groups"] },
+    { "id": "enzymes", "label": "酵素", "labels": { "ja": "酵素", "en": "Enzymes", "zh": "酶" }, "area": "biochem", "difficulty": 3, "position": { "x": 200, "y": 0 }, "description": "酵素反応速度論・ミカエリス-メンテン", "descriptions": { "ja": "酵素反応速度論・ミカエリス-メンテン", "en": "Enzyme kinetics and Michaelis-Menten", "zh": "酶动力学与米氏方程" }, "prerequisites": ["amino-acids-proteins", "kinetics"] },
+    { "id": "metabolism", "label": "代謝", "labels": { "ja": "代謝", "en": "Metabolism", "zh": "代谢" }, "area": "biochem", "difficulty": 3, "position": { "x": 100, "y": 150 }, "description": "解糖系・クエン酸回路・電子伝達系", "descriptions": { "ja": "解糖系・クエン酸回路・電子伝達系", "en": "Glycolysis, citric acid cycle, and electron transport chain", "zh": "糖酵解、柠檬酸循环与电子传递链" }, "prerequisites": ["enzymes", "thermodynamics-chem"] },
+    { "id": "nucleic-acids", "label": "核酸", "labels": { "ja": "核酸", "en": "Nucleic Acids", "zh": "核酸" }, "area": "biochem", "difficulty": 3, "position": { "x": 300, "y": 0 }, "description": "DNA・RNA・複製・転写・翻訳", "descriptions": { "ja": "DNA・RNA・複製・転写・翻訳", "en": "DNA, RNA, replication, transcription, and translation", "zh": "DNA、RNA、复制、转录与翻译" }, "prerequisites": ["amino-acids-proteins"] }
+  ],
+  "edges": [
+    { "source": "atomic-structure", "target": "chemical-bonding" },
+    { "source": "atomic-structure", "target": "stoichiometry" },
+    { "source": "chemical-bonding", "target": "states-of-matter" },
+    { "source": "chemical-bonding", "target": "solutions" },
+    { "source": "stoichiometry", "target": "solutions" },
+    { "source": "chemical-bonding", "target": "hydrocarbons" },
+    { "source": "hydrocarbons", "target": "functional-groups" },
+    { "source": "functional-groups", "target": "organic-reactions" },
+    { "source": "functional-groups", "target": "stereochemistry" },
+    { "source": "chemical-bonding", "target": "coordination-chem" },
+    { "source": "chemical-bonding", "target": "solid-state" },
+    { "source": "coordination-chem", "target": "bioinorganic" },
+    { "source": "stoichiometry", "target": "thermodynamics-chem" },
+    { "source": "states-of-matter", "target": "thermodynamics-chem" },
+    { "source": "thermodynamics-chem", "target": "kinetics" },
+    { "source": "thermodynamics-chem", "target": "equilibrium" },
+    { "source": "thermodynamics-chem", "target": "electrochemistry" },
+    { "source": "chemical-bonding", "target": "quantum-chem" },
+    { "source": "thermodynamics-chem", "target": "quantum-chem" },
+    { "source": "solutions", "target": "acid-base" },
+    { "source": "stoichiometry", "target": "acid-base" },
+    { "source": "chemical-bonding", "target": "spectroscopy" },
+    { "source": "acid-base", "target": "spectroscopy" },
+    { "source": "solutions", "target": "chromatography" },
+    { "source": "functional-groups", "target": "amino-acids-proteins" },
+    { "source": "amino-acids-proteins", "target": "enzymes" },
+    { "source": "kinetics", "target": "enzymes" },
+    { "source": "enzymes", "target": "metabolism" },
+    { "source": "thermodynamics-chem", "target": "metabolism" },
+    { "source": "amino-acids-proteins", "target": "nucleic-acids" }
+  ]
+}

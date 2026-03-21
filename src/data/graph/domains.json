@@ -22,5 +22,29 @@
     "description": "クラウドサービスの構成要素と設計パターンを学ぶ",
     "descriptions": { "ja": "クラウドサービスの構成要素と設計パターンを学ぶ", "en": "Learn cloud service components and design patterns", "zh": "学习云服务组件与设计模式" },
     "color": "#f59e0b"
+  },
+  {
+    "id": "cs",
+    "label": "コンピュータサイエンス",
+    "labels": { "ja": "コンピュータサイエンス", "en": "Computer Science", "zh": "计算机科学" },
+    "description": "アルゴリズム・データ構造・OS・ネットワークなど計算の科学",
+    "descriptions": { "ja": "アルゴリズム・データ構造・OS・ネットワークなど計算の科学", "en": "Algorithms, data structures, OS, networking — the science of computation", "zh": "算法、数据结构、操作系统、网络等计算科学" },
+    "color": "#06b6d4"
+  },
+  {
+    "id": "chemistry",
+    "label": "化学",
+    "labels": { "ja": "化学", "en": "Chemistry", "zh": "化学" },
+    "description": "原子・分子・化学反応から有機・無機・生化学まで",
+    "descriptions": { "ja": "原子・分子・化学反応から有機・無機・生化学まで", "en": "From atoms and molecules to organic, inorganic, and biochemistry", "zh": "从原子、分子、化学反应到有机、无机与生物化学" },
+    "color": "#22c55e"
+  },
+  {
+    "id": "accounting",
+    "label": "会計・簿記",
+    "labels": { "ja": "会計・簿記", "en": "Accounting", "zh": "会计与簿记" },
+    "description": "仕訳・財務諸表・原価計算など企業会計の基礎と実務",
+    "descriptions": { "ja": "仕訳・財務諸表・原価計算など企業会計の基礎と実務", "en": "Journal entries, financial statements, cost accounting — fundamentals and practice", "zh": "分录、财务报表、成本核算等企业会计基础与实务" },
+    "color": "#ef4444"
   }
 ]

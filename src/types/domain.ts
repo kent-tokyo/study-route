@@ -1,6 +1,6 @@
 import type { LocalizedStrings } from './index';
 
-export type DomainId = 'math' | 'philosophy' | 'aws';
+export type DomainId = 'math' | 'philosophy' | 'aws' | 'cs' | 'chemistry' | 'accounting';
 
 export interface DomainMeta {
   id: DomainId;

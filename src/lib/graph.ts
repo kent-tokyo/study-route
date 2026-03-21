@@ -27,7 +27,7 @@ export function getNode(nodeId: string, domainId?: DomainId): GraphNode | undefi
   if (result) return result;
 
   // Fallback: search across all domains
-  for (const d of ['math', 'philosophy', 'aws'] as DomainId[]) {
+  for (const d of ['math', 'philosophy', 'aws', 'cs', 'chemistry', 'accounting'] as DomainId[]) {
     const found = getGraphData(d).nodes.find(n => n.id === nodeId);
     if (found) return found;
   }

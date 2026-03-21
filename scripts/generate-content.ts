@@ -7,8 +7,8 @@ import { generateConceptImage } from '../src/lib/image-generator';
 import { getAllNodes } from '../src/lib/graph';
 import type { DomainId } from '../src/types/domain';
 
-const DOMAIN_IDS: DomainId[] = ['math', 'philosophy', 'aws'];
-const DOMAIN_LABELS: Record<DomainId, string> = { math: 'Math（数学）', philosophy: 'Philosophy（哲学）', aws: 'AWS' };
+const DOMAIN_IDS: DomainId[] = ['math', 'philosophy', 'aws', 'cs', 'chemistry', 'accounting'];
+const DOMAIN_LABELS: Record<DomainId, string> = { math: 'Math（数学）', philosophy: 'Philosophy（哲学）', aws: 'AWS', cs: 'Computer Science', chemistry: 'Chemistry（化学）', accounting: 'Accounting（会計・簿記）' };
 
 const OUTPUT_DIR = path.join(process.cwd(), 'public', 'content');
 const CONTENT_LEVELS = ['beginner', 'standard', 'advanced'] as const;
