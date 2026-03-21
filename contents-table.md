@@ -76,7 +76,7 @@ Last updated: 2026-03-21
 |-----|---------|-------|------|----------|----------|----------|---------|------|----------|
 | 02-001 | propositional-logic | 命題論理 | logic | - | done | - | done | done | - |
 | 02-002 | predicate-logic | 述語論理 | logic | - | done | - | done | done | - |
-| 02-003 | modal-logic | 様相論理 | logic | - | - | - | - | - | - |
+| 02-003 | modal-logic | 様相論理 | logic | - | done | - | - | - | - |
 | 02-004 | informal-fallacies | 非形式的誤謬 | logic | - | - | - | - | - | - |
 | 02-005 | truth | 真理論 | epistemology | - | done | - | - | - | - |
 | 02-006 | justification | 正当化 | epistemology | - | done | - | - | - | - |
