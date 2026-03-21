@@ -21,6 +21,11 @@
     ],
     "hasIllustration": {
       "standard": false
+    },
+    "locales": {
+      "standard": [
+        "ja"
+      ]
     }
   }
 }

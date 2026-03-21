@@ -7,7 +7,7 @@ Last updated: 2026-03-21
 |-----|---------|-------|------|----------|----------|----------|---------|------|----------|
 | 01-001 | counting | 数える | foundations | - | done | - | done | done | - |
 | 01-002 | number-systems | 数の体系 | foundations | - | done | - | done | done | - |
-| 01-003 | integers | 整数 | foundations | - | done | - | - | - | - |
+| 01-003 | integers | 整数 | foundations | - | done | - | - | done | - |
 | 01-004 | real-numbers | 実数 | foundations | - | - | - | - | - | - |
 | 01-005 | complex-numbers | 複素数 | foundations | - | - | - | - | - | - |
 | 01-006 | set-theory | 集合論 | foundations | - | - | - | - | - | - |
