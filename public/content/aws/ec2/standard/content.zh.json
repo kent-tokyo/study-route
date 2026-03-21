@@ -1,0 +1,162 @@
+{
+  "id": "9fbe6910-84e6-47e2-9310-abfdca524b64",
+  "nodeId": "ec2",
+  "level": "standard",
+  "locale": "zh",
+  "generatedAt": "2026-03-21T22:44:37.116Z",
+  "content": "# EC2\n\n## 是什么 — 直观的解释\n\n用一句话来概括 EC2（Amazon Elastic Compute Cloud），它就是\"放在互联网上、可以自由使用的租用计算机\"。\n\n我们平时使用的电脑，是摆在眼前的实体机器。而 EC2 则允许你租用 Amazon 数据中心中庞大计算机集群的一部分，就好像那台机器是专属于你的一样。开机、关机、调整配置——这一切操作都可以通过互联网完成，这正是它最大的特点。它之所以被称为\"虚拟服务器（Virtual Server）\"，原因也在于此。物理实体在 Amazon 那一侧，而用户体验到的却是\"拥有一台专属服务器\"的感觉。\n\n## 为什么需要它 — 在技术体系中的定位\n\n过去，企业若想构建 Web 服务或系统，必须自行购置、部署并维护服务器硬件。初期投入有时高达数百万日元，对于小团队或个人开发者来说是一道难以逾越的门槛。\n\nEC2 从根本上解决了这一问题。通过\"按量付费\"模式——需要时再用，用多少付多少——从初创公司到大型企业，各种规模的团队都能使用同一套基础设施。此外，正如\"Elastic（弹性）\"这个名字所暗示的，当访问量骤增时可以扩充服务器，闲时再缩减，实现灵活的弹性伸缩。EC2 是支撑现代云计算的核心服务之一，也是整个 AWS（Amazon Web Services）的基础所在。\n\n## 核心理念 — 定义与本质\n\nEC2 的本质在于**虚拟化（Virtualization）**技术。它能在一台物理机器上同时运行多个相互独立的虚拟机（VM）。\n\n每个 EC2 实例（虚拟服务器的基本单位）由以下主要要素构成：\n\n- **AMI（Amazon Machine Image）**：服务器的\"设计蓝图\"，定义操作系统和软件的初始状态\n- **实例类型**：CPU、内存、存储、网络性能的组合配置（例如：`t3.micro`、`m5.large`）\n- **EBS（Elastic Block Store）**：用于存储数据的虚拟磁盘\n- **安全组（Security Group）**：控制允许或拒绝哪些网络通信的防火墙\n\n以小时为单位的计费方式，可以用以下公式来估算实例费用：\n\n$$\n\\text{月度费用} = \\text{每小时单价} \\times 24 \\, \\text{小时} \\times 30 \\, \\text{天}\n$$\n\n例如，若每小时单价为 $0.02 美元，则月费为 $0.02 \\times 24 \\times 30 = 14.4$ 美元。由于只对实际使用的时长计费，仅用于测试而运行几个小时，费用也不过几毛钱。\n\n## 具体示例\n\n### 示例1：日常生活类比 — 租车与私家车\n\n拥有一辆私家车（自建服务器）意味着需要承担购车费、保险、停车费和维护费。而租车（EC2）则只需在需要时租用，按使用量付费。行李多的日子可以租大车，平时通勤租小车即可，非常灵活。EC2 同样如此，可以根据负载随时调整配置规格。\n\n### 示例2：托管 Web 应用程序\n\n假设一位个人开发者想要发布自己做的美食菜谱分享服务。初期访问量少，使用小型实例（`t3.micro`，月费约数十元人民币）就已足够。一旦在社交媒体上被广泛传播、访问量骤增，可以将实例类型升级为性能更强的规格，或者横向扩展为多台相同配置的服务器，整个过程可将停机时间控制在最低限度。\n\n### 示例3：训练机器学习模型\n\n大学实验室想要训练图像识别模型时，本地 PC 可能因 GPU 不足而需要耗费好几天。EC2 提供了搭载 GPU 的实例类型（如 `p3` 系列），可以在需要时启动并完成高速训练，结束后即可停止实例。通常只需几小时、花费数百元，无需购买昂贵的硬件设备。\n\n### 示例4：定时批处理任务\n\nEC2 同样适合处理定时批量任务，例如每天深夜自动汇总销售数据、次日清晨生成报告。只需配置为在处理时段自动启动和停止实例，每天只产生数小时的费用，与长期运行相比可大幅降低成本。\n\n## 关联 — 与其他概念的关系\n\n理解 EC2 时，有必要梳理相关联的概念。\n\n**前置与周边知识**\n- **云计算**：EC2 是云计算的核心资源之一，先掌握云计算的基本概念有助于加深理解\n- **Linux / 操作系统基础**：EC2 实例大多运行 Linux，具备基本的命令行操作知识会很有帮助\n- **网络基础（IP、端口）**：配置安全组时所需的基础知识\n\n**进阶关联**\n- **Auto Scaling（自动伸缩）**：根据访问量自动增减 EC2 实例数量的机制\n- **ELB（Elastic Load Balancing，弹性负载均衡）**：将流量分发到多个 EC2 实例、实现负载均衡的服务\n- **Lambda**：无需管理服务器的\"无服务器（Serverless）\"进阶形态，与 EC2 对比学习有助于加深理解\n- **VPC（Virtual Private Cloud，虚拟私有云）**：部署 EC2 实例所在的虚拟网络空间\n\n## 跨领域应用\n\n**游戏行业**\nEC2 被广泛用作在线游戏的服务器。新游戏上线初期往往面临访问高峰，可以临时启动大量实例应对，热度回落后再缩减规模。\n\n**医疗与生物信息学**\n基因组分析、药物研发模拟等需要海量计算资源的研究中，EC2 的高性能实例发挥着重要作用。大学和科研机构无需自建超级计算机，按需租用即可，极具革新意义。\n\n**媒体与视频流媒体**\n视频编码处理（将视频文件转换为各种格式）属于计算密集型任务，借助 EC2 可以通过并行处理大幅提升速度。电影流媒体服务在幕后广泛使用了这一能力。\n\n**金融与金融科技**\nEC2 被用于外汇汇率和股票价格的实时分析，以及交易系统的后端支撑。金融系统对高可用性（不中断运行）要求极高，而通过 EC2 的冗余架构便可实现这一目标。",
+  "terms": [
+    {
+      "term": "EC2",
+      "reading": "EC2",
+      "en": "Amazon Elastic Compute Cloud",
+      "definition": "亚马逊提供的云端虚拟服务器服务。可以在需要时按需使用所需的计算资源。"
+    },
+    {
+      "term": "虚拟化",
+      "reading": "xū nǐ huà",
+      "en": "Virtualization",
+      "definition": "在一台物理机器上同时运行多个相互独立的虚拟机的技术。是EC2的核心概念。"
+    },
+    {
+      "term": "实例",
+      "reading": "shí lì",
+      "en": "Instance",
+      "definition": "在EC2上启动的虚拟服务器的一个单位。可选择包含CPU和内存等规格的实例类型来使用。"
+    },
+    {
+      "term": "AMI",
+      "reading": "AMI",
+      "en": "Amazon Machine Image",
+      "definition": "定义EC2实例操作系统和软件初始状态的服务器蓝图。用作启动实例时的模板。"
+    },
+    {
+      "term": "EBS",
+      "reading": "EBS",
+      "en": "Elastic Block Store",
+      "definition": "连接到EC2实例使用的虚拟磁盘存储服务。用于数据的持久化保存。"
+    },
+    {
+      "term": "安全组",
+      "reading": "ān quán zǔ",
+      "en": "Security Group",
+      "definition": "控制EC2实例通信允许与拒绝的虚拟防火墙。可以按IP地址和端口设置访问规则。"
+    },
+    {
+      "term": "按量计费",
+      "reading": "àn liàng jì fèi",
+      "en": "Pay-as-you-go",
+      "definition": "只为实际使用量付费的计费模式。EC2按实例运行的时间单位产生费用。"
+    },
+    {
+      "term": "Auto Scaling",
+      "reading": "Auto Scaling",
+      "en": "Auto Scaling",
+      "definition": "根据访问量和负载自动增减EC2实例数量的机制。兼顾成本优化与可用性维护。"
+    },
+    {
+      "term": "ELB",
+      "reading": "ELB",
+      "en": "Elastic Load Balancing",
+      "definition": "将流量分发到多个EC2实例、实现负载均衡的AWS服务。确保系统稳定运行和高可用性。"
+    },
+    {
+      "term": "VPC",
+      "reading": "VPC",
+      "en": "Virtual Private Cloud",
+      "definition": "用于部署EC2实例的虚拟网络空间。可对网络配置进行逻辑隔离与控制。"
+    },
+    {
+      "term": "云计算",
+      "reading": "yún jì suàn",
+      "en": "Cloud Computing",
+      "definition": "通过互联网提供和使用计算资源的模式。EC2是其核心服务之一。"
+    },
+    {
+      "term": "本地部署",
+      "reading": "běn dì bù shǔ",
+      "en": "On-Premises",
+      "definition": "企业自行购买、安装和管理服务器及设备的传统运营方式。与EC2等云服务形成对比的概念。"
+    },
+    {
+      "term": "Lambda",
+      "reading": "Lambda",
+      "en": "AWS Lambda",
+      "definition": "无需管理服务器的AWS无服务器计算服务。被定位为EC2的进阶形态。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 背景: 透明 -->\n\n  <!-- ===== 中央: EC2インスタンス ===== -->\n  <!-- 中心ボックス -->\n  <rect x=\"200\" y=\"200\" width=\"200\" height=\"80\" rx=\"12\" ry=\"12\"\n        fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n  <text x=\"300\" y=\"234\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#3b82f6\">EC2实例</text>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">虚拟服务器（VM）</text>\n  <text x=\"300\" y=\"270\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">例: t3.micro / m5.large</text>\n\n  <!-- ===== 上部: AMI（設計図） ===== -->\n  <rect x=\"210\" y=\"60\" width=\"180\" height=\"56\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"84\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">AMI</text>\n  <text x=\"300\" y=\"100\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Amazon Machine Image</text>\n  <text x=\"300\" y=\"113\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">操作系统和软件的设计蓝图</text>\n  <!-- AMI → EC2 矢印 -->\n  <line x1=\"300\" y1=\"116\" x2=\"300\" y2=\"198\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"300,200 295,190 305,190\" fill=\"currentColor\"/>\n\n  <!-- ===== 左: インスタンスタイプ ===== -->\n  <rect x=\"30\" y=\"195\" width=\"145\" height=\"60\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"102\" y=\"218\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">实例类型</text>\n  <text x=\"102\" y=\"234\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">CPU / 内存 / 网络</text>\n  <text x=\"102\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">规格的组合</text>\n  <!-- → EC2 矢印 -->\n  <line x1=\"175\" y1=\"225\" x2=\"198\" y2=\"236\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"200,237 190,231 191,242\" fill=\"currentColor\"/>\n\n  <!-- ===== 右: EBS ===== -->\n  <rect x=\"425\" y=\"195\" width=\"145\" height=\"60\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"497\" y=\"218\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">EBS</text>\n  <text x=\"497\" y=\"234\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Elastic Block Store</text>\n  <text x=\"497\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">虚拟磁盘（数据存储）</text>\n  <!-- EC2 → EBS 矢印 -->\n  <line x1=\"400\" y1=\"237\" x2=\"423\" y2=\"232\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"425,231 414,226 415,237\" fill=\"currentColor\"/>\n\n  <!-- ===== 下: セキュリティグループ ===== -->\n  <rect x=\"190\" y=\"325\" width=\"220\" height=\"56\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"#ef4444\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"348\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#ef4444\">安全组</text>\n  <text x=\"300\" y=\"364\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">控制通信的允许与拒绝</text>\n  <text x=\"300\" y=\"377\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">防火墙功能</text>\n  <!-- EC2 → セキュリティグループ 矢印 -->\n  <line x1=\"300\" y1=\"280\" x2=\"300\" y2=\"323\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <polygon points=\"300,325 295,315 305,315\" fill=\"#ef4444\"/>\n\n  <!-- ===== 従量課金の計算式 ===== -->\n  <rect x=\"30\" y=\"320\" width=\"155\" height=\"70\" rx=\"10\" ry=\"10\"\n        fill=\"#22c55e\" fill-opacity=\"0.08\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"107\" y=\"342\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">按量计费模式</text>\n  <text x=\"107\" y=\"358\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">月费 = 单价 × 24h × 30天</text>\n  <text x=\"107\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">例: $0.02 × 24 × 30</text>\n  <text x=\"107\" y=\"386\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#22c55e\">= $14.4 / 月</text>\n\n  <!-- ===== 発展概念エリア（下部） ===== -->\n  <rect x=\"28\" y=\"420\" width=\"544\" height=\"82\" rx=\"12\" ry=\"12\"\n        fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"6,3\"/>\n  <text x=\"300\" y=\"442\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">相关服务与进阶概念</text>\n\n  <!-- Auto Scaling -->\n  <rect x=\"42\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"97\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">Auto Scaling</text>\n  <text x=\"97\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">自动扩缩容</text>\n\n  <!-- ELB -->\n  <rect x=\"162\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"217\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">ELB</text>\n  <text x=\"217\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">负载均衡</text>\n\n  <!-- VPC -->\n  <rect x=\"282\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#3b82f6\" fill-opacity=\"0.1\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n  <text x=\"337\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#3b82f6\">VPC</text>\n  <text x=\"337\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">虚拟网络</text>\n\n  <!-- Lambda -->\n  <rect x=\"402\" y=\"450\" width=\"110\" height=\"38\" rx=\"7\" ry=\"7\"\n        fill=\"#22c55e\" fill-opacity=\"0.1\" stroke=\"#22c55e\" stroke-width=\"1.2\"/>\n  <text x=\"457\" y=\"466\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#22c55e\">Lambda</text>\n  <text x=\"457\" y=\"481\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">无服务器（进阶）</text>\n\n  <!-- EC2 → 関連概念エリアへの矢印 -->\n  <line x1=\"300\" y1=\"280\" x2=\"300\" y2=\"418\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/>\n\n  <!-- 右側にAWSクラウドのラベル -->\n  <rect x=\"425\" y=\"320\" width=\"145\" height=\"70\" rx=\"10\" ry=\"10\"\n        fill=\"currentColor\" fill-opacity=\"0.05\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  <text x=\"497\" y=\"343\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"currentColor\">AWS云</text>\n  <text x=\"497\" y=\"359\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">物理服务器由</text>\n  <text x=\"497\" y=\"373\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">亚马逊负责管理</text>\n  <text x=\"497\" y=\"386\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">用户以虚拟方式使用</text>\n\n  <!-- タイトル -->\n  <text x=\"300\" y=\"24\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"currentColor\">EC2 概念图</text>\n  <text x=\"300\" y=\"42\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">Amazon Elastic Compute Cloud — 虚拟服务器的结构</text>\n\n</svg>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "EC2における「Elastic（弾力的）」という名称が示す特性として、最も適切なものはどれか？",
+      "choices": [
+        {
+          "text": "データが暗号化されており、外部からの攻撃に対して柔軟に対応できること",
+          "isCorrect": false
+        },
+        {
+          "text": "アクセス量の増減に応じて、サーバーのリソースを柔軟にスケールアップ・ダウンできること",
+          "isCorrect": true
+        },
+        {
+          "text": "物理サーバーの素材が柔軟性の高い素材で作られており、耐久性が高いこと",
+          "isCorrect": false
+        },
+        {
+          "text": "料金プランが固定ではなく、複数の通貨で支払いができること",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "「Elastic」とは、アクセスが急増したときはインスタンスを増やし、閑散期には減らすという「需要に応じた柔軟なスケーリング」を指します。これがEC2の大きな特徴であり、従来の固定的なオンプレミスサーバーとの本質的な違いです。"
+    },
+    {
+      "question": "EC2のインスタンスを構成する要素のうち、「どの通信を許可・拒否するかを制御する仮想的なファイアウォール」に相当するものはどれか？",
+      "choices": [
+        {
+          "text": "AMI（Amazon Machine Image）",
+          "isCorrect": false
+        },
+        {
+          "text": "EBS（Elastic Block Store）",
+          "isCorrect": false
+        },
+        {
+          "text": "セキュリティグループ",
+          "isCorrect": true
+        },
+        {
+          "text": "インスタンスタイプ",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "セキュリティグループは、EC2インスタンスへの通信を制御する仮想ファイアウォールです。AMIはOSや初期ソフトウェアの設計図、EBSはデータ保存用の仮想ディスク、インスタンスタイプはCPU・メモリなどの性能仕様を指します。それぞれ異なる役割を持ちます。"
+    },
+    {
+      "question": "EC2とAWS Lambdaの関係について、最も正確に述べているものはどれか？",
+      "choices": [
+        {
+          "text": "LambdaはEC2の旧称であり、現在はEC2に統合されている",
+          "isCorrect": false
+        },
+        {
+          "text": "EC2はLambdaの内部で動作しており、LambdaはEC2を管理するツールである",
+          "isCorrect": false
+        },
+        {
+          "text": "LambdaはEC2をより大規模化したサービスであり、より高性能なサーバーを提供する",
+          "isCorrect": false
+        },
+        {
+          "text": "LambdaはEC2よりさらに発展した「サーバーレス」の形態であり、サーバーの管理すら不要にしたサービスである",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "EC2は仮想サーバーを借りて自分で管理するサービスですが、Lambdaはサーバーの存在を意識せずにコードを実行できる「サーバーレス」の発展形です。EC2 → Lambdaの流れは、インフラ管理の手間をさらに省略する方向への進化を示しています。"
+    }
+  ]
+}

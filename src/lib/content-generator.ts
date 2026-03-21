@@ -27,8 +27,7 @@ function parseJsonArray<T>(text: string, fallback: T[]): T[] {
     return JSON.parse(jsonMatch[0]);
   } catch { /* continue */ }
 
-  // 2nd attempt: fix unescaped control characters inside JSON string values
-  // Process line by line: join lines that are inside a JSON string value
+  // 2nd attempt: fix unescaped control characters and bare backslashes inside JSON string values
   try {
     const raw = jsonMatch[0];
     let fixed = '';
@@ -44,6 +43,14 @@ function parseJsonArray<T>(text: string, fallback: T[]): T[] {
         // skip
       } else if (inString && ch === '\t') {
         fixed += '\\t';
+      } else if (inString && ch === '\\') {
+        // Check next char for valid JSON escape sequences
+        const next = raw[i + 1];
+        if (next && '"\\/bfnrtu'.includes(next)) {
+          fixed += ch; // valid escape, keep as-is
+        } else {
+          fixed += '\\\\'; // bare backslash, escape it
+        }
       } else {
         fixed += ch;
       }

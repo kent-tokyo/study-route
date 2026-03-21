@@ -13,6 +13,13 @@
     ],
     "hasIllustration": {
       "standard": true
+    },
+    "locales": {
+      "standard": [
+        "ja",
+        "en",
+        "zh"
+      ]
     }
   },
   "utilitarianism": {

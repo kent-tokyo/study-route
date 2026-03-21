@@ -1,0 +1,162 @@
+{
+  "id": "a6374457-7045-4a96-adbe-1f62295caec8",
+  "nodeId": "binary-logic",
+  "level": "standard",
+  "locale": "zh",
+  "generatedAt": "2026-03-21T22:45:58.042Z",
+  "content": "# 二进制与逻辑电路\n\n## 是什么 — 直观的解释\n\n在计算机内部，所有信息都只用\"0和1\"这两种数字来表示。这就是**二进制（binary）**。就像我们日常使用的十进制用0到9共10种数字一样，二进制只用0和1这两种数字来表示数值。\n\n举个例子，想象一下电灯开关。开关只有\"开（1）\"和\"关（0）\"两种状态。计算机内部有数十亿个微小的开关（晶体管），正是这些开关各自保持\"0或1\"的状态，才得以处理海量的信息。\n\n**逻辑电路（logic circuit）**是将这些0和1的信号组合起来，执行\"AND（与）\"\"OR（或）\"\"NOT（非）\"等逻辑运算的电路。二进制与逻辑电路，正如同支撑计算机这座巨大建筑的\"砖块\"一般不可或缺。\n\n---\n\n## 为什么需要 — 在数学中的定位\n\n二进制与逻辑电路是**计算机科学最根本的基础**。无论多么复杂的程序，最终都会被转换为0和1的世界来处理。其数学背景是\"布尔代数（Boolean algebra）\"体系，由19世纪数学家乔治·布尔为将逻辑学代数化而创建。\n\n这一概念与\"离散数学\"\"信息论\"\"数字电路设计\"等领域直接相关，是大学学习计算机科学或电气工程的必要起点。此外，由于它与集合论和命题逻辑有深刻联系，也是培养数学逻辑思维能力的优秀素材。\n\n在实际应用方面，理解二进制后，编程中的位运算以及数据存储与压缩的原理便会自然而然地变得清晰。能够回答\"为什么计算机使用二进制？\"这一问题，也是生活在数字社会中的重要素养。\n\n---\n\n## 核心思想 — 定义与定理的本质\n\n### 二进制的表示\n\n在十进制中，每一\"位\"具有 $10^n$ 的权重。同理，二进制中每一位的权重为 $2^n$。\n\n$$\n(1011)_2 = 1 \\times 2^3 + 0 \\times 2^2 + 1 \\times 2^1 + 1 \\times 2^0 = 8 + 0 + 2 + 1 = 11\n$$\n\n一般地，$n$ 位二进制数 $b_{n-1} b_{n-2} \\cdots b_1 b_0$（其中每个 $b_i \\in \\{0, 1\\}$）所表示的十进制值为\n\n$$\n\\sum_{i=0}^{n-1} b_i \\cdot 2^i\n$$\n\n### 布尔代数与基本逻辑门\n\n**布尔代数**规定了在0和1的世界中进行计算的规则。基本运算有以下三种。\n\n| 运算名 | 符号 | 含义 |\n|--------|------|------|\n| AND（逻辑与） | $A \\land B$ | 仅当A和B都为1时结果为1 |\n| OR（逻辑或） | $A \\lor B$ | A或B中至少有一个为1时结果为1 |\n| NOT（逻辑非） | $\\lnot A$ | 将0和1互换 |\n\n这些运算均可通过**真值表**完整定义。例如，AND的真值表如下。\n\n| $A$ | $B$ | $A \\land B$ |\n|-----|-----|-------------|\n| 0   | 0   | 0           |\n| 0   | 1   | 0           |\n| 1   | 0   | 0           |\n| 1   | 1   | 1           |\n\n此外，布尔代数中有如下重要定律（德摩根定律）。\n\n$$\n\\lnot (A \\land B) = \\lnot A \\lor \\lnot B\n$$\n\n$$\n\\lnot (A \\lor B) = \\lnot A \\land \\lnot B\n$$\n\n通过组合这些逻辑门，可以实现加法、减法、比较等一切运算。\n\n---\n\n## 具体示例\n\n### 示例1：日常生活 — 电灯与两个开关\n\n想象走廊里的电灯。系统中有\"走廊入口的开关（A）\"和\"走廊出口的开关（B）\"两个开关，**任意一个打开，电灯就会亮**。这正是 **OR 电路**的工作方式。\n\n$$\n\\text{电灯} = A \\lor B\n$$\n\n另一方面，\"安全门已关闭（A = 1）\"且\"密码正确（B = 1）\"，**两个条件同时满足才解锁**的系统则是 **AND 电路**。可见，日常生活中各种\"条件的组合\"都能用逻辑电路来表达。\n\n### 示例2：用二进制计数\n\n将十进制的0到15用二进制表示如下。\n\n| 十进制 | 二进制 |\n|--------|-------|\n| 0      | 0000  |\n| 1      | 0001  |\n| 5      | 0101  |\n| 10     | 1010  |\n| 15     | 1111  |\n\n4位二进制数能表示的最大值为 $1111_2 = 15 = 2^4 - 1$。一般地，$n$ 位可以表示从 $0$ 到 $2^n - 1$ 共 $2^n$ 个不同的值。这恰好等于 $n$ 个开关\"开/关组合\"的总数。\n\n### 示例3：半加器 — 用逻辑门实现加法\n\n将 AND 与 XOR（异或）组合，可以构造出执行1位加法的电路（**半加器**）。\n\n$$\n\\text{和}（S） = A \\oplus B \\quad (\\text{XOR})\n$$\n$$\n\\text{进位}（C） = A \\land B \\quad (\\text{AND})\n$$\n\n对所有输入组合用真值表验证，结果如下。\n\n| $A$ | $B$ | $S = A \\oplus B$ | $C = A \\land B$ |\n|-----|-----|------------------|-----------------|\n| 0   | 0   | 0                | 0               |\n| 0   | 1   | 1                | 0               |\n| 1   | 0   | 1                | 0               |\n| 1   | 1   | 0                | 1               |\n\n例如当 $A = 1,\\, B = 1$ 时，$S = 0,\\, C = 1$，对应 $1 + 1 = 10_2$（十进制的2）。正是这样将基本逻辑门层层叠加，计算机\"进行计算\"的功能才得以实现。\n\n---\n\n## 关联 — 与其他概念的联系\n\n**前置知识：**\n- 十进制的原理（位值计数法的理解）\n- 基本集合论与命题逻辑（AND/OR/NOT的逻辑含义）\n\n**与本概念相关的数学：**\n- **布尔代数**：二进制与逻辑电路的数学基础，与集合的 $\\cap$（交集）和 $\\cup$（并集）完全对应\n- **命题逻辑**：$\\land,\\, \\lor,\\, \\lnot$ 运算即为逻辑学的符号本身\n- **信息论**：比特（bit = binary digit）是信息量的最小单位，并延伸至熵的概念\n\n**进一步发展的方向：**\n- **组合电路与时序电路**：触发器、计数器等具有记忆功能的电路\n- **补码表示**：用二进制处理负数的方法\n- **浮点数（IEEE 754）**：计算机表示小数的机制\n- **算法与计算复杂度**：二进制的位数（比特数）出现在算法复杂度的讨论中\n\n---\n\n## 在其他领域的应用\n\n### 计算机工程与电气工程\n\n逻辑电路与CPU（中央处理器）的设计直接相关。现代CPU集成了数十亿个晶体管，它们通过AND、OR、NOT的组合实现运算、存储和控制的全部功能。此外，FPGA（现场可编程逻辑阵列）也广泛应用于通信设备和医疗器械。\n\n### 信息通信与密码理论\n\n通过互联网收发数据时，数据以二进制比特串的形式处理。纠错码（如汉明码）巧妙地利用位运算来检测和纠正数据错误。现代密码技术（AES、RSA等）也以对大型二进制数进行位运算为基础。\n\n### 认知科学与哲学\n\n布尔代数中\"真（1）/假（0）\"的二值逻辑也被用于人类思维的形式化。在人工智能早期研究中，\"人类的推理可以还原为逻辑运算\"的观点曾占据主导地位。即使在现代神经网络中，每个神经元\"激活（1）/不激活（0）\"的二值化抽象仍是模型的起源所在。\n\n### 生物学与医学\n\n基因开关（开/关）的调控网络具有与逻辑电路类似的结构。决定某个基因\"是否表达（1或0）\"的调控网络可用布尔电路建模，并被应用于细胞分化机制及疾病机理的研究之中。",
+  "terms": [
+    {
+      "term": "二进制数",
+      "reading": "èr jìn zhì shù",
+      "en": "binary number",
+      "definition": "仅使用0和1两种数字来表示数值的记数法。是一种各位权重为2的幂次的位值记数法。"
+    },
+    {
+      "term": "布尔代数",
+      "reading": "bù ěr dài shù",
+      "en": "Boolean algebra",
+      "definition": "以0和1两个值为对象，由AND、OR、NOT运算构成的代数体系。由19世纪数学家乔治·布尔将逻辑学代数化而建立，是逻辑电路的数学基础。"
+    },
+    {
+      "term": "逻辑电路",
+      "reading": "luó ji diàn lù",
+      "en": "logic circuit",
+      "definition": "以0和1的信号为输入，通过组合AND、OR、NOT等逻辑运算得到输出的电子电路。是计算机运算与控制的基本构成要素。"
+    },
+    {
+      "term": "逻辑与",
+      "reading": "luó ji yǔ",
+      "en": "AND",
+      "definition": "仅当两个输入均为1时输出才为1的逻辑运算。用符号 $A \\land B$ 表示。"
+    },
+    {
+      "term": "逻辑或",
+      "reading": "luó ji huò",
+      "en": "OR",
+      "definition": "两个输入中至少有一个为1时输出为1的逻辑运算。用符号 $A \\lor B$ 表示。"
+    },
+    {
+      "term": "逻辑非",
+      "reading": "luó ji fēi",
+      "en": "NOT",
+      "definition": "将输入的0和1取反的逻辑运算。用符号 $\\lnot A$ 表示，是1输入1输出的最基本逻辑门。"
+    },
+    {
+      "term": "真值表",
+      "reading": "zhēn zhí biǎo",
+      "en": "truth table",
+      "definition": "在逻辑运算中，将所有输入组合及其对应输出一览列出的表格。完整地定义了逻辑运算的行为。"
+    },
+    {
+      "term": "德摩根定律",
+      "reading": "dé mó gēn dìng lǜ",
+      "en": "De Morgan's laws",
+      "definition": "布尔代数中重要的变换法则，即 $\\lnot(A \\land B) = \\lnot A \\lor \\lnot B$ 以及 $\\lnot(A \\lor B) = \\lnot A \\land \\lnot B$ 成立。"
+    },
+    {
+      "term": "异或",
+      "reading": "yì huò",
+      "en": "XOR (exclusive OR)",
+      "definition": "当两个输入不同时输出1、相同时输出0的逻辑运算。用符号 $A \\oplus B$ 表示，常用于半加器的求和运算等场合。"
+    },
+    {
+      "term": "半加器",
+      "reading": "bàn jiā qì",
+      "en": "half adder",
+      "definition": "将XOR门与AND门组合，对两个1位数进行加法运算的基本逻辑电路。输出和（S）与进位（C）共2位。"
+    },
+    {
+      "term": "比特",
+      "reading": "bǐ tè",
+      "en": "bit",
+      "definition": "binary digit的缩写，是取0或1两个值的信息量最小单位，相当于二进制数的1位。"
+    },
+    {
+      "term": "晶体管",
+      "reading": "jīng tǐ guǎn",
+      "en": "transistor",
+      "definition": "能够控制电信号开关的半导体器件。是逻辑电路的物理实现单元，现代CPU中集成了数十亿个晶体管。"
+    },
+    {
+      "term": "命题逻辑",
+      "reading": "mìng tí luó ji",
+      "en": "propositional logic",
+      "definition": "使用∧、∨、¬等逻辑运算对取真（1）或假（0）值的命题进行组合，处理推理形式化体系的逻辑学分支。"
+    }
+  ],
+  "diagrams": [
+    {
+      "name": "concept-diagram.svg",
+      "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- Background transparent -->\n\n  <!-- ===== TITLE ===== -->\n  <text x=\"300\" y=\"30\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"currentColor\">二进制与逻辑电路结构图</text>\n\n  <!-- ===== CENTER: Boolean Algebra ===== -->\n  <ellipse cx=\"300\" cy=\"260\" rx=\"70\" ry=\"36\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n  <text x=\"300\" y=\"254\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#3b82f6\">布尔代数</text>\n  <text x=\"300\" y=\"272\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">Boolean Algebra</text>\n\n  <!-- ===== TOP LEFT: 2进制 ===== -->\n  <rect x=\"50\" y=\"55\" width=\"140\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"120\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">二进制</text>\n  <text x=\"120\" y=\"96\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">各位权重: 2ⁿ</text>\n  <text x=\"120\" y=\"112\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">(1011)₂ = 8+0+2+1 = 11</text>\n  <text x=\"120\" y=\"126\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">n位 → 2ⁿ种</text>\n\n  <!-- ===== TOP RIGHT: 命题逻辑 ===== -->\n  <rect x=\"410\" y=\"55\" width=\"140\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"480\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">命题逻辑</text>\n  <text x=\"480\" y=\"96\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">∧（AND）∨（OR）</text>\n  <text x=\"480\" y=\"112\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬（NOT）</text>\n  <text x=\"480\" y=\"126\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">真假 → 0 / 1</text>\n\n  <!-- ===== MIDDLE LEFT: 基本门 ===== -->\n  <rect x=\"30\" y=\"215\" width=\"150\" height=\"90\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"105\" y=\"238\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">基本逻辑门</text>\n  <!-- AND gate symbol -->\n  <text x=\"50\" y=\"258\" font-size=\"10\" fill=\"#3b82f6\">AND:</text>\n  <text x=\"90\" y=\"258\" font-size=\"10\" fill=\"currentColor\">A∧B → 两者为1则1</text>\n  <text x=\"50\" y=\"274\" font-size=\"10\" fill=\"#22c55e\">OR:</text>\n  <text x=\"90\" y=\"274\" font-size=\"10\" fill=\"currentColor\">A∨B → 一方为1则1</text>\n  <text x=\"50\" y=\"290\" font-size=\"10\" fill=\"#ef4444\">NOT:</text>\n  <text x=\"90\" y=\"290\" font-size=\"10\" fill=\"currentColor\">¬A → 0↔1取反</text>\n\n  <!-- ===== MIDDLE RIGHT: 真值表 ===== -->\n  <rect x=\"420\" y=\"215\" width=\"150\" height=\"90\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"495\" y=\"238\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">真值表 (AND)</text>\n  <text x=\"445\" y=\"256\" font-size=\"10\" fill=\"currentColor\">A  B  A∧B</text>\n  <line x1=\"435\" y1=\"260\" x2=\"560\" y2=\"260\" stroke=\"currentColor\" stroke-width=\"0.8\" stroke-opacity=\"0.4\"/>\n  <text x=\"445\" y=\"272\" font-size=\"10\" fill=\"currentColor\">0  0   0</text>\n  <text x=\"445\" y=\"284\" font-size=\"10\" fill=\"currentColor\">0  1   0</text>\n  <text x=\"445\" y=\"296\" font-size=\"10\" fill=\"currentColor\">1  0   0</text>\n  <text x=\"445\" y=\"308\" font-size=\"10\" fill=\"#22c55e\" font-weight=\"bold\">1  1   1</text>\n\n  <!-- ===== BOTTOM LEFT: 德摩根定律 ===== -->\n  <rect x=\"50\" y=\"370\" width=\"160\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"130\" y=\"392\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">德摩根定律</text>\n  <text x=\"130\" y=\"412\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬(A∧B) = ¬A ∨ ¬B</text>\n  <text x=\"130\" y=\"428\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">¬(A∨B) = ¬A ∧ ¬B</text>\n  <text x=\"130\" y=\"444\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.7\">与集合的补集相对应</text>\n\n  <!-- ===== BOTTOM CENTER: 半加器 ===== -->\n  <rect x=\"220\" y=\"370\" width=\"160\" height=\"80\" rx=\"12\" fill=\"#3b82f6\" fill-opacity=\"0.08\" stroke=\"#3b82f6\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"392\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#3b82f6\">半加器</text>\n  <text x=\"300\" y=\"410\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">和 S = A ⊕ B (XOR)</text>\n  <text x=\"300\" y=\"426\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">进位 C = A∧B</text>\n  <text x=\"300\" y=\"444\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">1+1 = 10₂ (C=1, S=0)</text>\n\n  <!-- ===== BOTTOM RIGHT: 应用 ===== -->\n  <rect x=\"395\" y=\"370\" width=\"160\" height=\"80\" rx=\"12\" fill=\"currentColor\" fill-opacity=\"0.07\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"475\" y=\"392\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"currentColor\">应用与联系</text>\n  <text x=\"475\" y=\"410\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">信息论·位运算</text>\n  <text x=\"475\" y=\"426\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">数字电路设计</text>\n  <text x=\"475\" y=\"442\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">集合论·离散数学</text>\n\n  <!-- ===== ARROWS ===== -->\n  <!-- 二进制 → 布尔代数 -->\n  <line x1=\"185\" y1=\"110\" x2=\"255\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- 命题逻辑 → 布尔代数 -->\n  <line x1=\"415\" y1=\"110\" x2=\"345\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- 布尔代数 → 基本门 -->\n  <line x1=\"234\" y1=\"268\" x2=\"182\" y2=\"268\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- 布尔代数 → 真值表 -->\n  <line x1=\"366\" y1=\"268\" x2=\"418\" y2=\"268\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- 布尔代数 → 德摩根 -->\n  <line x1=\"258\" y1=\"288\" x2=\"210\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n  <!-- 布尔代数 → 半加器 -->\n  <line x1=\"300\" y1=\"296\" x2=\"300\" y2=\"368\" stroke=\"#3b82f6\" stroke-width=\"1.8\" stroke-opacity=\"0.7\" marker-end=\"url(#arrowBlue)\"/>\n  <!-- 布尔代数 → 应用 -->\n  <line x1=\"342\" y1=\"288\" x2=\"440\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-opacity=\"0.6\" marker-end=\"url(#arrow)\"/>\n\n  <!-- 二进制 → 半加器 (dashed) -->\n  <line x1=\"150\" y1=\"135\" x2=\"255\" y2=\"375\" stroke=\"currentColor\" stroke-width=\"1\" stroke-opacity=\"0.3\" stroke-dasharray=\"5,4\" marker-end=\"url(#arrowLight)\"/>\n\n  <!-- ===== ARROW MARKERS ===== -->\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.6\"/>\n    </marker>\n    <marker id=\"arrowBlue\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#3b82f6\" fill-opacity=\"0.8\"/>\n    </marker>\n    <marker id=\"arrowLight\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\" fill-opacity=\"0.3\"/>\n    </marker>\n  </defs>\n\n  <!-- ===== LEGEND ===== -->\n  <text x=\"300\" y=\"500\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\" fill-opacity=\"0.55\">→ 概念的依赖与派生关系　　虚线 → 间接联系</text>\n\n</svg>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "2進数 $(1101)_2$ を10進数に変換すると、どの値になりますか？",
+      "choices": [
+        {
+          "text": "11",
+          "isCorrect": false
+        },
+        {
+          "text": "13",
+          "isCorrect": true
+        },
+        {
+          "text": "14",
+          "isCorrect": false
+        },
+        {
+          "text": "15",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "各桁の重みは右から $2^0, 2^1, 2^2, 2^3$ です。$(1101)_2 = 1 \\times 2^3 + 1 \\times 2^2 + 0 \\times 2^1 + 1 \\times 2^0 = 8 + 4 + 0 + 1 = 13$ となります。"
+    },
+    {
+      "question": "AND回路とOR回路について、次の説明のうち正しいものはどれですか？",
+      "choices": [
+        {
+          "text": "AND回路は入力AとBのどちらか一方が1であれば出力が1になる",
+          "isCorrect": false
+        },
+        {
+          "text": "OR回路は入力AとBの両方が0のときだけ出力が0になる",
+          "isCorrect": true
+        },
+        {
+          "text": "AND回路は入力AとBのどちらか一方が1であれば出力が0になる",
+          "isCorrect": false
+        },
+        {
+          "text": "OR回路は入力AとBの両方が1のときだけ出力が1になる",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "OR回路（$A \\lor B$）は「AかBの少なくとも一方が1なら出力は1」となります。裏を返すと、「両方が0のときだけ出力が0」になります。AND回路は「両方が1のときだけ出力が1」という動作をします。"
+    },
+    {
+      "question": "半加算器において、$A = 1,\\ B = 1$ を入力したとき、和（$S$）と桁上がり（$C$）の出力の組み合わせとして正しいものはどれですか？",
+      "choices": [
+        {
+          "text": "$S = 1,\\ C = 1$",
+          "isCorrect": false
+        },
+        {
+          "text": "$S = 1,\\ C = 0$",
+          "isCorrect": false
+        },
+        {
+          "text": "$S = 0,\\ C = 1$",
+          "isCorrect": true
+        },
+        {
+          "text": "$S = 0,\\ C = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "半加算器では $S = A \\oplus B$（XOR）、$C = A \\land B$（AND）で計算します。$A = 1,\\ B = 1$ のとき、$S = 1 \\oplus 1 = 0$、$C = 1 \\land 1 = 1$ となります。これは $1 + 1 = (10)_2$、すなわち10進数の2に対応しています。"
+    }
+  ]
+}
