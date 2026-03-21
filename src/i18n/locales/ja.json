@@ -6,7 +6,8 @@
     "completed": "完了",
     "loading": "コンテンツを読み込んでいます...",
     "notFound": "コンテンツが見つかりませんでした。",
-    "processing": "処理中..."
+    "processing": "処理中...",
+    "backToTop": "ページ上部に戻る"
   },
   "domain": {
     "selectTitle": "学習ドメインを選択",

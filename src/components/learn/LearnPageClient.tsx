@@ -120,6 +120,15 @@ export default function LearnPageClient({ nodeId, domain }: LearnPageClientProps
           domainMapUrl={domainMapUrl}
         />
       </main>
+
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-6 right-6 z-20 rounded-full bg-zinc-700 dark:bg-zinc-600 p-3 text-white shadow-lg transition-opacity hover:bg-zinc-600 dark:hover:bg-zinc-500"
+        title={t('common.backToTop')}
+        aria-label="Scroll to top"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
     </div>
   );
 }

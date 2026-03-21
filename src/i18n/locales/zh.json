@@ -6,7 +6,8 @@
     "completed": "已完成",
     "loading": "正在加载内容...",
     "notFound": "未找到内容。",
-    "processing": "处理中..."
+    "processing": "处理中...",
+    "backToTop": "返回顶部"
   },
   "domain": {
     "selectTitle": "选择学习领域",

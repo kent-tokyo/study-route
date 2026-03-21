@@ -6,7 +6,8 @@
     "completed": "completed",
     "loading": "Loading content...",
     "notFound": "Content not found.",
-    "processing": "Processing..."
+    "processing": "Processing...",
+    "backToTop": "Back to top"
   },
   "domain": {
     "selectTitle": "Select a Learning Domain",
