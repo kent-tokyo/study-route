@@ -12,7 +12,7 @@ interface ProgressEntry {
 type ProgressData = Record<string, ProgressEntry>;
 
 function getStorageKey(domain?: string): string {
-  return domain ? `plactice_math_progress_${domain}` : 'plactice_math_progress';
+  return domain ? `study-route_progress_${domain}` : 'study-route_progress';
 }
 
 function loadProgress(domain?: string): ProgressData {

@@ -59,13 +59,13 @@ export default function PolicyPage() {
           <h2>{t('policy.licenseTitle')}</h2>
           <p>
             {t('policy.licenseBody')}{' '}
-            <a href="https://github.com/kent-tokyo/plactice_math" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/kent-tokyo/study-route" target="_blank" rel="noopener noreferrer">GitHub</a>
           </p>
 
           <h2>{t('policy.contactTitle')}</h2>
           <p>
             {t('policy.contactBody')}{' '}
-            <a href="https://github.com/kent-tokyo/plactice_math/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>
+            <a href="https://github.com/kent-tokyo/study-route/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>
           </p>
         </div>
       </main>

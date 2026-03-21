@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 flex flex-col">
       <header className="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 px-6 py-3">
-        <h1 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">plactice_math</h1>
+        <h1 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">study-route</h1>
         <div className="flex items-center gap-3">
           <LanguageSelector />
           <button

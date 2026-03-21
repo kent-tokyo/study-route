@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 export type ContentLevel = 'beginner' | 'standard' | 'advanced';
 
-const STORAGE_KEY = 'plactice_math_content_level';
+const STORAGE_KEY = 'study-route_content_level';
 
 export function useSettings() {
   const [contentLevel, setContentLevelState] = useState<ContentLevel>('standard');

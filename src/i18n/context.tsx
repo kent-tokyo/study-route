@@ -10,7 +10,7 @@ export type Locale = 'ja' | 'en' | 'zh';
 const VALID_LOCALES = new Set<string>(['ja', 'en', 'zh']);
 const messages: Record<Locale, Record<string, unknown>> = { ja, en, zh };
 
-const STORAGE_KEY = 'plactice_math_locale';
+const STORAGE_KEY = 'study-route_locale';
 
 function getNestedValue(obj: Record<string, unknown>, path: string): string {
   const keys = path.split('.');

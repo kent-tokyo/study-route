@@ -4,8 +4,8 @@ import { ThemeScript } from "./theme-script";
 import { LocaleProvider } from "@/i18n/context";
 
 export const metadata: Metadata = {
-  title: "plactice_math - 数学概念学習",
-  description: "数学の概念を一歩ずつ理解するための学習アプリ",
+  title: "study-route - 概念学習マップ",
+  description: "数学・哲学・CS・化学・会計など、複数分野の概念を一歩ずつ学ぶ",
 };
 
 export default function RootLayout({
