@@ -21,7 +21,7 @@
         "zh": "计算机基础：二进制表示与逻辑门"
       },
       "prerequisites": [],
-      "number": "01-01"
+      "number": "04-001"
     },
     {
       "id": "discrete-math",
@@ -46,7 +46,7 @@
       "prerequisites": [
         "binary-logic"
       ],
-      "number": "01-02"
+      "number": "04-002"
     },
     {
       "id": "automata",
@@ -71,7 +71,7 @@
       "prerequisites": [
         "discrete-math"
       ],
-      "number": "01-03"
+      "number": "04-003"
     },
     {
       "id": "complexity",
@@ -96,7 +96,7 @@
       "prerequisites": [
         "automata"
       ],
-      "number": "01-04"
+      "number": "04-004"
     },
     {
       "id": "data-structures",
@@ -121,7 +121,7 @@
       "prerequisites": [
         "discrete-math"
       ],
-      "number": "02-01"
+      "number": "04-005"
     },
     {
       "id": "sorting-searching",
@@ -146,7 +146,7 @@
       "prerequisites": [
         "data-structures"
       ],
-      "number": "02-02"
+      "number": "04-006"
     },
     {
       "id": "graph-algorithms",
@@ -172,7 +172,7 @@
         "data-structures",
         "discrete-math"
       ],
-      "number": "02-03"
+      "number": "04-007"
     },
     {
       "id": "dynamic-programming",
@@ -197,7 +197,7 @@
       "prerequisites": [
         "sorting-searching"
       ],
-      "number": "02-04"
+      "number": "04-008"
     },
     {
       "id": "os-basics",
@@ -222,7 +222,7 @@
       "prerequisites": [
         "binary-logic"
       ],
-      "number": "03-01"
+      "number": "04-009"
     },
     {
       "id": "file-systems",
@@ -247,7 +247,7 @@
       "prerequisites": [
         "os-basics"
       ],
-      "number": "03-02"
+      "number": "04-010"
     },
     {
       "id": "db-fundamentals",
@@ -272,7 +272,7 @@
       "prerequisites": [
         "discrete-math"
       ],
-      "number": "03-03"
+      "number": "04-011"
     },
     {
       "id": "distributed-systems",
@@ -298,7 +298,7 @@
         "os-basics",
         "tcp-ip"
       ],
-      "number": "03-04"
+      "number": "04-012"
     },
     {
       "id": "compiler",
@@ -324,7 +324,7 @@
         "automata",
         "os-basics"
       ],
-      "number": "03-05"
+      "number": "04-013"
     },
     {
       "id": "tcp-ip",
@@ -349,7 +349,7 @@
       "prerequisites": [
         "os-basics"
       ],
-      "number": "04-01"
+      "number": "04-014"
     },
     {
       "id": "http-web",
@@ -374,7 +374,7 @@
       "prerequisites": [
         "tcp-ip"
       ],
-      "number": "04-02"
+      "number": "04-015"
     },
     {
       "id": "network-security",
@@ -399,7 +399,7 @@
       "prerequisites": [
         "tcp-ip"
       ],
-      "number": "04-03"
+      "number": "04-016"
     },
     {
       "id": "dns-routing",
@@ -424,7 +424,7 @@
       "prerequisites": [
         "tcp-ip"
       ],
-      "number": "04-04"
+      "number": "04-017"
     },
     {
       "id": "programming-paradigms",
@@ -447,7 +447,7 @@
         "zh": "命令式、函数式与面向对象编程"
       },
       "prerequisites": [],
-      "number": "05-01"
+      "number": "04-018"
     },
     {
       "id": "type-systems",
@@ -472,7 +472,7 @@
       "prerequisites": [
         "programming-paradigms"
       ],
-      "number": "05-02"
+      "number": "04-019"
     },
     {
       "id": "fp",
@@ -497,7 +497,7 @@
       "prerequisites": [
         "programming-paradigms"
       ],
-      "number": "05-03"
+      "number": "04-020"
     },
     {
       "id": "concurrent-programming",
@@ -523,7 +523,7 @@
         "programming-paradigms",
         "os-basics"
       ],
-      "number": "05-04"
+      "number": "04-021"
     },
     {
       "id": "ml-basics",
@@ -548,7 +548,7 @@
       "prerequisites": [
         "discrete-math"
       ],
-      "number": "06-01"
+      "number": "04-022"
     },
     {
       "id": "deep-learning",
@@ -573,7 +573,7 @@
       "prerequisites": [
         "ml-basics"
       ],
-      "number": "06-02"
+      "number": "04-023"
     },
     {
       "id": "nlp",
@@ -598,7 +598,7 @@
       "prerequisites": [
         "deep-learning"
       ],
-      "number": "06-03"
+      "number": "04-024"
     },
     {
       "id": "reinforcement-learning",
@@ -624,7 +624,7 @@
         "ml-basics",
         "dynamic-programming"
       ],
-      "number": "06-04"
+      "number": "04-025"
     }
   ],
   "edges": [

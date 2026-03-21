@@ -2,6 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import fs from 'fs';
 import path from 'path';
 import { getNode, getAllNodes } from './graph';
+import { getAreaToDomainMap } from '@/data/graph';
 import type { Term, QuizQuestion } from '@/types';
 
 export interface GeneratedContent {
@@ -17,24 +18,7 @@ const client = new Anthropic();
 // Domain detection from area
 // ---------------------------------------------------------------------------
 
-const AREA_TO_DOMAIN: Record<string, string> = {
-  // math
-  foundations: 'math', pure_algebra: 'math', pure_analysis: 'math', pure_geometry: 'math',
-  stochastic: 'math', computational: 'math', mathematical_modeling: 'math', social: 'math',
-  // philosophy
-  logic: 'philosophy', epistemology: 'philosophy', ethics: 'philosophy', metaphysics: 'philosophy', aesthetics: 'philosophy',
-  // aws
-  compute: 'aws', storage: 'aws', networking: 'aws', security: 'aws', databases: 'aws',
-  ai_ml: 'aws', management: 'aws', app_integration: 'aws',
-  // cs
-  foundations_cs: 'cs', algorithms: 'cs', systems: 'cs', networking_cs: 'cs', pl: 'cs', ai_cs: 'cs',
-  // chemistry
-  general_chem: 'chemistry', organic: 'chemistry', inorganic: 'chemistry', physical: 'chemistry',
-  analytical: 'chemistry', biochem: 'chemistry',
-  // accounting
-  bookkeeping: 'accounting', financial_statements: 'accounting', cost_accounting: 'accounting',
-  tax_accounting: 'accounting', management_accounting: 'accounting', auditing: 'accounting',
-};
+const AREA_TO_DOMAIN = getAreaToDomainMap();
 
 function getDomainFromArea(area: string): string {
   return AREA_TO_DOMAIN[area] || 'math';

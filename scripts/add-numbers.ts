@@ -1,21 +1,23 @@
 /**
- * Adds "number" field (e.g. "01-01") to all nodes in graph JSON files.
- * Area order is defined per domain; node order is topological within each area.
+ * Adds "number" field (e.g. "01-001") to all nodes in graph JSON files.
+ * Format: DD-NNN (domain prefix + domain-wide sequential number).
+ * Matches contents-table.md numbering.
+ * Domain config (prefix, areaOrder) is read from domains.json.
  */
 import fs from 'fs';
 import path from 'path';
 
 const GRAPH_DIR = path.join(process.cwd(), 'src', 'data', 'graph');
 
-// Area ordering per domain
-const AREA_ORDER: Record<string, string[]> = {
-  math: ['foundations', 'pure_algebra', 'pure_analysis', 'pure_geometry', 'stochastic', 'computational', 'mathematical_modeling', 'social'],
-  philosophy: ['logic', 'epistemology', 'ethics', 'metaphysics', 'aesthetics'],
-  aws: ['compute', 'networking', 'storage', 'security', 'databases', 'ai_ml', 'management', 'app_integration'],
-  cs: ['foundations_cs', 'algorithms', 'systems', 'networking_cs', 'pl', 'ai_cs'],
-  chemistry: ['general_chem', 'organic', 'inorganic', 'physical', 'analytical', 'biochem'],
-  accounting: ['bookkeeping', 'financial_statements', 'cost_accounting', 'tax_accounting', 'management_accounting', 'auditing'],
-};
+interface DomainConfig {
+  id: string;
+  prefix: string;
+  areaOrder: string[];
+}
+
+const domains: DomainConfig[] = JSON.parse(
+  fs.readFileSync(path.join(GRAPH_DIR, 'domains.json'), 'utf-8')
+);
 
 interface Node {
   id: string;
@@ -45,72 +47,55 @@ function topoSort(nodes: Node[]): Node[] {
   return result;
 }
 
-function processFile(filePath: string, areaOrder: string[]) {
-  const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  const nodes: Node[] = data.nodes;
-
-  const areaMap = new Map<string, number>();
-  areaOrder.forEach((area, i) => areaMap.set(area, i + 1));
-
+function getOrderedNodes(allNodes: Node[], areaOrder: string[]): Node[] {
+  const ordered: Node[] = [];
   for (const area of areaOrder) {
-    const areaNodes = nodes.filter(n => n.area === area);
-    const sorted = topoSort(areaNodes);
-    const areaNum = (areaMap.get(area) ?? 0).toString().padStart(2, '0');
-    sorted.forEach((node, i) => {
-      node.number = `${areaNum}-${(i + 1).toString().padStart(2, '0')}`;
-    });
+    const areaNodes = allNodes.filter(n => n.area === area);
+    ordered.push(...topoSort(areaNodes));
   }
-
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n');
-  console.log(`  Updated ${filePath} (${nodes.length} nodes)`);
+  return ordered;
 }
 
-// Math has 3 files
-function processMath() {
-  const areaOrder = AREA_ORDER.math;
-  const files = ['foundations.json', 'pure-math.json', 'applied-math.json'];
+function assignNumbers(nodes: Node[], prefix: string): void {
+  nodes.forEach((node, i) => {
+    node.number = `${prefix}-${(i + 1).toString().padStart(3, '0')}`;
+  });
+}
 
-  // Load all nodes to do global area numbering
-  const allNodes: { file: string; data: { nodes: Node[]; edges: unknown[] } }[] = [];
+// Math has 3 files, others have 1
+function processDomain(domain: DomainConfig) {
+  const domainDir = path.join(GRAPH_DIR, domain.id);
+  let files: string[];
+
+  if (domain.id === 'math') {
+    files = ['foundations.json', 'pure-math.json', 'applied-math.json'];
+  } else {
+    files = ['topics.json'];
+  }
+
+  const allData: { file: string; data: { nodes: Node[]; edges: unknown[] } }[] = [];
   for (const f of files) {
-    const filePath = path.join(GRAPH_DIR, 'math', f);
+    const filePath = path.join(domainDir, f);
     const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    allNodes.push({ file: filePath, data });
+    allData.push({ file: filePath, data });
   }
 
-  const flatNodes = allNodes.flatMap(f => f.data.nodes);
-  const areaMap = new Map<string, number>();
-  areaOrder.forEach((area, i) => areaMap.set(area, i + 1));
+  const flatNodes = allData.flatMap(f => f.data.nodes);
+  const ordered = getOrderedNodes(flatNodes, domain.areaOrder);
+  assignNumbers(ordered, domain.prefix);
 
-  for (const area of areaOrder) {
-    const areaNodes = flatNodes.filter(n => n.area === area);
-    const sorted = topoSort(areaNodes);
-    const areaNum = (areaMap.get(area) ?? 0).toString().padStart(2, '0');
-    sorted.forEach((node, i) => {
-      node.number = `${areaNum}-${(i + 1).toString().padStart(2, '0')}`;
-    });
-  }
-
-  for (const f of allNodes) {
+  for (const f of allData) {
     fs.writeFileSync(f.file, JSON.stringify(f.data, null, 2) + '\n');
     console.log(`  Updated ${f.file} (${f.data.nodes.length} nodes)`);
   }
 }
 
-// Single-file domains
-function processDomain(domain: string) {
-  const filePath = path.join(GRAPH_DIR, domain, 'topics.json');
-  processFile(filePath, AREA_ORDER[domain]);
-}
-
 console.log('Adding numbers to graph nodes...\n');
 
-console.log('Math:');
-processMath();
-
-for (const domain of ['philosophy', 'aws', 'cs', 'chemistry', 'accounting']) {
-  console.log(`\n${domain}:`);
+for (const domain of domains) {
+  console.log(`${domain.id}:`);
   processDomain(domain);
+  console.log();
 }
 
-console.log('\nDone!');
+console.log('Done!');

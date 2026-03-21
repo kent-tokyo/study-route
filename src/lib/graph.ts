@@ -1,4 +1,4 @@
-import { getAllGraphData } from '@/data/graph';
+import { getAllGraphData, getDomainIds } from '@/data/graph';
 import type { GraphNode, NodeStatus } from '@/types';
 import type { DomainId } from '@/types/domain';
 
@@ -27,7 +27,7 @@ export function getNode(nodeId: string, domainId?: DomainId): GraphNode | undefi
   if (result) return result;
 
   // Fallback: search across all domains
-  for (const d of ['math', 'philosophy', 'aws', 'cs', 'chemistry', 'accounting'] as DomainId[]) {
+  for (const d of getDomainIds()) {
     const found = getGraphData(d).nodes.find(n => n.id === nodeId);
     if (found) return found;
   }

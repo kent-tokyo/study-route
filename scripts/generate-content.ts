@@ -6,10 +6,12 @@ import { generateContent, generateQuizOnly } from '../src/lib/content-generator'
 import { generateConceptImage } from '../src/lib/image-generator';
 import { getAllNodes, getNode } from '../src/lib/graph';
 import type { DomainId } from '../src/types/domain';
+import { getDomains, getDomainIds } from '../src/data/graph';
 
-const DOMAIN_IDS: DomainId[] = ['math', 'philosophy', 'aws', 'cs', 'chemistry', 'accounting'];
-const DOMAIN_LABELS: Record<DomainId, string> = { math: 'Math（数学）', philosophy: 'Philosophy（哲学）', aws: 'AWS', cs: 'Computer Science', chemistry: 'Chemistry（化学）', accounting: 'Accounting（会計・簿記）' };
-const DOMAIN_PREFIXES: Record<DomainId, string> = { math: '01', philosophy: '02', aws: '03', cs: '04', chemistry: '05', accounting: '06' };
+const DOMAIN_IDS = getDomainIds();
+const domainsData = getDomains();
+const DOMAIN_LABELS = Object.fromEntries(domainsData.map(d => [d.id, d.contentsTableLabel])) as Record<DomainId, string>;
+const DOMAIN_PREFIXES = Object.fromEntries(domainsData.map(d => [d.id, d.prefix])) as Record<DomainId, string>;
 
 const OUTPUT_DIR = path.join(process.cwd(), 'public', 'content');
 const CONTENT_LEVELS = ['beginner', 'standard', 'advanced'] as const;

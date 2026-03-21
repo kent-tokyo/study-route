@@ -25,7 +25,7 @@
 - ノード状態: locked / available / in_progress / completed
 - 分野別カラーコード（ドメインごとに定義）
 - 難易度表示（★1〜5）
-- **ノードナンバリング**: `01-01`形式のナンバーをノードカード内に薄い色で表示。`number`フィールド（GraphNode）で管理、`add-numbers.ts`スクリプトで自動付番（エリア順×トポロジカルソート）
+- **ノードナンバリング**: `DD-NNN`形式（ドメインプレフィックス+ドメイン内通し番号、例: `04-001`）のナンバーをノードカード内に薄い色で表示。contents-table.mdと同一フォーマット。`number`フィールド（GraphNode）で管理、`add-numbers.ts`スクリプトで自動付番（エリア順×トポロジカルソート）
 - 完了数カウンター（エリアレベル/全体レベルで切替）
 - **ビューポート保存**: パン/ズーム状態をlocalStorageに保存し、再訪時に復元（ドメイン+エリアごとにキー分離）
 - **エッジ重なり防止**: `getSmoothStepPath` に動的offset（縦方向接続80px / 横方向50px、borderRadius 20px）でノードからエッジを離す
@@ -176,7 +176,7 @@
 - **未対応（将来）**: コンテンツ本体のlocale別生成
 
 ### 11. マルチドメイン対応
-- **ドメイン定義**: `src/data/graph/domains.json`（id, label, labels, description, descriptions, color）
+- **ドメイン定義**: `src/data/graph/domains.json`（id, prefix, label, labels, description, descriptions, color, contentsTableLabel, areaOrder）— ドメインプレフィックス・エリア順序・ラベルなどの一元管理マスタ
 - **ドメイン型**: `DomainId = 'math' | 'philosophy' | 'aws'`
 - **グラフデータ**: `src/data/graph/{domain}/` にドメインごとのエリア・ノード・エッジを配置
 - **汎用型**: `GraphNode`（旧MathNode）、`GraphEdge`（旧MathEdge）、`AreaId = string`

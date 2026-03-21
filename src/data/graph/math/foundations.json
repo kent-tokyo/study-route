@@ -21,7 +21,7 @@
         "zh": "计数这一最基本的概念。自然数的引入。"
       },
       "prerequisites": [],
-      "number": "01-01"
+      "number": "01-001"
     },
     {
       "id": "number-systems",
@@ -46,7 +46,7 @@
       "prerequisites": [
         "counting"
       ],
-      "number": "01-02"
+      "number": "01-002"
     },
     {
       "id": "integers",
@@ -71,7 +71,7 @@
       "prerequisites": [
         "number-systems"
       ],
-      "number": "01-03"
+      "number": "01-003"
     },
     {
       "id": "real-numbers",
@@ -96,7 +96,7 @@
       "prerequisites": [
         "integers"
       ],
-      "number": "01-04"
+      "number": "01-004"
     },
     {
       "id": "complex-numbers",
@@ -121,7 +121,7 @@
       "prerequisites": [
         "real-numbers"
       ],
-      "number": "01-05"
+      "number": "01-005"
     },
     {
       "id": "set-theory",
@@ -146,7 +146,7 @@
       "prerequisites": [
         "counting"
       ],
-      "number": "01-06"
+      "number": "01-006"
     },
     {
       "id": "logic",
@@ -171,7 +171,7 @@
       "prerequisites": [
         "set-theory"
       ],
-      "number": "01-07"
+      "number": "01-007"
     },
     {
       "id": "functions",
@@ -197,7 +197,7 @@
         "number-systems",
         "set-theory"
       ],
-      "number": "01-08"
+      "number": "01-008"
     },
     {
       "id": "proof-methods",
@@ -222,7 +222,7 @@
       "prerequisites": [
         "logic"
       ],
-      "number": "01-09"
+      "number": "01-009"
     },
     {
       "id": "combinatorics",
@@ -247,7 +247,7 @@
       "prerequisites": [
         "functions"
       ],
-      "number": "01-10"
+      "number": "01-010"
     },
     {
       "id": "relations",
@@ -273,7 +273,7 @@
         "set-theory",
         "functions"
       ],
-      "number": "01-11"
+      "number": "01-011"
     },
     {
       "id": "order-theory",
@@ -299,7 +299,7 @@
         "set-theory",
         "proof-methods"
       ],
-      "number": "01-12"
+      "number": "01-012"
     },
     {
       "id": "mathematical-logic-advanced",
@@ -325,7 +325,7 @@
         "logic",
         "proof-methods"
       ],
-      "number": "01-13"
+      "number": "01-013"
     },
     {
       "id": "axiomatic-set-theory",
@@ -351,7 +351,7 @@
         "set-theory",
         "mathematical-logic-advanced"
       ],
-      "number": "01-14"
+      "number": "01-014"
     },
     {
       "id": "computability",
@@ -377,7 +377,7 @@
         "mathematical-logic-advanced",
         "functions"
       ],
-      "number": "01-15"
+      "number": "01-015"
     },
     {
       "id": "category-theory",
@@ -404,7 +404,7 @@
         "proof-methods",
         "functions"
       ],
-      "number": "01-16"
+      "number": "01-016"
     }
   ],
   "edges": [

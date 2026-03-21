@@ -21,7 +21,7 @@
         "zh": "电子构型、元素周期表与原子轨道"
       },
       "prerequisites": [],
-      "number": "01-01"
+      "number": "05-001"
     },
     {
       "id": "chemical-bonding",
@@ -46,7 +46,7 @@
       "prerequisites": [
         "atomic-structure"
       ],
-      "number": "01-02"
+      "number": "05-002"
     },
     {
       "id": "stoichiometry",
@@ -71,7 +71,7 @@
       "prerequisites": [
         "atomic-structure"
       ],
-      "number": "01-03"
+      "number": "05-003"
     },
     {
       "id": "states-of-matter",
@@ -96,7 +96,7 @@
       "prerequisites": [
         "chemical-bonding"
       ],
-      "number": "01-04"
+      "number": "05-004"
     },
     {
       "id": "solutions",
@@ -122,7 +122,7 @@
         "chemical-bonding",
         "stoichiometry"
       ],
-      "number": "01-05"
+      "number": "05-005"
     },
     {
       "id": "hydrocarbons",
@@ -147,7 +147,7 @@
       "prerequisites": [
         "chemical-bonding"
       ],
-      "number": "02-01"
+      "number": "05-006"
     },
     {
       "id": "functional-groups",
@@ -172,7 +172,7 @@
       "prerequisites": [
         "hydrocarbons"
       ],
-      "number": "02-02"
+      "number": "05-007"
     },
     {
       "id": "organic-reactions",
@@ -197,7 +197,7 @@
       "prerequisites": [
         "functional-groups"
       ],
-      "number": "02-03"
+      "number": "05-008"
     },
     {
       "id": "stereochemistry",
@@ -222,7 +222,7 @@
       "prerequisites": [
         "functional-groups"
       ],
-      "number": "02-04"
+      "number": "05-009"
     },
     {
       "id": "coordination-chem",
@@ -247,7 +247,7 @@
       "prerequisites": [
         "chemical-bonding"
       ],
-      "number": "03-01"
+      "number": "05-010"
     },
     {
       "id": "solid-state",
@@ -272,7 +272,7 @@
       "prerequisites": [
         "chemical-bonding"
       ],
-      "number": "03-02"
+      "number": "05-011"
     },
     {
       "id": "bioinorganic",
@@ -297,7 +297,7 @@
       "prerequisites": [
         "coordination-chem"
       ],
-      "number": "03-03"
+      "number": "05-012"
     },
     {
       "id": "thermodynamics-chem",
@@ -323,7 +323,7 @@
         "stoichiometry",
         "states-of-matter"
       ],
-      "number": "04-01"
+      "number": "05-013"
     },
     {
       "id": "kinetics",
@@ -348,7 +348,7 @@
       "prerequisites": [
         "thermodynamics-chem"
       ],
-      "number": "04-02"
+      "number": "05-014"
     },
     {
       "id": "equilibrium",
@@ -373,7 +373,7 @@
       "prerequisites": [
         "thermodynamics-chem"
       ],
-      "number": "04-03"
+      "number": "05-015"
     },
     {
       "id": "electrochemistry",
@@ -398,7 +398,7 @@
       "prerequisites": [
         "thermodynamics-chem"
       ],
-      "number": "04-04"
+      "number": "05-016"
     },
     {
       "id": "quantum-chem",
@@ -424,7 +424,7 @@
         "chemical-bonding",
         "thermodynamics-chem"
       ],
-      "number": "04-05"
+      "number": "05-017"
     },
     {
       "id": "acid-base",
@@ -450,7 +450,7 @@
         "solutions",
         "stoichiometry"
       ],
-      "number": "05-01"
+      "number": "05-018"
     },
     {
       "id": "spectroscopy",
@@ -476,7 +476,7 @@
         "chemical-bonding",
         "acid-base"
       ],
-      "number": "05-02"
+      "number": "05-019"
     },
     {
       "id": "chromatography",
@@ -501,7 +501,7 @@
       "prerequisites": [
         "solutions"
       ],
-      "number": "05-03"
+      "number": "05-020"
     },
     {
       "id": "amino-acids-proteins",
@@ -526,7 +526,7 @@
       "prerequisites": [
         "functional-groups"
       ],
-      "number": "06-01"
+      "number": "05-021"
     },
     {
       "id": "enzymes",
@@ -552,7 +552,7 @@
         "amino-acids-proteins",
         "kinetics"
       ],
-      "number": "06-02"
+      "number": "05-022"
     },
     {
       "id": "metabolism",
@@ -578,7 +578,7 @@
         "enzymes",
         "thermodynamics-chem"
       ],
-      "number": "06-03"
+      "number": "05-023"
     },
     {
       "id": "nucleic-acids",
@@ -603,7 +603,7 @@
       "prerequisites": [
         "amino-acids-proteins"
       ],
-      "number": "06-04"
+      "number": "05-024"
     }
   ],
   "edges": [

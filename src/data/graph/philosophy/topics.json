@@ -21,7 +21,7 @@
         "zh": "命题与逻辑连接词的基础"
       },
       "prerequisites": [],
-      "number": "01-01"
+      "number": "02-001"
     },
     {
       "id": "predicate-logic",
@@ -46,7 +46,7 @@
       "prerequisites": [
         "propositional-logic"
       ],
-      "number": "01-02"
+      "number": "02-002"
     },
     {
       "id": "modal-logic",
@@ -71,7 +71,7 @@
       "prerequisites": [
         "predicate-logic"
       ],
-      "number": "01-03"
+      "number": "02-003"
     },
     {
       "id": "informal-fallacies",
@@ -96,7 +96,7 @@
       "prerequisites": [
         "propositional-logic"
       ],
-      "number": "01-04"
+      "number": "02-004"
     },
     {
       "id": "truth",
@@ -119,7 +119,7 @@
         "zh": "思考真理的定义与条件"
       },
       "prerequisites": [],
-      "number": "02-01"
+      "number": "02-005"
     },
     {
       "id": "justification",
@@ -144,7 +144,7 @@
       "prerequisites": [
         "truth"
       ],
-      "number": "02-02"
+      "number": "02-006"
     },
     {
       "id": "skepticism",
@@ -169,7 +169,7 @@
       "prerequisites": [
         "justification"
       ],
-      "number": "02-03"
+      "number": "02-007"
     },
     {
       "id": "rationalism-empiricism",
@@ -195,7 +195,7 @@
         "truth",
         "justification"
       ],
-      "number": "02-04"
+      "number": "02-008"
     },
     {
       "id": "philosophy-of-science",
@@ -221,7 +221,7 @@
         "skepticism",
         "rationalism-empiricism"
       ],
-      "number": "02-05"
+      "number": "02-009"
     },
     {
       "id": "utilitarianism",
@@ -244,7 +244,7 @@
         "zh": "追求最大多数人最大幸福的伦理理论"
       },
       "prerequisites": [],
-      "number": "03-01"
+      "number": "02-010"
     },
     {
       "id": "deontology",
@@ -267,7 +267,7 @@
         "zh": "行为的正确性由义务和规则决定"
       },
       "prerequisites": [],
-      "number": "03-02"
+      "number": "02-011"
     },
     {
       "id": "virtue-ethics",
@@ -293,7 +293,7 @@
         "utilitarianism",
         "deontology"
       ],
-      "number": "03-03"
+      "number": "02-012"
     },
     {
       "id": "justice",
@@ -319,7 +319,7 @@
         "deontology",
         "utilitarianism"
       ],
-      "number": "03-04"
+      "number": "02-013"
     },
     {
       "id": "bioethics",
@@ -345,7 +345,7 @@
         "utilitarianism",
         "deontology"
       ],
-      "number": "03-05"
+      "number": "02-014"
     },
     {
       "id": "environmental-ethics",
@@ -370,7 +370,7 @@
       "prerequisites": [
         "utilitarianism"
       ],
-      "number": "03-06"
+      "number": "02-015"
     },
     {
       "id": "ontology",
@@ -393,7 +393,7 @@
         "zh": "什么存在，存在是什么？"
       },
       "prerequisites": [],
-      "number": "04-01"
+      "number": "02-016"
     },
     {
       "id": "causation",
@@ -418,7 +418,7 @@
       "prerequisites": [
         "ontology"
       ],
-      "number": "04-02"
+      "number": "02-017"
     },
     {
       "id": "free-will",
@@ -443,7 +443,7 @@
       "prerequisites": [
         "causation"
       ],
-      "number": "04-03"
+      "number": "02-018"
     },
     {
       "id": "mind-body",
@@ -468,7 +468,7 @@
       "prerequisites": [
         "ontology"
       ],
-      "number": "04-04"
+      "number": "02-019"
     },
     {
       "id": "time-space",
@@ -494,7 +494,7 @@
         "ontology",
         "causation"
       ],
-      "number": "04-05"
+      "number": "02-020"
     },
     {
       "id": "beauty",
@@ -517,7 +517,7 @@
         "zh": "什么是美？其主观性与客观性"
       },
       "prerequisites": [],
-      "number": "05-01"
+      "number": "02-021"
     },
     {
       "id": "art-philosophy",
@@ -542,7 +542,7 @@
       "prerequisites": [
         "beauty"
       ],
-      "number": "05-02"
+      "number": "02-022"
     },
     {
       "id": "sublime",
@@ -567,7 +567,7 @@
       "prerequisites": [
         "beauty"
       ],
-      "number": "05-03"
+      "number": "02-023"
     },
     {
       "id": "aesthetic-judgment",
@@ -593,7 +593,7 @@
         "beauty",
         "art-philosophy"
       ],
-      "number": "05-04"
+      "number": "02-024"
     }
   ],
   "edges": [

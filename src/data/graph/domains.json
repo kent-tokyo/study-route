@@ -1,50 +1,68 @@
 [
   {
     "id": "math",
+    "prefix": "01",
     "label": "数学",
     "labels": { "ja": "数学", "en": "Mathematics", "zh": "数学" },
     "description": "数学の基礎から応用まで、概念のつながりを理解する",
     "descriptions": { "ja": "数学の基礎から応用まで、概念のつながりを理解する", "en": "Understand the connections between mathematical concepts, from basics to advanced", "zh": "从基础到应用，理解数学概念之间的联系" },
-    "color": "#3b82f6"
+    "color": "#3b82f6",
+    "contentsTableLabel": "Math（数学）",
+    "areaOrder": ["foundations", "pure_algebra", "pure_analysis", "pure_geometry", "stochastic", "computational", "mathematical_modeling", "social"]
   },
   {
     "id": "philosophy",
+    "prefix": "02",
     "label": "哲学",
     "labels": { "ja": "哲学", "en": "Philosophy", "zh": "哲学" },
     "description": "認識論・倫理学・論理学など、思考の根本を探究する",
     "descriptions": { "ja": "認識論・倫理学・論理学など、思考の根本を探究する", "en": "Explore the roots of thought: epistemology, ethics, logic, and more", "zh": "探究认识论、伦理学、逻辑学等思想根基" },
-    "color": "#8b5cf6"
+    "color": "#8b5cf6",
+    "contentsTableLabel": "Philosophy（哲学）",
+    "areaOrder": ["logic", "epistemology", "ethics", "metaphysics", "aesthetics"]
   },
   {
     "id": "aws",
+    "prefix": "03",
     "label": "AWS",
     "labels": { "ja": "AWS", "en": "AWS", "zh": "AWS" },
     "description": "クラウドサービスの構成要素と設計パターンを学ぶ",
     "descriptions": { "ja": "クラウドサービスの構成要素と設計パターンを学ぶ", "en": "Learn cloud service components and design patterns", "zh": "学习云服务组件与设计模式" },
-    "color": "#f59e0b"
+    "color": "#f59e0b",
+    "contentsTableLabel": "AWS",
+    "areaOrder": ["compute", "networking", "storage", "security", "databases", "ai_ml", "management", "app_integration"]
   },
   {
     "id": "cs",
+    "prefix": "04",
     "label": "コンピュータサイエンス",
     "labels": { "ja": "コンピュータサイエンス", "en": "Computer Science", "zh": "计算机科学" },
     "description": "アルゴリズム・データ構造・OS・ネットワークなど計算の科学",
     "descriptions": { "ja": "アルゴリズム・データ構造・OS・ネットワークなど計算の科学", "en": "Algorithms, data structures, OS, networking — the science of computation", "zh": "算法、数据结构、操作系统、网络等计算科学" },
-    "color": "#06b6d4"
+    "color": "#06b6d4",
+    "contentsTableLabel": "Computer Science",
+    "areaOrder": ["foundations_cs", "algorithms", "systems", "networking_cs", "pl", "ai_cs"]
   },
   {
     "id": "chemistry",
+    "prefix": "05",
     "label": "化学",
     "labels": { "ja": "化学", "en": "Chemistry", "zh": "化学" },
     "description": "原子・分子・化学反応から有機・無機・生化学まで",
     "descriptions": { "ja": "原子・分子・化学反応から有機・無機・生化学まで", "en": "From atoms and molecules to organic, inorganic, and biochemistry", "zh": "从原子、分子、化学反应到有机、无机与生物化学" },
-    "color": "#22c55e"
+    "color": "#22c55e",
+    "contentsTableLabel": "Chemistry（化学）",
+    "areaOrder": ["general_chem", "organic", "inorganic", "physical", "analytical", "biochem"]
   },
   {
     "id": "accounting",
+    "prefix": "06",
     "label": "会計・簿記",
     "labels": { "ja": "会計・簿記", "en": "Accounting", "zh": "会计与簿记" },
     "description": "仕訳・財務諸表・原価計算など企業会計の基礎と実務",
     "descriptions": { "ja": "仕訳・財務諸表・原価計算など企業会計の基礎と実務", "en": "Journal entries, financial statements, cost accounting — fundamentals and practice", "zh": "分录、财务报表、成本核算等企业会计基础与实务" },
-    "color": "#ef4444"
+    "color": "#ef4444",
+    "contentsTableLabel": "Accounting（会計・簿記）",
+    "areaOrder": ["bookkeeping", "financial_statements", "cost_accounting", "tax_accounting", "management_accounting", "auditing"]
   }
 ]

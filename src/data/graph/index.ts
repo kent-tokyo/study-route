@@ -37,7 +37,22 @@ import appliedMathData from './applied-math.json';
 import areasData from './areas.json';
 
 export function getDomains(): DomainMeta[] {
-  return domainsData as DomainMeta[];
+  return domainsData as unknown as DomainMeta[];
+}
+
+export function getDomainIds(): DomainId[] {
+  return getDomains().map(d => d.id);
+}
+
+/** Build area-to-domain lookup from domains.json areaOrder */
+export function getAreaToDomainMap(): Record<string, DomainId> {
+  const map: Record<string, DomainId> = {};
+  for (const d of getDomains()) {
+    for (const area of d.areaOrder) {
+      map[area] = d.id;
+    }
+  }
+  return map;
 }
 
 export function getAllGraphData(domainId?: DomainId): GraphData {

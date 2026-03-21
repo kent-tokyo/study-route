@@ -21,7 +21,7 @@
         "zh": "提供虚拟服务器的计算服务"
       },
       "prerequisites": [],
-      "number": "01-01"
+      "number": "03-001"
     },
     {
       "id": "lambda",
@@ -46,7 +46,7 @@
       "prerequisites": [
         "iam"
       ],
-      "number": "01-02"
+      "number": "03-002"
     },
     {
       "id": "ecs",
@@ -72,7 +72,7 @@
         "ec2",
         "vpc"
       ],
-      "number": "01-03"
+      "number": "03-003"
     },
     {
       "id": "fargate",
@@ -97,7 +97,7 @@
       "prerequisites": [
         "ecs"
       ],
-      "number": "01-04"
+      "number": "03-004"
     },
     {
       "id": "auto-scaling",
@@ -123,7 +123,7 @@
         "ec2",
         "elb"
       ],
-      "number": "01-05"
+      "number": "03-005"
     },
     {
       "id": "s3",
@@ -146,7 +146,7 @@
         "zh": "可扩展的对象存储"
       },
       "prerequisites": [],
-      "number": "03-01"
+      "number": "03-011"
     },
     {
       "id": "ebs",
@@ -171,7 +171,7 @@
       "prerequisites": [
         "ec2"
       ],
-      "number": "03-02"
+      "number": "03-012"
     },
     {
       "id": "efs",
@@ -197,7 +197,7 @@
         "ec2",
         "vpc"
       ],
-      "number": "03-03"
+      "number": "03-013"
     },
     {
       "id": "glacier",
@@ -222,7 +222,7 @@
       "prerequisites": [
         "s3"
       ],
-      "number": "03-04"
+      "number": "03-014"
     },
     {
       "id": "vpc",
@@ -245,7 +245,7 @@
         "zh": "虚拟私有云网络"
       },
       "prerequisites": [],
-      "number": "02-01"
+      "number": "03-006"
     },
     {
       "id": "route53",
@@ -270,7 +270,7 @@
       "prerequisites": [
         "vpc"
       ],
-      "number": "02-02"
+      "number": "03-007"
     },
     {
       "id": "cloudfront",
@@ -296,7 +296,7 @@
         "s3",
         "route53"
       ],
-      "number": "02-03"
+      "number": "03-008"
     },
     {
       "id": "elb",
@@ -321,7 +321,7 @@
       "prerequisites": [
         "vpc"
       ],
-      "number": "02-04"
+      "number": "03-009"
     },
     {
       "id": "api-gateway",
@@ -347,7 +347,7 @@
         "lambda",
         "vpc"
       ],
-      "number": "02-05"
+      "number": "03-010"
     },
     {
       "id": "iam",
@@ -370,7 +370,7 @@
         "zh": "身份和访问管理"
       },
       "prerequisites": [],
-      "number": "04-01"
+      "number": "03-015"
     },
     {
       "id": "kms",
@@ -395,7 +395,7 @@
       "prerequisites": [
         "iam"
       ],
-      "number": "04-02"
+      "number": "03-016"
     },
     {
       "id": "cognito",
@@ -420,7 +420,7 @@
       "prerequisites": [
         "iam"
       ],
-      "number": "04-03"
+      "number": "03-017"
     },
     {
       "id": "waf",
@@ -446,7 +446,7 @@
         "cloudfront",
         "elb"
       ],
-      "number": "04-04"
+      "number": "03-018"
     },
     {
       "id": "rds",
@@ -472,7 +472,7 @@
         "vpc",
         "iam"
       ],
-      "number": "05-01"
+      "number": "03-019"
     },
     {
       "id": "dynamodb",
@@ -497,7 +497,7 @@
       "prerequisites": [
         "iam"
       ],
-      "number": "05-02"
+      "number": "03-020"
     },
     {
       "id": "elasticache",
@@ -523,7 +523,7 @@
         "vpc",
         "rds"
       ],
-      "number": "05-03"
+      "number": "03-021"
     },
     {
       "id": "redshift",
@@ -549,7 +549,7 @@
         "s3",
         "rds"
       ],
-      "number": "05-04"
+      "number": "03-022"
     },
     {
       "id": "sagemaker",
@@ -575,7 +575,7 @@
         "s3",
         "iam"
       ],
-      "number": "06-01"
+      "number": "03-023"
     },
     {
       "id": "bedrock",
@@ -600,7 +600,7 @@
       "prerequisites": [
         "iam"
       ],
-      "number": "06-02"
+      "number": "03-024"
     },
     {
       "id": "rekognition",
@@ -626,7 +626,7 @@
         "s3",
         "iam"
       ],
-      "number": "06-03"
+      "number": "03-025"
     },
     {
       "id": "comprehend",
@@ -651,7 +651,7 @@
       "prerequisites": [
         "iam"
       ],
-      "number": "06-04"
+      "number": "03-026"
     },
     {
       "id": "cloudwatch",
@@ -677,7 +677,7 @@
         "ec2",
         "iam"
       ],
-      "number": "07-01"
+      "number": "03-027"
     },
     {
       "id": "cloudformation",
@@ -704,7 +704,7 @@
         "vpc",
         "ec2"
       ],
-      "number": "07-02"
+      "number": "03-028"
     },
     {
       "id": "ssm",
@@ -730,7 +730,7 @@
         "ec2",
         "iam"
       ],
-      "number": "07-03"
+      "number": "03-029"
     },
     {
       "id": "cloudtrail",
@@ -756,7 +756,7 @@
         "iam",
         "s3"
       ],
-      "number": "07-04"
+      "number": "03-030"
     },
     {
       "id": "sqs",
@@ -781,7 +781,7 @@
       "prerequisites": [
         "iam"
       ],
-      "number": "08-01"
+      "number": "03-031"
     },
     {
       "id": "sns",
@@ -806,7 +806,7 @@
       "prerequisites": [
         "iam"
       ],
-      "number": "08-02"
+      "number": "03-032"
     },
     {
       "id": "step-functions",
@@ -832,7 +832,7 @@
         "lambda",
         "sqs"
       ],
-      "number": "08-03"
+      "number": "03-033"
     },
     {
       "id": "eventbridge",
@@ -858,7 +858,7 @@
         "lambda",
         "sns"
       ],
-      "number": "08-04"
+      "number": "03-034"
     }
   ],
   "edges": [
