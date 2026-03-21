@@ -5,7 +5,7 @@ Last updated: 2026-03-21
 
 | Node ID | Label | Area | Beginner | Standard | Advanced | Illust. | Quiz | Reviewed |
 |---------|-------|------|----------|----------|----------|---------|------|----------|
-| counting | 数える | foundations | - | done | - | done | - | - |
+| counting | 数える | foundations | - | done | - | done | done | - |
 | number-systems | 数の体系 | foundations | - | done | - | - | - | - |
 | integers | 整数 | foundations | - | done | - | - | - | - |
 | real-numbers | 実数 | foundations | - | - | - | - | - | - |

@@ -89,5 +89,73 @@
       "name": "concept-diagram.svg",
       "svg": "<svg viewBox=\"0 0 600 520\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"system-ui, sans-serif\">\n\n  <!-- 中央：数える（核心概念） -->\n  <ellipse cx=\"300\" cy=\"240\" rx=\"72\" ry=\"40\" fill=\"#3b82f6\" fill-opacity=\"0.15\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n  <text x=\"300\" y=\"234\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#3b82f6\">数える</text>\n  <text x=\"300\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" fill=\"#3b82f6\">（1対1対応）</text>\n\n  <!-- 上：全単射（bijection） -->\n  <rect x=\"205\" y=\"28\" width=\"190\" height=\"52\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"52\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"currentColor\">全単射（bijection）</text>\n  <text x=\"300\" y=\"70\" text-anchor=\"middle\" font-size=\"11\" fill=\"currentColor\">|A|=n ⟺ ∃f: A →{1,…,n}</text>\n\n  <!-- 上矢印 -->\n  <line x1=\"300\" y1=\"80\" x2=\"300\" y2=\"198\" stroke=\"currentColor\" stroke-width=\"1.8\" marker-end=\"url(#arr)\"/>\n  <text x=\"310\" y=\"148\" font-size=\"10\" fill=\"currentColor\">定式化</text>\n\n  <!-- 左上：有限の数え方 -->\n  <rect x=\"28\" y=\"100\" width=\"140\" height=\"52\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"98\" y=\"122\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">有限集合</text>\n  <text x=\"98\" y=\"140\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">硬貨・頂点・組合せ</text>\n\n  <!-- 左上→中央 -->\n  <line x1=\"168\" y1=\"138\" x2=\"232\" y2=\"220\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr)\"/>\n  <text x=\"185\" y=\"185\" font-size=\"10\" fill=\"currentColor\">具体例</text>\n\n  <!-- 右上：無限集合 -->\n  <rect x=\"432\" y=\"100\" width=\"140\" height=\"52\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"502\" y=\"122\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">無限集合</text>\n  <text x=\"502\" y=\"140\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">ℕ と E の全単射</text>\n\n  <!-- 右上→中央 -->\n  <line x1=\"432\" y1=\"138\" x2=\"368\" y2=\"220\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\" marker-end=\"url(#arr)\"/>\n  <text x=\"390\" y=\"185\" font-size=\"10\" fill=\"currentColor\" text-anchor=\"middle\">拡張</text>\n\n  <!-- 左：自然数ℕ（前提→次の概念） -->\n  <rect x=\"18\" y=\"208\" width=\"140\" height=\"60\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"88\" y=\"232\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">自然数 ℕ</text>\n  <text x=\"88\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">ペアノの公理</text>\n  <text x=\"88\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">1, 2, 3, …</text>\n\n  <!-- 左←→中央 -->\n  <line x1=\"158\" y1=\"238\" x2=\"228\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.8\" marker-end=\"url(#arr)\"/>\n  <text x=\"183\" y=\"230\" font-size=\"10\" text-anchor=\"middle\" fill=\"currentColor\">生成</text>\n\n  <!-- 右：集合の濃度 -->\n  <rect x=\"442\" y=\"208\" width=\"140\" height=\"60\" rx=\"10\" fill=\"currentColor\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n  <text x=\"512\" y=\"232\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"currentColor\">集合の濃度</text>\n  <text x=\"512\" y=\"248\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">可算・非可算</text>\n  <text x=\"512\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"currentColor\">カントール理論</text>\n\n  <!-- 中央→右 -->\n  <line x1=\"372\" y1=\"238\" x2=\"442\" y2=\"238\" stroke=\"currentColor\" stroke-width=\"1.8\" marker-end=\"url(#arr)\"/>\n  <text x=\"407\" y=\"230\" font-size=\"10\" text-anchor=\"middle\" fill=\"currentColor\">拡張</text>\n\n  <!-- 下左：組合せ論 -->\n  <rect x=\"28\" y=\"338\" width=\"130\" height=\"52\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.10\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"93\" y=\"360\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">組合せ論</text>\n  <text x=\"93\" y=\"378\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">順列・組合せ</text>\n\n  <!-- 中央→下左 -->\n  <line x1=\"258\" y1=\"275\" x2=\"148\" y2=\"338\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arr-g)\"/>\n\n  <!-- 下中：確率論 -->\n  <rect x=\"225\" y=\"358\" width=\"150\" height=\"52\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.10\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"380\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">確率論</text>\n  <text x=\"300\" y=\"398\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">場合の数・比</text>\n\n  <!-- 中央→下中 -->\n  <line x1=\"300\" y1=\"280\" x2=\"300\" y2=\"358\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arr-g)\"/>\n\n  <!-- 下右：CS・物理・社会 -->\n  <rect x=\"445\" y=\"338\" width=\"130\" height=\"52\" rx=\"10\" fill=\"#22c55e\" fill-opacity=\"0.10\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"510\" y=\"360\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#22c55e\">CS・物理・社会</text>\n  <text x=\"510\" y=\"378\" text-anchor=\"middle\" font-size=\"10\" fill=\"#22c55e\">計算量・エントロピー</text>\n\n  <!-- 中央→下右 -->\n  <line x1=\"342\" y1=\"275\" x2=\"452\" y2=\"338\" stroke=\"#22c55e\" stroke-width=\"1.5\" marker-end=\"url(#arr-g)\"/>\n\n  <!-- 1対1対応の例示（中央下付近） -->\n  <g transform=\"translate(220,440)\">\n    <text x=\"0\" y=\"0\" font-size=\"11\" fill=\"currentColor\" font-weight=\"bold\">【1対1対応の例】</text>\n    <!-- リンゴ記号 -->\n    <circle cx=\"18\" cy=\"22\" r=\"9\" fill=\"#ef4444\" fill-opacity=\"0.25\" stroke=\"#ef4444\" stroke-width=\"1.2\"/>\n    <circle cx=\"46\" cy=\"22\" r=\"9\" fill=\"#ef4444\" fill-opacity=\"0.25\" stroke=\"#ef4444\" stroke-width=\"1.2\"/>\n    <circle cx=\"74\" cy=\"22\" r=\"9\" fill=\"#ef4444\" fill-opacity=\"0.25\" stroke=\"#ef4444\" stroke-width=\"1.2\"/>\n    <text x=\"18\" y=\"26\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">🍎</text>\n    <text x=\"46\" y=\"26\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">🍎</text>\n    <text x=\"74\" y=\"26\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ef4444\">🍎</text>\n    <!-- 矢印 -->\n    <line x1=\"18\" y1=\"34\" x2=\"18\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.2\" marker-end=\"url(#arr-s)\"/>\n    <line x1=\"46\" y1=\"34\" x2=\"46\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.2\" marker-end=\"url(#arr-s)\"/>\n    <line x1=\"74\" y1=\"34\" x2=\"74\" y2=\"48\" stroke=\"currentColor\" stroke-width=\"1.2\" marker-end=\"url(#arr-s)\"/>\n    <!-- 数字 -->\n    <circle cx=\"18\" cy=\"62\" r=\"9\" fill=\"#3b82f6\" fill-opacity=\"0.20\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n    <circle cx=\"46\" cy=\"62\" r=\"9\" fill=\"#3b82f6\" fill-opacity=\"0.20\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n    <circle cx=\"74\" cy=\"62\" r=\"9\" fill=\"#3b82f6\" fill-opacity=\"0.20\" stroke=\"#3b82f6\" stroke-width=\"1.2\"/>\n    <text x=\"18\" y=\"66\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">1</text>\n    <text x=\"46\" y=\"66\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">2</text>\n    <text x=\"74\" y=\"66\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#3b82f6\">3</text>\n    <text x=\"100\" y=\"26\" font-size=\"11\" fill=\"currentColor\">集合A</text>\n    <text x=\"100\" y=\"66\" font-size=\"11\" fill=\"currentColor\">{1,2,3}</text>\n  </g>\n\n  <!-- 凡例 -->\n  <line x1=\"22\" y1=\"498\" x2=\"44\" y2=\"498\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <text x=\"48\" y=\"502\" font-size=\"10\" fill=\"currentColor\">直感・具体</text>\n  <line x1=\"130\" y1=\"498\" x2=\"152\" y2=\"498\" stroke=\"#22c55e\" stroke-width=\"1.5\"/>\n  <text x=\"156\" y=\"502\" font-size=\"10\" fill=\"#22c55e\">応用・発展</text>\n  <line x1=\"230\" y1=\"498\" x2=\"252\" y2=\"498\" stroke=\"currentColor\" stroke-width=\"1.8\"/>\n  <text x=\"256\" y=\"502\" font-size=\"10\" fill=\"currentColor\">定式化・生成</text>\n\n  <!-- Arrowhead markers -->\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"currentColor\"/>\n    </marker>\n    <marker id=\"arr-g\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#22c55e\"/>\n    </marker>\n    <marker id=\"arr-s\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L6,3 z\" fill=\"currentColor\"/>\n    </marker>\n  </defs>\n\n</svg>"
     }
+  ],
+  "quiz": [
+    {
+      "question": "集合 $A$ の要素を「数える」ことを数学的に正確に表現すると、どのような操作に相当するか？",
+      "choices": [
+        {
+          "text": "集合 $A$ の要素を大きさの順に並べ替える操作",
+          "isCorrect": false
+        },
+        {
+          "text": "集合 $A$ と $\\{1, 2, \\ldots, n\\}$ のあいだに全単射が存在することを確認し、その $n$ を個数とする操作",
+          "isCorrect": true
+        },
+        {
+          "text": "集合 $A$ の要素をいくつかのグループに分類する操作",
+          "isCorrect": false
+        },
+        {
+          "text": "集合 $A$ に含まれる最大の要素を特定する操作",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "数えることの厳密な定義は「全単射（bijection）」を用いて表されます。集合 $A$ と $\\{1, 2, \\ldots, n\\}$ のあいだに漏れなく・重複なく対応する写像（全単射）が存在するとき、$n$ を $A$ の要素の個数（濃度）と定義します。これにより「実際に声に出して数えなくても個数を比較できる」という強みが生まれます。"
+    },
+    {
+      "question": "自然数全体 $\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$ と偶数全体 $E = \\{2, 4, 6, \\ldots\\}$ の要素の個数について、全単射の考え方に基づくと正しい結論はどれか？",
+      "choices": [
+        {
+          "text": "偶数は自然数の部分集合なので、$E$ の個数は $\\mathbb{N}$ の個数より少ない",
+          "isCorrect": false
+        },
+        {
+          "text": "$f(n) = 2n$ という全単射が存在するため、$\\mathbb{N}$ と $E$ は同じ意味で無限個あると言える",
+          "isCorrect": true
+        },
+        {
+          "text": "$\\mathbb{N}$ と $E$ のあいだには全単射が存在しないため、個数を比較することはできない",
+          "isCorrect": false
+        },
+        {
+          "text": "奇数が含まれるかどうかが違うので、$\\mathbb{N}$ の個数は $E$ の個数のちょうど2倍である",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(n) = 2n$ という対応を作ると、$1 \\leftrightarrow 2,\\ 2 \\leftrightarrow 4,\\ 3 \\leftrightarrow 6, \\ldots$ のように $\\mathbb{N}$ の各要素と $E$ の各要素がぴったり1対1に対応します。全単射が存在するため $|\\mathbb{N}| = |E|$ と言えます。有限集合では「部分集合の個数は全体より少ない」が成り立ちますが、無限集合ではこの直感が通用しない点が無限の面白さです。"
+    },
+    {
+      "question": "「数える」という概念が応用されているものとして、コンテンツの内容と一致しないものはどれか？",
+      "choices": [
+        {
+          "text": "アルゴリズムの効率を評価する「計算量」は、操作の回数を数えることで定義される",
+          "isCorrect": false
+        },
+        {
+          "text": "統計力学のエントロピーは、気体分子の微視的な状態が何通りあるかを数えることに直結する",
+          "isCorrect": false
+        },
+        {
+          "text": "確率論では、全体のうち条件を満たす場合の数の比として確率を定義する",
+          "isCorrect": false
+        },
+        {
+          "text": "実数全体の集合は自然数と全単射が作れるため、自然数と同じ意味で数えることができる",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "コンテンツでは「自然数と偶数は全単射によって同じ意味で無限個ある（可算）」と説明されていますが、実数全体の集合は自然数と全単射を作ることができない「非可算無限」であることが知られています。自然数・コンピュータの計算量・エントロピー・確率の定義はすべてコンテンツ内で「数える」の応用として言及されている内容です。"
+    }
   ]
 }
