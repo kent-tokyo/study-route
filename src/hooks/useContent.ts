@@ -72,17 +72,10 @@ export function useContent(nodeId: string, level: string, domain?: string): UseC
         const json: ContentData = await res.json();
         setData(json);
 
-        // Check illustration
+        // Check illustration (always use legacy path since files are at /content/{nodeId}/...)
         const hasImg = await hasIllustration(nodeId, targetLevel, domain);
         if (!cancelled) {
-          if (hasImg) {
-            // Try domain path first
-            const domainUrl = `${basePath}/content/${domainPrefix}${nodeId}/${targetLevel}/illustration.webp`;
-            const legacyUrl = `${basePath}/content/${nodeId}/${targetLevel}/illustration.webp`;
-            setIllustrationUrl(domain ? domainUrl : legacyUrl);
-          } else {
-            setIllustrationUrl(null);
-          }
+          setIllustrationUrl(hasImg ? `${basePath}/content/${nodeId}/${targetLevel}/illustration.webp` : null);
         }
       } catch {
         if (!cancelled) setError(true);

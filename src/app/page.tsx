@@ -6,6 +6,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { useLocale } from '@/i18n/useLocale';
 import { localize } from '@/i18n/localize';
 import LanguageSelector from '@/components/shared/LanguageSelector';
+import Footer from '@/components/shared/Footer';
 
 const domains = getDomains();
 
@@ -60,6 +61,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

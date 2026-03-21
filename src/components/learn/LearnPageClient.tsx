@@ -12,6 +12,7 @@ import { useSettings, type ContentLevel } from '@/hooks/useSettings';
 import { useLocale } from '@/i18n/useLocale';
 import { localize } from '@/i18n/localize';
 import LanguageSelector from '@/components/shared/LanguageSelector';
+import Footer from '@/components/shared/Footer';
 import { useTheme } from '@/hooks/useTheme';
 import { getNode } from '@/lib/graph';
 import type { DomainId } from '@/types/domain';
@@ -133,6 +134,8 @@ export default function LearnPageClient({ nodeId, domain }: LearnPageClientProps
           domainMapUrl={domainMapUrl}
         />
       </main>
+
+      <Footer />
 
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
