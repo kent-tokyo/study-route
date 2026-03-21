@@ -1,0 +1,26 @@
+{
+  "counting": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "number-systems": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "integers": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  }
+}

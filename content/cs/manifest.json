@@ -1,0 +1,42 @@
+{
+  "binary-logic": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "programming-paradigms": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "discrete-math": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "os-basics": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "automata": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  }
+}

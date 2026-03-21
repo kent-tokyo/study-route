@@ -1,0 +1,50 @@
+{
+  "ec2": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "s3": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "vpc": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "iam": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "lambda": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "ecs": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  }
+}

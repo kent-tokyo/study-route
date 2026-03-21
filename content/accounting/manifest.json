@@ -1,0 +1,26 @@
+{
+  "double-entry": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "accounts": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "journal-entries": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "truth": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "propositional-logic": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "utilitarianism": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "deontology": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "ontology": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "beauty": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "predicate-logic": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": true
+    }
+  },
+  "justification": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  },
+  "modal-logic": {
+    "levels": [
+      "standard"
+    ],
+    "hasIllustration": {
+      "standard": false
+    }
+  }
+}
