@@ -15,6 +15,53 @@ export interface GeneratedContent {
 const client = new Anthropic();
 
 // ---------------------------------------------------------------------------
+// Robust JSON array parser for LLM output
+// ---------------------------------------------------------------------------
+
+function parseJsonArray<T>(text: string, fallback: T[]): T[] {
+  const jsonMatch = text.match(/\[[\s\S]*\]/);
+  if (!jsonMatch) return fallback;
+
+  // 1st attempt: direct parse
+  try {
+    return JSON.parse(jsonMatch[0]);
+  } catch { /* continue */ }
+
+  // 2nd attempt: fix unescaped control characters inside JSON string values
+  // Process line by line: join lines that are inside a JSON string value
+  try {
+    const raw = jsonMatch[0];
+    let fixed = '';
+    let inString = false;
+    for (let i = 0; i < raw.length; i++) {
+      const ch = raw[i];
+      if (ch === '"' && (i === 0 || raw[i - 1] !== '\\')) {
+        inString = !inString;
+        fixed += ch;
+      } else if (inString && ch === '\n') {
+        fixed += '\\n';
+      } else if (inString && ch === '\r') {
+        // skip
+      } else if (inString && ch === '\t') {
+        fixed += '\\t';
+      } else {
+        fixed += ch;
+      }
+    }
+    return JSON.parse(fixed);
+  } catch { /* continue */ }
+
+  // 3rd attempt: strip markdown code fences and retry
+  try {
+    const stripped = text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+    const match2 = stripped.match(/\[[\s\S]*\]/);
+    if (match2) return JSON.parse(match2[0]);
+  } catch { /* continue */ }
+
+  return fallback;
+}
+
+// ---------------------------------------------------------------------------
 // Domain detection from area
 // ---------------------------------------------------------------------------
 
@@ -306,20 +353,7 @@ ${mdxContent}
   });
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '';
-  const jsonMatch = text.match(/\[[\s\S]*\]/);
-  if (!jsonMatch) return [];
-
-  try {
-    return JSON.parse(jsonMatch[0]);
-  } catch {
-    const fixed = jsonMatch[0].replace(/[\x00-\x1f]/g, (ch) => {
-      if (ch === '\n') return '\\n';
-      if (ch === '\r') return '\\r';
-      if (ch === '\t') return '\\t';
-      return '';
-    });
-    return JSON.parse(fixed);
-  }
+  return parseJsonArray(text, []);
 }
 
 // ---------------------------------------------------------------------------
@@ -457,20 +491,7 @@ ${mdxContent.slice(0, 4000)}
   });
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '';
-  const jsonMatch = text.match(/\[[\s\S]*\]/);
-  if (!jsonMatch) return [];
-
-  try {
-    return JSON.parse(jsonMatch[0]);
-  } catch {
-    const fixed = jsonMatch[0].replace(/[\x00-\x1f]/g, (ch) => {
-      if (ch === '\n') return '\\n';
-      if (ch === '\r') return '\\r';
-      if (ch === '\t') return '\\t';
-      return '';
-    });
-    return JSON.parse(fixed);
-  }
+  return parseJsonArray(text, []);
 }
 
 // ---------------------------------------------------------------------------
@@ -594,20 +615,7 @@ Rules:
   });
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '';
-  const jsonMatch = text.match(/\[[\s\S]*\]/);
-  if (!jsonMatch) return terms;
-
-  try {
-    return JSON.parse(jsonMatch[0]);
-  } catch {
-    const fixed = jsonMatch[0].replace(/[\x00-\x1f]/g, (ch) => {
-      if (ch === '\n') return '\\n';
-      if (ch === '\r') return '\\r';
-      if (ch === '\t') return '\\t';
-      return '';
-    });
-    return JSON.parse(fixed);
-  }
+  return parseJsonArray(text, terms);
 }
 
 async function translateQuiz(quiz: QuizQuestion[], locale: string, model: string): Promise<QuizQuestion[]> {
@@ -632,20 +640,7 @@ Rules:
   });
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '';
-  const jsonMatch = text.match(/\[[\s\S]*\]/);
-  if (!jsonMatch) return quiz;
-
-  try {
-    return JSON.parse(jsonMatch[0]);
-  } catch {
-    const fixed = jsonMatch[0].replace(/[\x00-\x1f]/g, (ch) => {
-      if (ch === '\n') return '\\n';
-      if (ch === '\r') return '\\r';
-      if (ch === '\t') return '\\t';
-      return '';
-    });
-    return JSON.parse(fixed);
-  }
+  return parseJsonArray(text, quiz);
 }
 
 async function translateSVG(svgContent: string, locale: string, model: string): Promise<string> {
