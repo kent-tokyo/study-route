@@ -5,8 +5,8 @@
     "labels": { "ja": "コンピューティング", "en": "Compute", "zh": "计算" },
     "position": { "x": 0, "y": 0 },
     "color": "#f59e0b",
-    "description": "EC2・Lambda・ECSなどの実行環境",
-    "descriptions": { "ja": "EC2・Lambda・ECSなどの実行環境", "en": "EC2, Lambda, ECS and other execution environments", "zh": "EC2、Lambda、ECS等执行环境" }
+    "description": "EC2・Lambda・ECS・Fargateなどの実行環境",
+    "descriptions": { "ja": "EC2・Lambda・ECS・Fargateなどの実行環境", "en": "EC2, Lambda, ECS, Fargate and other execution environments", "zh": "EC2、Lambda、ECS、Fargate等执行环境" }
   },
   {
     "id": "storage",
@@ -14,8 +14,8 @@
     "labels": { "ja": "ストレージ", "en": "Storage", "zh": "存储" },
     "position": { "x": 400, "y": 0 },
     "color": "#22c55e",
-    "description": "S3・EBS・EFSなどのデータ保存",
-    "descriptions": { "ja": "S3・EBS・EFSなどのデータ保存", "en": "S3, EBS, EFS and other data storage", "zh": "S3、EBS、EFS等数据存储" }
+    "description": "S3・EBS・EFS・Glacierなどのデータ保存",
+    "descriptions": { "ja": "S3・EBS・EFS・Glacierなどのデータ保存", "en": "S3, EBS, EFS, Glacier and other data storage", "zh": "S3、EBS、EFS、Glacier等数据存储" }
   },
   {
     "id": "networking",
@@ -23,8 +23,8 @@
     "labels": { "ja": "ネットワーキング", "en": "Networking", "zh": "网络" },
     "position": { "x": 200, "y": -200 },
     "color": "#8b5cf6",
-    "description": "VPC・Route53・CloudFrontなど",
-    "descriptions": { "ja": "VPC・Route53・CloudFrontなど", "en": "VPC, Route 53, CloudFront and more", "zh": "VPC、Route53、CloudFront等" }
+    "description": "VPC・Route53・CloudFront・ELBなど",
+    "descriptions": { "ja": "VPC・Route53・CloudFront・ELBなど", "en": "VPC, Route 53, CloudFront, ELB and more", "zh": "VPC、Route53、CloudFront、ELB等" }
   },
   {
     "id": "security",
@@ -32,25 +32,43 @@
     "labels": { "ja": "セキュリティ", "en": "Security", "zh": "安全" },
     "position": { "x": 200, "y": 200 },
     "color": "#ef4444",
-    "description": "IAM・KMS・WAFなどのセキュリティサービス",
-    "descriptions": { "ja": "IAM・KMS・WAFなどのセキュリティサービス", "en": "IAM, KMS, WAF and other security services", "zh": "IAM、KMS、WAF等安全服务" }
+    "description": "IAM・KMS・WAF・Cognitoなどのセキュリティサービス",
+    "descriptions": { "ja": "IAM・KMS・WAF・Cognitoなどのセキュリティサービス", "en": "IAM, KMS, WAF, Cognito and other security services", "zh": "IAM、KMS、WAF、Cognito等安全服务" }
   },
   {
     "id": "databases",
     "label": "データベース",
     "labels": { "ja": "データベース", "en": "Databases", "zh": "数据库" },
-    "position": { "x": 600, "y": 200 },
+    "position": { "x": 600, "y": 0 },
     "color": "#3b82f6",
-    "description": "RDS・DynamoDB・ElastiCacheなど",
-    "descriptions": { "ja": "RDS・DynamoDB・ElastiCacheなど", "en": "RDS, DynamoDB, ElastiCache and more", "zh": "RDS、DynamoDB、ElastiCache等" }
+    "description": "RDS・DynamoDB・ElastiCache・Redshiftなど",
+    "descriptions": { "ja": "RDS・DynamoDB・ElastiCache・Redshiftなど", "en": "RDS, DynamoDB, ElastiCache, Redshift and more", "zh": "RDS、DynamoDB、ElastiCache、Redshift等" }
   },
   {
     "id": "ai_ml",
     "label": "AI・機械学習",
     "labels": { "ja": "AI・機械学習", "en": "AI & ML", "zh": "AI与机器学习" },
-    "position": { "x": 400, "y": 400 },
+    "position": { "x": 600, "y": 400 },
     "color": "#06b6d4",
     "description": "SageMaker・Bedrock・Rekognitionなど",
     "descriptions": { "ja": "SageMaker・Bedrock・Rekognitionなど", "en": "SageMaker, Bedrock, Rekognition and more", "zh": "SageMaker、Bedrock、Rekognition等" }
+  },
+  {
+    "id": "management",
+    "label": "管理・監視",
+    "labels": { "ja": "管理・監視", "en": "Management & Monitoring", "zh": "管理与监控" },
+    "position": { "x": 0, "y": 400 },
+    "color": "#f97316",
+    "description": "CloudWatch・CloudFormation・Systems Managerなど",
+    "descriptions": { "ja": "CloudWatch・CloudFormation・Systems Managerなど", "en": "CloudWatch, CloudFormation, Systems Manager and more", "zh": "CloudWatch、CloudFormation、Systems Manager等" }
+  },
+  {
+    "id": "app_integration",
+    "label": "アプリ統合",
+    "labels": { "ja": "アプリ統合", "en": "App Integration", "zh": "应用集成" },
+    "position": { "x": 400, "y": 200 },
+    "color": "#ec4899",
+    "description": "SQS・SNS・API Gateway・Step Functionsなど",
+    "descriptions": { "ja": "SQS・SNS・API Gateway・Step Functionsなど", "en": "SQS, SNS, API Gateway, Step Functions and more", "zh": "SQS、SNS、API Gateway、Step Functions等" }
   }
 ]
