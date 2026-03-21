@@ -70,7 +70,18 @@
 - `mapUrl`（`?area=xxx`付き）はサブマップ、`domainMapUrl`（`?area=`なし）は全体マップの2つを用意
 - 教訓: **階層構造のあるUIでは「戻る」の行き先を複数提供すべき。ユーザーは直前のレベルだけでなく上位レベルにも戻りたい場合がある**
 
+### ドメイン追加のスケーラビリティ
+- 新ドメイン追加に必要な作業: (1) areas.json + topics.json作成 (2) domains.json追記 (3) DomainId型追加 (4) index.tsにimport+switch追加 (5) graph.tsのfallback配列追加 (6) generate-content.tsのDOMAIN_IDS追加
+- 6箇所の変更が必要で、switchベースのデータロードは拡張性がやや低い
+- 教訓: **ドメインが増えるたびにswitch文を更新するのは保守コストが高い。動的import化やディレクトリスキャンを検討すべきタイミングが来ている**
+
 ## フロントエンド
+
+### router.push vs window.location.href（2回目の教訓）
+- 「マップに戻る」ボタンで`router.push`を使うと`?area=xxx`のクエリパラメータが効かず全体マップに飛ぶ
+- 原因: クライアントサイドナビゲーションではページコンポーネントが再マウントされず、`useState`の初期値（`getInitialArea`）が再評価されない
+- `window.location.href`でフルリロードすることで解決（同じパターンの2回目）
+- 教訓: **Next.jsの`router.push`はSPAナビゲーション。URLクエリに依存する初期状態はフルリロードでないと反映されない。このパターンは一貫して`window.location.href`を使うべき**
 
 ### router.push vs window.location.href
 - 「理解した」ボタン後にrouter.pushでマップに戻ると、進捗データが古いまま表示される

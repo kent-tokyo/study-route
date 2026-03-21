@@ -162,8 +162,11 @@
 | ドメイン | エリア数 | ノード数 | 説明 |
 |---------|---------|---------|------|
 | math | 8 | 64 | 基礎から大学院数学まで |
-| philosophy | 5 | 12 | 認識論・倫理学・論理学・形而上学・美学 |
-| aws | 6 | 15 | コンピューティング・ストレージ・ネットワーキング・セキュリティ・データベース・AI/ML |
+| philosophy | 5 | 25 | 認識論・倫理学・論理学・形而上学・美学 |
+| aws | 8 | 33 | コンピューティング・ストレージ・ネットワーキング・セキュリティ・DB・AI/ML・管理監視・アプリ統合 |
+| cs | 6 | 28 | 基礎理論・アルゴリズム・システム・ネットワーク・PL・AI/ML |
+| chemistry | 6 | 27 | 一般化学・有機・無機・物理化学・分析化学・生化学 |
+| accounting | 6 | 24 | 簿記基礎・財務諸表・原価計算・税務会計・管理会計・監査 |
 
 ## 非機能要件
 
@@ -197,26 +200,61 @@
 | 物理・制御 (mathematical_modeling) | 3 | 4-5 | mathematical-physics, dynamical-systems |
 | 社会科学応用 (social) | 2 | 3-4 | game-theory, cryptography |
 
-#### 哲学ドメイン（12ノード・5エリア）
+#### 哲学ドメイン（25ノード・5エリア）
 
 | エリア | ノード数 | 代表的なノード |
 |--------|---------|---------------|
-| 認識論 (epistemology) | 3 | truth, justification, skepticism |
-| 倫理学 (ethics) | 3 | utilitarianism, deontology, virtue-ethics |
-| 論理学 (logic) | 2 | propositional-logic, predicate-logic |
-| 形而上学 (metaphysics) | 2 | ontology, causation |
-| 美学 (aesthetics) | 2 | beauty, art-philosophy |
+| 認識論 (epistemology) | 5 | truth, justification, skepticism, rationalism-empiricism, philosophy-of-science |
+| 倫理学 (ethics) | 6 | utilitarianism, deontology, virtue-ethics, justice, bioethics, environmental-ethics |
+| 論理学 (logic) | 4 | propositional-logic, predicate-logic, modal-logic, informal-fallacies |
+| 形而上学 (metaphysics) | 5 | ontology, causation, free-will, mind-body, time-space |
+| 美学 (aesthetics) | 4 | beauty, art-philosophy, sublime, aesthetic-judgment |
 
-#### AWSドメイン（15ノード・6エリア）
+#### AWSドメイン（33ノード・8エリア）
 
 | エリア | ノード数 | 代表的なノード |
 |--------|---------|---------------|
-| コンピューティング (compute) | 3 | ec2, lambda, ecs |
-| ストレージ (storage) | 2 | s3, ebs |
-| ネットワーキング (networking) | 3 | vpc, route53, cloudfront |
-| セキュリティ (security) | 2 | iam, kms |
-| データベース (databases) | 2 | rds, dynamodb |
-| AI・機械学習 (ai_ml) | 3 | sagemaker, bedrock, rekognition |
+| コンピューティング (compute) | 5 | ec2, lambda, ecs, fargate, auto-scaling |
+| ストレージ (storage) | 4 | s3, ebs, efs, glacier |
+| ネットワーキング (networking) | 5 | vpc, route53, cloudfront, elb, api-gateway |
+| セキュリティ (security) | 4 | iam, kms, cognito, waf |
+| データベース (databases) | 4 | rds, dynamodb, elasticache, redshift |
+| AI・機械学習 (ai_ml) | 4 | sagemaker, bedrock, rekognition, comprehend |
+| 管理・監視 (management) | 4 | cloudwatch, cloudformation, ssm, cloudtrail |
+| アプリ統合 (app_integration) | 4 | sqs, sns, step-functions, eventbridge |
+
+#### コンピュータサイエンスドメイン（28ノード・6エリア）
+
+| エリア | ノード数 | 代表的なノード |
+|--------|---------|---------------|
+| 基礎理論 (foundations_cs) | 4 | binary-logic, discrete-math, automata, complexity |
+| アルゴリズム (algorithms) | 4 | data-structures, sorting-searching, graph-algorithms, dynamic-programming |
+| システム (systems) | 5 | os-basics, file-systems, db-fundamentals, distributed-systems, compiler |
+| ネットワーク (networking_cs) | 4 | tcp-ip, http-web, network-security, dns-routing |
+| プログラミング言語 (pl) | 4 | programming-paradigms, type-systems, fp, concurrent-programming |
+| AI・機械学習 (ai_cs) | 4 | ml-basics, deep-learning, nlp, reinforcement-learning |
+
+#### 化学ドメイン（27ノード・6エリア）
+
+| エリア | ノード数 | 代表的なノード |
+|--------|---------|---------------|
+| 一般化学 (general_chem) | 5 | atomic-structure, chemical-bonding, stoichiometry, states-of-matter, solutions |
+| 有機化学 (organic) | 4 | hydrocarbons, functional-groups, organic-reactions, stereochemistry |
+| 無機化学 (inorganic) | 3 | coordination-chem, solid-state, bioinorganic |
+| 物理化学 (physical) | 5 | thermodynamics-chem, kinetics, equilibrium, electrochemistry, quantum-chem |
+| 分析化学 (analytical) | 3 | acid-base, spectroscopy, chromatography |
+| 生化学 (biochem) | 4 | amino-acids-proteins, enzymes, metabolism, nucleic-acids |
+
+#### 会計・簿記ドメイン（24ノード・6エリア）
+
+| エリア | ノード数 | 代表的なノード |
+|--------|---------|---------------|
+| 簿記の基礎 (bookkeeping) | 5 | double-entry, accounts, journal-entries, trial-balance, closing-entries |
+| 財務諸表 (financial_statements) | 4 | balance-sheet, income-statement, cash-flow, financial-analysis |
+| 原価計算 (cost_accounting) | 4 | cost-classification, job-costing, process-costing, standard-costing |
+| 税務会計 (tax_accounting) | 3 | corporate-tax, consumption-tax, deferred-tax |
+| 管理会計 (management_accounting) | 4 | cvp-analysis, budgeting, decision-accounting, abc |
+| 監査 (auditing) | 3 | internal-control, audit-procedures, audit-report |
 
 ## 環境変数（スクリプト用のみ）
 
