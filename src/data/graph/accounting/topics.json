@@ -34,7 +34,7 @@
       "area": "bookkeeping",
       "difficulty": 1,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "資産・負債・純資産・収益・費用の分類",
@@ -59,8 +59,8 @@
       "area": "bookkeeping",
       "difficulty": 2,
       "position": {
-        "x": 100,
-        "y": 200
+        "x": 150,
+        "y": 300
       },
       "description": "取引の記録方法と仕訳帳",
       "descriptions": {
@@ -85,8 +85,8 @@
       "area": "bookkeeping",
       "difficulty": 2,
       "position": {
-        "x": 300,
-        "y": 400
+        "x": 450,
+        "y": 600
       },
       "description": "合計残高試算表・残高試算表",
       "descriptions": {
@@ -111,7 +111,7 @@
       "difficulty": 2,
       "position": {
         "x": 0,
-        "y": 400
+        "y": 600
       },
       "description": "減価償却・引当金・経過勘定",
       "descriptions": {
@@ -161,7 +161,7 @@
       "area": "financial_statements",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "収益と費用から利益を算出",
@@ -187,8 +187,8 @@
       "area": "financial_statements",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "営業・投資・財務活動のキャッシュフロー",
       "descriptions": {
@@ -213,8 +213,8 @@
       "area": "financial_statements",
       "difficulty": 3,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "ROE・流動比率・自己資本比率",
       "descriptions": {
@@ -264,7 +264,7 @@
       "area": "cost_accounting",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "受注生産の原価計算",
@@ -289,8 +289,8 @@
       "area": "cost_accounting",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "大量生産の原価計算",
       "descriptions": {
@@ -314,8 +314,8 @@
       "area": "cost_accounting",
       "difficulty": 3,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "標準原価と原価差異分析",
       "descriptions": {
@@ -365,7 +365,7 @@
       "area": "tax_accounting",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "課税取引・仕入税額控除・インボイス制度",
@@ -390,8 +390,8 @@
       "area": "tax_accounting",
       "difficulty": 4,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "繰延税金資産・負債と一時差異",
       "descriptions": {
@@ -441,7 +441,7 @@
       "area": "management_accounting",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "予算編成・予算実績差異分析",
@@ -467,8 +467,8 @@
       "area": "management_accounting",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "設備投資の経済性計算・NPV・IRR",
       "descriptions": {
@@ -493,7 +493,7 @@
       "area": "management_accounting",
       "difficulty": 3,
       "position": {
-        "x": 300,
+        "x": 450,
         "y": 0
       },
       "description": "活動に基づく間接費配賦",
@@ -543,7 +543,7 @@
       "area": "auditing",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "リスク評価・実証手続・分析的手続",
@@ -568,8 +568,8 @@
       "area": "auditing",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "監査意見の種類と報告書の構成",
       "descriptions": {

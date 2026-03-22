@@ -34,7 +34,7 @@
       "area": "general_chem",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "イオン結合・共有結合・分子軌道",
@@ -59,8 +59,8 @@
       "area": "general_chem",
       "difficulty": 2,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "モル計算・化学反応式の量的関係",
       "descriptions": {
@@ -84,7 +84,7 @@
       "area": "general_chem",
       "difficulty": 2,
       "position": {
-        "x": 400,
+        "x": 600,
         "y": 0
       },
       "description": "気体・液体・固体・相転移",
@@ -109,8 +109,8 @@
       "area": "general_chem",
       "difficulty": 2,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "濃度・溶解度・コロイド",
       "descriptions": {
@@ -160,7 +160,7 @@
       "area": "organic",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "アルコール・アルデヒド・ケトン・カルボン酸",
@@ -185,8 +185,8 @@
       "area": "organic",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "置換反応・付加反応・脱離反応",
       "descriptions": {
@@ -210,8 +210,8 @@
       "area": "organic",
       "difficulty": 3,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "キラリティ・立体異性体・光学活性",
       "descriptions": {
@@ -260,7 +260,7 @@
       "area": "inorganic",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "結晶構造・バンド理論・半導体",
@@ -285,8 +285,8 @@
       "area": "inorganic",
       "difficulty": 4,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "金属酵素・ヘモグロビン・光合成の化学",
       "descriptions": {
@@ -336,7 +336,7 @@
       "area": "physical",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "反応速度・活性化エネルギー・触媒",
@@ -361,8 +361,8 @@
       "area": "physical",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "平衡定数・ルシャトリエの原理",
       "descriptions": {
@@ -386,7 +386,7 @@
       "area": "physical",
       "difficulty": 3,
       "position": {
-        "x": 300,
+        "x": 450,
         "y": 0
       },
       "description": "酸化還元・電池・電気分解",
@@ -411,8 +411,8 @@
       "area": "physical",
       "difficulty": 4,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "シュレディンガー方程式・分子軌道計算",
       "descriptions": {
@@ -463,7 +463,7 @@
       "area": "analytical",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "UV-Vis・IR・NMR・質量分析",
@@ -489,8 +489,8 @@
       "area": "analytical",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "GC・HPLC・薄層クロマトグラフィー",
       "descriptions": {
@@ -539,7 +539,7 @@
       "area": "biochem",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "酵素反応速度論・ミカエリス-メンテン",
@@ -565,8 +565,8 @@
       "area": "biochem",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "解糖系・クエン酸回路・電子伝達系",
       "descriptions": {
@@ -591,7 +591,7 @@
       "area": "biochem",
       "difficulty": 3,
       "position": {
-        "x": 300,
+        "x": 450,
         "y": 0
       },
       "description": "DNA・RNA・複製・転写・翻訳",

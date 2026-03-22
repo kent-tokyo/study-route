@@ -34,7 +34,7 @@
       "area": "foundations_cs",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "集合・グラフ・組合せ論・証明",
@@ -59,7 +59,7 @@
       "area": "foundations_cs",
       "difficulty": 3,
       "position": {
-        "x": 400,
+        "x": 600,
         "y": 0
       },
       "description": "有限オートマトン・正規言語・チューリング機械",
@@ -84,8 +84,8 @@
       "area": "foundations_cs",
       "difficulty": 4,
       "position": {
-        "x": 400,
-        "y": 150
+        "x": 600,
+        "y": 225
       },
       "description": "P vs NP・計算量クラス・帰着",
       "descriptions": {
@@ -134,7 +134,7 @@
       "area": "algorithms",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "基本的なソート・探索アルゴリズム",
@@ -159,8 +159,8 @@
       "area": "algorithms",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "BFS・DFS・最短経路・最小全域木",
       "descriptions": {
@@ -185,8 +185,8 @@
       "area": "algorithms",
       "difficulty": 3,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "部分問題の最適解を組み合わせる手法",
       "descriptions": {
@@ -235,7 +235,7 @@
       "area": "systems",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "ファイル管理・ジャーナリング・RAID",
@@ -260,8 +260,8 @@
       "area": "systems",
       "difficulty": 2,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "リレーショナルモデル・SQL・正規化",
       "descriptions": {
@@ -285,8 +285,8 @@
       "area": "systems",
       "difficulty": 4,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "CAP定理・合意プロトコル・一貫性モデル",
       "descriptions": {
@@ -312,7 +312,7 @@
       "difficulty": 4,
       "position": {
         "x": 0,
-        "y": 150
+        "y": 225
       },
       "description": "字句解析・構文解析・コード生成",
       "descriptions": {
@@ -362,7 +362,7 @@
       "area": "networking_cs",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "HTTPプロトコル・REST・Webアーキテクチャ",
@@ -387,8 +387,8 @@
       "area": "networking_cs",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "暗号・TLS・認証・ファイアウォール",
       "descriptions": {
@@ -412,8 +412,8 @@
       "area": "networking_cs",
       "difficulty": 3,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "名前解決・ルーティングプロトコル",
       "descriptions": {
@@ -460,7 +460,7 @@
       "area": "pl",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "静的型付け・型推論・ジェネリクス",
@@ -485,8 +485,8 @@
       "area": "pl",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "純粋関数・不変性・モナド・高階関数",
       "descriptions": {
@@ -510,7 +510,7 @@
       "area": "pl",
       "difficulty": 3,
       "position": {
-        "x": 300,
+        "x": 450,
         "y": 0
       },
       "description": "マルチスレッド・非同期・アクターモデル",
@@ -561,7 +561,7 @@
       "area": "ai_cs",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "ニューラルネットワーク・CNN・RNN・Transformer",
@@ -586,8 +586,8 @@
       "area": "ai_cs",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "形態素解析・埋め込み・大規模言語モデル",
       "descriptions": {
@@ -611,8 +611,8 @@
       "area": "ai_cs",
       "difficulty": 4,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "報酬最大化・Q学習・方策勾配法",
       "descriptions": {

@@ -2,55 +2,121 @@
   {
     "id": "bookkeeping",
     "label": "簿記の基礎",
-    "labels": { "ja": "簿記の基礎", "en": "Bookkeeping Basics", "zh": "簿记基础" },
-    "position": { "x": 0, "y": 0 },
+    "labels": {
+      "ja": "簿記の基礎",
+      "en": "Bookkeeping Basics",
+      "zh": "簿记基础"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
     "color": "#f59e0b",
     "description": "仕訳・勘定科目・試算表の基本",
-    "descriptions": { "ja": "仕訳・勘定科目・試算表の基本", "en": "Journal entries, accounts, and trial balance basics", "zh": "分录、会计科目与试算表基础" }
+    "descriptions": {
+      "ja": "仕訳・勘定科目・試算表の基本",
+      "en": "Journal entries, accounts, and trial balance basics",
+      "zh": "分录、会计科目与试算表基础"
+    }
   },
   {
     "id": "financial_statements",
     "label": "財務諸表",
-    "labels": { "ja": "財務諸表", "en": "Financial Statements", "zh": "财务报表" },
-    "position": { "x": 400, "y": 0 },
+    "labels": {
+      "ja": "財務諸表",
+      "en": "Financial Statements",
+      "zh": "财务报表"
+    },
+    "position": {
+      "x": 600,
+      "y": 0
+    },
     "color": "#3b82f6",
     "description": "貸借対照表・損益計算書・キャッシュフロー計算書",
-    "descriptions": { "ja": "貸借対照表・損益計算書・キャッシュフロー計算書", "en": "Balance sheet, income statement, and cash flow statement", "zh": "资产负债表、利润表与现金流量表" }
+    "descriptions": {
+      "ja": "貸借対照表・損益計算書・キャッシュフロー計算書",
+      "en": "Balance sheet, income statement, and cash flow statement",
+      "zh": "资产负债表、利润表与现金流量表"
+    }
   },
   {
     "id": "cost_accounting",
     "label": "原価計算",
-    "labels": { "ja": "原価計算", "en": "Cost Accounting", "zh": "成本核算" },
-    "position": { "x": 800, "y": -100 },
+    "labels": {
+      "ja": "原価計算",
+      "en": "Cost Accounting",
+      "zh": "成本核算"
+    },
+    "position": {
+      "x": 1200,
+      "y": -150
+    },
     "color": "#22c55e",
     "description": "原価の分類・配賦・標準原価計算",
-    "descriptions": { "ja": "原価の分類・配賦・標準原価計算", "en": "Cost classification, allocation, and standard costing", "zh": "成本分类、分配与标准成本核算" }
+    "descriptions": {
+      "ja": "原価の分類・配賦・標準原価計算",
+      "en": "Cost classification, allocation, and standard costing",
+      "zh": "成本分类、分配与标准成本核算"
+    }
   },
   {
     "id": "tax_accounting",
     "label": "税務会計",
-    "labels": { "ja": "税務会計", "en": "Tax Accounting", "zh": "税务会计" },
-    "position": { "x": 800, "y": 100 },
+    "labels": {
+      "ja": "税務会計",
+      "en": "Tax Accounting",
+      "zh": "税务会计"
+    },
+    "position": {
+      "x": 1200,
+      "y": 150
+    },
     "color": "#ef4444",
     "description": "法人税・消費税・確定申告",
-    "descriptions": { "ja": "法人税・消費税・確定申告", "en": "Corporate tax, consumption tax, and tax filing", "zh": "企业所得税、消费税与纳税申报" }
+    "descriptions": {
+      "ja": "法人税・消費税・確定申告",
+      "en": "Corporate tax, consumption tax, and tax filing",
+      "zh": "企业所得税、消费税与纳税申报"
+    }
   },
   {
     "id": "management_accounting",
     "label": "管理会計",
-    "labels": { "ja": "管理会計", "en": "Management Accounting", "zh": "管理会计" },
-    "position": { "x": 400, "y": 200 },
+    "labels": {
+      "ja": "管理会計",
+      "en": "Management Accounting",
+      "zh": "管理会计"
+    },
+    "position": {
+      "x": 600,
+      "y": 300
+    },
     "color": "#8b5cf6",
     "description": "予算管理・CVP分析・意思決定会計",
-    "descriptions": { "ja": "予算管理・CVP分析・意思決定会計", "en": "Budgeting, CVP analysis, and decision-making accounting", "zh": "预算管理、CVP分析与决策会计" }
+    "descriptions": {
+      "ja": "予算管理・CVP分析・意思決定会計",
+      "en": "Budgeting, CVP analysis, and decision-making accounting",
+      "zh": "预算管理、CVP分析与决策会计"
+    }
   },
   {
     "id": "auditing",
     "label": "監査",
-    "labels": { "ja": "監査", "en": "Auditing", "zh": "审计" },
-    "position": { "x": 0, "y": 200 },
+    "labels": {
+      "ja": "監査",
+      "en": "Auditing",
+      "zh": "审计"
+    },
+    "position": {
+      "x": 0,
+      "y": 300
+    },
     "color": "#06b6d4",
     "description": "内部統制・監査手続・監査報告書",
-    "descriptions": { "ja": "内部統制・監査手続・監査報告書", "en": "Internal controls, audit procedures, and audit reports", "zh": "内部控制、审计程序与审计报告" }
+    "descriptions": {
+      "ja": "内部統制・監査手続・監査報告書",
+      "en": "Internal controls, audit procedures, and audit reports",
+      "zh": "内部控制、审计程序与审计报告"
+    }
   }
 ]

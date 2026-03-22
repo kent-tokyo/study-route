@@ -2,55 +2,121 @@
   {
     "id": "foundations_cs",
     "label": "基礎理論",
-    "labels": { "ja": "基礎理論", "en": "Foundations", "zh": "基础理论" },
-    "position": { "x": 0, "y": 0 },
+    "labels": {
+      "ja": "基礎理論",
+      "en": "Foundations",
+      "zh": "基础理论"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
     "color": "#f59e0b",
     "description": "計算理論・離散数学・情報理論の基礎",
-    "descriptions": { "ja": "計算理論・離散数学・情報理論の基礎", "en": "Computation theory, discrete math, and information theory basics", "zh": "计算理论、离散数学与信息论基础" }
+    "descriptions": {
+      "ja": "計算理論・離散数学・情報理論の基礎",
+      "en": "Computation theory, discrete math, and information theory basics",
+      "zh": "计算理论、离散数学与信息论基础"
+    }
   },
   {
     "id": "algorithms",
     "label": "アルゴリズム",
-    "labels": { "ja": "アルゴリズム", "en": "Algorithms", "zh": "算法" },
-    "position": { "x": 400, "y": -100 },
+    "labels": {
+      "ja": "アルゴリズム",
+      "en": "Algorithms",
+      "zh": "算法"
+    },
+    "position": {
+      "x": 600,
+      "y": -150
+    },
     "color": "#3b82f6",
     "description": "ソート・探索・グラフ・動的計画法",
-    "descriptions": { "ja": "ソート・探索・グラフ・動的計画法", "en": "Sorting, searching, graphs, and dynamic programming", "zh": "排序、搜索、图与动态规划" }
+    "descriptions": {
+      "ja": "ソート・探索・グラフ・動的計画法",
+      "en": "Sorting, searching, graphs, and dynamic programming",
+      "zh": "排序、搜索、图与动态规划"
+    }
   },
   {
     "id": "systems",
     "label": "システム",
-    "labels": { "ja": "システム", "en": "Systems", "zh": "系统" },
-    "position": { "x": 400, "y": 100 },
+    "labels": {
+      "ja": "システム",
+      "en": "Systems",
+      "zh": "系统"
+    },
+    "position": {
+      "x": 600,
+      "y": 150
+    },
     "color": "#ef4444",
     "description": "OS・コンパイラ・データベース・分散システム",
-    "descriptions": { "ja": "OS・コンパイラ・データベース・分散システム", "en": "OS, compilers, databases, and distributed systems", "zh": "操作系统、编译器、数据库与分布式系统" }
+    "descriptions": {
+      "ja": "OS・コンパイラ・データベース・分散システム",
+      "en": "OS, compilers, databases, and distributed systems",
+      "zh": "操作系统、编译器、数据库与分布式系统"
+    }
   },
   {
     "id": "networking_cs",
     "label": "ネットワーク",
-    "labels": { "ja": "ネットワーク", "en": "Networking", "zh": "网络" },
-    "position": { "x": 800, "y": 0 },
+    "labels": {
+      "ja": "ネットワーク",
+      "en": "Networking",
+      "zh": "网络"
+    },
+    "position": {
+      "x": 1200,
+      "y": 0
+    },
     "color": "#8b5cf6",
     "description": "TCP/IP・HTTP・セキュリティ・分散通信",
-    "descriptions": { "ja": "TCP/IP・HTTP・セキュリティ・分散通信", "en": "TCP/IP, HTTP, security, and distributed communication", "zh": "TCP/IP、HTTP、安全与分布式通信" }
+    "descriptions": {
+      "ja": "TCP/IP・HTTP・セキュリティ・分散通信",
+      "en": "TCP/IP, HTTP, security, and distributed communication",
+      "zh": "TCP/IP、HTTP、安全与分布式通信"
+    }
   },
   {
     "id": "pl",
     "label": "プログラミング言語",
-    "labels": { "ja": "プログラミング言語", "en": "Programming Languages", "zh": "编程语言" },
-    "position": { "x": 0, "y": 200 },
+    "labels": {
+      "ja": "プログラミング言語",
+      "en": "Programming Languages",
+      "zh": "编程语言"
+    },
+    "position": {
+      "x": 0,
+      "y": 300
+    },
     "color": "#22c55e",
     "description": "型理論・パラダイム・言語処理系",
-    "descriptions": { "ja": "型理論・パラダイム・言語処理系", "en": "Type theory, paradigms, and language implementations", "zh": "类型理论、范式与语言实现" }
+    "descriptions": {
+      "ja": "型理論・パラダイム・言語処理系",
+      "en": "Type theory, paradigms, and language implementations",
+      "zh": "类型理论、范式与语言实现"
+    }
   },
   {
     "id": "ai_cs",
     "label": "AI・機械学習",
-    "labels": { "ja": "AI・機械学習", "en": "AI & ML", "zh": "AI与机器学习" },
-    "position": { "x": 800, "y": 200 },
+    "labels": {
+      "ja": "AI・機械学習",
+      "en": "AI & ML",
+      "zh": "AI与机器学习"
+    },
+    "position": {
+      "x": 1200,
+      "y": 300
+    },
     "color": "#06b6d4",
     "description": "機械学習・深層学習・自然言語処理",
-    "descriptions": { "ja": "機械学習・深層学習・自然言語処理", "en": "Machine learning, deep learning, and NLP", "zh": "机器学习、深度学习与自然语言处理" }
+    "descriptions": {
+      "ja": "機械学習・深層学習・自然言語処理",
+      "en": "Machine learning, deep learning, and NLP",
+      "zh": "机器学习、深度学习与自然语言处理"
+    }
   }
 ]

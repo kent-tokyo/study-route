@@ -34,7 +34,7 @@
       "area": "compute",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "サーバーレスで関数を実行する",
@@ -59,8 +59,8 @@
       "area": "compute",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "コンテナオーケストレーションサービス",
       "descriptions": {
@@ -85,8 +85,8 @@
       "area": "compute",
       "difficulty": 3,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "サーバーレスコンテナ実行環境",
       "descriptions": {
@@ -111,7 +111,7 @@
       "difficulty": 3,
       "position": {
         "x": 0,
-        "y": 150
+        "y": 225
       },
       "description": "需要に応じた自動スケーリング",
       "descriptions": {
@@ -159,7 +159,7 @@
       "area": "storage",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "EC2用のブロックストレージ",
@@ -184,8 +184,8 @@
       "area": "storage",
       "difficulty": 2,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "マネージド共有ファイルシステム",
       "descriptions": {
@@ -210,8 +210,8 @@
       "area": "storage",
       "difficulty": 2,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "低コストなアーカイブストレージ",
       "descriptions": {
@@ -258,7 +258,7 @@
       "area": "networking",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "DNSウェブサービス",
@@ -283,8 +283,8 @@
       "area": "networking",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "グローバルCDNサービス",
       "descriptions": {
@@ -309,7 +309,7 @@
       "difficulty": 2,
       "position": {
         "x": 0,
-        "y": 150
+        "y": 225
       },
       "description": "ロードバランサー（ALB/NLB/CLB）",
       "descriptions": {
@@ -333,8 +333,8 @@
       "area": "networking",
       "difficulty": 3,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "APIの作成・公開・管理",
       "descriptions": {
@@ -381,7 +381,7 @@
       "area": "security",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "暗号鍵の管理サービス",
@@ -406,8 +406,8 @@
       "area": "security",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "ユーザー認証・認可サービス",
       "descriptions": {
@@ -431,7 +431,7 @@
       "area": "security",
       "difficulty": 3,
       "position": {
-        "x": 300,
+        "x": 450,
         "y": 0
       },
       "description": "Webアプリケーションファイアウォール",
@@ -482,7 +482,7 @@
       "area": "databases",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "フルマネージドNoSQLデータベース",
@@ -507,8 +507,8 @@
       "area": "databases",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "インメモリキャッシュ（Redis/Memcached）",
       "descriptions": {
@@ -533,8 +533,8 @@
       "area": "databases",
       "difficulty": 3,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "データウェアハウスサービス",
       "descriptions": {
@@ -585,7 +585,7 @@
       "area": "ai_ml",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "基盤モデルAPIによる生成AI構築",
@@ -610,8 +610,8 @@
       "area": "ai_ml",
       "difficulty": 2,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "画像・動画の分析サービス",
       "descriptions": {
@@ -636,7 +636,7 @@
       "area": "ai_ml",
       "difficulty": 2,
       "position": {
-        "x": 300,
+        "x": 450,
         "y": 0
       },
       "description": "自然言語処理サービス",
@@ -687,7 +687,7 @@
       "area": "management",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "インフラをコードで定義するIaCサービス",
@@ -714,8 +714,8 @@
       "area": "management",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "インフラの運用管理・パッチ適用",
       "descriptions": {
@@ -740,7 +740,7 @@
       "area": "management",
       "difficulty": 2,
       "position": {
-        "x": 300,
+        "x": 450,
         "y": 0
       },
       "description": "API操作の監査ログ",
@@ -791,7 +791,7 @@
       "area": "app_integration",
       "difficulty": 2,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "Pub/Sub通知サービス",
@@ -816,8 +816,8 @@
       "area": "app_integration",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "サーバーレスワークフローオーケストレーション",
       "descriptions": {
@@ -842,7 +842,7 @@
       "area": "app_integration",
       "difficulty": 3,
       "position": {
-        "x": 300,
+        "x": 450,
         "y": 0
       },
       "description": "イベント駆動型アーキテクチャのバス",

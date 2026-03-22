@@ -2,73 +2,161 @@
   {
     "id": "foundations",
     "label": "基礎",
-    "labels": { "ja": "基礎", "en": "Foundations", "zh": "基础" },
-    "position": { "x": 0, "y": 200 },
+    "labels": {
+      "ja": "基礎",
+      "en": "Foundations",
+      "zh": "基础"
+    },
+    "position": {
+      "x": 0,
+      "y": 300
+    },
     "color": "#f59e0b",
     "description": "数える・数の体系・集合・論理など、数学の土台となる概念群",
-    "descriptions": { "ja": "数える・数の体系・集合・論理など、数学の土台となる概念群", "en": "Counting, number systems, sets, logic — the foundations of mathematics", "zh": "计数、数系、集合、逻辑等数学基础概念" }
+    "descriptions": {
+      "ja": "数える・数の体系・集合・論理など、数学の土台となる概念群",
+      "en": "Counting, number systems, sets, logic — the foundations of mathematics",
+      "zh": "计数、数系、集合、逻辑等数学基础概念"
+    }
   },
   {
     "id": "pure_algebra",
     "label": "代数学",
-    "labels": { "ja": "代数学", "en": "Algebra", "zh": "代数学" },
-    "position": { "x": 500, "y": 100 },
+    "labels": {
+      "ja": "代数学",
+      "en": "Algebra",
+      "zh": "代数学"
+    },
+    "position": {
+      "x": 750,
+      "y": 150
+    },
     "color": "#8b5cf6",
     "description": "線形代数・群論・環論・ガロア理論など、構造と演算を扱う分野",
-    "descriptions": { "ja": "線形代数・群論・環論・ガロア理論など、構造と演算を扱う分野", "en": "Linear algebra, group theory, ring theory, Galois theory — structures and operations", "zh": "线性代数、群论、环论、伽罗瓦理论等结构与运算" }
+    "descriptions": {
+      "ja": "線形代数・群論・環論・ガロア理論など、構造と演算を扱う分野",
+      "en": "Linear algebra, group theory, ring theory, Galois theory — structures and operations",
+      "zh": "线性代数、群论、环论、伽罗瓦理论等结构与运算"
+    }
   },
   {
     "id": "pure_analysis",
     "label": "解析学",
-    "labels": { "ja": "解析学", "en": "Analysis", "zh": "分析学" },
-    "position": { "x": 500, "y": -100 },
+    "labels": {
+      "ja": "解析学",
+      "en": "Analysis",
+      "zh": "分析学"
+    },
+    "position": {
+      "x": 750,
+      "y": -150
+    },
     "color": "#f43f5e",
     "description": "微分・積分・実解析・関数解析など、連続的な変化を扱う分野",
-    "descriptions": { "ja": "微分・積分・実解析・関数解析など、連続的な変化を扱う分野", "en": "Calculus, real analysis, functional analysis — continuous change", "zh": "微分、积分、实分析、泛函分析等连续变化" }
+    "descriptions": {
+      "ja": "微分・積分・実解析・関数解析など、連続的な変化を扱う分野",
+      "en": "Calculus, real analysis, functional analysis — continuous change",
+      "zh": "微分、积分、实分析、泛函分析等连续变化"
+    }
   },
   {
     "id": "pure_geometry",
     "label": "幾何学",
-    "labels": { "ja": "幾何学", "en": "Geometry", "zh": "几何学" },
-    "position": { "x": 500, "y": 300 },
+    "labels": {
+      "ja": "幾何学",
+      "en": "Geometry",
+      "zh": "几何学"
+    },
+    "position": {
+      "x": 750,
+      "y": 450
+    },
     "color": "#06b6d4",
     "description": "ユークリッド幾何から多様体・代数幾何まで、空間の性質を扱う分野",
-    "descriptions": { "ja": "ユークリッド幾何から多様体・代数幾何まで、空間の性質を扱う分野", "en": "From Euclidean geometry to manifolds and algebraic geometry", "zh": "从欧几里得几何到流形和代数几何" }
+    "descriptions": {
+      "ja": "ユークリッド幾何から多様体・代数幾何まで、空間の性質を扱う分野",
+      "en": "From Euclidean geometry to manifolds and algebraic geometry",
+      "zh": "从欧几里得几何到流形和代数几何"
+    }
   },
   {
     "id": "stochastic",
     "label": "確率・統計",
-    "labels": { "ja": "確率・統計", "en": "Probability & Statistics", "zh": "概率与统计" },
-    "position": { "x": 1000, "y": 200 },
+    "labels": {
+      "ja": "確率・統計",
+      "en": "Probability & Statistics",
+      "zh": "概率与统计"
+    },
+    "position": {
+      "x": 1500,
+      "y": 300
+    },
     "color": "#14b8a6",
     "description": "確率論・統計学・確率過程・情報理論など、不確実性の数学",
-    "descriptions": { "ja": "確率論・統計学・確率過程・情報理論など、不確実性の数学", "en": "Probability, statistics, stochastic processes — the mathematics of uncertainty", "zh": "概率论、统计学、随机过程等不确定性数学" }
+    "descriptions": {
+      "ja": "確率論・統計学・確率過程・情報理論など、不確実性の数学",
+      "en": "Probability, statistics, stochastic processes — the mathematics of uncertainty",
+      "zh": "概率论、统计学、随机过程等不确定性数学"
+    }
   },
   {
     "id": "computational",
     "label": "最適化・計算",
-    "labels": { "ja": "最適化・計算", "en": "Optimization & Computation", "zh": "优化与计算" },
-    "position": { "x": 1000, "y": 0 },
+    "labels": {
+      "ja": "最適化・計算",
+      "en": "Optimization & Computation",
+      "zh": "优化与计算"
+    },
+    "position": {
+      "x": 1500,
+      "y": 0
+    },
     "color": "#3b82f6",
     "description": "最適化理論・数値解析・機械学習の数理など、計算と最適化の数学",
-    "descriptions": { "ja": "最適化理論・数値解析・機械学習の数理など、計算と最適化の数学", "en": "Optimization, numerical analysis, ML math — computation and optimization", "zh": "优化理论、数值分析、机器学习数理等" }
+    "descriptions": {
+      "ja": "最適化理論・数値解析・機械学習の数理など、計算と最適化の数学",
+      "en": "Optimization, numerical analysis, ML math — computation and optimization",
+      "zh": "优化理论、数值分析、机器学习数理等"
+    }
   },
   {
     "id": "mathematical_modeling",
     "label": "物理・制御",
-    "labels": { "ja": "物理・制御", "en": "Physics & Control", "zh": "物理与控制" },
-    "position": { "x": 1000, "y": -200 },
+    "labels": {
+      "ja": "物理・制御",
+      "en": "Physics & Control",
+      "zh": "物理与控制"
+    },
+    "position": {
+      "x": 1500,
+      "y": -300
+    },
     "color": "#ef4444",
     "description": "数理物理学・力学系・制御理論など、物理現象のモデル化",
-    "descriptions": { "ja": "数理物理学・力学系・制御理論など、物理現象のモデル化", "en": "Mathematical physics, dynamical systems, control theory", "zh": "数学物理、动力系统、控制理论等" }
+    "descriptions": {
+      "ja": "数理物理学・力学系・制御理論など、物理現象のモデル化",
+      "en": "Mathematical physics, dynamical systems, control theory",
+      "zh": "数学物理、动力系统、控制理论等"
+    }
   },
   {
     "id": "social",
     "label": "社会科学応用",
-    "labels": { "ja": "社会科学応用", "en": "Social Science Applications", "zh": "社会科学应用" },
-    "position": { "x": 1000, "y": 400 },
+    "labels": {
+      "ja": "社会科学応用",
+      "en": "Social Science Applications",
+      "zh": "社会科学应用"
+    },
+    "position": {
+      "x": 1500,
+      "y": 600
+    },
     "color": "#f97316",
     "description": "ゲーム理論・暗号理論など、社会科学への数学の応用",
-    "descriptions": { "ja": "ゲーム理論・暗号理論など、社会科学への数学の応用", "en": "Game theory, cryptography — mathematics applied to social sciences", "zh": "博弈论、密码学等数学在社会科学中的应用" }
+    "descriptions": {
+      "ja": "ゲーム理論・暗号理論など、社会科学への数学の応用",
+      "en": "Game theory, cryptography — mathematics applied to social sciences",
+      "zh": "博弈论、密码学等数学在社会科学中的应用"
+    }
   }
 ]

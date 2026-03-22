@@ -34,7 +34,7 @@
       "area": "logic",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "量化子と述語による推論体系",
@@ -59,7 +59,7 @@
       "area": "logic",
       "difficulty": 4,
       "position": {
-        "x": 400,
+        "x": 600,
         "y": 0
       },
       "description": "可能性と必然性を扱う論理体系",
@@ -84,8 +84,8 @@
       "area": "logic",
       "difficulty": 2,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "日常的推論に潜む典型的な誤り",
       "descriptions": {
@@ -132,7 +132,7 @@
       "area": "epistemology",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "信念が知識となるための正当化条件",
@@ -157,7 +157,7 @@
       "area": "epistemology",
       "difficulty": 3,
       "position": {
-        "x": 400,
+        "x": 600,
         "y": 0
       },
       "description": "知識の可能性を問い直す",
@@ -182,8 +182,8 @@
       "area": "epistemology",
       "difficulty": 3,
       "position": {
-        "x": 200,
-        "y": 150
+        "x": 300,
+        "y": 225
       },
       "description": "知識の源泉は理性か経験か",
       "descriptions": {
@@ -208,8 +208,8 @@
       "area": "epistemology",
       "difficulty": 4,
       "position": {
-        "x": 400,
-        "y": 150
+        "x": 600,
+        "y": 225
       },
       "description": "科学的方法・反証可能性・パラダイム転換",
       "descriptions": {
@@ -257,7 +257,7 @@
       "area": "ethics",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "行為の正しさは義務と規則で決まる",
@@ -280,8 +280,8 @@
       "area": "ethics",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "良い人格・徳を中心に据える倫理学",
       "descriptions": {
@@ -306,8 +306,8 @@
       "area": "ethics",
       "difficulty": 4,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "ロールズの正義論・分配的正義・公正としての正義",
       "descriptions": {
@@ -332,7 +332,7 @@
       "area": "ethics",
       "difficulty": 3,
       "position": {
-        "x": 400,
+        "x": 600,
         "y": 0
       },
       "description": "医療・生殖・遺伝子操作の倫理的問題",
@@ -358,8 +358,8 @@
       "area": "ethics",
       "difficulty": 3,
       "position": {
-        "x": 200,
-        "y": -150
+        "x": 300,
+        "y": -225
       },
       "description": "自然環境・動物・未来世代への道徳的責任",
       "descriptions": {
@@ -406,7 +406,7 @@
       "area": "metaphysics",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "原因と結果の関係を分析する",
@@ -431,7 +431,7 @@
       "area": "metaphysics",
       "difficulty": 3,
       "position": {
-        "x": 400,
+        "x": 600,
         "y": 0
       },
       "description": "決定論と自由意志の両立可能性",
@@ -456,8 +456,8 @@
       "area": "metaphysics",
       "difficulty": 4,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "心と身体の関係・意識のハードプロブレム",
       "descriptions": {
@@ -481,8 +481,8 @@
       "area": "metaphysics",
       "difficulty": 4,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "時間の本質・空間の実在性・相対主義",
       "descriptions": {
@@ -530,7 +530,7 @@
       "area": "aesthetics",
       "difficulty": 3,
       "position": {
-        "x": 200,
+        "x": 300,
         "y": 0
       },
       "description": "芸術作品の本質と価値を考える",
@@ -555,8 +555,8 @@
       "area": "aesthetics",
       "difficulty": 3,
       "position": {
-        "x": 100,
-        "y": 150
+        "x": 150,
+        "y": 225
       },
       "description": "圧倒的な自然や偉大さが喚起する感情",
       "descriptions": {
@@ -580,8 +580,8 @@
       "area": "aesthetics",
       "difficulty": 4,
       "position": {
-        "x": 300,
-        "y": 150
+        "x": 450,
+        "y": 225
       },
       "description": "カントの趣味判断・美的経験の普遍性",
       "descriptions": {

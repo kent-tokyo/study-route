@@ -11,8 +11,8 @@
       "area": "pure_algebra",
       "difficulty": 3,
       "position": {
-        "x": 1000,
-        "y": 40
+        "x": 1500,
+        "y": 60
       },
       "description": "ベクトル・行列・線形変換。現代数学の基本言語。",
       "descriptions": {
@@ -37,8 +37,8 @@
       "area": "pure_algebra",
       "difficulty": 3,
       "position": {
-        "x": 1250,
-        "y": 40
+        "x": 1875,
+        "y": 60
       },
       "description": "対称性を抽象化した代数構造。",
       "descriptions": {
@@ -63,8 +63,8 @@
       "area": "pure_algebra",
       "difficulty": 3,
       "position": {
-        "x": 1250,
-        "y": 320
+        "x": 1875,
+        "y": 480
       },
       "description": "合同式・二次剰余。整数の深い性質。",
       "descriptions": {
@@ -89,7 +89,7 @@
       "area": "pure_algebra",
       "difficulty": 4,
       "position": {
-        "x": 1500,
+        "x": 2250,
         "y": 0
       },
       "description": "環・イデアル・剰余環。加法と乗法を持つ代数構造。",
@@ -115,8 +115,8 @@
       "area": "pure_algebra",
       "difficulty": 4,
       "position": {
-        "x": 1750,
-        "y": -80
+        "x": 2625,
+        "y": -120
       },
       "description": "体の拡大・分離拡大。方程式の可解性への道。",
       "descriptions": {
@@ -140,8 +140,8 @@
       "area": "pure_algebra",
       "difficulty": 5,
       "position": {
-        "x": 2000,
-        "y": -80
+        "x": 3000,
+        "y": -120
       },
       "description": "体の拡大と群の対応。方程式の可解性の完全な解答。",
       "descriptions": {
@@ -166,8 +166,8 @@
       "area": "pure_algebra",
       "difficulty": 4,
       "position": {
-        "x": 1500,
-        "y": 120
+        "x": 2250,
+        "y": 180
       },
       "description": "環上の加群。線形代数の一般化。",
       "descriptions": {
@@ -192,8 +192,8 @@
       "area": "pure_algebra",
       "difficulty": 5,
       "position": {
-        "x": 1750,
-        "y": 40
+        "x": 2625,
+        "y": 60
       },
       "description": "可換環とその加群。代数幾何の代数的基盤。",
       "descriptions": {
@@ -218,8 +218,8 @@
       "area": "pure_algebra",
       "difficulty": 5,
       "position": {
-        "x": 2000,
-        "y": 120
+        "x": 3000,
+        "y": 180
       },
       "description": "完全系列・導来関手。代数の深い構造論。",
       "descriptions": {
@@ -244,8 +244,8 @@
       "area": "pure_algebra",
       "difficulty": 5,
       "position": {
-        "x": 2000,
-        "y": 240
+        "x": 3000,
+        "y": 360
       },
       "description": "群や環を行列で表現する理論。",
       "descriptions": {
@@ -271,8 +271,8 @@
       "area": "pure_algebra",
       "difficulty": 5,
       "position": {
-        "x": 2000,
-        "y": 320
+        "x": 3000,
+        "y": 480
       },
       "description": "代数体の整数環。フェルマー予想への道。",
       "descriptions": {
@@ -297,8 +297,8 @@
       "area": "pure_algebra",
       "difficulty": 5,
       "position": {
-        "x": 1750,
-        "y": 240
+        "x": 2625,
+        "y": 360
       },
       "description": "連続対称性の無限小構造。微分幾何・物理への橋。",
       "descriptions": {
@@ -323,8 +323,8 @@
       "area": "pure_analysis",
       "difficulty": 3,
       "position": {
-        "x": 1000,
-        "y": -200
+        "x": 1500,
+        "y": -300
       },
       "description": "変化の速さを捉える。極限・導関数。",
       "descriptions": {
@@ -349,8 +349,8 @@
       "area": "pure_analysis",
       "difficulty": 3,
       "position": {
-        "x": 1250,
-        "y": -200
+        "x": 1875,
+        "y": -300
       },
       "description": "面積・累積量を求める。不定積分と定積分。",
       "descriptions": {
@@ -374,8 +374,8 @@
       "area": "pure_analysis",
       "difficulty": 3,
       "position": {
-        "x": 1500,
-        "y": -280
+        "x": 2250,
+        "y": -420
       },
       "description": "偏微分・重積分・ベクトル解析。多次元への拡張。",
       "descriptions": {
@@ -400,8 +400,8 @@
       "area": "pure_analysis",
       "difficulty": 3,
       "position": {
-        "x": 1500,
-        "y": -160
+        "x": 2250,
+        "y": -240
       },
       "description": "数列・級数の収束。テイラー展開・べき級数。",
       "descriptions": {
@@ -425,8 +425,8 @@
       "area": "pure_analysis",
       "difficulty": 3,
       "position": {
-        "x": 1750,
-        "y": -280
+        "x": 2625,
+        "y": -420
       },
       "description": "未知関数とその導関数の方程式。",
       "descriptions": {
@@ -450,8 +450,8 @@
       "area": "pure_analysis",
       "difficulty": 4,
       "position": {
-        "x": 1750,
-        "y": -160
+        "x": 2625,
+        "y": -240
       },
       "description": "厳密なε-δ論法。位相的性質と収束の理論。",
       "descriptions": {
@@ -476,8 +476,8 @@
       "area": "pure_analysis",
       "difficulty": 4,
       "position": {
-        "x": 1750,
-        "y": -40
+        "x": 2625,
+        "y": -60
       },
       "description": "正則関数・コーシーの積分定理・留数。",
       "descriptions": {
@@ -502,8 +502,8 @@
       "area": "pure_analysis",
       "difficulty": 4,
       "position": {
-        "x": 2000,
-        "y": -160
+        "x": 3000,
+        "y": -240
       },
       "description": "ルベーグ測度・ルベーグ積分。現代解析の基礎。",
       "descriptions": {
@@ -527,8 +527,8 @@
       "area": "pure_analysis",
       "difficulty": 4,
       "position": {
-        "x": 2000,
-        "y": -280
+        "x": 3000,
+        "y": -420
       },
       "description": "多変数の微分方程式。物理現象のモデル化。",
       "descriptions": {
@@ -553,8 +553,8 @@
       "area": "pure_analysis",
       "difficulty": 5,
       "position": {
-        "x": 2250,
-        "y": -160
+        "x": 3375,
+        "y": -240
       },
       "description": "バナッハ空間・ヒルベルト空間。無限次元の線形代数。",
       "descriptions": {
@@ -579,8 +579,8 @@
       "area": "pure_analysis",
       "difficulty": 4,
       "position": {
-        "x": 2000,
-        "y": -40
+        "x": 3000,
+        "y": -60
       },
       "description": "フーリエ級数・フーリエ変換。信号分解の数学。",
       "descriptions": {
@@ -605,8 +605,8 @@
       "area": "pure_analysis",
       "difficulty": 5,
       "position": {
-        "x": 2250,
-        "y": -40
+        "x": 3375,
+        "y": -60
       },
       "description": "フーリエ解析の一般化。群上の解析。",
       "descriptions": {
@@ -631,8 +631,8 @@
       "area": "pure_analysis",
       "difficulty": 5,
       "position": {
-        "x": 2250,
-        "y": -280
+        "x": 3375,
+        "y": -420
       },
       "description": "線形作用素のスペクトル理論。量子力学の数学的基盤。",
       "descriptions": {
@@ -656,8 +656,8 @@
       "area": "pure_geometry",
       "difficulty": 2,
       "position": {
-        "x": 1000,
-        "y": 200
+        "x": 1500,
+        "y": 300
       },
       "description": "点・直線・平面。古代ギリシャからの幾何学。",
       "descriptions": {
@@ -682,8 +682,8 @@
       "area": "pure_geometry",
       "difficulty": 2,
       "position": {
-        "x": 1250,
-        "y": 200
+        "x": 1875,
+        "y": 300
       },
       "description": "座標を用いた幾何学。図形と方程式の対応。",
       "descriptions": {
@@ -708,8 +708,8 @@
       "area": "pure_geometry",
       "difficulty": 3,
       "position": {
-        "x": 1250,
-        "y": 320
+        "x": 1875,
+        "y": 480
       },
       "description": "開集合・連続写像・コンパクト性。空間の抽象化。",
       "descriptions": {
@@ -735,8 +735,8 @@
       "area": "pure_geometry",
       "difficulty": 4,
       "position": {
-        "x": 1500,
-        "y": 200
+        "x": 2250,
+        "y": 300
       },
       "description": "曲線・曲面の微分的性質。曲率の理論。",
       "descriptions": {
@@ -762,8 +762,8 @@
       "area": "pure_geometry",
       "difficulty": 4,
       "position": {
-        "x": 1500,
-        "y": 320
+        "x": 2250,
+        "y": 480
       },
       "description": "局所的にユークリッド空間に見える空間。",
       "descriptions": {
@@ -788,8 +788,8 @@
       "area": "pure_geometry",
       "difficulty": 5,
       "position": {
-        "x": 1750,
-        "y": 320
+        "x": 2625,
+        "y": 480
       },
       "description": "基本群・ホモロジー群。位相的不変量の代数化。",
       "descriptions": {
@@ -814,8 +814,8 @@
       "area": "pure_geometry",
       "difficulty": 5,
       "position": {
-        "x": 1750,
-        "y": 200
+        "x": 2625,
+        "y": 300
       },
       "description": "計量を持つ多様体。一般相対性理論の数学。",
       "descriptions": {
@@ -840,8 +840,8 @@
       "area": "pure_geometry",
       "difficulty": 5,
       "position": {
-        "x": 2000,
-        "y": 280
+        "x": 3000,
+        "y": 420
       },
       "description": "多項式の零点集合の幾何学。可換代数との深い結びつき。",
       "descriptions": {
@@ -866,8 +866,8 @@
       "area": "pure_algebra",
       "difficulty": 2,
       "position": {
-        "x": 1000,
-        "y": 320
+        "x": 1500,
+        "y": 480
       },
       "description": "1とその数自身でしか割れない特別な自然数。",
       "descriptions": {

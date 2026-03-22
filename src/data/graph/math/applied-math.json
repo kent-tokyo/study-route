@@ -11,8 +11,8 @@
       "area": "stochastic",
       "difficulty": 3,
       "position": {
-        "x": 1250,
-        "y": 320
+        "x": 1875,
+        "y": 480
       },
       "description": "不確実な事象の数学的モデル。",
       "descriptions": {
@@ -37,8 +37,8 @@
       "area": "stochastic",
       "difficulty": 3,
       "position": {
-        "x": 1500,
-        "y": 320
+        "x": 2250,
+        "y": 480
       },
       "description": "データから情報を引き出す方法論。",
       "descriptions": {
@@ -62,8 +62,8 @@
       "area": "stochastic",
       "difficulty": 4,
       "position": {
-        "x": 1750,
-        "y": 400
+        "x": 2625,
+        "y": 600
       },
       "description": "エントロピー・通信路容量。情報の数学的理論。",
       "descriptions": {
@@ -87,8 +87,8 @@
       "area": "stochastic",
       "difficulty": 4,
       "position": {
-        "x": 1750,
-        "y": 480
+        "x": 2625,
+        "y": 720
       },
       "description": "マルコフ連鎖・ブラウン運動。時間と確率の理論。",
       "descriptions": {
@@ -113,8 +113,8 @@
       "area": "stochastic",
       "difficulty": 4,
       "position": {
-        "x": 1750,
-        "y": 320
+        "x": 2625,
+        "y": 480
       },
       "description": "推定論・検定論の数学的基盤。",
       "descriptions": {
@@ -139,8 +139,8 @@
       "area": "computational",
       "difficulty": 3,
       "position": {
-        "x": 1500,
-        "y": 160
+        "x": 2250,
+        "y": 240
       },
       "description": "近似計算・誤差解析。コンピュータによる数学。",
       "descriptions": {
@@ -165,8 +165,8 @@
       "area": "computational",
       "difficulty": 4,
       "position": {
-        "x": 1750,
-        "y": 160
+        "x": 2625,
+        "y": 240
       },
       "description": "関数の最大最小問題。線形計画・凸最適化。",
       "descriptions": {
@@ -191,8 +191,8 @@
       "area": "computational",
       "difficulty": 4,
       "position": {
-        "x": 2000,
-        "y": 280
+        "x": 3000,
+        "y": 420
       },
       "description": "統計的学習理論・カーネル法・最適化の応用。",
       "descriptions": {
@@ -218,8 +218,8 @@
       "area": "computational",
       "difficulty": 4,
       "position": {
-        "x": 2000,
-        "y": 60
+        "x": 3000,
+        "y": 90
       },
       "description": "グラフ理論・整数計画。離散構造の最適化。",
       "descriptions": {
@@ -244,8 +244,8 @@
       "area": "mathematical_modeling",
       "difficulty": 4,
       "position": {
-        "x": 1750,
-        "y": 280
+        "x": 2625,
+        "y": 420
       },
       "description": "時間発展する系の定性的理論。カオス。",
       "descriptions": {
@@ -269,8 +269,8 @@
       "area": "mathematical_modeling",
       "difficulty": 5,
       "position": {
-        "x": 2000,
-        "y": 160
+        "x": 3000,
+        "y": 240
       },
       "description": "物理学の数学的定式化。量子力学・場の理論。",
       "descriptions": {
@@ -295,8 +295,8 @@
       "area": "mathematical_modeling",
       "difficulty": 4,
       "position": {
-        "x": 2000,
-        "y": 480
+        "x": 3000,
+        "y": 720
       },
       "description": "動的システムの制御。フィードバックの数学。",
       "descriptions": {
@@ -321,8 +321,8 @@
       "area": "social",
       "difficulty": 3,
       "position": {
-        "x": 1500,
-        "y": 480
+        "x": 2250,
+        "y": 720
       },
       "description": "戦略的意思決定の数学。ナッシュ均衡。",
       "descriptions": {
@@ -347,8 +347,8 @@
       "area": "social",
       "difficulty": 4,
       "position": {
-        "x": 2000,
-        "y": 400
+        "x": 3000,
+        "y": 600
       },
       "description": "数論に基づく暗号化。RSA・楕円曲線暗号。",
       "descriptions": {
