@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import type { NodeStatus, QuizQuestion } from '@/types';
 import { useLocale } from '@/i18n/useLocale';
 import { getContentBasePath } from '@/lib/content-manifest';
@@ -20,10 +19,11 @@ interface ComprehensionCheckProps {
 export default function ComprehensionCheck({ nodeId, status, area, onUpdateProgress, quiz, mapUrl, domainMapUrl }: ComprehensionCheckProps) {
   const [loading, setLoading] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
-  const router = useRouter();
+  const [showQuiz, setShowQuiz] = useState(false);
   const { t } = useLocale();
 
   const resolvedMapUrl = mapUrl || `/map?area=${area}`;
+  const hasQuiz = quiz && quiz.length > 0;
 
   const handleComplete = () => {
     setLoading(true);
@@ -38,6 +38,11 @@ export default function ComprehensionCheck({ nodeId, status, area, onUpdateProgr
   };
 
   if (status === 'completed') {
+    // Show quiz retry if requested
+    if (showQuiz && hasQuiz) {
+      return <QuizView questions={quiz} onComplete={() => setShowQuiz(false)} />;
+    }
+
     return (
       <div className="rounded-lg border border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950 p-6 text-center">
         <p className="text-emerald-700 dark:text-emerald-300 font-semibold">{t('comprehension.alreadyCompleted')}</p>
@@ -56,13 +61,21 @@ export default function ComprehensionCheck({ nodeId, status, area, onUpdateProgr
               {t('common.backToOverview')}
             </button>
           )}
+          {hasQuiz && (
+            <button
+              onClick={() => setShowQuiz(true)}
+              className="rounded-md border border-emerald-300 dark:border-emerald-700 bg-white dark:bg-emerald-950 px-6 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-300 transition-colors hover:bg-emerald-50 dark:hover:bg-emerald-900"
+            >
+              {t('quiz.retryQuiz')}
+            </button>
+          )}
         </div>
       </div>
     );
   }
 
   // Show quiz if available and not yet completed
-  if (quiz && quiz.length > 0 && !quizCompleted) {
+  if (hasQuiz && !quizCompleted) {
     return <QuizView questions={quiz} onComplete={() => setQuizCompleted(true)} />;
   }
 

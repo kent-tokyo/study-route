@@ -43,7 +43,8 @@
     "next": "Next Question",
     "showResult": "See Results",
     "proceed": "Continue",
-    "explanation": "Explanation"
+    "explanation": "Explanation",
+    "retryQuiz": "Retry Quiz"
   },
   "search": {
     "placeholder": "Search content...",

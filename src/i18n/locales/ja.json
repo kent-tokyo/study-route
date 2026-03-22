@@ -43,7 +43,8 @@
     "next": "次の問題",
     "showResult": "結果を見る",
     "proceed": "次へ進む",
-    "explanation": "解説"
+    "explanation": "解説",
+    "retryQuiz": "クイズに再挑戦"
   },
   "search": {
     "placeholder": "コンテンツを検索...",

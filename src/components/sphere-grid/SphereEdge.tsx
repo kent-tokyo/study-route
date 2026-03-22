@@ -6,12 +6,22 @@ import type { EdgeProps } from '@xyflow/react';
 export default function SphereEdge(props: EdgeProps) {
   const { sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition } = props;
 
-  // Increase offset when nodes are mostly vertical (small horizontal gap)
-  // to prevent edges from overlapping node boxes
   const dx = Math.abs(targetX - sourceX);
   const dy = Math.abs(targetY - sourceY);
-  const isVertical = dy > dx * 0.8;
-  const offset = isVertical ? 80 : 50;
+
+  // Use small offset for well-aligned nodes (nearly horizontal or vertical)
+  // to keep edges straight. Only use large offset for diagonal connections
+  // where edges need to route around node boxes.
+  let offset: number;
+  if (dy < 20) {
+    offset = 10;
+  } else if (dx < 20) {
+    offset = 10;
+  } else if (dy > dx * 0.8) {
+    offset = 60;
+  } else {
+    offset = 35;
+  }
 
   const [edgePath] = getSmoothStepPath({
     sourceX,

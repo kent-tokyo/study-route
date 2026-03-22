@@ -43,7 +43,8 @@
     "next": "下一题",
     "showResult": "查看结果",
     "proceed": "继续",
-    "explanation": "解析"
+    "explanation": "解析",
+    "retryQuiz": "重新测验"
   },
   "search": {
     "placeholder": "搜索内容...",
