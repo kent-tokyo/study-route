@@ -88,7 +88,8 @@ export function getAreaMeta(domainId?: DomainId): AreaMeta[] {
   }
 }
 
-/** Derive inter-area edges by aggregating cross-area edges from the full graph */
+/** Derive inter-area edges by aggregating cross-area edges from the full graph.
+ *  Removes redundant edges: if A→C is reachable via A→B→...→C, the direct A→C edge is dropped. */
 export function getAreaEdges(domainId?: DomainId): GraphEdge[] {
   const graph = getAllGraphData(domainId);
   const nodeAreaMap = new Map<string, AreaId>();
@@ -111,7 +112,33 @@ export function getAreaEdges(domainId?: DomainId): GraphEdge[] {
     }
   }
 
-  return areaEdges;
+  // Remove transitively redundant edges (A→C when A→B→...→C exists)
+  const adj = new Map<string, Set<string>>();
+  for (const e of areaEdges) {
+    if (!adj.has(e.source)) adj.set(e.source, new Set());
+    adj.get(e.source)!.add(e.target);
+  }
+
+  function hasLongerPath(source: string, target: string): boolean {
+    // BFS from source's neighbors (excluding target) to see if target is reachable
+    const visited = new Set<string>();
+    const queue: string[] = [];
+    for (const neighbor of adj.get(source) ?? []) {
+      if (neighbor !== target) queue.push(neighbor);
+    }
+    while (queue.length > 0) {
+      const node = queue.shift()!;
+      if (visited.has(node)) continue;
+      visited.add(node);
+      if (node === target) return true;
+      for (const neighbor of adj.get(node) ?? []) {
+        if (!visited.has(neighbor)) queue.push(neighbor);
+      }
+    }
+    return false;
+  }
+
+  return areaEdges.filter(e => !hasLongerPath(e.source, e.target));
 }
 
 /** Get nodes and edges within a specific area (plus cross-area edges touching area nodes) */
