@@ -9,18 +9,21 @@ export default function SphereEdge(props: EdgeProps) {
   const dx = Math.abs(targetX - sourceX);
   const dy = Math.abs(targetY - sourceY);
 
-  // Use small offset for well-aligned nodes (nearly horizontal or vertical)
-  // to keep edges straight. Only use large offset for diagonal connections
-  // where edges need to route around node boxes.
+  // Nearly aligned nodes: small offset for straight edges.
+  // Diagonal/offset connections: large offset to route around intermediate nodes.
   let offset: number;
   if (dy < 20) {
+    // Horizontal alignment — keep straight
     offset = 10;
   } else if (dx < 20) {
+    // Vertical alignment — keep straight
     offset = 10;
   } else if (dy > dx * 0.8) {
-    offset = 60;
+    // Mainly vertical with horizontal offset — large to avoid node overlap
+    offset = 80;
   } else {
-    offset = 35;
+    // Diagonal — needs room to route around nodes
+    offset = 50;
   }
 
   const [edgePath] = getSmoothStepPath({
