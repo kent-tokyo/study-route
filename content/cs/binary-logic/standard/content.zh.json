@@ -93,70 +93,70 @@
   ],
   "quiz": [
     {
-      "question": "2進数 $(1101)_2$ を10進数に変換すると、どの値になりますか？",
+      "question": "在二进制中，十进制数13如何表示？",
       "choices": [
         {
-          "text": "11",
+          "text": "1011",
           "isCorrect": false
         },
         {
-          "text": "13",
+          "text": "1101",
           "isCorrect": true
         },
         {
-          "text": "14",
+          "text": "1110",
           "isCorrect": false
         },
         {
-          "text": "15",
+          "text": "1010",
           "isCorrect": false
         }
       ],
-      "explanation": "各桁の重みは右から $2^0, 2^1, 2^2, 2^3$ です。$(1101)_2 = 1 \\times 2^3 + 1 \\times 2^2 + 0 \\times 2^1 + 1 \\times 2^0 = 8 + 4 + 0 + 1 = 13$ となります。"
+      "explanation": "十进制13 = 8+4+1 = $2^3 + 2^2 + 2^0$，因此二进制表示为1101。从右起各位分别代表 $2^0=1$、$2^1=2$、$2^2=4$、$2^3=8$。"
     },
     {
-      "question": "AND回路とOR回路について、次の説明のうち正しいものはどれですか？",
+      "question": "逻辑门AND、OR、NOT中，NOT门的特征是什么？",
       "choices": [
         {
-          "text": "AND回路は入力AとBのどちらか一方が1であれば出力が1になる",
+          "text": "接收两个输入，仅当两者都为1时输出1",
           "isCorrect": false
         },
         {
-          "text": "OR回路は入力AとBの両方が0のときだけ出力が0になる",
+          "text": "接收两个输入，当其中一个为1时输出1",
+          "isCorrect": false
+        },
+        {
+          "text": "接收一个输入，将0变为1、1变为0",
           "isCorrect": true
         },
         {
-          "text": "AND回路は入力AとBのどちらか一方が1であれば出力が0になる",
-          "isCorrect": false
-        },
-        {
-          "text": "OR回路は入力AとBの両方が1のときだけ出力が1になる",
+          "text": "接收两个输入，当两者不同时输出1",
           "isCorrect": false
         }
       ],
-      "explanation": "OR回路（$A \\lor B$）は「AかBの少なくとも一方が1なら出力は1」となります。裏を返すと、「両方が0のときだけ出力が0」になります。AND回路は「両方が1のときだけ出力が1」という動作をします。"
+      "explanation": "NOT门（非门/反相器）接收一个输入，反转其值输出。输入0则输出1，输入1则输出0。AND门和OR门接收两个输入，XOR门在两个输入不同时输出1。"
     },
     {
-      "question": "半加算器において、$A = 1,\\ B = 1$ を入力したとき、和（$S$）と桁上がり（$C$）の出力の組み合わせとして正しいものはどれですか？",
+      "question": "布尔代数中德摩根定律的正确表述是哪个？",
       "choices": [
         {
-          "text": "$S = 1,\\ C = 1$",
+          "text": "$\\overline{A \\cdot B} = \\overline{A} \\cdot \\overline{B}$",
           "isCorrect": false
         },
         {
-          "text": "$S = 1,\\ C = 0$",
-          "isCorrect": false
-        },
-        {
-          "text": "$S = 0,\\ C = 1$",
+          "text": "$\\overline{A + B} = \\overline{A} \\cdot \\overline{B}$",
           "isCorrect": true
         },
         {
-          "text": "$S = 0,\\ C = 0$",
+          "text": "$\\overline{A + B} = \\overline{A} + \\overline{B}$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\overline{A \\cdot B} = A + B$",
           "isCorrect": false
         }
       ],
-      "explanation": "半加算器では $S = A \\oplus B$（XOR）、$C = A \\land B$（AND）で計算します。$A = 1,\\ B = 1$ のとき、$S = 1 \\oplus 1 = 0$、$C = 1 \\land 1 = 1$ となります。これは $1 + 1 = (10)_2$、すなわち10進数の2に対応しています。"
+      "explanation": "德摩根定律指出：$\\overline{A + B} = \\overline{A} \\cdot \\overline{B}$（OR的否定等于各自否定的AND），以及 $\\overline{A \\cdot B} = \\overline{A} + \\overline{B}$（AND的否定等于各自否定的OR）。这在逻辑电路设计中非常重要。"
     }
   ]
 }
