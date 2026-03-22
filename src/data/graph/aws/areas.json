@@ -8,8 +8,8 @@
       "zh": "网络"
     },
     "position": {
-      "x": -300,
-      "y": -150
+      "x": 0,
+      "y": -125
     },
     "color": "#8b5cf6",
     "description": "VPC・Route53・CloudFront・ELBなど",
@@ -28,8 +28,8 @@
       "zh": "安全"
     },
     "position": {
-      "x": -300,
-      "y": 150
+      "x": 0,
+      "y": 125
     },
     "color": "#ef4444",
     "description": "IAM・KMS・WAF・Cognitoなどのセキュリティサービス",
@@ -48,8 +48,8 @@
       "zh": "计算"
     },
     "position": {
-      "x": 300,
-      "y": -150
+      "x": 450,
+      "y": 0
     },
     "color": "#f59e0b",
     "description": "EC2・Lambda・ECS・Fargateなどの実行環境",
@@ -68,8 +68,8 @@
       "zh": "存储"
     },
     "position": {
-      "x": 300,
-      "y": 150
+      "x": 900,
+      "y": -125
     },
     "color": "#22c55e",
     "description": "S3・EBS・EFS・Glacierなどのデータ保存",
@@ -88,8 +88,8 @@
       "zh": "数据库"
     },
     "position": {
-      "x": 900,
-      "y": -150
+      "x": 1350,
+      "y": -250
     },
     "color": "#3b82f6",
     "description": "RDS・DynamoDB・ElastiCache・Redshiftなど",
@@ -109,7 +109,7 @@
     },
     "position": {
       "x": 900,
-      "y": 150
+      "y": 125
     },
     "color": "#ec4899",
     "description": "SQS・SNS・API Gateway・Step Functionsなど",
@@ -128,8 +128,8 @@
       "zh": "管理与监控"
     },
     "position": {
-      "x": 300,
-      "y": 450
+      "x": 1350,
+      "y": 0
     },
     "color": "#f97316",
     "description": "CloudWatch・CloudFormation・Systems Managerなど",
@@ -148,8 +148,8 @@
       "zh": "AI与机器学习"
     },
     "position": {
-      "x": 900,
-      "y": 450
+      "x": 1350,
+      "y": 250
     },
     "color": "#06b6d4",
     "description": "SageMaker・Bedrock・Rekognitionなど",

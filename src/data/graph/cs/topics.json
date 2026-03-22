@@ -673,10 +673,6 @@
       "target": "tcp-ip"
     },
     {
-      "source": "tcp-ip",
-      "target": "distributed-systems"
-    },
-    {
       "source": "automata",
       "target": "compiler"
     },
