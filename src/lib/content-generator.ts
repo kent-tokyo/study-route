@@ -648,7 +648,7 @@ Rules:
   });
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '';
-  return parseJsonArray(text, quiz);
+  return parseJsonArray(text, []);
 }
 
 async function translateSVG(svgContent: string, locale: string, model: string): Promise<string> {

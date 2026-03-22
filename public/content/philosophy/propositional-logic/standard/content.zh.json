@@ -100,36 +100,36 @@
   "diagrams": [],
   "quiz": [
     {
-      "question": "含意 $P \\Rightarrow Q$ が偽になるのは、次のうちどの場合か？",
+      "question": "命题 $P$ 和 $Q$ 的合取 $P \\land Q$ 为真的条件是什么？",
       "choices": [
         {
-          "text": "$P$ が偽で、$Q$ が偽のとき",
+          "text": "$P$ 和 $Q$ 中至少有一个为真",
           "isCorrect": false
         },
         {
-          "text": "$P$ が真で、$Q$ が偽のとき",
+          "text": "$P$ 和 $Q$ 都为真",
           "isCorrect": true
         },
         {
-          "text": "$P$ が偽で、$Q$ が真のとき",
+          "text": "$P$ 和 $Q$ 中恰好有一个为真",
           "isCorrect": false
         },
         {
-          "text": "$P$ が真で、$Q$ が真のとき",
+          "text": "$P$ 和 $Q$ 都为假",
           "isCorrect": false
         }
       ],
-      "explanation": "含意 $P \\Rightarrow Q$ が偽になるのは、「前提 $P$ が真なのに結論 $Q$ が偽」の場合だけです。$P$ が偽のときは $Q$ の真偽にかかわらず含意全体は真となります。これは「嘘から何でも導ける（Ex falso quodlibet）」という原則に対応します。"
+      "explanation": "合取 $P \\land Q$ 仅在 $P$ 和 $Q$ 都为真时为真。如果其中任何一个为假，$P \\land Q$ 就为假。这与日常语言中的「并且」相对应。"
     },
     {
-      "question": "命題 $P \\Rightarrow Q$ と論理的に同値な式はどれか？",
+      "question": "蕴含 $P \\Rightarrow Q$ 与以下哪个命题逻辑等价？",
       "choices": [
         {
-          "text": "$P \\land \\lnot Q$",
+          "text": "$P \\land Q$",
           "isCorrect": false
         },
         {
-          "text": "$\\lnot P \\land Q$",
+          "text": "$P \\lor Q$",
           "isCorrect": false
         },
         {
@@ -141,29 +141,29 @@
           "isCorrect": false
         }
       ],
-      "explanation": "含意 $P \\Rightarrow Q$ は「$P$ が真で $Q$ が偽」のときのみ偽となります。これは「$P$ が偽、または $Q$ が真」すなわち $\\lnot P \\lor Q$ と全く同じ真理値表を持ちます。「試験の合否」の例でも、$\\lnot P \\lor Q \\equiv P \\Rightarrow Q$ として紹介されています。"
+      "explanation": "蕴含 $P \\Rightarrow Q$ 仅在「$P$ 为真且 $Q$ 为假」时为假。这与「$P$ 为假或 $Q$ 为真」即 $\\lnot P \\lor Q$ 具有完全相同的真值表。在「考试合格与否」的例子中也说明了 $\\lnot P \\lor Q \\equiv P \\Rightarrow Q$。"
     },
     {
-      "question": "トートロジー（tautology）の説明として正しいものはどれか？",
+      "question": "关于重言式（tautology）的说明，正确的是哪个？",
       "choices": [
         {
-          "text": "すべての真理値の組み合わせで常に偽となる命題式のこと",
+          "text": "对所有真值组合始终为假的命题公式",
           "isCorrect": false
         },
         {
-          "text": "$P$ と $Q$ が同じ真理値を持つときのみ真となる命題式のこと",
+          "text": "仅当 $P$ 和 $Q$ 具有相同真值时才为真的命题公式",
           "isCorrect": false
         },
         {
-          "text": "少なくとも一つの真理値の組み合わせで真となる命題式のこと",
-          "isCorrect": false
-        },
-        {
-          "text": "すべての真理値の組み合わせで常に真となる命題式のこと",
+          "text": "对所有真值组合始终为真的命题公式",
           "isCorrect": true
+        },
+        {
+          "text": "真值表中真和假各占一半的命题公式",
+          "isCorrect": false
         }
       ],
-      "explanation": "トートロジーとは、命題変数にどのような真理値を割り当てても、常に真となる命題式のことです。代表例は排中律 $P \\lor \\lnot P$ で、「$P$ は真か偽のどちらかである」という古典論理の基本原理です。常に偽となる式は「矛盾（contradiction）」と呼ばれ、トートロジーとは区別されます。"
+      "explanation": "重言式是无论构成命题变量取何种真值组合，结果都为真的命题公式。例如 $P \\lor \\lnot P$（排中律）无论 $P$ 为真还是为假都为真，因此是重言式。"
     }
   ]
 }
