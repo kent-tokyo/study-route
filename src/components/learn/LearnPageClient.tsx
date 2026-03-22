@@ -11,6 +11,7 @@ import { useSettings, type ContentLevel } from '@/hooks/useSettings';
 import { useLocale } from '@/i18n/useLocale';
 import { localize } from '@/i18n/localize';
 import LanguageSelector from '@/components/shared/LanguageSelector';
+import SearchBox from '@/components/shared/SearchBox';
 import Footer from '@/components/shared/Footer';
 import { useTheme } from '@/hooks/useTheme';
 import { getNode } from '@/lib/graph';
@@ -120,6 +121,7 @@ export default function LearnPageClient({ nodeId, domain }: LearnPageClientProps
             </div>
           )}
           <div className={`flex items-center gap-2 ${availableLevels.length <= 1 ? 'ml-auto' : ''}`}>
+            <SearchBox />
             <LanguageSelector />
             <button
               onClick={toggleTheme}
